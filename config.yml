@@ -10,4 +10,5 @@ additionalProperties:
   withGoMod: false
   isGoSubmodule: true
 openapiGeneratorIgnoreList:
+  - configuration.go
   - test/
