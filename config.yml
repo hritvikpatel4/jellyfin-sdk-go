@@ -1,0 +1,13 @@
+inputSpec: jellyfin-openapi-stable.json
+generatorName: go
+outputDir: api
+gitUserId: hritvikpatel4
+gitRepoId: jellyfin-sdk-go
+additionalProperties:
+  enumClassPrefix: true
+  generateInterfaces: true
+  packageName: api
+  withGoMod: false
+  isGoSubmodule: true
+openapiGeneratorIgnoreList:
+  - test/
