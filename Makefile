@@ -6,8 +6,7 @@ load:
 	curl -O https://api.jellyfin.org/openapi/jellyfin-openapi-stable.json
 
 .PHONY: generate
-generate:
-	clear
+generate: clear
 	openapi-generator-cli version-manager set latest
 	openapi-generator-cli generate -c config.yml
 
