@@ -63,7 +63,6 @@ api_video_attachments.go
 api_videos.go
 api_years.go
 client.go
-configuration.go
 docs/AccessSchedule.md
 docs/ActivityLogAPI.md
 docs/ActivityLogEntry.md
