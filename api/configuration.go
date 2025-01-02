@@ -63,15 +63,15 @@ type ServerVariable struct {
 	EnumValues   []string
 }
 
-// ServerConfiguration stores the information about a server
-type ServerConfiguration struct {
+// APIServerConfiguration stores the information about a server
+type APIServerConfiguration struct {
 	URL string
 	Description string
 	Variables map[string]ServerVariable
 }
 
-// ServerConfigurations stores multiple ServerConfiguration items
-type ServerConfigurations []ServerConfiguration
+// ServerConfigurations stores multiple APIServerConfiguration items
+type ServerConfigurations []APIServerConfiguration
 
 // Configuration stores the configuration of the API client
 type Configuration struct {
