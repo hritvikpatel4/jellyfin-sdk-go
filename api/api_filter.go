@@ -19,14 +19,13 @@ import (
 	"reflect"
 )
 
-
 type FilterAPI interface {
 
 	/*
-	GetQueryFilters Gets query filters.
+		GetQueryFilters Gets query filters.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetQueryFiltersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetQueryFiltersRequest
 	*/
 	GetQueryFilters(ctx context.Context) ApiGetQueryFiltersRequest
 
@@ -35,10 +34,10 @@ type FilterAPI interface {
 	GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (*QueryFilters, *http.Response, error)
 
 	/*
-	GetQueryFiltersLegacy Gets legacy query filters.
+		GetQueryFiltersLegacy Gets legacy query filters.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetQueryFiltersLegacyRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetQueryFiltersLegacyRequest
 	*/
 	GetQueryFiltersLegacy(ctx context.Context) ApiGetQueryFiltersLegacyRequest
 
@@ -51,18 +50,18 @@ type FilterAPI interface {
 type FilterAPIService service
 
 type ApiGetQueryFiltersRequest struct {
-	ctx context.Context
-	ApiService FilterAPI
-	userId *string
-	parentId *string
+	ctx              context.Context
+	ApiService       FilterAPI
+	userId           *string
+	parentId         *string
 	includeItemTypes *[]BaseItemKind
-	isAiring *bool
-	isMovie *bool
-	isSports *bool
-	isKids *bool
-	isNews *bool
-	isSeries *bool
-	recursive *bool
+	isAiring         *bool
+	isMovie          *bool
+	isSports         *bool
+	isKids           *bool
+	isNews           *bool
+	isSeries         *bool
+	recursive        *bool
 }
 
 // Optional. User id.
@@ -132,24 +131,25 @@ func (r ApiGetQueryFiltersRequest) Execute() (*QueryFilters, *http.Response, err
 /*
 GetQueryFilters Gets query filters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetQueryFiltersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetQueryFiltersRequest
 */
 func (a *FilterAPIService) GetQueryFilters(ctx context.Context) ApiGetQueryFiltersRequest {
 	return ApiGetQueryFiltersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return QueryFilters
+//
+//	@return QueryFilters
 func (a *FilterAPIService) GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (*QueryFilters, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *QueryFilters
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *QueryFilters
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FilterAPIService.GetQueryFilters")
@@ -270,12 +270,12 @@ func (a *FilterAPIService) GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (
 }
 
 type ApiGetQueryFiltersLegacyRequest struct {
-	ctx context.Context
-	ApiService FilterAPI
-	userId *string
-	parentId *string
+	ctx              context.Context
+	ApiService       FilterAPI
+	userId           *string
+	parentId         *string
 	includeItemTypes *[]BaseItemKind
-	mediaTypes *[]MediaType
+	mediaTypes       *[]MediaType
 }
 
 // Optional. User id.
@@ -309,24 +309,25 @@ func (r ApiGetQueryFiltersLegacyRequest) Execute() (*QueryFiltersLegacy, *http.R
 /*
 GetQueryFiltersLegacy Gets legacy query filters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetQueryFiltersLegacyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetQueryFiltersLegacyRequest
 */
 func (a *FilterAPIService) GetQueryFiltersLegacy(ctx context.Context) ApiGetQueryFiltersLegacyRequest {
 	return ApiGetQueryFiltersLegacyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return QueryFiltersLegacy
+//
+//	@return QueryFiltersLegacy
 func (a *FilterAPIService) GetQueryFiltersLegacyExecute(r ApiGetQueryFiltersLegacyRequest) (*QueryFiltersLegacy, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *QueryFiltersLegacy
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *QueryFiltersLegacy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FilterAPIService.GetQueryFiltersLegacy")

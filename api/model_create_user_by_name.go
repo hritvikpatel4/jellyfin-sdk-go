@@ -11,8 +11,8 @@ API version: 10.10.3
 package api
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -103,6 +103,7 @@ func (o *CreateUserByName) HasPassword() bool {
 func (o *CreateUserByName) SetPassword(v string) {
 	o.Password.Set(&v)
 }
+
 // SetPasswordNil sets the value for Password to be an explicit nil
 func (o *CreateUserByName) SetPasswordNil() {
 	o.Password.Set(nil)
@@ -114,7 +115,7 @@ func (o *CreateUserByName) UnsetPassword() {
 }
 
 func (o CreateUserByName) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +144,10 @@ func (o *CreateUserByName) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -202,5 +203,3 @@ func (v *NullableCreateUserByName) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

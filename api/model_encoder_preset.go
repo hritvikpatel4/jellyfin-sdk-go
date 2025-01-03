@@ -20,15 +20,15 @@ type EncoderPreset string
 
 // List of EncoderPreset
 const (
-	ENCODERPRESET_AUTO EncoderPreset = "auto"
-	ENCODERPRESET_PLACEBO EncoderPreset = "placebo"
-	ENCODERPRESET_VERYSLOW EncoderPreset = "veryslow"
-	ENCODERPRESET_SLOWER EncoderPreset = "slower"
-	ENCODERPRESET_SLOW EncoderPreset = "slow"
-	ENCODERPRESET_MEDIUM EncoderPreset = "medium"
-	ENCODERPRESET_FAST EncoderPreset = "fast"
-	ENCODERPRESET_FASTER EncoderPreset = "faster"
-	ENCODERPRESET_VERYFAST EncoderPreset = "veryfast"
+	ENCODERPRESET_AUTO      EncoderPreset = "auto"
+	ENCODERPRESET_PLACEBO   EncoderPreset = "placebo"
+	ENCODERPRESET_VERYSLOW  EncoderPreset = "veryslow"
+	ENCODERPRESET_SLOWER    EncoderPreset = "slower"
+	ENCODERPRESET_SLOW      EncoderPreset = "slow"
+	ENCODERPRESET_MEDIUM    EncoderPreset = "medium"
+	ENCODERPRESET_FAST      EncoderPreset = "fast"
+	ENCODERPRESET_FASTER    EncoderPreset = "faster"
+	ENCODERPRESET_VERYFAST  EncoderPreset = "veryfast"
 	ENCODERPRESET_SUPERFAST EncoderPreset = "superfast"
 	ENCODERPRESET_ULTRAFAST EncoderPreset = "ultrafast"
 )
@@ -126,4 +126,3 @@ func (v *NullableEncoderPreset) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

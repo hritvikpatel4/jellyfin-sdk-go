@@ -21,8 +21,8 @@ type VideoRange string
 // List of VideoRange
 const (
 	VIDEORANGE_UNKNOWN VideoRange = "Unknown"
-	VIDEORANGE_SDR VideoRange = "SDR"
-	VIDEORANGE_HDR VideoRange = "HDR"
+	VIDEORANGE_SDR     VideoRange = "SDR"
+	VIDEORANGE_HDR     VideoRange = "HDR"
 )
 
 // All allowed values of VideoRange enum
@@ -110,4 +110,3 @@ func (v *NullableVideoRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

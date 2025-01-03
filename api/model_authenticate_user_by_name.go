@@ -74,6 +74,7 @@ func (o *AuthenticateUserByName) HasUsername() bool {
 func (o *AuthenticateUserByName) SetUsername(v string) {
 	o.Username.Set(&v)
 }
+
 // SetUsernameNil sets the value for Username to be an explicit nil
 func (o *AuthenticateUserByName) SetUsernameNil() {
 	o.Username.Set(nil)
@@ -116,6 +117,7 @@ func (o *AuthenticateUserByName) HasPw() bool {
 func (o *AuthenticateUserByName) SetPw(v string) {
 	o.Pw.Set(&v)
 }
+
 // SetPwNil sets the value for Pw to be an explicit nil
 func (o *AuthenticateUserByName) SetPwNil() {
 	o.Pw.Set(nil)
@@ -127,7 +129,7 @@ func (o *AuthenticateUserByName) UnsetPw() {
 }
 
 func (o AuthenticateUserByName) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableAuthenticateUserByName) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

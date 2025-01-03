@@ -21,9 +21,9 @@ type SendCommandType string
 // List of SendCommandType
 const (
 	SENDCOMMANDTYPE_UNPAUSE SendCommandType = "Unpause"
-	SENDCOMMANDTYPE_PAUSE SendCommandType = "Pause"
-	SENDCOMMANDTYPE_STOP SendCommandType = "Stop"
-	SENDCOMMANDTYPE_SEEK SendCommandType = "Seek"
+	SENDCOMMANDTYPE_PAUSE   SendCommandType = "Pause"
+	SENDCOMMANDTYPE_STOP    SendCommandType = "Stop"
+	SENDCOMMANDTYPE_SEEK    SendCommandType = "Seek"
 )
 
 // All allowed values of SendCommandType enum
@@ -112,4 +112,3 @@ func (v *NullableSendCommandType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

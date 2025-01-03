@@ -20,30 +20,30 @@ type ProfileConditionValue string
 
 // List of ProfileConditionValue
 const (
-	PROFILECONDITIONVALUE_AUDIO_CHANNELS ProfileConditionValue = "AudioChannels"
-	PROFILECONDITIONVALUE_AUDIO_BITRATE ProfileConditionValue = "AudioBitrate"
-	PROFILECONDITIONVALUE_AUDIO_PROFILE ProfileConditionValue = "AudioProfile"
-	PROFILECONDITIONVALUE_WIDTH ProfileConditionValue = "Width"
-	PROFILECONDITIONVALUE_HEIGHT ProfileConditionValue = "Height"
-	PROFILECONDITIONVALUE_HAS64_BIT_OFFSETS ProfileConditionValue = "Has64BitOffsets"
-	PROFILECONDITIONVALUE_PACKET_LENGTH ProfileConditionValue = "PacketLength"
-	PROFILECONDITIONVALUE_VIDEO_BIT_DEPTH ProfileConditionValue = "VideoBitDepth"
-	PROFILECONDITIONVALUE_VIDEO_BITRATE ProfileConditionValue = "VideoBitrate"
-	PROFILECONDITIONVALUE_VIDEO_FRAMERATE ProfileConditionValue = "VideoFramerate"
-	PROFILECONDITIONVALUE_VIDEO_LEVEL ProfileConditionValue = "VideoLevel"
-	PROFILECONDITIONVALUE_VIDEO_PROFILE ProfileConditionValue = "VideoProfile"
-	PROFILECONDITIONVALUE_VIDEO_TIMESTAMP ProfileConditionValue = "VideoTimestamp"
-	PROFILECONDITIONVALUE_IS_ANAMORPHIC ProfileConditionValue = "IsAnamorphic"
-	PROFILECONDITIONVALUE_REF_FRAMES ProfileConditionValue = "RefFrames"
-	PROFILECONDITIONVALUE_NUM_AUDIO_STREAMS ProfileConditionValue = "NumAudioStreams"
-	PROFILECONDITIONVALUE_NUM_VIDEO_STREAMS ProfileConditionValue = "NumVideoStreams"
+	PROFILECONDITIONVALUE_AUDIO_CHANNELS     ProfileConditionValue = "AudioChannels"
+	PROFILECONDITIONVALUE_AUDIO_BITRATE      ProfileConditionValue = "AudioBitrate"
+	PROFILECONDITIONVALUE_AUDIO_PROFILE      ProfileConditionValue = "AudioProfile"
+	PROFILECONDITIONVALUE_WIDTH              ProfileConditionValue = "Width"
+	PROFILECONDITIONVALUE_HEIGHT             ProfileConditionValue = "Height"
+	PROFILECONDITIONVALUE_HAS64_BIT_OFFSETS  ProfileConditionValue = "Has64BitOffsets"
+	PROFILECONDITIONVALUE_PACKET_LENGTH      ProfileConditionValue = "PacketLength"
+	PROFILECONDITIONVALUE_VIDEO_BIT_DEPTH    ProfileConditionValue = "VideoBitDepth"
+	PROFILECONDITIONVALUE_VIDEO_BITRATE      ProfileConditionValue = "VideoBitrate"
+	PROFILECONDITIONVALUE_VIDEO_FRAMERATE    ProfileConditionValue = "VideoFramerate"
+	PROFILECONDITIONVALUE_VIDEO_LEVEL        ProfileConditionValue = "VideoLevel"
+	PROFILECONDITIONVALUE_VIDEO_PROFILE      ProfileConditionValue = "VideoProfile"
+	PROFILECONDITIONVALUE_VIDEO_TIMESTAMP    ProfileConditionValue = "VideoTimestamp"
+	PROFILECONDITIONVALUE_IS_ANAMORPHIC      ProfileConditionValue = "IsAnamorphic"
+	PROFILECONDITIONVALUE_REF_FRAMES         ProfileConditionValue = "RefFrames"
+	PROFILECONDITIONVALUE_NUM_AUDIO_STREAMS  ProfileConditionValue = "NumAudioStreams"
+	PROFILECONDITIONVALUE_NUM_VIDEO_STREAMS  ProfileConditionValue = "NumVideoStreams"
 	PROFILECONDITIONVALUE_IS_SECONDARY_AUDIO ProfileConditionValue = "IsSecondaryAudio"
-	PROFILECONDITIONVALUE_VIDEO_CODEC_TAG ProfileConditionValue = "VideoCodecTag"
-	PROFILECONDITIONVALUE_IS_AVC ProfileConditionValue = "IsAvc"
-	PROFILECONDITIONVALUE_IS_INTERLACED ProfileConditionValue = "IsInterlaced"
-	PROFILECONDITIONVALUE_AUDIO_SAMPLE_RATE ProfileConditionValue = "AudioSampleRate"
-	PROFILECONDITIONVALUE_AUDIO_BIT_DEPTH ProfileConditionValue = "AudioBitDepth"
-	PROFILECONDITIONVALUE_VIDEO_RANGE_TYPE ProfileConditionValue = "VideoRangeType"
+	PROFILECONDITIONVALUE_VIDEO_CODEC_TAG    ProfileConditionValue = "VideoCodecTag"
+	PROFILECONDITIONVALUE_IS_AVC             ProfileConditionValue = "IsAvc"
+	PROFILECONDITIONVALUE_IS_INTERLACED      ProfileConditionValue = "IsInterlaced"
+	PROFILECONDITIONVALUE_AUDIO_SAMPLE_RATE  ProfileConditionValue = "AudioSampleRate"
+	PROFILECONDITIONVALUE_AUDIO_BIT_DEPTH    ProfileConditionValue = "AudioBitDepth"
+	PROFILECONDITIONVALUE_VIDEO_RANGE_TYPE   ProfileConditionValue = "VideoRangeType"
 )
 
 // All allowed values of ProfileConditionValue enum
@@ -152,4 +152,3 @@ func (v *NullableProfileConditionValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -142,6 +142,7 @@ func (o *ContainerProfile) HasContainer() bool {
 func (o *ContainerProfile) SetContainer(v string) {
 	o.Container.Set(&v)
 }
+
 // SetContainerNil sets the value for Container to be an explicit nil
 func (o *ContainerProfile) SetContainerNil() {
 	o.Container.Set(nil)
@@ -184,6 +185,7 @@ func (o *ContainerProfile) HasSubContainer() bool {
 func (o *ContainerProfile) SetSubContainer(v string) {
 	o.SubContainer.Set(&v)
 }
+
 // SetSubContainerNil sets the value for SubContainer to be an explicit nil
 func (o *ContainerProfile) SetSubContainerNil() {
 	o.SubContainer.Set(nil)
@@ -195,7 +197,7 @@ func (o *ContainerProfile) UnsetSubContainer() {
 }
 
 func (o ContainerProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -254,5 +256,3 @@ func (v *NullableContainerProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -74,6 +74,7 @@ func (o *WakeOnLanInfo) HasMacAddress() bool {
 func (o *WakeOnLanInfo) SetMacAddress(v string) {
 	o.MacAddress.Set(&v)
 }
+
 // SetMacAddressNil sets the value for MacAddress to be an explicit nil
 func (o *WakeOnLanInfo) SetMacAddressNil() {
 	o.MacAddress.Set(nil)
@@ -117,7 +118,7 @@ func (o *WakeOnLanInfo) SetPort(v int32) {
 }
 
 func (o WakeOnLanInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableWakeOnLanInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

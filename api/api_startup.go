@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type StartupAPI interface {
 
 	/*
-	CompleteWizard Completes the startup wizard.
+		CompleteWizard Completes the startup wizard.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCompleteWizardRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCompleteWizardRequest
 	*/
 	CompleteWizard(ctx context.Context) ApiCompleteWizardRequest
 
@@ -33,10 +32,10 @@ type StartupAPI interface {
 	CompleteWizardExecute(r ApiCompleteWizardRequest) (*http.Response, error)
 
 	/*
-	GetFirstUser Gets the first user.
+		GetFirstUser Gets the first user.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetFirstUserRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetFirstUserRequest
 	*/
 	GetFirstUser(ctx context.Context) ApiGetFirstUserRequest
 
@@ -45,10 +44,10 @@ type StartupAPI interface {
 	GetFirstUserExecute(r ApiGetFirstUserRequest) (*StartupUserDto, *http.Response, error)
 
 	/*
-	GetFirstUser2 Gets the first user.
+		GetFirstUser2 Gets the first user.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetFirstUser2Request
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetFirstUser2Request
 	*/
 	GetFirstUser2(ctx context.Context) ApiGetFirstUser2Request
 
@@ -57,10 +56,10 @@ type StartupAPI interface {
 	GetFirstUser2Execute(r ApiGetFirstUser2Request) (*StartupUserDto, *http.Response, error)
 
 	/*
-	GetStartupConfiguration Gets the initial startup wizard configuration.
+		GetStartupConfiguration Gets the initial startup wizard configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetStartupConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetStartupConfigurationRequest
 	*/
 	GetStartupConfiguration(ctx context.Context) ApiGetStartupConfigurationRequest
 
@@ -69,10 +68,10 @@ type StartupAPI interface {
 	GetStartupConfigurationExecute(r ApiGetStartupConfigurationRequest) (*StartupConfigurationDto, *http.Response, error)
 
 	/*
-	SetRemoteAccess Sets remote access and UPnP.
+		SetRemoteAccess Sets remote access and UPnP.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetRemoteAccessRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSetRemoteAccessRequest
 	*/
 	SetRemoteAccess(ctx context.Context) ApiSetRemoteAccessRequest
 
@@ -80,10 +79,10 @@ type StartupAPI interface {
 	SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) (*http.Response, error)
 
 	/*
-	UpdateInitialConfiguration Sets the initial startup wizard configuration.
+		UpdateInitialConfiguration Sets the initial startup wizard configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUpdateInitialConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateInitialConfigurationRequest
 	*/
 	UpdateInitialConfiguration(ctx context.Context) ApiUpdateInitialConfigurationRequest
 
@@ -91,10 +90,10 @@ type StartupAPI interface {
 	UpdateInitialConfigurationExecute(r ApiUpdateInitialConfigurationRequest) (*http.Response, error)
 
 	/*
-	UpdateStartupUser Sets the user name and password.
+		UpdateStartupUser Sets the user name and password.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUpdateStartupUserRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateStartupUserRequest
 	*/
 	UpdateStartupUser(ctx context.Context) ApiUpdateStartupUserRequest
 
@@ -106,7 +105,7 @@ type StartupAPI interface {
 type StartupAPIService service
 
 type ApiCompleteWizardRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService StartupAPI
 }
 
@@ -117,22 +116,22 @@ func (r ApiCompleteWizardRequest) Execute() (*http.Response, error) {
 /*
 CompleteWizard Completes the startup wizard.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompleteWizardRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCompleteWizardRequest
 */
 func (a *StartupAPIService) CompleteWizard(ctx context.Context) ApiCompleteWizardRequest {
 	return ApiCompleteWizardRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *StartupAPIService) CompleteWizardExecute(r ApiCompleteWizardRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.CompleteWizard")
@@ -206,7 +205,7 @@ func (a *StartupAPIService) CompleteWizardExecute(r ApiCompleteWizardRequest) (*
 }
 
 type ApiGetFirstUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService StartupAPI
 }
 
@@ -217,24 +216,25 @@ func (r ApiGetFirstUserRequest) Execute() (*StartupUserDto, *http.Response, erro
 /*
 GetFirstUser Gets the first user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFirstUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetFirstUserRequest
 */
 func (a *StartupAPIService) GetFirstUser(ctx context.Context) ApiGetFirstUserRequest {
 	return ApiGetFirstUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StartupUserDto
+//
+//	@return StartupUserDto
 func (a *StartupAPIService) GetFirstUserExecute(r ApiGetFirstUserRequest) (*StartupUserDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StartupUserDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StartupUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.GetFirstUser")
@@ -317,7 +317,7 @@ func (a *StartupAPIService) GetFirstUserExecute(r ApiGetFirstUserRequest) (*Star
 }
 
 type ApiGetFirstUser2Request struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService StartupAPI
 }
 
@@ -328,24 +328,25 @@ func (r ApiGetFirstUser2Request) Execute() (*StartupUserDto, *http.Response, err
 /*
 GetFirstUser2 Gets the first user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFirstUser2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetFirstUser2Request
 */
 func (a *StartupAPIService) GetFirstUser2(ctx context.Context) ApiGetFirstUser2Request {
 	return ApiGetFirstUser2Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StartupUserDto
+//
+//	@return StartupUserDto
 func (a *StartupAPIService) GetFirstUser2Execute(r ApiGetFirstUser2Request) (*StartupUserDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StartupUserDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StartupUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.GetFirstUser2")
@@ -428,7 +429,7 @@ func (a *StartupAPIService) GetFirstUser2Execute(r ApiGetFirstUser2Request) (*St
 }
 
 type ApiGetStartupConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService StartupAPI
 }
 
@@ -439,24 +440,25 @@ func (r ApiGetStartupConfigurationRequest) Execute() (*StartupConfigurationDto, 
 /*
 GetStartupConfiguration Gets the initial startup wizard configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStartupConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetStartupConfigurationRequest
 */
 func (a *StartupAPIService) GetStartupConfiguration(ctx context.Context) ApiGetStartupConfigurationRequest {
 	return ApiGetStartupConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StartupConfigurationDto
+//
+//	@return StartupConfigurationDto
 func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfigurationRequest) (*StartupConfigurationDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StartupConfigurationDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StartupConfigurationDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.GetStartupConfiguration")
@@ -539,8 +541,8 @@ func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfig
 }
 
 type ApiSetRemoteAccessRequest struct {
-	ctx context.Context
-	ApiService StartupAPI
+	ctx                    context.Context
+	ApiService             StartupAPI
 	startupRemoteAccessDto *StartupRemoteAccessDto
 }
 
@@ -557,22 +559,22 @@ func (r ApiSetRemoteAccessRequest) Execute() (*http.Response, error) {
 /*
 SetRemoteAccess Sets remote access and UPnP.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetRemoteAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetRemoteAccessRequest
 */
 func (a *StartupAPIService) SetRemoteAccess(ctx context.Context) ApiSetRemoteAccessRequest {
 	return ApiSetRemoteAccessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.SetRemoteAccess")
@@ -651,8 +653,8 @@ func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) 
 }
 
 type ApiUpdateInitialConfigurationRequest struct {
-	ctx context.Context
-	ApiService StartupAPI
+	ctx                     context.Context
+	ApiService              StartupAPI
 	startupConfigurationDto *StartupConfigurationDto
 }
 
@@ -669,22 +671,22 @@ func (r ApiUpdateInitialConfigurationRequest) Execute() (*http.Response, error) 
 /*
 UpdateInitialConfiguration Sets the initial startup wizard configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateInitialConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateInitialConfigurationRequest
 */
 func (a *StartupAPIService) UpdateInitialConfiguration(ctx context.Context) ApiUpdateInitialConfigurationRequest {
 	return ApiUpdateInitialConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitialConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.UpdateInitialConfiguration")
@@ -763,8 +765,8 @@ func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitial
 }
 
 type ApiUpdateStartupUserRequest struct {
-	ctx context.Context
-	ApiService StartupAPI
+	ctx            context.Context
+	ApiService     StartupAPI
 	startupUserDto *StartupUserDto
 }
 
@@ -781,22 +783,22 @@ func (r ApiUpdateStartupUserRequest) Execute() (*http.Response, error) {
 /*
 UpdateStartupUser Sets the user name and password.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateStartupUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateStartupUserRequest
 */
 func (a *StartupAPIService) UpdateStartupUser(ctx context.Context) ApiUpdateStartupUserRequest {
 	return ApiUpdateStartupUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *StartupAPIService) UpdateStartupUserExecute(r ApiUpdateStartupUserRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.UpdateStartupUser")

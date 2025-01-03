@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type TimeSyncAPI interface {
 
 	/*
-	GetUtcTime Gets the current UTC time.
+		GetUtcTime Gets the current UTC time.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUtcTimeRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetUtcTimeRequest
 	*/
 	GetUtcTime(ctx context.Context) ApiGetUtcTimeRequest
 
@@ -38,7 +37,7 @@ type TimeSyncAPI interface {
 type TimeSyncAPIService service
 
 type ApiGetUtcTimeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService TimeSyncAPI
 }
 
@@ -49,24 +48,25 @@ func (r ApiGetUtcTimeRequest) Execute() (*UtcTimeResponse, *http.Response, error
 /*
 GetUtcTime Gets the current UTC time.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUtcTimeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUtcTimeRequest
 */
 func (a *TimeSyncAPIService) GetUtcTime(ctx context.Context) ApiGetUtcTimeRequest {
 	return ApiGetUtcTimeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UtcTimeResponse
+//
+//	@return UtcTimeResponse
 func (a *TimeSyncAPIService) GetUtcTimeExecute(r ApiGetUtcTimeRequest) (*UtcTimeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UtcTimeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UtcTimeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimeSyncAPIService.GetUtcTime")

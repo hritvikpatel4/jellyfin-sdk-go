@@ -20,7 +20,7 @@ var _ MappedNullable = &NameGuidPair{}
 // NameGuidPair struct for NameGuidPair
 type NameGuidPair struct {
 	Name NullableString `json:"Name,omitempty"`
-	Id *string `json:"Id,omitempty"`
+	Id   *string        `json:"Id,omitempty"`
 }
 
 // NewNameGuidPair instantiates a new NameGuidPair object
@@ -72,6 +72,7 @@ func (o *NameGuidPair) HasName() bool {
 func (o *NameGuidPair) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *NameGuidPair) SetNameNil() {
 	o.Name.Set(nil)
@@ -115,7 +116,7 @@ func (o *NameGuidPair) SetId(v string) {
 }
 
 func (o NameGuidPair) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +169,3 @@ func (v *NullableNameGuidPair) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -110,6 +110,7 @@ func (o *DirectPlayProfile) HasAudioCodec() bool {
 func (o *DirectPlayProfile) SetAudioCodec(v string) {
 	o.AudioCodec.Set(&v)
 }
+
 // SetAudioCodecNil sets the value for AudioCodec to be an explicit nil
 func (o *DirectPlayProfile) SetAudioCodecNil() {
 	o.AudioCodec.Set(nil)
@@ -152,6 +153,7 @@ func (o *DirectPlayProfile) HasVideoCodec() bool {
 func (o *DirectPlayProfile) SetVideoCodec(v string) {
 	o.VideoCodec.Set(&v)
 }
+
 // SetVideoCodecNil sets the value for VideoCodec to be an explicit nil
 func (o *DirectPlayProfile) SetVideoCodecNil() {
 	o.VideoCodec.Set(nil)
@@ -195,7 +197,7 @@ func (o *DirectPlayProfile) SetType(v DlnaProfileType) {
 }
 
 func (o DirectPlayProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -254,5 +256,3 @@ func (v *NullableDirectPlayProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

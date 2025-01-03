@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type AudioAPI interface {
 
 	/*
-	GetAudioStream Gets an audio stream.
+		GetAudioStream Gets an audio stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetAudioStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetAudioStreamRequest
 	*/
 	GetAudioStream(ctx context.Context, itemId string) ApiGetAudioStreamRequest
 
@@ -37,12 +36,12 @@ type AudioAPI interface {
 	GetAudioStreamExecute(r ApiGetAudioStreamRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetAudioStreamByContainer Gets an audio stream.
+		GetAudioStreamByContainer Gets an audio stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param container The audio container.
-	@return ApiGetAudioStreamByContainerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param container The audio container.
+		@return ApiGetAudioStreamByContainerRequest
 	*/
 	GetAudioStreamByContainer(ctx context.Context, itemId string, container string) ApiGetAudioStreamByContainerRequest
 
@@ -51,11 +50,11 @@ type AudioAPI interface {
 	GetAudioStreamByContainerExecute(r ApiGetAudioStreamByContainerRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadAudioStream Gets an audio stream.
+		HeadAudioStream Gets an audio stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiHeadAudioStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiHeadAudioStreamRequest
 	*/
 	HeadAudioStream(ctx context.Context, itemId string) ApiHeadAudioStreamRequest
 
@@ -64,12 +63,12 @@ type AudioAPI interface {
 	HeadAudioStreamExecute(r ApiHeadAudioStreamRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadAudioStreamByContainer Gets an audio stream.
+		HeadAudioStreamByContainer Gets an audio stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param container The audio container.
-	@return ApiHeadAudioStreamByContainerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param container The audio container.
+		@return ApiHeadAudioStreamByContainerRequest
 	*/
 	HeadAudioStreamByContainer(ctx context.Context, itemId string, container string) ApiHeadAudioStreamByContainerRequest
 
@@ -82,58 +81,58 @@ type AudioAPI interface {
 type AudioAPIService service
 
 type ApiGetAudioStreamRequest struct {
-	ctx context.Context
-	ApiService AudioAPI
-	itemId string
-	container *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  AudioAPI
+	itemId                      string
+	container                   *string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // The audio container.
@@ -438,26 +437,27 @@ func (r ApiGetAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetAudioStream Gets an audio stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetAudioStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetAudioStreamRequest
 */
 func (a *AudioAPIService) GetAudioStream(ctx context.Context, itemId string) ApiGetAudioStreamRequest {
 	return ApiGetAudioStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *AudioAPIService) GetAudioStreamExecute(r ApiGetAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AudioAPIService.GetAudioStream")
@@ -677,58 +677,58 @@ func (a *AudioAPIService) GetAudioStreamExecute(r ApiGetAudioStreamRequest) (*os
 }
 
 type ApiGetAudioStreamByContainerRequest struct {
-	ctx context.Context
-	ApiService AudioAPI
-	itemId string
-	container string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  AudioAPI
+	itemId                      string
+	container                   string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
@@ -1027,28 +1027,29 @@ func (r ApiGetAudioStreamByContainerRequest) Execute() (*os.File, *http.Response
 /*
 GetAudioStreamByContainer Gets an audio stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param container The audio container.
- @return ApiGetAudioStreamByContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param container The audio container.
+	@return ApiGetAudioStreamByContainerRequest
 */
 func (a *AudioAPIService) GetAudioStreamByContainer(ctx context.Context, itemId string, container string) ApiGetAudioStreamByContainerRequest {
 	return ApiGetAudioStreamByContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		container: container,
+		ctx:        ctx,
+		itemId:     itemId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *AudioAPIService) GetAudioStreamByContainerExecute(r ApiGetAudioStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AudioAPIService.GetAudioStreamByContainer")
@@ -1266,58 +1267,58 @@ func (a *AudioAPIService) GetAudioStreamByContainerExecute(r ApiGetAudioStreamBy
 }
 
 type ApiHeadAudioStreamRequest struct {
-	ctx context.Context
-	ApiService AudioAPI
-	itemId string
-	container *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  AudioAPI
+	itemId                      string
+	container                   *string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // The audio container.
@@ -1622,26 +1623,27 @@ func (r ApiHeadAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadAudioStream Gets an audio stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiHeadAudioStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiHeadAudioStreamRequest
 */
 func (a *AudioAPIService) HeadAudioStream(ctx context.Context, itemId string) ApiHeadAudioStreamRequest {
 	return ApiHeadAudioStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *AudioAPIService) HeadAudioStreamExecute(r ApiHeadAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AudioAPIService.HeadAudioStream")
@@ -1861,58 +1863,58 @@ func (a *AudioAPIService) HeadAudioStreamExecute(r ApiHeadAudioStreamRequest) (*
 }
 
 type ApiHeadAudioStreamByContainerRequest struct {
-	ctx context.Context
-	ApiService AudioAPI
-	itemId string
-	container string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  AudioAPI
+	itemId                      string
+	container                   string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
@@ -2211,28 +2213,29 @@ func (r ApiHeadAudioStreamByContainerRequest) Execute() (*os.File, *http.Respons
 /*
 HeadAudioStreamByContainer Gets an audio stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param container The audio container.
- @return ApiHeadAudioStreamByContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param container The audio container.
+	@return ApiHeadAudioStreamByContainerRequest
 */
 func (a *AudioAPIService) HeadAudioStreamByContainer(ctx context.Context, itemId string, container string) ApiHeadAudioStreamByContainerRequest {
 	return ApiHeadAudioStreamByContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		container: container,
+		ctx:        ctx,
+		itemId:     itemId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *AudioAPIService) HeadAudioStreamByContainerExecute(r ApiHeadAudioStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AudioAPIService.HeadAudioStreamByContainer")

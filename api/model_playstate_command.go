@@ -20,15 +20,15 @@ type PlaystateCommand string
 
 // List of PlaystateCommand
 const (
-	PLAYSTATECOMMAND_STOP PlaystateCommand = "Stop"
-	PLAYSTATECOMMAND_PAUSE PlaystateCommand = "Pause"
-	PLAYSTATECOMMAND_UNPAUSE PlaystateCommand = "Unpause"
-	PLAYSTATECOMMAND_NEXT_TRACK PlaystateCommand = "NextTrack"
+	PLAYSTATECOMMAND_STOP           PlaystateCommand = "Stop"
+	PLAYSTATECOMMAND_PAUSE          PlaystateCommand = "Pause"
+	PLAYSTATECOMMAND_UNPAUSE        PlaystateCommand = "Unpause"
+	PLAYSTATECOMMAND_NEXT_TRACK     PlaystateCommand = "NextTrack"
 	PLAYSTATECOMMAND_PREVIOUS_TRACK PlaystateCommand = "PreviousTrack"
-	PLAYSTATECOMMAND_SEEK PlaystateCommand = "Seek"
-	PLAYSTATECOMMAND_REWIND PlaystateCommand = "Rewind"
-	PLAYSTATECOMMAND_FAST_FORWARD PlaystateCommand = "FastForward"
-	PLAYSTATECOMMAND_PLAY_PAUSE PlaystateCommand = "PlayPause"
+	PLAYSTATECOMMAND_SEEK           PlaystateCommand = "Seek"
+	PLAYSTATECOMMAND_REWIND         PlaystateCommand = "Rewind"
+	PLAYSTATECOMMAND_FAST_FORWARD   PlaystateCommand = "FastForward"
+	PLAYSTATECOMMAND_PLAY_PAUSE     PlaystateCommand = "PlayPause"
 )
 
 // All allowed values of PlaystateCommand enum
@@ -122,4 +122,3 @@ func (v *NullablePlaystateCommand) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

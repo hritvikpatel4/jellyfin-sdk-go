@@ -156,6 +156,7 @@ func (o *ActivityLogEntry) HasOverview() bool {
 func (o *ActivityLogEntry) SetOverview(v string) {
 	o.Overview.Set(&v)
 }
+
 // SetOverviewNil sets the value for Overview to be an explicit nil
 func (o *ActivityLogEntry) SetOverviewNil() {
 	o.Overview.Set(nil)
@@ -198,6 +199,7 @@ func (o *ActivityLogEntry) HasShortOverview() bool {
 func (o *ActivityLogEntry) SetShortOverview(v string) {
 	o.ShortOverview.Set(&v)
 }
+
 // SetShortOverviewNil sets the value for ShortOverview to be an explicit nil
 func (o *ActivityLogEntry) SetShortOverviewNil() {
 	o.ShortOverview.Set(nil)
@@ -272,6 +274,7 @@ func (o *ActivityLogEntry) HasItemId() bool {
 func (o *ActivityLogEntry) SetItemId(v string) {
 	o.ItemId.Set(&v)
 }
+
 // SetItemIdNil sets the value for ItemId to be an explicit nil
 func (o *ActivityLogEntry) SetItemIdNil() {
 	o.ItemId.Set(nil)
@@ -381,6 +384,7 @@ func (o *ActivityLogEntry) HasUserPrimaryImageTag() bool {
 func (o *ActivityLogEntry) SetUserPrimaryImageTag(v string) {
 	o.UserPrimaryImageTag.Set(&v)
 }
+
 // SetUserPrimaryImageTagNil sets the value for UserPrimaryImageTag to be an explicit nil
 func (o *ActivityLogEntry) SetUserPrimaryImageTagNil() {
 	o.UserPrimaryImageTag.Set(nil)
@@ -424,7 +428,7 @@ func (o *ActivityLogEntry) SetSeverity(v LogLevel) {
 }
 
 func (o ActivityLogEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -501,5 +505,3 @@ func (v *NullableActivityLogEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

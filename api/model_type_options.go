@@ -19,12 +19,12 @@ var _ MappedNullable = &TypeOptions{}
 
 // TypeOptions struct for TypeOptions
 type TypeOptions struct {
-	Type NullableString `json:"Type,omitempty"`
-	MetadataFetchers []string `json:"MetadataFetchers,omitempty"`
-	MetadataFetcherOrder []string `json:"MetadataFetcherOrder,omitempty"`
-	ImageFetchers []string `json:"ImageFetchers,omitempty"`
-	ImageFetcherOrder []string `json:"ImageFetcherOrder,omitempty"`
-	ImageOptions []ImageOption `json:"ImageOptions,omitempty"`
+	Type                 NullableString `json:"Type,omitempty"`
+	MetadataFetchers     []string       `json:"MetadataFetchers,omitempty"`
+	MetadataFetcherOrder []string       `json:"MetadataFetcherOrder,omitempty"`
+	ImageFetchers        []string       `json:"ImageFetchers,omitempty"`
+	ImageFetcherOrder    []string       `json:"ImageFetcherOrder,omitempty"`
+	ImageOptions         []ImageOption  `json:"ImageOptions,omitempty"`
 }
 
 // NewTypeOptions instantiates a new TypeOptions object
@@ -76,6 +76,7 @@ func (o *TypeOptions) HasType() bool {
 func (o *TypeOptions) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *TypeOptions) SetTypeNil() {
 	o.Type.Set(nil)
@@ -252,7 +253,7 @@ func (o *TypeOptions) SetImageOptions(v []ImageOption) {
 }
 
 func (o TypeOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -317,5 +318,3 @@ func (v *NullableTypeOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

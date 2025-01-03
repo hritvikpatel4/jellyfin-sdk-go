@@ -78,6 +78,7 @@ func (o *UpdatePlaylistDto) HasName() bool {
 func (o *UpdatePlaylistDto) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *UpdatePlaylistDto) SetNameNil() {
 	o.Name.Set(nil)
@@ -186,6 +187,7 @@ func (o *UpdatePlaylistDto) HasIsPublic() bool {
 func (o *UpdatePlaylistDto) SetIsPublic(v bool) {
 	o.IsPublic.Set(&v)
 }
+
 // SetIsPublicNil sets the value for IsPublic to be an explicit nil
 func (o *UpdatePlaylistDto) SetIsPublicNil() {
 	o.IsPublic.Set(nil)
@@ -197,7 +199,7 @@ func (o *UpdatePlaylistDto) UnsetIsPublic() {
 }
 
 func (o UpdatePlaylistDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -256,5 +258,3 @@ func (v *NullableUpdatePlaylistDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

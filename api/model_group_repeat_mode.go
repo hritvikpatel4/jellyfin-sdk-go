@@ -20,8 +20,8 @@ type GroupRepeatMode string
 
 // List of GroupRepeatMode
 const (
-	GROUPREPEATMODE_REPEAT_ONE GroupRepeatMode = "RepeatOne"
-	GROUPREPEATMODE_REPEAT_ALL GroupRepeatMode = "RepeatAll"
+	GROUPREPEATMODE_REPEAT_ONE  GroupRepeatMode = "RepeatOne"
+	GROUPREPEATMODE_REPEAT_ALL  GroupRepeatMode = "RepeatAll"
 	GROUPREPEATMODE_REPEAT_NONE GroupRepeatMode = "RepeatNone"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableGroupRepeatMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"reflect"
 	"strings"
 	"time"
-	"reflect"
 )
-
 
 type ItemsAPI interface {
 
 	/*
-	GetItemUserData Get Item User Data.
+		GetItemUserData Get Item User Data.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetItemUserDataRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetItemUserDataRequest
 	*/
 	GetItemUserData(ctx context.Context, itemId string) ApiGetItemUserDataRequest
 
@@ -38,10 +37,10 @@ type ItemsAPI interface {
 	GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*UserItemDataDto, *http.Response, error)
 
 	/*
-	GetItems Gets items based on a query.
+		GetItems Gets items based on a query.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetItemsRequest
 	*/
 	GetItems(ctx context.Context) ApiGetItemsRequest
 
@@ -50,10 +49,10 @@ type ItemsAPI interface {
 	GetItemsExecute(r ApiGetItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetResumeItems Gets items based on a query.
+		GetResumeItems Gets items based on a query.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetResumeItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetResumeItemsRequest
 	*/
 	GetResumeItems(ctx context.Context) ApiGetResumeItemsRequest
 
@@ -62,11 +61,11 @@ type ItemsAPI interface {
 	GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	UpdateItemUserData Update Item User Data.
+		UpdateItemUserData Update Item User Data.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiUpdateItemUserDataRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiUpdateItemUserDataRequest
 	*/
 	UpdateItemUserData(ctx context.Context, itemId string) ApiUpdateItemUserDataRequest
 
@@ -79,10 +78,10 @@ type ItemsAPI interface {
 type ItemsAPIService service
 
 type ApiGetItemUserDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ItemsAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // The user id.
@@ -98,26 +97,27 @@ func (r ApiGetItemUserDataRequest) Execute() (*UserItemDataDto, *http.Response, 
 /*
 GetItemUserData Get Item User Data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetItemUserDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetItemUserDataRequest
 */
 func (a *ItemsAPIService) GetItemUserData(ctx context.Context, itemId string) ApiGetItemUserDataRequest {
 	return ApiGetItemUserDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
+//
+//	@return UserItemDataDto
 func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*UserItemDataDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.GetItemUserData")
@@ -195,8 +195,8 @@ func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -215,94 +215,94 @@ func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*
 }
 
 type ApiGetItemsRequest struct {
-	ctx context.Context
-	ApiService ItemsAPI
-	userId *string
-	maxOfficialRating *string
-	hasThemeSong *bool
-	hasThemeVideo *bool
-	hasSubtitles *bool
-	hasSpecialFeature *bool
-	hasTrailer *bool
-	adjacentTo *string
-	indexNumber *int32
-	parentIndexNumber *int32
-	hasParentalRating *bool
-	isHd *bool
-	is4K *bool
-	locationTypes *[]LocationType
-	excludeLocationTypes *[]LocationType
-	isMissing *bool
-	isUnaired *bool
-	minCommunityRating *float64
-	minCriticRating *float64
-	minPremiereDate *time.Time
-	minDateLastSaved *time.Time
+	ctx                     context.Context
+	ApiService              ItemsAPI
+	userId                  *string
+	maxOfficialRating       *string
+	hasThemeSong            *bool
+	hasThemeVideo           *bool
+	hasSubtitles            *bool
+	hasSpecialFeature       *bool
+	hasTrailer              *bool
+	adjacentTo              *string
+	indexNumber             *int32
+	parentIndexNumber       *int32
+	hasParentalRating       *bool
+	isHd                    *bool
+	is4K                    *bool
+	locationTypes           *[]LocationType
+	excludeLocationTypes    *[]LocationType
+	isMissing               *bool
+	isUnaired               *bool
+	minCommunityRating      *float64
+	minCriticRating         *float64
+	minPremiereDate         *time.Time
+	minDateLastSaved        *time.Time
 	minDateLastSavedForUser *time.Time
-	maxPremiereDate *time.Time
-	hasOverview *bool
-	hasImdbId *bool
-	hasTmdbId *bool
-	hasTvdbId *bool
-	isMovie *bool
-	isSeries *bool
-	isNews *bool
-	isKids *bool
-	isSports *bool
-	excludeItemIds *[]string
-	startIndex *int32
-	limit *int32
-	recursive *bool
-	searchTerm *string
-	sortOrder *[]SortOrder
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
-	isFavorite *bool
-	mediaTypes *[]MediaType
-	imageTypes *[]ImageType
-	sortBy *[]ItemSortBy
-	isPlayed *bool
-	genres *[]string
-	officialRatings *[]string
-	tags *[]string
-	years *[]int32
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	person *string
-	personIds *[]string
-	personTypes *[]string
-	studios *[]string
-	artists *[]string
-	excludeArtistIds *[]string
-	artistIds *[]string
-	albumArtistIds *[]string
-	contributingArtistIds *[]string
-	albums *[]string
-	albumIds *[]string
-	ids *[]string
-	videoTypes *[]VideoType
-	minOfficialRating *string
-	isLocked *bool
-	isPlaceHolder *bool
-	hasOfficialRating *bool
-	collapseBoxSetItems *bool
-	minWidth *int32
-	minHeight *int32
-	maxWidth *int32
-	maxHeight *int32
-	is3D *bool
-	seriesStatus *[]SeriesStatus
+	maxPremiereDate         *time.Time
+	hasOverview             *bool
+	hasImdbId               *bool
+	hasTmdbId               *bool
+	hasTvdbId               *bool
+	isMovie                 *bool
+	isSeries                *bool
+	isNews                  *bool
+	isKids                  *bool
+	isSports                *bool
+	excludeItemIds          *[]string
+	startIndex              *int32
+	limit                   *int32
+	recursive               *bool
+	searchTerm              *string
+	sortOrder               *[]SortOrder
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	includeItemTypes        *[]BaseItemKind
+	filters                 *[]ItemFilter
+	isFavorite              *bool
+	mediaTypes              *[]MediaType
+	imageTypes              *[]ImageType
+	sortBy                  *[]ItemSortBy
+	isPlayed                *bool
+	genres                  *[]string
+	officialRatings         *[]string
+	tags                    *[]string
+	years                   *[]int32
+	enableUserData          *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	person                  *string
+	personIds               *[]string
+	personTypes             *[]string
+	studios                 *[]string
+	artists                 *[]string
+	excludeArtistIds        *[]string
+	artistIds               *[]string
+	albumArtistIds          *[]string
+	contributingArtistIds   *[]string
+	albums                  *[]string
+	albumIds                *[]string
+	ids                     *[]string
+	videoTypes              *[]VideoType
+	minOfficialRating       *string
+	isLocked                *bool
+	isPlaceHolder           *bool
+	hasOfficialRating       *bool
+	collapseBoxSetItems     *bool
+	minWidth                *int32
+	minHeight               *int32
+	maxWidth                *int32
+	maxHeight               *int32
+	is3D                    *bool
+	seriesStatus            *[]SeriesStatus
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	studioIds *[]string
-	genreIds *[]string
-	enableTotalRecordCount *bool
-	enableImages *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	studioIds               *[]string
+	genreIds                *[]string
+	enableTotalRecordCount  *bool
+	enableImages            *bool
 }
 
 // The user id supplied as query parameter; this is required when not using an API key.
@@ -828,24 +828,25 @@ func (r ApiGetItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, 
 /*
 GetItems Gets items based on a query.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetItemsRequest
 */
 func (a *ItemsAPIService) GetItems(ctx context.Context) ApiGetItemsRequest {
 	return ApiGetItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ItemsAPIService) GetItemsExecute(r ApiGetItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.GetItems")
@@ -1440,23 +1441,23 @@ func (a *ItemsAPIService) GetItemsExecute(r ApiGetItemsRequest) (*BaseItemDtoQue
 }
 
 type ApiGetResumeItemsRequest struct {
-	ctx context.Context
-	ApiService ItemsAPI
-	userId *string
-	startIndex *int32
-	limit *int32
-	searchTerm *string
-	parentId *string
-	fields *[]ItemFields
-	mediaTypes *[]MediaType
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
+	ctx                    context.Context
+	ApiService             ItemsAPI
+	userId                 *string
+	startIndex             *int32
+	limit                  *int32
+	searchTerm             *string
+	parentId               *string
+	fields                 *[]ItemFields
+	mediaTypes             *[]MediaType
+	enableUserData         *bool
+	imageTypeLimit         *int32
+	enableImageTypes       *[]ImageType
+	excludeItemTypes       *[]BaseItemKind
+	includeItemTypes       *[]BaseItemKind
 	enableTotalRecordCount *bool
-	enableImages *bool
-	excludeActiveSessions *bool
+	enableImages           *bool
+	excludeActiveSessions  *bool
 }
 
 // The user id.
@@ -1556,24 +1557,25 @@ func (r ApiGetResumeItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Resp
 /*
 GetResumeItems Gets items based on a query.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetResumeItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetResumeItemsRequest
 */
 func (a *ItemsAPIService) GetResumeItems(ctx context.Context) ApiGetResumeItemsRequest {
 	return ApiGetResumeItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ItemsAPIService) GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.GetResumeItems")
@@ -1750,11 +1752,11 @@ func (a *ItemsAPIService) GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*Ba
 }
 
 type ApiUpdateItemUserDataRequest struct {
-	ctx context.Context
-	ApiService ItemsAPI
-	itemId string
+	ctx                   context.Context
+	ApiService            ItemsAPI
+	itemId                string
 	updateUserItemDataDto *UpdateUserItemDataDto
-	userId *string
+	userId                *string
 }
 
 // New user data object.
@@ -1776,26 +1778,27 @@ func (r ApiUpdateItemUserDataRequest) Execute() (*UserItemDataDto, *http.Respons
 /*
 UpdateItemUserData Update Item User Data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiUpdateItemUserDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiUpdateItemUserDataRequest
 */
 func (a *ItemsAPIService) UpdateItemUserData(ctx context.Context, itemId string) ApiUpdateItemUserDataRequest {
 	return ApiUpdateItemUserDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
+//
+//	@return UserItemDataDto
 func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataRequest) (*UserItemDataDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.UpdateItemUserData")
@@ -1878,8 +1881,8 @@ func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

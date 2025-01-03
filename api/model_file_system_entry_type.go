@@ -20,10 +20,10 @@ type FileSystemEntryType string
 
 // List of FileSystemEntryType
 const (
-	FILESYSTEMENTRYTYPE_FILE FileSystemEntryType = "File"
-	FILESYSTEMENTRYTYPE_DIRECTORY FileSystemEntryType = "Directory"
+	FILESYSTEMENTRYTYPE_FILE             FileSystemEntryType = "File"
+	FILESYSTEMENTRYTYPE_DIRECTORY        FileSystemEntryType = "Directory"
 	FILESYSTEMENTRYTYPE_NETWORK_COMPUTER FileSystemEntryType = "NetworkComputer"
-	FILESYSTEMENTRYTYPE_NETWORK_SHARE FileSystemEntryType = "NetworkShare"
+	FILESYSTEMENTRYTYPE_NETWORK_SHARE    FileSystemEntryType = "NetworkShare"
 )
 
 // All allowed values of FileSystemEntryType enum
@@ -112,4 +112,3 @@ func (v *NullableFileSystemEntryType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

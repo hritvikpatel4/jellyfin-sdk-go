@@ -143,6 +143,7 @@ func (o *ExternalIdInfo) HasType() bool {
 func (o *ExternalIdInfo) SetType(v ExternalIdMediaType) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *ExternalIdInfo) SetTypeNil() {
 	o.Type.Set(nil)
@@ -188,6 +189,7 @@ func (o *ExternalIdInfo) HasUrlFormatString() bool {
 func (o *ExternalIdInfo) SetUrlFormatString(v string) {
 	o.UrlFormatString.Set(&v)
 }
+
 // SetUrlFormatStringNil sets the value for UrlFormatString to be an explicit nil
 func (o *ExternalIdInfo) SetUrlFormatStringNil() {
 	o.UrlFormatString.Set(nil)
@@ -199,7 +201,7 @@ func (o *ExternalIdInfo) UnsetUrlFormatString() {
 }
 
 func (o ExternalIdInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -258,5 +260,3 @@ func (v *NullableExternalIdInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,12 +19,12 @@ var _ MappedNullable = &MetadataEditorInfo{}
 
 // MetadataEditorInfo struct for MetadataEditorInfo
 type MetadataEditorInfo struct {
-	ParentalRatingOptions []ParentalRating `json:"ParentalRatingOptions,omitempty"`
-	Countries []CountryInfo `json:"Countries,omitempty"`
-	Cultures []CultureDto `json:"Cultures,omitempty"`
-	ExternalIdInfos []ExternalIdInfo `json:"ExternalIdInfos,omitempty"`
-	ContentType NullableCollectionType `json:"ContentType,omitempty"`
-	ContentTypeOptions []NameValuePair `json:"ContentTypeOptions,omitempty"`
+	ParentalRatingOptions []ParentalRating       `json:"ParentalRatingOptions,omitempty"`
+	Countries             []CountryInfo          `json:"Countries,omitempty"`
+	Cultures              []CultureDto           `json:"Cultures,omitempty"`
+	ExternalIdInfos       []ExternalIdInfo       `json:"ExternalIdInfos,omitempty"`
+	ContentType           NullableCollectionType `json:"ContentType,omitempty"`
+	ContentTypeOptions    []NameValuePair        `json:"ContentTypeOptions,omitempty"`
 }
 
 // NewMetadataEditorInfo instantiates a new MetadataEditorInfo object
@@ -204,6 +204,7 @@ func (o *MetadataEditorInfo) HasContentType() bool {
 func (o *MetadataEditorInfo) SetContentType(v CollectionType) {
 	o.ContentType.Set(&v)
 }
+
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
 func (o *MetadataEditorInfo) SetContentTypeNil() {
 	o.ContentType.Set(nil)
@@ -247,7 +248,7 @@ func (o *MetadataEditorInfo) SetContentTypeOptions(v []NameValuePair) {
 }
 
 func (o MetadataEditorInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,5 +313,3 @@ func (v *NullableMetadataEditorInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,15 +19,14 @@ import (
 	"strings"
 )
 
-
 type PackageAPI interface {
 
 	/*
-	CancelPackageInstallation Cancels a package installation.
+		CancelPackageInstallation Cancels a package installation.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param packageId Installation Id.
-	@return ApiCancelPackageInstallationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param packageId Installation Id.
+		@return ApiCancelPackageInstallationRequest
 	*/
 	CancelPackageInstallation(ctx context.Context, packageId string) ApiCancelPackageInstallationRequest
 
@@ -35,11 +34,11 @@ type PackageAPI interface {
 	CancelPackageInstallationExecute(r ApiCancelPackageInstallationRequest) (*http.Response, error)
 
 	/*
-	GetPackageInfo Gets a package by name or assembly GUID.
+		GetPackageInfo Gets a package by name or assembly GUID.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name The name of the package.
-	@return ApiGetPackageInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name The name of the package.
+		@return ApiGetPackageInfoRequest
 	*/
 	GetPackageInfo(ctx context.Context, name string) ApiGetPackageInfoRequest
 
@@ -48,10 +47,10 @@ type PackageAPI interface {
 	GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*PackageInfo, *http.Response, error)
 
 	/*
-	GetPackages Gets available packages.
+		GetPackages Gets available packages.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPackagesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPackagesRequest
 	*/
 	GetPackages(ctx context.Context) ApiGetPackagesRequest
 
@@ -60,10 +59,10 @@ type PackageAPI interface {
 	GetPackagesExecute(r ApiGetPackagesRequest) ([]PackageInfo, *http.Response, error)
 
 	/*
-	GetRepositories Gets all package repositories.
+		GetRepositories Gets all package repositories.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRepositoriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRepositoriesRequest
 	*/
 	GetRepositories(ctx context.Context) ApiGetRepositoriesRequest
 
@@ -72,11 +71,11 @@ type PackageAPI interface {
 	GetRepositoriesExecute(r ApiGetRepositoriesRequest) ([]RepositoryInfo, *http.Response, error)
 
 	/*
-	InstallPackage Installs a package.
+		InstallPackage Installs a package.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Package name.
-	@return ApiInstallPackageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Package name.
+		@return ApiInstallPackageRequest
 	*/
 	InstallPackage(ctx context.Context, name string) ApiInstallPackageRequest
 
@@ -84,10 +83,10 @@ type PackageAPI interface {
 	InstallPackageExecute(r ApiInstallPackageRequest) (*http.Response, error)
 
 	/*
-	SetRepositories Sets the enabled and existing package repositories.
+		SetRepositories Sets the enabled and existing package repositories.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetRepositoriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSetRepositoriesRequest
 	*/
 	SetRepositories(ctx context.Context) ApiSetRepositoriesRequest
 
@@ -99,9 +98,9 @@ type PackageAPI interface {
 type PackageAPIService service
 
 type ApiCancelPackageInstallationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PackageAPI
-	packageId string
+	packageId  string
 }
 
 func (r ApiCancelPackageInstallationRequest) Execute() (*http.Response, error) {
@@ -111,24 +110,24 @@ func (r ApiCancelPackageInstallationRequest) Execute() (*http.Response, error) {
 /*
 CancelPackageInstallation Cancels a package installation.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId Installation Id.
- @return ApiCancelPackageInstallationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId Installation Id.
+	@return ApiCancelPackageInstallationRequest
 */
 func (a *PackageAPIService) CancelPackageInstallation(ctx context.Context, packageId string) ApiCancelPackageInstallationRequest {
 	return ApiCancelPackageInstallationRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
 // Execute executes the request
 func (a *PackageAPIService) CancelPackageInstallationExecute(r ApiCancelPackageInstallationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.CancelPackageInstallation")
@@ -203,9 +202,9 @@ func (a *PackageAPIService) CancelPackageInstallationExecute(r ApiCancelPackageI
 }
 
 type ApiGetPackageInfoRequest struct {
-	ctx context.Context
-	ApiService PackageAPI
-	name string
+	ctx          context.Context
+	ApiService   PackageAPI
+	name         string
 	assemblyGuid *string
 }
 
@@ -222,26 +221,27 @@ func (r ApiGetPackageInfoRequest) Execute() (*PackageInfo, *http.Response, error
 /*
 GetPackageInfo Gets a package by name or assembly GUID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the package.
- @return ApiGetPackageInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name The name of the package.
+	@return ApiGetPackageInfoRequest
 */
 func (a *PackageAPIService) GetPackageInfo(ctx context.Context, name string) ApiGetPackageInfoRequest {
 	return ApiGetPackageInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
-//  @return PackageInfo
+//
+//	@return PackageInfo
 func (a *PackageAPIService) GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*PackageInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PackageInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PackageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetPackageInfo")
@@ -328,7 +328,7 @@ func (a *PackageAPIService) GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*
 }
 
 type ApiGetPackagesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PackageAPI
 }
 
@@ -339,24 +339,25 @@ func (r ApiGetPackagesRequest) Execute() ([]PackageInfo, *http.Response, error) 
 /*
 GetPackages Gets available packages.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPackagesRequest
 */
 func (a *PackageAPIService) GetPackages(ctx context.Context) ApiGetPackagesRequest {
 	return ApiGetPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PackageInfo
+//
+//	@return []PackageInfo
 func (a *PackageAPIService) GetPackagesExecute(r ApiGetPackagesRequest) ([]PackageInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PackageInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PackageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetPackages")
@@ -439,7 +440,7 @@ func (a *PackageAPIService) GetPackagesExecute(r ApiGetPackagesRequest) ([]Packa
 }
 
 type ApiGetRepositoriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PackageAPI
 }
 
@@ -450,24 +451,25 @@ func (r ApiGetRepositoriesRequest) Execute() ([]RepositoryInfo, *http.Response, 
 /*
 GetRepositories Gets all package repositories.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRepositoriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRepositoriesRequest
 */
 func (a *PackageAPIService) GetRepositories(ctx context.Context) ApiGetRepositoriesRequest {
 	return ApiGetRepositoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RepositoryInfo
+//
+//	@return []RepositoryInfo
 func (a *PackageAPIService) GetRepositoriesExecute(r ApiGetRepositoriesRequest) ([]RepositoryInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RepositoryInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RepositoryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetRepositories")
@@ -550,11 +552,11 @@ func (a *PackageAPIService) GetRepositoriesExecute(r ApiGetRepositoriesRequest) 
 }
 
 type ApiInstallPackageRequest struct {
-	ctx context.Context
-	ApiService PackageAPI
-	name string
-	assemblyGuid *string
-	version *string
+	ctx           context.Context
+	ApiService    PackageAPI
+	name          string
+	assemblyGuid  *string
+	version       *string
 	repositoryUrl *string
 }
 
@@ -583,24 +585,24 @@ func (r ApiInstallPackageRequest) Execute() (*http.Response, error) {
 /*
 InstallPackage Installs a package.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Package name.
- @return ApiInstallPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Package name.
+	@return ApiInstallPackageRequest
 */
 func (a *PackageAPIService) InstallPackage(ctx context.Context, name string) ApiInstallPackageRequest {
 	return ApiInstallPackageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.InstallPackage")
@@ -684,8 +686,8 @@ func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -695,8 +697,8 @@ func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*
 }
 
 type ApiSetRepositoriesRequest struct {
-	ctx context.Context
-	ApiService PackageAPI
+	ctx            context.Context
+	ApiService     PackageAPI
 	repositoryInfo *[]RepositoryInfo
 }
 
@@ -713,22 +715,22 @@ func (r ApiSetRepositoriesRequest) Execute() (*http.Response, error) {
 /*
 SetRepositories Sets the enabled and existing package repositories.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetRepositoriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetRepositoriesRequest
 */
 func (a *PackageAPIService) SetRepositories(ctx context.Context) ApiSetRepositoriesRequest {
 	return ApiSetRepositoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *PackageAPIService) SetRepositoriesExecute(r ApiSetRepositoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.SetRepositories")

@@ -16,21 +16,20 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type VideoAttachmentsAPI interface {
 
 	/*
-	GetAttachment Get video attachment.
+		GetAttachment Get video attachment.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param videoId Video ID.
-	@param mediaSourceId Media Source ID.
-	@param index Attachment Index.
-	@return ApiGetAttachmentRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param videoId Video ID.
+		@param mediaSourceId Media Source ID.
+		@param index Attachment Index.
+		@return ApiGetAttachmentRequest
 	*/
 	GetAttachment(ctx context.Context, videoId string, mediaSourceId string, index int32) ApiGetAttachmentRequest
 
@@ -43,11 +42,11 @@ type VideoAttachmentsAPI interface {
 type VideoAttachmentsAPIService service
 
 type ApiGetAttachmentRequest struct {
-	ctx context.Context
-	ApiService VideoAttachmentsAPI
-	videoId string
+	ctx           context.Context
+	ApiService    VideoAttachmentsAPI
+	videoId       string
 	mediaSourceId string
-	index int32
+	index         int32
 }
 
 func (r ApiGetAttachmentRequest) Execute() (*os.File, *http.Response, error) {
@@ -57,30 +56,31 @@ func (r ApiGetAttachmentRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetAttachment Get video attachment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param videoId Video ID.
- @param mediaSourceId Media Source ID.
- @param index Attachment Index.
- @return ApiGetAttachmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param videoId Video ID.
+	@param mediaSourceId Media Source ID.
+	@param index Attachment Index.
+	@return ApiGetAttachmentRequest
 */
 func (a *VideoAttachmentsAPIService) GetAttachment(ctx context.Context, videoId string, mediaSourceId string, index int32) ApiGetAttachmentRequest {
 	return ApiGetAttachmentRequest{
-		ApiService: a,
-		ctx: ctx,
-		videoId: videoId,
+		ApiService:    a,
+		ctx:           ctx,
+		videoId:       videoId,
 		mediaSourceId: mediaSourceId,
-		index: index,
+		index:         index,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *VideoAttachmentsAPIService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoAttachmentsAPIService.GetAttachment")
@@ -143,8 +143,8 @@ func (a *VideoAttachmentsAPIService) GetAttachmentExecute(r ApiGetAttachmentRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

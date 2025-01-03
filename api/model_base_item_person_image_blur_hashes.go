@@ -19,19 +19,19 @@ var _ MappedNullable = &BaseItemPersonImageBlurHashes{}
 
 // BaseItemPersonImageBlurHashes Gets or sets the primary image blurhash.
 type BaseItemPersonImageBlurHashes struct {
-	Primary *map[string]string `json:"Primary,omitempty"`
-	Art *map[string]string `json:"Art,omitempty"`
-	Backdrop *map[string]string `json:"Backdrop,omitempty"`
-	Banner *map[string]string `json:"Banner,omitempty"`
-	Logo *map[string]string `json:"Logo,omitempty"`
-	Thumb *map[string]string `json:"Thumb,omitempty"`
-	Disc *map[string]string `json:"Disc,omitempty"`
-	Box *map[string]string `json:"Box,omitempty"`
+	Primary    *map[string]string `json:"Primary,omitempty"`
+	Art        *map[string]string `json:"Art,omitempty"`
+	Backdrop   *map[string]string `json:"Backdrop,omitempty"`
+	Banner     *map[string]string `json:"Banner,omitempty"`
+	Logo       *map[string]string `json:"Logo,omitempty"`
+	Thumb      *map[string]string `json:"Thumb,omitempty"`
+	Disc       *map[string]string `json:"Disc,omitempty"`
+	Box        *map[string]string `json:"Box,omitempty"`
 	Screenshot *map[string]string `json:"Screenshot,omitempty"`
-	Menu *map[string]string `json:"Menu,omitempty"`
-	Chapter *map[string]string `json:"Chapter,omitempty"`
-	BoxRear *map[string]string `json:"BoxRear,omitempty"`
-	Profile *map[string]string `json:"Profile,omitempty"`
+	Menu       *map[string]string `json:"Menu,omitempty"`
+	Chapter    *map[string]string `json:"Chapter,omitempty"`
+	BoxRear    *map[string]string `json:"BoxRear,omitempty"`
+	Profile    *map[string]string `json:"Profile,omitempty"`
 }
 
 // NewBaseItemPersonImageBlurHashes instantiates a new BaseItemPersonImageBlurHashes object
@@ -468,7 +468,7 @@ func (o *BaseItemPersonImageBlurHashes) SetProfile(v map[string]string) {
 }
 
 func (o BaseItemPersonImageBlurHashes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -554,5 +554,3 @@ func (v *NullableBaseItemPersonImageBlurHashes) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

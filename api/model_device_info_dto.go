@@ -93,6 +93,7 @@ func (o *DeviceInfoDto) HasName() bool {
 func (o *DeviceInfoDto) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *DeviceInfoDto) SetNameNil() {
 	o.Name.Set(nil)
@@ -135,6 +136,7 @@ func (o *DeviceInfoDto) HasCustomName() bool {
 func (o *DeviceInfoDto) SetCustomName(v string) {
 	o.CustomName.Set(&v)
 }
+
 // SetCustomNameNil sets the value for CustomName to be an explicit nil
 func (o *DeviceInfoDto) SetCustomNameNil() {
 	o.CustomName.Set(nil)
@@ -177,6 +179,7 @@ func (o *DeviceInfoDto) HasAccessToken() bool {
 func (o *DeviceInfoDto) SetAccessToken(v string) {
 	o.AccessToken.Set(&v)
 }
+
 // SetAccessTokenNil sets the value for AccessToken to be an explicit nil
 func (o *DeviceInfoDto) SetAccessTokenNil() {
 	o.AccessToken.Set(nil)
@@ -219,6 +222,7 @@ func (o *DeviceInfoDto) HasId() bool {
 func (o *DeviceInfoDto) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *DeviceInfoDto) SetIdNil() {
 	o.Id.Set(nil)
@@ -261,6 +265,7 @@ func (o *DeviceInfoDto) HasLastUserName() bool {
 func (o *DeviceInfoDto) SetLastUserName(v string) {
 	o.LastUserName.Set(&v)
 }
+
 // SetLastUserNameNil sets the value for LastUserName to be an explicit nil
 func (o *DeviceInfoDto) SetLastUserNameNil() {
 	o.LastUserName.Set(nil)
@@ -303,6 +308,7 @@ func (o *DeviceInfoDto) HasAppName() bool {
 func (o *DeviceInfoDto) SetAppName(v string) {
 	o.AppName.Set(&v)
 }
+
 // SetAppNameNil sets the value for AppName to be an explicit nil
 func (o *DeviceInfoDto) SetAppNameNil() {
 	o.AppName.Set(nil)
@@ -345,6 +351,7 @@ func (o *DeviceInfoDto) HasAppVersion() bool {
 func (o *DeviceInfoDto) SetAppVersion(v string) {
 	o.AppVersion.Set(&v)
 }
+
 // SetAppVersionNil sets the value for AppVersion to be an explicit nil
 func (o *DeviceInfoDto) SetAppVersionNil() {
 	o.AppVersion.Set(nil)
@@ -387,6 +394,7 @@ func (o *DeviceInfoDto) HasLastUserId() bool {
 func (o *DeviceInfoDto) SetLastUserId(v string) {
 	o.LastUserId.Set(&v)
 }
+
 // SetLastUserIdNil sets the value for LastUserId to be an explicit nil
 func (o *DeviceInfoDto) SetLastUserIdNil() {
 	o.LastUserId.Set(nil)
@@ -429,6 +437,7 @@ func (o *DeviceInfoDto) HasDateLastActivity() bool {
 func (o *DeviceInfoDto) SetDateLastActivity(v time.Time) {
 	o.DateLastActivity.Set(&v)
 }
+
 // SetDateLastActivityNil sets the value for DateLastActivity to be an explicit nil
 func (o *DeviceInfoDto) SetDateLastActivityNil() {
 	o.DateLastActivity.Set(nil)
@@ -503,6 +512,7 @@ func (o *DeviceInfoDto) HasIconUrl() bool {
 func (o *DeviceInfoDto) SetIconUrl(v string) {
 	o.IconUrl.Set(&v)
 }
+
 // SetIconUrlNil sets the value for IconUrl to be an explicit nil
 func (o *DeviceInfoDto) SetIconUrlNil() {
 	o.IconUrl.Set(nil)
@@ -514,7 +524,7 @@ func (o *DeviceInfoDto) UnsetIconUrl() {
 }
 
 func (o DeviceInfoDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -594,5 +604,3 @@ func (v *NullableDeviceInfoDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

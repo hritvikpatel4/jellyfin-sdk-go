@@ -38,11 +38,11 @@ type PlaybackProgressInfo struct {
 	// Gets or sets a value indicating whether this instance is muted.
 	IsMuted *bool `json:"IsMuted,omitempty"`
 	// Gets or sets the position ticks.
-	PositionTicks NullableInt64 `json:"PositionTicks,omitempty"`
+	PositionTicks          NullableInt64 `json:"PositionTicks,omitempty"`
 	PlaybackStartTimeTicks NullableInt64 `json:"PlaybackStartTimeTicks,omitempty"`
 	// Gets or sets the volume level.
-	VolumeLevel NullableInt32 `json:"VolumeLevel,omitempty"`
-	Brightness NullableInt32 `json:"Brightness,omitempty"`
+	VolumeLevel NullableInt32  `json:"VolumeLevel,omitempty"`
+	Brightness  NullableInt32  `json:"Brightness,omitempty"`
 	AspectRatio NullableString `json:"AspectRatio,omitempty"`
 	// Gets or sets the play method.
 	PlayMethod *PlayMethod `json:"PlayMethod,omitempty"`
@@ -53,9 +53,9 @@ type PlaybackProgressInfo struct {
 	// Gets or sets the repeat mode.
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
 	// Gets or sets the playback order.
-	PlaybackOrder *PlaybackOrder `json:"PlaybackOrder,omitempty"`
-	NowPlayingQueue []QueueItem `json:"NowPlayingQueue,omitempty"`
-	PlaylistItemId NullableString `json:"PlaylistItemId,omitempty"`
+	PlaybackOrder   *PlaybackOrder `json:"PlaybackOrder,omitempty"`
+	NowPlayingQueue []QueueItem    `json:"NowPlayingQueue,omitempty"`
+	PlaylistItemId  NullableString `json:"PlaylistItemId,omitempty"`
 }
 
 // NewPlaybackProgressInfo instantiates a new PlaybackProgressInfo object
@@ -139,6 +139,7 @@ func (o *PlaybackProgressInfo) HasItem() bool {
 func (o *PlaybackProgressInfo) SetItem(v BaseItemDto) {
 	o.Item.Set(&v)
 }
+
 // SetItemNil sets the value for Item to be an explicit nil
 func (o *PlaybackProgressInfo) SetItemNil() {
 	o.Item.Set(nil)
@@ -213,6 +214,7 @@ func (o *PlaybackProgressInfo) HasSessionId() bool {
 func (o *PlaybackProgressInfo) SetSessionId(v string) {
 	o.SessionId.Set(&v)
 }
+
 // SetSessionIdNil sets the value for SessionId to be an explicit nil
 func (o *PlaybackProgressInfo) SetSessionIdNil() {
 	o.SessionId.Set(nil)
@@ -255,6 +257,7 @@ func (o *PlaybackProgressInfo) HasMediaSourceId() bool {
 func (o *PlaybackProgressInfo) SetMediaSourceId(v string) {
 	o.MediaSourceId.Set(&v)
 }
+
 // SetMediaSourceIdNil sets the value for MediaSourceId to be an explicit nil
 func (o *PlaybackProgressInfo) SetMediaSourceIdNil() {
 	o.MediaSourceId.Set(nil)
@@ -297,6 +300,7 @@ func (o *PlaybackProgressInfo) HasAudioStreamIndex() bool {
 func (o *PlaybackProgressInfo) SetAudioStreamIndex(v int32) {
 	o.AudioStreamIndex.Set(&v)
 }
+
 // SetAudioStreamIndexNil sets the value for AudioStreamIndex to be an explicit nil
 func (o *PlaybackProgressInfo) SetAudioStreamIndexNil() {
 	o.AudioStreamIndex.Set(nil)
@@ -339,6 +343,7 @@ func (o *PlaybackProgressInfo) HasSubtitleStreamIndex() bool {
 func (o *PlaybackProgressInfo) SetSubtitleStreamIndex(v int32) {
 	o.SubtitleStreamIndex.Set(&v)
 }
+
 // SetSubtitleStreamIndexNil sets the value for SubtitleStreamIndex to be an explicit nil
 func (o *PlaybackProgressInfo) SetSubtitleStreamIndexNil() {
 	o.SubtitleStreamIndex.Set(nil)
@@ -445,6 +450,7 @@ func (o *PlaybackProgressInfo) HasPositionTicks() bool {
 func (o *PlaybackProgressInfo) SetPositionTicks(v int64) {
 	o.PositionTicks.Set(&v)
 }
+
 // SetPositionTicksNil sets the value for PositionTicks to be an explicit nil
 func (o *PlaybackProgressInfo) SetPositionTicksNil() {
 	o.PositionTicks.Set(nil)
@@ -487,6 +493,7 @@ func (o *PlaybackProgressInfo) HasPlaybackStartTimeTicks() bool {
 func (o *PlaybackProgressInfo) SetPlaybackStartTimeTicks(v int64) {
 	o.PlaybackStartTimeTicks.Set(&v)
 }
+
 // SetPlaybackStartTimeTicksNil sets the value for PlaybackStartTimeTicks to be an explicit nil
 func (o *PlaybackProgressInfo) SetPlaybackStartTimeTicksNil() {
 	o.PlaybackStartTimeTicks.Set(nil)
@@ -529,6 +536,7 @@ func (o *PlaybackProgressInfo) HasVolumeLevel() bool {
 func (o *PlaybackProgressInfo) SetVolumeLevel(v int32) {
 	o.VolumeLevel.Set(&v)
 }
+
 // SetVolumeLevelNil sets the value for VolumeLevel to be an explicit nil
 func (o *PlaybackProgressInfo) SetVolumeLevelNil() {
 	o.VolumeLevel.Set(nil)
@@ -571,6 +579,7 @@ func (o *PlaybackProgressInfo) HasBrightness() bool {
 func (o *PlaybackProgressInfo) SetBrightness(v int32) {
 	o.Brightness.Set(&v)
 }
+
 // SetBrightnessNil sets the value for Brightness to be an explicit nil
 func (o *PlaybackProgressInfo) SetBrightnessNil() {
 	o.Brightness.Set(nil)
@@ -613,6 +622,7 @@ func (o *PlaybackProgressInfo) HasAspectRatio() bool {
 func (o *PlaybackProgressInfo) SetAspectRatio(v string) {
 	o.AspectRatio.Set(&v)
 }
+
 // SetAspectRatioNil sets the value for AspectRatio to be an explicit nil
 func (o *PlaybackProgressInfo) SetAspectRatioNil() {
 	o.AspectRatio.Set(nil)
@@ -687,6 +697,7 @@ func (o *PlaybackProgressInfo) HasLiveStreamId() bool {
 func (o *PlaybackProgressInfo) SetLiveStreamId(v string) {
 	o.LiveStreamId.Set(&v)
 }
+
 // SetLiveStreamIdNil sets the value for LiveStreamId to be an explicit nil
 func (o *PlaybackProgressInfo) SetLiveStreamIdNil() {
 	o.LiveStreamId.Set(nil)
@@ -729,6 +740,7 @@ func (o *PlaybackProgressInfo) HasPlaySessionId() bool {
 func (o *PlaybackProgressInfo) SetPlaySessionId(v string) {
 	o.PlaySessionId.Set(&v)
 }
+
 // SetPlaySessionIdNil sets the value for PlaySessionId to be an explicit nil
 func (o *PlaybackProgressInfo) SetPlaySessionIdNil() {
 	o.PlaySessionId.Set(nil)
@@ -868,6 +880,7 @@ func (o *PlaybackProgressInfo) HasPlaylistItemId() bool {
 func (o *PlaybackProgressInfo) SetPlaylistItemId(v string) {
 	o.PlaylistItemId.Set(&v)
 }
+
 // SetPlaylistItemIdNil sets the value for PlaylistItemId to be an explicit nil
 func (o *PlaybackProgressInfo) SetPlaylistItemIdNil() {
 	o.PlaylistItemId.Set(nil)
@@ -879,7 +892,7 @@ func (o *PlaybackProgressInfo) UnsetPlaylistItemId() {
 }
 
 func (o PlaybackProgressInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -989,5 +1002,3 @@ func (v *NullablePlaybackProgressInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

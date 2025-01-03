@@ -20,9 +20,9 @@ type GroupStateType string
 
 // List of GroupStateType
 const (
-	GROUPSTATETYPE_IDLE GroupStateType = "Idle"
+	GROUPSTATETYPE_IDLE    GroupStateType = "Idle"
 	GROUPSTATETYPE_WAITING GroupStateType = "Waiting"
-	GROUPSTATETYPE_PAUSED GroupStateType = "Paused"
+	GROUPSTATETYPE_PAUSED  GroupStateType = "Paused"
 	GROUPSTATETYPE_PLAYING GroupStateType = "Playing"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableGroupStateType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

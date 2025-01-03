@@ -254,6 +254,7 @@ func (o *ChannelFeatures) HasMaxPageSize() bool {
 func (o *ChannelFeatures) SetMaxPageSize(v int32) {
 	o.MaxPageSize.Set(&v)
 }
+
 // SetMaxPageSizeNil sets the value for MaxPageSize to be an explicit nil
 func (o *ChannelFeatures) SetMaxPageSizeNil() {
 	o.MaxPageSize.Set(nil)
@@ -296,6 +297,7 @@ func (o *ChannelFeatures) HasAutoRefreshLevels() bool {
 func (o *ChannelFeatures) SetAutoRefreshLevels(v int32) {
 	o.AutoRefreshLevels.Set(&v)
 }
+
 // SetAutoRefreshLevelsNil sets the value for AutoRefreshLevels to be an explicit nil
 func (o *ChannelFeatures) SetAutoRefreshLevelsNil() {
 	o.AutoRefreshLevels.Set(nil)
@@ -467,7 +469,7 @@ func (o *ChannelFeatures) SetSupportsContentDownloading(v bool) {
 }
 
 func (o ChannelFeatures) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -550,5 +552,3 @@ func (v *NullableChannelFeatures) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

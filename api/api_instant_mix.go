@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type InstantMixAPI interface {
 
 	/*
-	GetInstantMixFromAlbum Creates an instant playlist based on a given album.
+		GetInstantMixFromAlbum Creates an instant playlist based on a given album.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetInstantMixFromAlbumRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetInstantMixFromAlbumRequest
 	*/
 	GetInstantMixFromAlbum(ctx context.Context, itemId string) ApiGetInstantMixFromAlbumRequest
 
@@ -37,11 +36,11 @@ type InstantMixAPI interface {
 	GetInstantMixFromAlbumExecute(r ApiGetInstantMixFromAlbumRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromArtists Creates an instant playlist based on a given artist.
+		GetInstantMixFromArtists Creates an instant playlist based on a given artist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetInstantMixFromArtistsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetInstantMixFromArtistsRequest
 	*/
 	GetInstantMixFromArtists(ctx context.Context, itemId string) ApiGetInstantMixFromArtistsRequest
 
@@ -50,12 +49,12 @@ type InstantMixAPI interface {
 	GetInstantMixFromArtistsExecute(r ApiGetInstantMixFromArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromArtists2 Creates an instant playlist based on a given artist.
+		GetInstantMixFromArtists2 Creates an instant playlist based on a given artist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetInstantMixFromArtists2Request
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetInstantMixFromArtists2Request
 
-	Deprecated
+		Deprecated
 	*/
 	GetInstantMixFromArtists2(ctx context.Context) ApiGetInstantMixFromArtists2Request
 
@@ -65,11 +64,11 @@ type InstantMixAPI interface {
 	GetInstantMixFromArtists2Execute(r ApiGetInstantMixFromArtists2Request) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromItem Creates an instant playlist based on a given item.
+		GetInstantMixFromItem Creates an instant playlist based on a given item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetInstantMixFromItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetInstantMixFromItemRequest
 	*/
 	GetInstantMixFromItem(ctx context.Context, itemId string) ApiGetInstantMixFromItemRequest
 
@@ -78,10 +77,10 @@ type InstantMixAPI interface {
 	GetInstantMixFromItemExecute(r ApiGetInstantMixFromItemRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromMusicGenreById Creates an instant playlist based on a given genre.
+		GetInstantMixFromMusicGenreById Creates an instant playlist based on a given genre.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetInstantMixFromMusicGenreByIdRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetInstantMixFromMusicGenreByIdRequest
 	*/
 	GetInstantMixFromMusicGenreById(ctx context.Context) ApiGetInstantMixFromMusicGenreByIdRequest
 
@@ -90,11 +89,11 @@ type InstantMixAPI interface {
 	GetInstantMixFromMusicGenreByIdExecute(r ApiGetInstantMixFromMusicGenreByIdRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromMusicGenreByName Creates an instant playlist based on a given genre.
+		GetInstantMixFromMusicGenreByName Creates an instant playlist based on a given genre.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name The genre name.
-	@return ApiGetInstantMixFromMusicGenreByNameRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name The genre name.
+		@return ApiGetInstantMixFromMusicGenreByNameRequest
 	*/
 	GetInstantMixFromMusicGenreByName(ctx context.Context, name string) ApiGetInstantMixFromMusicGenreByNameRequest
 
@@ -103,11 +102,11 @@ type InstantMixAPI interface {
 	GetInstantMixFromMusicGenreByNameExecute(r ApiGetInstantMixFromMusicGenreByNameRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromPlaylist Creates an instant playlist based on a given playlist.
+		GetInstantMixFromPlaylist Creates an instant playlist based on a given playlist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetInstantMixFromPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetInstantMixFromPlaylistRequest
 	*/
 	GetInstantMixFromPlaylist(ctx context.Context, itemId string) ApiGetInstantMixFromPlaylistRequest
 
@@ -116,11 +115,11 @@ type InstantMixAPI interface {
 	GetInstantMixFromPlaylistExecute(r ApiGetInstantMixFromPlaylistRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetInstantMixFromSong Creates an instant playlist based on a given song.
+		GetInstantMixFromSong Creates an instant playlist based on a given song.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetInstantMixFromSongRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetInstantMixFromSongRequest
 	*/
 	GetInstantMixFromSong(ctx context.Context, itemId string) ApiGetInstantMixFromSongRequest
 
@@ -133,15 +132,15 @@ type InstantMixAPI interface {
 type InstantMixAPIService service
 
 type ApiGetInstantMixFromAlbumRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	itemId string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	itemId           string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -194,26 +193,27 @@ func (r ApiGetInstantMixFromAlbumRequest) Execute() (*BaseItemDtoQueryResult, *h
 /*
 GetInstantMixFromAlbum Creates an instant playlist based on a given album.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetInstantMixFromAlbumRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetInstantMixFromAlbumRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromAlbum(ctx context.Context, itemId string) ApiGetInstantMixFromAlbumRequest {
 	return ApiGetInstantMixFromAlbumRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixFromAlbumRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromAlbum")
@@ -325,8 +325,8 @@ func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -345,15 +345,15 @@ func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixF
 }
 
 type ApiGetInstantMixFromArtistsRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	itemId string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	itemId           string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -406,26 +406,27 @@ func (r ApiGetInstantMixFromArtistsRequest) Execute() (*BaseItemDtoQueryResult, 
 /*
 GetInstantMixFromArtists Creates an instant playlist based on a given artist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetInstantMixFromArtistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetInstantMixFromArtistsRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromArtists(ctx context.Context, itemId string) ApiGetInstantMixFromArtistsRequest {
 	return ApiGetInstantMixFromArtistsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMixFromArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromArtists")
@@ -537,8 +538,8 @@ func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -557,15 +558,15 @@ func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMi
 }
 
 type ApiGetInstantMixFromArtists2Request struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	id *string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	id               *string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -624,27 +625,29 @@ func (r ApiGetInstantMixFromArtists2Request) Execute() (*BaseItemDtoQueryResult,
 /*
 GetInstantMixFromArtists2 Creates an instant playlist based on a given artist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetInstantMixFromArtists2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetInstantMixFromArtists2Request
 
 Deprecated
 */
 func (a *InstantMixAPIService) GetInstantMixFromArtists2(ctx context.Context) ApiGetInstantMixFromArtists2Request {
 	return ApiGetInstantMixFromArtists2Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
+//
 // Deprecated
 func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantMixFromArtists2Request) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromArtists2")
@@ -759,8 +762,8 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -779,15 +782,15 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantM
 }
 
 type ApiGetInstantMixFromItemRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	itemId string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	itemId           string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -840,26 +843,27 @@ func (r ApiGetInstantMixFromItemRequest) Execute() (*BaseItemDtoQueryResult, *ht
 /*
 GetInstantMixFromItem Creates an instant playlist based on a given item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetInstantMixFromItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetInstantMixFromItemRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromItem(ctx context.Context, itemId string) ApiGetInstantMixFromItemRequest {
 	return ApiGetInstantMixFromItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFromItemRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromItem")
@@ -971,8 +975,8 @@ func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -991,15 +995,15 @@ func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFr
 }
 
 type ApiGetInstantMixFromMusicGenreByIdRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	id *string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	id               *string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -1058,24 +1062,25 @@ func (r ApiGetInstantMixFromMusicGenreByIdRequest) Execute() (*BaseItemDtoQueryR
 /*
 GetInstantMixFromMusicGenreById Creates an instant playlist based on a given genre.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetInstantMixFromMusicGenreByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetInstantMixFromMusicGenreByIdRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromMusicGenreById(ctx context.Context) ApiGetInstantMixFromMusicGenreByIdRequest {
 	return ApiGetInstantMixFromMusicGenreByIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetInstantMixFromMusicGenreByIdRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromMusicGenreById")
@@ -1190,8 +1195,8 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1210,15 +1215,15 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetIn
 }
 
 type ApiGetInstantMixFromMusicGenreByNameRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	name string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	name             string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -1271,26 +1276,27 @@ func (r ApiGetInstantMixFromMusicGenreByNameRequest) Execute() (*BaseItemDtoQuer
 /*
 GetInstantMixFromMusicGenreByName Creates an instant playlist based on a given genre.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The genre name.
- @return ApiGetInstantMixFromMusicGenreByNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name The genre name.
+	@return ApiGetInstantMixFromMusicGenreByNameRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByName(ctx context.Context, name string) ApiGetInstantMixFromMusicGenreByNameRequest {
 	return ApiGetInstantMixFromMusicGenreByNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r ApiGetInstantMixFromMusicGenreByNameRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromMusicGenreByName")
@@ -1411,15 +1417,15 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r ApiGet
 }
 
 type ApiGetInstantMixFromPlaylistRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	itemId string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	itemId           string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -1472,26 +1478,27 @@ func (r ApiGetInstantMixFromPlaylistRequest) Execute() (*BaseItemDtoQueryResult,
 /*
 GetInstantMixFromPlaylist Creates an instant playlist based on a given playlist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetInstantMixFromPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetInstantMixFromPlaylistRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromPlaylist(ctx context.Context, itemId string) ApiGetInstantMixFromPlaylistRequest {
 	return ApiGetInstantMixFromPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantMixFromPlaylistRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromPlaylist")
@@ -1603,8 +1610,8 @@ func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1623,15 +1630,15 @@ func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantM
 }
 
 type ApiGetInstantMixFromSongRequest struct {
-	ctx context.Context
-	ApiService InstantMixAPI
-	itemId string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       InstantMixAPI
+	itemId           string
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -1684,26 +1691,27 @@ func (r ApiGetInstantMixFromSongRequest) Execute() (*BaseItemDtoQueryResult, *ht
 /*
 GetInstantMixFromSong Creates an instant playlist based on a given song.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetInstantMixFromSongRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetInstantMixFromSongRequest
 */
 func (a *InstantMixAPIService) GetInstantMixFromSong(ctx context.Context, itemId string) ApiGetInstantMixFromSongRequest {
 	return ApiGetInstantMixFromSongRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r ApiGetInstantMixFromSongRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromSong")
@@ -1815,8 +1823,8 @@ func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r ApiGetInstantMixFr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

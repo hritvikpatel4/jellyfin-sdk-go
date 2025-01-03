@@ -20,12 +20,12 @@ type ProgramAudio string
 
 // List of ProgramAudio
 const (
-	PROGRAMAUDIO_MONO ProgramAudio = "Mono"
-	PROGRAMAUDIO_STEREO ProgramAudio = "Stereo"
-	PROGRAMAUDIO_DOLBY ProgramAudio = "Dolby"
+	PROGRAMAUDIO_MONO          ProgramAudio = "Mono"
+	PROGRAMAUDIO_STEREO        ProgramAudio = "Stereo"
+	PROGRAMAUDIO_DOLBY         ProgramAudio = "Dolby"
 	PROGRAMAUDIO_DOLBY_DIGITAL ProgramAudio = "DolbyDigital"
-	PROGRAMAUDIO_THX ProgramAudio = "Thx"
-	PROGRAMAUDIO_ATMOS ProgramAudio = "Atmos"
+	PROGRAMAUDIO_THX           ProgramAudio = "Thx"
+	PROGRAMAUDIO_ATMOS         ProgramAudio = "Atmos"
 )
 
 // All allowed values of ProgramAudio enum
@@ -116,4 +116,3 @@ func (v *NullableProgramAudio) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

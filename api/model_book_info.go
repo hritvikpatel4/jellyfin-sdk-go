@@ -33,12 +33,12 @@ type BookInfo struct {
 	// Gets or sets the provider ids.
 	ProviderIds map[string]string `json:"ProviderIds,omitempty"`
 	// Gets or sets the year.
-	Year NullableInt32 `json:"Year,omitempty"`
-	IndexNumber NullableInt32 `json:"IndexNumber,omitempty"`
-	ParentIndexNumber NullableInt32 `json:"ParentIndexNumber,omitempty"`
-	PremiereDate NullableTime `json:"PremiereDate,omitempty"`
-	IsAutomated *bool `json:"IsAutomated,omitempty"`
-	SeriesName NullableString `json:"SeriesName,omitempty"`
+	Year              NullableInt32  `json:"Year,omitempty"`
+	IndexNumber       NullableInt32  `json:"IndexNumber,omitempty"`
+	ParentIndexNumber NullableInt32  `json:"ParentIndexNumber,omitempty"`
+	PremiereDate      NullableTime   `json:"PremiereDate,omitempty"`
+	IsAutomated       *bool          `json:"IsAutomated,omitempty"`
+	SeriesName        NullableString `json:"SeriesName,omitempty"`
 }
 
 // NewBookInfo instantiates a new BookInfo object
@@ -90,6 +90,7 @@ func (o *BookInfo) HasName() bool {
 func (o *BookInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *BookInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -132,6 +133,7 @@ func (o *BookInfo) HasOriginalTitle() bool {
 func (o *BookInfo) SetOriginalTitle(v string) {
 	o.OriginalTitle.Set(&v)
 }
+
 // SetOriginalTitleNil sets the value for OriginalTitle to be an explicit nil
 func (o *BookInfo) SetOriginalTitleNil() {
 	o.OriginalTitle.Set(nil)
@@ -174,6 +176,7 @@ func (o *BookInfo) HasPath() bool {
 func (o *BookInfo) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *BookInfo) SetPathNil() {
 	o.Path.Set(nil)
@@ -216,6 +219,7 @@ func (o *BookInfo) HasMetadataLanguage() bool {
 func (o *BookInfo) SetMetadataLanguage(v string) {
 	o.MetadataLanguage.Set(&v)
 }
+
 // SetMetadataLanguageNil sets the value for MetadataLanguage to be an explicit nil
 func (o *BookInfo) SetMetadataLanguageNil() {
 	o.MetadataLanguage.Set(nil)
@@ -258,6 +262,7 @@ func (o *BookInfo) HasMetadataCountryCode() bool {
 func (o *BookInfo) SetMetadataCountryCode(v string) {
 	o.MetadataCountryCode.Set(&v)
 }
+
 // SetMetadataCountryCodeNil sets the value for MetadataCountryCode to be an explicit nil
 func (o *BookInfo) SetMetadataCountryCodeNil() {
 	o.MetadataCountryCode.Set(nil)
@@ -333,6 +338,7 @@ func (o *BookInfo) HasYear() bool {
 func (o *BookInfo) SetYear(v int32) {
 	o.Year.Set(&v)
 }
+
 // SetYearNil sets the value for Year to be an explicit nil
 func (o *BookInfo) SetYearNil() {
 	o.Year.Set(nil)
@@ -375,6 +381,7 @@ func (o *BookInfo) HasIndexNumber() bool {
 func (o *BookInfo) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *BookInfo) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -417,6 +424,7 @@ func (o *BookInfo) HasParentIndexNumber() bool {
 func (o *BookInfo) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *BookInfo) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -459,6 +467,7 @@ func (o *BookInfo) HasPremiereDate() bool {
 func (o *BookInfo) SetPremiereDate(v time.Time) {
 	o.PremiereDate.Set(&v)
 }
+
 // SetPremiereDateNil sets the value for PremiereDate to be an explicit nil
 func (o *BookInfo) SetPremiereDateNil() {
 	o.PremiereDate.Set(nil)
@@ -533,6 +542,7 @@ func (o *BookInfo) HasSeriesName() bool {
 func (o *BookInfo) SetSeriesName(v string) {
 	o.SeriesName.Set(&v)
 }
+
 // SetSeriesNameNil sets the value for SeriesName to be an explicit nil
 func (o *BookInfo) SetSeriesNameNil() {
 	o.SeriesName.Set(nil)
@@ -544,7 +554,7 @@ func (o *BookInfo) UnsetSeriesName() {
 }
 
 func (o BookInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -627,5 +637,3 @@ func (v *NullableBookInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

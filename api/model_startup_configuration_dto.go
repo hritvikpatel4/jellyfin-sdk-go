@@ -76,6 +76,7 @@ func (o *StartupConfigurationDto) HasUICulture() bool {
 func (o *StartupConfigurationDto) SetUICulture(v string) {
 	o.UICulture.Set(&v)
 }
+
 // SetUICultureNil sets the value for UICulture to be an explicit nil
 func (o *StartupConfigurationDto) SetUICultureNil() {
 	o.UICulture.Set(nil)
@@ -118,6 +119,7 @@ func (o *StartupConfigurationDto) HasMetadataCountryCode() bool {
 func (o *StartupConfigurationDto) SetMetadataCountryCode(v string) {
 	o.MetadataCountryCode.Set(&v)
 }
+
 // SetMetadataCountryCodeNil sets the value for MetadataCountryCode to be an explicit nil
 func (o *StartupConfigurationDto) SetMetadataCountryCodeNil() {
 	o.MetadataCountryCode.Set(nil)
@@ -160,6 +162,7 @@ func (o *StartupConfigurationDto) HasPreferredMetadataLanguage() bool {
 func (o *StartupConfigurationDto) SetPreferredMetadataLanguage(v string) {
 	o.PreferredMetadataLanguage.Set(&v)
 }
+
 // SetPreferredMetadataLanguageNil sets the value for PreferredMetadataLanguage to be an explicit nil
 func (o *StartupConfigurationDto) SetPreferredMetadataLanguageNil() {
 	o.PreferredMetadataLanguage.Set(nil)
@@ -171,7 +174,7 @@ func (o *StartupConfigurationDto) UnsetPreferredMetadataLanguage() {
 }
 
 func (o StartupConfigurationDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -227,5 +230,3 @@ func (v *NullableStartupConfigurationDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

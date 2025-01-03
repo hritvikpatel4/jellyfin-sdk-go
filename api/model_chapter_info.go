@@ -25,9 +25,9 @@ type ChapterInfo struct {
 	// Gets or sets the name.
 	Name NullableString `json:"Name,omitempty"`
 	// Gets or sets the image path.
-	ImagePath NullableString `json:"ImagePath,omitempty"`
-	ImageDateModified *time.Time `json:"ImageDateModified,omitempty"`
-	ImageTag NullableString `json:"ImageTag,omitempty"`
+	ImagePath         NullableString `json:"ImagePath,omitempty"`
+	ImageDateModified *time.Time     `json:"ImageDateModified,omitempty"`
+	ImageTag          NullableString `json:"ImageTag,omitempty"`
 }
 
 // NewChapterInfo instantiates a new ChapterInfo object
@@ -111,6 +111,7 @@ func (o *ChapterInfo) HasName() bool {
 func (o *ChapterInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *ChapterInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -153,6 +154,7 @@ func (o *ChapterInfo) HasImagePath() bool {
 func (o *ChapterInfo) SetImagePath(v string) {
 	o.ImagePath.Set(&v)
 }
+
 // SetImagePathNil sets the value for ImagePath to be an explicit nil
 func (o *ChapterInfo) SetImagePathNil() {
 	o.ImagePath.Set(nil)
@@ -227,6 +229,7 @@ func (o *ChapterInfo) HasImageTag() bool {
 func (o *ChapterInfo) SetImageTag(v string) {
 	o.ImageTag.Set(&v)
 }
+
 // SetImageTagNil sets the value for ImageTag to be an explicit nil
 func (o *ChapterInfo) SetImageTagNil() {
 	o.ImageTag.Set(nil)
@@ -238,7 +241,7 @@ func (o *ChapterInfo) UnsetImageTag() {
 }
 
 func (o ChapterInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -300,5 +303,3 @@ func (v *NullableChapterInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

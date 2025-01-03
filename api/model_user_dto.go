@@ -100,6 +100,7 @@ func (o *UserDto) HasName() bool {
 func (o *UserDto) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *UserDto) SetNameNil() {
 	o.Name.Set(nil)
@@ -142,6 +143,7 @@ func (o *UserDto) HasServerId() bool {
 func (o *UserDto) SetServerId(v string) {
 	o.ServerId.Set(&v)
 }
+
 // SetServerIdNil sets the value for ServerId to be an explicit nil
 func (o *UserDto) SetServerIdNil() {
 	o.ServerId.Set(nil)
@@ -184,6 +186,7 @@ func (o *UserDto) HasServerName() bool {
 func (o *UserDto) SetServerName(v string) {
 	o.ServerName.Set(&v)
 }
+
 // SetServerNameNil sets the value for ServerName to be an explicit nil
 func (o *UserDto) SetServerNameNil() {
 	o.ServerName.Set(nil)
@@ -258,6 +261,7 @@ func (o *UserDto) HasPrimaryImageTag() bool {
 func (o *UserDto) SetPrimaryImageTag(v string) {
 	o.PrimaryImageTag.Set(&v)
 }
+
 // SetPrimaryImageTagNil sets the value for PrimaryImageTag to be an explicit nil
 func (o *UserDto) SetPrimaryImageTagNil() {
 	o.PrimaryImageTag.Set(nil)
@@ -399,6 +403,7 @@ func (o *UserDto) HasEnableAutoLogin() bool {
 func (o *UserDto) SetEnableAutoLogin(v bool) {
 	o.EnableAutoLogin.Set(&v)
 }
+
 // SetEnableAutoLoginNil sets the value for EnableAutoLogin to be an explicit nil
 func (o *UserDto) SetEnableAutoLoginNil() {
 	o.EnableAutoLogin.Set(nil)
@@ -441,6 +446,7 @@ func (o *UserDto) HasLastLoginDate() bool {
 func (o *UserDto) SetLastLoginDate(v time.Time) {
 	o.LastLoginDate.Set(&v)
 }
+
 // SetLastLoginDateNil sets the value for LastLoginDate to be an explicit nil
 func (o *UserDto) SetLastLoginDateNil() {
 	o.LastLoginDate.Set(nil)
@@ -483,6 +489,7 @@ func (o *UserDto) HasLastActivityDate() bool {
 func (o *UserDto) SetLastActivityDate(v time.Time) {
 	o.LastActivityDate.Set(&v)
 }
+
 // SetLastActivityDateNil sets the value for LastActivityDate to be an explicit nil
 func (o *UserDto) SetLastActivityDateNil() {
 	o.LastActivityDate.Set(nil)
@@ -525,6 +532,7 @@ func (o *UserDto) HasConfiguration() bool {
 func (o *UserDto) SetConfiguration(v UserConfiguration) {
 	o.Configuration.Set(&v)
 }
+
 // SetConfigurationNil sets the value for Configuration to be an explicit nil
 func (o *UserDto) SetConfigurationNil() {
 	o.Configuration.Set(nil)
@@ -567,6 +575,7 @@ func (o *UserDto) HasPolicy() bool {
 func (o *UserDto) SetPolicy(v UserPolicy) {
 	o.Policy.Set(&v)
 }
+
 // SetPolicyNil sets the value for Policy to be an explicit nil
 func (o *UserDto) SetPolicyNil() {
 	o.Policy.Set(nil)
@@ -609,6 +618,7 @@ func (o *UserDto) HasPrimaryImageAspectRatio() bool {
 func (o *UserDto) SetPrimaryImageAspectRatio(v float64) {
 	o.PrimaryImageAspectRatio.Set(&v)
 }
+
 // SetPrimaryImageAspectRatioNil sets the value for PrimaryImageAspectRatio to be an explicit nil
 func (o *UserDto) SetPrimaryImageAspectRatioNil() {
 	o.PrimaryImageAspectRatio.Set(nil)
@@ -620,7 +630,7 @@ func (o *UserDto) UnsetPrimaryImageAspectRatio() {
 }
 
 func (o UserDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -709,5 +719,3 @@ func (v *NullableUserDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

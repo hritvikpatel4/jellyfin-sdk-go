@@ -129,6 +129,7 @@ func (o *SessionInfoDto) HasPlayState() bool {
 func (o *SessionInfoDto) SetPlayState(v PlayerStateInfo) {
 	o.PlayState.Set(&v)
 }
+
 // SetPlayStateNil sets the value for PlayState to be an explicit nil
 func (o *SessionInfoDto) SetPlayStateNil() {
 	o.PlayState.Set(nil)
@@ -204,6 +205,7 @@ func (o *SessionInfoDto) HasCapabilities() bool {
 func (o *SessionInfoDto) SetCapabilities(v ClientCapabilitiesDto) {
 	o.Capabilities.Set(&v)
 }
+
 // SetCapabilitiesNil sets the value for Capabilities to be an explicit nil
 func (o *SessionInfoDto) SetCapabilitiesNil() {
 	o.Capabilities.Set(nil)
@@ -246,6 +248,7 @@ func (o *SessionInfoDto) HasRemoteEndPoint() bool {
 func (o *SessionInfoDto) SetRemoteEndPoint(v string) {
 	o.RemoteEndPoint.Set(&v)
 }
+
 // SetRemoteEndPointNil sets the value for RemoteEndPoint to be an explicit nil
 func (o *SessionInfoDto) SetRemoteEndPointNil() {
 	o.RemoteEndPoint.Set(nil)
@@ -320,6 +323,7 @@ func (o *SessionInfoDto) HasId() bool {
 func (o *SessionInfoDto) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *SessionInfoDto) SetIdNil() {
 	o.Id.Set(nil)
@@ -394,6 +398,7 @@ func (o *SessionInfoDto) HasUserName() bool {
 func (o *SessionInfoDto) SetUserName(v string) {
 	o.UserName.Set(&v)
 }
+
 // SetUserNameNil sets the value for UserName to be an explicit nil
 func (o *SessionInfoDto) SetUserNameNil() {
 	o.UserName.Set(nil)
@@ -436,6 +441,7 @@ func (o *SessionInfoDto) HasClient() bool {
 func (o *SessionInfoDto) SetClient(v string) {
 	o.Client.Set(&v)
 }
+
 // SetClientNil sets the value for Client to be an explicit nil
 func (o *SessionInfoDto) SetClientNil() {
 	o.Client.Set(nil)
@@ -542,6 +548,7 @@ func (o *SessionInfoDto) HasLastPausedDate() bool {
 func (o *SessionInfoDto) SetLastPausedDate(v time.Time) {
 	o.LastPausedDate.Set(&v)
 }
+
 // SetLastPausedDateNil sets the value for LastPausedDate to be an explicit nil
 func (o *SessionInfoDto) SetLastPausedDateNil() {
 	o.LastPausedDate.Set(nil)
@@ -584,6 +591,7 @@ func (o *SessionInfoDto) HasDeviceName() bool {
 func (o *SessionInfoDto) SetDeviceName(v string) {
 	o.DeviceName.Set(&v)
 }
+
 // SetDeviceNameNil sets the value for DeviceName to be an explicit nil
 func (o *SessionInfoDto) SetDeviceNameNil() {
 	o.DeviceName.Set(nil)
@@ -626,6 +634,7 @@ func (o *SessionInfoDto) HasDeviceType() bool {
 func (o *SessionInfoDto) SetDeviceType(v string) {
 	o.DeviceType.Set(&v)
 }
+
 // SetDeviceTypeNil sets the value for DeviceType to be an explicit nil
 func (o *SessionInfoDto) SetDeviceTypeNil() {
 	o.DeviceType.Set(nil)
@@ -668,6 +677,7 @@ func (o *SessionInfoDto) HasNowPlayingItem() bool {
 func (o *SessionInfoDto) SetNowPlayingItem(v BaseItemDto) {
 	o.NowPlayingItem.Set(&v)
 }
+
 // SetNowPlayingItemNil sets the value for NowPlayingItem to be an explicit nil
 func (o *SessionInfoDto) SetNowPlayingItemNil() {
 	o.NowPlayingItem.Set(nil)
@@ -710,6 +720,7 @@ func (o *SessionInfoDto) HasNowViewingItem() bool {
 func (o *SessionInfoDto) SetNowViewingItem(v BaseItemDto) {
 	o.NowViewingItem.Set(&v)
 }
+
 // SetNowViewingItemNil sets the value for NowViewingItem to be an explicit nil
 func (o *SessionInfoDto) SetNowViewingItemNil() {
 	o.NowViewingItem.Set(nil)
@@ -752,6 +763,7 @@ func (o *SessionInfoDto) HasDeviceId() bool {
 func (o *SessionInfoDto) SetDeviceId(v string) {
 	o.DeviceId.Set(&v)
 }
+
 // SetDeviceIdNil sets the value for DeviceId to be an explicit nil
 func (o *SessionInfoDto) SetDeviceIdNil() {
 	o.DeviceId.Set(nil)
@@ -794,6 +806,7 @@ func (o *SessionInfoDto) HasApplicationVersion() bool {
 func (o *SessionInfoDto) SetApplicationVersion(v string) {
 	o.ApplicationVersion.Set(&v)
 }
+
 // SetApplicationVersionNil sets the value for ApplicationVersion to be an explicit nil
 func (o *SessionInfoDto) SetApplicationVersionNil() {
 	o.ApplicationVersion.Set(nil)
@@ -836,6 +849,7 @@ func (o *SessionInfoDto) HasTranscodingInfo() bool {
 func (o *SessionInfoDto) SetTranscodingInfo(v TranscodingInfo) {
 	o.TranscodingInfo.Set(&v)
 }
+
 // SetTranscodingInfoNil sets the value for TranscodingInfo to be an explicit nil
 func (o *SessionInfoDto) SetTranscodingInfoNil() {
 	o.TranscodingInfo.Set(nil)
@@ -1072,6 +1086,7 @@ func (o *SessionInfoDto) HasPlaylistItemId() bool {
 func (o *SessionInfoDto) SetPlaylistItemId(v string) {
 	o.PlaylistItemId.Set(&v)
 }
+
 // SetPlaylistItemIdNil sets the value for PlaylistItemId to be an explicit nil
 func (o *SessionInfoDto) SetPlaylistItemIdNil() {
 	o.PlaylistItemId.Set(nil)
@@ -1114,6 +1129,7 @@ func (o *SessionInfoDto) HasServerId() bool {
 func (o *SessionInfoDto) SetServerId(v string) {
 	o.ServerId.Set(&v)
 }
+
 // SetServerIdNil sets the value for ServerId to be an explicit nil
 func (o *SessionInfoDto) SetServerIdNil() {
 	o.ServerId.Set(nil)
@@ -1156,6 +1172,7 @@ func (o *SessionInfoDto) HasUserPrimaryImageTag() bool {
 func (o *SessionInfoDto) SetUserPrimaryImageTag(v string) {
 	o.UserPrimaryImageTag.Set(&v)
 }
+
 // SetUserPrimaryImageTagNil sets the value for UserPrimaryImageTag to be an explicit nil
 func (o *SessionInfoDto) SetUserPrimaryImageTagNil() {
 	o.UserPrimaryImageTag.Set(nil)
@@ -1199,7 +1216,7 @@ func (o *SessionInfoDto) SetSupportedCommands(v []GeneralCommandType) {
 }
 
 func (o SessionInfoDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1333,5 +1350,3 @@ func (v *NullableSessionInfoDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

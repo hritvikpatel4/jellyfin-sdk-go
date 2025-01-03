@@ -150,6 +150,7 @@ func (o *PluginInfo) HasConfigurationFileName() bool {
 func (o *PluginInfo) SetConfigurationFileName(v string) {
 	o.ConfigurationFileName.Set(&v)
 }
+
 // SetConfigurationFileNameNil sets the value for ConfigurationFileName to be an explicit nil
 func (o *PluginInfo) SetConfigurationFileNameNil() {
 	o.ConfigurationFileName.Set(nil)
@@ -321,7 +322,7 @@ func (o *PluginInfo) SetStatus(v PluginStatus) {
 }
 
 func (o PluginInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -392,5 +393,3 @@ func (v *NullablePluginInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

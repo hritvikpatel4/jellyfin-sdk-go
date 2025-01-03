@@ -20,7 +20,7 @@ type DayPattern string
 
 // List of DayPattern
 const (
-	DAYPATTERN_DAILY DayPattern = "Daily"
+	DAYPATTERN_DAILY    DayPattern = "Daily"
 	DAYPATTERN_WEEKDAYS DayPattern = "Weekdays"
 	DAYPATTERN_WEEKENDS DayPattern = "Weekends"
 )
@@ -110,4 +110,3 @@ func (v *NullableDayPattern) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

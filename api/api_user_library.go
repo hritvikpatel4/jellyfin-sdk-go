@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type UserLibraryAPI interface {
 
 	/*
-	DeleteUserItemRating Deletes a user's saved personal rating for an item.
+		DeleteUserItemRating Deletes a user's saved personal rating for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiDeleteUserItemRatingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiDeleteUserItemRatingRequest
 	*/
 	DeleteUserItemRating(ctx context.Context, itemId string) ApiDeleteUserItemRatingRequest
 
@@ -37,11 +36,11 @@ type UserLibraryAPI interface {
 	DeleteUserItemRatingExecute(r ApiDeleteUserItemRatingRequest) (*UserItemDataDto, *http.Response, error)
 
 	/*
-	GetIntros Gets intros to play before the main media item plays.
+		GetIntros Gets intros to play before the main media item plays.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetIntrosRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetIntrosRequest
 	*/
 	GetIntros(ctx context.Context, itemId string) ApiGetIntrosRequest
 
@@ -50,11 +49,11 @@ type UserLibraryAPI interface {
 	GetIntrosExecute(r ApiGetIntrosRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetItem Gets an item from a user's library.
+		GetItem Gets an item from a user's library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetItemRequest
 	*/
 	GetItem(ctx context.Context, itemId string) ApiGetItemRequest
 
@@ -63,10 +62,10 @@ type UserLibraryAPI interface {
 	GetItemExecute(r ApiGetItemRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetLatestMedia Gets latest media.
+		GetLatestMedia Gets latest media.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLatestMediaRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLatestMediaRequest
 	*/
 	GetLatestMedia(ctx context.Context) ApiGetLatestMediaRequest
 
@@ -75,11 +74,11 @@ type UserLibraryAPI interface {
 	GetLatestMediaExecute(r ApiGetLatestMediaRequest) ([]BaseItemDto, *http.Response, error)
 
 	/*
-	GetLocalTrailers Gets local trailers for an item.
+		GetLocalTrailers Gets local trailers for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetLocalTrailersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetLocalTrailersRequest
 	*/
 	GetLocalTrailers(ctx context.Context, itemId string) ApiGetLocalTrailersRequest
 
@@ -88,10 +87,10 @@ type UserLibraryAPI interface {
 	GetLocalTrailersExecute(r ApiGetLocalTrailersRequest) ([]BaseItemDto, *http.Response, error)
 
 	/*
-	GetRootFolder Gets the root folder from a user's library.
+		GetRootFolder Gets the root folder from a user's library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRootFolderRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRootFolderRequest
 	*/
 	GetRootFolder(ctx context.Context) ApiGetRootFolderRequest
 
@@ -100,11 +99,11 @@ type UserLibraryAPI interface {
 	GetRootFolderExecute(r ApiGetRootFolderRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetSpecialFeatures Gets special features for an item.
+		GetSpecialFeatures Gets special features for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetSpecialFeaturesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetSpecialFeaturesRequest
 	*/
 	GetSpecialFeatures(ctx context.Context, itemId string) ApiGetSpecialFeaturesRequest
 
@@ -113,11 +112,11 @@ type UserLibraryAPI interface {
 	GetSpecialFeaturesExecute(r ApiGetSpecialFeaturesRequest) ([]BaseItemDto, *http.Response, error)
 
 	/*
-	MarkFavoriteItem Marks an item as a favorite.
+		MarkFavoriteItem Marks an item as a favorite.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiMarkFavoriteItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiMarkFavoriteItemRequest
 	*/
 	MarkFavoriteItem(ctx context.Context, itemId string) ApiMarkFavoriteItemRequest
 
@@ -126,11 +125,11 @@ type UserLibraryAPI interface {
 	MarkFavoriteItemExecute(r ApiMarkFavoriteItemRequest) (*UserItemDataDto, *http.Response, error)
 
 	/*
-	UnmarkFavoriteItem Unmarks item as a favorite.
+		UnmarkFavoriteItem Unmarks item as a favorite.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiUnmarkFavoriteItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiUnmarkFavoriteItemRequest
 	*/
 	UnmarkFavoriteItem(ctx context.Context, itemId string) ApiUnmarkFavoriteItemRequest
 
@@ -139,11 +138,11 @@ type UserLibraryAPI interface {
 	UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteItemRequest) (*UserItemDataDto, *http.Response, error)
 
 	/*
-	UpdateUserItemRating Updates a user's rating for an item.
+		UpdateUserItemRating Updates a user's rating for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiUpdateUserItemRatingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiUpdateUserItemRatingRequest
 	*/
 	UpdateUserItemRating(ctx context.Context, itemId string) ApiUpdateUserItemRatingRequest
 
@@ -156,10 +155,10 @@ type UserLibraryAPI interface {
 type UserLibraryAPIService service
 
 type ApiDeleteUserItemRatingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -175,26 +174,27 @@ func (r ApiDeleteUserItemRatingRequest) Execute() (*UserItemDataDto, *http.Respo
 /*
 DeleteUserItemRating Deletes a user's saved personal rating for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiDeleteUserItemRatingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiDeleteUserItemRatingRequest
 */
 func (a *UserLibraryAPIService) DeleteUserItemRating(ctx context.Context, itemId string) ApiDeleteUserItemRatingRequest {
 	return ApiDeleteUserItemRatingRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
+//
+//	@return UserItemDataDto
 func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r ApiDeleteUserItemRatingRequest) (*UserItemDataDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.DeleteUserItemRating")
@@ -281,10 +281,10 @@ func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r ApiDeleteUserItemR
 }
 
 type ApiGetIntrosRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -300,26 +300,27 @@ func (r ApiGetIntrosRequest) Execute() (*BaseItemDtoQueryResult, *http.Response,
 /*
 GetIntros Gets intros to play before the main media item plays.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetIntrosRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetIntrosRequest
 */
 func (a *UserLibraryAPIService) GetIntros(ctx context.Context, itemId string) ApiGetIntrosRequest {
 	return ApiGetIntrosRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *UserLibraryAPIService) GetIntrosExecute(r ApiGetIntrosRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetIntros")
@@ -406,10 +407,10 @@ func (a *UserLibraryAPIService) GetIntrosExecute(r ApiGetIntrosRequest) (*BaseIt
 }
 
 type ApiGetItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -425,26 +426,27 @@ func (r ApiGetItemRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetItem Gets an item from a user's library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetItemRequest
 */
 func (a *UserLibraryAPIService) GetItem(ctx context.Context, itemId string) ApiGetItemRequest {
 	return ApiGetItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *UserLibraryAPIService) GetItemExecute(r ApiGetItemRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetItem")
@@ -531,19 +533,19 @@ func (a *UserLibraryAPIService) GetItemExecute(r ApiGetItemRequest) (*BaseItemDt
 }
 
 type ApiGetLatestMediaRequest struct {
-	ctx context.Context
-	ApiService UserLibraryAPI
-	userId *string
-	parentId *string
-	fields *[]ItemFields
+	ctx              context.Context
+	ApiService       UserLibraryAPI
+	userId           *string
+	parentId         *string
+	fields           *[]ItemFields
 	includeItemTypes *[]BaseItemKind
-	isPlayed *bool
-	enableImages *bool
-	imageTypeLimit *int32
+	isPlayed         *bool
+	enableImages     *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
-	enableUserData *bool
-	limit *int32
-	groupItems *bool
+	enableUserData   *bool
+	limit            *int32
+	groupItems       *bool
 }
 
 // User id.
@@ -619,24 +621,25 @@ func (r ApiGetLatestMediaRequest) Execute() ([]BaseItemDto, *http.Response, erro
 /*
 GetLatestMedia Gets latest media.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLatestMediaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLatestMediaRequest
 */
 func (a *UserLibraryAPIService) GetLatestMedia(ctx context.Context) ApiGetLatestMediaRequest {
 	return ApiGetLatestMediaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
+//
+//	@return []BaseItemDto
 func (a *UserLibraryAPIService) GetLatestMediaExecute(r ApiGetLatestMediaRequest) ([]BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetLatestMedia")
@@ -782,10 +785,10 @@ func (a *UserLibraryAPIService) GetLatestMediaExecute(r ApiGetLatestMediaRequest
 }
 
 type ApiGetLocalTrailersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -801,26 +804,27 @@ func (r ApiGetLocalTrailersRequest) Execute() ([]BaseItemDto, *http.Response, er
 /*
 GetLocalTrailers Gets local trailers for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetLocalTrailersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetLocalTrailersRequest
 */
 func (a *UserLibraryAPIService) GetLocalTrailers(ctx context.Context, itemId string) ApiGetLocalTrailersRequest {
 	return ApiGetLocalTrailersRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
+//
+//	@return []BaseItemDto
 func (a *UserLibraryAPIService) GetLocalTrailersExecute(r ApiGetLocalTrailersRequest) ([]BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetLocalTrailers")
@@ -907,9 +911,9 @@ func (a *UserLibraryAPIService) GetLocalTrailersExecute(r ApiGetLocalTrailersReq
 }
 
 type ApiGetRootFolderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	userId *string
+	userId     *string
 }
 
 // User id.
@@ -925,24 +929,25 @@ func (r ApiGetRootFolderRequest) Execute() (*BaseItemDto, *http.Response, error)
 /*
 GetRootFolder Gets the root folder from a user's library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRootFolderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRootFolderRequest
 */
 func (a *UserLibraryAPIService) GetRootFolder(ctx context.Context) ApiGetRootFolderRequest {
 	return ApiGetRootFolderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *UserLibraryAPIService) GetRootFolderExecute(r ApiGetRootFolderRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetRootFolder")
@@ -1028,10 +1033,10 @@ func (a *UserLibraryAPIService) GetRootFolderExecute(r ApiGetRootFolderRequest) 
 }
 
 type ApiGetSpecialFeaturesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -1047,26 +1052,27 @@ func (r ApiGetSpecialFeaturesRequest) Execute() ([]BaseItemDto, *http.Response, 
 /*
 GetSpecialFeatures Gets special features for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetSpecialFeaturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetSpecialFeaturesRequest
 */
 func (a *UserLibraryAPIService) GetSpecialFeatures(ctx context.Context, itemId string) ApiGetSpecialFeaturesRequest {
 	return ApiGetSpecialFeaturesRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
+//
+//	@return []BaseItemDto
 func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r ApiGetSpecialFeaturesRequest) ([]BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetSpecialFeatures")
@@ -1153,10 +1159,10 @@ func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r ApiGetSpecialFeature
 }
 
 type ApiMarkFavoriteItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -1172,26 +1178,27 @@ func (r ApiMarkFavoriteItemRequest) Execute() (*UserItemDataDto, *http.Response,
 /*
 MarkFavoriteItem Marks an item as a favorite.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiMarkFavoriteItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiMarkFavoriteItemRequest
 */
 func (a *UserLibraryAPIService) MarkFavoriteItem(ctx context.Context, itemId string) ApiMarkFavoriteItemRequest {
 	return ApiMarkFavoriteItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
+//
+//	@return UserItemDataDto
 func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r ApiMarkFavoriteItemRequest) (*UserItemDataDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.MarkFavoriteItem")
@@ -1278,10 +1285,10 @@ func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r ApiMarkFavoriteItemReq
 }
 
 type ApiUnmarkFavoriteItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // User id.
@@ -1297,26 +1304,27 @@ func (r ApiUnmarkFavoriteItemRequest) Execute() (*UserItemDataDto, *http.Respons
 /*
 UnmarkFavoriteItem Unmarks item as a favorite.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiUnmarkFavoriteItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiUnmarkFavoriteItemRequest
 */
 func (a *UserLibraryAPIService) UnmarkFavoriteItem(ctx context.Context, itemId string) ApiUnmarkFavoriteItemRequest {
 	return ApiUnmarkFavoriteItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
+//
+//	@return UserItemDataDto
 func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteItemRequest) (*UserItemDataDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.UnmarkFavoriteItem")
@@ -1403,11 +1411,11 @@ func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteIte
 }
 
 type ApiUpdateUserItemRatingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserLibraryAPI
-	itemId string
-	userId *string
-	likes *bool
+	itemId     string
+	userId     *string
+	likes      *bool
 }
 
 // User id.
@@ -1429,26 +1437,27 @@ func (r ApiUpdateUserItemRatingRequest) Execute() (*UserItemDataDto, *http.Respo
 /*
 UpdateUserItemRating Updates a user's rating for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiUpdateUserItemRatingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiUpdateUserItemRatingRequest
 */
 func (a *UserLibraryAPIService) UpdateUserItemRating(ctx context.Context, itemId string) ApiUpdateUserItemRatingRequest {
 	return ApiUpdateUserItemRatingRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
+//
+//	@return UserItemDataDto
 func (a *UserLibraryAPIService) UpdateUserItemRatingExecute(r ApiUpdateUserItemRatingRequest) (*UserItemDataDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.UpdateUserItemRating")

@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type StudiosAPI interface {
 
 	/*
-	GetStudio Gets a studio by name.
+		GetStudio Gets a studio by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Studio name.
-	@return ApiGetStudioRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Studio name.
+		@return ApiGetStudioRequest
 	*/
 	GetStudio(ctx context.Context, name string) ApiGetStudioRequest
 
@@ -37,10 +36,10 @@ type StudiosAPI interface {
 	GetStudioExecute(r ApiGetStudioRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetStudios Gets all studios from a given item, folder, or the entire library.
+		GetStudios Gets all studios from a given item, folder, or the entire library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetStudiosRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetStudiosRequest
 	*/
 	GetStudios(ctx context.Context) ApiGetStudiosRequest
 
@@ -53,10 +52,10 @@ type StudiosAPI interface {
 type StudiosAPIService service
 
 type ApiGetStudioRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService StudiosAPI
-	name string
-	userId *string
+	name       string
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -72,26 +71,27 @@ func (r ApiGetStudioRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetStudio Gets a studio by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Studio name.
- @return ApiGetStudioRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Studio name.
+	@return ApiGetStudioRequest
 */
 func (a *StudiosAPIService) GetStudio(ctx context.Context, name string) ApiGetStudioRequest {
 	return ApiGetStudioRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *StudiosAPIService) GetStudioExecute(r ApiGetStudioRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StudiosAPIService.GetStudio")
@@ -178,25 +178,25 @@ func (a *StudiosAPIService) GetStudioExecute(r ApiGetStudioRequest) (*BaseItemDt
 }
 
 type ApiGetStudiosRequest struct {
-	ctx context.Context
-	ApiService StudiosAPI
-	startIndex *int32
-	limit *int32
-	searchTerm *string
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	isFavorite *bool
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	userId *string
+	ctx                     context.Context
+	ApiService              StudiosAPI
+	startIndex              *int32
+	limit                   *int32
+	searchTerm              *string
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	includeItemTypes        *[]BaseItemKind
+	isFavorite              *bool
+	enableUserData          *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	userId                  *string
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	enableImages *bool
-	enableTotalRecordCount *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	enableImages            *bool
+	enableTotalRecordCount  *bool
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
@@ -308,24 +308,25 @@ func (r ApiGetStudiosRequest) Execute() (*BaseItemDtoQueryResult, *http.Response
 /*
 GetStudios Gets all studios from a given item, folder, or the entire library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStudiosRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetStudiosRequest
 */
 func (a *StudiosAPIService) GetStudios(ctx context.Context) ApiGetStudiosRequest {
 	return ApiGetStudiosRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *StudiosAPIService) GetStudiosExecute(r ApiGetStudiosRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StudiosAPIService.GetStudios")

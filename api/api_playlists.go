@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type PlaylistsAPI interface {
 
 	/*
-	AddItemToPlaylist Adds items to a playlist.
+		AddItemToPlaylist Adds items to a playlist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@return ApiAddItemToPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@return ApiAddItemToPlaylistRequest
 	*/
 	AddItemToPlaylist(ctx context.Context, playlistId string) ApiAddItemToPlaylistRequest
 
@@ -36,13 +35,13 @@ type PlaylistsAPI interface {
 	AddItemToPlaylistExecute(r ApiAddItemToPlaylistRequest) (*http.Response, error)
 
 	/*
-	CreatePlaylist Creates a new playlist.
+		CreatePlaylist Creates a new playlist.
 
-	For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.
-Query parameters are obsolete.
+		For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.
+	Query parameters are obsolete.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreatePlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreatePlaylistRequest
 	*/
 	CreatePlaylist(ctx context.Context) ApiCreatePlaylistRequest
 
@@ -51,11 +50,11 @@ Query parameters are obsolete.
 	CreatePlaylistExecute(r ApiCreatePlaylistRequest) (*PlaylistCreationResult, *http.Response, error)
 
 	/*
-	GetPlaylist Get a playlist.
+		GetPlaylist Get a playlist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@return ApiGetPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@return ApiGetPlaylistRequest
 	*/
 	GetPlaylist(ctx context.Context, playlistId string) ApiGetPlaylistRequest
 
@@ -64,11 +63,11 @@ Query parameters are obsolete.
 	GetPlaylistExecute(r ApiGetPlaylistRequest) (*PlaylistDto, *http.Response, error)
 
 	/*
-	GetPlaylistItems Gets the original items of a playlist.
+		GetPlaylistItems Gets the original items of a playlist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@return ApiGetPlaylistItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@return ApiGetPlaylistItemsRequest
 	*/
 	GetPlaylistItems(ctx context.Context, playlistId string) ApiGetPlaylistItemsRequest
 
@@ -77,12 +76,12 @@ Query parameters are obsolete.
 	GetPlaylistItemsExecute(r ApiGetPlaylistItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetPlaylistUser Get a playlist user.
+		GetPlaylistUser Get a playlist user.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@param userId The user id.
-	@return ApiGetPlaylistUserRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@param userId The user id.
+		@return ApiGetPlaylistUserRequest
 	*/
 	GetPlaylistUser(ctx context.Context, playlistId string, userId string) ApiGetPlaylistUserRequest
 
@@ -91,11 +90,11 @@ Query parameters are obsolete.
 	GetPlaylistUserExecute(r ApiGetPlaylistUserRequest) (*PlaylistUserPermissions, *http.Response, error)
 
 	/*
-	GetPlaylistUsers Get a playlist's users.
+		GetPlaylistUsers Get a playlist's users.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@return ApiGetPlaylistUsersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@return ApiGetPlaylistUsersRequest
 	*/
 	GetPlaylistUsers(ctx context.Context, playlistId string) ApiGetPlaylistUsersRequest
 
@@ -104,13 +103,13 @@ Query parameters are obsolete.
 	GetPlaylistUsersExecute(r ApiGetPlaylistUsersRequest) ([]PlaylistUserPermissions, *http.Response, error)
 
 	/*
-	MoveItem Moves a playlist item.
+		MoveItem Moves a playlist item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@param itemId The item id.
-	@param newIndex The new index.
-	@return ApiMoveItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@param itemId The item id.
+		@param newIndex The new index.
+		@return ApiMoveItemRequest
 	*/
 	MoveItem(ctx context.Context, playlistId string, itemId string, newIndex int32) ApiMoveItemRequest
 
@@ -118,11 +117,11 @@ Query parameters are obsolete.
 	MoveItemExecute(r ApiMoveItemRequest) (*http.Response, error)
 
 	/*
-	RemoveItemFromPlaylist Removes items from a playlist.
+		RemoveItemFromPlaylist Removes items from a playlist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@return ApiRemoveItemFromPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@return ApiRemoveItemFromPlaylistRequest
 	*/
 	RemoveItemFromPlaylist(ctx context.Context, playlistId string) ApiRemoveItemFromPlaylistRequest
 
@@ -130,12 +129,12 @@ Query parameters are obsolete.
 	RemoveItemFromPlaylistExecute(r ApiRemoveItemFromPlaylistRequest) (*http.Response, error)
 
 	/*
-	RemoveUserFromPlaylist Remove a user from a playlist's users.
+		RemoveUserFromPlaylist Remove a user from a playlist's users.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@param userId The user id.
-	@return ApiRemoveUserFromPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@param userId The user id.
+		@return ApiRemoveUserFromPlaylistRequest
 	*/
 	RemoveUserFromPlaylist(ctx context.Context, playlistId string, userId string) ApiRemoveUserFromPlaylistRequest
 
@@ -143,11 +142,11 @@ Query parameters are obsolete.
 	RemoveUserFromPlaylistExecute(r ApiRemoveUserFromPlaylistRequest) (*http.Response, error)
 
 	/*
-	UpdatePlaylist Updates a playlist.
+		UpdatePlaylist Updates a playlist.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@return ApiUpdatePlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@return ApiUpdatePlaylistRequest
 	*/
 	UpdatePlaylist(ctx context.Context, playlistId string) ApiUpdatePlaylistRequest
 
@@ -155,12 +154,12 @@ Query parameters are obsolete.
 	UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) (*http.Response, error)
 
 	/*
-	UpdatePlaylistUser Modify a user of a playlist's users.
+		UpdatePlaylistUser Modify a user of a playlist's users.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param playlistId The playlist id.
-	@param userId The user id.
-	@return ApiUpdatePlaylistUserRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param playlistId The playlist id.
+		@param userId The user id.
+		@return ApiUpdatePlaylistUserRequest
 	*/
 	UpdatePlaylistUser(ctx context.Context, playlistId string, userId string) ApiUpdatePlaylistUserRequest
 
@@ -172,11 +171,11 @@ Query parameters are obsolete.
 type PlaylistsAPIService service
 
 type ApiAddItemToPlaylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
-	ids *[]string
-	userId *string
+	ids        *[]string
+	userId     *string
 }
 
 // Item id, comma delimited.
@@ -198,14 +197,14 @@ func (r ApiAddItemToPlaylistRequest) Execute() (*http.Response, error) {
 /*
 AddItemToPlaylist Adds items to a playlist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @return ApiAddItemToPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@return ApiAddItemToPlaylistRequest
 */
 func (a *PlaylistsAPIService) AddItemToPlaylist(ctx context.Context, playlistId string) ApiAddItemToPlaylistRequest {
 	return ApiAddItemToPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
 	}
 }
@@ -213,9 +212,9 @@ func (a *PlaylistsAPIService) AddItemToPlaylist(ctx context.Context, playlistId 
 // Execute executes the request
 func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.AddItemToPlaylist")
@@ -304,8 +303,8 @@ func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistReq
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -315,8 +314,8 @@ func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistReq
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -326,12 +325,12 @@ func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistReq
 }
 
 type ApiCreatePlaylistRequest struct {
-	ctx context.Context
-	ApiService PlaylistsAPI
-	name *string
-	ids *[]string
-	userId *string
-	mediaType *MediaType
+	ctx               context.Context
+	ApiService        PlaylistsAPI
+	name              *string
+	ids               *[]string
+	userId            *string
+	mediaType         *MediaType
 	createPlaylistDto *CreatePlaylistDto
 }
 
@@ -385,18 +384,19 @@ Query parameters are obsolete.
 func (a *PlaylistsAPIService) CreatePlaylist(ctx context.Context) ApiCreatePlaylistRequest {
 	return ApiCreatePlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PlaylistCreationResult
+//
+//	@return PlaylistCreationResult
 func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) (*PlaylistCreationResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PlaylistCreationResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PlaylistCreationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.CreatePlaylist")
@@ -501,7 +501,7 @@ func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) 
 }
 
 type ApiGetPlaylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
 }
@@ -513,26 +513,27 @@ func (r ApiGetPlaylistRequest) Execute() (*PlaylistDto, *http.Response, error) {
 /*
 GetPlaylist Get a playlist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @return ApiGetPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@return ApiGetPlaylistRequest
 */
 func (a *PlaylistsAPIService) GetPlaylist(ctx context.Context, playlistId string) ApiGetPlaylistRequest {
 	return ApiGetPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
 	}
 }
 
 // Execute executes the request
-//  @return PlaylistDto
+//
+//	@return PlaylistDto
 func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*PlaylistDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PlaylistDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PlaylistDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylist")
@@ -607,8 +608,8 @@ func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*Play
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -627,16 +628,16 @@ func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*Play
 }
 
 type ApiGetPlaylistItemsRequest struct {
-	ctx context.Context
-	ApiService PlaylistsAPI
-	playlistId string
-	userId *string
-	startIndex *int32
-	limit *int32
-	fields *[]ItemFields
-	enableImages *bool
-	enableUserData *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       PlaylistsAPI
+	playlistId       string
+	userId           *string
+	startIndex       *int32
+	limit            *int32
+	fields           *[]ItemFields
+	enableImages     *bool
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
 }
 
@@ -695,26 +696,27 @@ func (r ApiGetPlaylistItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Re
 /*
 GetPlaylistItems Gets the original items of a playlist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @return ApiGetPlaylistItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@return ApiGetPlaylistItemsRequest
 */
 func (a *PlaylistsAPIService) GetPlaylistItems(ctx context.Context, playlistId string) ApiGetPlaylistItemsRequest {
 	return ApiGetPlaylistItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylistItems")
@@ -829,8 +831,8 @@ func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -840,8 +842,8 @@ func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -860,10 +862,10 @@ func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsReque
 }
 
 type ApiGetPlaylistUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
-	userId string
+	userId     string
 }
 
 func (r ApiGetPlaylistUserRequest) Execute() (*PlaylistUserPermissions, *http.Response, error) {
@@ -873,28 +875,29 @@ func (r ApiGetPlaylistUserRequest) Execute() (*PlaylistUserPermissions, *http.Re
 /*
 GetPlaylistUser Get a playlist user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @param userId The user id.
- @return ApiGetPlaylistUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@param userId The user id.
+	@return ApiGetPlaylistUserRequest
 */
 func (a *PlaylistsAPIService) GetPlaylistUser(ctx context.Context, playlistId string, userId string) ApiGetPlaylistUserRequest {
 	return ApiGetPlaylistUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
-		userId: userId,
+		userId:     userId,
 	}
 }
 
 // Execute executes the request
-//  @return PlaylistUserPermissions
+//
+//	@return PlaylistUserPermissions
 func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest) (*PlaylistUserPermissions, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PlaylistUserPermissions
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PlaylistUserPermissions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylistUser")
@@ -970,8 +973,8 @@ func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -981,8 +984,8 @@ func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1001,7 +1004,7 @@ func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest
 }
 
 type ApiGetPlaylistUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
 }
@@ -1013,26 +1016,27 @@ func (r ApiGetPlaylistUsersRequest) Execute() ([]PlaylistUserPermissions, *http.
 /*
 GetPlaylistUsers Get a playlist's users.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @return ApiGetPlaylistUsersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@return ApiGetPlaylistUsersRequest
 */
 func (a *PlaylistsAPIService) GetPlaylistUsers(ctx context.Context, playlistId string) ApiGetPlaylistUsersRequest {
 	return ApiGetPlaylistUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
 	}
 }
 
 // Execute executes the request
-//  @return []PlaylistUserPermissions
+//
+//	@return []PlaylistUserPermissions
 func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersRequest) ([]PlaylistUserPermissions, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PlaylistUserPermissions
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PlaylistUserPermissions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylistUsers")
@@ -1107,8 +1111,8 @@ func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1118,8 +1122,8 @@ func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1138,11 +1142,11 @@ func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersReque
 }
 
 type ApiMoveItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
-	itemId string
-	newIndex int32
+	itemId     string
+	newIndex   int32
 }
 
 func (r ApiMoveItemRequest) Execute() (*http.Response, error) {
@@ -1152,28 +1156,28 @@ func (r ApiMoveItemRequest) Execute() (*http.Response, error) {
 /*
 MoveItem Moves a playlist item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @param itemId The item id.
- @param newIndex The new index.
- @return ApiMoveItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@param itemId The item id.
+	@param newIndex The new index.
+	@return ApiMoveItemRequest
 */
 func (a *PlaylistsAPIService) MoveItem(ctx context.Context, playlistId string, itemId string, newIndex int32) ApiMoveItemRequest {
 	return ApiMoveItemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
-		itemId: itemId,
-		newIndex: newIndex,
+		itemId:     itemId,
+		newIndex:   newIndex,
 	}
 }
 
 // Execute executes the request
 func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.MoveItem")
@@ -1250,8 +1254,8 @@ func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Respo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1261,8 +1265,8 @@ func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Respo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1272,10 +1276,10 @@ func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Respo
 }
 
 type ApiRemoveItemFromPlaylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
-	entryIds *[]string
+	entryIds   *[]string
 }
 
 // The item ids, comma delimited.
@@ -1291,14 +1295,14 @@ func (r ApiRemoveItemFromPlaylistRequest) Execute() (*http.Response, error) {
 /*
 RemoveItemFromPlaylist Removes items from a playlist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @return ApiRemoveItemFromPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@return ApiRemoveItemFromPlaylistRequest
 */
 func (a *PlaylistsAPIService) RemoveItemFromPlaylist(ctx context.Context, playlistId string) ApiRemoveItemFromPlaylistRequest {
 	return ApiRemoveItemFromPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
 	}
 }
@@ -1306,9 +1310,9 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylist(ctx context.Context, playli
 // Execute executes the request
 func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromPlaylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.RemoveItemFromPlaylist")
@@ -1394,8 +1398,8 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromP
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1405,8 +1409,8 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromP
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1416,10 +1420,10 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromP
 }
 
 type ApiRemoveUserFromPlaylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PlaylistsAPI
 	playlistId string
-	userId string
+	userId     string
 }
 
 func (r ApiRemoveUserFromPlaylistRequest) Execute() (*http.Response, error) {
@@ -1429,26 +1433,26 @@ func (r ApiRemoveUserFromPlaylistRequest) Execute() (*http.Response, error) {
 /*
 RemoveUserFromPlaylist Remove a user from a playlist's users.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @param userId The user id.
- @return ApiRemoveUserFromPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@param userId The user id.
+	@return ApiRemoveUserFromPlaylistRequest
 */
 func (a *PlaylistsAPIService) RemoveUserFromPlaylist(ctx context.Context, playlistId string, userId string) ApiRemoveUserFromPlaylistRequest {
 	return ApiRemoveUserFromPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
-		userId: userId,
+		userId:     userId,
 	}
 }
 
 // Execute executes the request
 func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromPlaylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.RemoveUserFromPlaylist")
@@ -1524,8 +1528,8 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromP
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1535,8 +1539,8 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromP
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1546,9 +1550,9 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromP
 }
 
 type ApiUpdatePlaylistRequest struct {
-	ctx context.Context
-	ApiService PlaylistsAPI
-	playlistId string
+	ctx               context.Context
+	ApiService        PlaylistsAPI
+	playlistId        string
 	updatePlaylistDto *UpdatePlaylistDto
 }
 
@@ -1565,14 +1569,14 @@ func (r ApiUpdatePlaylistRequest) Execute() (*http.Response, error) {
 /*
 UpdatePlaylist Updates a playlist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @return ApiUpdatePlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@return ApiUpdatePlaylistRequest
 */
 func (a *PlaylistsAPIService) UpdatePlaylist(ctx context.Context, playlistId string) ApiUpdatePlaylistRequest {
 	return ApiUpdatePlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
 	}
 }
@@ -1580,9 +1584,9 @@ func (a *PlaylistsAPIService) UpdatePlaylist(ctx context.Context, playlistId str
 // Execute executes the request
 func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.UpdatePlaylist")
@@ -1662,8 +1666,8 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1673,8 +1677,8 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1684,10 +1688,10 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 }
 
 type ApiUpdatePlaylistUserRequest struct {
-	ctx context.Context
-	ApiService PlaylistsAPI
-	playlistId string
-	userId string
+	ctx                   context.Context
+	ApiService            PlaylistsAPI
+	playlistId            string
+	userId                string
 	updatePlaylistUserDto *UpdatePlaylistUserDto
 }
 
@@ -1704,26 +1708,26 @@ func (r ApiUpdatePlaylistUserRequest) Execute() (*http.Response, error) {
 /*
 UpdatePlaylistUser Modify a user of a playlist's users.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param playlistId The playlist id.
- @param userId The user id.
- @return ApiUpdatePlaylistUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param playlistId The playlist id.
+	@param userId The user id.
+	@return ApiUpdatePlaylistUserRequest
 */
 func (a *PlaylistsAPIService) UpdatePlaylistUser(ctx context.Context, playlistId string, userId string) ApiUpdatePlaylistUserRequest {
 	return ApiUpdatePlaylistUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		playlistId: playlistId,
-		userId: userId,
+		userId:     userId,
 	}
 }
 
 // Execute executes the request
 func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.UpdatePlaylistUser")
@@ -1804,8 +1808,8 @@ func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1815,8 +1819,8 @@ func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

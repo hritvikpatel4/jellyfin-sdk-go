@@ -20,14 +20,14 @@ type ImageOrientation string
 
 // List of ImageOrientation
 const (
-	IMAGEORIENTATION_TOP_LEFT ImageOrientation = "TopLeft"
-	IMAGEORIENTATION_TOP_RIGHT ImageOrientation = "TopRight"
+	IMAGEORIENTATION_TOP_LEFT     ImageOrientation = "TopLeft"
+	IMAGEORIENTATION_TOP_RIGHT    ImageOrientation = "TopRight"
 	IMAGEORIENTATION_BOTTOM_RIGHT ImageOrientation = "BottomRight"
-	IMAGEORIENTATION_BOTTOM_LEFT ImageOrientation = "BottomLeft"
-	IMAGEORIENTATION_LEFT_TOP ImageOrientation = "LeftTop"
-	IMAGEORIENTATION_RIGHT_TOP ImageOrientation = "RightTop"
+	IMAGEORIENTATION_BOTTOM_LEFT  ImageOrientation = "BottomLeft"
+	IMAGEORIENTATION_LEFT_TOP     ImageOrientation = "LeftTop"
+	IMAGEORIENTATION_RIGHT_TOP    ImageOrientation = "RightTop"
 	IMAGEORIENTATION_RIGHT_BOTTOM ImageOrientation = "RightBottom"
-	IMAGEORIENTATION_LEFT_BOTTOM ImageOrientation = "LeftBottom"
+	IMAGEORIENTATION_LEFT_BOTTOM  ImageOrientation = "LeftBottom"
 )
 
 // All allowed values of ImageOrientation enum
@@ -120,4 +120,3 @@ func (v *NullableImageOrientation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

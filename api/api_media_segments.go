@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type MediaSegmentsAPI interface {
 
 	/*
-	GetItemSegments Gets all media segments based on an itemId.
+		GetItemSegments Gets all media segments based on an itemId.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The ItemId.
-	@return ApiGetItemSegmentsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The ItemId.
+		@return ApiGetItemSegmentsRequest
 	*/
 	GetItemSegments(ctx context.Context, itemId string) ApiGetItemSegmentsRequest
 
@@ -41,9 +40,9 @@ type MediaSegmentsAPI interface {
 type MediaSegmentsAPIService service
 
 type ApiGetItemSegmentsRequest struct {
-	ctx context.Context
-	ApiService MediaSegmentsAPI
-	itemId string
+	ctx                 context.Context
+	ApiService          MediaSegmentsAPI
+	itemId              string
 	includeSegmentTypes *[]MediaSegmentType
 }
 
@@ -60,26 +59,27 @@ func (r ApiGetItemSegmentsRequest) Execute() (*MediaSegmentDtoQueryResult, *http
 /*
 GetItemSegments Gets all media segments based on an itemId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The ItemId.
- @return ApiGetItemSegmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The ItemId.
+	@return ApiGetItemSegmentsRequest
 */
 func (a *MediaSegmentsAPIService) GetItemSegments(ctx context.Context, itemId string) ApiGetItemSegmentsRequest {
 	return ApiGetItemSegmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return MediaSegmentDtoQueryResult
+//
+//	@return MediaSegmentDtoQueryResult
 func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r ApiGetItemSegmentsRequest) (*MediaSegmentDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MediaSegmentDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MediaSegmentDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaSegmentsAPIService.GetItemSegments")
@@ -165,8 +165,8 @@ func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r ApiGetItemSegmentsReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

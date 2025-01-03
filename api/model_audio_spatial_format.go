@@ -20,9 +20,9 @@ type AudioSpatialFormat string
 
 // List of AudioSpatialFormat
 const (
-	AUDIOSPATIALFORMAT_NONE AudioSpatialFormat = "None"
+	AUDIOSPATIALFORMAT_NONE        AudioSpatialFormat = "None"
 	AUDIOSPATIALFORMAT_DOLBY_ATMOS AudioSpatialFormat = "DolbyAtmos"
-	AUDIOSPATIALFORMAT_DTSX AudioSpatialFormat = "DTSX"
+	AUDIOSPATIALFORMAT_DTSX        AudioSpatialFormat = "DTSX"
 )
 
 // All allowed values of AudioSpatialFormat enum
@@ -110,4 +110,3 @@ func (v *NullableAudioSpatialFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

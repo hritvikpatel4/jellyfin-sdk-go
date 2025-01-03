@@ -21,7 +21,7 @@ type SeriesStatus string
 // List of SeriesStatus
 const (
 	SERIESSTATUS_CONTINUING SeriesStatus = "Continuing"
-	SERIESSTATUS_ENDED SeriesStatus = "Ended"
+	SERIESSTATUS_ENDED      SeriesStatus = "Ended"
 	SERIESSTATUS_UNRELEASED SeriesStatus = "Unreleased"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableSeriesStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

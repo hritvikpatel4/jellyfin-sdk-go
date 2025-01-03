@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type CollectionAPI interface {
 
 	/*
-	AddToCollection Adds items to a collection.
+		AddToCollection Adds items to a collection.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param collectionId The collection id.
-	@return ApiAddToCollectionRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param collectionId The collection id.
+		@return ApiAddToCollectionRequest
 	*/
 	AddToCollection(ctx context.Context, collectionId string) ApiAddToCollectionRequest
 
@@ -36,10 +35,10 @@ type CollectionAPI interface {
 	AddToCollectionExecute(r ApiAddToCollectionRequest) (*http.Response, error)
 
 	/*
-	CreateCollection Creates a new collection.
+		CreateCollection Creates a new collection.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateCollectionRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateCollectionRequest
 	*/
 	CreateCollection(ctx context.Context) ApiCreateCollectionRequest
 
@@ -48,11 +47,11 @@ type CollectionAPI interface {
 	CreateCollectionExecute(r ApiCreateCollectionRequest) (*CollectionCreationResult, *http.Response, error)
 
 	/*
-	RemoveFromCollection Removes items from a collection.
+		RemoveFromCollection Removes items from a collection.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param collectionId The collection id.
-	@return ApiRemoveFromCollectionRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param collectionId The collection id.
+		@return ApiRemoveFromCollectionRequest
 	*/
 	RemoveFromCollection(ctx context.Context, collectionId string) ApiRemoveFromCollectionRequest
 
@@ -64,10 +63,10 @@ type CollectionAPI interface {
 type CollectionAPIService service
 
 type ApiAddToCollectionRequest struct {
-	ctx context.Context
-	ApiService CollectionAPI
+	ctx          context.Context
+	ApiService   CollectionAPI
 	collectionId string
-	ids *[]string
+	ids          *[]string
 }
 
 // Item ids, comma delimited.
@@ -83,14 +82,14 @@ func (r ApiAddToCollectionRequest) Execute() (*http.Response, error) {
 /*
 AddToCollection Adds items to a collection.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param collectionId The collection id.
- @return ApiAddToCollectionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param collectionId The collection id.
+	@return ApiAddToCollectionRequest
 */
 func (a *CollectionAPIService) AddToCollection(ctx context.Context, collectionId string) ApiAddToCollectionRequest {
 	return ApiAddToCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		collectionId: collectionId,
 	}
 }
@@ -98,9 +97,9 @@ func (a *CollectionAPIService) AddToCollection(ctx context.Context, collectionId
 // Execute executes the request
 func (a *CollectionAPIService) AddToCollectionExecute(r ApiAddToCollectionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.AddToCollection")
@@ -189,12 +188,12 @@ func (a *CollectionAPIService) AddToCollectionExecute(r ApiAddToCollectionReques
 }
 
 type ApiCreateCollectionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService CollectionAPI
-	name *string
-	ids *[]string
-	parentId *string
-	isLocked *bool
+	name       *string
+	ids        *[]string
+	parentId   *string
+	isLocked   *bool
 }
 
 // The name of the collection.
@@ -228,24 +227,25 @@ func (r ApiCreateCollectionRequest) Execute() (*CollectionCreationResult, *http.
 /*
 CreateCollection Creates a new collection.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCollectionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateCollectionRequest
 */
 func (a *CollectionAPIService) CreateCollection(ctx context.Context) ApiCreateCollectionRequest {
 	return ApiCreateCollectionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CollectionCreationResult
+//
+//	@return CollectionCreationResult
 func (a *CollectionAPIService) CreateCollectionExecute(r ApiCreateCollectionRequest) (*CollectionCreationResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CollectionCreationResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CollectionCreationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.CreateCollection")
@@ -351,10 +351,10 @@ func (a *CollectionAPIService) CreateCollectionExecute(r ApiCreateCollectionRequ
 }
 
 type ApiRemoveFromCollectionRequest struct {
-	ctx context.Context
-	ApiService CollectionAPI
+	ctx          context.Context
+	ApiService   CollectionAPI
 	collectionId string
-	ids *[]string
+	ids          *[]string
 }
 
 // Item ids, comma delimited.
@@ -370,14 +370,14 @@ func (r ApiRemoveFromCollectionRequest) Execute() (*http.Response, error) {
 /*
 RemoveFromCollection Removes items from a collection.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param collectionId The collection id.
- @return ApiRemoveFromCollectionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param collectionId The collection id.
+	@return ApiRemoveFromCollectionRequest
 */
 func (a *CollectionAPIService) RemoveFromCollection(ctx context.Context, collectionId string) ApiRemoveFromCollectionRequest {
 	return ApiRemoveFromCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		collectionId: collectionId,
 	}
 }
@@ -385,9 +385,9 @@ func (a *CollectionAPIService) RemoveFromCollection(ctx context.Context, collect
 // Execute executes the request
 func (a *CollectionAPIService) RemoveFromCollectionExecute(r ApiRemoveFromCollectionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.RemoveFromCollection")

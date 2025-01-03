@@ -33,11 +33,11 @@ type TrailerInfo struct {
 	// Gets or sets the provider ids.
 	ProviderIds map[string]string `json:"ProviderIds,omitempty"`
 	// Gets or sets the year.
-	Year NullableInt32 `json:"Year,omitempty"`
-	IndexNumber NullableInt32 `json:"IndexNumber,omitempty"`
+	Year              NullableInt32 `json:"Year,omitempty"`
+	IndexNumber       NullableInt32 `json:"IndexNumber,omitempty"`
 	ParentIndexNumber NullableInt32 `json:"ParentIndexNumber,omitempty"`
-	PremiereDate NullableTime `json:"PremiereDate,omitempty"`
-	IsAutomated *bool `json:"IsAutomated,omitempty"`
+	PremiereDate      NullableTime  `json:"PremiereDate,omitempty"`
+	IsAutomated       *bool         `json:"IsAutomated,omitempty"`
 }
 
 // NewTrailerInfo instantiates a new TrailerInfo object
@@ -89,6 +89,7 @@ func (o *TrailerInfo) HasName() bool {
 func (o *TrailerInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *TrailerInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -131,6 +132,7 @@ func (o *TrailerInfo) HasOriginalTitle() bool {
 func (o *TrailerInfo) SetOriginalTitle(v string) {
 	o.OriginalTitle.Set(&v)
 }
+
 // SetOriginalTitleNil sets the value for OriginalTitle to be an explicit nil
 func (o *TrailerInfo) SetOriginalTitleNil() {
 	o.OriginalTitle.Set(nil)
@@ -173,6 +175,7 @@ func (o *TrailerInfo) HasPath() bool {
 func (o *TrailerInfo) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *TrailerInfo) SetPathNil() {
 	o.Path.Set(nil)
@@ -215,6 +218,7 @@ func (o *TrailerInfo) HasMetadataLanguage() bool {
 func (o *TrailerInfo) SetMetadataLanguage(v string) {
 	o.MetadataLanguage.Set(&v)
 }
+
 // SetMetadataLanguageNil sets the value for MetadataLanguage to be an explicit nil
 func (o *TrailerInfo) SetMetadataLanguageNil() {
 	o.MetadataLanguage.Set(nil)
@@ -257,6 +261,7 @@ func (o *TrailerInfo) HasMetadataCountryCode() bool {
 func (o *TrailerInfo) SetMetadataCountryCode(v string) {
 	o.MetadataCountryCode.Set(&v)
 }
+
 // SetMetadataCountryCodeNil sets the value for MetadataCountryCode to be an explicit nil
 func (o *TrailerInfo) SetMetadataCountryCodeNil() {
 	o.MetadataCountryCode.Set(nil)
@@ -332,6 +337,7 @@ func (o *TrailerInfo) HasYear() bool {
 func (o *TrailerInfo) SetYear(v int32) {
 	o.Year.Set(&v)
 }
+
 // SetYearNil sets the value for Year to be an explicit nil
 func (o *TrailerInfo) SetYearNil() {
 	o.Year.Set(nil)
@@ -374,6 +380,7 @@ func (o *TrailerInfo) HasIndexNumber() bool {
 func (o *TrailerInfo) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *TrailerInfo) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -416,6 +423,7 @@ func (o *TrailerInfo) HasParentIndexNumber() bool {
 func (o *TrailerInfo) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *TrailerInfo) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -458,6 +466,7 @@ func (o *TrailerInfo) HasPremiereDate() bool {
 func (o *TrailerInfo) SetPremiereDate(v time.Time) {
 	o.PremiereDate.Set(&v)
 }
+
 // SetPremiereDateNil sets the value for PremiereDate to be an explicit nil
 func (o *TrailerInfo) SetPremiereDateNil() {
 	o.PremiereDate.Set(nil)
@@ -501,7 +510,7 @@ func (o *TrailerInfo) SetIsAutomated(v bool) {
 }
 
 func (o TrailerInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,5 +590,3 @@ func (v *NullableTrailerInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

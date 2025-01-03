@@ -21,7 +21,7 @@ var _ MappedNullable = &SeriesTimerInfoDto{}
 // SeriesTimerInfoDto Class SeriesTimerInfoDto.
 type SeriesTimerInfoDto struct {
 	// Gets or sets the Id of the recording.
-	Id NullableString `json:"Id,omitempty"`
+	Id   NullableString `json:"Id,omitempty"`
 	Type NullableString `json:"Type,omitempty"`
 	// Gets or sets the server identifier.
 	ServerId NullableString `json:"ServerId,omitempty"`
@@ -32,7 +32,7 @@ type SeriesTimerInfoDto struct {
 	// Gets or sets the external channel identifier.
 	ExternalChannelId NullableString `json:"ExternalChannelId,omitempty"`
 	// Gets or sets the channel name of the recording.
-	ChannelName NullableString `json:"ChannelName,omitempty"`
+	ChannelName            NullableString `json:"ChannelName,omitempty"`
 	ChannelPrimaryImageTag NullableString `json:"ChannelPrimaryImageTag,omitempty"`
 	// Gets or sets the program identifier.
 	ProgramId NullableString `json:"ProgramId,omitempty"`
@@ -61,14 +61,14 @@ type SeriesTimerInfoDto struct {
 	// Gets or sets the parent backdrop image tags.
 	ParentBackdropImageTags []string `json:"ParentBackdropImageTags,omitempty"`
 	// Gets or sets a value indicating whether this instance is post padding required.
-	IsPostPaddingRequired *bool `json:"IsPostPaddingRequired,omitempty"`
-	KeepUntil *KeepUntil `json:"KeepUntil,omitempty"`
+	IsPostPaddingRequired *bool      `json:"IsPostPaddingRequired,omitempty"`
+	KeepUntil             *KeepUntil `json:"KeepUntil,omitempty"`
 	// Gets or sets a value indicating whether [record any time].
-	RecordAnyTime *bool `json:"RecordAnyTime,omitempty"`
+	RecordAnyTime         *bool `json:"RecordAnyTime,omitempty"`
 	SkipEpisodesInLibrary *bool `json:"SkipEpisodesInLibrary,omitempty"`
 	// Gets or sets a value indicating whether [record any channel].
-	RecordAnyChannel *bool `json:"RecordAnyChannel,omitempty"`
-	KeepUpTo *int32 `json:"KeepUpTo,omitempty"`
+	RecordAnyChannel *bool  `json:"RecordAnyChannel,omitempty"`
+	KeepUpTo         *int32 `json:"KeepUpTo,omitempty"`
 	// Gets or sets a value indicating whether [record new only].
 	RecordNewOnly *bool `json:"RecordNewOnly,omitempty"`
 	// Gets or sets the days.
@@ -136,6 +136,7 @@ func (o *SeriesTimerInfoDto) HasId() bool {
 func (o *SeriesTimerInfoDto) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *SeriesTimerInfoDto) SetIdNil() {
 	o.Id.Set(nil)
@@ -178,6 +179,7 @@ func (o *SeriesTimerInfoDto) HasType() bool {
 func (o *SeriesTimerInfoDto) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *SeriesTimerInfoDto) SetTypeNil() {
 	o.Type.Set(nil)
@@ -220,6 +222,7 @@ func (o *SeriesTimerInfoDto) HasServerId() bool {
 func (o *SeriesTimerInfoDto) SetServerId(v string) {
 	o.ServerId.Set(&v)
 }
+
 // SetServerIdNil sets the value for ServerId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetServerIdNil() {
 	o.ServerId.Set(nil)
@@ -262,6 +265,7 @@ func (o *SeriesTimerInfoDto) HasExternalId() bool {
 func (o *SeriesTimerInfoDto) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
 }
+
 // SetExternalIdNil sets the value for ExternalId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetExternalIdNil() {
 	o.ExternalId.Set(nil)
@@ -336,6 +340,7 @@ func (o *SeriesTimerInfoDto) HasExternalChannelId() bool {
 func (o *SeriesTimerInfoDto) SetExternalChannelId(v string) {
 	o.ExternalChannelId.Set(&v)
 }
+
 // SetExternalChannelIdNil sets the value for ExternalChannelId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetExternalChannelIdNil() {
 	o.ExternalChannelId.Set(nil)
@@ -378,6 +383,7 @@ func (o *SeriesTimerInfoDto) HasChannelName() bool {
 func (o *SeriesTimerInfoDto) SetChannelName(v string) {
 	o.ChannelName.Set(&v)
 }
+
 // SetChannelNameNil sets the value for ChannelName to be an explicit nil
 func (o *SeriesTimerInfoDto) SetChannelNameNil() {
 	o.ChannelName.Set(nil)
@@ -420,6 +426,7 @@ func (o *SeriesTimerInfoDto) HasChannelPrimaryImageTag() bool {
 func (o *SeriesTimerInfoDto) SetChannelPrimaryImageTag(v string) {
 	o.ChannelPrimaryImageTag.Set(&v)
 }
+
 // SetChannelPrimaryImageTagNil sets the value for ChannelPrimaryImageTag to be an explicit nil
 func (o *SeriesTimerInfoDto) SetChannelPrimaryImageTagNil() {
 	o.ChannelPrimaryImageTag.Set(nil)
@@ -462,6 +469,7 @@ func (o *SeriesTimerInfoDto) HasProgramId() bool {
 func (o *SeriesTimerInfoDto) SetProgramId(v string) {
 	o.ProgramId.Set(&v)
 }
+
 // SetProgramIdNil sets the value for ProgramId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetProgramIdNil() {
 	o.ProgramId.Set(nil)
@@ -504,6 +512,7 @@ func (o *SeriesTimerInfoDto) HasExternalProgramId() bool {
 func (o *SeriesTimerInfoDto) SetExternalProgramId(v string) {
 	o.ExternalProgramId.Set(&v)
 }
+
 // SetExternalProgramIdNil sets the value for ExternalProgramId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetExternalProgramIdNil() {
 	o.ExternalProgramId.Set(nil)
@@ -546,6 +555,7 @@ func (o *SeriesTimerInfoDto) HasName() bool {
 func (o *SeriesTimerInfoDto) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *SeriesTimerInfoDto) SetNameNil() {
 	o.Name.Set(nil)
@@ -588,6 +598,7 @@ func (o *SeriesTimerInfoDto) HasOverview() bool {
 func (o *SeriesTimerInfoDto) SetOverview(v string) {
 	o.Overview.Set(&v)
 }
+
 // SetOverviewNil sets the value for Overview to be an explicit nil
 func (o *SeriesTimerInfoDto) SetOverviewNil() {
 	o.Overview.Set(nil)
@@ -694,6 +705,7 @@ func (o *SeriesTimerInfoDto) HasServiceName() bool {
 func (o *SeriesTimerInfoDto) SetServiceName(v string) {
 	o.ServiceName.Set(&v)
 }
+
 // SetServiceNameNil sets the value for ServiceName to be an explicit nil
 func (o *SeriesTimerInfoDto) SetServiceNameNil() {
 	o.ServiceName.Set(nil)
@@ -864,6 +876,7 @@ func (o *SeriesTimerInfoDto) HasParentBackdropItemId() bool {
 func (o *SeriesTimerInfoDto) SetParentBackdropItemId(v string) {
 	o.ParentBackdropItemId.Set(&v)
 }
+
 // SetParentBackdropItemIdNil sets the value for ParentBackdropItemId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetParentBackdropItemIdNil() {
 	o.ParentBackdropItemId.Set(nil)
@@ -1196,6 +1209,7 @@ func (o *SeriesTimerInfoDto) HasDayPattern() bool {
 func (o *SeriesTimerInfoDto) SetDayPattern(v DayPattern) {
 	o.DayPattern.Set(&v)
 }
+
 // SetDayPatternNil sets the value for DayPattern to be an explicit nil
 func (o *SeriesTimerInfoDto) SetDayPatternNil() {
 	o.DayPattern.Set(nil)
@@ -1271,6 +1285,7 @@ func (o *SeriesTimerInfoDto) HasParentThumbItemId() bool {
 func (o *SeriesTimerInfoDto) SetParentThumbItemId(v string) {
 	o.ParentThumbItemId.Set(&v)
 }
+
 // SetParentThumbItemIdNil sets the value for ParentThumbItemId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetParentThumbItemIdNil() {
 	o.ParentThumbItemId.Set(nil)
@@ -1313,6 +1328,7 @@ func (o *SeriesTimerInfoDto) HasParentThumbImageTag() bool {
 func (o *SeriesTimerInfoDto) SetParentThumbImageTag(v string) {
 	o.ParentThumbImageTag.Set(&v)
 }
+
 // SetParentThumbImageTagNil sets the value for ParentThumbImageTag to be an explicit nil
 func (o *SeriesTimerInfoDto) SetParentThumbImageTagNil() {
 	o.ParentThumbImageTag.Set(nil)
@@ -1355,6 +1371,7 @@ func (o *SeriesTimerInfoDto) HasParentPrimaryImageItemId() bool {
 func (o *SeriesTimerInfoDto) SetParentPrimaryImageItemId(v string) {
 	o.ParentPrimaryImageItemId.Set(&v)
 }
+
 // SetParentPrimaryImageItemIdNil sets the value for ParentPrimaryImageItemId to be an explicit nil
 func (o *SeriesTimerInfoDto) SetParentPrimaryImageItemIdNil() {
 	o.ParentPrimaryImageItemId.Set(nil)
@@ -1397,6 +1414,7 @@ func (o *SeriesTimerInfoDto) HasParentPrimaryImageTag() bool {
 func (o *SeriesTimerInfoDto) SetParentPrimaryImageTag(v string) {
 	o.ParentPrimaryImageTag.Set(&v)
 }
+
 // SetParentPrimaryImageTagNil sets the value for ParentPrimaryImageTag to be an explicit nil
 func (o *SeriesTimerInfoDto) SetParentPrimaryImageTagNil() {
 	o.ParentPrimaryImageTag.Set(nil)
@@ -1408,7 +1426,7 @@ func (o *SeriesTimerInfoDto) UnsetParentPrimaryImageTag() {
 }
 
 func (o SeriesTimerInfoDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1560,5 +1578,3 @@ func (v *NullableSeriesTimerInfoDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

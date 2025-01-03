@@ -20,7 +20,7 @@ type IsoType string
 
 // List of IsoType
 const (
-	ISOTYPE_DVD IsoType = "Dvd"
+	ISOTYPE_DVD     IsoType = "Dvd"
 	ISOTYPE_BLU_RAY IsoType = "BluRay"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableIsoType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

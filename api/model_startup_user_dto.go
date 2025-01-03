@@ -74,6 +74,7 @@ func (o *StartupUserDto) HasName() bool {
 func (o *StartupUserDto) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *StartupUserDto) SetNameNil() {
 	o.Name.Set(nil)
@@ -116,6 +117,7 @@ func (o *StartupUserDto) HasPassword() bool {
 func (o *StartupUserDto) SetPassword(v string) {
 	o.Password.Set(&v)
 }
+
 // SetPasswordNil sets the value for Password to be an explicit nil
 func (o *StartupUserDto) SetPasswordNil() {
 	o.Password.Set(nil)
@@ -127,7 +129,7 @@ func (o *StartupUserDto) UnsetPassword() {
 }
 
 func (o StartupUserDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableStartupUserDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

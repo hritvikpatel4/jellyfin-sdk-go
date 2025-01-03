@@ -90,6 +90,7 @@ func (o *TaskInfo) HasName() bool {
 func (o *TaskInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *TaskInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -164,6 +165,7 @@ func (o *TaskInfo) HasCurrentProgressPercentage() bool {
 func (o *TaskInfo) SetCurrentProgressPercentage(v float64) {
 	o.CurrentProgressPercentage.Set(&v)
 }
+
 // SetCurrentProgressPercentageNil sets the value for CurrentProgressPercentage to be an explicit nil
 func (o *TaskInfo) SetCurrentProgressPercentageNil() {
 	o.CurrentProgressPercentage.Set(nil)
@@ -206,6 +208,7 @@ func (o *TaskInfo) HasId() bool {
 func (o *TaskInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *TaskInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -248,6 +251,7 @@ func (o *TaskInfo) HasLastExecutionResult() bool {
 func (o *TaskInfo) SetLastExecutionResult(v TaskResult) {
 	o.LastExecutionResult.Set(&v)
 }
+
 // SetLastExecutionResultNil sets the value for LastExecutionResult to be an explicit nil
 func (o *TaskInfo) SetLastExecutionResultNil() {
 	o.LastExecutionResult.Set(nil)
@@ -323,6 +327,7 @@ func (o *TaskInfo) HasDescription() bool {
 func (o *TaskInfo) SetDescription(v string) {
 	o.Description.Set(&v)
 }
+
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *TaskInfo) SetDescriptionNil() {
 	o.Description.Set(nil)
@@ -365,6 +370,7 @@ func (o *TaskInfo) HasCategory() bool {
 func (o *TaskInfo) SetCategory(v string) {
 	o.Category.Set(&v)
 }
+
 // SetCategoryNil sets the value for Category to be an explicit nil
 func (o *TaskInfo) SetCategoryNil() {
 	o.Category.Set(nil)
@@ -439,6 +445,7 @@ func (o *TaskInfo) HasKey() bool {
 func (o *TaskInfo) SetKey(v string) {
 	o.Key.Set(&v)
 }
+
 // SetKeyNil sets the value for Key to be an explicit nil
 func (o *TaskInfo) SetKeyNil() {
 	o.Key.Set(nil)
@@ -450,7 +457,7 @@ func (o *TaskInfo) UnsetKey() {
 }
 
 func (o TaskInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,5 +534,3 @@ func (v *NullableTaskInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

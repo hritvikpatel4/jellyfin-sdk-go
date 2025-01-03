@@ -20,8 +20,8 @@ type MediaSourceType string
 
 // List of MediaSourceType
 const (
-	MEDIASOURCETYPE_DEFAULT MediaSourceType = "Default"
-	MEDIASOURCETYPE_GROUPING MediaSourceType = "Grouping"
+	MEDIASOURCETYPE_DEFAULT     MediaSourceType = "Default"
+	MEDIASOURCETYPE_GROUPING    MediaSourceType = "Grouping"
 	MEDIASOURCETYPE_PLACEHOLDER MediaSourceType = "Placeholder"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableMediaSourceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

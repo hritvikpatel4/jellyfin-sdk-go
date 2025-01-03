@@ -72,6 +72,7 @@ func (o *DefaultDirectoryBrowserInfoDto) HasPath() bool {
 func (o *DefaultDirectoryBrowserInfoDto) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *DefaultDirectoryBrowserInfoDto) SetPathNil() {
 	o.Path.Set(nil)
@@ -83,7 +84,7 @@ func (o *DefaultDirectoryBrowserInfoDto) UnsetPath() {
 }
 
 func (o DefaultDirectoryBrowserInfoDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,5 +134,3 @@ func (v *NullableDefaultDirectoryBrowserInfoDto) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

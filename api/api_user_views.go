@@ -19,14 +19,13 @@ import (
 	"reflect"
 )
 
-
 type UserViewsAPI interface {
 
 	/*
-	GetGroupingOptions Get user view grouping options.
+		GetGroupingOptions Get user view grouping options.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetGroupingOptionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetGroupingOptionsRequest
 	*/
 	GetGroupingOptions(ctx context.Context) ApiGetGroupingOptionsRequest
 
@@ -35,10 +34,10 @@ type UserViewsAPI interface {
 	GetGroupingOptionsExecute(r ApiGetGroupingOptionsRequest) ([]SpecialViewOptionDto, *http.Response, error)
 
 	/*
-	GetUserViews Get user views.
+		GetUserViews Get user views.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUserViewsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetUserViewsRequest
 	*/
 	GetUserViews(ctx context.Context) ApiGetUserViewsRequest
 
@@ -51,9 +50,9 @@ type UserViewsAPI interface {
 type UserViewsAPIService service
 
 type ApiGetGroupingOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService UserViewsAPI
-	userId *string
+	userId     *string
 }
 
 // User id.
@@ -69,24 +68,25 @@ func (r ApiGetGroupingOptionsRequest) Execute() ([]SpecialViewOptionDto, *http.R
 /*
 GetGroupingOptions Get user view grouping options.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGroupingOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetGroupingOptionsRequest
 */
 func (a *UserViewsAPIService) GetGroupingOptions(ctx context.Context) ApiGetGroupingOptionsRequest {
 	return ApiGetGroupingOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SpecialViewOptionDto
+//
+//	@return []SpecialViewOptionDto
 func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsRequest) ([]SpecialViewOptionDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SpecialViewOptionDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SpecialViewOptionDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserViewsAPIService.GetGroupingOptions")
@@ -163,8 +163,8 @@ func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -183,12 +183,12 @@ func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsR
 }
 
 type ApiGetUserViewsRequest struct {
-	ctx context.Context
-	ApiService UserViewsAPI
-	userId *string
+	ctx                    context.Context
+	ApiService             UserViewsAPI
+	userId                 *string
 	includeExternalContent *bool
-	presetViews *[]CollectionType
-	includeHidden *bool
+	presetViews            *[]CollectionType
+	includeHidden          *bool
 }
 
 // User id.
@@ -222,24 +222,25 @@ func (r ApiGetUserViewsRequest) Execute() (*BaseItemDtoQueryResult, *http.Respon
 /*
 GetUserViews Get user views.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserViewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUserViewsRequest
 */
 func (a *UserViewsAPIService) GetUserViews(ctx context.Context) ApiGetUserViewsRequest {
 	return ApiGetUserViewsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *UserViewsAPIService) GetUserViewsExecute(r ApiGetUserViewsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserViewsAPIService.GetUserViews")

@@ -26,8 +26,8 @@ type CultureDto struct {
 	// Gets the name of the two letter ISO language.
 	TwoLetterISOLanguageName *string `json:"TwoLetterISOLanguageName,omitempty"`
 	// Gets the name of the three letter ISO language.
-	ThreeLetterISOLanguageName NullableString `json:"ThreeLetterISOLanguageName,omitempty"`
-	ThreeLetterISOLanguageNames []string `json:"ThreeLetterISOLanguageNames,omitempty"`
+	ThreeLetterISOLanguageName  NullableString `json:"ThreeLetterISOLanguageName,omitempty"`
+	ThreeLetterISOLanguageNames []string       `json:"ThreeLetterISOLanguageNames,omitempty"`
 }
 
 // NewCultureDto instantiates a new CultureDto object
@@ -175,6 +175,7 @@ func (o *CultureDto) HasThreeLetterISOLanguageName() bool {
 func (o *CultureDto) SetThreeLetterISOLanguageName(v string) {
 	o.ThreeLetterISOLanguageName.Set(&v)
 }
+
 // SetThreeLetterISOLanguageNameNil sets the value for ThreeLetterISOLanguageName to be an explicit nil
 func (o *CultureDto) SetThreeLetterISOLanguageNameNil() {
 	o.ThreeLetterISOLanguageName.Set(nil)
@@ -218,7 +219,7 @@ func (o *CultureDto) SetThreeLetterISOLanguageNames(v []string) {
 }
 
 func (o CultureDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,5 +281,3 @@ func (v *NullableCultureDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

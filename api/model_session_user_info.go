@@ -106,6 +106,7 @@ func (o *SessionUserInfo) HasUserName() bool {
 func (o *SessionUserInfo) SetUserName(v string) {
 	o.UserName.Set(&v)
 }
+
 // SetUserNameNil sets the value for UserName to be an explicit nil
 func (o *SessionUserInfo) SetUserNameNil() {
 	o.UserName.Set(nil)
@@ -117,7 +118,7 @@ func (o *SessionUserInfo) UnsetUserName() {
 }
 
 func (o SessionUserInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableSessionUserInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

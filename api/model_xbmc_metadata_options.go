@@ -19,11 +19,11 @@ var _ MappedNullable = &XbmcMetadataOptions{}
 
 // XbmcMetadataOptions struct for XbmcMetadataOptions
 type XbmcMetadataOptions struct {
-	UserId NullableString `json:"UserId,omitempty"`
-	ReleaseDateFormat *string `json:"ReleaseDateFormat,omitempty"`
-	SaveImagePathsInNfo *bool `json:"SaveImagePathsInNfo,omitempty"`
-	EnablePathSubstitution *bool `json:"EnablePathSubstitution,omitempty"`
-	EnableExtraThumbsDuplication *bool `json:"EnableExtraThumbsDuplication,omitempty"`
+	UserId                       NullableString `json:"UserId,omitempty"`
+	ReleaseDateFormat            *string        `json:"ReleaseDateFormat,omitempty"`
+	SaveImagePathsInNfo          *bool          `json:"SaveImagePathsInNfo,omitempty"`
+	EnablePathSubstitution       *bool          `json:"EnablePathSubstitution,omitempty"`
+	EnableExtraThumbsDuplication *bool          `json:"EnableExtraThumbsDuplication,omitempty"`
 }
 
 // NewXbmcMetadataOptions instantiates a new XbmcMetadataOptions object
@@ -75,6 +75,7 @@ func (o *XbmcMetadataOptions) HasUserId() bool {
 func (o *XbmcMetadataOptions) SetUserId(v string) {
 	o.UserId.Set(&v)
 }
+
 // SetUserIdNil sets the value for UserId to be an explicit nil
 func (o *XbmcMetadataOptions) SetUserIdNil() {
 	o.UserId.Set(nil)
@@ -214,7 +215,7 @@ func (o *XbmcMetadataOptions) SetEnableExtraThumbsDuplication(v bool) {
 }
 
 func (o XbmcMetadataOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -276,5 +277,3 @@ func (v *NullableXbmcMetadataOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type PluginsAPI interface {
 
 	/*
-	DisablePlugin Disable a plugin.
+		DisablePlugin Disable a plugin.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@param version Plugin version.
-	@return ApiDisablePluginRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@param version Plugin version.
+		@return ApiDisablePluginRequest
 	*/
 	DisablePlugin(ctx context.Context, pluginId string, version string) ApiDisablePluginRequest
 
@@ -37,12 +36,12 @@ type PluginsAPI interface {
 	DisablePluginExecute(r ApiDisablePluginRequest) (*http.Response, error)
 
 	/*
-	EnablePlugin Enables a disabled plugin.
+		EnablePlugin Enables a disabled plugin.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@param version Plugin version.
-	@return ApiEnablePluginRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@param version Plugin version.
+		@return ApiEnablePluginRequest
 	*/
 	EnablePlugin(ctx context.Context, pluginId string, version string) ApiEnablePluginRequest
 
@@ -50,11 +49,11 @@ type PluginsAPI interface {
 	EnablePluginExecute(r ApiEnablePluginRequest) (*http.Response, error)
 
 	/*
-	GetPluginConfiguration Gets plugin configuration.
+		GetPluginConfiguration Gets plugin configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@return ApiGetPluginConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@return ApiGetPluginConfigurationRequest
 	*/
 	GetPluginConfiguration(ctx context.Context, pluginId string) ApiGetPluginConfigurationRequest
 
@@ -63,12 +62,12 @@ type PluginsAPI interface {
 	GetPluginConfigurationExecute(r ApiGetPluginConfigurationRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
-	GetPluginImage Gets a plugin's image.
+		GetPluginImage Gets a plugin's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@param version Plugin version.
-	@return ApiGetPluginImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@param version Plugin version.
+		@return ApiGetPluginImageRequest
 	*/
 	GetPluginImage(ctx context.Context, pluginId string, version string) ApiGetPluginImageRequest
 
@@ -77,11 +76,11 @@ type PluginsAPI interface {
 	GetPluginImageExecute(r ApiGetPluginImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetPluginManifest Gets a plugin's manifest.
+		GetPluginManifest Gets a plugin's manifest.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@return ApiGetPluginManifestRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@return ApiGetPluginManifestRequest
 	*/
 	GetPluginManifest(ctx context.Context, pluginId string) ApiGetPluginManifestRequest
 
@@ -89,10 +88,10 @@ type PluginsAPI interface {
 	GetPluginManifestExecute(r ApiGetPluginManifestRequest) (*http.Response, error)
 
 	/*
-	GetPlugins Gets a list of currently installed plugins.
+		GetPlugins Gets a list of currently installed plugins.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPluginsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPluginsRequest
 	*/
 	GetPlugins(ctx context.Context) ApiGetPluginsRequest
 
@@ -101,13 +100,13 @@ type PluginsAPI interface {
 	GetPluginsExecute(r ApiGetPluginsRequest) ([]PluginInfo, *http.Response, error)
 
 	/*
-	UninstallPlugin Uninstalls a plugin.
+		UninstallPlugin Uninstalls a plugin.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@return ApiUninstallPluginRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@return ApiUninstallPluginRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UninstallPlugin(ctx context.Context, pluginId string) ApiUninstallPluginRequest
 
@@ -116,12 +115,12 @@ type PluginsAPI interface {
 	UninstallPluginExecute(r ApiUninstallPluginRequest) (*http.Response, error)
 
 	/*
-	UninstallPluginByVersion Uninstalls a plugin by version.
+		UninstallPluginByVersion Uninstalls a plugin by version.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@param version Plugin version.
-	@return ApiUninstallPluginByVersionRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@param version Plugin version.
+		@return ApiUninstallPluginByVersionRequest
 	*/
 	UninstallPluginByVersion(ctx context.Context, pluginId string, version string) ApiUninstallPluginByVersionRequest
 
@@ -129,13 +128,13 @@ type PluginsAPI interface {
 	UninstallPluginByVersionExecute(r ApiUninstallPluginByVersionRequest) (*http.Response, error)
 
 	/*
-	UpdatePluginConfiguration Updates plugin configuration.
+		UpdatePluginConfiguration Updates plugin configuration.
 
-	Accepts plugin configuration as JSON body.
+		Accepts plugin configuration as JSON body.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param pluginId Plugin id.
-	@return ApiUpdatePluginConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param pluginId Plugin id.
+		@return ApiUpdatePluginConfigurationRequest
 	*/
 	UpdatePluginConfiguration(ctx context.Context, pluginId string) ApiUpdatePluginConfigurationRequest
 
@@ -147,10 +146,10 @@ type PluginsAPI interface {
 type PluginsAPIService service
 
 type ApiDisablePluginRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
-	version string
+	pluginId   string
+	version    string
 }
 
 func (r ApiDisablePluginRequest) Execute() (*http.Response, error) {
@@ -160,26 +159,26 @@ func (r ApiDisablePluginRequest) Execute() (*http.Response, error) {
 /*
 DisablePlugin Disable a plugin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @param version Plugin version.
- @return ApiDisablePluginRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@param version Plugin version.
+	@return ApiDisablePluginRequest
 */
 func (a *PluginsAPIService) DisablePlugin(ctx context.Context, pluginId string, version string) ApiDisablePluginRequest {
 	return ApiDisablePluginRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
-		version: version,
+		ctx:        ctx,
+		pluginId:   pluginId,
+		version:    version,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) DisablePluginExecute(r ApiDisablePluginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.DisablePlugin")
@@ -255,8 +254,8 @@ func (a *PluginsAPIService) DisablePluginExecute(r ApiDisablePluginRequest) (*ht
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -266,10 +265,10 @@ func (a *PluginsAPIService) DisablePluginExecute(r ApiDisablePluginRequest) (*ht
 }
 
 type ApiEnablePluginRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
-	version string
+	pluginId   string
+	version    string
 }
 
 func (r ApiEnablePluginRequest) Execute() (*http.Response, error) {
@@ -279,26 +278,26 @@ func (r ApiEnablePluginRequest) Execute() (*http.Response, error) {
 /*
 EnablePlugin Enables a disabled plugin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @param version Plugin version.
- @return ApiEnablePluginRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@param version Plugin version.
+	@return ApiEnablePluginRequest
 */
 func (a *PluginsAPIService) EnablePlugin(ctx context.Context, pluginId string, version string) ApiEnablePluginRequest {
 	return ApiEnablePluginRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
-		version: version,
+		ctx:        ctx,
+		pluginId:   pluginId,
+		version:    version,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) EnablePluginExecute(r ApiEnablePluginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.EnablePlugin")
@@ -374,8 +373,8 @@ func (a *PluginsAPIService) EnablePluginExecute(r ApiEnablePluginRequest) (*http
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -385,9 +384,9 @@ func (a *PluginsAPIService) EnablePluginExecute(r ApiEnablePluginRequest) (*http
 }
 
 type ApiGetPluginConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
+	pluginId   string
 }
 
 func (r ApiGetPluginConfigurationRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -397,26 +396,27 @@ func (r ApiGetPluginConfigurationRequest) Execute() (map[string]interface{}, *ht
 /*
 GetPluginConfiguration Gets plugin configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @return ApiGetPluginConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@return ApiGetPluginConfigurationRequest
 */
 func (a *PluginsAPIService) GetPluginConfiguration(ctx context.Context, pluginId string) ApiGetPluginConfigurationRequest {
 	return ApiGetPluginConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
+		ctx:        ctx,
+		pluginId:   pluginId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *PluginsAPIService) GetPluginConfigurationExecute(r ApiGetPluginConfigurationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.GetPluginConfiguration")
@@ -491,8 +491,8 @@ func (a *PluginsAPIService) GetPluginConfigurationExecute(r ApiGetPluginConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -511,10 +511,10 @@ func (a *PluginsAPIService) GetPluginConfigurationExecute(r ApiGetPluginConfigur
 }
 
 type ApiGetPluginImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
-	version string
+	pluginId   string
+	version    string
 }
 
 func (r ApiGetPluginImageRequest) Execute() (*os.File, *http.Response, error) {
@@ -524,28 +524,29 @@ func (r ApiGetPluginImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetPluginImage Gets a plugin's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @param version Plugin version.
- @return ApiGetPluginImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@param version Plugin version.
+	@return ApiGetPluginImageRequest
 */
 func (a *PluginsAPIService) GetPluginImage(ctx context.Context, pluginId string, version string) ApiGetPluginImageRequest {
 	return ApiGetPluginImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
-		version: version,
+		ctx:        ctx,
+		pluginId:   pluginId,
+		version:    version,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *PluginsAPIService) GetPluginImageExecute(r ApiGetPluginImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.GetPluginImage")
@@ -621,8 +622,8 @@ func (a *PluginsAPIService) GetPluginImageExecute(r ApiGetPluginImageRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -641,9 +642,9 @@ func (a *PluginsAPIService) GetPluginImageExecute(r ApiGetPluginImageRequest) (*
 }
 
 type ApiGetPluginManifestRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
+	pluginId   string
 }
 
 func (r ApiGetPluginManifestRequest) Execute() (*http.Response, error) {
@@ -653,24 +654,24 @@ func (r ApiGetPluginManifestRequest) Execute() (*http.Response, error) {
 /*
 GetPluginManifest Gets a plugin's manifest.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @return ApiGetPluginManifestRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@return ApiGetPluginManifestRequest
 */
 func (a *PluginsAPIService) GetPluginManifest(ctx context.Context, pluginId string) ApiGetPluginManifestRequest {
 	return ApiGetPluginManifestRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
+		ctx:        ctx,
+		pluginId:   pluginId,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) GetPluginManifestExecute(r ApiGetPluginManifestRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.GetPluginManifest")
@@ -745,8 +746,8 @@ func (a *PluginsAPIService) GetPluginManifestExecute(r ApiGetPluginManifestReque
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -756,7 +757,7 @@ func (a *PluginsAPIService) GetPluginManifestExecute(r ApiGetPluginManifestReque
 }
 
 type ApiGetPluginsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
 }
 
@@ -767,24 +768,25 @@ func (r ApiGetPluginsRequest) Execute() ([]PluginInfo, *http.Response, error) {
 /*
 GetPlugins Gets a list of currently installed plugins.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPluginsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPluginsRequest
 */
 func (a *PluginsAPIService) GetPlugins(ctx context.Context) ApiGetPluginsRequest {
 	return ApiGetPluginsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PluginInfo
+//
+//	@return []PluginInfo
 func (a *PluginsAPIService) GetPluginsExecute(r ApiGetPluginsRequest) ([]PluginInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PluginInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PluginInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.GetPlugins")
@@ -867,9 +869,9 @@ func (a *PluginsAPIService) GetPluginsExecute(r ApiGetPluginsRequest) ([]PluginI
 }
 
 type ApiUninstallPluginRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
+	pluginId   string
 }
 
 func (r ApiUninstallPluginRequest) Execute() (*http.Response, error) {
@@ -879,17 +881,17 @@ func (r ApiUninstallPluginRequest) Execute() (*http.Response, error) {
 /*
 UninstallPlugin Uninstalls a plugin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @return ApiUninstallPluginRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@return ApiUninstallPluginRequest
 
 Deprecated
 */
 func (a *PluginsAPIService) UninstallPlugin(ctx context.Context, pluginId string) ApiUninstallPluginRequest {
 	return ApiUninstallPluginRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
+		ctx:        ctx,
+		pluginId:   pluginId,
 	}
 }
 
@@ -897,9 +899,9 @@ func (a *PluginsAPIService) UninstallPlugin(ctx context.Context, pluginId string
 // Deprecated
 func (a *PluginsAPIService) UninstallPluginExecute(r ApiUninstallPluginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.UninstallPlugin")
@@ -974,8 +976,8 @@ func (a *PluginsAPIService) UninstallPluginExecute(r ApiUninstallPluginRequest) 
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -985,10 +987,10 @@ func (a *PluginsAPIService) UninstallPluginExecute(r ApiUninstallPluginRequest) 
 }
 
 type ApiUninstallPluginByVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
-	version string
+	pluginId   string
+	version    string
 }
 
 func (r ApiUninstallPluginByVersionRequest) Execute() (*http.Response, error) {
@@ -998,26 +1000,26 @@ func (r ApiUninstallPluginByVersionRequest) Execute() (*http.Response, error) {
 /*
 UninstallPluginByVersion Uninstalls a plugin by version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @param version Plugin version.
- @return ApiUninstallPluginByVersionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@param version Plugin version.
+	@return ApiUninstallPluginByVersionRequest
 */
 func (a *PluginsAPIService) UninstallPluginByVersion(ctx context.Context, pluginId string, version string) ApiUninstallPluginByVersionRequest {
 	return ApiUninstallPluginByVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
-		version: version,
+		ctx:        ctx,
+		pluginId:   pluginId,
+		version:    version,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) UninstallPluginByVersionExecute(r ApiUninstallPluginByVersionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.UninstallPluginByVersion")
@@ -1093,8 +1095,8 @@ func (a *PluginsAPIService) UninstallPluginByVersionExecute(r ApiUninstallPlugin
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1104,9 +1106,9 @@ func (a *PluginsAPIService) UninstallPluginByVersionExecute(r ApiUninstallPlugin
 }
 
 type ApiUpdatePluginConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PluginsAPI
-	pluginId string
+	pluginId   string
 }
 
 func (r ApiUpdatePluginConfigurationRequest) Execute() (*http.Response, error) {
@@ -1118,24 +1120,24 @@ UpdatePluginConfiguration Updates plugin configuration.
 
 Accepts plugin configuration as JSON body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pluginId Plugin id.
- @return ApiUpdatePluginConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pluginId Plugin id.
+	@return ApiUpdatePluginConfigurationRequest
 */
 func (a *PluginsAPIService) UpdatePluginConfiguration(ctx context.Context, pluginId string) ApiUpdatePluginConfigurationRequest {
 	return ApiUpdatePluginConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		pluginId: pluginId,
+		ctx:        ctx,
+		pluginId:   pluginId,
 	}
 }
 
 // Execute executes the request
 func (a *PluginsAPIService) UpdatePluginConfigurationExecute(r ApiUpdatePluginConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.UpdatePluginConfiguration")
@@ -1210,8 +1212,8 @@ func (a *PluginsAPIService) UpdatePluginConfigurationExecute(r ApiUpdatePluginCo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

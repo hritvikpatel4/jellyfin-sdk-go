@@ -179,6 +179,7 @@ func (o *SendCommand) HasPositionTicks() bool {
 func (o *SendCommand) SetPositionTicks(v int64) {
 	o.PositionTicks.Set(&v)
 }
+
 // SetPositionTicksNil sets the value for PositionTicks to be an explicit nil
 func (o *SendCommand) SetPositionTicksNil() {
 	o.PositionTicks.Set(nil)
@@ -254,7 +255,7 @@ func (o *SendCommand) SetEmittedAt(v time.Time) {
 }
 
 func (o SendCommand) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -319,5 +320,3 @@ func (v *NullableSendCommand) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

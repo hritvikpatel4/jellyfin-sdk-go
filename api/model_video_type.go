@@ -21,9 +21,9 @@ type VideoType string
 // List of VideoType
 const (
 	VIDEOTYPE_VIDEO_FILE VideoType = "VideoFile"
-	VIDEOTYPE_ISO VideoType = "Iso"
-	VIDEOTYPE_DVD VideoType = "Dvd"
-	VIDEOTYPE_BLU_RAY VideoType = "BluRay"
+	VIDEOTYPE_ISO        VideoType = "Iso"
+	VIDEOTYPE_DVD        VideoType = "Dvd"
+	VIDEOTYPE_BLU_RAY    VideoType = "BluRay"
 )
 
 // All allowed values of VideoType enum
@@ -112,4 +112,3 @@ func (v *NullableVideoType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

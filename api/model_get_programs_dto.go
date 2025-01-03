@@ -162,6 +162,7 @@ func (o *GetProgramsDto) HasUserId() bool {
 func (o *GetProgramsDto) SetUserId(v string) {
 	o.UserId.Set(&v)
 }
+
 // SetUserIdNil sets the value for UserId to be an explicit nil
 func (o *GetProgramsDto) SetUserIdNil() {
 	o.UserId.Set(nil)
@@ -204,6 +205,7 @@ func (o *GetProgramsDto) HasMinStartDate() bool {
 func (o *GetProgramsDto) SetMinStartDate(v time.Time) {
 	o.MinStartDate.Set(&v)
 }
+
 // SetMinStartDateNil sets the value for MinStartDate to be an explicit nil
 func (o *GetProgramsDto) SetMinStartDateNil() {
 	o.MinStartDate.Set(nil)
@@ -246,6 +248,7 @@ func (o *GetProgramsDto) HasHasAired() bool {
 func (o *GetProgramsDto) SetHasAired(v bool) {
 	o.HasAired.Set(&v)
 }
+
 // SetHasAiredNil sets the value for HasAired to be an explicit nil
 func (o *GetProgramsDto) SetHasAiredNil() {
 	o.HasAired.Set(nil)
@@ -288,6 +291,7 @@ func (o *GetProgramsDto) HasIsAiring() bool {
 func (o *GetProgramsDto) SetIsAiring(v bool) {
 	o.IsAiring.Set(&v)
 }
+
 // SetIsAiringNil sets the value for IsAiring to be an explicit nil
 func (o *GetProgramsDto) SetIsAiringNil() {
 	o.IsAiring.Set(nil)
@@ -330,6 +334,7 @@ func (o *GetProgramsDto) HasMaxStartDate() bool {
 func (o *GetProgramsDto) SetMaxStartDate(v time.Time) {
 	o.MaxStartDate.Set(&v)
 }
+
 // SetMaxStartDateNil sets the value for MaxStartDate to be an explicit nil
 func (o *GetProgramsDto) SetMaxStartDateNil() {
 	o.MaxStartDate.Set(nil)
@@ -372,6 +377,7 @@ func (o *GetProgramsDto) HasMinEndDate() bool {
 func (o *GetProgramsDto) SetMinEndDate(v time.Time) {
 	o.MinEndDate.Set(&v)
 }
+
 // SetMinEndDateNil sets the value for MinEndDate to be an explicit nil
 func (o *GetProgramsDto) SetMinEndDateNil() {
 	o.MinEndDate.Set(nil)
@@ -414,6 +420,7 @@ func (o *GetProgramsDto) HasMaxEndDate() bool {
 func (o *GetProgramsDto) SetMaxEndDate(v time.Time) {
 	o.MaxEndDate.Set(&v)
 }
+
 // SetMaxEndDateNil sets the value for MaxEndDate to be an explicit nil
 func (o *GetProgramsDto) SetMaxEndDateNil() {
 	o.MaxEndDate.Set(nil)
@@ -456,6 +463,7 @@ func (o *GetProgramsDto) HasIsMovie() bool {
 func (o *GetProgramsDto) SetIsMovie(v bool) {
 	o.IsMovie.Set(&v)
 }
+
 // SetIsMovieNil sets the value for IsMovie to be an explicit nil
 func (o *GetProgramsDto) SetIsMovieNil() {
 	o.IsMovie.Set(nil)
@@ -498,6 +506,7 @@ func (o *GetProgramsDto) HasIsSeries() bool {
 func (o *GetProgramsDto) SetIsSeries(v bool) {
 	o.IsSeries.Set(&v)
 }
+
 // SetIsSeriesNil sets the value for IsSeries to be an explicit nil
 func (o *GetProgramsDto) SetIsSeriesNil() {
 	o.IsSeries.Set(nil)
@@ -540,6 +549,7 @@ func (o *GetProgramsDto) HasIsNews() bool {
 func (o *GetProgramsDto) SetIsNews(v bool) {
 	o.IsNews.Set(&v)
 }
+
 // SetIsNewsNil sets the value for IsNews to be an explicit nil
 func (o *GetProgramsDto) SetIsNewsNil() {
 	o.IsNews.Set(nil)
@@ -582,6 +592,7 @@ func (o *GetProgramsDto) HasIsKids() bool {
 func (o *GetProgramsDto) SetIsKids(v bool) {
 	o.IsKids.Set(&v)
 }
+
 // SetIsKidsNil sets the value for IsKids to be an explicit nil
 func (o *GetProgramsDto) SetIsKidsNil() {
 	o.IsKids.Set(nil)
@@ -624,6 +635,7 @@ func (o *GetProgramsDto) HasIsSports() bool {
 func (o *GetProgramsDto) SetIsSports(v bool) {
 	o.IsSports.Set(&v)
 }
+
 // SetIsSportsNil sets the value for IsSports to be an explicit nil
 func (o *GetProgramsDto) SetIsSportsNil() {
 	o.IsSports.Set(nil)
@@ -666,6 +678,7 @@ func (o *GetProgramsDto) HasStartIndex() bool {
 func (o *GetProgramsDto) SetStartIndex(v int32) {
 	o.StartIndex.Set(&v)
 }
+
 // SetStartIndexNil sets the value for StartIndex to be an explicit nil
 func (o *GetProgramsDto) SetStartIndexNil() {
 	o.StartIndex.Set(nil)
@@ -708,6 +721,7 @@ func (o *GetProgramsDto) HasLimit() bool {
 func (o *GetProgramsDto) SetLimit(v int32) {
 	o.Limit.Set(&v)
 }
+
 // SetLimitNil sets the value for Limit to be an explicit nil
 func (o *GetProgramsDto) SetLimitNil() {
 	o.Limit.Set(nil)
@@ -882,6 +896,7 @@ func (o *GetProgramsDto) HasEnableImages() bool {
 func (o *GetProgramsDto) SetEnableImages(v bool) {
 	o.EnableImages.Set(&v)
 }
+
 // SetEnableImagesNil sets the value for EnableImages to be an explicit nil
 func (o *GetProgramsDto) SetEnableImagesNil() {
 	o.EnableImages.Set(nil)
@@ -956,6 +971,7 @@ func (o *GetProgramsDto) HasImageTypeLimit() bool {
 func (o *GetProgramsDto) SetImageTypeLimit(v int32) {
 	o.ImageTypeLimit.Set(&v)
 }
+
 // SetImageTypeLimitNil sets the value for ImageTypeLimit to be an explicit nil
 func (o *GetProgramsDto) SetImageTypeLimitNil() {
 	o.ImageTypeLimit.Set(nil)
@@ -1031,6 +1047,7 @@ func (o *GetProgramsDto) HasEnableUserData() bool {
 func (o *GetProgramsDto) SetEnableUserData(v bool) {
 	o.EnableUserData.Set(&v)
 }
+
 // SetEnableUserDataNil sets the value for EnableUserData to be an explicit nil
 func (o *GetProgramsDto) SetEnableUserDataNil() {
 	o.EnableUserData.Set(nil)
@@ -1073,6 +1090,7 @@ func (o *GetProgramsDto) HasSeriesTimerId() bool {
 func (o *GetProgramsDto) SetSeriesTimerId(v string) {
 	o.SeriesTimerId.Set(&v)
 }
+
 // SetSeriesTimerIdNil sets the value for SeriesTimerId to be an explicit nil
 func (o *GetProgramsDto) SetSeriesTimerIdNil() {
 	o.SeriesTimerId.Set(nil)
@@ -1115,6 +1133,7 @@ func (o *GetProgramsDto) HasLibrarySeriesId() bool {
 func (o *GetProgramsDto) SetLibrarySeriesId(v string) {
 	o.LibrarySeriesId.Set(&v)
 }
+
 // SetLibrarySeriesIdNil sets the value for LibrarySeriesId to be an explicit nil
 func (o *GetProgramsDto) SetLibrarySeriesIdNil() {
 	o.LibrarySeriesId.Set(nil)
@@ -1159,7 +1178,7 @@ func (o *GetProgramsDto) SetFields(v []ItemFields) {
 }
 
 func (o GetProgramsDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1287,5 +1306,3 @@ func (v *NullableGetProgramsDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

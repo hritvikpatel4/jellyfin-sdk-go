@@ -98,6 +98,7 @@ func (o *DisplayPreferencesDto) HasId() bool {
 func (o *DisplayPreferencesDto) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *DisplayPreferencesDto) SetIdNil() {
 	o.Id.Set(nil)
@@ -140,6 +141,7 @@ func (o *DisplayPreferencesDto) HasViewType() bool {
 func (o *DisplayPreferencesDto) SetViewType(v string) {
 	o.ViewType.Set(&v)
 }
+
 // SetViewTypeNil sets the value for ViewType to be an explicit nil
 func (o *DisplayPreferencesDto) SetViewTypeNil() {
 	o.ViewType.Set(nil)
@@ -182,6 +184,7 @@ func (o *DisplayPreferencesDto) HasSortBy() bool {
 func (o *DisplayPreferencesDto) SetSortBy(v string) {
 	o.SortBy.Set(&v)
 }
+
 // SetSortByNil sets the value for SortBy to be an explicit nil
 func (o *DisplayPreferencesDto) SetSortByNil() {
 	o.SortBy.Set(nil)
@@ -224,6 +227,7 @@ func (o *DisplayPreferencesDto) HasIndexBy() bool {
 func (o *DisplayPreferencesDto) SetIndexBy(v string) {
 	o.IndexBy.Set(&v)
 }
+
 // SetIndexByNil sets the value for IndexBy to be an explicit nil
 func (o *DisplayPreferencesDto) SetIndexByNil() {
 	o.IndexBy.Set(nil)
@@ -554,6 +558,7 @@ func (o *DisplayPreferencesDto) HasClient() bool {
 func (o *DisplayPreferencesDto) SetClient(v string) {
 	o.Client.Set(&v)
 }
+
 // SetClientNil sets the value for Client to be an explicit nil
 func (o *DisplayPreferencesDto) SetClientNil() {
 	o.Client.Set(nil)
@@ -565,7 +570,7 @@ func (o *DisplayPreferencesDto) UnsetClient() {
 }
 
 func (o DisplayPreferencesDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -654,5 +659,3 @@ func (v *NullableDisplayPreferencesDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,19 +25,19 @@ type UserConfiguration struct {
 	PlayDefaultAudioTrack *bool `json:"PlayDefaultAudioTrack,omitempty"`
 	// Gets or sets the subtitle language preference.
 	SubtitleLanguagePreference NullableString `json:"SubtitleLanguagePreference,omitempty"`
-	DisplayMissingEpisodes *bool `json:"DisplayMissingEpisodes,omitempty"`
-	GroupedFolders []string `json:"GroupedFolders,omitempty"`
+	DisplayMissingEpisodes     *bool          `json:"DisplayMissingEpisodes,omitempty"`
+	GroupedFolders             []string       `json:"GroupedFolders,omitempty"`
 	// An enum representing a subtitle playback mode.
-	SubtitleMode *SubtitlePlaybackMode `json:"SubtitleMode,omitempty"`
-	DisplayCollectionsView *bool `json:"DisplayCollectionsView,omitempty"`
-	EnableLocalPassword *bool `json:"EnableLocalPassword,omitempty"`
-	OrderedViews []string `json:"OrderedViews,omitempty"`
-	LatestItemsExcludes []string `json:"LatestItemsExcludes,omitempty"`
-	MyMediaExcludes []string `json:"MyMediaExcludes,omitempty"`
-	HidePlayedInLatest *bool `json:"HidePlayedInLatest,omitempty"`
-	RememberAudioSelections *bool `json:"RememberAudioSelections,omitempty"`
-	RememberSubtitleSelections *bool `json:"RememberSubtitleSelections,omitempty"`
-	EnableNextEpisodeAutoPlay *bool `json:"EnableNextEpisodeAutoPlay,omitempty"`
+	SubtitleMode               *SubtitlePlaybackMode `json:"SubtitleMode,omitempty"`
+	DisplayCollectionsView     *bool                 `json:"DisplayCollectionsView,omitempty"`
+	EnableLocalPassword        *bool                 `json:"EnableLocalPassword,omitempty"`
+	OrderedViews               []string              `json:"OrderedViews,omitempty"`
+	LatestItemsExcludes        []string              `json:"LatestItemsExcludes,omitempty"`
+	MyMediaExcludes            []string              `json:"MyMediaExcludes,omitempty"`
+	HidePlayedInLatest         *bool                 `json:"HidePlayedInLatest,omitempty"`
+	RememberAudioSelections    *bool                 `json:"RememberAudioSelections,omitempty"`
+	RememberSubtitleSelections *bool                 `json:"RememberSubtitleSelections,omitempty"`
+	EnableNextEpisodeAutoPlay  *bool                 `json:"EnableNextEpisodeAutoPlay,omitempty"`
 	// Gets or sets the id of the selected cast receiver.
 	CastReceiverId NullableString `json:"CastReceiverId,omitempty"`
 }
@@ -91,6 +91,7 @@ func (o *UserConfiguration) HasAudioLanguagePreference() bool {
 func (o *UserConfiguration) SetAudioLanguagePreference(v string) {
 	o.AudioLanguagePreference.Set(&v)
 }
+
 // SetAudioLanguagePreferenceNil sets the value for AudioLanguagePreference to be an explicit nil
 func (o *UserConfiguration) SetAudioLanguagePreferenceNil() {
 	o.AudioLanguagePreference.Set(nil)
@@ -165,6 +166,7 @@ func (o *UserConfiguration) HasSubtitleLanguagePreference() bool {
 func (o *UserConfiguration) SetSubtitleLanguagePreference(v string) {
 	o.SubtitleLanguagePreference.Set(&v)
 }
+
 // SetSubtitleLanguagePreferenceNil sets the value for SubtitleLanguagePreference to be an explicit nil
 func (o *UserConfiguration) SetSubtitleLanguagePreferenceNil() {
 	o.SubtitleLanguagePreference.Set(nil)
@@ -591,6 +593,7 @@ func (o *UserConfiguration) HasCastReceiverId() bool {
 func (o *UserConfiguration) SetCastReceiverId(v string) {
 	o.CastReceiverId.Set(&v)
 }
+
 // SetCastReceiverIdNil sets the value for CastReceiverId to be an explicit nil
 func (o *UserConfiguration) SetCastReceiverIdNil() {
 	o.CastReceiverId.Set(nil)
@@ -602,7 +605,7 @@ func (o *UserConfiguration) UnsetCastReceiverId() {
 }
 
 func (o UserConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -697,5 +700,3 @@ func (v *NullableUserConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

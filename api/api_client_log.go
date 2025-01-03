@@ -19,14 +19,13 @@ import (
 	"os"
 )
 
-
 type ClientLogAPI interface {
 
 	/*
-	LogFile Upload a document.
+		LogFile Upload a document.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiLogFileRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiLogFileRequest
 	*/
 	LogFile(ctx context.Context) ApiLogFileRequest
 
@@ -39,9 +38,9 @@ type ClientLogAPI interface {
 type ClientLogAPIService service
 
 type ApiLogFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ClientLogAPI
-	body *os.File
+	body       *os.File
 }
 
 func (r ApiLogFileRequest) Body(body *os.File) ApiLogFileRequest {
@@ -56,24 +55,25 @@ func (r ApiLogFileRequest) Execute() (*ClientLogDocumentResponseDto, *http.Respo
 /*
 LogFile Upload a document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLogFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLogFileRequest
 */
 func (a *ClientLogAPIService) LogFile(ctx context.Context) ApiLogFileRequest {
 	return ApiLogFileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ClientLogDocumentResponseDto
+//
+//	@return ClientLogDocumentResponseDto
 func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*ClientLogDocumentResponseDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ClientLogDocumentResponseDto
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ClientLogDocumentResponseDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientLogAPIService.LogFile")
@@ -149,8 +149,8 @@ func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*ClientLogDoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -160,8 +160,8 @@ func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*ClientLogDoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

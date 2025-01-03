@@ -21,7 +21,7 @@ type ScrollDirection string
 // List of ScrollDirection
 const (
 	SCROLLDIRECTION_HORIZONTAL ScrollDirection = "Horizontal"
-	SCROLLDIRECTION_VERTICAL ScrollDirection = "Vertical"
+	SCROLLDIRECTION_VERTICAL   ScrollDirection = "Vertical"
 )
 
 // All allowed values of ScrollDirection enum
@@ -108,4 +108,3 @@ func (v *NullableScrollDirection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

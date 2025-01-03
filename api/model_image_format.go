@@ -20,12 +20,12 @@ type ImageFormat string
 
 // List of ImageFormat
 const (
-	IMAGEFORMAT_BMP ImageFormat = "Bmp"
-	IMAGEFORMAT_GIF ImageFormat = "Gif"
-	IMAGEFORMAT_JPG ImageFormat = "Jpg"
-	IMAGEFORMAT_PNG ImageFormat = "Png"
+	IMAGEFORMAT_BMP  ImageFormat = "Bmp"
+	IMAGEFORMAT_GIF  ImageFormat = "Gif"
+	IMAGEFORMAT_JPG  ImageFormat = "Jpg"
+	IMAGEFORMAT_PNG  ImageFormat = "Png"
 	IMAGEFORMAT_WEBP ImageFormat = "Webp"
-	IMAGEFORMAT_SVG ImageFormat = "Svg"
+	IMAGEFORMAT_SVG  ImageFormat = "Svg"
 )
 
 // All allowed values of ImageFormat enum
@@ -116,4 +116,3 @@ func (v *NullableImageFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

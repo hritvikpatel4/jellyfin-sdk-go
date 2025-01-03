@@ -34,10 +34,10 @@ type PlaybackStopInfo struct {
 	// Gets or sets the play session identifier.
 	PlaySessionId NullableString `json:"PlaySessionId,omitempty"`
 	// Gets or sets a value indicating whether this MediaBrowser.Model.Session.PlaybackStopInfo is failed.
-	Failed *bool `json:"Failed,omitempty"`
-	NextMediaType NullableString `json:"NextMediaType,omitempty"`
-	PlaylistItemId NullableString `json:"PlaylistItemId,omitempty"`
-	NowPlayingQueue []QueueItem `json:"NowPlayingQueue,omitempty"`
+	Failed          *bool          `json:"Failed,omitempty"`
+	NextMediaType   NullableString `json:"NextMediaType,omitempty"`
+	PlaylistItemId  NullableString `json:"PlaylistItemId,omitempty"`
+	NowPlayingQueue []QueueItem    `json:"NowPlayingQueue,omitempty"`
 }
 
 // NewPlaybackStopInfo instantiates a new PlaybackStopInfo object
@@ -89,6 +89,7 @@ func (o *PlaybackStopInfo) HasItem() bool {
 func (o *PlaybackStopInfo) SetItem(v BaseItemDto) {
 	o.Item.Set(&v)
 }
+
 // SetItemNil sets the value for Item to be an explicit nil
 func (o *PlaybackStopInfo) SetItemNil() {
 	o.Item.Set(nil)
@@ -163,6 +164,7 @@ func (o *PlaybackStopInfo) HasSessionId() bool {
 func (o *PlaybackStopInfo) SetSessionId(v string) {
 	o.SessionId.Set(&v)
 }
+
 // SetSessionIdNil sets the value for SessionId to be an explicit nil
 func (o *PlaybackStopInfo) SetSessionIdNil() {
 	o.SessionId.Set(nil)
@@ -205,6 +207,7 @@ func (o *PlaybackStopInfo) HasMediaSourceId() bool {
 func (o *PlaybackStopInfo) SetMediaSourceId(v string) {
 	o.MediaSourceId.Set(&v)
 }
+
 // SetMediaSourceIdNil sets the value for MediaSourceId to be an explicit nil
 func (o *PlaybackStopInfo) SetMediaSourceIdNil() {
 	o.MediaSourceId.Set(nil)
@@ -247,6 +250,7 @@ func (o *PlaybackStopInfo) HasPositionTicks() bool {
 func (o *PlaybackStopInfo) SetPositionTicks(v int64) {
 	o.PositionTicks.Set(&v)
 }
+
 // SetPositionTicksNil sets the value for PositionTicks to be an explicit nil
 func (o *PlaybackStopInfo) SetPositionTicksNil() {
 	o.PositionTicks.Set(nil)
@@ -289,6 +293,7 @@ func (o *PlaybackStopInfo) HasLiveStreamId() bool {
 func (o *PlaybackStopInfo) SetLiveStreamId(v string) {
 	o.LiveStreamId.Set(&v)
 }
+
 // SetLiveStreamIdNil sets the value for LiveStreamId to be an explicit nil
 func (o *PlaybackStopInfo) SetLiveStreamIdNil() {
 	o.LiveStreamId.Set(nil)
@@ -331,6 +336,7 @@ func (o *PlaybackStopInfo) HasPlaySessionId() bool {
 func (o *PlaybackStopInfo) SetPlaySessionId(v string) {
 	o.PlaySessionId.Set(&v)
 }
+
 // SetPlaySessionIdNil sets the value for PlaySessionId to be an explicit nil
 func (o *PlaybackStopInfo) SetPlaySessionIdNil() {
 	o.PlaySessionId.Set(nil)
@@ -405,6 +411,7 @@ func (o *PlaybackStopInfo) HasNextMediaType() bool {
 func (o *PlaybackStopInfo) SetNextMediaType(v string) {
 	o.NextMediaType.Set(&v)
 }
+
 // SetNextMediaTypeNil sets the value for NextMediaType to be an explicit nil
 func (o *PlaybackStopInfo) SetNextMediaTypeNil() {
 	o.NextMediaType.Set(nil)
@@ -447,6 +454,7 @@ func (o *PlaybackStopInfo) HasPlaylistItemId() bool {
 func (o *PlaybackStopInfo) SetPlaylistItemId(v string) {
 	o.PlaylistItemId.Set(&v)
 }
+
 // SetPlaylistItemIdNil sets the value for PlaylistItemId to be an explicit nil
 func (o *PlaybackStopInfo) SetPlaylistItemIdNil() {
 	o.PlaylistItemId.Set(nil)
@@ -491,7 +499,7 @@ func (o *PlaybackStopInfo) SetNowPlayingQueue(v []QueueItem) {
 }
 
 func (o PlaybackStopInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -571,5 +579,3 @@ func (v *NullablePlaybackStopInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

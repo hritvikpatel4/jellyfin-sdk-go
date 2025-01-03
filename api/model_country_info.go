@@ -78,6 +78,7 @@ func (o *CountryInfo) HasName() bool {
 func (o *CountryInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *CountryInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -120,6 +121,7 @@ func (o *CountryInfo) HasDisplayName() bool {
 func (o *CountryInfo) SetDisplayName(v string) {
 	o.DisplayName.Set(&v)
 }
+
 // SetDisplayNameNil sets the value for DisplayName to be an explicit nil
 func (o *CountryInfo) SetDisplayNameNil() {
 	o.DisplayName.Set(nil)
@@ -162,6 +164,7 @@ func (o *CountryInfo) HasTwoLetterISORegionName() bool {
 func (o *CountryInfo) SetTwoLetterISORegionName(v string) {
 	o.TwoLetterISORegionName.Set(&v)
 }
+
 // SetTwoLetterISORegionNameNil sets the value for TwoLetterISORegionName to be an explicit nil
 func (o *CountryInfo) SetTwoLetterISORegionNameNil() {
 	o.TwoLetterISORegionName.Set(nil)
@@ -204,6 +207,7 @@ func (o *CountryInfo) HasThreeLetterISORegionName() bool {
 func (o *CountryInfo) SetThreeLetterISORegionName(v string) {
 	o.ThreeLetterISORegionName.Set(&v)
 }
+
 // SetThreeLetterISORegionNameNil sets the value for ThreeLetterISORegionName to be an explicit nil
 func (o *CountryInfo) SetThreeLetterISORegionNameNil() {
 	o.ThreeLetterISORegionName.Set(nil)
@@ -215,7 +219,7 @@ func (o *CountryInfo) UnsetThreeLetterISORegionName() {
 }
 
 func (o CountryInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -274,5 +278,3 @@ func (v *NullableCountryInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

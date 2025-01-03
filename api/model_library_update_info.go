@@ -28,9 +28,9 @@ type LibraryUpdateInfo struct {
 	// Gets or sets the items removed.
 	ItemsRemoved []string `json:"ItemsRemoved,omitempty"`
 	// Gets or sets the items updated.
-	ItemsUpdated []string `json:"ItemsUpdated,omitempty"`
+	ItemsUpdated      []string `json:"ItemsUpdated,omitempty"`
 	CollectionFolders []string `json:"CollectionFolders,omitempty"`
-	IsEmpty *bool `json:"IsEmpty,omitempty"`
+	IsEmpty           *bool    `json:"IsEmpty,omitempty"`
 }
 
 // NewLibraryUpdateInfo instantiates a new LibraryUpdateInfo object
@@ -275,7 +275,7 @@ func (o *LibraryUpdateInfo) SetIsEmpty(v bool) {
 }
 
 func (o LibraryUpdateInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -343,5 +343,3 @@ func (v *NullableLibraryUpdateInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

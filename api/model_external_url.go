@@ -74,6 +74,7 @@ func (o *ExternalUrl) HasName() bool {
 func (o *ExternalUrl) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *ExternalUrl) SetNameNil() {
 	o.Name.Set(nil)
@@ -116,6 +117,7 @@ func (o *ExternalUrl) HasUrl() bool {
 func (o *ExternalUrl) SetUrl(v string) {
 	o.Url.Set(&v)
 }
+
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *ExternalUrl) SetUrlNil() {
 	o.Url.Set(nil)
@@ -127,7 +129,7 @@ func (o *ExternalUrl) UnsetUrl() {
 }
 
 func (o ExternalUrl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableExternalUrl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

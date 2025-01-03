@@ -20,9 +20,9 @@ var _ MappedNullable = &GeneralCommand{}
 // GeneralCommand struct for GeneralCommand
 type GeneralCommand struct {
 	// This exists simply to identify a set of known commands.
-	Name *GeneralCommandType `json:"Name,omitempty"`
-	ControllingUserId *string `json:"ControllingUserId,omitempty"`
-	Arguments *map[string]string `json:"Arguments,omitempty"`
+	Name              *GeneralCommandType `json:"Name,omitempty"`
+	ControllingUserId *string             `json:"ControllingUserId,omitempty"`
+	Arguments         *map[string]string  `json:"Arguments,omitempty"`
 }
 
 // NewGeneralCommand instantiates a new GeneralCommand object
@@ -139,7 +139,7 @@ func (o *GeneralCommand) SetArguments(v map[string]string) {
 }
 
 func (o GeneralCommand) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableGeneralCommand) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

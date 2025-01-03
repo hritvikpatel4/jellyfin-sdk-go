@@ -12,13 +12,13 @@ package api
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // WebSocketMessage - Represents the possible websocket types
 type WebSocketMessage struct {
-	InboundWebSocketMessage *InboundWebSocketMessage
+	InboundWebSocketMessage  *InboundWebSocketMessage
 	OutboundWebSocketMessage *OutboundWebSocketMessage
 }
 
@@ -35,7 +35,6 @@ func OutboundWebSocketMessageAsWebSocketMessage(v *OutboundWebSocketMessage) Web
 		OutboundWebSocketMessage: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WebSocketMessage) UnmarshalJSON(data []byte) error {
@@ -102,7 +101,7 @@ func (src WebSocketMessage) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WebSocketMessage) GetActualInstance() (interface{}) {
+func (obj *WebSocketMessage) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -153,5 +152,3 @@ func (v *NullableWebSocketMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

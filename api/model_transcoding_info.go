@@ -96,6 +96,7 @@ func (o *TranscodingInfo) HasAudioCodec() bool {
 func (o *TranscodingInfo) SetAudioCodec(v string) {
 	o.AudioCodec.Set(&v)
 }
+
 // SetAudioCodecNil sets the value for AudioCodec to be an explicit nil
 func (o *TranscodingInfo) SetAudioCodecNil() {
 	o.AudioCodec.Set(nil)
@@ -138,6 +139,7 @@ func (o *TranscodingInfo) HasVideoCodec() bool {
 func (o *TranscodingInfo) SetVideoCodec(v string) {
 	o.VideoCodec.Set(&v)
 }
+
 // SetVideoCodecNil sets the value for VideoCodec to be an explicit nil
 func (o *TranscodingInfo) SetVideoCodecNil() {
 	o.VideoCodec.Set(nil)
@@ -180,6 +182,7 @@ func (o *TranscodingInfo) HasContainer() bool {
 func (o *TranscodingInfo) SetContainer(v string) {
 	o.Container.Set(&v)
 }
+
 // SetContainerNil sets the value for Container to be an explicit nil
 func (o *TranscodingInfo) SetContainerNil() {
 	o.Container.Set(nil)
@@ -286,6 +289,7 @@ func (o *TranscodingInfo) HasBitrate() bool {
 func (o *TranscodingInfo) SetBitrate(v int32) {
 	o.Bitrate.Set(&v)
 }
+
 // SetBitrateNil sets the value for Bitrate to be an explicit nil
 func (o *TranscodingInfo) SetBitrateNil() {
 	o.Bitrate.Set(nil)
@@ -328,6 +332,7 @@ func (o *TranscodingInfo) HasFramerate() bool {
 func (o *TranscodingInfo) SetFramerate(v float32) {
 	o.Framerate.Set(&v)
 }
+
 // SetFramerateNil sets the value for Framerate to be an explicit nil
 func (o *TranscodingInfo) SetFramerateNil() {
 	o.Framerate.Set(nil)
@@ -370,6 +375,7 @@ func (o *TranscodingInfo) HasCompletionPercentage() bool {
 func (o *TranscodingInfo) SetCompletionPercentage(v float64) {
 	o.CompletionPercentage.Set(&v)
 }
+
 // SetCompletionPercentageNil sets the value for CompletionPercentage to be an explicit nil
 func (o *TranscodingInfo) SetCompletionPercentageNil() {
 	o.CompletionPercentage.Set(nil)
@@ -412,6 +418,7 @@ func (o *TranscodingInfo) HasWidth() bool {
 func (o *TranscodingInfo) SetWidth(v int32) {
 	o.Width.Set(&v)
 }
+
 // SetWidthNil sets the value for Width to be an explicit nil
 func (o *TranscodingInfo) SetWidthNil() {
 	o.Width.Set(nil)
@@ -454,6 +461,7 @@ func (o *TranscodingInfo) HasHeight() bool {
 func (o *TranscodingInfo) SetHeight(v int32) {
 	o.Height.Set(&v)
 }
+
 // SetHeightNil sets the value for Height to be an explicit nil
 func (o *TranscodingInfo) SetHeightNil() {
 	o.Height.Set(nil)
@@ -496,6 +504,7 @@ func (o *TranscodingInfo) HasAudioChannels() bool {
 func (o *TranscodingInfo) SetAudioChannels(v int32) {
 	o.AudioChannels.Set(&v)
 }
+
 // SetAudioChannelsNil sets the value for AudioChannels to be an explicit nil
 func (o *TranscodingInfo) SetAudioChannelsNil() {
 	o.AudioChannels.Set(nil)
@@ -538,6 +547,7 @@ func (o *TranscodingInfo) HasHardwareAccelerationType() bool {
 func (o *TranscodingInfo) SetHardwareAccelerationType(v HardwareAccelerationType) {
 	o.HardwareAccelerationType.Set(&v)
 }
+
 // SetHardwareAccelerationTypeNil sets the value for HardwareAccelerationType to be an explicit nil
 func (o *TranscodingInfo) SetHardwareAccelerationTypeNil() {
 	o.HardwareAccelerationType.Set(nil)
@@ -581,7 +591,7 @@ func (o *TranscodingInfo) SetTranscodeReasons(v []TranscodeReason) {
 }
 
 func (o TranscodingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -667,5 +677,3 @@ func (v *NullableTranscodingInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

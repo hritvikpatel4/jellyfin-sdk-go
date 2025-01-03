@@ -20,11 +20,11 @@ type DlnaProfileType string
 
 // List of DlnaProfileType
 const (
-	DLNAPROFILETYPE_AUDIO DlnaProfileType = "Audio"
-	DLNAPROFILETYPE_VIDEO DlnaProfileType = "Video"
-	DLNAPROFILETYPE_PHOTO DlnaProfileType = "Photo"
+	DLNAPROFILETYPE_AUDIO    DlnaProfileType = "Audio"
+	DLNAPROFILETYPE_VIDEO    DlnaProfileType = "Video"
+	DLNAPROFILETYPE_PHOTO    DlnaProfileType = "Photo"
 	DLNAPROFILETYPE_SUBTITLE DlnaProfileType = "Subtitle"
-	DLNAPROFILETYPE_LYRIC DlnaProfileType = "Lyric"
+	DLNAPROFILETYPE_LYRIC    DlnaProfileType = "Lyric"
 )
 
 // All allowed values of DlnaProfileType enum
@@ -114,4 +114,3 @@ func (v *NullableDlnaProfileType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

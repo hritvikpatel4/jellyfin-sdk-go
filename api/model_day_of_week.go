@@ -20,13 +20,13 @@ type DayOfWeek string
 
 // List of DayOfWeek
 const (
-	DAYOFWEEK_SUNDAY DayOfWeek = "Sunday"
-	DAYOFWEEK_MONDAY DayOfWeek = "Monday"
-	DAYOFWEEK_TUESDAY DayOfWeek = "Tuesday"
+	DAYOFWEEK_SUNDAY    DayOfWeek = "Sunday"
+	DAYOFWEEK_MONDAY    DayOfWeek = "Monday"
+	DAYOFWEEK_TUESDAY   DayOfWeek = "Tuesday"
 	DAYOFWEEK_WEDNESDAY DayOfWeek = "Wednesday"
-	DAYOFWEEK_THURSDAY DayOfWeek = "Thursday"
-	DAYOFWEEK_FRIDAY DayOfWeek = "Friday"
-	DAYOFWEEK_SATURDAY DayOfWeek = "Saturday"
+	DAYOFWEEK_THURSDAY  DayOfWeek = "Thursday"
+	DAYOFWEEK_FRIDAY    DayOfWeek = "Friday"
+	DAYOFWEEK_SATURDAY  DayOfWeek = "Saturday"
 )
 
 // All allowed values of DayOfWeek enum
@@ -118,4 +118,3 @@ func (v *NullableDayOfWeek) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

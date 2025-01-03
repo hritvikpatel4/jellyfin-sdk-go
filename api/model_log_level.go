@@ -20,13 +20,13 @@ type LogLevel string
 
 // List of LogLevel
 const (
-	LOGLEVEL_TRACE LogLevel = "Trace"
-	LOGLEVEL_DEBUG LogLevel = "Debug"
+	LOGLEVEL_TRACE       LogLevel = "Trace"
+	LOGLEVEL_DEBUG       LogLevel = "Debug"
 	LOGLEVEL_INFORMATION LogLevel = "Information"
-	LOGLEVEL_WARNING LogLevel = "Warning"
-	LOGLEVEL_ERROR LogLevel = "Error"
-	LOGLEVEL_CRITICAL LogLevel = "Critical"
-	LOGLEVEL_NONE LogLevel = "None"
+	LOGLEVEL_WARNING     LogLevel = "Warning"
+	LOGLEVEL_ERROR       LogLevel = "Error"
+	LOGLEVEL_CRITICAL    LogLevel = "Critical"
+	LOGLEVEL_NONE        LogLevel = "None"
 )
 
 // All allowed values of LogLevel enum
@@ -118,4 +118,3 @@ func (v *NullableLogLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

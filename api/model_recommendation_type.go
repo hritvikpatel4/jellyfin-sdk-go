@@ -20,12 +20,12 @@ type RecommendationType string
 
 // List of RecommendationType
 const (
-	RECOMMENDATIONTYPE_SIMILAR_TO_RECENTLY_PLAYED RecommendationType = "SimilarToRecentlyPlayed"
-	RECOMMENDATIONTYPE_SIMILAR_TO_LIKED_ITEM RecommendationType = "SimilarToLikedItem"
+	RECOMMENDATIONTYPE_SIMILAR_TO_RECENTLY_PLAYED        RecommendationType = "SimilarToRecentlyPlayed"
+	RECOMMENDATIONTYPE_SIMILAR_TO_LIKED_ITEM             RecommendationType = "SimilarToLikedItem"
 	RECOMMENDATIONTYPE_HAS_DIRECTOR_FROM_RECENTLY_PLAYED RecommendationType = "HasDirectorFromRecentlyPlayed"
-	RECOMMENDATIONTYPE_HAS_ACTOR_FROM_RECENTLY_PLAYED RecommendationType = "HasActorFromRecentlyPlayed"
-	RECOMMENDATIONTYPE_HAS_LIKED_DIRECTOR RecommendationType = "HasLikedDirector"
-	RECOMMENDATIONTYPE_HAS_LIKED_ACTOR RecommendationType = "HasLikedActor"
+	RECOMMENDATIONTYPE_HAS_ACTOR_FROM_RECENTLY_PLAYED    RecommendationType = "HasActorFromRecentlyPlayed"
+	RECOMMENDATIONTYPE_HAS_LIKED_DIRECTOR                RecommendationType = "HasLikedDirector"
+	RECOMMENDATIONTYPE_HAS_LIKED_ACTOR                   RecommendationType = "HasLikedActor"
 )
 
 // All allowed values of RecommendationType enum
@@ -116,4 +116,3 @@ func (v *NullableRecommendationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

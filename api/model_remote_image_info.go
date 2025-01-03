@@ -90,6 +90,7 @@ func (o *RemoteImageInfo) HasProviderName() bool {
 func (o *RemoteImageInfo) SetProviderName(v string) {
 	o.ProviderName.Set(&v)
 }
+
 // SetProviderNameNil sets the value for ProviderName to be an explicit nil
 func (o *RemoteImageInfo) SetProviderNameNil() {
 	o.ProviderName.Set(nil)
@@ -132,6 +133,7 @@ func (o *RemoteImageInfo) HasUrl() bool {
 func (o *RemoteImageInfo) SetUrl(v string) {
 	o.Url.Set(&v)
 }
+
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *RemoteImageInfo) SetUrlNil() {
 	o.Url.Set(nil)
@@ -174,6 +176,7 @@ func (o *RemoteImageInfo) HasThumbnailUrl() bool {
 func (o *RemoteImageInfo) SetThumbnailUrl(v string) {
 	o.ThumbnailUrl.Set(&v)
 }
+
 // SetThumbnailUrlNil sets the value for ThumbnailUrl to be an explicit nil
 func (o *RemoteImageInfo) SetThumbnailUrlNil() {
 	o.ThumbnailUrl.Set(nil)
@@ -216,6 +219,7 @@ func (o *RemoteImageInfo) HasHeight() bool {
 func (o *RemoteImageInfo) SetHeight(v int32) {
 	o.Height.Set(&v)
 }
+
 // SetHeightNil sets the value for Height to be an explicit nil
 func (o *RemoteImageInfo) SetHeightNil() {
 	o.Height.Set(nil)
@@ -258,6 +262,7 @@ func (o *RemoteImageInfo) HasWidth() bool {
 func (o *RemoteImageInfo) SetWidth(v int32) {
 	o.Width.Set(&v)
 }
+
 // SetWidthNil sets the value for Width to be an explicit nil
 func (o *RemoteImageInfo) SetWidthNil() {
 	o.Width.Set(nil)
@@ -300,6 +305,7 @@ func (o *RemoteImageInfo) HasCommunityRating() bool {
 func (o *RemoteImageInfo) SetCommunityRating(v float64) {
 	o.CommunityRating.Set(&v)
 }
+
 // SetCommunityRatingNil sets the value for CommunityRating to be an explicit nil
 func (o *RemoteImageInfo) SetCommunityRatingNil() {
 	o.CommunityRating.Set(nil)
@@ -342,6 +348,7 @@ func (o *RemoteImageInfo) HasVoteCount() bool {
 func (o *RemoteImageInfo) SetVoteCount(v int32) {
 	o.VoteCount.Set(&v)
 }
+
 // SetVoteCountNil sets the value for VoteCount to be an explicit nil
 func (o *RemoteImageInfo) SetVoteCountNil() {
 	o.VoteCount.Set(nil)
@@ -384,6 +391,7 @@ func (o *RemoteImageInfo) HasLanguage() bool {
 func (o *RemoteImageInfo) SetLanguage(v string) {
 	o.Language.Set(&v)
 }
+
 // SetLanguageNil sets the value for Language to be an explicit nil
 func (o *RemoteImageInfo) SetLanguageNil() {
 	o.Language.Set(nil)
@@ -459,7 +467,7 @@ func (o *RemoteImageInfo) SetRatingType(v RatingType) {
 }
 
 func (o RemoteImageInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -536,5 +544,3 @@ func (v *NullableRemoteImageInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

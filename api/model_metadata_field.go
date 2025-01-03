@@ -20,15 +20,15 @@ type MetadataField string
 
 // List of MetadataField
 const (
-	METADATAFIELD_CAST MetadataField = "Cast"
-	METADATAFIELD_GENRES MetadataField = "Genres"
+	METADATAFIELD_CAST                 MetadataField = "Cast"
+	METADATAFIELD_GENRES               MetadataField = "Genres"
 	METADATAFIELD_PRODUCTION_LOCATIONS MetadataField = "ProductionLocations"
-	METADATAFIELD_STUDIOS MetadataField = "Studios"
-	METADATAFIELD_TAGS MetadataField = "Tags"
-	METADATAFIELD_NAME MetadataField = "Name"
-	METADATAFIELD_OVERVIEW MetadataField = "Overview"
-	METADATAFIELD_RUNTIME MetadataField = "Runtime"
-	METADATAFIELD_OFFICIAL_RATING MetadataField = "OfficialRating"
+	METADATAFIELD_STUDIOS              MetadataField = "Studios"
+	METADATAFIELD_TAGS                 MetadataField = "Tags"
+	METADATAFIELD_NAME                 MetadataField = "Name"
+	METADATAFIELD_OVERVIEW             MetadataField = "Overview"
+	METADATAFIELD_RUNTIME              MetadataField = "Runtime"
+	METADATAFIELD_OFFICIAL_RATING      MetadataField = "OfficialRating"
 )
 
 // All allowed values of MetadataField enum
@@ -122,4 +122,3 @@ func (v *NullableMetadataField) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

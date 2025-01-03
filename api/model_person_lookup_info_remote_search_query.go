@@ -20,7 +20,7 @@ var _ MappedNullable = &PersonLookupInfoRemoteSearchQuery{}
 // PersonLookupInfoRemoteSearchQuery struct for PersonLookupInfoRemoteSearchQuery
 type PersonLookupInfoRemoteSearchQuery struct {
 	SearchInfo NullablePersonLookupInfo `json:"SearchInfo,omitempty"`
-	ItemId *string `json:"ItemId,omitempty"`
+	ItemId     *string                  `json:"ItemId,omitempty"`
 	// Gets or sets the provider name to search within if set.
 	SearchProviderName NullableString `json:"SearchProviderName,omitempty"`
 	// Gets or sets a value indicating whether disabled providers should be included.
@@ -76,6 +76,7 @@ func (o *PersonLookupInfoRemoteSearchQuery) HasSearchInfo() bool {
 func (o *PersonLookupInfoRemoteSearchQuery) SetSearchInfo(v PersonLookupInfo) {
 	o.SearchInfo.Set(&v)
 }
+
 // SetSearchInfoNil sets the value for SearchInfo to be an explicit nil
 func (o *PersonLookupInfoRemoteSearchQuery) SetSearchInfoNil() {
 	o.SearchInfo.Set(nil)
@@ -150,6 +151,7 @@ func (o *PersonLookupInfoRemoteSearchQuery) HasSearchProviderName() bool {
 func (o *PersonLookupInfoRemoteSearchQuery) SetSearchProviderName(v string) {
 	o.SearchProviderName.Set(&v)
 }
+
 // SetSearchProviderNameNil sets the value for SearchProviderName to be an explicit nil
 func (o *PersonLookupInfoRemoteSearchQuery) SetSearchProviderNameNil() {
 	o.SearchProviderName.Set(nil)
@@ -193,7 +195,7 @@ func (o *PersonLookupInfoRemoteSearchQuery) SetIncludeDisabledProviders(v bool) 
 }
 
 func (o PersonLookupInfoRemoteSearchQuery) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -252,5 +254,3 @@ func (v *NullablePersonLookupInfoRemoteSearchQuery) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

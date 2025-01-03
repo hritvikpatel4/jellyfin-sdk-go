@@ -19,15 +19,14 @@ import (
 	"strings"
 )
 
-
 type ItemLookupAPI interface {
 
 	/*
-	ApplySearchCriteria Applies search criteria to an item and refreshes metadata.
+		ApplySearchCriteria Applies search criteria to an item and refreshes metadata.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiApplySearchCriteriaRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiApplySearchCriteriaRequest
 	*/
 	ApplySearchCriteria(ctx context.Context, itemId string) ApiApplySearchCriteriaRequest
 
@@ -35,10 +34,10 @@ type ItemLookupAPI interface {
 	ApplySearchCriteriaExecute(r ApiApplySearchCriteriaRequest) (*http.Response, error)
 
 	/*
-	GetBookRemoteSearchResults Get book remote search.
+		GetBookRemoteSearchResults Get book remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBookRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetBookRemoteSearchResultsRequest
 	*/
 	GetBookRemoteSearchResults(ctx context.Context) ApiGetBookRemoteSearchResultsRequest
 
@@ -47,10 +46,10 @@ type ItemLookupAPI interface {
 	GetBookRemoteSearchResultsExecute(r ApiGetBookRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetBoxSetRemoteSearchResults Get box set remote search.
+		GetBoxSetRemoteSearchResults Get box set remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBoxSetRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetBoxSetRemoteSearchResultsRequest
 	*/
 	GetBoxSetRemoteSearchResults(ctx context.Context) ApiGetBoxSetRemoteSearchResultsRequest
 
@@ -59,11 +58,11 @@ type ItemLookupAPI interface {
 	GetBoxSetRemoteSearchResultsExecute(r ApiGetBoxSetRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetExternalIdInfos Get the item's external id info.
+		GetExternalIdInfos Get the item's external id info.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetExternalIdInfosRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetExternalIdInfosRequest
 	*/
 	GetExternalIdInfos(ctx context.Context, itemId string) ApiGetExternalIdInfosRequest
 
@@ -72,10 +71,10 @@ type ItemLookupAPI interface {
 	GetExternalIdInfosExecute(r ApiGetExternalIdInfosRequest) ([]ExternalIdInfo, *http.Response, error)
 
 	/*
-	GetMovieRemoteSearchResults Get movie remote search.
+		GetMovieRemoteSearchResults Get movie remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMovieRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetMovieRemoteSearchResultsRequest
 	*/
 	GetMovieRemoteSearchResults(ctx context.Context) ApiGetMovieRemoteSearchResultsRequest
 
@@ -84,10 +83,10 @@ type ItemLookupAPI interface {
 	GetMovieRemoteSearchResultsExecute(r ApiGetMovieRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetMusicAlbumRemoteSearchResults Get music album remote search.
+		GetMusicAlbumRemoteSearchResults Get music album remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMusicAlbumRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetMusicAlbumRemoteSearchResultsRequest
 	*/
 	GetMusicAlbumRemoteSearchResults(ctx context.Context) ApiGetMusicAlbumRemoteSearchResultsRequest
 
@@ -96,10 +95,10 @@ type ItemLookupAPI interface {
 	GetMusicAlbumRemoteSearchResultsExecute(r ApiGetMusicAlbumRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetMusicArtistRemoteSearchResults Get music artist remote search.
+		GetMusicArtistRemoteSearchResults Get music artist remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMusicArtistRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetMusicArtistRemoteSearchResultsRequest
 	*/
 	GetMusicArtistRemoteSearchResults(ctx context.Context) ApiGetMusicArtistRemoteSearchResultsRequest
 
@@ -108,10 +107,10 @@ type ItemLookupAPI interface {
 	GetMusicArtistRemoteSearchResultsExecute(r ApiGetMusicArtistRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetMusicVideoRemoteSearchResults Get music video remote search.
+		GetMusicVideoRemoteSearchResults Get music video remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMusicVideoRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetMusicVideoRemoteSearchResultsRequest
 	*/
 	GetMusicVideoRemoteSearchResults(ctx context.Context) ApiGetMusicVideoRemoteSearchResultsRequest
 
@@ -120,10 +119,10 @@ type ItemLookupAPI interface {
 	GetMusicVideoRemoteSearchResultsExecute(r ApiGetMusicVideoRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetPersonRemoteSearchResults Get person remote search.
+		GetPersonRemoteSearchResults Get person remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPersonRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPersonRemoteSearchResultsRequest
 	*/
 	GetPersonRemoteSearchResults(ctx context.Context) ApiGetPersonRemoteSearchResultsRequest
 
@@ -132,10 +131,10 @@ type ItemLookupAPI interface {
 	GetPersonRemoteSearchResultsExecute(r ApiGetPersonRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetSeriesRemoteSearchResults Get series remote search.
+		GetSeriesRemoteSearchResults Get series remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSeriesRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSeriesRemoteSearchResultsRequest
 	*/
 	GetSeriesRemoteSearchResults(ctx context.Context) ApiGetSeriesRemoteSearchResultsRequest
 
@@ -144,10 +143,10 @@ type ItemLookupAPI interface {
 	GetSeriesRemoteSearchResultsExecute(r ApiGetSeriesRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error)
 
 	/*
-	GetTrailerRemoteSearchResults Get trailer remote search.
+		GetTrailerRemoteSearchResults Get trailer remote search.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetTrailerRemoteSearchResultsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetTrailerRemoteSearchResultsRequest
 	*/
 	GetTrailerRemoteSearchResults(ctx context.Context) ApiGetTrailerRemoteSearchResultsRequest
 
@@ -160,11 +159,11 @@ type ItemLookupAPI interface {
 type ItemLookupAPIService service
 
 type ApiApplySearchCriteriaRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
-	itemId string
+	ctx                context.Context
+	ApiService         ItemLookupAPI
+	itemId             string
 	remoteSearchResult *RemoteSearchResult
-	replaceAllImages *bool
+	replaceAllImages   *bool
 }
 
 // The remote search result.
@@ -186,24 +185,24 @@ func (r ApiApplySearchCriteriaRequest) Execute() (*http.Response, error) {
 /*
 ApplySearchCriteria Applies search criteria to an item and refreshes metadata.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiApplySearchCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiApplySearchCriteriaRequest
 */
 func (a *ItemLookupAPIService) ApplySearchCriteria(ctx context.Context, itemId string) ApiApplySearchCriteriaRequest {
 	return ApiApplySearchCriteriaRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *ItemLookupAPIService) ApplySearchCriteriaExecute(r ApiApplySearchCriteriaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.ApplySearchCriteria")
@@ -289,8 +288,8 @@ func (a *ItemLookupAPIService) ApplySearchCriteriaExecute(r ApiApplySearchCriter
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -300,8 +299,8 @@ func (a *ItemLookupAPIService) ApplySearchCriteriaExecute(r ApiApplySearchCriter
 }
 
 type ApiGetBookRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                       context.Context
+	ApiService                ItemLookupAPI
 	bookInfoRemoteSearchQuery *BookInfoRemoteSearchQuery
 }
 
@@ -318,24 +317,25 @@ func (r ApiGetBookRemoteSearchResultsRequest) Execute() ([]RemoteSearchResult, *
 /*
 GetBookRemoteSearchResults Get book remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBookRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBookRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetBookRemoteSearchResults(ctx context.Context) ApiGetBookRemoteSearchResultsRequest {
 	return ApiGetBookRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetBookRemoteSearchResultsExecute(r ApiGetBookRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetBookRemoteSearchResults")
@@ -423,8 +423,8 @@ func (a *ItemLookupAPIService) GetBookRemoteSearchResultsExecute(r ApiGetBookRem
 }
 
 type ApiGetBoxSetRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                         context.Context
+	ApiService                  ItemLookupAPI
 	boxSetInfoRemoteSearchQuery *BoxSetInfoRemoteSearchQuery
 }
 
@@ -441,24 +441,25 @@ func (r ApiGetBoxSetRemoteSearchResultsRequest) Execute() ([]RemoteSearchResult,
 /*
 GetBoxSetRemoteSearchResults Get box set remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBoxSetRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBoxSetRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResults(ctx context.Context) ApiGetBoxSetRemoteSearchResultsRequest {
 	return ApiGetBoxSetRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResultsExecute(r ApiGetBoxSetRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetBoxSetRemoteSearchResults")
@@ -546,9 +547,9 @@ func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResultsExecute(r ApiGetBoxSe
 }
 
 type ApiGetExternalIdInfosRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ItemLookupAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetExternalIdInfosRequest) Execute() ([]ExternalIdInfo, *http.Response, error) {
@@ -558,26 +559,27 @@ func (r ApiGetExternalIdInfosRequest) Execute() ([]ExternalIdInfo, *http.Respons
 /*
 GetExternalIdInfos Get the item's external id info.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetExternalIdInfosRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetExternalIdInfosRequest
 */
 func (a *ItemLookupAPIService) GetExternalIdInfos(ctx context.Context, itemId string) ApiGetExternalIdInfosRequest {
 	return ApiGetExternalIdInfosRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return []ExternalIdInfo
+//
+//	@return []ExternalIdInfo
 func (a *ItemLookupAPIService) GetExternalIdInfosExecute(r ApiGetExternalIdInfosRequest) ([]ExternalIdInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ExternalIdInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ExternalIdInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetExternalIdInfos")
@@ -652,8 +654,8 @@ func (a *ItemLookupAPIService) GetExternalIdInfosExecute(r ApiGetExternalIdInfos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -672,8 +674,8 @@ func (a *ItemLookupAPIService) GetExternalIdInfosExecute(r ApiGetExternalIdInfos
 }
 
 type ApiGetMovieRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                        context.Context
+	ApiService                 ItemLookupAPI
 	movieInfoRemoteSearchQuery *MovieInfoRemoteSearchQuery
 }
 
@@ -690,24 +692,25 @@ func (r ApiGetMovieRemoteSearchResultsRequest) Execute() ([]RemoteSearchResult, 
 /*
 GetMovieRemoteSearchResults Get movie remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMovieRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMovieRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetMovieRemoteSearchResults(ctx context.Context) ApiGetMovieRemoteSearchResultsRequest {
 	return ApiGetMovieRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetMovieRemoteSearchResultsExecute(r ApiGetMovieRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetMovieRemoteSearchResults")
@@ -795,8 +798,8 @@ func (a *ItemLookupAPIService) GetMovieRemoteSearchResultsExecute(r ApiGetMovieR
 }
 
 type ApiGetMusicAlbumRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                        context.Context
+	ApiService                 ItemLookupAPI
 	albumInfoRemoteSearchQuery *AlbumInfoRemoteSearchQuery
 }
 
@@ -813,24 +816,25 @@ func (r ApiGetMusicAlbumRemoteSearchResultsRequest) Execute() ([]RemoteSearchRes
 /*
 GetMusicAlbumRemoteSearchResults Get music album remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicAlbumRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMusicAlbumRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResults(ctx context.Context) ApiGetMusicAlbumRemoteSearchResultsRequest {
 	return ApiGetMusicAlbumRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResultsExecute(r ApiGetMusicAlbumRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetMusicAlbumRemoteSearchResults")
@@ -918,8 +922,8 @@ func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResultsExecute(r ApiGetM
 }
 
 type ApiGetMusicArtistRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                         context.Context
+	ApiService                  ItemLookupAPI
 	artistInfoRemoteSearchQuery *ArtistInfoRemoteSearchQuery
 }
 
@@ -936,24 +940,25 @@ func (r ApiGetMusicArtistRemoteSearchResultsRequest) Execute() ([]RemoteSearchRe
 /*
 GetMusicArtistRemoteSearchResults Get music artist remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicArtistRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMusicArtistRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResults(ctx context.Context) ApiGetMusicArtistRemoteSearchResultsRequest {
 	return ApiGetMusicArtistRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResultsExecute(r ApiGetMusicArtistRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetMusicArtistRemoteSearchResults")
@@ -1041,8 +1046,8 @@ func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResultsExecute(r ApiGet
 }
 
 type ApiGetMusicVideoRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                             context.Context
+	ApiService                      ItemLookupAPI
 	musicVideoInfoRemoteSearchQuery *MusicVideoInfoRemoteSearchQuery
 }
 
@@ -1059,24 +1064,25 @@ func (r ApiGetMusicVideoRemoteSearchResultsRequest) Execute() ([]RemoteSearchRes
 /*
 GetMusicVideoRemoteSearchResults Get music video remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicVideoRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMusicVideoRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResults(ctx context.Context) ApiGetMusicVideoRemoteSearchResultsRequest {
 	return ApiGetMusicVideoRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResultsExecute(r ApiGetMusicVideoRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetMusicVideoRemoteSearchResults")
@@ -1164,8 +1170,8 @@ func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResultsExecute(r ApiGetM
 }
 
 type ApiGetPersonRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                               context.Context
+	ApiService                        ItemLookupAPI
 	personLookupInfoRemoteSearchQuery *PersonLookupInfoRemoteSearchQuery
 }
 
@@ -1182,24 +1188,25 @@ func (r ApiGetPersonRemoteSearchResultsRequest) Execute() ([]RemoteSearchResult,
 /*
 GetPersonRemoteSearchResults Get person remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPersonRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPersonRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetPersonRemoteSearchResults(ctx context.Context) ApiGetPersonRemoteSearchResultsRequest {
 	return ApiGetPersonRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetPersonRemoteSearchResultsExecute(r ApiGetPersonRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetPersonRemoteSearchResults")
@@ -1287,8 +1294,8 @@ func (a *ItemLookupAPIService) GetPersonRemoteSearchResultsExecute(r ApiGetPerso
 }
 
 type ApiGetSeriesRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                         context.Context
+	ApiService                  ItemLookupAPI
 	seriesInfoRemoteSearchQuery *SeriesInfoRemoteSearchQuery
 }
 
@@ -1305,24 +1312,25 @@ func (r ApiGetSeriesRemoteSearchResultsRequest) Execute() ([]RemoteSearchResult,
 /*
 GetSeriesRemoteSearchResults Get series remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSeriesRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSeriesRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetSeriesRemoteSearchResults(ctx context.Context) ApiGetSeriesRemoteSearchResultsRequest {
 	return ApiGetSeriesRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetSeriesRemoteSearchResultsExecute(r ApiGetSeriesRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetSeriesRemoteSearchResults")
@@ -1410,8 +1418,8 @@ func (a *ItemLookupAPIService) GetSeriesRemoteSearchResultsExecute(r ApiGetSerie
 }
 
 type ApiGetTrailerRemoteSearchResultsRequest struct {
-	ctx context.Context
-	ApiService ItemLookupAPI
+	ctx                          context.Context
+	ApiService                   ItemLookupAPI
 	trailerInfoRemoteSearchQuery *TrailerInfoRemoteSearchQuery
 }
 
@@ -1428,24 +1436,25 @@ func (r ApiGetTrailerRemoteSearchResultsRequest) Execute() ([]RemoteSearchResult
 /*
 GetTrailerRemoteSearchResults Get trailer remote search.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTrailerRemoteSearchResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTrailerRemoteSearchResultsRequest
 */
 func (a *ItemLookupAPIService) GetTrailerRemoteSearchResults(ctx context.Context) ApiGetTrailerRemoteSearchResultsRequest {
 	return ApiGetTrailerRemoteSearchResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteSearchResult
+//
+//	@return []RemoteSearchResult
 func (a *ItemLookupAPIService) GetTrailerRemoteSearchResultsExecute(r ApiGetTrailerRemoteSearchResultsRequest) ([]RemoteSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteSearchResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemLookupAPIService.GetTrailerRemoteSearchResults")

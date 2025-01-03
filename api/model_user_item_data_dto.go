@@ -93,6 +93,7 @@ func (o *UserItemDataDto) HasRating() bool {
 func (o *UserItemDataDto) SetRating(v float64) {
 	o.Rating.Set(&v)
 }
+
 // SetRatingNil sets the value for Rating to be an explicit nil
 func (o *UserItemDataDto) SetRatingNil() {
 	o.Rating.Set(nil)
@@ -135,6 +136,7 @@ func (o *UserItemDataDto) HasPlayedPercentage() bool {
 func (o *UserItemDataDto) SetPlayedPercentage(v float64) {
 	o.PlayedPercentage.Set(&v)
 }
+
 // SetPlayedPercentageNil sets the value for PlayedPercentage to be an explicit nil
 func (o *UserItemDataDto) SetPlayedPercentageNil() {
 	o.PlayedPercentage.Set(nil)
@@ -177,6 +179,7 @@ func (o *UserItemDataDto) HasUnplayedItemCount() bool {
 func (o *UserItemDataDto) SetUnplayedItemCount(v int32) {
 	o.UnplayedItemCount.Set(&v)
 }
+
 // SetUnplayedItemCountNil sets the value for UnplayedItemCount to be an explicit nil
 func (o *UserItemDataDto) SetUnplayedItemCountNil() {
 	o.UnplayedItemCount.Set(nil)
@@ -315,6 +318,7 @@ func (o *UserItemDataDto) HasLikes() bool {
 func (o *UserItemDataDto) SetLikes(v bool) {
 	o.Likes.Set(&v)
 }
+
 // SetLikesNil sets the value for Likes to be an explicit nil
 func (o *UserItemDataDto) SetLikesNil() {
 	o.Likes.Set(nil)
@@ -357,6 +361,7 @@ func (o *UserItemDataDto) HasLastPlayedDate() bool {
 func (o *UserItemDataDto) SetLastPlayedDate(v time.Time) {
 	o.LastPlayedDate.Set(&v)
 }
+
 // SetLastPlayedDateNil sets the value for LastPlayedDate to be an explicit nil
 func (o *UserItemDataDto) SetLastPlayedDateNil() {
 	o.LastPlayedDate.Set(nil)
@@ -464,7 +469,7 @@ func (o *UserItemDataDto) SetItemId(v string) {
 }
 
 func (o UserItemDataDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -544,5 +549,3 @@ func (v *NullableUserItemDataDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

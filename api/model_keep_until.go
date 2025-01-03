@@ -20,10 +20,10 @@ type KeepUntil string
 
 // List of KeepUntil
 const (
-	KEEPUNTIL_UNTIL_DELETED KeepUntil = "UntilDeleted"
+	KEEPUNTIL_UNTIL_DELETED      KeepUntil = "UntilDeleted"
 	KEEPUNTIL_UNTIL_SPACE_NEEDED KeepUntil = "UntilSpaceNeeded"
-	KEEPUNTIL_UNTIL_WATCHED KeepUntil = "UntilWatched"
-	KEEPUNTIL_UNTIL_DATE KeepUntil = "UntilDate"
+	KEEPUNTIL_UNTIL_WATCHED      KeepUntil = "UntilWatched"
+	KEEPUNTIL_UNTIL_DATE         KeepUntil = "UntilDate"
 )
 
 // All allowed values of KeepUntil enum
@@ -112,4 +112,3 @@ func (v *NullableKeepUntil) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -76,6 +76,7 @@ func (o *SyncPlayGroupUpdateCommandMessage) HasData() bool {
 func (o *SyncPlayGroupUpdateCommandMessage) SetData(v GroupUpdate) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *SyncPlayGroupUpdateCommandMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -151,7 +152,7 @@ func (o *SyncPlayGroupUpdateCommandMessage) SetMessageType(v SessionMessageType)
 }
 
 func (o SyncPlayGroupUpdateCommandMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,5 +208,3 @@ func (v *NullableSyncPlayGroupUpdateCommandMessage) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

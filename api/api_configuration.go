@@ -16,18 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type ConfigurationAPI interface {
 
 	/*
-	GetConfiguration Gets application configuration.
+		GetConfiguration Gets application configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetConfigurationRequest
 	*/
 	GetConfiguration(ctx context.Context) ApiGetConfigurationRequest
 
@@ -36,10 +35,10 @@ type ConfigurationAPI interface {
 	GetConfigurationExecute(r ApiGetConfigurationRequest) (*ServerConfiguration, *http.Response, error)
 
 	/*
-	GetDefaultMetadataOptions Gets a default MetadataOptions object.
+		GetDefaultMetadataOptions Gets a default MetadataOptions object.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDefaultMetadataOptionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDefaultMetadataOptionsRequest
 	*/
 	GetDefaultMetadataOptions(ctx context.Context) ApiGetDefaultMetadataOptionsRequest
 
@@ -48,11 +47,11 @@ type ConfigurationAPI interface {
 	GetDefaultMetadataOptionsExecute(r ApiGetDefaultMetadataOptionsRequest) (*MetadataOptions, *http.Response, error)
 
 	/*
-	GetNamedConfiguration Gets a named configuration.
+		GetNamedConfiguration Gets a named configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param key Configuration key.
-	@return ApiGetNamedConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param key Configuration key.
+		@return ApiGetNamedConfigurationRequest
 	*/
 	GetNamedConfiguration(ctx context.Context, key string) ApiGetNamedConfigurationRequest
 
@@ -61,10 +60,10 @@ type ConfigurationAPI interface {
 	GetNamedConfigurationExecute(r ApiGetNamedConfigurationRequest) (*os.File, *http.Response, error)
 
 	/*
-	UpdateConfiguration Updates application configuration.
+		UpdateConfiguration Updates application configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUpdateConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUpdateConfigurationRequest
 	*/
 	UpdateConfiguration(ctx context.Context) ApiUpdateConfigurationRequest
 
@@ -72,11 +71,11 @@ type ConfigurationAPI interface {
 	UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*http.Response, error)
 
 	/*
-	UpdateNamedConfiguration Updates named configuration.
+		UpdateNamedConfiguration Updates named configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param key Configuration key.
-	@return ApiUpdateNamedConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param key Configuration key.
+		@return ApiUpdateNamedConfigurationRequest
 	*/
 	UpdateNamedConfiguration(ctx context.Context, key string) ApiUpdateNamedConfigurationRequest
 
@@ -88,7 +87,7 @@ type ConfigurationAPI interface {
 type ConfigurationAPIService service
 
 type ApiGetConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ConfigurationAPI
 }
 
@@ -99,24 +98,25 @@ func (r ApiGetConfigurationRequest) Execute() (*ServerConfiguration, *http.Respo
 /*
 GetConfiguration Gets application configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetConfigurationRequest
 */
 func (a *ConfigurationAPIService) GetConfiguration(ctx context.Context) ApiGetConfigurationRequest {
 	return ApiGetConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ServerConfiguration
+//
+//	@return ServerConfiguration
 func (a *ConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*ServerConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServerConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServerConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.GetConfiguration")
@@ -199,7 +199,7 @@ func (a *ConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationR
 }
 
 type ApiGetDefaultMetadataOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ConfigurationAPI
 }
 
@@ -210,24 +210,25 @@ func (r ApiGetDefaultMetadataOptionsRequest) Execute() (*MetadataOptions, *http.
 /*
 GetDefaultMetadataOptions Gets a default MetadataOptions object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultMetadataOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDefaultMetadataOptionsRequest
 */
 func (a *ConfigurationAPIService) GetDefaultMetadataOptions(ctx context.Context) ApiGetDefaultMetadataOptionsRequest {
 	return ApiGetDefaultMetadataOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return MetadataOptions
+//
+//	@return MetadataOptions
 func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ApiGetDefaultMetadataOptionsRequest) (*MetadataOptions, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MetadataOptions
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MetadataOptions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.GetDefaultMetadataOptions")
@@ -310,9 +311,9 @@ func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ApiGetDefau
 }
 
 type ApiGetNamedConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ConfigurationAPI
-	key string
+	key        string
 }
 
 func (r ApiGetNamedConfigurationRequest) Execute() (*os.File, *http.Response, error) {
@@ -322,26 +323,27 @@ func (r ApiGetNamedConfigurationRequest) Execute() (*os.File, *http.Response, er
 /*
 GetNamedConfiguration Gets a named configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Configuration key.
- @return ApiGetNamedConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param key Configuration key.
+	@return ApiGetNamedConfigurationRequest
 */
 func (a *ConfigurationAPIService) GetNamedConfiguration(ctx context.Context, key string) ApiGetNamedConfigurationRequest {
 	return ApiGetNamedConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ConfigurationAPIService) GetNamedConfigurationExecute(r ApiGetNamedConfigurationRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.GetNamedConfiguration")
@@ -425,8 +427,8 @@ func (a *ConfigurationAPIService) GetNamedConfigurationExecute(r ApiGetNamedConf
 }
 
 type ApiUpdateConfigurationRequest struct {
-	ctx context.Context
-	ApiService ConfigurationAPI
+	ctx                 context.Context
+	ApiService          ConfigurationAPI
 	serverConfiguration *ServerConfiguration
 }
 
@@ -443,22 +445,22 @@ func (r ApiUpdateConfigurationRequest) Execute() (*http.Response, error) {
 /*
 UpdateConfiguration Updates application configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateConfigurationRequest
 */
 func (a *ConfigurationAPIService) UpdateConfiguration(ctx context.Context) ApiUpdateConfigurationRequest {
 	return ApiUpdateConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.UpdateConfiguration")
@@ -537,10 +539,10 @@ func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ApiUpdateConfigur
 }
 
 type ApiUpdateNamedConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ConfigurationAPI
-	key string
-	body *interface{}
+	key        string
+	body       *interface{}
 }
 
 // Configuration.
@@ -556,24 +558,24 @@ func (r ApiUpdateNamedConfigurationRequest) Execute() (*http.Response, error) {
 /*
 UpdateNamedConfiguration Updates named configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Configuration key.
- @return ApiUpdateNamedConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param key Configuration key.
+	@return ApiUpdateNamedConfigurationRequest
 */
 func (a *ConfigurationAPIService) UpdateNamedConfiguration(ctx context.Context, key string) ApiUpdateNamedConfigurationRequest {
 	return ApiUpdateNamedConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *ConfigurationAPIService) UpdateNamedConfigurationExecute(r ApiUpdateNamedConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.UpdateNamedConfiguration")

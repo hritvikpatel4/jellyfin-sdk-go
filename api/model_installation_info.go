@@ -116,6 +116,7 @@ func (o *InstallationInfo) HasName() bool {
 func (o *InstallationInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *InstallationInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -158,6 +159,7 @@ func (o *InstallationInfo) HasVersion() bool {
 func (o *InstallationInfo) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *InstallationInfo) SetVersionNil() {
 	o.Version.Set(nil)
@@ -200,6 +202,7 @@ func (o *InstallationInfo) HasChangelog() bool {
 func (o *InstallationInfo) SetChangelog(v string) {
 	o.Changelog.Set(&v)
 }
+
 // SetChangelogNil sets the value for Changelog to be an explicit nil
 func (o *InstallationInfo) SetChangelogNil() {
 	o.Changelog.Set(nil)
@@ -242,6 +245,7 @@ func (o *InstallationInfo) HasSourceUrl() bool {
 func (o *InstallationInfo) SetSourceUrl(v string) {
 	o.SourceUrl.Set(&v)
 }
+
 // SetSourceUrlNil sets the value for SourceUrl to be an explicit nil
 func (o *InstallationInfo) SetSourceUrlNil() {
 	o.SourceUrl.Set(nil)
@@ -284,6 +288,7 @@ func (o *InstallationInfo) HasChecksum() bool {
 func (o *InstallationInfo) SetChecksum(v string) {
 	o.Checksum.Set(&v)
 }
+
 // SetChecksumNil sets the value for Checksum to be an explicit nil
 func (o *InstallationInfo) SetChecksumNil() {
 	o.Checksum.Set(nil)
@@ -326,6 +331,7 @@ func (o *InstallationInfo) HasPackageInfo() bool {
 func (o *InstallationInfo) SetPackageInfo(v PackageInfo) {
 	o.PackageInfo.Set(&v)
 }
+
 // SetPackageInfoNil sets the value for PackageInfo to be an explicit nil
 func (o *InstallationInfo) SetPackageInfoNil() {
 	o.PackageInfo.Set(nil)
@@ -337,7 +343,7 @@ func (o *InstallationInfo) UnsetPackageInfo() {
 }
 
 func (o InstallationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -405,5 +411,3 @@ func (v *NullableInstallationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

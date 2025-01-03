@@ -310,6 +310,7 @@ func (o *PackageInfo) HasImageUrl() bool {
 func (o *PackageInfo) SetImageUrl(v string) {
 	o.ImageUrl.Set(&v)
 }
+
 // SetImageUrlNil sets the value for ImageUrl to be an explicit nil
 func (o *PackageInfo) SetImageUrlNil() {
 	o.ImageUrl.Set(nil)
@@ -321,7 +322,7 @@ func (o *PackageInfo) UnsetImageUrl() {
 }
 
 func (o PackageInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -392,5 +393,3 @@ func (v *NullablePackageInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

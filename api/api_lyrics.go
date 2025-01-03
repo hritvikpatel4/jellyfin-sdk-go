@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type LyricsAPI interface {
 
 	/*
-	DeleteLyrics Deletes an external lyric file.
+		DeleteLyrics Deletes an external lyric file.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiDeleteLyricsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiDeleteLyricsRequest
 	*/
 	DeleteLyrics(ctx context.Context, itemId string) ApiDeleteLyricsRequest
 
@@ -36,12 +35,12 @@ type LyricsAPI interface {
 	DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.Response, error)
 
 	/*
-	DownloadRemoteLyrics Downloads a remote lyric.
+		DownloadRemoteLyrics Downloads a remote lyric.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param lyricId The lyric id.
-	@return ApiDownloadRemoteLyricsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param lyricId The lyric id.
+		@return ApiDownloadRemoteLyricsRequest
 	*/
 	DownloadRemoteLyrics(ctx context.Context, itemId string, lyricId string) ApiDownloadRemoteLyricsRequest
 
@@ -50,11 +49,11 @@ type LyricsAPI interface {
 	DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyricsRequest) (*LyricDto, *http.Response, error)
 
 	/*
-	GetLyrics Gets an item's lyrics.
+		GetLyrics Gets an item's lyrics.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetLyricsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetLyricsRequest
 	*/
 	GetLyrics(ctx context.Context, itemId string) ApiGetLyricsRequest
 
@@ -63,11 +62,11 @@ type LyricsAPI interface {
 	GetLyricsExecute(r ApiGetLyricsRequest) (*LyricDto, *http.Response, error)
 
 	/*
-	GetRemoteLyrics Gets the remote lyrics.
+		GetRemoteLyrics Gets the remote lyrics.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param lyricId The remote provider item id.
-	@return ApiGetRemoteLyricsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param lyricId The remote provider item id.
+		@return ApiGetRemoteLyricsRequest
 	*/
 	GetRemoteLyrics(ctx context.Context, lyricId string) ApiGetRemoteLyricsRequest
 
@@ -76,11 +75,11 @@ type LyricsAPI interface {
 	GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (*LyricDto, *http.Response, error)
 
 	/*
-	SearchRemoteLyrics Search remote lyrics.
+		SearchRemoteLyrics Search remote lyrics.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiSearchRemoteLyricsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiSearchRemoteLyricsRequest
 	*/
 	SearchRemoteLyrics(ctx context.Context, itemId string) ApiSearchRemoteLyricsRequest
 
@@ -89,11 +88,11 @@ type LyricsAPI interface {
 	SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequest) ([]RemoteLyricInfoDto, *http.Response, error)
 
 	/*
-	UploadLyrics Upload an external lyric file.
+		UploadLyrics Upload an external lyric file.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item the lyric belongs to.
-	@return ApiUploadLyricsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item the lyric belongs to.
+		@return ApiUploadLyricsRequest
 	*/
 	UploadLyrics(ctx context.Context, itemId string) ApiUploadLyricsRequest
 
@@ -106,9 +105,9 @@ type LyricsAPI interface {
 type LyricsAPIService service
 
 type ApiDeleteLyricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LyricsAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiDeleteLyricsRequest) Execute() (*http.Response, error) {
@@ -118,24 +117,24 @@ func (r ApiDeleteLyricsRequest) Execute() (*http.Response, error) {
 /*
 DeleteLyrics Deletes an external lyric file.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiDeleteLyricsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiDeleteLyricsRequest
 */
 func (a *LyricsAPIService) DeleteLyrics(ctx context.Context, itemId string) ApiDeleteLyricsRequest {
 	return ApiDeleteLyricsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *LyricsAPIService) DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.DeleteLyrics")
@@ -210,8 +209,8 @@ func (a *LyricsAPIService) DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -221,10 +220,10 @@ func (a *LyricsAPIService) DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.
 }
 
 type ApiDownloadRemoteLyricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LyricsAPI
-	itemId string
-	lyricId string
+	itemId     string
+	lyricId    string
 }
 
 func (r ApiDownloadRemoteLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
@@ -234,28 +233,29 @@ func (r ApiDownloadRemoteLyricsRequest) Execute() (*LyricDto, *http.Response, er
 /*
 DownloadRemoteLyrics Downloads a remote lyric.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param lyricId The lyric id.
- @return ApiDownloadRemoteLyricsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param lyricId The lyric id.
+	@return ApiDownloadRemoteLyricsRequest
 */
 func (a *LyricsAPIService) DownloadRemoteLyrics(ctx context.Context, itemId string, lyricId string) ApiDownloadRemoteLyricsRequest {
 	return ApiDownloadRemoteLyricsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		lyricId: lyricId,
+		ctx:        ctx,
+		itemId:     itemId,
+		lyricId:    lyricId,
 	}
 }
 
 // Execute executes the request
-//  @return LyricDto
+//
+//	@return LyricDto
 func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyricsRequest) (*LyricDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.DownloadRemoteLyrics")
@@ -331,8 +331,8 @@ func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyrics
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -351,9 +351,9 @@ func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyrics
 }
 
 type ApiGetLyricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LyricsAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
@@ -363,26 +363,27 @@ func (r ApiGetLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
 /*
 GetLyrics Gets an item's lyrics.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetLyricsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetLyricsRequest
 */
 func (a *LyricsAPIService) GetLyrics(ctx context.Context, itemId string) ApiGetLyricsRequest {
 	return ApiGetLyricsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return LyricDto
+//
+//	@return LyricDto
 func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*LyricDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.GetLyrics")
@@ -457,8 +458,8 @@ func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*LyricDto, *
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -477,9 +478,9 @@ func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*LyricDto, *
 }
 
 type ApiGetRemoteLyricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LyricsAPI
-	lyricId string
+	lyricId    string
 }
 
 func (r ApiGetRemoteLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
@@ -489,26 +490,27 @@ func (r ApiGetRemoteLyricsRequest) Execute() (*LyricDto, *http.Response, error) 
 /*
 GetRemoteLyrics Gets the remote lyrics.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lyricId The remote provider item id.
- @return ApiGetRemoteLyricsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lyricId The remote provider item id.
+	@return ApiGetRemoteLyricsRequest
 */
 func (a *LyricsAPIService) GetRemoteLyrics(ctx context.Context, lyricId string) ApiGetRemoteLyricsRequest {
 	return ApiGetRemoteLyricsRequest{
 		ApiService: a,
-		ctx: ctx,
-		lyricId: lyricId,
+		ctx:        ctx,
+		lyricId:    lyricId,
 	}
 }
 
 // Execute executes the request
-//  @return LyricDto
+//
+//	@return LyricDto
 func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (*LyricDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.GetRemoteLyrics")
@@ -583,8 +585,8 @@ func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -603,9 +605,9 @@ func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (
 }
 
 type ApiSearchRemoteLyricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LyricsAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiSearchRemoteLyricsRequest) Execute() ([]RemoteLyricInfoDto, *http.Response, error) {
@@ -615,26 +617,27 @@ func (r ApiSearchRemoteLyricsRequest) Execute() ([]RemoteLyricInfoDto, *http.Res
 /*
 SearchRemoteLyrics Search remote lyrics.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiSearchRemoteLyricsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiSearchRemoteLyricsRequest
 */
 func (a *LyricsAPIService) SearchRemoteLyrics(ctx context.Context, itemId string) ApiSearchRemoteLyricsRequest {
 	return ApiSearchRemoteLyricsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return []RemoteLyricInfoDto
+//
+//	@return []RemoteLyricInfoDto
 func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequest) ([]RemoteLyricInfoDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RemoteLyricInfoDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RemoteLyricInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.SearchRemoteLyrics")
@@ -709,8 +712,8 @@ func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -729,11 +732,11 @@ func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequ
 }
 
 type ApiUploadLyricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LyricsAPI
-	itemId string
-	fileName *string
-	body *os.File
+	itemId     string
+	fileName   *string
+	body       *os.File
 }
 
 // Name of the file being uploaded.
@@ -754,26 +757,27 @@ func (r ApiUploadLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
 /*
 UploadLyrics Upload an external lyric file.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item the lyric belongs to.
- @return ApiUploadLyricsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item the lyric belongs to.
+	@return ApiUploadLyricsRequest
 */
 func (a *LyricsAPIService) UploadLyrics(ctx context.Context, itemId string) ApiUploadLyricsRequest {
 	return ApiUploadLyricsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return LyricDto
+//
+//	@return LyricDto
 func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*LyricDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.UploadLyrics")
@@ -854,8 +858,8 @@ func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*Lyric
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -865,8 +869,8 @@ func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*Lyric
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

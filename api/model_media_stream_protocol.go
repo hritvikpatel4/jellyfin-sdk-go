@@ -21,7 +21,7 @@ type MediaStreamProtocol string
 // List of MediaStreamProtocol
 const (
 	MEDIASTREAMPROTOCOL_HTTP MediaStreamProtocol = "http"
-	MEDIASTREAMPROTOCOL_HLS MediaStreamProtocol = "hls"
+	MEDIASTREAMPROTOCOL_HLS  MediaStreamProtocol = "hls"
 )
 
 // All allowed values of MediaStreamProtocol enum
@@ -108,4 +108,3 @@ func (v *NullableMediaStreamProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

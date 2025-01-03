@@ -19,14 +19,13 @@ import (
 	"os"
 )
 
-
 type DashboardAPI interface {
 
 	/*
-	GetConfigurationPages Gets the configuration pages.
+		GetConfigurationPages Gets the configuration pages.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetConfigurationPagesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetConfigurationPagesRequest
 	*/
 	GetConfigurationPages(ctx context.Context) ApiGetConfigurationPagesRequest
 
@@ -35,10 +34,10 @@ type DashboardAPI interface {
 	GetConfigurationPagesExecute(r ApiGetConfigurationPagesRequest) ([]ConfigurationPageInfo, *http.Response, error)
 
 	/*
-	GetDashboardConfigurationPage Gets a dashboard configuration page.
+		GetDashboardConfigurationPage Gets a dashboard configuration page.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDashboardConfigurationPageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDashboardConfigurationPageRequest
 	*/
 	GetDashboardConfigurationPage(ctx context.Context) ApiGetDashboardConfigurationPageRequest
 
@@ -51,8 +50,8 @@ type DashboardAPI interface {
 type DashboardAPIService service
 
 type ApiGetConfigurationPagesRequest struct {
-	ctx context.Context
-	ApiService DashboardAPI
+	ctx              context.Context
+	ApiService       DashboardAPI
 	enableInMainMenu *bool
 }
 
@@ -69,24 +68,25 @@ func (r ApiGetConfigurationPagesRequest) Execute() ([]ConfigurationPageInfo, *ht
 /*
 GetConfigurationPages Gets the configuration pages.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConfigurationPagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetConfigurationPagesRequest
 */
 func (a *DashboardAPIService) GetConfigurationPages(ctx context.Context) ApiGetConfigurationPagesRequest {
 	return ApiGetConfigurationPagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConfigurationPageInfo
+//
+//	@return []ConfigurationPageInfo
 func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfigurationPagesRequest) ([]ConfigurationPageInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConfigurationPageInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConfigurationPageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DashboardAPIService.GetConfigurationPages")
@@ -163,8 +163,8 @@ func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfiguration
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -183,9 +183,9 @@ func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfiguration
 }
 
 type ApiGetDashboardConfigurationPageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService DashboardAPI
-	name *string
+	name       *string
 }
 
 // The name of the page.
@@ -201,24 +201,25 @@ func (r ApiGetDashboardConfigurationPageRequest) Execute() (*os.File, *http.Resp
 /*
 GetDashboardConfigurationPage Gets a dashboard configuration page.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDashboardConfigurationPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDashboardConfigurationPageRequest
 */
 func (a *DashboardAPIService) GetDashboardConfigurationPage(ctx context.Context) ApiGetDashboardConfigurationPageRequest {
 	return ApiGetDashboardConfigurationPageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DashboardAPIService) GetDashboardConfigurationPageExecute(r ApiGetDashboardConfigurationPageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DashboardAPIService.GetDashboardConfigurationPage")
@@ -281,8 +282,8 @@ func (a *DashboardAPIService) GetDashboardConfigurationPageExecute(r ApiGetDashb
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

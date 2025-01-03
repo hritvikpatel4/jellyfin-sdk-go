@@ -74,6 +74,7 @@ func (o *ScheduledTasksInfoStartMessage) HasData() bool {
 func (o *ScheduledTasksInfoStartMessage) SetData(v string) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *ScheduledTasksInfoStartMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -117,7 +118,7 @@ func (o *ScheduledTasksInfoStartMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o ScheduledTasksInfoStartMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableScheduledTasksInfoStartMessage) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

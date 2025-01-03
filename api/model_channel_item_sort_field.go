@@ -20,12 +20,12 @@ type ChannelItemSortField string
 
 // List of ChannelItemSortField
 const (
-	CHANNELITEMSORTFIELD_NAME ChannelItemSortField = "Name"
-	CHANNELITEMSORTFIELD_COMMUNITY_RATING ChannelItemSortField = "CommunityRating"
-	CHANNELITEMSORTFIELD_PREMIERE_DATE ChannelItemSortField = "PremiereDate"
-	CHANNELITEMSORTFIELD_DATE_CREATED ChannelItemSortField = "DateCreated"
-	CHANNELITEMSORTFIELD_RUNTIME ChannelItemSortField = "Runtime"
-	CHANNELITEMSORTFIELD_PLAY_COUNT ChannelItemSortField = "PlayCount"
+	CHANNELITEMSORTFIELD_NAME                 ChannelItemSortField = "Name"
+	CHANNELITEMSORTFIELD_COMMUNITY_RATING     ChannelItemSortField = "CommunityRating"
+	CHANNELITEMSORTFIELD_PREMIERE_DATE        ChannelItemSortField = "PremiereDate"
+	CHANNELITEMSORTFIELD_DATE_CREATED         ChannelItemSortField = "DateCreated"
+	CHANNELITEMSORTFIELD_RUNTIME              ChannelItemSortField = "Runtime"
+	CHANNELITEMSORTFIELD_PLAY_COUNT           ChannelItemSortField = "PlayCount"
 	CHANNELITEMSORTFIELD_COMMUNITY_PLAY_COUNT ChannelItemSortField = "CommunityPlayCount"
 )
 
@@ -118,4 +118,3 @@ func (v *NullableChannelItemSortField) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

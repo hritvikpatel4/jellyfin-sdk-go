@@ -19,24 +19,24 @@ var _ MappedNullable = &ListingsProviderInfo{}
 
 // ListingsProviderInfo struct for ListingsProviderInfo
 type ListingsProviderInfo struct {
-	Id NullableString `json:"Id,omitempty"`
-	Type NullableString `json:"Type,omitempty"`
-	Username NullableString `json:"Username,omitempty"`
-	Password NullableString `json:"Password,omitempty"`
-	ListingsId NullableString `json:"ListingsId,omitempty"`
-	ZipCode NullableString `json:"ZipCode,omitempty"`
-	Country NullableString `json:"Country,omitempty"`
-	Path NullableString `json:"Path,omitempty"`
-	EnabledTuners []string `json:"EnabledTuners,omitempty"`
-	EnableAllTuners *bool `json:"EnableAllTuners,omitempty"`
-	NewsCategories []string `json:"NewsCategories,omitempty"`
-	SportsCategories []string `json:"SportsCategories,omitempty"`
-	KidsCategories []string `json:"KidsCategories,omitempty"`
-	MovieCategories []string `json:"MovieCategories,omitempty"`
-	ChannelMappings []NameValuePair `json:"ChannelMappings,omitempty"`
-	MoviePrefix NullableString `json:"MoviePrefix,omitempty"`
-	PreferredLanguage NullableString `json:"PreferredLanguage,omitempty"`
-	UserAgent NullableString `json:"UserAgent,omitempty"`
+	Id                NullableString  `json:"Id,omitempty"`
+	Type              NullableString  `json:"Type,omitempty"`
+	Username          NullableString  `json:"Username,omitempty"`
+	Password          NullableString  `json:"Password,omitempty"`
+	ListingsId        NullableString  `json:"ListingsId,omitempty"`
+	ZipCode           NullableString  `json:"ZipCode,omitempty"`
+	Country           NullableString  `json:"Country,omitempty"`
+	Path              NullableString  `json:"Path,omitempty"`
+	EnabledTuners     []string        `json:"EnabledTuners,omitempty"`
+	EnableAllTuners   *bool           `json:"EnableAllTuners,omitempty"`
+	NewsCategories    []string        `json:"NewsCategories,omitempty"`
+	SportsCategories  []string        `json:"SportsCategories,omitempty"`
+	KidsCategories    []string        `json:"KidsCategories,omitempty"`
+	MovieCategories   []string        `json:"MovieCategories,omitempty"`
+	ChannelMappings   []NameValuePair `json:"ChannelMappings,omitempty"`
+	MoviePrefix       NullableString  `json:"MoviePrefix,omitempty"`
+	PreferredLanguage NullableString  `json:"PreferredLanguage,omitempty"`
+	UserAgent         NullableString  `json:"UserAgent,omitempty"`
 }
 
 // NewListingsProviderInfo instantiates a new ListingsProviderInfo object
@@ -88,6 +88,7 @@ func (o *ListingsProviderInfo) HasId() bool {
 func (o *ListingsProviderInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *ListingsProviderInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -130,6 +131,7 @@ func (o *ListingsProviderInfo) HasType() bool {
 func (o *ListingsProviderInfo) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *ListingsProviderInfo) SetTypeNil() {
 	o.Type.Set(nil)
@@ -172,6 +174,7 @@ func (o *ListingsProviderInfo) HasUsername() bool {
 func (o *ListingsProviderInfo) SetUsername(v string) {
 	o.Username.Set(&v)
 }
+
 // SetUsernameNil sets the value for Username to be an explicit nil
 func (o *ListingsProviderInfo) SetUsernameNil() {
 	o.Username.Set(nil)
@@ -214,6 +217,7 @@ func (o *ListingsProviderInfo) HasPassword() bool {
 func (o *ListingsProviderInfo) SetPassword(v string) {
 	o.Password.Set(&v)
 }
+
 // SetPasswordNil sets the value for Password to be an explicit nil
 func (o *ListingsProviderInfo) SetPasswordNil() {
 	o.Password.Set(nil)
@@ -256,6 +260,7 @@ func (o *ListingsProviderInfo) HasListingsId() bool {
 func (o *ListingsProviderInfo) SetListingsId(v string) {
 	o.ListingsId.Set(&v)
 }
+
 // SetListingsIdNil sets the value for ListingsId to be an explicit nil
 func (o *ListingsProviderInfo) SetListingsIdNil() {
 	o.ListingsId.Set(nil)
@@ -298,6 +303,7 @@ func (o *ListingsProviderInfo) HasZipCode() bool {
 func (o *ListingsProviderInfo) SetZipCode(v string) {
 	o.ZipCode.Set(&v)
 }
+
 // SetZipCodeNil sets the value for ZipCode to be an explicit nil
 func (o *ListingsProviderInfo) SetZipCodeNil() {
 	o.ZipCode.Set(nil)
@@ -340,6 +346,7 @@ func (o *ListingsProviderInfo) HasCountry() bool {
 func (o *ListingsProviderInfo) SetCountry(v string) {
 	o.Country.Set(&v)
 }
+
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *ListingsProviderInfo) SetCountryNil() {
 	o.Country.Set(nil)
@@ -382,6 +389,7 @@ func (o *ListingsProviderInfo) HasPath() bool {
 func (o *ListingsProviderInfo) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *ListingsProviderInfo) SetPathNil() {
 	o.Path.Set(nil)
@@ -654,6 +662,7 @@ func (o *ListingsProviderInfo) HasMoviePrefix() bool {
 func (o *ListingsProviderInfo) SetMoviePrefix(v string) {
 	o.MoviePrefix.Set(&v)
 }
+
 // SetMoviePrefixNil sets the value for MoviePrefix to be an explicit nil
 func (o *ListingsProviderInfo) SetMoviePrefixNil() {
 	o.MoviePrefix.Set(nil)
@@ -696,6 +705,7 @@ func (o *ListingsProviderInfo) HasPreferredLanguage() bool {
 func (o *ListingsProviderInfo) SetPreferredLanguage(v string) {
 	o.PreferredLanguage.Set(&v)
 }
+
 // SetPreferredLanguageNil sets the value for PreferredLanguage to be an explicit nil
 func (o *ListingsProviderInfo) SetPreferredLanguageNil() {
 	o.PreferredLanguage.Set(nil)
@@ -738,6 +748,7 @@ func (o *ListingsProviderInfo) HasUserAgent() bool {
 func (o *ListingsProviderInfo) SetUserAgent(v string) {
 	o.UserAgent.Set(&v)
 }
+
 // SetUserAgentNil sets the value for UserAgent to be an explicit nil
 func (o *ListingsProviderInfo) SetUserAgentNil() {
 	o.UserAgent.Set(nil)
@@ -749,7 +760,7 @@ func (o *ListingsProviderInfo) UnsetUserAgent() {
 }
 
 func (o ListingsProviderInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -850,5 +861,3 @@ func (v *NullableListingsProviderInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

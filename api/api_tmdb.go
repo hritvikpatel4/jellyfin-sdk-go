@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type TmdbAPI interface {
 
 	/*
-	TmdbClientConfiguration Gets the TMDb image configuration options.
+		TmdbClientConfiguration Gets the TMDb image configuration options.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiTmdbClientConfigurationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiTmdbClientConfigurationRequest
 	*/
 	TmdbClientConfiguration(ctx context.Context) ApiTmdbClientConfigurationRequest
 
@@ -38,7 +37,7 @@ type TmdbAPI interface {
 type TmdbAPIService service
 
 type ApiTmdbClientConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService TmdbAPI
 }
 
@@ -49,24 +48,25 @@ func (r ApiTmdbClientConfigurationRequest) Execute() (*ConfigImageTypes, *http.R
 /*
 TmdbClientConfiguration Gets the TMDb image configuration options.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTmdbClientConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTmdbClientConfigurationRequest
 */
 func (a *TmdbAPIService) TmdbClientConfiguration(ctx context.Context) ApiTmdbClientConfigurationRequest {
 	return ApiTmdbClientConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConfigImageTypes
+//
+//	@return ConfigImageTypes
 func (a *TmdbAPIService) TmdbClientConfigurationExecute(r ApiTmdbClientConfigurationRequest) (*ConfigImageTypes, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConfigImageTypes
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConfigImageTypes
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TmdbAPIService.TmdbClientConfiguration")

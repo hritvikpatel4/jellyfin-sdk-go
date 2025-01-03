@@ -183,6 +183,7 @@ func (o *TaskResult) HasName() bool {
 func (o *TaskResult) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *TaskResult) SetNameNil() {
 	o.Name.Set(nil)
@@ -225,6 +226,7 @@ func (o *TaskResult) HasKey() bool {
 func (o *TaskResult) SetKey(v string) {
 	o.Key.Set(&v)
 }
+
 // SetKeyNil sets the value for Key to be an explicit nil
 func (o *TaskResult) SetKeyNil() {
 	o.Key.Set(nil)
@@ -267,6 +269,7 @@ func (o *TaskResult) HasId() bool {
 func (o *TaskResult) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *TaskResult) SetIdNil() {
 	o.Id.Set(nil)
@@ -309,6 +312,7 @@ func (o *TaskResult) HasErrorMessage() bool {
 func (o *TaskResult) SetErrorMessage(v string) {
 	o.ErrorMessage.Set(&v)
 }
+
 // SetErrorMessageNil sets the value for ErrorMessage to be an explicit nil
 func (o *TaskResult) SetErrorMessageNil() {
 	o.ErrorMessage.Set(nil)
@@ -351,6 +355,7 @@ func (o *TaskResult) HasLongErrorMessage() bool {
 func (o *TaskResult) SetLongErrorMessage(v string) {
 	o.LongErrorMessage.Set(&v)
 }
+
 // SetLongErrorMessageNil sets the value for LongErrorMessage to be an explicit nil
 func (o *TaskResult) SetLongErrorMessageNil() {
 	o.LongErrorMessage.Set(nil)
@@ -362,7 +367,7 @@ func (o *TaskResult) UnsetLongErrorMessage() {
 }
 
 func (o TaskResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -433,5 +438,3 @@ func (v *NullableTaskResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

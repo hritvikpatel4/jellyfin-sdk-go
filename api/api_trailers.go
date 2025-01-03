@@ -16,18 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"time"
 	"reflect"
+	"time"
 )
-
 
 type TrailersAPI interface {
 
 	/*
-	GetTrailers Finds movies and trailers similar to a given trailer.
+		GetTrailers Finds movies and trailers similar to a given trailer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetTrailersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetTrailersRequest
 	*/
 	GetTrailers(ctx context.Context) ApiGetTrailersRequest
 
@@ -40,92 +39,92 @@ type TrailersAPI interface {
 type TrailersAPIService service
 
 type ApiGetTrailersRequest struct {
-	ctx context.Context
-	ApiService TrailersAPI
-	userId *string
-	maxOfficialRating *string
-	hasThemeSong *bool
-	hasThemeVideo *bool
-	hasSubtitles *bool
-	hasSpecialFeature *bool
-	hasTrailer *bool
-	adjacentTo *string
-	parentIndexNumber *int32
-	hasParentalRating *bool
-	isHd *bool
-	is4K *bool
-	locationTypes *[]LocationType
-	excludeLocationTypes *[]LocationType
-	isMissing *bool
-	isUnaired *bool
-	minCommunityRating *float64
-	minCriticRating *float64
-	minPremiereDate *time.Time
-	minDateLastSaved *time.Time
+	ctx                     context.Context
+	ApiService              TrailersAPI
+	userId                  *string
+	maxOfficialRating       *string
+	hasThemeSong            *bool
+	hasThemeVideo           *bool
+	hasSubtitles            *bool
+	hasSpecialFeature       *bool
+	hasTrailer              *bool
+	adjacentTo              *string
+	parentIndexNumber       *int32
+	hasParentalRating       *bool
+	isHd                    *bool
+	is4K                    *bool
+	locationTypes           *[]LocationType
+	excludeLocationTypes    *[]LocationType
+	isMissing               *bool
+	isUnaired               *bool
+	minCommunityRating      *float64
+	minCriticRating         *float64
+	minPremiereDate         *time.Time
+	minDateLastSaved        *time.Time
 	minDateLastSavedForUser *time.Time
-	maxPremiereDate *time.Time
-	hasOverview *bool
-	hasImdbId *bool
-	hasTmdbId *bool
-	hasTvdbId *bool
-	isMovie *bool
-	isSeries *bool
-	isNews *bool
-	isKids *bool
-	isSports *bool
-	excludeItemIds *[]string
-	startIndex *int32
-	limit *int32
-	recursive *bool
-	searchTerm *string
-	sortOrder *[]SortOrder
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
-	isFavorite *bool
-	mediaTypes *[]MediaType
-	imageTypes *[]ImageType
-	sortBy *[]ItemSortBy
-	isPlayed *bool
-	genres *[]string
-	officialRatings *[]string
-	tags *[]string
-	years *[]int32
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	person *string
-	personIds *[]string
-	personTypes *[]string
-	studios *[]string
-	artists *[]string
-	excludeArtistIds *[]string
-	artistIds *[]string
-	albumArtistIds *[]string
-	contributingArtistIds *[]string
-	albums *[]string
-	albumIds *[]string
-	ids *[]string
-	videoTypes *[]VideoType
-	minOfficialRating *string
-	isLocked *bool
-	isPlaceHolder *bool
-	hasOfficialRating *bool
-	collapseBoxSetItems *bool
-	minWidth *int32
-	minHeight *int32
-	maxWidth *int32
-	maxHeight *int32
-	is3D *bool
-	seriesStatus *[]SeriesStatus
+	maxPremiereDate         *time.Time
+	hasOverview             *bool
+	hasImdbId               *bool
+	hasTmdbId               *bool
+	hasTvdbId               *bool
+	isMovie                 *bool
+	isSeries                *bool
+	isNews                  *bool
+	isKids                  *bool
+	isSports                *bool
+	excludeItemIds          *[]string
+	startIndex              *int32
+	limit                   *int32
+	recursive               *bool
+	searchTerm              *string
+	sortOrder               *[]SortOrder
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	filters                 *[]ItemFilter
+	isFavorite              *bool
+	mediaTypes              *[]MediaType
+	imageTypes              *[]ImageType
+	sortBy                  *[]ItemSortBy
+	isPlayed                *bool
+	genres                  *[]string
+	officialRatings         *[]string
+	tags                    *[]string
+	years                   *[]int32
+	enableUserData          *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	person                  *string
+	personIds               *[]string
+	personTypes             *[]string
+	studios                 *[]string
+	artists                 *[]string
+	excludeArtistIds        *[]string
+	artistIds               *[]string
+	albumArtistIds          *[]string
+	contributingArtistIds   *[]string
+	albums                  *[]string
+	albumIds                *[]string
+	ids                     *[]string
+	videoTypes              *[]VideoType
+	minOfficialRating       *string
+	isLocked                *bool
+	isPlaceHolder           *bool
+	hasOfficialRating       *bool
+	collapseBoxSetItems     *bool
+	minWidth                *int32
+	minHeight               *int32
+	maxWidth                *int32
+	maxHeight               *int32
+	is3D                    *bool
+	seriesStatus            *[]SeriesStatus
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	studioIds *[]string
-	genreIds *[]string
-	enableTotalRecordCount *bool
-	enableImages *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	studioIds               *[]string
+	genreIds                *[]string
+	enableTotalRecordCount  *bool
+	enableImages            *bool
 }
 
 // The user id supplied as query parameter; this is required when not using an API key.
@@ -639,24 +638,25 @@ func (r ApiGetTrailersRequest) Execute() (*BaseItemDtoQueryResult, *http.Respons
 /*
 GetTrailers Finds movies and trailers similar to a given trailer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTrailersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTrailersRequest
 */
 func (a *TrailersAPIService) GetTrailers(ctx context.Context) ApiGetTrailersRequest {
 	return ApiGetTrailersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *TrailersAPIService) GetTrailersExecute(r ApiGetTrailersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrailersAPIService.GetTrailers")

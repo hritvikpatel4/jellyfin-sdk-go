@@ -12,19 +12,19 @@ package api
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // InboundWebSocketMessage - Represents the list of possible inbound websocket types
 type InboundWebSocketMessage struct {
-	ActivityLogEntryStartMessage *ActivityLogEntryStartMessage
-	ActivityLogEntryStopMessage *ActivityLogEntryStopMessage
-	InboundKeepAliveMessage *InboundKeepAliveMessage
+	ActivityLogEntryStartMessage   *ActivityLogEntryStartMessage
+	ActivityLogEntryStopMessage    *ActivityLogEntryStopMessage
+	InboundKeepAliveMessage        *InboundKeepAliveMessage
 	ScheduledTasksInfoStartMessage *ScheduledTasksInfoStartMessage
-	ScheduledTasksInfoStopMessage *ScheduledTasksInfoStopMessage
-	SessionsStartMessage *SessionsStartMessage
-	SessionsStopMessage *SessionsStopMessage
+	ScheduledTasksInfoStopMessage  *ScheduledTasksInfoStopMessage
+	SessionsStartMessage           *SessionsStartMessage
+	SessionsStopMessage            *SessionsStopMessage
 }
 
 // ActivityLogEntryStartMessageAsInboundWebSocketMessage is a convenience function that returns ActivityLogEntryStartMessage wrapped in InboundWebSocketMessage
@@ -75,7 +75,6 @@ func SessionsStopMessageAsInboundWebSocketMessage(v *SessionsStopMessage) Inboun
 		SessionsStopMessage: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InboundWebSocketMessage) UnmarshalJSON(data []byte) error {
@@ -252,7 +251,7 @@ func (src InboundWebSocketMessage) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InboundWebSocketMessage) GetActualInstance() (interface{}) {
+func (obj *InboundWebSocketMessage) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -323,5 +322,3 @@ func (v *NullableInboundWebSocketMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,14 +19,13 @@ import (
 	"time"
 )
 
-
 type ActivityLogAPI interface {
 
 	/*
-	GetLogEntries Gets activity log entries.
+		GetLogEntries Gets activity log entries.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLogEntriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLogEntriesRequest
 	*/
 	GetLogEntries(ctx context.Context) ApiGetLogEntriesRequest
 
@@ -39,12 +38,12 @@ type ActivityLogAPI interface {
 type ActivityLogAPIService service
 
 type ApiGetLogEntriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ActivityLogAPI
 	startIndex *int32
-	limit *int32
-	minDate *time.Time
-	hasUserId *bool
+	limit      *int32
+	minDate    *time.Time
+	hasUserId  *bool
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
@@ -78,24 +77,25 @@ func (r ApiGetLogEntriesRequest) Execute() (*ActivityLogEntryQueryResult, *http.
 /*
 GetLogEntries Gets activity log entries.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLogEntriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLogEntriesRequest
 */
 func (a *ActivityLogAPIService) GetLogEntries(ctx context.Context) ApiGetLogEntriesRequest {
 	return ApiGetLogEntriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ActivityLogEntryQueryResult
+//
+//	@return ActivityLogEntryQueryResult
 func (a *ActivityLogAPIService) GetLogEntriesExecute(r ApiGetLogEntriesRequest) (*ActivityLogEntryQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ActivityLogEntryQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ActivityLogEntryQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActivityLogAPIService.GetLogEntries")

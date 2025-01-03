@@ -20,13 +20,13 @@ type RecordingStatus string
 
 // List of RecordingStatus
 const (
-	RECORDINGSTATUS_NEW RecordingStatus = "New"
-	RECORDINGSTATUS_IN_PROGRESS RecordingStatus = "InProgress"
-	RECORDINGSTATUS_COMPLETED RecordingStatus = "Completed"
-	RECORDINGSTATUS_CANCELLED RecordingStatus = "Cancelled"
-	RECORDINGSTATUS_CONFLICTED_OK RecordingStatus = "ConflictedOk"
+	RECORDINGSTATUS_NEW               RecordingStatus = "New"
+	RECORDINGSTATUS_IN_PROGRESS       RecordingStatus = "InProgress"
+	RECORDINGSTATUS_COMPLETED         RecordingStatus = "Completed"
+	RECORDINGSTATUS_CANCELLED         RecordingStatus = "Cancelled"
+	RECORDINGSTATUS_CONFLICTED_OK     RecordingStatus = "ConflictedOk"
 	RECORDINGSTATUS_CONFLICTED_NOT_OK RecordingStatus = "ConflictedNotOk"
-	RECORDINGSTATUS_ERROR RecordingStatus = "Error"
+	RECORDINGSTATUS_ERROR             RecordingStatus = "Error"
 )
 
 // All allowed values of RecordingStatus enum
@@ -118,4 +118,3 @@ func (v *NullableRecordingStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

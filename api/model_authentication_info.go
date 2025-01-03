@@ -39,9 +39,9 @@ type AuthenticationInfo struct {
 	// Gets or sets the date created.
 	DateCreated *time.Time `json:"DateCreated,omitempty"`
 	// Gets or sets the date revoked.
-	DateRevoked NullableTime `json:"DateRevoked,omitempty"`
-	DateLastActivity *time.Time `json:"DateLastActivity,omitempty"`
-	UserName NullableString `json:"UserName,omitempty"`
+	DateRevoked      NullableTime   `json:"DateRevoked,omitempty"`
+	DateLastActivity *time.Time     `json:"DateLastActivity,omitempty"`
+	UserName         NullableString `json:"UserName,omitempty"`
 }
 
 // NewAuthenticationInfo instantiates a new AuthenticationInfo object
@@ -125,6 +125,7 @@ func (o *AuthenticationInfo) HasAccessToken() bool {
 func (o *AuthenticationInfo) SetAccessToken(v string) {
 	o.AccessToken.Set(&v)
 }
+
 // SetAccessTokenNil sets the value for AccessToken to be an explicit nil
 func (o *AuthenticationInfo) SetAccessTokenNil() {
 	o.AccessToken.Set(nil)
@@ -167,6 +168,7 @@ func (o *AuthenticationInfo) HasDeviceId() bool {
 func (o *AuthenticationInfo) SetDeviceId(v string) {
 	o.DeviceId.Set(&v)
 }
+
 // SetDeviceIdNil sets the value for DeviceId to be an explicit nil
 func (o *AuthenticationInfo) SetDeviceIdNil() {
 	o.DeviceId.Set(nil)
@@ -209,6 +211,7 @@ func (o *AuthenticationInfo) HasAppName() bool {
 func (o *AuthenticationInfo) SetAppName(v string) {
 	o.AppName.Set(&v)
 }
+
 // SetAppNameNil sets the value for AppName to be an explicit nil
 func (o *AuthenticationInfo) SetAppNameNil() {
 	o.AppName.Set(nil)
@@ -251,6 +254,7 @@ func (o *AuthenticationInfo) HasAppVersion() bool {
 func (o *AuthenticationInfo) SetAppVersion(v string) {
 	o.AppVersion.Set(&v)
 }
+
 // SetAppVersionNil sets the value for AppVersion to be an explicit nil
 func (o *AuthenticationInfo) SetAppVersionNil() {
 	o.AppVersion.Set(nil)
@@ -293,6 +297,7 @@ func (o *AuthenticationInfo) HasDeviceName() bool {
 func (o *AuthenticationInfo) SetDeviceName(v string) {
 	o.DeviceName.Set(&v)
 }
+
 // SetDeviceNameNil sets the value for DeviceName to be an explicit nil
 func (o *AuthenticationInfo) SetDeviceNameNil() {
 	o.DeviceName.Set(nil)
@@ -431,6 +436,7 @@ func (o *AuthenticationInfo) HasDateRevoked() bool {
 func (o *AuthenticationInfo) SetDateRevoked(v time.Time) {
 	o.DateRevoked.Set(&v)
 }
+
 // SetDateRevokedNil sets the value for DateRevoked to be an explicit nil
 func (o *AuthenticationInfo) SetDateRevokedNil() {
 	o.DateRevoked.Set(nil)
@@ -505,6 +511,7 @@ func (o *AuthenticationInfo) HasUserName() bool {
 func (o *AuthenticationInfo) SetUserName(v string) {
 	o.UserName.Set(&v)
 }
+
 // SetUserNameNil sets the value for UserName to be an explicit nil
 func (o *AuthenticationInfo) SetUserNameNil() {
 	o.UserName.Set(nil)
@@ -516,7 +523,7 @@ func (o *AuthenticationInfo) UnsetUserName() {
 }
 
 func (o AuthenticationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,5 +606,3 @@ func (v *NullableAuthenticationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

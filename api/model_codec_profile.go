@@ -178,6 +178,7 @@ func (o *CodecProfile) HasCodec() bool {
 func (o *CodecProfile) SetCodec(v string) {
 	o.Codec.Set(&v)
 }
+
 // SetCodecNil sets the value for Codec to be an explicit nil
 func (o *CodecProfile) SetCodecNil() {
 	o.Codec.Set(nil)
@@ -220,6 +221,7 @@ func (o *CodecProfile) HasContainer() bool {
 func (o *CodecProfile) SetContainer(v string) {
 	o.Container.Set(&v)
 }
+
 // SetContainerNil sets the value for Container to be an explicit nil
 func (o *CodecProfile) SetContainerNil() {
 	o.Container.Set(nil)
@@ -262,6 +264,7 @@ func (o *CodecProfile) HasSubContainer() bool {
 func (o *CodecProfile) SetSubContainer(v string) {
 	o.SubContainer.Set(&v)
 }
+
 // SetSubContainerNil sets the value for SubContainer to be an explicit nil
 func (o *CodecProfile) SetSubContainerNil() {
 	o.SubContainer.Set(nil)
@@ -273,7 +276,7 @@ func (o *CodecProfile) UnsetSubContainer() {
 }
 
 func (o CodecProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -338,5 +341,3 @@ func (v *NullableCodecProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

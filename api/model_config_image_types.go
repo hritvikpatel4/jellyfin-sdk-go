@@ -19,13 +19,13 @@ var _ MappedNullable = &ConfigImageTypes{}
 
 // ConfigImageTypes struct for ConfigImageTypes
 type ConfigImageTypes struct {
-	BackdropSizes []string `json:"BackdropSizes,omitempty"`
-	BaseUrl NullableString `json:"BaseUrl,omitempty"`
-	LogoSizes []string `json:"LogoSizes,omitempty"`
-	PosterSizes []string `json:"PosterSizes,omitempty"`
-	ProfileSizes []string `json:"ProfileSizes,omitempty"`
+	BackdropSizes []string       `json:"BackdropSizes,omitempty"`
+	BaseUrl       NullableString `json:"BaseUrl,omitempty"`
+	LogoSizes     []string       `json:"LogoSizes,omitempty"`
+	PosterSizes   []string       `json:"PosterSizes,omitempty"`
+	ProfileSizes  []string       `json:"ProfileSizes,omitempty"`
 	SecureBaseUrl NullableString `json:"SecureBaseUrl,omitempty"`
-	StillSizes []string `json:"StillSizes,omitempty"`
+	StillSizes    []string       `json:"StillSizes,omitempty"`
 }
 
 // NewConfigImageTypes instantiates a new ConfigImageTypes object
@@ -110,6 +110,7 @@ func (o *ConfigImageTypes) HasBaseUrl() bool {
 func (o *ConfigImageTypes) SetBaseUrl(v string) {
 	o.BaseUrl.Set(&v)
 }
+
 // SetBaseUrlNil sets the value for BaseUrl to be an explicit nil
 func (o *ConfigImageTypes) SetBaseUrlNil() {
 	o.BaseUrl.Set(nil)
@@ -251,6 +252,7 @@ func (o *ConfigImageTypes) HasSecureBaseUrl() bool {
 func (o *ConfigImageTypes) SetSecureBaseUrl(v string) {
 	o.SecureBaseUrl.Set(&v)
 }
+
 // SetSecureBaseUrlNil sets the value for SecureBaseUrl to be an explicit nil
 func (o *ConfigImageTypes) SetSecureBaseUrlNil() {
 	o.SecureBaseUrl.Set(nil)
@@ -295,7 +297,7 @@ func (o *ConfigImageTypes) SetStillSizes(v []string) {
 }
 
 func (o ConfigImageTypes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -363,5 +365,3 @@ func (v *NullableConfigImageTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,15 +19,14 @@ import (
 	"strings"
 )
 
-
 type ItemUpdateAPI interface {
 
 	/*
-	GetMetadataEditorInfo Gets metadata editor info for an item.
+		GetMetadataEditorInfo Gets metadata editor info for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetMetadataEditorInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetMetadataEditorInfoRequest
 	*/
 	GetMetadataEditorInfo(ctx context.Context, itemId string) ApiGetMetadataEditorInfoRequest
 
@@ -36,11 +35,11 @@ type ItemUpdateAPI interface {
 	GetMetadataEditorInfoExecute(r ApiGetMetadataEditorInfoRequest) (*MetadataEditorInfo, *http.Response, error)
 
 	/*
-	UpdateItem Updates an item.
+		UpdateItem Updates an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiUpdateItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiUpdateItemRequest
 	*/
 	UpdateItem(ctx context.Context, itemId string) ApiUpdateItemRequest
 
@@ -48,11 +47,11 @@ type ItemUpdateAPI interface {
 	UpdateItemExecute(r ApiUpdateItemRequest) (*http.Response, error)
 
 	/*
-	UpdateItemContentType Updates an item's content type.
+		UpdateItemContentType Updates an item's content type.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiUpdateItemContentTypeRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiUpdateItemContentTypeRequest
 	*/
 	UpdateItemContentType(ctx context.Context, itemId string) ApiUpdateItemContentTypeRequest
 
@@ -64,9 +63,9 @@ type ItemUpdateAPI interface {
 type ItemUpdateAPIService service
 
 type ApiGetMetadataEditorInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ItemUpdateAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetMetadataEditorInfoRequest) Execute() (*MetadataEditorInfo, *http.Response, error) {
@@ -76,26 +75,27 @@ func (r ApiGetMetadataEditorInfoRequest) Execute() (*MetadataEditorInfo, *http.R
 /*
 GetMetadataEditorInfo Gets metadata editor info for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetMetadataEditorInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetMetadataEditorInfoRequest
 */
 func (a *ItemUpdateAPIService) GetMetadataEditorInfo(ctx context.Context, itemId string) ApiGetMetadataEditorInfoRequest {
 	return ApiGetMetadataEditorInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return MetadataEditorInfo
+//
+//	@return MetadataEditorInfo
 func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEditorInfoRequest) (*MetadataEditorInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MetadataEditorInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MetadataEditorInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemUpdateAPIService.GetMetadataEditorInfo")
@@ -170,8 +170,8 @@ func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEdit
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -190,9 +190,9 @@ func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEdit
 }
 
 type ApiUpdateItemRequest struct {
-	ctx context.Context
-	ApiService ItemUpdateAPI
-	itemId string
+	ctx         context.Context
+	ApiService  ItemUpdateAPI
+	itemId      string
 	baseItemDto *BaseItemDto
 }
 
@@ -209,24 +209,24 @@ func (r ApiUpdateItemRequest) Execute() (*http.Response, error) {
 /*
 UpdateItem Updates an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiUpdateItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiUpdateItemRequest
 */
 func (a *ItemUpdateAPIService) UpdateItem(ctx context.Context, itemId string) ApiUpdateItemRequest {
 	return ApiUpdateItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemUpdateAPIService.UpdateItem")
@@ -306,8 +306,8 @@ func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -317,9 +317,9 @@ func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.
 }
 
 type ApiUpdateItemContentTypeRequest struct {
-	ctx context.Context
-	ApiService ItemUpdateAPI
-	itemId string
+	ctx         context.Context
+	ApiService  ItemUpdateAPI
+	itemId      string
 	contentType *string
 }
 
@@ -336,24 +336,24 @@ func (r ApiUpdateItemContentTypeRequest) Execute() (*http.Response, error) {
 /*
 UpdateItemContentType Updates an item's content type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiUpdateItemContentTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiUpdateItemContentTypeRequest
 */
 func (a *ItemUpdateAPIService) UpdateItemContentType(ctx context.Context, itemId string) ApiUpdateItemContentTypeRequest {
 	return ApiUpdateItemContentTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *ItemUpdateAPIService) UpdateItemContentTypeExecute(r ApiUpdateItemContentTypeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemUpdateAPIService.UpdateItemContentType")
@@ -431,8 +431,8 @@ func (a *ItemUpdateAPIService) UpdateItemContentTypeExecute(r ApiUpdateItemConte
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

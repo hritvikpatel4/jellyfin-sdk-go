@@ -20,7 +20,7 @@ type TrickplayScanBehavior string
 
 // List of TrickplayScanBehavior
 const (
-	TRICKPLAYSCANBEHAVIOR_BLOCKING TrickplayScanBehavior = "Blocking"
+	TRICKPLAYSCANBEHAVIOR_BLOCKING     TrickplayScanBehavior = "Blocking"
 	TRICKPLAYSCANBEHAVIOR_NON_BLOCKING TrickplayScanBehavior = "NonBlocking"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableTrickplayScanBehavior) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

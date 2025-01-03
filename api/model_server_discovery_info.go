@@ -174,6 +174,7 @@ func (o *ServerDiscoveryInfo) HasEndpointAddress() bool {
 func (o *ServerDiscoveryInfo) SetEndpointAddress(v string) {
 	o.EndpointAddress.Set(&v)
 }
+
 // SetEndpointAddressNil sets the value for EndpointAddress to be an explicit nil
 func (o *ServerDiscoveryInfo) SetEndpointAddressNil() {
 	o.EndpointAddress.Set(nil)
@@ -185,7 +186,7 @@ func (o *ServerDiscoveryInfo) UnsetEndpointAddress() {
 }
 
 func (o ServerDiscoveryInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,5 +245,3 @@ func (v *NullableServerDiscoveryInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

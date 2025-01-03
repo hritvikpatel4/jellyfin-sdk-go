@@ -146,6 +146,7 @@ func (o *ConfigurationPageInfo) HasMenuSection() bool {
 func (o *ConfigurationPageInfo) SetMenuSection(v string) {
 	o.MenuSection.Set(&v)
 }
+
 // SetMenuSectionNil sets the value for MenuSection to be an explicit nil
 func (o *ConfigurationPageInfo) SetMenuSectionNil() {
 	o.MenuSection.Set(nil)
@@ -188,6 +189,7 @@ func (o *ConfigurationPageInfo) HasMenuIcon() bool {
 func (o *ConfigurationPageInfo) SetMenuIcon(v string) {
 	o.MenuIcon.Set(&v)
 }
+
 // SetMenuIconNil sets the value for MenuIcon to be an explicit nil
 func (o *ConfigurationPageInfo) SetMenuIconNil() {
 	o.MenuIcon.Set(nil)
@@ -230,6 +232,7 @@ func (o *ConfigurationPageInfo) HasDisplayName() bool {
 func (o *ConfigurationPageInfo) SetDisplayName(v string) {
 	o.DisplayName.Set(&v)
 }
+
 // SetDisplayNameNil sets the value for DisplayName to be an explicit nil
 func (o *ConfigurationPageInfo) SetDisplayNameNil() {
 	o.DisplayName.Set(nil)
@@ -272,6 +275,7 @@ func (o *ConfigurationPageInfo) HasPluginId() bool {
 func (o *ConfigurationPageInfo) SetPluginId(v string) {
 	o.PluginId.Set(&v)
 }
+
 // SetPluginIdNil sets the value for PluginId to be an explicit nil
 func (o *ConfigurationPageInfo) SetPluginIdNil() {
 	o.PluginId.Set(nil)
@@ -283,7 +287,7 @@ func (o *ConfigurationPageInfo) UnsetPluginId() {
 }
 
 func (o ConfigurationPageInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,5 +352,3 @@ func (v *NullableConfigurationPageInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

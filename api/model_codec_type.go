@@ -20,9 +20,9 @@ type CodecType string
 
 // List of CodecType
 const (
-	CODECTYPE_VIDEO CodecType = "Video"
+	CODECTYPE_VIDEO       CodecType = "Video"
 	CODECTYPE_VIDEO_AUDIO CodecType = "VideoAudio"
-	CODECTYPE_AUDIO CodecType = "Audio"
+	CODECTYPE_AUDIO       CodecType = "Audio"
 )
 
 // All allowed values of CodecType enum
@@ -110,4 +110,3 @@ func (v *NullableCodecType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,16 +20,16 @@ type DynamicDayOfWeek string
 
 // List of DynamicDayOfWeek
 const (
-	DYNAMICDAYOFWEEK_SUNDAY DynamicDayOfWeek = "Sunday"
-	DYNAMICDAYOFWEEK_MONDAY DynamicDayOfWeek = "Monday"
-	DYNAMICDAYOFWEEK_TUESDAY DynamicDayOfWeek = "Tuesday"
+	DYNAMICDAYOFWEEK_SUNDAY    DynamicDayOfWeek = "Sunday"
+	DYNAMICDAYOFWEEK_MONDAY    DynamicDayOfWeek = "Monday"
+	DYNAMICDAYOFWEEK_TUESDAY   DynamicDayOfWeek = "Tuesday"
 	DYNAMICDAYOFWEEK_WEDNESDAY DynamicDayOfWeek = "Wednesday"
-	DYNAMICDAYOFWEEK_THURSDAY DynamicDayOfWeek = "Thursday"
-	DYNAMICDAYOFWEEK_FRIDAY DynamicDayOfWeek = "Friday"
-	DYNAMICDAYOFWEEK_SATURDAY DynamicDayOfWeek = "Saturday"
-	DYNAMICDAYOFWEEK_EVERYDAY DynamicDayOfWeek = "Everyday"
-	DYNAMICDAYOFWEEK_WEEKDAY DynamicDayOfWeek = "Weekday"
-	DYNAMICDAYOFWEEK_WEEKEND DynamicDayOfWeek = "Weekend"
+	DYNAMICDAYOFWEEK_THURSDAY  DynamicDayOfWeek = "Thursday"
+	DYNAMICDAYOFWEEK_FRIDAY    DynamicDayOfWeek = "Friday"
+	DYNAMICDAYOFWEEK_SATURDAY  DynamicDayOfWeek = "Saturday"
+	DYNAMICDAYOFWEEK_EVERYDAY  DynamicDayOfWeek = "Everyday"
+	DYNAMICDAYOFWEEK_WEEKDAY   DynamicDayOfWeek = "Weekday"
+	DYNAMICDAYOFWEEK_WEEKEND   DynamicDayOfWeek = "Weekend"
 )
 
 // All allowed values of DynamicDayOfWeek enum
@@ -124,4 +124,3 @@ func (v *NullableDynamicDayOfWeek) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

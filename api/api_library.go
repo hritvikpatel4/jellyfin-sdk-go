@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
-	"reflect"
 	"os"
+	"reflect"
+	"strings"
 )
-
 
 type LibraryAPI interface {
 
 	/*
-	DeleteItem Deletes an item from the library and filesystem.
+		DeleteItem Deletes an item from the library and filesystem.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiDeleteItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiDeleteItemRequest
 	*/
 	DeleteItem(ctx context.Context, itemId string) ApiDeleteItemRequest
 
@@ -37,10 +36,10 @@ type LibraryAPI interface {
 	DeleteItemExecute(r ApiDeleteItemRequest) (*http.Response, error)
 
 	/*
-	DeleteItems Deletes items from the library and filesystem.
+		DeleteItems Deletes items from the library and filesystem.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeleteItemsRequest
 	*/
 	DeleteItems(ctx context.Context) ApiDeleteItemsRequest
 
@@ -48,11 +47,11 @@ type LibraryAPI interface {
 	DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.Response, error)
 
 	/*
-	GetAncestors Gets all parents of an item.
+		GetAncestors Gets all parents of an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetAncestorsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetAncestorsRequest
 	*/
 	GetAncestors(ctx context.Context, itemId string) ApiGetAncestorsRequest
 
@@ -61,13 +60,13 @@ type LibraryAPI interface {
 	GetAncestorsExecute(r ApiGetAncestorsRequest) ([]BaseItemDto, *http.Response, error)
 
 	/*
-	GetCriticReviews Gets critic review for an item.
+		GetCriticReviews Gets critic review for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId
-	@return ApiGetCriticReviewsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId
+		@return ApiGetCriticReviewsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetCriticReviews(ctx context.Context, itemId string) ApiGetCriticReviewsRequest
 
@@ -77,11 +76,11 @@ type LibraryAPI interface {
 	GetCriticReviewsExecute(r ApiGetCriticReviewsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetDownload Downloads item media.
+		GetDownload Downloads item media.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetDownloadRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetDownloadRequest
 	*/
 	GetDownload(ctx context.Context, itemId string) ApiGetDownloadRequest
 
@@ -90,11 +89,11 @@ type LibraryAPI interface {
 	GetDownloadExecute(r ApiGetDownloadRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetFile Get the original file of an item.
+		GetFile Get the original file of an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetFileRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetFileRequest
 	*/
 	GetFile(ctx context.Context, itemId string) ApiGetFileRequest
 
@@ -103,10 +102,10 @@ type LibraryAPI interface {
 	GetFileExecute(r ApiGetFileRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetItemCounts Get item counts.
+		GetItemCounts Get item counts.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetItemCountsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetItemCountsRequest
 	*/
 	GetItemCounts(ctx context.Context) ApiGetItemCountsRequest
 
@@ -115,10 +114,10 @@ type LibraryAPI interface {
 	GetItemCountsExecute(r ApiGetItemCountsRequest) (*ItemCounts, *http.Response, error)
 
 	/*
-	GetLibraryOptionsInfo Gets the library options info.
+		GetLibraryOptionsInfo Gets the library options info.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLibraryOptionsInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLibraryOptionsInfoRequest
 	*/
 	GetLibraryOptionsInfo(ctx context.Context) ApiGetLibraryOptionsInfoRequest
 
@@ -127,10 +126,10 @@ type LibraryAPI interface {
 	GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsInfoRequest) (*LibraryOptionsResultDto, *http.Response, error)
 
 	/*
-	GetMediaFolders Gets all user media folders.
+		GetMediaFolders Gets all user media folders.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMediaFoldersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetMediaFoldersRequest
 	*/
 	GetMediaFolders(ctx context.Context) ApiGetMediaFoldersRequest
 
@@ -139,10 +138,10 @@ type LibraryAPI interface {
 	GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetPhysicalPaths Gets a list of physical paths from virtual folders.
+		GetPhysicalPaths Gets a list of physical paths from virtual folders.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPhysicalPathsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPhysicalPathsRequest
 	*/
 	GetPhysicalPaths(ctx context.Context) ApiGetPhysicalPathsRequest
 
@@ -151,11 +150,11 @@ type LibraryAPI interface {
 	GetPhysicalPathsExecute(r ApiGetPhysicalPathsRequest) ([]string, *http.Response, error)
 
 	/*
-	GetSimilarAlbums Gets similar items.
+		GetSimilarAlbums Gets similar items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetSimilarAlbumsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetSimilarAlbumsRequest
 	*/
 	GetSimilarAlbums(ctx context.Context, itemId string) ApiGetSimilarAlbumsRequest
 
@@ -164,11 +163,11 @@ type LibraryAPI interface {
 	GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSimilarArtists Gets similar items.
+		GetSimilarArtists Gets similar items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetSimilarArtistsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetSimilarArtistsRequest
 	*/
 	GetSimilarArtists(ctx context.Context, itemId string) ApiGetSimilarArtistsRequest
 
@@ -177,11 +176,11 @@ type LibraryAPI interface {
 	GetSimilarArtistsExecute(r ApiGetSimilarArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSimilarItems Gets similar items.
+		GetSimilarItems Gets similar items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetSimilarItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetSimilarItemsRequest
 	*/
 	GetSimilarItems(ctx context.Context, itemId string) ApiGetSimilarItemsRequest
 
@@ -190,11 +189,11 @@ type LibraryAPI interface {
 	GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSimilarMovies Gets similar items.
+		GetSimilarMovies Gets similar items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetSimilarMoviesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetSimilarMoviesRequest
 	*/
 	GetSimilarMovies(ctx context.Context, itemId string) ApiGetSimilarMoviesRequest
 
@@ -203,11 +202,11 @@ type LibraryAPI interface {
 	GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSimilarShows Gets similar items.
+		GetSimilarShows Gets similar items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetSimilarShowsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetSimilarShowsRequest
 	*/
 	GetSimilarShows(ctx context.Context, itemId string) ApiGetSimilarShowsRequest
 
@@ -216,11 +215,11 @@ type LibraryAPI interface {
 	GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSimilarTrailers Gets similar items.
+		GetSimilarTrailers Gets similar items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetSimilarTrailersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetSimilarTrailersRequest
 	*/
 	GetSimilarTrailers(ctx context.Context, itemId string) ApiGetSimilarTrailersRequest
 
@@ -229,11 +228,11 @@ type LibraryAPI interface {
 	GetSimilarTrailersExecute(r ApiGetSimilarTrailersRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetThemeMedia Get theme songs and videos for an item.
+		GetThemeMedia Get theme songs and videos for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetThemeMediaRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetThemeMediaRequest
 	*/
 	GetThemeMedia(ctx context.Context, itemId string) ApiGetThemeMediaRequest
 
@@ -242,11 +241,11 @@ type LibraryAPI interface {
 	GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*AllThemeMediaResult, *http.Response, error)
 
 	/*
-	GetThemeSongs Get theme songs for an item.
+		GetThemeSongs Get theme songs for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetThemeSongsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetThemeSongsRequest
 	*/
 	GetThemeSongs(ctx context.Context, itemId string) ApiGetThemeSongsRequest
 
@@ -255,11 +254,11 @@ type LibraryAPI interface {
 	GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*ThemeMediaResult, *http.Response, error)
 
 	/*
-	GetThemeVideos Get theme videos for an item.
+		GetThemeVideos Get theme videos for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetThemeVideosRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetThemeVideosRequest
 	*/
 	GetThemeVideos(ctx context.Context, itemId string) ApiGetThemeVideosRequest
 
@@ -268,10 +267,10 @@ type LibraryAPI interface {
 	GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*ThemeMediaResult, *http.Response, error)
 
 	/*
-	PostAddedMovies Reports that new movies have been added by an external source.
+		PostAddedMovies Reports that new movies have been added by an external source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostAddedMoviesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostAddedMoviesRequest
 	*/
 	PostAddedMovies(ctx context.Context) ApiPostAddedMoviesRequest
 
@@ -279,10 +278,10 @@ type LibraryAPI interface {
 	PostAddedMoviesExecute(r ApiPostAddedMoviesRequest) (*http.Response, error)
 
 	/*
-	PostAddedSeries Reports that new episodes of a series have been added by an external source.
+		PostAddedSeries Reports that new episodes of a series have been added by an external source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostAddedSeriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostAddedSeriesRequest
 	*/
 	PostAddedSeries(ctx context.Context) ApiPostAddedSeriesRequest
 
@@ -290,10 +289,10 @@ type LibraryAPI interface {
 	PostAddedSeriesExecute(r ApiPostAddedSeriesRequest) (*http.Response, error)
 
 	/*
-	PostUpdatedMedia Reports that new movies have been added by an external source.
+		PostUpdatedMedia Reports that new movies have been added by an external source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostUpdatedMediaRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostUpdatedMediaRequest
 	*/
 	PostUpdatedMedia(ctx context.Context) ApiPostUpdatedMediaRequest
 
@@ -301,10 +300,10 @@ type LibraryAPI interface {
 	PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest) (*http.Response, error)
 
 	/*
-	PostUpdatedMovies Reports that new movies have been added by an external source.
+		PostUpdatedMovies Reports that new movies have been added by an external source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostUpdatedMoviesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostUpdatedMoviesRequest
 	*/
 	PostUpdatedMovies(ctx context.Context) ApiPostUpdatedMoviesRequest
 
@@ -312,10 +311,10 @@ type LibraryAPI interface {
 	PostUpdatedMoviesExecute(r ApiPostUpdatedMoviesRequest) (*http.Response, error)
 
 	/*
-	PostUpdatedSeries Reports that new episodes of a series have been added by an external source.
+		PostUpdatedSeries Reports that new episodes of a series have been added by an external source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostUpdatedSeriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostUpdatedSeriesRequest
 	*/
 	PostUpdatedSeries(ctx context.Context) ApiPostUpdatedSeriesRequest
 
@@ -323,10 +322,10 @@ type LibraryAPI interface {
 	PostUpdatedSeriesExecute(r ApiPostUpdatedSeriesRequest) (*http.Response, error)
 
 	/*
-	RefreshLibrary Starts a library scan.
+		RefreshLibrary Starts a library scan.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRefreshLibraryRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiRefreshLibraryRequest
 	*/
 	RefreshLibrary(ctx context.Context) ApiRefreshLibraryRequest
 
@@ -338,9 +337,9 @@ type LibraryAPI interface {
 type LibraryAPIService service
 
 type ApiDeleteItemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiDeleteItemRequest) Execute() (*http.Response, error) {
@@ -350,24 +349,24 @@ func (r ApiDeleteItemRequest) Execute() (*http.Response, error) {
 /*
 DeleteItem Deletes an item from the library and filesystem.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiDeleteItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiDeleteItemRequest
 */
 func (a *LibraryAPIService) DeleteItem(ctx context.Context, itemId string) ApiDeleteItemRequest {
 	return ApiDeleteItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteItem")
@@ -442,8 +441,8 @@ func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Res
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -453,8 +452,8 @@ func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Res
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -464,9 +463,9 @@ func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Res
 }
 
 type ApiDeleteItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	ids *[]string
+	ids        *[]string
 }
 
 // The item ids.
@@ -482,22 +481,22 @@ func (r ApiDeleteItemsRequest) Execute() (*http.Response, error) {
 /*
 DeleteItems Deletes items from the library and filesystem.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeleteItemsRequest
 */
 func (a *LibraryAPIService) DeleteItems(ctx context.Context) ApiDeleteItemsRequest {
 	return ApiDeleteItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteItems")
@@ -582,8 +581,8 @@ func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.R
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -593,8 +592,8 @@ func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.R
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -604,10 +603,10 @@ func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.R
 }
 
 type ApiGetAncestorsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -623,26 +622,27 @@ func (r ApiGetAncestorsRequest) Execute() ([]BaseItemDto, *http.Response, error)
 /*
 GetAncestors Gets all parents of an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetAncestorsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetAncestorsRequest
 */
 func (a *LibraryAPIService) GetAncestors(ctx context.Context, itemId string) ApiGetAncestorsRequest {
 	return ApiGetAncestorsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
+//
+//	@return []BaseItemDto
 func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetAncestors")
@@ -720,8 +720,8 @@ func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]Bas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -740,9 +740,9 @@ func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]Bas
 }
 
 type ApiGetCriticReviewsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetCriticReviewsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
@@ -752,29 +752,31 @@ func (r ApiGetCriticReviewsRequest) Execute() (*BaseItemDtoQueryResult, *http.Re
 /*
 GetCriticReviews Gets critic review for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId
- @return ApiGetCriticReviewsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId
+	@return ApiGetCriticReviewsRequest
 
 Deprecated
 */
 func (a *LibraryAPIService) GetCriticReviews(ctx context.Context, itemId string) ApiGetCriticReviewsRequest {
 	return ApiGetCriticReviewsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
+//
 // Deprecated
 func (a *LibraryAPIService) GetCriticReviewsExecute(r ApiGetCriticReviewsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetCriticReviews")
@@ -858,9 +860,9 @@ func (a *LibraryAPIService) GetCriticReviewsExecute(r ApiGetCriticReviewsRequest
 }
 
 type ApiGetDownloadRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetDownloadRequest) Execute() (*os.File, *http.Response, error) {
@@ -870,26 +872,27 @@ func (r ApiGetDownloadRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetDownload Downloads item media.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetDownloadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetDownloadRequest
 */
 func (a *LibraryAPIService) GetDownload(ctx context.Context, itemId string) ApiGetDownloadRequest {
 	return ApiGetDownloadRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *LibraryAPIService) GetDownloadExecute(r ApiGetDownloadRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetDownload")
@@ -964,8 +967,8 @@ func (a *LibraryAPIService) GetDownloadExecute(r ApiGetDownloadRequest) (*os.Fil
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -984,9 +987,9 @@ func (a *LibraryAPIService) GetDownloadExecute(r ApiGetDownloadRequest) (*os.Fil
 }
 
 type ApiGetFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetFileRequest) Execute() (*os.File, *http.Response, error) {
@@ -996,26 +999,27 @@ func (r ApiGetFileRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetFile Get the original file of an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetFileRequest
 */
 func (a *LibraryAPIService) GetFile(ctx context.Context, itemId string) ApiGetFileRequest {
 	return ApiGetFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *LibraryAPIService) GetFileExecute(r ApiGetFileRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetFile")
@@ -1090,8 +1094,8 @@ func (a *LibraryAPIService) GetFileExecute(r ApiGetFileRequest) (*os.File, *http
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1110,9 +1114,9 @@ func (a *LibraryAPIService) GetFileExecute(r ApiGetFileRequest) (*os.File, *http
 }
 
 type ApiGetItemCountsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	userId *string
+	userId     *string
 	isFavorite *bool
 }
 
@@ -1135,24 +1139,25 @@ func (r ApiGetItemCountsRequest) Execute() (*ItemCounts, *http.Response, error) 
 /*
 GetItemCounts Get item counts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetItemCountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetItemCountsRequest
 */
 func (a *LibraryAPIService) GetItemCounts(ctx context.Context) ApiGetItemCountsRequest {
 	return ApiGetItemCountsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ItemCounts
+//
+//	@return ItemCounts
 func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*ItemCounts, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ItemCounts
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ItemCounts
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetItemCounts")
@@ -1241,10 +1246,10 @@ func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*It
 }
 
 type ApiGetLibraryOptionsInfoRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
+	ctx                context.Context
+	ApiService         LibraryAPI
 	libraryContentType *CollectionType
-	isNewLibrary *bool
+	isNewLibrary       *bool
 }
 
 // Library content type.
@@ -1266,24 +1271,25 @@ func (r ApiGetLibraryOptionsInfoRequest) Execute() (*LibraryOptionsResultDto, *h
 /*
 GetLibraryOptionsInfo Gets the library options info.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLibraryOptionsInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLibraryOptionsInfoRequest
 */
 func (a *LibraryAPIService) GetLibraryOptionsInfo(ctx context.Context) ApiGetLibraryOptionsInfoRequest {
 	return ApiGetLibraryOptionsInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LibraryOptionsResultDto
+//
+//	@return LibraryOptionsResultDto
 func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsInfoRequest) (*LibraryOptionsResultDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LibraryOptionsResultDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LibraryOptionsResultDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetLibraryOptionsInfo")
@@ -1375,9 +1381,9 @@ func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsI
 }
 
 type ApiGetMediaFoldersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	isHidden *bool
+	isHidden   *bool
 }
 
 // Optional. Filter by folders that are marked hidden, or not.
@@ -1393,24 +1399,25 @@ func (r ApiGetMediaFoldersRequest) Execute() (*BaseItemDtoQueryResult, *http.Res
 /*
 GetMediaFolders Gets all user media folders.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMediaFoldersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMediaFoldersRequest
 */
 func (a *LibraryAPIService) GetMediaFolders(ctx context.Context) ApiGetMediaFoldersRequest {
 	return ApiGetMediaFoldersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetMediaFolders")
@@ -1496,7 +1503,7 @@ func (a *LibraryAPIService) GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) 
 }
 
 type ApiGetPhysicalPathsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
 }
 
@@ -1507,24 +1514,25 @@ func (r ApiGetPhysicalPathsRequest) Execute() ([]string, *http.Response, error) 
 /*
 GetPhysicalPaths Gets a list of physical paths from virtual folders.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPhysicalPathsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPhysicalPathsRequest
 */
 func (a *LibraryAPIService) GetPhysicalPaths(ctx context.Context) ApiGetPhysicalPathsRequest {
 	return ApiGetPhysicalPathsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *LibraryAPIService) GetPhysicalPathsExecute(r ApiGetPhysicalPathsRequest) ([]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetPhysicalPaths")
@@ -1607,13 +1615,13 @@ func (a *LibraryAPIService) GetPhysicalPathsExecute(r ApiGetPhysicalPathsRequest
 }
 
 type ApiGetSimilarAlbumsRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
+	ctx              context.Context
+	ApiService       LibraryAPI
+	itemId           string
 	excludeArtistIds *[]string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
 }
 
 // Exclude artist ids.
@@ -1647,26 +1655,27 @@ func (r ApiGetSimilarAlbumsRequest) Execute() (*BaseItemDtoQueryResult, *http.Re
 /*
 GetSimilarAlbums Gets similar items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetSimilarAlbumsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetSimilarAlbumsRequest
 */
 func (a *LibraryAPIService) GetSimilarAlbums(ctx context.Context, itemId string) ApiGetSimilarAlbumsRequest {
 	return ApiGetSimilarAlbumsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarAlbums")
@@ -1778,13 +1787,13 @@ func (a *LibraryAPIService) GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest
 }
 
 type ApiGetSimilarArtistsRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
+	ctx              context.Context
+	ApiService       LibraryAPI
+	itemId           string
 	excludeArtistIds *[]string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
 }
 
 // Exclude artist ids.
@@ -1818,26 +1827,27 @@ func (r ApiGetSimilarArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.R
 /*
 GetSimilarArtists Gets similar items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetSimilarArtistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetSimilarArtistsRequest
 */
 func (a *LibraryAPIService) GetSimilarArtists(ctx context.Context, itemId string) ApiGetSimilarArtistsRequest {
 	return ApiGetSimilarArtistsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetSimilarArtistsExecute(r ApiGetSimilarArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarArtists")
@@ -1949,13 +1959,13 @@ func (a *LibraryAPIService) GetSimilarArtistsExecute(r ApiGetSimilarArtistsReque
 }
 
 type ApiGetSimilarItemsRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
+	ctx              context.Context
+	ApiService       LibraryAPI
+	itemId           string
 	excludeArtistIds *[]string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
 }
 
 // Exclude artist ids.
@@ -1989,26 +1999,27 @@ func (r ApiGetSimilarItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Res
 /*
 GetSimilarItems Gets similar items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetSimilarItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetSimilarItemsRequest
 */
 func (a *LibraryAPIService) GetSimilarItems(ctx context.Context, itemId string) ApiGetSimilarItemsRequest {
 	return ApiGetSimilarItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarItems")
@@ -2120,13 +2131,13 @@ func (a *LibraryAPIService) GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) 
 }
 
 type ApiGetSimilarMoviesRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
+	ctx              context.Context
+	ApiService       LibraryAPI
+	itemId           string
 	excludeArtistIds *[]string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
 }
 
 // Exclude artist ids.
@@ -2160,26 +2171,27 @@ func (r ApiGetSimilarMoviesRequest) Execute() (*BaseItemDtoQueryResult, *http.Re
 /*
 GetSimilarMovies Gets similar items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetSimilarMoviesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetSimilarMoviesRequest
 */
 func (a *LibraryAPIService) GetSimilarMovies(ctx context.Context, itemId string) ApiGetSimilarMoviesRequest {
 	return ApiGetSimilarMoviesRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarMovies")
@@ -2291,13 +2303,13 @@ func (a *LibraryAPIService) GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest
 }
 
 type ApiGetSimilarShowsRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
+	ctx              context.Context
+	ApiService       LibraryAPI
+	itemId           string
 	excludeArtistIds *[]string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
 }
 
 // Exclude artist ids.
@@ -2331,26 +2343,27 @@ func (r ApiGetSimilarShowsRequest) Execute() (*BaseItemDtoQueryResult, *http.Res
 /*
 GetSimilarShows Gets similar items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetSimilarShowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetSimilarShowsRequest
 */
 func (a *LibraryAPIService) GetSimilarShows(ctx context.Context, itemId string) ApiGetSimilarShowsRequest {
 	return ApiGetSimilarShowsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarShows")
@@ -2462,13 +2475,13 @@ func (a *LibraryAPIService) GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) 
 }
 
 type ApiGetSimilarTrailersRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
+	ctx              context.Context
+	ApiService       LibraryAPI
+	itemId           string
 	excludeArtistIds *[]string
-	userId *string
-	limit *int32
-	fields *[]ItemFields
+	userId           *string
+	limit            *int32
+	fields           *[]ItemFields
 }
 
 // Exclude artist ids.
@@ -2502,26 +2515,27 @@ func (r ApiGetSimilarTrailersRequest) Execute() (*BaseItemDtoQueryResult, *http.
 /*
 GetSimilarTrailers Gets similar items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetSimilarTrailersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetSimilarTrailersRequest
 */
 func (a *LibraryAPIService) GetSimilarTrailers(ctx context.Context, itemId string) ApiGetSimilarTrailersRequest {
 	return ApiGetSimilarTrailersRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LibraryAPIService) GetSimilarTrailersExecute(r ApiGetSimilarTrailersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarTrailers")
@@ -2633,13 +2647,13 @@ func (a *LibraryAPIService) GetSimilarTrailersExecute(r ApiGetSimilarTrailersReq
 }
 
 type ApiGetThemeMediaRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
-	userId *string
+	ctx               context.Context
+	ApiService        LibraryAPI
+	itemId            string
+	userId            *string
 	inheritFromParent *bool
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy            *[]ItemSortBy
+	sortOrder         *[]SortOrder
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -2673,26 +2687,27 @@ func (r ApiGetThemeMediaRequest) Execute() (*AllThemeMediaResult, *http.Response
 /*
 GetThemeMedia Get theme songs and videos for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetThemeMediaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetThemeMediaRequest
 */
 func (a *LibraryAPIService) GetThemeMedia(ctx context.Context, itemId string) ApiGetThemeMediaRequest {
 	return ApiGetThemeMediaRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return AllThemeMediaResult
+//
+//	@return AllThemeMediaResult
 func (a *LibraryAPIService) GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*AllThemeMediaResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AllThemeMediaResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AllThemeMediaResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetThemeMedia")
@@ -2807,13 +2822,13 @@ func (a *LibraryAPIService) GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*Al
 }
 
 type ApiGetThemeSongsRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
-	userId *string
+	ctx               context.Context
+	ApiService        LibraryAPI
+	itemId            string
+	userId            *string
 	inheritFromParent *bool
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy            *[]ItemSortBy
+	sortOrder         *[]SortOrder
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -2847,26 +2862,27 @@ func (r ApiGetThemeSongsRequest) Execute() (*ThemeMediaResult, *http.Response, e
 /*
 GetThemeSongs Get theme songs for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetThemeSongsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetThemeSongsRequest
 */
 func (a *LibraryAPIService) GetThemeSongs(ctx context.Context, itemId string) ApiGetThemeSongsRequest {
 	return ApiGetThemeSongsRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return ThemeMediaResult
+//
+//	@return ThemeMediaResult
 func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*ThemeMediaResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ThemeMediaResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ThemeMediaResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetThemeSongs")
@@ -2972,8 +2988,8 @@ func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*Th
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2992,13 +3008,13 @@ func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*Th
 }
 
 type ApiGetThemeVideosRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
-	itemId string
-	userId *string
+	ctx               context.Context
+	ApiService        LibraryAPI
+	itemId            string
+	userId            *string
 	inheritFromParent *bool
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy            *[]ItemSortBy
+	sortOrder         *[]SortOrder
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -3032,26 +3048,27 @@ func (r ApiGetThemeVideosRequest) Execute() (*ThemeMediaResult, *http.Response, 
 /*
 GetThemeVideos Get theme videos for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetThemeVideosRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetThemeVideosRequest
 */
 func (a *LibraryAPIService) GetThemeVideos(ctx context.Context, itemId string) ApiGetThemeVideosRequest {
 	return ApiGetThemeVideosRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return ThemeMediaResult
+//
+//	@return ThemeMediaResult
 func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*ThemeMediaResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ThemeMediaResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ThemeMediaResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetThemeVideos")
@@ -3157,8 +3174,8 @@ func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3177,10 +3194,10 @@ func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*
 }
 
 type ApiPostAddedMoviesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	tmdbId *string
-	imdbId *string
+	tmdbId     *string
+	imdbId     *string
 }
 
 // The tmdbId.
@@ -3202,22 +3219,22 @@ func (r ApiPostAddedMoviesRequest) Execute() (*http.Response, error) {
 /*
 PostAddedMovies Reports that new movies have been added by an external source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAddedMoviesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostAddedMoviesRequest
 */
 func (a *LibraryAPIService) PostAddedMovies(ctx context.Context) ApiPostAddedMoviesRequest {
 	return ApiPostAddedMoviesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) PostAddedMoviesExecute(r ApiPostAddedMoviesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.PostAddedMovies")
@@ -3297,9 +3314,9 @@ func (a *LibraryAPIService) PostAddedMoviesExecute(r ApiPostAddedMoviesRequest) 
 }
 
 type ApiPostAddedSeriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	tvdbId *string
+	tvdbId     *string
 }
 
 // The tvdbId.
@@ -3315,22 +3332,22 @@ func (r ApiPostAddedSeriesRequest) Execute() (*http.Response, error) {
 /*
 PostAddedSeries Reports that new episodes of a series have been added by an external source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAddedSeriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostAddedSeriesRequest
 */
 func (a *LibraryAPIService) PostAddedSeries(ctx context.Context) ApiPostAddedSeriesRequest {
 	return ApiPostAddedSeriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) PostAddedSeriesExecute(r ApiPostAddedSeriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.PostAddedSeries")
@@ -3407,8 +3424,8 @@ func (a *LibraryAPIService) PostAddedSeriesExecute(r ApiPostAddedSeriesRequest) 
 }
 
 type ApiPostUpdatedMediaRequest struct {
-	ctx context.Context
-	ApiService LibraryAPI
+	ctx                context.Context
+	ApiService         LibraryAPI
 	mediaUpdateInfoDto *MediaUpdateInfoDto
 }
 
@@ -3425,22 +3442,22 @@ func (r ApiPostUpdatedMediaRequest) Execute() (*http.Response, error) {
 /*
 PostUpdatedMedia Reports that new movies have been added by an external source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUpdatedMediaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostUpdatedMediaRequest
 */
 func (a *LibraryAPIService) PostUpdatedMedia(ctx context.Context) ApiPostUpdatedMediaRequest {
 	return ApiPostUpdatedMediaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.PostUpdatedMedia")
@@ -3519,10 +3536,10 @@ func (a *LibraryAPIService) PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest
 }
 
 type ApiPostUpdatedMoviesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	tmdbId *string
-	imdbId *string
+	tmdbId     *string
+	imdbId     *string
 }
 
 // The tmdbId.
@@ -3544,22 +3561,22 @@ func (r ApiPostUpdatedMoviesRequest) Execute() (*http.Response, error) {
 /*
 PostUpdatedMovies Reports that new movies have been added by an external source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUpdatedMoviesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostUpdatedMoviesRequest
 */
 func (a *LibraryAPIService) PostUpdatedMovies(ctx context.Context) ApiPostUpdatedMoviesRequest {
 	return ApiPostUpdatedMoviesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) PostUpdatedMoviesExecute(r ApiPostUpdatedMoviesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.PostUpdatedMovies")
@@ -3639,9 +3656,9 @@ func (a *LibraryAPIService) PostUpdatedMoviesExecute(r ApiPostUpdatedMoviesReque
 }
 
 type ApiPostUpdatedSeriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
-	tvdbId *string
+	tvdbId     *string
 }
 
 // The tvdbId.
@@ -3657,22 +3674,22 @@ func (r ApiPostUpdatedSeriesRequest) Execute() (*http.Response, error) {
 /*
 PostUpdatedSeries Reports that new episodes of a series have been added by an external source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUpdatedSeriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostUpdatedSeriesRequest
 */
 func (a *LibraryAPIService) PostUpdatedSeries(ctx context.Context) ApiPostUpdatedSeriesRequest {
 	return ApiPostUpdatedSeriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) PostUpdatedSeriesExecute(r ApiPostUpdatedSeriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.PostUpdatedSeries")
@@ -3749,7 +3766,7 @@ func (a *LibraryAPIService) PostUpdatedSeriesExecute(r ApiPostUpdatedSeriesReque
 }
 
 type ApiRefreshLibraryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LibraryAPI
 }
 
@@ -3760,22 +3777,22 @@ func (r ApiRefreshLibraryRequest) Execute() (*http.Response, error) {
 /*
 RefreshLibrary Starts a library scan.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRefreshLibraryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRefreshLibraryRequest
 */
 func (a *LibraryAPIService) RefreshLibrary(ctx context.Context) ApiRefreshLibraryRequest {
 	return ApiRefreshLibraryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) RefreshLibraryExecute(r ApiRefreshLibraryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RefreshLibrary")

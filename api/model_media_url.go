@@ -19,7 +19,7 @@ var _ MappedNullable = &MediaUrl{}
 
 // MediaUrl struct for MediaUrl
 type MediaUrl struct {
-	Url NullableString `json:"Url,omitempty"`
+	Url  NullableString `json:"Url,omitempty"`
 	Name NullableString `json:"Name,omitempty"`
 }
 
@@ -72,6 +72,7 @@ func (o *MediaUrl) HasUrl() bool {
 func (o *MediaUrl) SetUrl(v string) {
 	o.Url.Set(&v)
 }
+
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *MediaUrl) SetUrlNil() {
 	o.Url.Set(nil)
@@ -114,6 +115,7 @@ func (o *MediaUrl) HasName() bool {
 func (o *MediaUrl) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *MediaUrl) SetNameNil() {
 	o.Name.Set(nil)
@@ -125,7 +127,7 @@ func (o *MediaUrl) UnsetName() {
 }
 
 func (o MediaUrl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -178,5 +180,3 @@ func (v *NullableMediaUrl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

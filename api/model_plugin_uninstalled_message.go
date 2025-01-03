@@ -76,6 +76,7 @@ func (o *PluginUninstalledMessage) HasData() bool {
 func (o *PluginUninstalledMessage) SetData(v PluginInfo) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *PluginUninstalledMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -151,7 +152,7 @@ func (o *PluginUninstalledMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o PluginUninstalledMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,5 +208,3 @@ func (v *NullablePluginUninstalledMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

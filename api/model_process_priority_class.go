@@ -20,10 +20,10 @@ type ProcessPriorityClass string
 
 // List of ProcessPriorityClass
 const (
-	PROCESSPRIORITYCLASS_NORMAL ProcessPriorityClass = "Normal"
-	PROCESSPRIORITYCLASS_IDLE ProcessPriorityClass = "Idle"
-	PROCESSPRIORITYCLASS_HIGH ProcessPriorityClass = "High"
-	PROCESSPRIORITYCLASS_REAL_TIME ProcessPriorityClass = "RealTime"
+	PROCESSPRIORITYCLASS_NORMAL       ProcessPriorityClass = "Normal"
+	PROCESSPRIORITYCLASS_IDLE         ProcessPriorityClass = "Idle"
+	PROCESSPRIORITYCLASS_HIGH         ProcessPriorityClass = "High"
+	PROCESSPRIORITYCLASS_REAL_TIME    ProcessPriorityClass = "RealTime"
 	PROCESSPRIORITYCLASS_BELOW_NORMAL ProcessPriorityClass = "BelowNormal"
 	PROCESSPRIORITYCLASS_ABOVE_NORMAL ProcessPriorityClass = "AboveNormal"
 )
@@ -116,4 +116,3 @@ func (v *NullableProcessPriorityClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

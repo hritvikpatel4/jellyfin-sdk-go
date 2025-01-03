@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
 	"reflect"
+	"strings"
 	"time"
 )
-
 
 type LiveTvAPI interface {
 
 	/*
-	AddListingProvider Adds a listings provider.
+		AddListingProvider Adds a listings provider.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAddListingProviderRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiAddListingProviderRequest
 	*/
 	AddListingProvider(ctx context.Context) ApiAddListingProviderRequest
 
@@ -38,10 +37,10 @@ type LiveTvAPI interface {
 	AddListingProviderExecute(r ApiAddListingProviderRequest) (*ListingsProviderInfo, *http.Response, error)
 
 	/*
-	AddTunerHost Adds a tuner host.
+		AddTunerHost Adds a tuner host.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAddTunerHostRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiAddTunerHostRequest
 	*/
 	AddTunerHost(ctx context.Context) ApiAddTunerHostRequest
 
@@ -50,11 +49,11 @@ type LiveTvAPI interface {
 	AddTunerHostExecute(r ApiAddTunerHostRequest) (*TunerHostInfo, *http.Response, error)
 
 	/*
-	CancelSeriesTimer Cancels a live tv series timer.
+		CancelSeriesTimer Cancels a live tv series timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param timerId Timer id.
-	@return ApiCancelSeriesTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param timerId Timer id.
+		@return ApiCancelSeriesTimerRequest
 	*/
 	CancelSeriesTimer(ctx context.Context, timerId string) ApiCancelSeriesTimerRequest
 
@@ -62,11 +61,11 @@ type LiveTvAPI interface {
 	CancelSeriesTimerExecute(r ApiCancelSeriesTimerRequest) (*http.Response, error)
 
 	/*
-	CancelTimer Cancels a live tv timer.
+		CancelTimer Cancels a live tv timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param timerId Timer id.
-	@return ApiCancelTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param timerId Timer id.
+		@return ApiCancelTimerRequest
 	*/
 	CancelTimer(ctx context.Context, timerId string) ApiCancelTimerRequest
 
@@ -74,10 +73,10 @@ type LiveTvAPI interface {
 	CancelTimerExecute(r ApiCancelTimerRequest) (*http.Response, error)
 
 	/*
-	CreateSeriesTimer Creates a live tv series timer.
+		CreateSeriesTimer Creates a live tv series timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateSeriesTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateSeriesTimerRequest
 	*/
 	CreateSeriesTimer(ctx context.Context) ApiCreateSeriesTimerRequest
 
@@ -85,10 +84,10 @@ type LiveTvAPI interface {
 	CreateSeriesTimerExecute(r ApiCreateSeriesTimerRequest) (*http.Response, error)
 
 	/*
-	CreateTimer Creates a live tv timer.
+		CreateTimer Creates a live tv timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCreateTimerRequest
 	*/
 	CreateTimer(ctx context.Context) ApiCreateTimerRequest
 
@@ -96,10 +95,10 @@ type LiveTvAPI interface {
 	CreateTimerExecute(r ApiCreateTimerRequest) (*http.Response, error)
 
 	/*
-	DeleteListingProvider Delete listing provider.
+		DeleteListingProvider Delete listing provider.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteListingProviderRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeleteListingProviderRequest
 	*/
 	DeleteListingProvider(ctx context.Context) ApiDeleteListingProviderRequest
 
@@ -107,11 +106,11 @@ type LiveTvAPI interface {
 	DeleteListingProviderExecute(r ApiDeleteListingProviderRequest) (*http.Response, error)
 
 	/*
-	DeleteRecording Deletes a live tv recording.
+		DeleteRecording Deletes a live tv recording.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recordingId Recording id.
-	@return ApiDeleteRecordingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param recordingId Recording id.
+		@return ApiDeleteRecordingRequest
 	*/
 	DeleteRecording(ctx context.Context, recordingId string) ApiDeleteRecordingRequest
 
@@ -119,10 +118,10 @@ type LiveTvAPI interface {
 	DeleteRecordingExecute(r ApiDeleteRecordingRequest) (*http.Response, error)
 
 	/*
-	DeleteTunerHost Deletes a tuner host.
+		DeleteTunerHost Deletes a tuner host.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteTunerHostRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeleteTunerHostRequest
 	*/
 	DeleteTunerHost(ctx context.Context) ApiDeleteTunerHostRequest
 
@@ -130,10 +129,10 @@ type LiveTvAPI interface {
 	DeleteTunerHostExecute(r ApiDeleteTunerHostRequest) (*http.Response, error)
 
 	/*
-	DiscoverTuners Discover tuners.
+		DiscoverTuners Discover tuners.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDiscoverTunersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDiscoverTunersRequest
 	*/
 	DiscoverTuners(ctx context.Context) ApiDiscoverTunersRequest
 
@@ -142,10 +141,10 @@ type LiveTvAPI interface {
 	DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]TunerHostInfo, *http.Response, error)
 
 	/*
-	DiscvoverTuners Discover tuners.
+		DiscvoverTuners Discover tuners.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDiscvoverTunersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDiscvoverTunersRequest
 	*/
 	DiscvoverTuners(ctx context.Context) ApiDiscvoverTunersRequest
 
@@ -154,11 +153,11 @@ type LiveTvAPI interface {
 	DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) ([]TunerHostInfo, *http.Response, error)
 
 	/*
-	GetChannel Gets a live tv channel.
+		GetChannel Gets a live tv channel.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param channelId Channel id.
-	@return ApiGetChannelRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param channelId Channel id.
+		@return ApiGetChannelRequest
 	*/
 	GetChannel(ctx context.Context, channelId string) ApiGetChannelRequest
 
@@ -167,10 +166,10 @@ type LiveTvAPI interface {
 	GetChannelExecute(r ApiGetChannelRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetChannelMappingOptions Get channel mapping options.
+		GetChannelMappingOptions Get channel mapping options.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChannelMappingOptionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetChannelMappingOptionsRequest
 	*/
 	GetChannelMappingOptions(ctx context.Context) ApiGetChannelMappingOptionsRequest
 
@@ -179,10 +178,10 @@ type LiveTvAPI interface {
 	GetChannelMappingOptionsExecute(r ApiGetChannelMappingOptionsRequest) (*ChannelMappingOptionsDto, *http.Response, error)
 
 	/*
-	GetDefaultListingProvider Gets default listings provider info.
+		GetDefaultListingProvider Gets default listings provider info.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDefaultListingProviderRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDefaultListingProviderRequest
 	*/
 	GetDefaultListingProvider(ctx context.Context) ApiGetDefaultListingProviderRequest
 
@@ -191,10 +190,10 @@ type LiveTvAPI interface {
 	GetDefaultListingProviderExecute(r ApiGetDefaultListingProviderRequest) (*ListingsProviderInfo, *http.Response, error)
 
 	/*
-	GetDefaultTimer Gets the default values for a new timer.
+		GetDefaultTimer Gets the default values for a new timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDefaultTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDefaultTimerRequest
 	*/
 	GetDefaultTimer(ctx context.Context) ApiGetDefaultTimerRequest
 
@@ -203,10 +202,10 @@ type LiveTvAPI interface {
 	GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (*SeriesTimerInfoDto, *http.Response, error)
 
 	/*
-	GetGuideInfo Get guid info.
+		GetGuideInfo Get guid info.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetGuideInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetGuideInfoRequest
 	*/
 	GetGuideInfo(ctx context.Context) ApiGetGuideInfoRequest
 
@@ -215,10 +214,10 @@ type LiveTvAPI interface {
 	GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*GuideInfo, *http.Response, error)
 
 	/*
-	GetLineups Gets available lineups.
+		GetLineups Gets available lineups.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLineupsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLineupsRequest
 	*/
 	GetLineups(ctx context.Context) ApiGetLineupsRequest
 
@@ -227,11 +226,11 @@ type LiveTvAPI interface {
 	GetLineupsExecute(r ApiGetLineupsRequest) ([]NameIdPair, *http.Response, error)
 
 	/*
-	GetLiveRecordingFile Gets a live tv recording stream.
+		GetLiveRecordingFile Gets a live tv recording stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recordingId Recording id.
-	@return ApiGetLiveRecordingFileRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param recordingId Recording id.
+		@return ApiGetLiveRecordingFileRequest
 	*/
 	GetLiveRecordingFile(ctx context.Context, recordingId string) ApiGetLiveRecordingFileRequest
 
@@ -240,12 +239,12 @@ type LiveTvAPI interface {
 	GetLiveRecordingFileExecute(r ApiGetLiveRecordingFileRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetLiveStreamFile Gets a live tv channel stream.
+		GetLiveStreamFile Gets a live tv channel stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param streamId Stream id.
-	@param container Container type.
-	@return ApiGetLiveStreamFileRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param streamId Stream id.
+		@param container Container type.
+		@return ApiGetLiveStreamFileRequest
 	*/
 	GetLiveStreamFile(ctx context.Context, streamId string, container string) ApiGetLiveStreamFileRequest
 
@@ -254,10 +253,10 @@ type LiveTvAPI interface {
 	GetLiveStreamFileExecute(r ApiGetLiveStreamFileRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetLiveTvChannels Gets available live tv channels.
+		GetLiveTvChannels Gets available live tv channels.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLiveTvChannelsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLiveTvChannelsRequest
 	*/
 	GetLiveTvChannels(ctx context.Context) ApiGetLiveTvChannelsRequest
 
@@ -266,10 +265,10 @@ type LiveTvAPI interface {
 	GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetLiveTvInfo Gets available live tv services.
+		GetLiveTvInfo Gets available live tv services.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLiveTvInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLiveTvInfoRequest
 	*/
 	GetLiveTvInfo(ctx context.Context) ApiGetLiveTvInfoRequest
 
@@ -278,10 +277,10 @@ type LiveTvAPI interface {
 	GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*LiveTvInfo, *http.Response, error)
 
 	/*
-	GetLiveTvPrograms Gets available live tv epgs.
+		GetLiveTvPrograms Gets available live tv epgs.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLiveTvProgramsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLiveTvProgramsRequest
 	*/
 	GetLiveTvPrograms(ctx context.Context) ApiGetLiveTvProgramsRequest
 
@@ -290,11 +289,11 @@ type LiveTvAPI interface {
 	GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetProgram Gets a live tv program.
+		GetProgram Gets a live tv program.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param programId Program id.
-	@return ApiGetProgramRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param programId Program id.
+		@return ApiGetProgramRequest
 	*/
 	GetProgram(ctx context.Context, programId string) ApiGetProgramRequest
 
@@ -303,10 +302,10 @@ type LiveTvAPI interface {
 	GetProgramExecute(r ApiGetProgramRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetPrograms Gets available live tv epgs.
+		GetPrograms Gets available live tv epgs.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetProgramsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetProgramsRequest
 	*/
 	GetPrograms(ctx context.Context) ApiGetProgramsRequest
 
@@ -315,10 +314,10 @@ type LiveTvAPI interface {
 	GetProgramsExecute(r ApiGetProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetRecommendedPrograms Gets recommended live tv epgs.
+		GetRecommendedPrograms Gets recommended live tv epgs.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRecommendedProgramsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRecommendedProgramsRequest
 	*/
 	GetRecommendedPrograms(ctx context.Context) ApiGetRecommendedProgramsRequest
 
@@ -327,11 +326,11 @@ type LiveTvAPI interface {
 	GetRecommendedProgramsExecute(r ApiGetRecommendedProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetRecording Gets a live tv recording.
+		GetRecording Gets a live tv recording.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recordingId Recording id.
-	@return ApiGetRecordingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param recordingId Recording id.
+		@return ApiGetRecordingRequest
 	*/
 	GetRecording(ctx context.Context, recordingId string) ApiGetRecordingRequest
 
@@ -340,10 +339,10 @@ type LiveTvAPI interface {
 	GetRecordingExecute(r ApiGetRecordingRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetRecordingFolders Gets recording folders.
+		GetRecordingFolders Gets recording folders.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRecordingFoldersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRecordingFoldersRequest
 	*/
 	GetRecordingFolders(ctx context.Context) ApiGetRecordingFoldersRequest
 
@@ -352,13 +351,13 @@ type LiveTvAPI interface {
 	GetRecordingFoldersExecute(r ApiGetRecordingFoldersRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetRecordingGroup Get recording group.
+		GetRecordingGroup Get recording group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param groupId Group id.
-	@return ApiGetRecordingGroupRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param groupId Group id.
+		@return ApiGetRecordingGroupRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetRecordingGroup(ctx context.Context, groupId string) ApiGetRecordingGroupRequest
 
@@ -367,12 +366,12 @@ type LiveTvAPI interface {
 	GetRecordingGroupExecute(r ApiGetRecordingGroupRequest) (*http.Response, error)
 
 	/*
-	GetRecordingGroups Gets live tv recording groups.
+		GetRecordingGroups Gets live tv recording groups.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRecordingGroupsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRecordingGroupsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetRecordingGroups(ctx context.Context) ApiGetRecordingGroupsRequest
 
@@ -382,10 +381,10 @@ type LiveTvAPI interface {
 	GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetRecordings Gets live tv recordings.
+		GetRecordings Gets live tv recordings.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRecordingsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRecordingsRequest
 	*/
 	GetRecordings(ctx context.Context) ApiGetRecordingsRequest
 
@@ -394,12 +393,12 @@ type LiveTvAPI interface {
 	GetRecordingsExecute(r ApiGetRecordingsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetRecordingsSeries Gets live tv recording series.
+		GetRecordingsSeries Gets live tv recording series.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRecordingsSeriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetRecordingsSeriesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetRecordingsSeries(ctx context.Context) ApiGetRecordingsSeriesRequest
 
@@ -409,10 +408,10 @@ type LiveTvAPI interface {
 	GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSchedulesDirectCountries Gets available countries.
+		GetSchedulesDirectCountries Gets available countries.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSchedulesDirectCountriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSchedulesDirectCountriesRequest
 	*/
 	GetSchedulesDirectCountries(ctx context.Context) ApiGetSchedulesDirectCountriesRequest
 
@@ -421,11 +420,11 @@ type LiveTvAPI interface {
 	GetSchedulesDirectCountriesExecute(r ApiGetSchedulesDirectCountriesRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetSeriesTimer Gets a live tv series timer.
+		GetSeriesTimer Gets a live tv series timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param timerId Timer id.
-	@return ApiGetSeriesTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param timerId Timer id.
+		@return ApiGetSeriesTimerRequest
 	*/
 	GetSeriesTimer(ctx context.Context, timerId string) ApiGetSeriesTimerRequest
 
@@ -434,10 +433,10 @@ type LiveTvAPI interface {
 	GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*SeriesTimerInfoDto, *http.Response, error)
 
 	/*
-	GetSeriesTimers Gets live tv series timers.
+		GetSeriesTimers Gets live tv series timers.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSeriesTimersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSeriesTimersRequest
 	*/
 	GetSeriesTimers(ctx context.Context) ApiGetSeriesTimersRequest
 
@@ -446,11 +445,11 @@ type LiveTvAPI interface {
 	GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (*SeriesTimerInfoDtoQueryResult, *http.Response, error)
 
 	/*
-	GetTimer Gets a timer.
+		GetTimer Gets a timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param timerId Timer id.
-	@return ApiGetTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param timerId Timer id.
+		@return ApiGetTimerRequest
 	*/
 	GetTimer(ctx context.Context, timerId string) ApiGetTimerRequest
 
@@ -459,10 +458,10 @@ type LiveTvAPI interface {
 	GetTimerExecute(r ApiGetTimerRequest) (*TimerInfoDto, *http.Response, error)
 
 	/*
-	GetTimers Gets the live tv timers.
+		GetTimers Gets the live tv timers.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetTimersRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetTimersRequest
 	*/
 	GetTimers(ctx context.Context) ApiGetTimersRequest
 
@@ -471,10 +470,10 @@ type LiveTvAPI interface {
 	GetTimersExecute(r ApiGetTimersRequest) (*TimerInfoDtoQueryResult, *http.Response, error)
 
 	/*
-	GetTunerHostTypes Get tuner host types.
+		GetTunerHostTypes Get tuner host types.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetTunerHostTypesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetTunerHostTypesRequest
 	*/
 	GetTunerHostTypes(ctx context.Context) ApiGetTunerHostTypesRequest
 
@@ -483,11 +482,11 @@ type LiveTvAPI interface {
 	GetTunerHostTypesExecute(r ApiGetTunerHostTypesRequest) ([]NameIdPair, *http.Response, error)
 
 	/*
-	ResetTuner Resets a tv tuner.
+		ResetTuner Resets a tv tuner.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param tunerId Tuner id.
-	@return ApiResetTunerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param tunerId Tuner id.
+		@return ApiResetTunerRequest
 	*/
 	ResetTuner(ctx context.Context, tunerId string) ApiResetTunerRequest
 
@@ -495,10 +494,10 @@ type LiveTvAPI interface {
 	ResetTunerExecute(r ApiResetTunerRequest) (*http.Response, error)
 
 	/*
-	SetChannelMapping Set channel mappings.
+		SetChannelMapping Set channel mappings.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChannelMappingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSetChannelMappingRequest
 	*/
 	SetChannelMapping(ctx context.Context) ApiSetChannelMappingRequest
 
@@ -507,11 +506,11 @@ type LiveTvAPI interface {
 	SetChannelMappingExecute(r ApiSetChannelMappingRequest) (*TunerChannelMapping, *http.Response, error)
 
 	/*
-	UpdateSeriesTimer Updates a live tv series timer.
+		UpdateSeriesTimer Updates a live tv series timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param timerId Timer id.
-	@return ApiUpdateSeriesTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param timerId Timer id.
+		@return ApiUpdateSeriesTimerRequest
 	*/
 	UpdateSeriesTimer(ctx context.Context, timerId string) ApiUpdateSeriesTimerRequest
 
@@ -519,11 +518,11 @@ type LiveTvAPI interface {
 	UpdateSeriesTimerExecute(r ApiUpdateSeriesTimerRequest) (*http.Response, error)
 
 	/*
-	UpdateTimer Updates a live tv timer.
+		UpdateTimer Updates a live tv timer.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param timerId Timer id.
-	@return ApiUpdateTimerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param timerId Timer id.
+		@return ApiUpdateTimerRequest
 	*/
 	UpdateTimer(ctx context.Context, timerId string) ApiUpdateTimerRequest
 
@@ -535,11 +534,11 @@ type LiveTvAPI interface {
 type LiveTvAPIService service
 
 type ApiAddListingProviderRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	pw *string
-	validateListings *bool
-	validateLogin *bool
+	ctx                  context.Context
+	ApiService           LiveTvAPI
+	pw                   *string
+	validateListings     *bool
+	validateLogin        *bool
 	listingsProviderInfo *ListingsProviderInfo
 }
 
@@ -574,24 +573,25 @@ func (r ApiAddListingProviderRequest) Execute() (*ListingsProviderInfo, *http.Re
 /*
 AddListingProvider Adds a listings provider.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddListingProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddListingProviderRequest
 */
 func (a *LiveTvAPIService) AddListingProvider(ctx context.Context) ApiAddListingProviderRequest {
 	return ApiAddListingProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListingsProviderInfo
+//
+//	@return ListingsProviderInfo
 func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequest) (*ListingsProviderInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListingsProviderInfo
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListingsProviderInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.AddListingProvider")
@@ -691,8 +691,8 @@ func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequ
 }
 
 type ApiAddTunerHostRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx           context.Context
+	ApiService    LiveTvAPI
 	tunerHostInfo *TunerHostInfo
 }
 
@@ -709,24 +709,25 @@ func (r ApiAddTunerHostRequest) Execute() (*TunerHostInfo, *http.Response, error
 /*
 AddTunerHost Adds a tuner host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddTunerHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddTunerHostRequest
 */
 func (a *LiveTvAPIService) AddTunerHost(ctx context.Context) ApiAddTunerHostRequest {
 	return ApiAddTunerHostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TunerHostInfo
+//
+//	@return TunerHostInfo
 func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*TunerHostInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TunerHostInfo
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TunerHostInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.AddTunerHost")
@@ -811,9 +812,9 @@ func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*Tuner
 }
 
 type ApiCancelSeriesTimerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	timerId string
+	timerId    string
 }
 
 func (r ApiCancelSeriesTimerRequest) Execute() (*http.Response, error) {
@@ -823,24 +824,24 @@ func (r ApiCancelSeriesTimerRequest) Execute() (*http.Response, error) {
 /*
 CancelSeriesTimer Cancels a live tv series timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param timerId Timer id.
- @return ApiCancelSeriesTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param timerId Timer id.
+	@return ApiCancelSeriesTimerRequest
 */
 func (a *LiveTvAPIService) CancelSeriesTimer(ctx context.Context, timerId string) ApiCancelSeriesTimerRequest {
 	return ApiCancelSeriesTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		timerId: timerId,
+		ctx:        ctx,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) CancelSeriesTimerExecute(r ApiCancelSeriesTimerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.CancelSeriesTimer")
@@ -915,9 +916,9 @@ func (a *LiveTvAPIService) CancelSeriesTimerExecute(r ApiCancelSeriesTimerReques
 }
 
 type ApiCancelTimerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	timerId string
+	timerId    string
 }
 
 func (r ApiCancelTimerRequest) Execute() (*http.Response, error) {
@@ -927,24 +928,24 @@ func (r ApiCancelTimerRequest) Execute() (*http.Response, error) {
 /*
 CancelTimer Cancels a live tv timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param timerId Timer id.
- @return ApiCancelTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param timerId Timer id.
+	@return ApiCancelTimerRequest
 */
 func (a *LiveTvAPIService) CancelTimer(ctx context.Context, timerId string) ApiCancelTimerRequest {
 	return ApiCancelTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		timerId: timerId,
+		ctx:        ctx,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) CancelTimerExecute(r ApiCancelTimerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.CancelTimer")
@@ -1019,8 +1020,8 @@ func (a *LiveTvAPIService) CancelTimerExecute(r ApiCancelTimerRequest) (*http.Re
 }
 
 type ApiCreateSeriesTimerRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx                context.Context
+	ApiService         LiveTvAPI
 	seriesTimerInfoDto *SeriesTimerInfoDto
 }
 
@@ -1037,22 +1038,22 @@ func (r ApiCreateSeriesTimerRequest) Execute() (*http.Response, error) {
 /*
 CreateSeriesTimer Creates a live tv series timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateSeriesTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateSeriesTimerRequest
 */
 func (a *LiveTvAPIService) CreateSeriesTimer(ctx context.Context) ApiCreateSeriesTimerRequest {
 	return ApiCreateSeriesTimerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) CreateSeriesTimerExecute(r ApiCreateSeriesTimerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.CreateSeriesTimer")
@@ -1128,8 +1129,8 @@ func (a *LiveTvAPIService) CreateSeriesTimerExecute(r ApiCreateSeriesTimerReques
 }
 
 type ApiCreateTimerRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx          context.Context
+	ApiService   LiveTvAPI
 	timerInfoDto *TimerInfoDto
 }
 
@@ -1146,22 +1147,22 @@ func (r ApiCreateTimerRequest) Execute() (*http.Response, error) {
 /*
 CreateTimer Creates a live tv timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateTimerRequest
 */
 func (a *LiveTvAPIService) CreateTimer(ctx context.Context) ApiCreateTimerRequest {
 	return ApiCreateTimerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) CreateTimerExecute(r ApiCreateTimerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.CreateTimer")
@@ -1237,9 +1238,9 @@ func (a *LiveTvAPIService) CreateTimerExecute(r ApiCreateTimerRequest) (*http.Re
 }
 
 type ApiDeleteListingProviderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	id *string
+	id         *string
 }
 
 // Listing provider id.
@@ -1255,22 +1256,22 @@ func (r ApiDeleteListingProviderRequest) Execute() (*http.Response, error) {
 /*
 DeleteListingProvider Delete listing provider.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteListingProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeleteListingProviderRequest
 */
 func (a *LiveTvAPIService) DeleteListingProvider(ctx context.Context) ApiDeleteListingProviderRequest {
 	return ApiDeleteListingProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) DeleteListingProviderExecute(r ApiDeleteListingProviderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DeleteListingProvider")
@@ -1347,8 +1348,8 @@ func (a *LiveTvAPIService) DeleteListingProviderExecute(r ApiDeleteListingProvid
 }
 
 type ApiDeleteRecordingRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx         context.Context
+	ApiService  LiveTvAPI
 	recordingId string
 }
 
@@ -1359,14 +1360,14 @@ func (r ApiDeleteRecordingRequest) Execute() (*http.Response, error) {
 /*
 DeleteRecording Deletes a live tv recording.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param recordingId Recording id.
- @return ApiDeleteRecordingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recordingId Recording id.
+	@return ApiDeleteRecordingRequest
 */
 func (a *LiveTvAPIService) DeleteRecording(ctx context.Context, recordingId string) ApiDeleteRecordingRequest {
 	return ApiDeleteRecordingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		recordingId: recordingId,
 	}
 }
@@ -1374,9 +1375,9 @@ func (a *LiveTvAPIService) DeleteRecording(ctx context.Context, recordingId stri
 // Execute executes the request
 func (a *LiveTvAPIService) DeleteRecordingExecute(r ApiDeleteRecordingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DeleteRecording")
@@ -1451,8 +1452,8 @@ func (a *LiveTvAPIService) DeleteRecordingExecute(r ApiDeleteRecordingRequest) (
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1462,9 +1463,9 @@ func (a *LiveTvAPIService) DeleteRecordingExecute(r ApiDeleteRecordingRequest) (
 }
 
 type ApiDeleteTunerHostRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	id *string
+	id         *string
 }
 
 // Tuner host id.
@@ -1480,22 +1481,22 @@ func (r ApiDeleteTunerHostRequest) Execute() (*http.Response, error) {
 /*
 DeleteTunerHost Deletes a tuner host.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteTunerHostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeleteTunerHostRequest
 */
 func (a *LiveTvAPIService) DeleteTunerHost(ctx context.Context) ApiDeleteTunerHostRequest {
 	return ApiDeleteTunerHostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) DeleteTunerHostExecute(r ApiDeleteTunerHostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DeleteTunerHost")
@@ -1572,8 +1573,8 @@ func (a *LiveTvAPIService) DeleteTunerHostExecute(r ApiDeleteTunerHostRequest) (
 }
 
 type ApiDiscoverTunersRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx            context.Context
+	ApiService     LiveTvAPI
 	newDevicesOnly *bool
 }
 
@@ -1590,24 +1591,25 @@ func (r ApiDiscoverTunersRequest) Execute() ([]TunerHostInfo, *http.Response, er
 /*
 DiscoverTuners Discover tuners.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDiscoverTunersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDiscoverTunersRequest
 */
 func (a *LiveTvAPIService) DiscoverTuners(ctx context.Context) ApiDiscoverTunersRequest {
 	return ApiDiscoverTunersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TunerHostInfo
+//
+//	@return []TunerHostInfo
 func (a *LiveTvAPIService) DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]TunerHostInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TunerHostInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TunerHostInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DiscoverTuners")
@@ -1696,8 +1698,8 @@ func (a *LiveTvAPIService) DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]
 }
 
 type ApiDiscvoverTunersRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx            context.Context
+	ApiService     LiveTvAPI
 	newDevicesOnly *bool
 }
 
@@ -1714,24 +1716,25 @@ func (r ApiDiscvoverTunersRequest) Execute() ([]TunerHostInfo, *http.Response, e
 /*
 DiscvoverTuners Discover tuners.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDiscvoverTunersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDiscvoverTunersRequest
 */
 func (a *LiveTvAPIService) DiscvoverTuners(ctx context.Context) ApiDiscvoverTunersRequest {
 	return ApiDiscvoverTunersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TunerHostInfo
+//
+//	@return []TunerHostInfo
 func (a *LiveTvAPIService) DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) ([]TunerHostInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TunerHostInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TunerHostInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DiscvoverTuners")
@@ -1820,10 +1823,10 @@ func (a *LiveTvAPIService) DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) (
 }
 
 type ApiGetChannelRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	channelId string
-	userId *string
+	channelId  string
+	userId     *string
 }
 
 // Optional. Attach user data.
@@ -1839,26 +1842,27 @@ func (r ApiGetChannelRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetChannel Gets a live tv channel.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param channelId Channel id.
- @return ApiGetChannelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param channelId Channel id.
+	@return ApiGetChannelRequest
 */
 func (a *LiveTvAPIService) GetChannel(ctx context.Context, channelId string) ApiGetChannelRequest {
 	return ApiGetChannelRequest{
 		ApiService: a,
-		ctx: ctx,
-		channelId: channelId,
+		ctx:        ctx,
+		channelId:  channelId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetChannel")
@@ -1936,8 +1940,8 @@ func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*BaseItemD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1956,7 +1960,7 @@ func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*BaseItemD
 }
 
 type ApiGetChannelMappingOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
 	providerId *string
 }
@@ -1974,24 +1978,25 @@ func (r ApiGetChannelMappingOptionsRequest) Execute() (*ChannelMappingOptionsDto
 /*
 GetChannelMappingOptions Get channel mapping options.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChannelMappingOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetChannelMappingOptionsRequest
 */
 func (a *LiveTvAPIService) GetChannelMappingOptions(ctx context.Context) ApiGetChannelMappingOptionsRequest {
 	return ApiGetChannelMappingOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ChannelMappingOptionsDto
+//
+//	@return ChannelMappingOptionsDto
 func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r ApiGetChannelMappingOptionsRequest) (*ChannelMappingOptionsDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChannelMappingOptionsDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChannelMappingOptionsDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetChannelMappingOptions")
@@ -2077,7 +2082,7 @@ func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r ApiGetChannelMappin
 }
 
 type ApiGetDefaultListingProviderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
 }
 
@@ -2088,24 +2093,25 @@ func (r ApiGetDefaultListingProviderRequest) Execute() (*ListingsProviderInfo, *
 /*
 GetDefaultListingProvider Gets default listings provider info.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultListingProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDefaultListingProviderRequest
 */
 func (a *LiveTvAPIService) GetDefaultListingProvider(ctx context.Context) ApiGetDefaultListingProviderRequest {
 	return ApiGetDefaultListingProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListingsProviderInfo
+//
+//	@return ListingsProviderInfo
 func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r ApiGetDefaultListingProviderRequest) (*ListingsProviderInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListingsProviderInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListingsProviderInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetDefaultListingProvider")
@@ -2188,9 +2194,9 @@ func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r ApiGetDefaultListi
 }
 
 type ApiGetDefaultTimerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	programId *string
+	programId  *string
 }
 
 // Optional. To attach default values based on a program.
@@ -2206,24 +2212,25 @@ func (r ApiGetDefaultTimerRequest) Execute() (*SeriesTimerInfoDto, *http.Respons
 /*
 GetDefaultTimer Gets the default values for a new timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDefaultTimerRequest
 */
 func (a *LiveTvAPIService) GetDefaultTimer(ctx context.Context) ApiGetDefaultTimerRequest {
 	return ApiGetDefaultTimerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SeriesTimerInfoDto
+//
+//	@return SeriesTimerInfoDto
 func (a *LiveTvAPIService) GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (*SeriesTimerInfoDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SeriesTimerInfoDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SeriesTimerInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetDefaultTimer")
@@ -2309,7 +2316,7 @@ func (a *LiveTvAPIService) GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (
 }
 
 type ApiGetGuideInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
 }
 
@@ -2320,24 +2327,25 @@ func (r ApiGetGuideInfoRequest) Execute() (*GuideInfo, *http.Response, error) {
 /*
 GetGuideInfo Get guid info.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGuideInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetGuideInfoRequest
 */
 func (a *LiveTvAPIService) GetGuideInfo(ctx context.Context) ApiGetGuideInfoRequest {
 	return ApiGetGuideInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GuideInfo
+//
+//	@return GuideInfo
 func (a *LiveTvAPIService) GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*GuideInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GuideInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GuideInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetGuideInfo")
@@ -2420,12 +2428,12 @@ func (a *LiveTvAPIService) GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*Guide
 }
 
 type ApiGetLineupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	id *string
-	type_ *string
-	location *string
-	country *string
+	id         *string
+	type_      *string
+	location   *string
+	country    *string
 }
 
 // Provider id.
@@ -2459,24 +2467,25 @@ func (r ApiGetLineupsRequest) Execute() ([]NameIdPair, *http.Response, error) {
 /*
 GetLineups Gets available lineups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLineupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLineupsRequest
 */
 func (a *LiveTvAPIService) GetLineups(ctx context.Context) ApiGetLineupsRequest {
 	return ApiGetLineupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []NameIdPair
+//
+//	@return []NameIdPair
 func (a *LiveTvAPIService) GetLineupsExecute(r ApiGetLineupsRequest) ([]NameIdPair, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NameIdPair
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NameIdPair
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLineups")
@@ -2571,8 +2580,8 @@ func (a *LiveTvAPIService) GetLineupsExecute(r ApiGetLineupsRequest) ([]NameIdPa
 }
 
 type ApiGetLiveRecordingFileRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx         context.Context
+	ApiService  LiveTvAPI
 	recordingId string
 }
 
@@ -2583,26 +2592,27 @@ func (r ApiGetLiveRecordingFileRequest) Execute() (*os.File, *http.Response, err
 /*
 GetLiveRecordingFile Gets a live tv recording stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param recordingId Recording id.
- @return ApiGetLiveRecordingFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recordingId Recording id.
+	@return ApiGetLiveRecordingFileRequest
 */
 func (a *LiveTvAPIService) GetLiveRecordingFile(ctx context.Context, recordingId string) ApiGetLiveRecordingFileRequest {
 	return ApiGetLiveRecordingFileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		recordingId: recordingId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r ApiGetLiveRecordingFileRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveRecordingFile")
@@ -2663,8 +2673,8 @@ func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r ApiGetLiveRecordingFile
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2682,10 +2692,10 @@ func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r ApiGetLiveRecordingFile
 }
 
 type ApiGetLiveStreamFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	streamId string
-	container string
+	streamId   string
+	container  string
 }
 
 func (r ApiGetLiveStreamFileRequest) Execute() (*os.File, *http.Response, error) {
@@ -2695,28 +2705,29 @@ func (r ApiGetLiveStreamFileRequest) Execute() (*os.File, *http.Response, error)
 /*
 GetLiveStreamFile Gets a live tv channel stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param streamId Stream id.
- @param container Container type.
- @return ApiGetLiveStreamFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param streamId Stream id.
+	@param container Container type.
+	@return ApiGetLiveStreamFileRequest
 */
 func (a *LiveTvAPIService) GetLiveStreamFile(ctx context.Context, streamId string, container string) ApiGetLiveStreamFileRequest {
 	return ApiGetLiveStreamFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		streamId: streamId,
-		container: container,
+		ctx:        ctx,
+		streamId:   streamId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveStreamFile")
@@ -2778,8 +2789,8 @@ func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2797,29 +2808,29 @@ func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileReques
 }
 
 type ApiGetLiveTvChannelsRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	type_ *ChannelType
-	userId *string
-	startIndex *int32
-	isMovie *bool
-	isSeries *bool
-	isNews *bool
-	isKids *bool
-	isSports *bool
-	limit *int32
-	isFavorite *bool
-	isLiked *bool
-	isDisliked *bool
-	enableImages *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	fields *[]ItemFields
-	enableUserData *bool
-	sortBy *[]ItemSortBy
-	sortOrder *SortOrder
+	ctx                   context.Context
+	ApiService            LiveTvAPI
+	type_                 *ChannelType
+	userId                *string
+	startIndex            *int32
+	isMovie               *bool
+	isSeries              *bool
+	isNews                *bool
+	isKids                *bool
+	isSports              *bool
+	limit                 *int32
+	isFavorite            *bool
+	isLiked               *bool
+	isDisliked            *bool
+	enableImages          *bool
+	imageTypeLimit        *int32
+	enableImageTypes      *[]ImageType
+	fields                *[]ItemFields
+	enableUserData        *bool
+	sortBy                *[]ItemSortBy
+	sortOrder             *SortOrder
 	enableFavoriteSorting *bool
-	addCurrentProgram *bool
+	addCurrentProgram     *bool
 }
 
 // Optional. Filter by channel type.
@@ -2955,24 +2966,25 @@ func (r ApiGetLiveTvChannelsRequest) Execute() (*BaseItemDtoQueryResult, *http.R
 /*
 GetLiveTvChannels Gets available live tv channels.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLiveTvChannelsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLiveTvChannelsRequest
 */
 func (a *LiveTvAPIService) GetLiveTvChannels(ctx context.Context) ApiGetLiveTvChannelsRequest {
 	return ApiGetLiveTvChannelsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveTvChannels")
@@ -3148,7 +3160,7 @@ func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsReques
 }
 
 type ApiGetLiveTvInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
 }
 
@@ -3159,24 +3171,25 @@ func (r ApiGetLiveTvInfoRequest) Execute() (*LiveTvInfo, *http.Response, error) 
 /*
 GetLiveTvInfo Gets available live tv services.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLiveTvInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLiveTvInfoRequest
 */
 func (a *LiveTvAPIService) GetLiveTvInfo(ctx context.Context) ApiGetLiveTvInfoRequest {
 	return ApiGetLiveTvInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LiveTvInfo
+//
+//	@return LiveTvInfo
 func (a *LiveTvAPIService) GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*LiveTvInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LiveTvInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LiveTvInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveTvInfo")
@@ -3259,34 +3272,34 @@ func (a *LiveTvAPIService) GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*Liv
 }
 
 type ApiGetLiveTvProgramsRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	channelIds *[]string
-	userId *string
-	minStartDate *time.Time
-	hasAired *bool
-	isAiring *bool
-	maxStartDate *time.Time
-	minEndDate *time.Time
-	maxEndDate *time.Time
-	isMovie *bool
-	isSeries *bool
-	isNews *bool
-	isKids *bool
-	isSports *bool
-	startIndex *int32
-	limit *int32
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
-	genres *[]string
-	genreIds *[]string
-	enableImages *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	enableUserData *bool
-	seriesTimerId *string
-	librarySeriesId *string
-	fields *[]ItemFields
+	ctx                    context.Context
+	ApiService             LiveTvAPI
+	channelIds             *[]string
+	userId                 *string
+	minStartDate           *time.Time
+	hasAired               *bool
+	isAiring               *bool
+	maxStartDate           *time.Time
+	minEndDate             *time.Time
+	maxEndDate             *time.Time
+	isMovie                *bool
+	isSeries               *bool
+	isNews                 *bool
+	isKids                 *bool
+	isSports               *bool
+	startIndex             *int32
+	limit                  *int32
+	sortBy                 *[]ItemSortBy
+	sortOrder              *[]SortOrder
+	genres                 *[]string
+	genreIds               *[]string
+	enableImages           *bool
+	imageTypeLimit         *int32
+	enableImageTypes       *[]ImageType
+	enableUserData         *bool
+	seriesTimerId          *string
+	librarySeriesId        *string
+	fields                 *[]ItemFields
 	enableTotalRecordCount *bool
 }
 
@@ -3459,24 +3472,25 @@ func (r ApiGetLiveTvProgramsRequest) Execute() (*BaseItemDtoQueryResult, *http.R
 /*
 GetLiveTvPrograms Gets available live tv epgs.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLiveTvProgramsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLiveTvProgramsRequest
 */
 func (a *LiveTvAPIService) GetLiveTvPrograms(ctx context.Context) ApiGetLiveTvProgramsRequest {
 	return ApiGetLiveTvProgramsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveTvPrograms")
@@ -3699,10 +3713,10 @@ func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsReques
 }
 
 type ApiGetProgramRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	programId string
-	userId *string
+	programId  string
+	userId     *string
 }
 
 // Optional. Attach user data.
@@ -3718,26 +3732,27 @@ func (r ApiGetProgramRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetProgram Gets a live tv program.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param programId Program id.
- @return ApiGetProgramRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param programId Program id.
+	@return ApiGetProgramRequest
 */
 func (a *LiveTvAPIService) GetProgram(ctx context.Context, programId string) ApiGetProgramRequest {
 	return ApiGetProgramRequest{
 		ApiService: a,
-		ctx: ctx,
-		programId: programId,
+		ctx:        ctx,
+		programId:  programId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetProgram")
@@ -3824,8 +3839,8 @@ func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*BaseItemD
 }
 
 type ApiGetProgramsRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx            context.Context
+	ApiService     LiveTvAPI
 	getProgramsDto *GetProgramsDto
 }
 
@@ -3842,24 +3857,25 @@ func (r ApiGetProgramsRequest) Execute() (*BaseItemDtoQueryResult, *http.Respons
 /*
 GetPrograms Gets available live tv epgs.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetProgramsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetProgramsRequest
 */
 func (a *LiveTvAPIService) GetPrograms(ctx context.Context) ApiGetProgramsRequest {
 	return ApiGetProgramsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetPrograms")
@@ -3944,23 +3960,23 @@ func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*BaseIte
 }
 
 type ApiGetRecommendedProgramsRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	userId *string
-	limit *int32
-	isAiring *bool
-	hasAired *bool
-	isSeries *bool
-	isMovie *bool
-	isNews *bool
-	isKids *bool
-	isSports *bool
-	enableImages *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	genreIds *[]string
-	fields *[]ItemFields
-	enableUserData *bool
+	ctx                    context.Context
+	ApiService             LiveTvAPI
+	userId                 *string
+	limit                  *int32
+	isAiring               *bool
+	hasAired               *bool
+	isSeries               *bool
+	isMovie                *bool
+	isNews                 *bool
+	isKids                 *bool
+	isSports               *bool
+	enableImages           *bool
+	imageTypeLimit         *int32
+	enableImageTypes       *[]ImageType
+	genreIds               *[]string
+	fields                 *[]ItemFields
+	enableUserData         *bool
 	enableTotalRecordCount *bool
 }
 
@@ -4067,24 +4083,25 @@ func (r ApiGetRecommendedProgramsRequest) Execute() (*BaseItemDtoQueryResult, *h
 /*
 GetRecommendedPrograms Gets recommended live tv epgs.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecommendedProgramsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRecommendedProgramsRequest
 */
 func (a *LiveTvAPIService) GetRecommendedPrograms(ctx context.Context) ApiGetRecommendedProgramsRequest {
 	return ApiGetRecommendedProgramsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r ApiGetRecommendedProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecommendedPrograms")
@@ -4242,10 +4259,10 @@ func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r ApiGetRecommendedProg
 }
 
 type ApiGetRecordingRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx         context.Context
+	ApiService  LiveTvAPI
 	recordingId string
-	userId *string
+	userId      *string
 }
 
 // Optional. Attach user data.
@@ -4261,26 +4278,27 @@ func (r ApiGetRecordingRequest) Execute() (*BaseItemDto, *http.Response, error) 
 /*
 GetRecording Gets a live tv recording.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param recordingId Recording id.
- @return ApiGetRecordingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recordingId Recording id.
+	@return ApiGetRecordingRequest
 */
 func (a *LiveTvAPIService) GetRecording(ctx context.Context, recordingId string) ApiGetRecordingRequest {
 	return ApiGetRecordingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		recordingId: recordingId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecording")
@@ -4358,8 +4376,8 @@ func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*BaseI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4378,9 +4396,9 @@ func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*BaseI
 }
 
 type ApiGetRecordingFoldersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	userId *string
+	userId     *string
 }
 
 // Optional. Filter by user and attach user data.
@@ -4396,24 +4414,25 @@ func (r ApiGetRecordingFoldersRequest) Execute() (*BaseItemDtoQueryResult, *http
 /*
 GetRecordingFolders Gets recording folders.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingFoldersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRecordingFoldersRequest
 */
 func (a *LiveTvAPIService) GetRecordingFolders(ctx context.Context) ApiGetRecordingFoldersRequest {
 	return ApiGetRecordingFoldersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LiveTvAPIService) GetRecordingFoldersExecute(r ApiGetRecordingFoldersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingFolders")
@@ -4499,9 +4518,9 @@ func (a *LiveTvAPIService) GetRecordingFoldersExecute(r ApiGetRecordingFoldersRe
 }
 
 type ApiGetRecordingGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	groupId string
+	groupId    string
 }
 
 func (r ApiGetRecordingGroupRequest) Execute() (*http.Response, error) {
@@ -4511,17 +4530,17 @@ func (r ApiGetRecordingGroupRequest) Execute() (*http.Response, error) {
 /*
 GetRecordingGroup Get recording group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupId Group id.
- @return ApiGetRecordingGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupId Group id.
+	@return ApiGetRecordingGroupRequest
 
 Deprecated
 */
 func (a *LiveTvAPIService) GetRecordingGroup(ctx context.Context, groupId string) ApiGetRecordingGroupRequest {
 	return ApiGetRecordingGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		groupId: groupId,
+		ctx:        ctx,
+		groupId:    groupId,
 	}
 }
 
@@ -4529,9 +4548,9 @@ func (a *LiveTvAPIService) GetRecordingGroup(ctx context.Context, groupId string
 // Deprecated
 func (a *LiveTvAPIService) GetRecordingGroupExecute(r ApiGetRecordingGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingGroup")
@@ -4606,8 +4625,8 @@ func (a *LiveTvAPIService) GetRecordingGroupExecute(r ApiGetRecordingGroupReques
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -4617,9 +4636,9 @@ func (a *LiveTvAPIService) GetRecordingGroupExecute(r ApiGetRecordingGroupReques
 }
 
 type ApiGetRecordingGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	userId *string
+	userId     *string
 }
 
 // Optional. Filter by user and attach user data.
@@ -4635,27 +4654,29 @@ func (r ApiGetRecordingGroupsRequest) Execute() (*BaseItemDtoQueryResult, *http.
 /*
 GetRecordingGroups Gets live tv recording groups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRecordingGroupsRequest
 
 Deprecated
 */
 func (a *LiveTvAPIService) GetRecordingGroups(ctx context.Context) ApiGetRecordingGroupsRequest {
 	return ApiGetRecordingGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
+//
 // Deprecated
 func (a *LiveTvAPIService) GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingGroups")
@@ -4741,26 +4762,26 @@ func (a *LiveTvAPIService) GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequ
 }
 
 type ApiGetRecordingsRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	channelId *string
-	userId *string
-	startIndex *int32
-	limit *int32
-	status *RecordingStatus
-	isInProgress *bool
-	seriesTimerId *string
-	enableImages *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	fields *[]ItemFields
-	enableUserData *bool
-	isMovie *bool
-	isSeries *bool
-	isKids *bool
-	isSports *bool
-	isNews *bool
-	isLibraryItem *bool
+	ctx                    context.Context
+	ApiService             LiveTvAPI
+	channelId              *string
+	userId                 *string
+	startIndex             *int32
+	limit                  *int32
+	status                 *RecordingStatus
+	isInProgress           *bool
+	seriesTimerId          *string
+	enableImages           *bool
+	imageTypeLimit         *int32
+	enableImageTypes       *[]ImageType
+	fields                 *[]ItemFields
+	enableUserData         *bool
+	isMovie                *bool
+	isSeries               *bool
+	isKids                 *bool
+	isSports               *bool
+	isNews                 *bool
+	isLibraryItem          *bool
 	enableTotalRecordCount *bool
 }
 
@@ -4885,24 +4906,25 @@ func (r ApiGetRecordingsRequest) Execute() (*BaseItemDtoQueryResult, *http.Respo
 /*
 GetRecordings Gets live tv recordings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRecordingsRequest
 */
 func (a *LiveTvAPIService) GetRecordings(ctx context.Context) ApiGetRecordingsRequest {
 	return ApiGetRecordingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *LiveTvAPIService) GetRecordingsExecute(r ApiGetRecordingsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordings")
@@ -5061,21 +5083,21 @@ func (a *LiveTvAPIService) GetRecordingsExecute(r ApiGetRecordingsRequest) (*Bas
 }
 
 type ApiGetRecordingsSeriesRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	channelId *string
-	userId *string
-	groupId *string
-	startIndex *int32
-	limit *int32
-	status *RecordingStatus
-	isInProgress *bool
-	seriesTimerId *string
-	enableImages *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	fields *[]ItemFields
-	enableUserData *bool
+	ctx                    context.Context
+	ApiService             LiveTvAPI
+	channelId              *string
+	userId                 *string
+	groupId                *string
+	startIndex             *int32
+	limit                  *int32
+	status                 *RecordingStatus
+	isInProgress           *bool
+	seriesTimerId          *string
+	enableImages           *bool
+	imageTypeLimit         *int32
+	enableImageTypes       *[]ImageType
+	fields                 *[]ItemFields
+	enableUserData         *bool
 	enableTotalRecordCount *bool
 }
 
@@ -5170,27 +5192,29 @@ func (r ApiGetRecordingsSeriesRequest) Execute() (*BaseItemDtoQueryResult, *http
 /*
 GetRecordingsSeries Gets live tv recording series.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingsSeriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRecordingsSeriesRequest
 
 Deprecated
 */
 func (a *LiveTvAPIService) GetRecordingsSeries(ctx context.Context) ApiGetRecordingsSeriesRequest {
 	return ApiGetRecordingsSeriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
+//
 // Deprecated
 func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingsSeries")
@@ -5334,7 +5358,7 @@ func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRe
 }
 
 type ApiGetSchedulesDirectCountriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
 }
 
@@ -5345,24 +5369,25 @@ func (r ApiGetSchedulesDirectCountriesRequest) Execute() (*os.File, *http.Respon
 /*
 GetSchedulesDirectCountries Gets available countries.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSchedulesDirectCountriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSchedulesDirectCountriesRequest
 */
 func (a *LiveTvAPIService) GetSchedulesDirectCountries(ctx context.Context) ApiGetSchedulesDirectCountriesRequest {
 	return ApiGetSchedulesDirectCountriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *LiveTvAPIService) GetSchedulesDirectCountriesExecute(r ApiGetSchedulesDirectCountriesRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetSchedulesDirectCountries")
@@ -5445,9 +5470,9 @@ func (a *LiveTvAPIService) GetSchedulesDirectCountriesExecute(r ApiGetSchedulesD
 }
 
 type ApiGetSeriesTimerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	timerId string
+	timerId    string
 }
 
 func (r ApiGetSeriesTimerRequest) Execute() (*SeriesTimerInfoDto, *http.Response, error) {
@@ -5457,26 +5482,27 @@ func (r ApiGetSeriesTimerRequest) Execute() (*SeriesTimerInfoDto, *http.Response
 /*
 GetSeriesTimer Gets a live tv series timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param timerId Timer id.
- @return ApiGetSeriesTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param timerId Timer id.
+	@return ApiGetSeriesTimerRequest
 */
 func (a *LiveTvAPIService) GetSeriesTimer(ctx context.Context, timerId string) ApiGetSeriesTimerRequest {
 	return ApiGetSeriesTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		timerId: timerId,
+		ctx:        ctx,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
-//  @return SeriesTimerInfoDto
+//
+//	@return SeriesTimerInfoDto
 func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*SeriesTimerInfoDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SeriesTimerInfoDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SeriesTimerInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetSeriesTimer")
@@ -5551,8 +5577,8 @@ func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*S
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5571,10 +5597,10 @@ func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*S
 }
 
 type ApiGetSeriesTimersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	sortBy *string
-	sortOrder *SortOrder
+	sortBy     *string
+	sortOrder  *SortOrder
 }
 
 // Optional. Sort by SortName or Priority.
@@ -5596,24 +5622,25 @@ func (r ApiGetSeriesTimersRequest) Execute() (*SeriesTimerInfoDtoQueryResult, *h
 /*
 GetSeriesTimers Gets live tv series timers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSeriesTimersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSeriesTimersRequest
 */
 func (a *LiveTvAPIService) GetSeriesTimers(ctx context.Context) ApiGetSeriesTimersRequest {
 	return ApiGetSeriesTimersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SeriesTimerInfoDtoQueryResult
+//
+//	@return SeriesTimerInfoDtoQueryResult
 func (a *LiveTvAPIService) GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (*SeriesTimerInfoDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SeriesTimerInfoDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SeriesTimerInfoDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetSeriesTimers")
@@ -5702,9 +5729,9 @@ func (a *LiveTvAPIService) GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (
 }
 
 type ApiGetTimerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	timerId string
+	timerId    string
 }
 
 func (r ApiGetTimerRequest) Execute() (*TimerInfoDto, *http.Response, error) {
@@ -5714,26 +5741,27 @@ func (r ApiGetTimerRequest) Execute() (*TimerInfoDto, *http.Response, error) {
 /*
 GetTimer Gets a timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param timerId Timer id.
- @return ApiGetTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param timerId Timer id.
+	@return ApiGetTimerRequest
 */
 func (a *LiveTvAPIService) GetTimer(ctx context.Context, timerId string) ApiGetTimerRequest {
 	return ApiGetTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		timerId: timerId,
+		ctx:        ctx,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
-//  @return TimerInfoDto
+//
+//	@return TimerInfoDto
 func (a *LiveTvAPIService) GetTimerExecute(r ApiGetTimerRequest) (*TimerInfoDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimerInfoDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimerInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetTimer")
@@ -5817,12 +5845,12 @@ func (a *LiveTvAPIService) GetTimerExecute(r ApiGetTimerRequest) (*TimerInfoDto,
 }
 
 type ApiGetTimersRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	channelId *string
+	ctx           context.Context
+	ApiService    LiveTvAPI
+	channelId     *string
 	seriesTimerId *string
-	isActive *bool
-	isScheduled *bool
+	isActive      *bool
+	isScheduled   *bool
 }
 
 // Optional. Filter by channel id.
@@ -5856,24 +5884,25 @@ func (r ApiGetTimersRequest) Execute() (*TimerInfoDtoQueryResult, *http.Response
 /*
 GetTimers Gets the live tv timers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTimersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTimersRequest
 */
 func (a *LiveTvAPIService) GetTimers(ctx context.Context) ApiGetTimersRequest {
 	return ApiGetTimersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TimerInfoDtoQueryResult
+//
+//	@return TimerInfoDtoQueryResult
 func (a *LiveTvAPIService) GetTimersExecute(r ApiGetTimersRequest) (*TimerInfoDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimerInfoDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimerInfoDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetTimers")
@@ -5968,7 +5997,7 @@ func (a *LiveTvAPIService) GetTimersExecute(r ApiGetTimersRequest) (*TimerInfoDt
 }
 
 type ApiGetTunerHostTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
 }
 
@@ -5979,24 +6008,25 @@ func (r ApiGetTunerHostTypesRequest) Execute() ([]NameIdPair, *http.Response, er
 /*
 GetTunerHostTypes Get tuner host types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTunerHostTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTunerHostTypesRequest
 */
 func (a *LiveTvAPIService) GetTunerHostTypes(ctx context.Context) ApiGetTunerHostTypesRequest {
 	return ApiGetTunerHostTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []NameIdPair
+//
+//	@return []NameIdPair
 func (a *LiveTvAPIService) GetTunerHostTypesExecute(r ApiGetTunerHostTypesRequest) ([]NameIdPair, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NameIdPair
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NameIdPair
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetTunerHostTypes")
@@ -6079,9 +6109,9 @@ func (a *LiveTvAPIService) GetTunerHostTypesExecute(r ApiGetTunerHostTypesReques
 }
 
 type ApiResetTunerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LiveTvAPI
-	tunerId string
+	tunerId    string
 }
 
 func (r ApiResetTunerRequest) Execute() (*http.Response, error) {
@@ -6091,24 +6121,24 @@ func (r ApiResetTunerRequest) Execute() (*http.Response, error) {
 /*
 ResetTuner Resets a tv tuner.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tunerId Tuner id.
- @return ApiResetTunerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tunerId Tuner id.
+	@return ApiResetTunerRequest
 */
 func (a *LiveTvAPIService) ResetTuner(ctx context.Context, tunerId string) ApiResetTunerRequest {
 	return ApiResetTunerRequest{
 		ApiService: a,
-		ctx: ctx,
-		tunerId: tunerId,
+		ctx:        ctx,
+		tunerId:    tunerId,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) ResetTunerExecute(r ApiResetTunerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.ResetTuner")
@@ -6183,8 +6213,8 @@ func (a *LiveTvAPIService) ResetTunerExecute(r ApiResetTunerRequest) (*http.Resp
 }
 
 type ApiSetChannelMappingRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
+	ctx                  context.Context
+	ApiService           LiveTvAPI
 	setChannelMappingDto *SetChannelMappingDto
 }
 
@@ -6201,24 +6231,25 @@ func (r ApiSetChannelMappingRequest) Execute() (*TunerChannelMapping, *http.Resp
 /*
 SetChannelMapping Set channel mappings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChannelMappingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetChannelMappingRequest
 */
 func (a *LiveTvAPIService) SetChannelMapping(ctx context.Context) ApiSetChannelMappingRequest {
 	return ApiSetChannelMappingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TunerChannelMapping
+//
+//	@return TunerChannelMapping
 func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingRequest) (*TunerChannelMapping, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TunerChannelMapping
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TunerChannelMapping
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.SetChannelMapping")
@@ -6306,9 +6337,9 @@ func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingReques
 }
 
 type ApiUpdateSeriesTimerRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	timerId string
+	ctx                context.Context
+	ApiService         LiveTvAPI
+	timerId            string
 	seriesTimerInfoDto *SeriesTimerInfoDto
 }
 
@@ -6325,24 +6356,24 @@ func (r ApiUpdateSeriesTimerRequest) Execute() (*http.Response, error) {
 /*
 UpdateSeriesTimer Updates a live tv series timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param timerId Timer id.
- @return ApiUpdateSeriesTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param timerId Timer id.
+	@return ApiUpdateSeriesTimerRequest
 */
 func (a *LiveTvAPIService) UpdateSeriesTimer(ctx context.Context, timerId string) ApiUpdateSeriesTimerRequest {
 	return ApiUpdateSeriesTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		timerId: timerId,
+		ctx:        ctx,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) UpdateSeriesTimerExecute(r ApiUpdateSeriesTimerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.UpdateSeriesTimer")
@@ -6419,9 +6450,9 @@ func (a *LiveTvAPIService) UpdateSeriesTimerExecute(r ApiUpdateSeriesTimerReques
 }
 
 type ApiUpdateTimerRequest struct {
-	ctx context.Context
-	ApiService LiveTvAPI
-	timerId string
+	ctx          context.Context
+	ApiService   LiveTvAPI
+	timerId      string
 	timerInfoDto *TimerInfoDto
 }
 
@@ -6438,24 +6469,24 @@ func (r ApiUpdateTimerRequest) Execute() (*http.Response, error) {
 /*
 UpdateTimer Updates a live tv timer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param timerId Timer id.
- @return ApiUpdateTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param timerId Timer id.
+	@return ApiUpdateTimerRequest
 */
 func (a *LiveTvAPIService) UpdateTimer(ctx context.Context, timerId string) ApiUpdateTimerRequest {
 	return ApiUpdateTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		timerId: timerId,
+		ctx:        ctx,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
 func (a *LiveTvAPIService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.UpdateTimer")

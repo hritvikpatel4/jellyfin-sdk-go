@@ -84,6 +84,7 @@ func (o *IPlugin) HasName() bool {
 func (o *IPlugin) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *IPlugin) SetNameNil() {
 	o.Name.Set(nil)
@@ -126,6 +127,7 @@ func (o *IPlugin) HasDescription() bool {
 func (o *IPlugin) SetDescription(v string) {
 	o.Description.Set(&v)
 }
+
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *IPlugin) SetDescriptionNil() {
 	o.Description.Set(nil)
@@ -200,6 +202,7 @@ func (o *IPlugin) HasVersion() bool {
 func (o *IPlugin) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *IPlugin) SetVersionNil() {
 	o.Version.Set(nil)
@@ -242,6 +245,7 @@ func (o *IPlugin) HasAssemblyFilePath() bool {
 func (o *IPlugin) SetAssemblyFilePath(v string) {
 	o.AssemblyFilePath.Set(&v)
 }
+
 // SetAssemblyFilePathNil sets the value for AssemblyFilePath to be an explicit nil
 func (o *IPlugin) SetAssemblyFilePathNil() {
 	o.AssemblyFilePath.Set(nil)
@@ -316,6 +320,7 @@ func (o *IPlugin) HasDataFolderPath() bool {
 func (o *IPlugin) SetDataFolderPath(v string) {
 	o.DataFolderPath.Set(&v)
 }
+
 // SetDataFolderPathNil sets the value for DataFolderPath to be an explicit nil
 func (o *IPlugin) SetDataFolderPathNil() {
 	o.DataFolderPath.Set(nil)
@@ -327,7 +332,7 @@ func (o *IPlugin) UnsetDataFolderPath() {
 }
 
 func (o IPlugin) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -395,5 +400,3 @@ func (v *NullableIPlugin) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

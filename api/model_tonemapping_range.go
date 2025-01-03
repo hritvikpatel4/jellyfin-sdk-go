@@ -21,8 +21,8 @@ type TonemappingRange string
 // List of TonemappingRange
 const (
 	TONEMAPPINGRANGE_AUTO TonemappingRange = "auto"
-	TONEMAPPINGRANGE_TV TonemappingRange = "tv"
-	TONEMAPPINGRANGE_PC TonemappingRange = "pc"
+	TONEMAPPINGRANGE_TV   TonemappingRange = "tv"
+	TONEMAPPINGRANGE_PC   TonemappingRange = "pc"
 )
 
 // All allowed values of TonemappingRange enum
@@ -110,4 +110,3 @@ func (v *NullableTonemappingRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

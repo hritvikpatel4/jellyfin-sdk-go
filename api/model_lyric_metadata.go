@@ -90,6 +90,7 @@ func (o *LyricMetadata) HasArtist() bool {
 func (o *LyricMetadata) SetArtist(v string) {
 	o.Artist.Set(&v)
 }
+
 // SetArtistNil sets the value for Artist to be an explicit nil
 func (o *LyricMetadata) SetArtistNil() {
 	o.Artist.Set(nil)
@@ -132,6 +133,7 @@ func (o *LyricMetadata) HasAlbum() bool {
 func (o *LyricMetadata) SetAlbum(v string) {
 	o.Album.Set(&v)
 }
+
 // SetAlbumNil sets the value for Album to be an explicit nil
 func (o *LyricMetadata) SetAlbumNil() {
 	o.Album.Set(nil)
@@ -174,6 +176,7 @@ func (o *LyricMetadata) HasTitle() bool {
 func (o *LyricMetadata) SetTitle(v string) {
 	o.Title.Set(&v)
 }
+
 // SetTitleNil sets the value for Title to be an explicit nil
 func (o *LyricMetadata) SetTitleNil() {
 	o.Title.Set(nil)
@@ -216,6 +219,7 @@ func (o *LyricMetadata) HasAuthor() bool {
 func (o *LyricMetadata) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
+
 // SetAuthorNil sets the value for Author to be an explicit nil
 func (o *LyricMetadata) SetAuthorNil() {
 	o.Author.Set(nil)
@@ -258,6 +262,7 @@ func (o *LyricMetadata) HasLength() bool {
 func (o *LyricMetadata) SetLength(v int64) {
 	o.Length.Set(&v)
 }
+
 // SetLengthNil sets the value for Length to be an explicit nil
 func (o *LyricMetadata) SetLengthNil() {
 	o.Length.Set(nil)
@@ -300,6 +305,7 @@ func (o *LyricMetadata) HasBy() bool {
 func (o *LyricMetadata) SetBy(v string) {
 	o.By.Set(&v)
 }
+
 // SetByNil sets the value for By to be an explicit nil
 func (o *LyricMetadata) SetByNil() {
 	o.By.Set(nil)
@@ -342,6 +348,7 @@ func (o *LyricMetadata) HasOffset() bool {
 func (o *LyricMetadata) SetOffset(v int64) {
 	o.Offset.Set(&v)
 }
+
 // SetOffsetNil sets the value for Offset to be an explicit nil
 func (o *LyricMetadata) SetOffsetNil() {
 	o.Offset.Set(nil)
@@ -384,6 +391,7 @@ func (o *LyricMetadata) HasCreator() bool {
 func (o *LyricMetadata) SetCreator(v string) {
 	o.Creator.Set(&v)
 }
+
 // SetCreatorNil sets the value for Creator to be an explicit nil
 func (o *LyricMetadata) SetCreatorNil() {
 	o.Creator.Set(nil)
@@ -426,6 +434,7 @@ func (o *LyricMetadata) HasVersion() bool {
 func (o *LyricMetadata) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *LyricMetadata) SetVersionNil() {
 	o.Version.Set(nil)
@@ -468,6 +477,7 @@ func (o *LyricMetadata) HasIsSynced() bool {
 func (o *LyricMetadata) SetIsSynced(v bool) {
 	o.IsSynced.Set(&v)
 }
+
 // SetIsSyncedNil sets the value for IsSynced to be an explicit nil
 func (o *LyricMetadata) SetIsSyncedNil() {
 	o.IsSynced.Set(nil)
@@ -479,7 +489,7 @@ func (o *LyricMetadata) UnsetIsSynced() {
 }
 
 func (o LyricMetadata) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -556,5 +566,3 @@ func (v *NullableLyricMetadata) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

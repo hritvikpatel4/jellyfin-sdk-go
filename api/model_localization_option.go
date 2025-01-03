@@ -19,7 +19,7 @@ var _ MappedNullable = &LocalizationOption{}
 
 // LocalizationOption struct for LocalizationOption
 type LocalizationOption struct {
-	Name NullableString `json:"Name,omitempty"`
+	Name  NullableString `json:"Name,omitempty"`
 	Value NullableString `json:"Value,omitempty"`
 }
 
@@ -72,6 +72,7 @@ func (o *LocalizationOption) HasName() bool {
 func (o *LocalizationOption) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *LocalizationOption) SetNameNil() {
 	o.Name.Set(nil)
@@ -114,6 +115,7 @@ func (o *LocalizationOption) HasValue() bool {
 func (o *LocalizationOption) SetValue(v string) {
 	o.Value.Set(&v)
 }
+
 // SetValueNil sets the value for Value to be an explicit nil
 func (o *LocalizationOption) SetValueNil() {
 	o.Value.Set(nil)
@@ -125,7 +127,7 @@ func (o *LocalizationOption) UnsetValue() {
 }
 
 func (o LocalizationOption) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -178,5 +180,3 @@ func (v *NullableLocalizationOption) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

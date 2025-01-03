@@ -20,19 +20,19 @@ type ExternalIdMediaType string
 
 // List of ExternalIdMediaType
 const (
-	EXTERNALIDMEDIATYPE_ALBUM ExternalIdMediaType = "Album"
-	EXTERNALIDMEDIATYPE_ALBUM_ARTIST ExternalIdMediaType = "AlbumArtist"
-	EXTERNALIDMEDIATYPE_ARTIST ExternalIdMediaType = "Artist"
-	EXTERNALIDMEDIATYPE_BOX_SET ExternalIdMediaType = "BoxSet"
-	EXTERNALIDMEDIATYPE_EPISODE ExternalIdMediaType = "Episode"
-	EXTERNALIDMEDIATYPE_MOVIE ExternalIdMediaType = "Movie"
-	EXTERNALIDMEDIATYPE_OTHER_ARTIST ExternalIdMediaType = "OtherArtist"
-	EXTERNALIDMEDIATYPE_PERSON ExternalIdMediaType = "Person"
+	EXTERNALIDMEDIATYPE_ALBUM         ExternalIdMediaType = "Album"
+	EXTERNALIDMEDIATYPE_ALBUM_ARTIST  ExternalIdMediaType = "AlbumArtist"
+	EXTERNALIDMEDIATYPE_ARTIST        ExternalIdMediaType = "Artist"
+	EXTERNALIDMEDIATYPE_BOX_SET       ExternalIdMediaType = "BoxSet"
+	EXTERNALIDMEDIATYPE_EPISODE       ExternalIdMediaType = "Episode"
+	EXTERNALIDMEDIATYPE_MOVIE         ExternalIdMediaType = "Movie"
+	EXTERNALIDMEDIATYPE_OTHER_ARTIST  ExternalIdMediaType = "OtherArtist"
+	EXTERNALIDMEDIATYPE_PERSON        ExternalIdMediaType = "Person"
 	EXTERNALIDMEDIATYPE_RELEASE_GROUP ExternalIdMediaType = "ReleaseGroup"
-	EXTERNALIDMEDIATYPE_SEASON ExternalIdMediaType = "Season"
-	EXTERNALIDMEDIATYPE_SERIES ExternalIdMediaType = "Series"
-	EXTERNALIDMEDIATYPE_TRACK ExternalIdMediaType = "Track"
-	EXTERNALIDMEDIATYPE_BOOK ExternalIdMediaType = "Book"
+	EXTERNALIDMEDIATYPE_SEASON        ExternalIdMediaType = "Season"
+	EXTERNALIDMEDIATYPE_SERIES        ExternalIdMediaType = "Series"
+	EXTERNALIDMEDIATYPE_TRACK         ExternalIdMediaType = "Track"
+	EXTERNALIDMEDIATYPE_BOOK          ExternalIdMediaType = "Book"
 )
 
 // All allowed values of ExternalIdMediaType enum
@@ -130,4 +130,3 @@ func (v *NullableExternalIdMediaType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

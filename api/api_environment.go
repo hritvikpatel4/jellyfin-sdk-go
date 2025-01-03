@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type EnvironmentAPI interface {
 
 	/*
-	GetDefaultDirectoryBrowser Get Default directory browser.
+		GetDefaultDirectoryBrowser Get Default directory browser.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDefaultDirectoryBrowserRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDefaultDirectoryBrowserRequest
 	*/
 	GetDefaultDirectoryBrowser(ctx context.Context) ApiGetDefaultDirectoryBrowserRequest
 
@@ -34,10 +33,10 @@ type EnvironmentAPI interface {
 	GetDefaultDirectoryBrowserExecute(r ApiGetDefaultDirectoryBrowserRequest) (*DefaultDirectoryBrowserInfoDto, *http.Response, error)
 
 	/*
-	GetDirectoryContents Gets the contents of a given directory in the file system.
+		GetDirectoryContents Gets the contents of a given directory in the file system.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDirectoryContentsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDirectoryContentsRequest
 	*/
 	GetDirectoryContents(ctx context.Context) ApiGetDirectoryContentsRequest
 
@@ -46,10 +45,10 @@ type EnvironmentAPI interface {
 	GetDirectoryContentsExecute(r ApiGetDirectoryContentsRequest) ([]FileSystemEntryInfo, *http.Response, error)
 
 	/*
-	GetDrives Gets available drives from the server's file system.
+		GetDrives Gets available drives from the server's file system.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetDrivesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetDrivesRequest
 	*/
 	GetDrives(ctx context.Context) ApiGetDrivesRequest
 
@@ -58,12 +57,12 @@ type EnvironmentAPI interface {
 	GetDrivesExecute(r ApiGetDrivesRequest) ([]FileSystemEntryInfo, *http.Response, error)
 
 	/*
-	GetNetworkShares Gets network paths.
+		GetNetworkShares Gets network paths.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetNetworkSharesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetNetworkSharesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetNetworkShares(ctx context.Context) ApiGetNetworkSharesRequest
 
@@ -73,10 +72,10 @@ type EnvironmentAPI interface {
 	GetNetworkSharesExecute(r ApiGetNetworkSharesRequest) ([]FileSystemEntryInfo, *http.Response, error)
 
 	/*
-	GetParentPath Gets the parent path of a given path.
+		GetParentPath Gets the parent path of a given path.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetParentPathRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetParentPathRequest
 	*/
 	GetParentPath(ctx context.Context) ApiGetParentPathRequest
 
@@ -85,10 +84,10 @@ type EnvironmentAPI interface {
 	GetParentPathExecute(r ApiGetParentPathRequest) (string, *http.Response, error)
 
 	/*
-	ValidatePath Validates path.
+		ValidatePath Validates path.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiValidatePathRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiValidatePathRequest
 	*/
 	ValidatePath(ctx context.Context) ApiValidatePathRequest
 
@@ -100,7 +99,7 @@ type EnvironmentAPI interface {
 type EnvironmentAPIService service
 
 type ApiGetDefaultDirectoryBrowserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService EnvironmentAPI
 }
 
@@ -111,24 +110,25 @@ func (r ApiGetDefaultDirectoryBrowserRequest) Execute() (*DefaultDirectoryBrowse
 /*
 GetDefaultDirectoryBrowser Get Default directory browser.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultDirectoryBrowserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDefaultDirectoryBrowserRequest
 */
 func (a *EnvironmentAPIService) GetDefaultDirectoryBrowser(ctx context.Context) ApiGetDefaultDirectoryBrowserRequest {
 	return ApiGetDefaultDirectoryBrowserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DefaultDirectoryBrowserInfoDto
+//
+//	@return DefaultDirectoryBrowserInfoDto
 func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r ApiGetDefaultDirectoryBrowserRequest) (*DefaultDirectoryBrowserInfoDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DefaultDirectoryBrowserInfoDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DefaultDirectoryBrowserInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetDefaultDirectoryBrowser")
@@ -211,10 +211,10 @@ func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r ApiGetDefaul
 }
 
 type ApiGetDirectoryContentsRequest struct {
-	ctx context.Context
-	ApiService EnvironmentAPI
-	path *string
-	includeFiles *bool
+	ctx                context.Context
+	ApiService         EnvironmentAPI
+	path               *string
+	includeFiles       *bool
 	includeDirectories *bool
 }
 
@@ -243,24 +243,25 @@ func (r ApiGetDirectoryContentsRequest) Execute() ([]FileSystemEntryInfo, *http.
 /*
 GetDirectoryContents Gets the contents of a given directory in the file system.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDirectoryContentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDirectoryContentsRequest
 */
 func (a *EnvironmentAPIService) GetDirectoryContents(ctx context.Context) ApiGetDirectoryContentsRequest {
 	return ApiGetDirectoryContentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FileSystemEntryInfo
+//
+//	@return []FileSystemEntryInfo
 func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r ApiGetDirectoryContentsRequest) ([]FileSystemEntryInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FileSystemEntryInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FileSystemEntryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetDirectoryContents")
@@ -359,7 +360,7 @@ func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r ApiGetDirectoryCon
 }
 
 type ApiGetDrivesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService EnvironmentAPI
 }
 
@@ -370,24 +371,25 @@ func (r ApiGetDrivesRequest) Execute() ([]FileSystemEntryInfo, *http.Response, e
 /*
 GetDrives Gets available drives from the server's file system.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDrivesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetDrivesRequest
 */
 func (a *EnvironmentAPIService) GetDrives(ctx context.Context) ApiGetDrivesRequest {
 	return ApiGetDrivesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FileSystemEntryInfo
+//
+//	@return []FileSystemEntryInfo
 func (a *EnvironmentAPIService) GetDrivesExecute(r ApiGetDrivesRequest) ([]FileSystemEntryInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FileSystemEntryInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FileSystemEntryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetDrives")
@@ -470,7 +472,7 @@ func (a *EnvironmentAPIService) GetDrivesExecute(r ApiGetDrivesRequest) ([]FileS
 }
 
 type ApiGetNetworkSharesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService EnvironmentAPI
 }
 
@@ -481,27 +483,29 @@ func (r ApiGetNetworkSharesRequest) Execute() ([]FileSystemEntryInfo, *http.Resp
 /*
 GetNetworkShares Gets network paths.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkSharesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkSharesRequest
 
 Deprecated
 */
 func (a *EnvironmentAPIService) GetNetworkShares(ctx context.Context) ApiGetNetworkSharesRequest {
 	return ApiGetNetworkSharesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FileSystemEntryInfo
+//
+//	@return []FileSystemEntryInfo
+//
 // Deprecated
 func (a *EnvironmentAPIService) GetNetworkSharesExecute(r ApiGetNetworkSharesRequest) ([]FileSystemEntryInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FileSystemEntryInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FileSystemEntryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetNetworkShares")
@@ -584,9 +588,9 @@ func (a *EnvironmentAPIService) GetNetworkSharesExecute(r ApiGetNetworkSharesReq
 }
 
 type ApiGetParentPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService EnvironmentAPI
-	path *string
+	path       *string
 }
 
 // The path.
@@ -602,24 +606,25 @@ func (r ApiGetParentPathRequest) Execute() (string, *http.Response, error) {
 /*
 GetParentPath Gets the parent path of a given path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetParentPathRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetParentPathRequest
 */
 func (a *EnvironmentAPIService) GetParentPath(ctx context.Context) ApiGetParentPathRequest {
 	return ApiGetParentPathRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *EnvironmentAPIService) GetParentPathExecute(r ApiGetParentPathRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetParentPath")
@@ -706,8 +711,8 @@ func (a *EnvironmentAPIService) GetParentPathExecute(r ApiGetParentPathRequest) 
 }
 
 type ApiValidatePathRequest struct {
-	ctx context.Context
-	ApiService EnvironmentAPI
+	ctx             context.Context
+	ApiService      EnvironmentAPI
 	validatePathDto *ValidatePathDto
 }
 
@@ -724,22 +729,22 @@ func (r ApiValidatePathRequest) Execute() (*http.Response, error) {
 /*
 ValidatePath Validates path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiValidatePathRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiValidatePathRequest
 */
 func (a *EnvironmentAPIService) ValidatePath(ctx context.Context) ApiValidatePathRequest {
 	return ApiValidatePathRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *EnvironmentAPIService) ValidatePathExecute(r ApiValidatePathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.ValidatePath")
@@ -818,8 +823,8 @@ func (a *EnvironmentAPIService) ValidatePathExecute(r ApiValidatePathRequest) (*
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
