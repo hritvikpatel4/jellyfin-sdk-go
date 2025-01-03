@@ -12,16 +12,16 @@ package api
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GroupUpdate - Group update without data.
 type GroupUpdate struct {
-	GroupInfoDtoGroupUpdate *GroupInfoDtoGroupUpdate
+	GroupInfoDtoGroupUpdate     *GroupInfoDtoGroupUpdate
 	GroupStateUpdateGroupUpdate *GroupStateUpdateGroupUpdate
-	PlayQueueUpdateGroupUpdate *PlayQueueUpdateGroupUpdate
-	StringGroupUpdate *StringGroupUpdate
+	PlayQueueUpdateGroupUpdate  *PlayQueueUpdateGroupUpdate
+	StringGroupUpdate           *StringGroupUpdate
 }
 
 // GroupInfoDtoGroupUpdateAsGroupUpdate is a convenience function that returns GroupInfoDtoGroupUpdate wrapped in GroupUpdate
@@ -51,7 +51,6 @@ func StringGroupUpdateAsGroupUpdate(v *StringGroupUpdate) GroupUpdate {
 		StringGroupUpdate: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GroupUpdate) UnmarshalJSON(data []byte) error {
@@ -162,7 +161,7 @@ func (src GroupUpdate) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GroupUpdate) GetActualInstance() (interface{}) {
+func (obj *GroupUpdate) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -221,5 +220,3 @@ func (v *NullableGroupUpdate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

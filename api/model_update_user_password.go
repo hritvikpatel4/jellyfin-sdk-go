@@ -78,6 +78,7 @@ func (o *UpdateUserPassword) HasCurrentPassword() bool {
 func (o *UpdateUserPassword) SetCurrentPassword(v string) {
 	o.CurrentPassword.Set(&v)
 }
+
 // SetCurrentPasswordNil sets the value for CurrentPassword to be an explicit nil
 func (o *UpdateUserPassword) SetCurrentPasswordNil() {
 	o.CurrentPassword.Set(nil)
@@ -120,6 +121,7 @@ func (o *UpdateUserPassword) HasCurrentPw() bool {
 func (o *UpdateUserPassword) SetCurrentPw(v string) {
 	o.CurrentPw.Set(&v)
 }
+
 // SetCurrentPwNil sets the value for CurrentPw to be an explicit nil
 func (o *UpdateUserPassword) SetCurrentPwNil() {
 	o.CurrentPw.Set(nil)
@@ -162,6 +164,7 @@ func (o *UpdateUserPassword) HasNewPw() bool {
 func (o *UpdateUserPassword) SetNewPw(v string) {
 	o.NewPw.Set(&v)
 }
+
 // SetNewPwNil sets the value for NewPw to be an explicit nil
 func (o *UpdateUserPassword) SetNewPwNil() {
 	o.NewPw.Set(nil)
@@ -205,7 +208,7 @@ func (o *UpdateUserPassword) SetResetPassword(v bool) {
 }
 
 func (o UpdateUserPassword) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -264,5 +267,3 @@ func (v *NullableUpdateUserPassword) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

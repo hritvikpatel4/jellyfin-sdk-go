@@ -19,15 +19,15 @@ var _ MappedNullable = &SubtitleOptions{}
 
 // SubtitleOptions struct for SubtitleOptions
 type SubtitleOptions struct {
-	SkipIfEmbeddedSubtitlesPresent *bool `json:"SkipIfEmbeddedSubtitlesPresent,omitempty"`
-	SkipIfAudioTrackMatches *bool `json:"SkipIfAudioTrackMatches,omitempty"`
-	DownloadLanguages []string `json:"DownloadLanguages,omitempty"`
-	DownloadMovieSubtitles *bool `json:"DownloadMovieSubtitles,omitempty"`
-	DownloadEpisodeSubtitles *bool `json:"DownloadEpisodeSubtitles,omitempty"`
-	OpenSubtitlesUsername NullableString `json:"OpenSubtitlesUsername,omitempty"`
-	OpenSubtitlesPasswordHash NullableString `json:"OpenSubtitlesPasswordHash,omitempty"`
-	IsOpenSubtitleVipAccount *bool `json:"IsOpenSubtitleVipAccount,omitempty"`
-	RequirePerfectMatch *bool `json:"RequirePerfectMatch,omitempty"`
+	SkipIfEmbeddedSubtitlesPresent *bool          `json:"SkipIfEmbeddedSubtitlesPresent,omitempty"`
+	SkipIfAudioTrackMatches        *bool          `json:"SkipIfAudioTrackMatches,omitempty"`
+	DownloadLanguages              []string       `json:"DownloadLanguages,omitempty"`
+	DownloadMovieSubtitles         *bool          `json:"DownloadMovieSubtitles,omitempty"`
+	DownloadEpisodeSubtitles       *bool          `json:"DownloadEpisodeSubtitles,omitempty"`
+	OpenSubtitlesUsername          NullableString `json:"OpenSubtitlesUsername,omitempty"`
+	OpenSubtitlesPasswordHash      NullableString `json:"OpenSubtitlesPasswordHash,omitempty"`
+	IsOpenSubtitleVipAccount       *bool          `json:"IsOpenSubtitleVipAccount,omitempty"`
+	RequirePerfectMatch            *bool          `json:"RequirePerfectMatch,omitempty"`
 }
 
 // NewSubtitleOptions instantiates a new SubtitleOptions object
@@ -240,6 +240,7 @@ func (o *SubtitleOptions) HasOpenSubtitlesUsername() bool {
 func (o *SubtitleOptions) SetOpenSubtitlesUsername(v string) {
 	o.OpenSubtitlesUsername.Set(&v)
 }
+
 // SetOpenSubtitlesUsernameNil sets the value for OpenSubtitlesUsername to be an explicit nil
 func (o *SubtitleOptions) SetOpenSubtitlesUsernameNil() {
 	o.OpenSubtitlesUsername.Set(nil)
@@ -282,6 +283,7 @@ func (o *SubtitleOptions) HasOpenSubtitlesPasswordHash() bool {
 func (o *SubtitleOptions) SetOpenSubtitlesPasswordHash(v string) {
 	o.OpenSubtitlesPasswordHash.Set(&v)
 }
+
 // SetOpenSubtitlesPasswordHashNil sets the value for OpenSubtitlesPasswordHash to be an explicit nil
 func (o *SubtitleOptions) SetOpenSubtitlesPasswordHashNil() {
 	o.OpenSubtitlesPasswordHash.Set(nil)
@@ -357,7 +359,7 @@ func (o *SubtitleOptions) SetRequirePerfectMatch(v bool) {
 }
 
 func (o SubtitleOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -431,5 +433,3 @@ func (v *NullableSubtitleOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,22 +16,21 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type DynamicHlsAPI interface {
 
 	/*
-	GetHlsAudioSegment Gets a video stream using HTTP live streaming.
+		GetHlsAudioSegment Gets a video stream using HTTP live streaming.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param playlistId The playlist id.
-	@param segmentId The segment id.
-	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
-	@return ApiGetHlsAudioSegmentRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param playlistId The playlist id.
+		@param segmentId The segment id.
+		@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+		@return ApiGetHlsAudioSegmentRequest
 	*/
 	GetHlsAudioSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) ApiGetHlsAudioSegmentRequest
 
@@ -40,14 +39,14 @@ type DynamicHlsAPI interface {
 	GetHlsAudioSegmentExecute(r ApiGetHlsAudioSegmentRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetHlsVideoSegment Gets a video stream using HTTP live streaming.
+		GetHlsVideoSegment Gets a video stream using HTTP live streaming.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param playlistId The playlist id.
-	@param segmentId The segment id.
-	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
-	@return ApiGetHlsVideoSegmentRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param playlistId The playlist id.
+		@param segmentId The segment id.
+		@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+		@return ApiGetHlsVideoSegmentRequest
 	*/
 	GetHlsVideoSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) ApiGetHlsVideoSegmentRequest
 
@@ -56,11 +55,11 @@ type DynamicHlsAPI interface {
 	GetHlsVideoSegmentExecute(r ApiGetHlsVideoSegmentRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetLiveHlsStream Gets a hls live stream.
+		GetLiveHlsStream Gets a hls live stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetLiveHlsStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetLiveHlsStreamRequest
 	*/
 	GetLiveHlsStream(ctx context.Context, itemId string) ApiGetLiveHlsStreamRequest
 
@@ -69,11 +68,11 @@ type DynamicHlsAPI interface {
 	GetLiveHlsStreamExecute(r ApiGetLiveHlsStreamRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetMasterHlsAudioPlaylist Gets an audio hls playlist stream.
+		GetMasterHlsAudioPlaylist Gets an audio hls playlist stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetMasterHlsAudioPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetMasterHlsAudioPlaylistRequest
 	*/
 	GetMasterHlsAudioPlaylist(ctx context.Context, itemId string) ApiGetMasterHlsAudioPlaylistRequest
 
@@ -82,11 +81,11 @@ type DynamicHlsAPI interface {
 	GetMasterHlsAudioPlaylistExecute(r ApiGetMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetMasterHlsVideoPlaylist Gets a video hls playlist stream.
+		GetMasterHlsVideoPlaylist Gets a video hls playlist stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetMasterHlsVideoPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetMasterHlsVideoPlaylistRequest
 	*/
 	GetMasterHlsVideoPlaylist(ctx context.Context, itemId string) ApiGetMasterHlsVideoPlaylistRequest
 
@@ -95,11 +94,11 @@ type DynamicHlsAPI interface {
 	GetMasterHlsVideoPlaylistExecute(r ApiGetMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetVariantHlsAudioPlaylist Gets an audio stream using HTTP live streaming.
+		GetVariantHlsAudioPlaylist Gets an audio stream using HTTP live streaming.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetVariantHlsAudioPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetVariantHlsAudioPlaylistRequest
 	*/
 	GetVariantHlsAudioPlaylist(ctx context.Context, itemId string) ApiGetVariantHlsAudioPlaylistRequest
 
@@ -108,11 +107,11 @@ type DynamicHlsAPI interface {
 	GetVariantHlsAudioPlaylistExecute(r ApiGetVariantHlsAudioPlaylistRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetVariantHlsVideoPlaylist Gets a video stream using HTTP live streaming.
+		GetVariantHlsVideoPlaylist Gets a video stream using HTTP live streaming.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetVariantHlsVideoPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetVariantHlsVideoPlaylistRequest
 	*/
 	GetVariantHlsVideoPlaylist(ctx context.Context, itemId string) ApiGetVariantHlsVideoPlaylistRequest
 
@@ -121,11 +120,11 @@ type DynamicHlsAPI interface {
 	GetVariantHlsVideoPlaylistExecute(r ApiGetVariantHlsVideoPlaylistRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadMasterHlsAudioPlaylist Gets an audio hls playlist stream.
+		HeadMasterHlsAudioPlaylist Gets an audio hls playlist stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiHeadMasterHlsAudioPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiHeadMasterHlsAudioPlaylistRequest
 	*/
 	HeadMasterHlsAudioPlaylist(ctx context.Context, itemId string) ApiHeadMasterHlsAudioPlaylistRequest
 
@@ -134,11 +133,11 @@ type DynamicHlsAPI interface {
 	HeadMasterHlsAudioPlaylistExecute(r ApiHeadMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadMasterHlsVideoPlaylist Gets a video hls playlist stream.
+		HeadMasterHlsVideoPlaylist Gets a video hls playlist stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiHeadMasterHlsVideoPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiHeadMasterHlsVideoPlaylistRequest
 	*/
 	HeadMasterHlsVideoPlaylist(ctx context.Context, itemId string) ApiHeadMasterHlsVideoPlaylistRequest
 
@@ -151,63 +150,63 @@ type DynamicHlsAPI interface {
 type DynamicHlsAPIService service
 
 type ApiGetHlsAudioSegmentRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	playlistId string
-	segmentId int32
-	container string
-	runtimeTicks *int64
-	actualSegmentLengthTicks *int64
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	maxStreamingBitrate *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  DynamicHlsAPI
+	itemId                      string
+	playlistId                  string
+	segmentId                   int32
+	container                   string
+	runtimeTicks                *int64
+	actualSegmentLengthTicks    *int64
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	maxStreamingBitrate         *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // The position of the requested segment in ticks.
@@ -524,32 +523,33 @@ func (r ApiGetHlsAudioSegmentRequest) Execute() (*os.File, *http.Response, error
 /*
 GetHlsAudioSegment Gets a video stream using HTTP live streaming.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param playlistId The playlist id.
- @param segmentId The segment id.
- @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiGetHlsAudioSegmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param playlistId The playlist id.
+	@param segmentId The segment id.
+	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+	@return ApiGetHlsAudioSegmentRequest
 */
 func (a *DynamicHlsAPIService) GetHlsAudioSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) ApiGetHlsAudioSegmentRequest {
 	return ApiGetHlsAudioSegmentRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 		playlistId: playlistId,
-		segmentId: segmentId,
-		container: container,
+		segmentId:  segmentId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetHlsAudioSegmentExecute(r ApiGetHlsAudioSegmentRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetHlsAudioSegment")
@@ -794,64 +794,64 @@ func (a *DynamicHlsAPIService) GetHlsAudioSegmentExecute(r ApiGetHlsAudioSegment
 }
 
 type ApiGetHlsVideoSegmentRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	playlistId string
-	segmentId int32
-	container string
-	runtimeTicks *int64
-	actualSegmentLengthTicks *int64
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	ctx                                 context.Context
+	ApiService                          DynamicHlsAPI
+	itemId                              string
+	playlistId                          string
+	segmentId                           int32
+	container                           string
+	runtimeTicks                        *int64
+	actualSegmentLengthTicks            *int64
+	static                              *bool
+	params                              *string
+	tag                                 *string
+	deviceProfileId                     *string
+	playSessionId                       *string
+	segmentContainer                    *string
+	segmentLength                       *int32
+	minSegments                         *int32
+	mediaSourceId                       *string
+	deviceId                            *string
+	audioCodec                          *string
+	enableAutoStreamCopy                *bool
+	allowVideoStreamCopy                *bool
+	allowAudioStreamCopy                *bool
+	breakOnNonKeyFrames                 *bool
+	audioSampleRate                     *int32
+	maxAudioBitDepth                    *int32
+	audioBitRate                        *int32
+	audioChannels                       *int32
+	maxAudioChannels                    *int32
+	profile                             *string
+	level                               *string
+	framerate                           *float32
+	maxFramerate                        *float32
+	copyTimestamps                      *bool
+	startTimeTicks                      *int64
+	width                               *int32
+	height                              *int32
+	maxWidth                            *int32
+	maxHeight                           *int32
+	videoBitRate                        *int32
+	subtitleStreamIndex                 *int32
+	subtitleMethod                      *SubtitleDeliveryMethod
+	maxRefFrames                        *int32
+	maxVideoBitDepth                    *int32
+	requireAvc                          *bool
+	deInterlace                         *bool
+	requireNonAnamorphic                *bool
+	transcodingMaxAudioChannels         *int32
+	cpuCoreLimit                        *int32
+	liveStreamId                        *string
+	enableMpegtsM2TsMode                *bool
+	videoCodec                          *string
+	subtitleCodec                       *string
+	transcodeReasons                    *string
+	audioStreamIndex                    *int32
+	videoStreamIndex                    *int32
+	context                             *EncodingContext
+	streamOptions                       *map[string]string
+	enableAudioVbrEncoding              *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
 }
 
@@ -1181,32 +1181,33 @@ func (r ApiGetHlsVideoSegmentRequest) Execute() (*os.File, *http.Response, error
 /*
 GetHlsVideoSegment Gets a video stream using HTTP live streaming.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param playlistId The playlist id.
- @param segmentId The segment id.
- @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiGetHlsVideoSegmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param playlistId The playlist id.
+	@param segmentId The segment id.
+	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+	@return ApiGetHlsVideoSegmentRequest
 */
 func (a *DynamicHlsAPIService) GetHlsVideoSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) ApiGetHlsVideoSegmentRequest {
 	return ApiGetHlsVideoSegmentRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 		playlistId: playlistId,
-		segmentId: segmentId,
-		container: container,
+		segmentId:  segmentId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetHlsVideoSegmentExecute(r ApiGetHlsVideoSegmentRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetHlsVideoSegment")
@@ -1460,61 +1461,61 @@ func (a *DynamicHlsAPIService) GetHlsVideoSegmentExecute(r ApiGetHlsVideoSegment
 }
 
 type ApiGetLiveHlsStreamRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	container *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	maxWidth *int32
-	maxHeight *int32
-	enableSubtitlesInManifest *bool
-	enableAudioVbrEncoding *bool
+	ctx                                 context.Context
+	ApiService                          DynamicHlsAPI
+	itemId                              string
+	container                           *string
+	static                              *bool
+	params                              *string
+	tag                                 *string
+	deviceProfileId                     *string
+	playSessionId                       *string
+	segmentContainer                    *string
+	segmentLength                       *int32
+	minSegments                         *int32
+	mediaSourceId                       *string
+	deviceId                            *string
+	audioCodec                          *string
+	enableAutoStreamCopy                *bool
+	allowVideoStreamCopy                *bool
+	allowAudioStreamCopy                *bool
+	breakOnNonKeyFrames                 *bool
+	audioSampleRate                     *int32
+	maxAudioBitDepth                    *int32
+	audioBitRate                        *int32
+	audioChannels                       *int32
+	maxAudioChannels                    *int32
+	profile                             *string
+	level                               *string
+	framerate                           *float32
+	maxFramerate                        *float32
+	copyTimestamps                      *bool
+	startTimeTicks                      *int64
+	width                               *int32
+	height                              *int32
+	videoBitRate                        *int32
+	subtitleStreamIndex                 *int32
+	subtitleMethod                      *SubtitleDeliveryMethod
+	maxRefFrames                        *int32
+	maxVideoBitDepth                    *int32
+	requireAvc                          *bool
+	deInterlace                         *bool
+	requireNonAnamorphic                *bool
+	transcodingMaxAudioChannels         *int32
+	cpuCoreLimit                        *int32
+	liveStreamId                        *string
+	enableMpegtsM2TsMode                *bool
+	videoCodec                          *string
+	subtitleCodec                       *string
+	transcodeReasons                    *string
+	audioStreamIndex                    *int32
+	videoStreamIndex                    *int32
+	context                             *EncodingContext
+	streamOptions                       *map[string]string
+	maxWidth                            *int32
+	maxHeight                           *int32
+	enableSubtitlesInManifest           *bool
+	enableAudioVbrEncoding              *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
 }
 
@@ -1844,26 +1845,27 @@ func (r ApiGetLiveHlsStreamRequest) Execute() (*os.File, *http.Response, error) 
 /*
 GetLiveHlsStream Gets a hls live stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetLiveHlsStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetLiveHlsStreamRequest
 */
 func (a *DynamicHlsAPIService) GetLiveHlsStream(ctx context.Context, itemId string) ApiGetLiveHlsStreamRequest {
 	return ApiGetLiveHlsStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetLiveHlsStreamExecute(r ApiGetLiveHlsStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetLiveHlsStream")
@@ -2112,59 +2114,59 @@ func (a *DynamicHlsAPIService) GetLiveHlsStreamExecute(r ApiGetLiveHlsStreamRequ
 }
 
 type ApiGetMasterHlsAudioPlaylistRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	mediaSourceId *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	maxStreamingBitrate *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
+	ctx                            context.Context
+	ApiService                     DynamicHlsAPI
+	itemId                         string
+	mediaSourceId                  *string
+	static                         *bool
+	params                         *string
+	tag                            *string
+	deviceProfileId                *string
+	playSessionId                  *string
+	segmentContainer               *string
+	segmentLength                  *int32
+	minSegments                    *int32
+	deviceId                       *string
+	audioCodec                     *string
+	enableAutoStreamCopy           *bool
+	allowVideoStreamCopy           *bool
+	allowAudioStreamCopy           *bool
+	breakOnNonKeyFrames            *bool
+	audioSampleRate                *int32
+	maxAudioBitDepth               *int32
+	maxStreamingBitrate            *int32
+	audioBitRate                   *int32
+	audioChannels                  *int32
+	maxAudioChannels               *int32
+	profile                        *string
+	level                          *string
+	framerate                      *float32
+	maxFramerate                   *float32
+	copyTimestamps                 *bool
+	startTimeTicks                 *int64
+	width                          *int32
+	height                         *int32
+	videoBitRate                   *int32
+	subtitleStreamIndex            *int32
+	subtitleMethod                 *SubtitleDeliveryMethod
+	maxRefFrames                   *int32
+	maxVideoBitDepth               *int32
+	requireAvc                     *bool
+	deInterlace                    *bool
+	requireNonAnamorphic           *bool
+	transcodingMaxAudioChannels    *int32
+	cpuCoreLimit                   *int32
+	liveStreamId                   *string
+	enableMpegtsM2TsMode           *bool
+	videoCodec                     *string
+	subtitleCodec                  *string
+	transcodeReasons               *string
+	audioStreamIndex               *int32
+	videoStreamIndex               *int32
+	context                        *EncodingContext
+	streamOptions                  *map[string]string
 	enableAdaptiveBitrateStreaming *bool
-	enableAudioVbrEncoding *bool
+	enableAudioVbrEncoding         *bool
 }
 
 // The media version id, if playing an alternate version.
@@ -2475,26 +2477,27 @@ func (r ApiGetMasterHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response
 /*
 GetMasterHlsAudioPlaylist Gets an audio hls playlist stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetMasterHlsAudioPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetMasterHlsAudioPlaylistRequest
 */
 func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylist(ctx context.Context, itemId string) ApiGetMasterHlsAudioPlaylistRequest {
 	return ApiGetMasterHlsAudioPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylistExecute(r ApiGetMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetMasterHlsAudioPlaylist")
@@ -2735,61 +2738,61 @@ func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylistExecute(r ApiGetMasterHl
 }
 
 type ApiGetMasterHlsVideoPlaylistRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	mediaSourceId *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAdaptiveBitrateStreaming *bool
-	enableTrickplay *bool
-	enableAudioVbrEncoding *bool
+	ctx                                 context.Context
+	ApiService                          DynamicHlsAPI
+	itemId                              string
+	mediaSourceId                       *string
+	static                              *bool
+	params                              *string
+	tag                                 *string
+	deviceProfileId                     *string
+	playSessionId                       *string
+	segmentContainer                    *string
+	segmentLength                       *int32
+	minSegments                         *int32
+	deviceId                            *string
+	audioCodec                          *string
+	enableAutoStreamCopy                *bool
+	allowVideoStreamCopy                *bool
+	allowAudioStreamCopy                *bool
+	breakOnNonKeyFrames                 *bool
+	audioSampleRate                     *int32
+	maxAudioBitDepth                    *int32
+	audioBitRate                        *int32
+	audioChannels                       *int32
+	maxAudioChannels                    *int32
+	profile                             *string
+	level                               *string
+	framerate                           *float32
+	maxFramerate                        *float32
+	copyTimestamps                      *bool
+	startTimeTicks                      *int64
+	width                               *int32
+	height                              *int32
+	maxWidth                            *int32
+	maxHeight                           *int32
+	videoBitRate                        *int32
+	subtitleStreamIndex                 *int32
+	subtitleMethod                      *SubtitleDeliveryMethod
+	maxRefFrames                        *int32
+	maxVideoBitDepth                    *int32
+	requireAvc                          *bool
+	deInterlace                         *bool
+	requireNonAnamorphic                *bool
+	transcodingMaxAudioChannels         *int32
+	cpuCoreLimit                        *int32
+	liveStreamId                        *string
+	enableMpegtsM2TsMode                *bool
+	videoCodec                          *string
+	subtitleCodec                       *string
+	transcodeReasons                    *string
+	audioStreamIndex                    *int32
+	videoStreamIndex                    *int32
+	context                             *EncodingContext
+	streamOptions                       *map[string]string
+	enableAdaptiveBitrateStreaming      *bool
+	enableTrickplay                     *bool
+	enableAudioVbrEncoding              *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
 }
 
@@ -3119,26 +3122,27 @@ func (r ApiGetMasterHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response
 /*
 GetMasterHlsVideoPlaylist Gets a video hls playlist stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetMasterHlsVideoPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetMasterHlsVideoPlaylistRequest
 */
 func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylist(ctx context.Context, itemId string) ApiGetMasterHlsVideoPlaylistRequest {
 	return ApiGetMasterHlsVideoPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylistExecute(r ApiGetMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetMasterHlsVideoPlaylist")
@@ -3394,58 +3398,58 @@ func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylistExecute(r ApiGetMasterHl
 }
 
 type ApiGetVariantHlsAudioPlaylistRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	maxStreamingBitrate *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  DynamicHlsAPI
+	itemId                      string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	maxStreamingBitrate         *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
@@ -3750,26 +3754,27 @@ func (r ApiGetVariantHlsAudioPlaylistRequest) Execute() (*os.File, *http.Respons
 /*
 GetVariantHlsAudioPlaylist Gets an audio stream using HTTP live streaming.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetVariantHlsAudioPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetVariantHlsAudioPlaylistRequest
 */
 func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylist(ctx context.Context, itemId string) ApiGetVariantHlsAudioPlaylistRequest {
 	return ApiGetVariantHlsAudioPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylistExecute(r ApiGetVariantHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetVariantHlsAudioPlaylist")
@@ -4003,59 +4008,59 @@ func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylistExecute(r ApiGetVariant
 }
 
 type ApiGetVariantHlsVideoPlaylistRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	ctx                                 context.Context
+	ApiService                          DynamicHlsAPI
+	itemId                              string
+	static                              *bool
+	params                              *string
+	tag                                 *string
+	deviceProfileId                     *string
+	playSessionId                       *string
+	segmentContainer                    *string
+	segmentLength                       *int32
+	minSegments                         *int32
+	mediaSourceId                       *string
+	deviceId                            *string
+	audioCodec                          *string
+	enableAutoStreamCopy                *bool
+	allowVideoStreamCopy                *bool
+	allowAudioStreamCopy                *bool
+	breakOnNonKeyFrames                 *bool
+	audioSampleRate                     *int32
+	maxAudioBitDepth                    *int32
+	audioBitRate                        *int32
+	audioChannels                       *int32
+	maxAudioChannels                    *int32
+	profile                             *string
+	level                               *string
+	framerate                           *float32
+	maxFramerate                        *float32
+	copyTimestamps                      *bool
+	startTimeTicks                      *int64
+	width                               *int32
+	height                              *int32
+	maxWidth                            *int32
+	maxHeight                           *int32
+	videoBitRate                        *int32
+	subtitleStreamIndex                 *int32
+	subtitleMethod                      *SubtitleDeliveryMethod
+	maxRefFrames                        *int32
+	maxVideoBitDepth                    *int32
+	requireAvc                          *bool
+	deInterlace                         *bool
+	requireNonAnamorphic                *bool
+	transcodingMaxAudioChannels         *int32
+	cpuCoreLimit                        *int32
+	liveStreamId                        *string
+	enableMpegtsM2TsMode                *bool
+	videoCodec                          *string
+	subtitleCodec                       *string
+	transcodeReasons                    *string
+	audioStreamIndex                    *int32
+	videoStreamIndex                    *int32
+	context                             *EncodingContext
+	streamOptions                       *map[string]string
+	enableAudioVbrEncoding              *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
 }
 
@@ -4373,26 +4378,27 @@ func (r ApiGetVariantHlsVideoPlaylistRequest) Execute() (*os.File, *http.Respons
 /*
 GetVariantHlsVideoPlaylist Gets a video stream using HTTP live streaming.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetVariantHlsVideoPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetVariantHlsVideoPlaylistRequest
 */
 func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylist(ctx context.Context, itemId string) ApiGetVariantHlsVideoPlaylistRequest {
 	return ApiGetVariantHlsVideoPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylistExecute(r ApiGetVariantHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.GetVariantHlsVideoPlaylist")
@@ -4635,59 +4641,59 @@ func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylistExecute(r ApiGetVariant
 }
 
 type ApiHeadMasterHlsAudioPlaylistRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	mediaSourceId *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	maxStreamingBitrate *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
+	ctx                            context.Context
+	ApiService                     DynamicHlsAPI
+	itemId                         string
+	mediaSourceId                  *string
+	static                         *bool
+	params                         *string
+	tag                            *string
+	deviceProfileId                *string
+	playSessionId                  *string
+	segmentContainer               *string
+	segmentLength                  *int32
+	minSegments                    *int32
+	deviceId                       *string
+	audioCodec                     *string
+	enableAutoStreamCopy           *bool
+	allowVideoStreamCopy           *bool
+	allowAudioStreamCopy           *bool
+	breakOnNonKeyFrames            *bool
+	audioSampleRate                *int32
+	maxAudioBitDepth               *int32
+	maxStreamingBitrate            *int32
+	audioBitRate                   *int32
+	audioChannels                  *int32
+	maxAudioChannels               *int32
+	profile                        *string
+	level                          *string
+	framerate                      *float32
+	maxFramerate                   *float32
+	copyTimestamps                 *bool
+	startTimeTicks                 *int64
+	width                          *int32
+	height                         *int32
+	videoBitRate                   *int32
+	subtitleStreamIndex            *int32
+	subtitleMethod                 *SubtitleDeliveryMethod
+	maxRefFrames                   *int32
+	maxVideoBitDepth               *int32
+	requireAvc                     *bool
+	deInterlace                    *bool
+	requireNonAnamorphic           *bool
+	transcodingMaxAudioChannels    *int32
+	cpuCoreLimit                   *int32
+	liveStreamId                   *string
+	enableMpegtsM2TsMode           *bool
+	videoCodec                     *string
+	subtitleCodec                  *string
+	transcodeReasons               *string
+	audioStreamIndex               *int32
+	videoStreamIndex               *int32
+	context                        *EncodingContext
+	streamOptions                  *map[string]string
 	enableAdaptiveBitrateStreaming *bool
-	enableAudioVbrEncoding *bool
+	enableAudioVbrEncoding         *bool
 }
 
 // The media version id, if playing an alternate version.
@@ -4998,26 +5004,27 @@ func (r ApiHeadMasterHlsAudioPlaylistRequest) Execute() (*os.File, *http.Respons
 /*
 HeadMasterHlsAudioPlaylist Gets an audio hls playlist stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiHeadMasterHlsAudioPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiHeadMasterHlsAudioPlaylistRequest
 */
 func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylist(ctx context.Context, itemId string) ApiHeadMasterHlsAudioPlaylistRequest {
 	return ApiHeadMasterHlsAudioPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylistExecute(r ApiHeadMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.HeadMasterHlsAudioPlaylist")
@@ -5258,61 +5265,61 @@ func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylistExecute(r ApiHeadMaster
 }
 
 type ApiHeadMasterHlsVideoPlaylistRequest struct {
-	ctx context.Context
-	ApiService DynamicHlsAPI
-	itemId string
-	mediaSourceId *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
-	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAdaptiveBitrateStreaming *bool
-	enableTrickplay *bool
-	enableAudioVbrEncoding *bool
+	ctx                                 context.Context
+	ApiService                          DynamicHlsAPI
+	itemId                              string
+	mediaSourceId                       *string
+	static                              *bool
+	params                              *string
+	tag                                 *string
+	deviceProfileId                     *string
+	playSessionId                       *string
+	segmentContainer                    *string
+	segmentLength                       *int32
+	minSegments                         *int32
+	deviceId                            *string
+	audioCodec                          *string
+	enableAutoStreamCopy                *bool
+	allowVideoStreamCopy                *bool
+	allowAudioStreamCopy                *bool
+	breakOnNonKeyFrames                 *bool
+	audioSampleRate                     *int32
+	maxAudioBitDepth                    *int32
+	audioBitRate                        *int32
+	audioChannels                       *int32
+	maxAudioChannels                    *int32
+	profile                             *string
+	level                               *string
+	framerate                           *float32
+	maxFramerate                        *float32
+	copyTimestamps                      *bool
+	startTimeTicks                      *int64
+	width                               *int32
+	height                              *int32
+	maxWidth                            *int32
+	maxHeight                           *int32
+	videoBitRate                        *int32
+	subtitleStreamIndex                 *int32
+	subtitleMethod                      *SubtitleDeliveryMethod
+	maxRefFrames                        *int32
+	maxVideoBitDepth                    *int32
+	requireAvc                          *bool
+	deInterlace                         *bool
+	requireNonAnamorphic                *bool
+	transcodingMaxAudioChannels         *int32
+	cpuCoreLimit                        *int32
+	liveStreamId                        *string
+	enableMpegtsM2TsMode                *bool
+	videoCodec                          *string
+	subtitleCodec                       *string
+	transcodeReasons                    *string
+	audioStreamIndex                    *int32
+	videoStreamIndex                    *int32
+	context                             *EncodingContext
+	streamOptions                       *map[string]string
+	enableAdaptiveBitrateStreaming      *bool
+	enableTrickplay                     *bool
+	enableAudioVbrEncoding              *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
 }
 
@@ -5642,26 +5649,27 @@ func (r ApiHeadMasterHlsVideoPlaylistRequest) Execute() (*os.File, *http.Respons
 /*
 HeadMasterHlsVideoPlaylist Gets a video hls playlist stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiHeadMasterHlsVideoPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiHeadMasterHlsVideoPlaylistRequest
 */
 func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylist(ctx context.Context, itemId string) ApiHeadMasterHlsVideoPlaylistRequest {
 	return ApiHeadMasterHlsVideoPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylistExecute(r ApiHeadMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicHlsAPIService.HeadMasterHlsVideoPlaylist")

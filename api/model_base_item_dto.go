@@ -21,7 +21,7 @@ var _ MappedNullable = &BaseItemDto{}
 // BaseItemDto This is strictly used as a data transfer object from the api layer.  This holds information about a BaseItem in a format that is convenient for the client.
 type BaseItemDto struct {
 	// Gets or sets the name.
-	Name NullableString `json:"Name,omitempty"`
+	Name          NullableString `json:"Name,omitempty"`
 	OriginalTitle NullableString `json:"OriginalTitle,omitempty"`
 	// Gets or sets the server identifier.
 	ServerId NullableString `json:"ServerId,omitempty"`
@@ -34,21 +34,21 @@ type BaseItemDto struct {
 	// Gets or sets the playlist item identifier.
 	PlaylistItemId NullableString `json:"PlaylistItemId,omitempty"`
 	// Gets or sets the date created.
-	DateCreated NullableTime `json:"DateCreated,omitempty"`
-	DateLastMediaAdded NullableTime `json:"DateLastMediaAdded,omitempty"`
-	ExtraType NullableExtraType `json:"ExtraType,omitempty"`
-	AirsBeforeSeasonNumber NullableInt32 `json:"AirsBeforeSeasonNumber,omitempty"`
-	AirsAfterSeasonNumber NullableInt32 `json:"AirsAfterSeasonNumber,omitempty"`
-	AirsBeforeEpisodeNumber NullableInt32 `json:"AirsBeforeEpisodeNumber,omitempty"`
-	CanDelete NullableBool `json:"CanDelete,omitempty"`
-	CanDownload NullableBool `json:"CanDownload,omitempty"`
-	HasLyrics NullableBool `json:"HasLyrics,omitempty"`
-	HasSubtitles NullableBool `json:"HasSubtitles,omitempty"`
-	PreferredMetadataLanguage NullableString `json:"PreferredMetadataLanguage,omitempty"`
-	PreferredMetadataCountryCode NullableString `json:"PreferredMetadataCountryCode,omitempty"`
-	Container NullableString `json:"Container,omitempty"`
+	DateCreated                  NullableTime      `json:"DateCreated,omitempty"`
+	DateLastMediaAdded           NullableTime      `json:"DateLastMediaAdded,omitempty"`
+	ExtraType                    NullableExtraType `json:"ExtraType,omitempty"`
+	AirsBeforeSeasonNumber       NullableInt32     `json:"AirsBeforeSeasonNumber,omitempty"`
+	AirsAfterSeasonNumber        NullableInt32     `json:"AirsAfterSeasonNumber,omitempty"`
+	AirsBeforeEpisodeNumber      NullableInt32     `json:"AirsBeforeEpisodeNumber,omitempty"`
+	CanDelete                    NullableBool      `json:"CanDelete,omitempty"`
+	CanDownload                  NullableBool      `json:"CanDownload,omitempty"`
+	HasLyrics                    NullableBool      `json:"HasLyrics,omitempty"`
+	HasSubtitles                 NullableBool      `json:"HasSubtitles,omitempty"`
+	PreferredMetadataLanguage    NullableString    `json:"PreferredMetadataLanguage,omitempty"`
+	PreferredMetadataCountryCode NullableString    `json:"PreferredMetadataCountryCode,omitempty"`
+	Container                    NullableString    `json:"Container,omitempty"`
 	// Gets or sets the name of the sort.
-	SortName NullableString `json:"SortName,omitempty"`
+	SortName       NullableString `json:"SortName,omitempty"`
 	ForcedSortName NullableString `json:"ForcedSortName,omitempty"`
 	// Gets or sets the video3 D format.
 	Video3DFormat NullableVideo3DFormat `json:"Video3DFormat,omitempty"`
@@ -59,17 +59,17 @@ type BaseItemDto struct {
 	// Gets or sets the media versions.
 	MediaSources []MediaSourceInfo `json:"MediaSources,omitempty"`
 	// Gets or sets the critic rating.
-	CriticRating NullableFloat32 `json:"CriticRating,omitempty"`
-	ProductionLocations []string `json:"ProductionLocations,omitempty"`
+	CriticRating        NullableFloat32 `json:"CriticRating,omitempty"`
+	ProductionLocations []string        `json:"ProductionLocations,omitempty"`
 	// Gets or sets the path.
-	Path NullableString `json:"Path,omitempty"`
-	EnableMediaSourceDisplay NullableBool `json:"EnableMediaSourceDisplay,omitempty"`
+	Path                     NullableString `json:"Path,omitempty"`
+	EnableMediaSourceDisplay NullableBool   `json:"EnableMediaSourceDisplay,omitempty"`
 	// Gets or sets the official rating.
 	OfficialRating NullableString `json:"OfficialRating,omitempty"`
 	// Gets or sets the custom rating.
 	CustomRating NullableString `json:"CustomRating,omitempty"`
 	// Gets or sets the channel identifier.
-	ChannelId NullableString `json:"ChannelId,omitempty"`
+	ChannelId   NullableString `json:"ChannelId,omitempty"`
 	ChannelName NullableString `json:"ChannelName,omitempty"`
 	// Gets or sets the overview.
 	Overview NullableString `json:"Overview,omitempty"`
@@ -92,7 +92,7 @@ type BaseItemDto struct {
 	// Gets or sets a value indicating whether this instance is place holder.
 	IsPlaceHolder NullableBool `json:"IsPlaceHolder,omitempty"`
 	// Gets or sets the number.
-	Number NullableString `json:"Number,omitempty"`
+	Number        NullableString `json:"Number,omitempty"`
 	ChannelNumber NullableString `json:"ChannelNumber,omitempty"`
 	// Gets or sets the index number.
 	IndexNumber NullableInt32 `json:"IndexNumber,omitempty"`
@@ -115,7 +115,7 @@ type BaseItemDto struct {
 	// Gets or sets the people.
 	People []BaseItemPerson `json:"People,omitempty"`
 	// Gets or sets the studios.
-	Studios []NameGuidPair `json:"Studios,omitempty"`
+	Studios    []NameGuidPair `json:"Studios,omitempty"`
 	GenreItems []NameGuidPair `json:"GenreItems,omitempty"`
 	// Gets or sets whether the item has a logo, this will hold the Id of the Parent that has one.
 	ParentLogoItemId NullableString `json:"ParentLogoItemId,omitempty"`
@@ -178,7 +178,7 @@ type BaseItemDto struct {
 	// Gets or sets the type of the video.
 	VideoType NullableVideoType `json:"VideoType,omitempty"`
 	// Gets or sets the part count.
-	PartCount NullableInt32 `json:"PartCount,omitempty"`
+	PartCount        NullableInt32 `json:"PartCount,omitempty"`
 	MediaSourceCount NullableInt32 `json:"MediaSourceCount,omitempty"`
 	// Gets or sets the image tags.
 	ImageTags map[string]string `json:"ImageTags,omitempty"`
@@ -193,8 +193,8 @@ type BaseItemDto struct {
 	// Gets or sets the parent art image tag.
 	ParentArtImageTag NullableString `json:"ParentArtImageTag,omitempty"`
 	// Gets or sets the series thumb image tag.
-	SeriesThumbImageTag NullableString `json:"SeriesThumbImageTag,omitempty"`
-	ImageBlurHashes NullableBaseItemDtoImageBlurHashes `json:"ImageBlurHashes,omitempty"`
+	SeriesThumbImageTag NullableString                     `json:"SeriesThumbImageTag,omitempty"`
+	ImageBlurHashes     NullableBaseItemDtoImageBlurHashes `json:"ImageBlurHashes,omitempty"`
 	// Gets or sets the series studio.
 	SeriesStudio NullableString `json:"SeriesStudio,omitempty"`
 	// Gets or sets the parent thumb item id.
@@ -224,33 +224,33 @@ type BaseItemDto struct {
 	// Gets or sets the movie count.
 	MovieCount NullableInt32 `json:"MovieCount,omitempty"`
 	// Gets or sets the series count.
-	SeriesCount NullableInt32 `json:"SeriesCount,omitempty"`
+	SeriesCount  NullableInt32 `json:"SeriesCount,omitempty"`
 	ProgramCount NullableInt32 `json:"ProgramCount,omitempty"`
 	// Gets or sets the episode count.
 	EpisodeCount NullableInt32 `json:"EpisodeCount,omitempty"`
 	// Gets or sets the song count.
 	SongCount NullableInt32 `json:"SongCount,omitempty"`
 	// Gets or sets the album count.
-	AlbumCount NullableInt32 `json:"AlbumCount,omitempty"`
+	AlbumCount  NullableInt32 `json:"AlbumCount,omitempty"`
 	ArtistCount NullableInt32 `json:"ArtistCount,omitempty"`
 	// Gets or sets the music video count.
 	MusicVideoCount NullableInt32 `json:"MusicVideoCount,omitempty"`
 	// Gets or sets a value indicating whether [enable internet providers].
-	LockData NullableBool `json:"LockData,omitempty"`
-	Width NullableInt32 `json:"Width,omitempty"`
-	Height NullableInt32 `json:"Height,omitempty"`
-	CameraMake NullableString `json:"CameraMake,omitempty"`
-	CameraModel NullableString `json:"CameraModel,omitempty"`
-	Software NullableString `json:"Software,omitempty"`
-	ExposureTime NullableFloat64 `json:"ExposureTime,omitempty"`
-	FocalLength NullableFloat64 `json:"FocalLength,omitempty"`
+	LockData         NullableBool             `json:"LockData,omitempty"`
+	Width            NullableInt32            `json:"Width,omitempty"`
+	Height           NullableInt32            `json:"Height,omitempty"`
+	CameraMake       NullableString           `json:"CameraMake,omitempty"`
+	CameraModel      NullableString           `json:"CameraModel,omitempty"`
+	Software         NullableString           `json:"Software,omitempty"`
+	ExposureTime     NullableFloat64          `json:"ExposureTime,omitempty"`
+	FocalLength      NullableFloat64          `json:"FocalLength,omitempty"`
 	ImageOrientation NullableImageOrientation `json:"ImageOrientation,omitempty"`
-	Aperture NullableFloat64 `json:"Aperture,omitempty"`
-	ShutterSpeed NullableFloat64 `json:"ShutterSpeed,omitempty"`
-	Latitude NullableFloat64 `json:"Latitude,omitempty"`
-	Longitude NullableFloat64 `json:"Longitude,omitempty"`
-	Altitude NullableFloat64 `json:"Altitude,omitempty"`
-	IsoSpeedRating NullableInt32 `json:"IsoSpeedRating,omitempty"`
+	Aperture         NullableFloat64          `json:"Aperture,omitempty"`
+	ShutterSpeed     NullableFloat64          `json:"ShutterSpeed,omitempty"`
+	Latitude         NullableFloat64          `json:"Latitude,omitempty"`
+	Longitude        NullableFloat64          `json:"Longitude,omitempty"`
+	Altitude         NullableFloat64          `json:"Altitude,omitempty"`
+	IsoSpeedRating   NullableInt32            `json:"IsoSpeedRating,omitempty"`
 	// Gets or sets the series timer identifier.
 	SeriesTimerId NullableString `json:"SeriesTimerId,omitempty"`
 	// Gets or sets the program identifier.
@@ -340,6 +340,7 @@ func (o *BaseItemDto) HasName() bool {
 func (o *BaseItemDto) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *BaseItemDto) SetNameNil() {
 	o.Name.Set(nil)
@@ -382,6 +383,7 @@ func (o *BaseItemDto) HasOriginalTitle() bool {
 func (o *BaseItemDto) SetOriginalTitle(v string) {
 	o.OriginalTitle.Set(&v)
 }
+
 // SetOriginalTitleNil sets the value for OriginalTitle to be an explicit nil
 func (o *BaseItemDto) SetOriginalTitleNil() {
 	o.OriginalTitle.Set(nil)
@@ -424,6 +426,7 @@ func (o *BaseItemDto) HasServerId() bool {
 func (o *BaseItemDto) SetServerId(v string) {
 	o.ServerId.Set(&v)
 }
+
 // SetServerIdNil sets the value for ServerId to be an explicit nil
 func (o *BaseItemDto) SetServerIdNil() {
 	o.ServerId.Set(nil)
@@ -498,6 +501,7 @@ func (o *BaseItemDto) HasEtag() bool {
 func (o *BaseItemDto) SetEtag(v string) {
 	o.Etag.Set(&v)
 }
+
 // SetEtagNil sets the value for Etag to be an explicit nil
 func (o *BaseItemDto) SetEtagNil() {
 	o.Etag.Set(nil)
@@ -540,6 +544,7 @@ func (o *BaseItemDto) HasSourceType() bool {
 func (o *BaseItemDto) SetSourceType(v string) {
 	o.SourceType.Set(&v)
 }
+
 // SetSourceTypeNil sets the value for SourceType to be an explicit nil
 func (o *BaseItemDto) SetSourceTypeNil() {
 	o.SourceType.Set(nil)
@@ -582,6 +587,7 @@ func (o *BaseItemDto) HasPlaylistItemId() bool {
 func (o *BaseItemDto) SetPlaylistItemId(v string) {
 	o.PlaylistItemId.Set(&v)
 }
+
 // SetPlaylistItemIdNil sets the value for PlaylistItemId to be an explicit nil
 func (o *BaseItemDto) SetPlaylistItemIdNil() {
 	o.PlaylistItemId.Set(nil)
@@ -624,6 +630,7 @@ func (o *BaseItemDto) HasDateCreated() bool {
 func (o *BaseItemDto) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
 }
+
 // SetDateCreatedNil sets the value for DateCreated to be an explicit nil
 func (o *BaseItemDto) SetDateCreatedNil() {
 	o.DateCreated.Set(nil)
@@ -666,6 +673,7 @@ func (o *BaseItemDto) HasDateLastMediaAdded() bool {
 func (o *BaseItemDto) SetDateLastMediaAdded(v time.Time) {
 	o.DateLastMediaAdded.Set(&v)
 }
+
 // SetDateLastMediaAddedNil sets the value for DateLastMediaAdded to be an explicit nil
 func (o *BaseItemDto) SetDateLastMediaAddedNil() {
 	o.DateLastMediaAdded.Set(nil)
@@ -708,6 +716,7 @@ func (o *BaseItemDto) HasExtraType() bool {
 func (o *BaseItemDto) SetExtraType(v ExtraType) {
 	o.ExtraType.Set(&v)
 }
+
 // SetExtraTypeNil sets the value for ExtraType to be an explicit nil
 func (o *BaseItemDto) SetExtraTypeNil() {
 	o.ExtraType.Set(nil)
@@ -750,6 +759,7 @@ func (o *BaseItemDto) HasAirsBeforeSeasonNumber() bool {
 func (o *BaseItemDto) SetAirsBeforeSeasonNumber(v int32) {
 	o.AirsBeforeSeasonNumber.Set(&v)
 }
+
 // SetAirsBeforeSeasonNumberNil sets the value for AirsBeforeSeasonNumber to be an explicit nil
 func (o *BaseItemDto) SetAirsBeforeSeasonNumberNil() {
 	o.AirsBeforeSeasonNumber.Set(nil)
@@ -792,6 +802,7 @@ func (o *BaseItemDto) HasAirsAfterSeasonNumber() bool {
 func (o *BaseItemDto) SetAirsAfterSeasonNumber(v int32) {
 	o.AirsAfterSeasonNumber.Set(&v)
 }
+
 // SetAirsAfterSeasonNumberNil sets the value for AirsAfterSeasonNumber to be an explicit nil
 func (o *BaseItemDto) SetAirsAfterSeasonNumberNil() {
 	o.AirsAfterSeasonNumber.Set(nil)
@@ -834,6 +845,7 @@ func (o *BaseItemDto) HasAirsBeforeEpisodeNumber() bool {
 func (o *BaseItemDto) SetAirsBeforeEpisodeNumber(v int32) {
 	o.AirsBeforeEpisodeNumber.Set(&v)
 }
+
 // SetAirsBeforeEpisodeNumberNil sets the value for AirsBeforeEpisodeNumber to be an explicit nil
 func (o *BaseItemDto) SetAirsBeforeEpisodeNumberNil() {
 	o.AirsBeforeEpisodeNumber.Set(nil)
@@ -876,6 +888,7 @@ func (o *BaseItemDto) HasCanDelete() bool {
 func (o *BaseItemDto) SetCanDelete(v bool) {
 	o.CanDelete.Set(&v)
 }
+
 // SetCanDeleteNil sets the value for CanDelete to be an explicit nil
 func (o *BaseItemDto) SetCanDeleteNil() {
 	o.CanDelete.Set(nil)
@@ -918,6 +931,7 @@ func (o *BaseItemDto) HasCanDownload() bool {
 func (o *BaseItemDto) SetCanDownload(v bool) {
 	o.CanDownload.Set(&v)
 }
+
 // SetCanDownloadNil sets the value for CanDownload to be an explicit nil
 func (o *BaseItemDto) SetCanDownloadNil() {
 	o.CanDownload.Set(nil)
@@ -960,6 +974,7 @@ func (o *BaseItemDto) HasHasLyrics() bool {
 func (o *BaseItemDto) SetHasLyrics(v bool) {
 	o.HasLyrics.Set(&v)
 }
+
 // SetHasLyricsNil sets the value for HasLyrics to be an explicit nil
 func (o *BaseItemDto) SetHasLyricsNil() {
 	o.HasLyrics.Set(nil)
@@ -1002,6 +1017,7 @@ func (o *BaseItemDto) HasHasSubtitles() bool {
 func (o *BaseItemDto) SetHasSubtitles(v bool) {
 	o.HasSubtitles.Set(&v)
 }
+
 // SetHasSubtitlesNil sets the value for HasSubtitles to be an explicit nil
 func (o *BaseItemDto) SetHasSubtitlesNil() {
 	o.HasSubtitles.Set(nil)
@@ -1044,6 +1060,7 @@ func (o *BaseItemDto) HasPreferredMetadataLanguage() bool {
 func (o *BaseItemDto) SetPreferredMetadataLanguage(v string) {
 	o.PreferredMetadataLanguage.Set(&v)
 }
+
 // SetPreferredMetadataLanguageNil sets the value for PreferredMetadataLanguage to be an explicit nil
 func (o *BaseItemDto) SetPreferredMetadataLanguageNil() {
 	o.PreferredMetadataLanguage.Set(nil)
@@ -1086,6 +1103,7 @@ func (o *BaseItemDto) HasPreferredMetadataCountryCode() bool {
 func (o *BaseItemDto) SetPreferredMetadataCountryCode(v string) {
 	o.PreferredMetadataCountryCode.Set(&v)
 }
+
 // SetPreferredMetadataCountryCodeNil sets the value for PreferredMetadataCountryCode to be an explicit nil
 func (o *BaseItemDto) SetPreferredMetadataCountryCodeNil() {
 	o.PreferredMetadataCountryCode.Set(nil)
@@ -1128,6 +1146,7 @@ func (o *BaseItemDto) HasContainer() bool {
 func (o *BaseItemDto) SetContainer(v string) {
 	o.Container.Set(&v)
 }
+
 // SetContainerNil sets the value for Container to be an explicit nil
 func (o *BaseItemDto) SetContainerNil() {
 	o.Container.Set(nil)
@@ -1170,6 +1189,7 @@ func (o *BaseItemDto) HasSortName() bool {
 func (o *BaseItemDto) SetSortName(v string) {
 	o.SortName.Set(&v)
 }
+
 // SetSortNameNil sets the value for SortName to be an explicit nil
 func (o *BaseItemDto) SetSortNameNil() {
 	o.SortName.Set(nil)
@@ -1212,6 +1232,7 @@ func (o *BaseItemDto) HasForcedSortName() bool {
 func (o *BaseItemDto) SetForcedSortName(v string) {
 	o.ForcedSortName.Set(&v)
 }
+
 // SetForcedSortNameNil sets the value for ForcedSortName to be an explicit nil
 func (o *BaseItemDto) SetForcedSortNameNil() {
 	o.ForcedSortName.Set(nil)
@@ -1254,6 +1275,7 @@ func (o *BaseItemDto) HasVideo3DFormat() bool {
 func (o *BaseItemDto) SetVideo3DFormat(v Video3DFormat) {
 	o.Video3DFormat.Set(&v)
 }
+
 // SetVideo3DFormatNil sets the value for Video3DFormat to be an explicit nil
 func (o *BaseItemDto) SetVideo3DFormatNil() {
 	o.Video3DFormat.Set(nil)
@@ -1296,6 +1318,7 @@ func (o *BaseItemDto) HasPremiereDate() bool {
 func (o *BaseItemDto) SetPremiereDate(v time.Time) {
 	o.PremiereDate.Set(&v)
 }
+
 // SetPremiereDateNil sets the value for PremiereDate to be an explicit nil
 func (o *BaseItemDto) SetPremiereDateNil() {
 	o.PremiereDate.Set(nil)
@@ -1404,6 +1427,7 @@ func (o *BaseItemDto) HasCriticRating() bool {
 func (o *BaseItemDto) SetCriticRating(v float32) {
 	o.CriticRating.Set(&v)
 }
+
 // SetCriticRatingNil sets the value for CriticRating to be an explicit nil
 func (o *BaseItemDto) SetCriticRatingNil() {
 	o.CriticRating.Set(nil)
@@ -1479,6 +1503,7 @@ func (o *BaseItemDto) HasPath() bool {
 func (o *BaseItemDto) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *BaseItemDto) SetPathNil() {
 	o.Path.Set(nil)
@@ -1521,6 +1546,7 @@ func (o *BaseItemDto) HasEnableMediaSourceDisplay() bool {
 func (o *BaseItemDto) SetEnableMediaSourceDisplay(v bool) {
 	o.EnableMediaSourceDisplay.Set(&v)
 }
+
 // SetEnableMediaSourceDisplayNil sets the value for EnableMediaSourceDisplay to be an explicit nil
 func (o *BaseItemDto) SetEnableMediaSourceDisplayNil() {
 	o.EnableMediaSourceDisplay.Set(nil)
@@ -1563,6 +1589,7 @@ func (o *BaseItemDto) HasOfficialRating() bool {
 func (o *BaseItemDto) SetOfficialRating(v string) {
 	o.OfficialRating.Set(&v)
 }
+
 // SetOfficialRatingNil sets the value for OfficialRating to be an explicit nil
 func (o *BaseItemDto) SetOfficialRatingNil() {
 	o.OfficialRating.Set(nil)
@@ -1605,6 +1632,7 @@ func (o *BaseItemDto) HasCustomRating() bool {
 func (o *BaseItemDto) SetCustomRating(v string) {
 	o.CustomRating.Set(&v)
 }
+
 // SetCustomRatingNil sets the value for CustomRating to be an explicit nil
 func (o *BaseItemDto) SetCustomRatingNil() {
 	o.CustomRating.Set(nil)
@@ -1647,6 +1675,7 @@ func (o *BaseItemDto) HasChannelId() bool {
 func (o *BaseItemDto) SetChannelId(v string) {
 	o.ChannelId.Set(&v)
 }
+
 // SetChannelIdNil sets the value for ChannelId to be an explicit nil
 func (o *BaseItemDto) SetChannelIdNil() {
 	o.ChannelId.Set(nil)
@@ -1689,6 +1718,7 @@ func (o *BaseItemDto) HasChannelName() bool {
 func (o *BaseItemDto) SetChannelName(v string) {
 	o.ChannelName.Set(&v)
 }
+
 // SetChannelNameNil sets the value for ChannelName to be an explicit nil
 func (o *BaseItemDto) SetChannelNameNil() {
 	o.ChannelName.Set(nil)
@@ -1731,6 +1761,7 @@ func (o *BaseItemDto) HasOverview() bool {
 func (o *BaseItemDto) SetOverview(v string) {
 	o.Overview.Set(&v)
 }
+
 // SetOverviewNil sets the value for Overview to be an explicit nil
 func (o *BaseItemDto) SetOverviewNil() {
 	o.Overview.Set(nil)
@@ -1839,6 +1870,7 @@ func (o *BaseItemDto) HasCommunityRating() bool {
 func (o *BaseItemDto) SetCommunityRating(v float32) {
 	o.CommunityRating.Set(&v)
 }
+
 // SetCommunityRatingNil sets the value for CommunityRating to be an explicit nil
 func (o *BaseItemDto) SetCommunityRatingNil() {
 	o.CommunityRating.Set(nil)
@@ -1881,6 +1913,7 @@ func (o *BaseItemDto) HasCumulativeRunTimeTicks() bool {
 func (o *BaseItemDto) SetCumulativeRunTimeTicks(v int64) {
 	o.CumulativeRunTimeTicks.Set(&v)
 }
+
 // SetCumulativeRunTimeTicksNil sets the value for CumulativeRunTimeTicks to be an explicit nil
 func (o *BaseItemDto) SetCumulativeRunTimeTicksNil() {
 	o.CumulativeRunTimeTicks.Set(nil)
@@ -1923,6 +1956,7 @@ func (o *BaseItemDto) HasRunTimeTicks() bool {
 func (o *BaseItemDto) SetRunTimeTicks(v int64) {
 	o.RunTimeTicks.Set(&v)
 }
+
 // SetRunTimeTicksNil sets the value for RunTimeTicks to be an explicit nil
 func (o *BaseItemDto) SetRunTimeTicksNil() {
 	o.RunTimeTicks.Set(nil)
@@ -1965,6 +1999,7 @@ func (o *BaseItemDto) HasPlayAccess() bool {
 func (o *BaseItemDto) SetPlayAccess(v PlayAccess) {
 	o.PlayAccess.Set(&v)
 }
+
 // SetPlayAccessNil sets the value for PlayAccess to be an explicit nil
 func (o *BaseItemDto) SetPlayAccessNil() {
 	o.PlayAccess.Set(nil)
@@ -2007,6 +2042,7 @@ func (o *BaseItemDto) HasAspectRatio() bool {
 func (o *BaseItemDto) SetAspectRatio(v string) {
 	o.AspectRatio.Set(&v)
 }
+
 // SetAspectRatioNil sets the value for AspectRatio to be an explicit nil
 func (o *BaseItemDto) SetAspectRatioNil() {
 	o.AspectRatio.Set(nil)
@@ -2049,6 +2085,7 @@ func (o *BaseItemDto) HasProductionYear() bool {
 func (o *BaseItemDto) SetProductionYear(v int32) {
 	o.ProductionYear.Set(&v)
 }
+
 // SetProductionYearNil sets the value for ProductionYear to be an explicit nil
 func (o *BaseItemDto) SetProductionYearNil() {
 	o.ProductionYear.Set(nil)
@@ -2091,6 +2128,7 @@ func (o *BaseItemDto) HasIsPlaceHolder() bool {
 func (o *BaseItemDto) SetIsPlaceHolder(v bool) {
 	o.IsPlaceHolder.Set(&v)
 }
+
 // SetIsPlaceHolderNil sets the value for IsPlaceHolder to be an explicit nil
 func (o *BaseItemDto) SetIsPlaceHolderNil() {
 	o.IsPlaceHolder.Set(nil)
@@ -2133,6 +2171,7 @@ func (o *BaseItemDto) HasNumber() bool {
 func (o *BaseItemDto) SetNumber(v string) {
 	o.Number.Set(&v)
 }
+
 // SetNumberNil sets the value for Number to be an explicit nil
 func (o *BaseItemDto) SetNumberNil() {
 	o.Number.Set(nil)
@@ -2175,6 +2214,7 @@ func (o *BaseItemDto) HasChannelNumber() bool {
 func (o *BaseItemDto) SetChannelNumber(v string) {
 	o.ChannelNumber.Set(&v)
 }
+
 // SetChannelNumberNil sets the value for ChannelNumber to be an explicit nil
 func (o *BaseItemDto) SetChannelNumberNil() {
 	o.ChannelNumber.Set(nil)
@@ -2217,6 +2257,7 @@ func (o *BaseItemDto) HasIndexNumber() bool {
 func (o *BaseItemDto) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *BaseItemDto) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -2259,6 +2300,7 @@ func (o *BaseItemDto) HasIndexNumberEnd() bool {
 func (o *BaseItemDto) SetIndexNumberEnd(v int32) {
 	o.IndexNumberEnd.Set(&v)
 }
+
 // SetIndexNumberEndNil sets the value for IndexNumberEnd to be an explicit nil
 func (o *BaseItemDto) SetIndexNumberEndNil() {
 	o.IndexNumberEnd.Set(nil)
@@ -2301,6 +2343,7 @@ func (o *BaseItemDto) HasParentIndexNumber() bool {
 func (o *BaseItemDto) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *BaseItemDto) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -2409,6 +2452,7 @@ func (o *BaseItemDto) HasIsHD() bool {
 func (o *BaseItemDto) SetIsHD(v bool) {
 	o.IsHD.Set(&v)
 }
+
 // SetIsHDNil sets the value for IsHD to be an explicit nil
 func (o *BaseItemDto) SetIsHDNil() {
 	o.IsHD.Set(nil)
@@ -2451,6 +2495,7 @@ func (o *BaseItemDto) HasIsFolder() bool {
 func (o *BaseItemDto) SetIsFolder(v bool) {
 	o.IsFolder.Set(&v)
 }
+
 // SetIsFolderNil sets the value for IsFolder to be an explicit nil
 func (o *BaseItemDto) SetIsFolderNil() {
 	o.IsFolder.Set(nil)
@@ -2493,6 +2538,7 @@ func (o *BaseItemDto) HasParentId() bool {
 func (o *BaseItemDto) SetParentId(v string) {
 	o.ParentId.Set(&v)
 }
+
 // SetParentIdNil sets the value for ParentId to be an explicit nil
 func (o *BaseItemDto) SetParentIdNil() {
 	o.ParentId.Set(nil)
@@ -2666,6 +2712,7 @@ func (o *BaseItemDto) HasParentLogoItemId() bool {
 func (o *BaseItemDto) SetParentLogoItemId(v string) {
 	o.ParentLogoItemId.Set(&v)
 }
+
 // SetParentLogoItemIdNil sets the value for ParentLogoItemId to be an explicit nil
 func (o *BaseItemDto) SetParentLogoItemIdNil() {
 	o.ParentLogoItemId.Set(nil)
@@ -2708,6 +2755,7 @@ func (o *BaseItemDto) HasParentBackdropItemId() bool {
 func (o *BaseItemDto) SetParentBackdropItemId(v string) {
 	o.ParentBackdropItemId.Set(&v)
 }
+
 // SetParentBackdropItemIdNil sets the value for ParentBackdropItemId to be an explicit nil
 func (o *BaseItemDto) SetParentBackdropItemIdNil() {
 	o.ParentBackdropItemId.Set(nil)
@@ -2783,6 +2831,7 @@ func (o *BaseItemDto) HasLocalTrailerCount() bool {
 func (o *BaseItemDto) SetLocalTrailerCount(v int32) {
 	o.LocalTrailerCount.Set(&v)
 }
+
 // SetLocalTrailerCountNil sets the value for LocalTrailerCount to be an explicit nil
 func (o *BaseItemDto) SetLocalTrailerCountNil() {
 	o.LocalTrailerCount.Set(nil)
@@ -2825,6 +2874,7 @@ func (o *BaseItemDto) HasUserData() bool {
 func (o *BaseItemDto) SetUserData(v UserItemDataDto) {
 	o.UserData.Set(&v)
 }
+
 // SetUserDataNil sets the value for UserData to be an explicit nil
 func (o *BaseItemDto) SetUserDataNil() {
 	o.UserData.Set(nil)
@@ -2867,6 +2917,7 @@ func (o *BaseItemDto) HasRecursiveItemCount() bool {
 func (o *BaseItemDto) SetRecursiveItemCount(v int32) {
 	o.RecursiveItemCount.Set(&v)
 }
+
 // SetRecursiveItemCountNil sets the value for RecursiveItemCount to be an explicit nil
 func (o *BaseItemDto) SetRecursiveItemCountNil() {
 	o.RecursiveItemCount.Set(nil)
@@ -2909,6 +2960,7 @@ func (o *BaseItemDto) HasChildCount() bool {
 func (o *BaseItemDto) SetChildCount(v int32) {
 	o.ChildCount.Set(&v)
 }
+
 // SetChildCountNil sets the value for ChildCount to be an explicit nil
 func (o *BaseItemDto) SetChildCountNil() {
 	o.ChildCount.Set(nil)
@@ -2951,6 +3003,7 @@ func (o *BaseItemDto) HasSeriesName() bool {
 func (o *BaseItemDto) SetSeriesName(v string) {
 	o.SeriesName.Set(&v)
 }
+
 // SetSeriesNameNil sets the value for SeriesName to be an explicit nil
 func (o *BaseItemDto) SetSeriesNameNil() {
 	o.SeriesName.Set(nil)
@@ -2993,6 +3046,7 @@ func (o *BaseItemDto) HasSeriesId() bool {
 func (o *BaseItemDto) SetSeriesId(v string) {
 	o.SeriesId.Set(&v)
 }
+
 // SetSeriesIdNil sets the value for SeriesId to be an explicit nil
 func (o *BaseItemDto) SetSeriesIdNil() {
 	o.SeriesId.Set(nil)
@@ -3035,6 +3089,7 @@ func (o *BaseItemDto) HasSeasonId() bool {
 func (o *BaseItemDto) SetSeasonId(v string) {
 	o.SeasonId.Set(&v)
 }
+
 // SetSeasonIdNil sets the value for SeasonId to be an explicit nil
 func (o *BaseItemDto) SetSeasonIdNil() {
 	o.SeasonId.Set(nil)
@@ -3077,6 +3132,7 @@ func (o *BaseItemDto) HasSpecialFeatureCount() bool {
 func (o *BaseItemDto) SetSpecialFeatureCount(v int32) {
 	o.SpecialFeatureCount.Set(&v)
 }
+
 // SetSpecialFeatureCountNil sets the value for SpecialFeatureCount to be an explicit nil
 func (o *BaseItemDto) SetSpecialFeatureCountNil() {
 	o.SpecialFeatureCount.Set(nil)
@@ -3119,6 +3175,7 @@ func (o *BaseItemDto) HasDisplayPreferencesId() bool {
 func (o *BaseItemDto) SetDisplayPreferencesId(v string) {
 	o.DisplayPreferencesId.Set(&v)
 }
+
 // SetDisplayPreferencesIdNil sets the value for DisplayPreferencesId to be an explicit nil
 func (o *BaseItemDto) SetDisplayPreferencesIdNil() {
 	o.DisplayPreferencesId.Set(nil)
@@ -3161,6 +3218,7 @@ func (o *BaseItemDto) HasStatus() bool {
 func (o *BaseItemDto) SetStatus(v string) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *BaseItemDto) SetStatusNil() {
 	o.Status.Set(nil)
@@ -3203,6 +3261,7 @@ func (o *BaseItemDto) HasAirTime() bool {
 func (o *BaseItemDto) SetAirTime(v string) {
 	o.AirTime.Set(&v)
 }
+
 // SetAirTimeNil sets the value for AirTime to be an explicit nil
 func (o *BaseItemDto) SetAirTimeNil() {
 	o.AirTime.Set(nil)
@@ -3311,6 +3370,7 @@ func (o *BaseItemDto) HasPrimaryImageAspectRatio() bool {
 func (o *BaseItemDto) SetPrimaryImageAspectRatio(v float64) {
 	o.PrimaryImageAspectRatio.Set(&v)
 }
+
 // SetPrimaryImageAspectRatioNil sets the value for PrimaryImageAspectRatio to be an explicit nil
 func (o *BaseItemDto) SetPrimaryImageAspectRatioNil() {
 	o.PrimaryImageAspectRatio.Set(nil)
@@ -3419,6 +3479,7 @@ func (o *BaseItemDto) HasAlbum() bool {
 func (o *BaseItemDto) SetAlbum(v string) {
 	o.Album.Set(&v)
 }
+
 // SetAlbumNil sets the value for Album to be an explicit nil
 func (o *BaseItemDto) SetAlbumNil() {
 	o.Album.Set(nil)
@@ -3461,6 +3522,7 @@ func (o *BaseItemDto) HasCollectionType() bool {
 func (o *BaseItemDto) SetCollectionType(v CollectionType) {
 	o.CollectionType.Set(&v)
 }
+
 // SetCollectionTypeNil sets the value for CollectionType to be an explicit nil
 func (o *BaseItemDto) SetCollectionTypeNil() {
 	o.CollectionType.Set(nil)
@@ -3503,6 +3565,7 @@ func (o *BaseItemDto) HasDisplayOrder() bool {
 func (o *BaseItemDto) SetDisplayOrder(v string) {
 	o.DisplayOrder.Set(&v)
 }
+
 // SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
 func (o *BaseItemDto) SetDisplayOrderNil() {
 	o.DisplayOrder.Set(nil)
@@ -3545,6 +3608,7 @@ func (o *BaseItemDto) HasAlbumId() bool {
 func (o *BaseItemDto) SetAlbumId(v string) {
 	o.AlbumId.Set(&v)
 }
+
 // SetAlbumIdNil sets the value for AlbumId to be an explicit nil
 func (o *BaseItemDto) SetAlbumIdNil() {
 	o.AlbumId.Set(nil)
@@ -3587,6 +3651,7 @@ func (o *BaseItemDto) HasAlbumPrimaryImageTag() bool {
 func (o *BaseItemDto) SetAlbumPrimaryImageTag(v string) {
 	o.AlbumPrimaryImageTag.Set(&v)
 }
+
 // SetAlbumPrimaryImageTagNil sets the value for AlbumPrimaryImageTag to be an explicit nil
 func (o *BaseItemDto) SetAlbumPrimaryImageTagNil() {
 	o.AlbumPrimaryImageTag.Set(nil)
@@ -3629,6 +3694,7 @@ func (o *BaseItemDto) HasSeriesPrimaryImageTag() bool {
 func (o *BaseItemDto) SetSeriesPrimaryImageTag(v string) {
 	o.SeriesPrimaryImageTag.Set(&v)
 }
+
 // SetSeriesPrimaryImageTagNil sets the value for SeriesPrimaryImageTag to be an explicit nil
 func (o *BaseItemDto) SetSeriesPrimaryImageTagNil() {
 	o.SeriesPrimaryImageTag.Set(nil)
@@ -3671,6 +3737,7 @@ func (o *BaseItemDto) HasAlbumArtist() bool {
 func (o *BaseItemDto) SetAlbumArtist(v string) {
 	o.AlbumArtist.Set(&v)
 }
+
 // SetAlbumArtistNil sets the value for AlbumArtist to be an explicit nil
 func (o *BaseItemDto) SetAlbumArtistNil() {
 	o.AlbumArtist.Set(nil)
@@ -3746,6 +3813,7 @@ func (o *BaseItemDto) HasSeasonName() bool {
 func (o *BaseItemDto) SetSeasonName(v string) {
 	o.SeasonName.Set(&v)
 }
+
 // SetSeasonNameNil sets the value for SeasonName to be an explicit nil
 func (o *BaseItemDto) SetSeasonNameNil() {
 	o.SeasonName.Set(nil)
@@ -3821,6 +3889,7 @@ func (o *BaseItemDto) HasVideoType() bool {
 func (o *BaseItemDto) SetVideoType(v VideoType) {
 	o.VideoType.Set(&v)
 }
+
 // SetVideoTypeNil sets the value for VideoType to be an explicit nil
 func (o *BaseItemDto) SetVideoTypeNil() {
 	o.VideoType.Set(nil)
@@ -3863,6 +3932,7 @@ func (o *BaseItemDto) HasPartCount() bool {
 func (o *BaseItemDto) SetPartCount(v int32) {
 	o.PartCount.Set(&v)
 }
+
 // SetPartCountNil sets the value for PartCount to be an explicit nil
 func (o *BaseItemDto) SetPartCountNil() {
 	o.PartCount.Set(nil)
@@ -3905,6 +3975,7 @@ func (o *BaseItemDto) HasMediaSourceCount() bool {
 func (o *BaseItemDto) SetMediaSourceCount(v int32) {
 	o.MediaSourceCount.Set(&v)
 }
+
 // SetMediaSourceCountNil sets the value for MediaSourceCount to be an explicit nil
 func (o *BaseItemDto) SetMediaSourceCountNil() {
 	o.MediaSourceCount.Set(nil)
@@ -4046,6 +4117,7 @@ func (o *BaseItemDto) HasParentLogoImageTag() bool {
 func (o *BaseItemDto) SetParentLogoImageTag(v string) {
 	o.ParentLogoImageTag.Set(&v)
 }
+
 // SetParentLogoImageTagNil sets the value for ParentLogoImageTag to be an explicit nil
 func (o *BaseItemDto) SetParentLogoImageTagNil() {
 	o.ParentLogoImageTag.Set(nil)
@@ -4088,6 +4160,7 @@ func (o *BaseItemDto) HasParentArtItemId() bool {
 func (o *BaseItemDto) SetParentArtItemId(v string) {
 	o.ParentArtItemId.Set(&v)
 }
+
 // SetParentArtItemIdNil sets the value for ParentArtItemId to be an explicit nil
 func (o *BaseItemDto) SetParentArtItemIdNil() {
 	o.ParentArtItemId.Set(nil)
@@ -4130,6 +4203,7 @@ func (o *BaseItemDto) HasParentArtImageTag() bool {
 func (o *BaseItemDto) SetParentArtImageTag(v string) {
 	o.ParentArtImageTag.Set(&v)
 }
+
 // SetParentArtImageTagNil sets the value for ParentArtImageTag to be an explicit nil
 func (o *BaseItemDto) SetParentArtImageTagNil() {
 	o.ParentArtImageTag.Set(nil)
@@ -4172,6 +4246,7 @@ func (o *BaseItemDto) HasSeriesThumbImageTag() bool {
 func (o *BaseItemDto) SetSeriesThumbImageTag(v string) {
 	o.SeriesThumbImageTag.Set(&v)
 }
+
 // SetSeriesThumbImageTagNil sets the value for SeriesThumbImageTag to be an explicit nil
 func (o *BaseItemDto) SetSeriesThumbImageTagNil() {
 	o.SeriesThumbImageTag.Set(nil)
@@ -4214,6 +4289,7 @@ func (o *BaseItemDto) HasImageBlurHashes() bool {
 func (o *BaseItemDto) SetImageBlurHashes(v BaseItemDtoImageBlurHashes) {
 	o.ImageBlurHashes.Set(&v)
 }
+
 // SetImageBlurHashesNil sets the value for ImageBlurHashes to be an explicit nil
 func (o *BaseItemDto) SetImageBlurHashesNil() {
 	o.ImageBlurHashes.Set(nil)
@@ -4256,6 +4332,7 @@ func (o *BaseItemDto) HasSeriesStudio() bool {
 func (o *BaseItemDto) SetSeriesStudio(v string) {
 	o.SeriesStudio.Set(&v)
 }
+
 // SetSeriesStudioNil sets the value for SeriesStudio to be an explicit nil
 func (o *BaseItemDto) SetSeriesStudioNil() {
 	o.SeriesStudio.Set(nil)
@@ -4298,6 +4375,7 @@ func (o *BaseItemDto) HasParentThumbItemId() bool {
 func (o *BaseItemDto) SetParentThumbItemId(v string) {
 	o.ParentThumbItemId.Set(&v)
 }
+
 // SetParentThumbItemIdNil sets the value for ParentThumbItemId to be an explicit nil
 func (o *BaseItemDto) SetParentThumbItemIdNil() {
 	o.ParentThumbItemId.Set(nil)
@@ -4340,6 +4418,7 @@ func (o *BaseItemDto) HasParentThumbImageTag() bool {
 func (o *BaseItemDto) SetParentThumbImageTag(v string) {
 	o.ParentThumbImageTag.Set(&v)
 }
+
 // SetParentThumbImageTagNil sets the value for ParentThumbImageTag to be an explicit nil
 func (o *BaseItemDto) SetParentThumbImageTagNil() {
 	o.ParentThumbImageTag.Set(nil)
@@ -4382,6 +4461,7 @@ func (o *BaseItemDto) HasParentPrimaryImageItemId() bool {
 func (o *BaseItemDto) SetParentPrimaryImageItemId(v string) {
 	o.ParentPrimaryImageItemId.Set(&v)
 }
+
 // SetParentPrimaryImageItemIdNil sets the value for ParentPrimaryImageItemId to be an explicit nil
 func (o *BaseItemDto) SetParentPrimaryImageItemIdNil() {
 	o.ParentPrimaryImageItemId.Set(nil)
@@ -4424,6 +4504,7 @@ func (o *BaseItemDto) HasParentPrimaryImageTag() bool {
 func (o *BaseItemDto) SetParentPrimaryImageTag(v string) {
 	o.ParentPrimaryImageTag.Set(&v)
 }
+
 // SetParentPrimaryImageTagNil sets the value for ParentPrimaryImageTag to be an explicit nil
 func (o *BaseItemDto) SetParentPrimaryImageTagNil() {
 	o.ParentPrimaryImageTag.Set(nil)
@@ -4532,6 +4613,7 @@ func (o *BaseItemDto) HasLocationType() bool {
 func (o *BaseItemDto) SetLocationType(v LocationType) {
 	o.LocationType.Set(&v)
 }
+
 // SetLocationTypeNil sets the value for LocationType to be an explicit nil
 func (o *BaseItemDto) SetLocationTypeNil() {
 	o.LocationType.Set(nil)
@@ -4574,6 +4656,7 @@ func (o *BaseItemDto) HasIsoType() bool {
 func (o *BaseItemDto) SetIsoType(v IsoType) {
 	o.IsoType.Set(&v)
 }
+
 // SetIsoTypeNil sets the value for IsoType to be an explicit nil
 func (o *BaseItemDto) SetIsoTypeNil() {
 	o.IsoType.Set(nil)
@@ -4648,6 +4731,7 @@ func (o *BaseItemDto) HasEndDate() bool {
 func (o *BaseItemDto) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *BaseItemDto) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -4723,6 +4807,7 @@ func (o *BaseItemDto) HasTrailerCount() bool {
 func (o *BaseItemDto) SetTrailerCount(v int32) {
 	o.TrailerCount.Set(&v)
 }
+
 // SetTrailerCountNil sets the value for TrailerCount to be an explicit nil
 func (o *BaseItemDto) SetTrailerCountNil() {
 	o.TrailerCount.Set(nil)
@@ -4765,6 +4850,7 @@ func (o *BaseItemDto) HasMovieCount() bool {
 func (o *BaseItemDto) SetMovieCount(v int32) {
 	o.MovieCount.Set(&v)
 }
+
 // SetMovieCountNil sets the value for MovieCount to be an explicit nil
 func (o *BaseItemDto) SetMovieCountNil() {
 	o.MovieCount.Set(nil)
@@ -4807,6 +4893,7 @@ func (o *BaseItemDto) HasSeriesCount() bool {
 func (o *BaseItemDto) SetSeriesCount(v int32) {
 	o.SeriesCount.Set(&v)
 }
+
 // SetSeriesCountNil sets the value for SeriesCount to be an explicit nil
 func (o *BaseItemDto) SetSeriesCountNil() {
 	o.SeriesCount.Set(nil)
@@ -4849,6 +4936,7 @@ func (o *BaseItemDto) HasProgramCount() bool {
 func (o *BaseItemDto) SetProgramCount(v int32) {
 	o.ProgramCount.Set(&v)
 }
+
 // SetProgramCountNil sets the value for ProgramCount to be an explicit nil
 func (o *BaseItemDto) SetProgramCountNil() {
 	o.ProgramCount.Set(nil)
@@ -4891,6 +4979,7 @@ func (o *BaseItemDto) HasEpisodeCount() bool {
 func (o *BaseItemDto) SetEpisodeCount(v int32) {
 	o.EpisodeCount.Set(&v)
 }
+
 // SetEpisodeCountNil sets the value for EpisodeCount to be an explicit nil
 func (o *BaseItemDto) SetEpisodeCountNil() {
 	o.EpisodeCount.Set(nil)
@@ -4933,6 +5022,7 @@ func (o *BaseItemDto) HasSongCount() bool {
 func (o *BaseItemDto) SetSongCount(v int32) {
 	o.SongCount.Set(&v)
 }
+
 // SetSongCountNil sets the value for SongCount to be an explicit nil
 func (o *BaseItemDto) SetSongCountNil() {
 	o.SongCount.Set(nil)
@@ -4975,6 +5065,7 @@ func (o *BaseItemDto) HasAlbumCount() bool {
 func (o *BaseItemDto) SetAlbumCount(v int32) {
 	o.AlbumCount.Set(&v)
 }
+
 // SetAlbumCountNil sets the value for AlbumCount to be an explicit nil
 func (o *BaseItemDto) SetAlbumCountNil() {
 	o.AlbumCount.Set(nil)
@@ -5017,6 +5108,7 @@ func (o *BaseItemDto) HasArtistCount() bool {
 func (o *BaseItemDto) SetArtistCount(v int32) {
 	o.ArtistCount.Set(&v)
 }
+
 // SetArtistCountNil sets the value for ArtistCount to be an explicit nil
 func (o *BaseItemDto) SetArtistCountNil() {
 	o.ArtistCount.Set(nil)
@@ -5059,6 +5151,7 @@ func (o *BaseItemDto) HasMusicVideoCount() bool {
 func (o *BaseItemDto) SetMusicVideoCount(v int32) {
 	o.MusicVideoCount.Set(&v)
 }
+
 // SetMusicVideoCountNil sets the value for MusicVideoCount to be an explicit nil
 func (o *BaseItemDto) SetMusicVideoCountNil() {
 	o.MusicVideoCount.Set(nil)
@@ -5101,6 +5194,7 @@ func (o *BaseItemDto) HasLockData() bool {
 func (o *BaseItemDto) SetLockData(v bool) {
 	o.LockData.Set(&v)
 }
+
 // SetLockDataNil sets the value for LockData to be an explicit nil
 func (o *BaseItemDto) SetLockDataNil() {
 	o.LockData.Set(nil)
@@ -5143,6 +5237,7 @@ func (o *BaseItemDto) HasWidth() bool {
 func (o *BaseItemDto) SetWidth(v int32) {
 	o.Width.Set(&v)
 }
+
 // SetWidthNil sets the value for Width to be an explicit nil
 func (o *BaseItemDto) SetWidthNil() {
 	o.Width.Set(nil)
@@ -5185,6 +5280,7 @@ func (o *BaseItemDto) HasHeight() bool {
 func (o *BaseItemDto) SetHeight(v int32) {
 	o.Height.Set(&v)
 }
+
 // SetHeightNil sets the value for Height to be an explicit nil
 func (o *BaseItemDto) SetHeightNil() {
 	o.Height.Set(nil)
@@ -5227,6 +5323,7 @@ func (o *BaseItemDto) HasCameraMake() bool {
 func (o *BaseItemDto) SetCameraMake(v string) {
 	o.CameraMake.Set(&v)
 }
+
 // SetCameraMakeNil sets the value for CameraMake to be an explicit nil
 func (o *BaseItemDto) SetCameraMakeNil() {
 	o.CameraMake.Set(nil)
@@ -5269,6 +5366,7 @@ func (o *BaseItemDto) HasCameraModel() bool {
 func (o *BaseItemDto) SetCameraModel(v string) {
 	o.CameraModel.Set(&v)
 }
+
 // SetCameraModelNil sets the value for CameraModel to be an explicit nil
 func (o *BaseItemDto) SetCameraModelNil() {
 	o.CameraModel.Set(nil)
@@ -5311,6 +5409,7 @@ func (o *BaseItemDto) HasSoftware() bool {
 func (o *BaseItemDto) SetSoftware(v string) {
 	o.Software.Set(&v)
 }
+
 // SetSoftwareNil sets the value for Software to be an explicit nil
 func (o *BaseItemDto) SetSoftwareNil() {
 	o.Software.Set(nil)
@@ -5353,6 +5452,7 @@ func (o *BaseItemDto) HasExposureTime() bool {
 func (o *BaseItemDto) SetExposureTime(v float64) {
 	o.ExposureTime.Set(&v)
 }
+
 // SetExposureTimeNil sets the value for ExposureTime to be an explicit nil
 func (o *BaseItemDto) SetExposureTimeNil() {
 	o.ExposureTime.Set(nil)
@@ -5395,6 +5495,7 @@ func (o *BaseItemDto) HasFocalLength() bool {
 func (o *BaseItemDto) SetFocalLength(v float64) {
 	o.FocalLength.Set(&v)
 }
+
 // SetFocalLengthNil sets the value for FocalLength to be an explicit nil
 func (o *BaseItemDto) SetFocalLengthNil() {
 	o.FocalLength.Set(nil)
@@ -5437,6 +5538,7 @@ func (o *BaseItemDto) HasImageOrientation() bool {
 func (o *BaseItemDto) SetImageOrientation(v ImageOrientation) {
 	o.ImageOrientation.Set(&v)
 }
+
 // SetImageOrientationNil sets the value for ImageOrientation to be an explicit nil
 func (o *BaseItemDto) SetImageOrientationNil() {
 	o.ImageOrientation.Set(nil)
@@ -5479,6 +5581,7 @@ func (o *BaseItemDto) HasAperture() bool {
 func (o *BaseItemDto) SetAperture(v float64) {
 	o.Aperture.Set(&v)
 }
+
 // SetApertureNil sets the value for Aperture to be an explicit nil
 func (o *BaseItemDto) SetApertureNil() {
 	o.Aperture.Set(nil)
@@ -5521,6 +5624,7 @@ func (o *BaseItemDto) HasShutterSpeed() bool {
 func (o *BaseItemDto) SetShutterSpeed(v float64) {
 	o.ShutterSpeed.Set(&v)
 }
+
 // SetShutterSpeedNil sets the value for ShutterSpeed to be an explicit nil
 func (o *BaseItemDto) SetShutterSpeedNil() {
 	o.ShutterSpeed.Set(nil)
@@ -5563,6 +5667,7 @@ func (o *BaseItemDto) HasLatitude() bool {
 func (o *BaseItemDto) SetLatitude(v float64) {
 	o.Latitude.Set(&v)
 }
+
 // SetLatitudeNil sets the value for Latitude to be an explicit nil
 func (o *BaseItemDto) SetLatitudeNil() {
 	o.Latitude.Set(nil)
@@ -5605,6 +5710,7 @@ func (o *BaseItemDto) HasLongitude() bool {
 func (o *BaseItemDto) SetLongitude(v float64) {
 	o.Longitude.Set(&v)
 }
+
 // SetLongitudeNil sets the value for Longitude to be an explicit nil
 func (o *BaseItemDto) SetLongitudeNil() {
 	o.Longitude.Set(nil)
@@ -5647,6 +5753,7 @@ func (o *BaseItemDto) HasAltitude() bool {
 func (o *BaseItemDto) SetAltitude(v float64) {
 	o.Altitude.Set(&v)
 }
+
 // SetAltitudeNil sets the value for Altitude to be an explicit nil
 func (o *BaseItemDto) SetAltitudeNil() {
 	o.Altitude.Set(nil)
@@ -5689,6 +5796,7 @@ func (o *BaseItemDto) HasIsoSpeedRating() bool {
 func (o *BaseItemDto) SetIsoSpeedRating(v int32) {
 	o.IsoSpeedRating.Set(&v)
 }
+
 // SetIsoSpeedRatingNil sets the value for IsoSpeedRating to be an explicit nil
 func (o *BaseItemDto) SetIsoSpeedRatingNil() {
 	o.IsoSpeedRating.Set(nil)
@@ -5731,6 +5839,7 @@ func (o *BaseItemDto) HasSeriesTimerId() bool {
 func (o *BaseItemDto) SetSeriesTimerId(v string) {
 	o.SeriesTimerId.Set(&v)
 }
+
 // SetSeriesTimerIdNil sets the value for SeriesTimerId to be an explicit nil
 func (o *BaseItemDto) SetSeriesTimerIdNil() {
 	o.SeriesTimerId.Set(nil)
@@ -5773,6 +5882,7 @@ func (o *BaseItemDto) HasProgramId() bool {
 func (o *BaseItemDto) SetProgramId(v string) {
 	o.ProgramId.Set(&v)
 }
+
 // SetProgramIdNil sets the value for ProgramId to be an explicit nil
 func (o *BaseItemDto) SetProgramIdNil() {
 	o.ProgramId.Set(nil)
@@ -5815,6 +5925,7 @@ func (o *BaseItemDto) HasChannelPrimaryImageTag() bool {
 func (o *BaseItemDto) SetChannelPrimaryImageTag(v string) {
 	o.ChannelPrimaryImageTag.Set(&v)
 }
+
 // SetChannelPrimaryImageTagNil sets the value for ChannelPrimaryImageTag to be an explicit nil
 func (o *BaseItemDto) SetChannelPrimaryImageTagNil() {
 	o.ChannelPrimaryImageTag.Set(nil)
@@ -5857,6 +5968,7 @@ func (o *BaseItemDto) HasStartDate() bool {
 func (o *BaseItemDto) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
 }
+
 // SetStartDateNil sets the value for StartDate to be an explicit nil
 func (o *BaseItemDto) SetStartDateNil() {
 	o.StartDate.Set(nil)
@@ -5899,6 +6011,7 @@ func (o *BaseItemDto) HasCompletionPercentage() bool {
 func (o *BaseItemDto) SetCompletionPercentage(v float64) {
 	o.CompletionPercentage.Set(&v)
 }
+
 // SetCompletionPercentageNil sets the value for CompletionPercentage to be an explicit nil
 func (o *BaseItemDto) SetCompletionPercentageNil() {
 	o.CompletionPercentage.Set(nil)
@@ -5941,6 +6054,7 @@ func (o *BaseItemDto) HasIsRepeat() bool {
 func (o *BaseItemDto) SetIsRepeat(v bool) {
 	o.IsRepeat.Set(&v)
 }
+
 // SetIsRepeatNil sets the value for IsRepeat to be an explicit nil
 func (o *BaseItemDto) SetIsRepeatNil() {
 	o.IsRepeat.Set(nil)
@@ -5983,6 +6097,7 @@ func (o *BaseItemDto) HasEpisodeTitle() bool {
 func (o *BaseItemDto) SetEpisodeTitle(v string) {
 	o.EpisodeTitle.Set(&v)
 }
+
 // SetEpisodeTitleNil sets the value for EpisodeTitle to be an explicit nil
 func (o *BaseItemDto) SetEpisodeTitleNil() {
 	o.EpisodeTitle.Set(nil)
@@ -6025,6 +6140,7 @@ func (o *BaseItemDto) HasChannelType() bool {
 func (o *BaseItemDto) SetChannelType(v ChannelType) {
 	o.ChannelType.Set(&v)
 }
+
 // SetChannelTypeNil sets the value for ChannelType to be an explicit nil
 func (o *BaseItemDto) SetChannelTypeNil() {
 	o.ChannelType.Set(nil)
@@ -6067,6 +6183,7 @@ func (o *BaseItemDto) HasAudio() bool {
 func (o *BaseItemDto) SetAudio(v ProgramAudio) {
 	o.Audio.Set(&v)
 }
+
 // SetAudioNil sets the value for Audio to be an explicit nil
 func (o *BaseItemDto) SetAudioNil() {
 	o.Audio.Set(nil)
@@ -6109,6 +6226,7 @@ func (o *BaseItemDto) HasIsMovie() bool {
 func (o *BaseItemDto) SetIsMovie(v bool) {
 	o.IsMovie.Set(&v)
 }
+
 // SetIsMovieNil sets the value for IsMovie to be an explicit nil
 func (o *BaseItemDto) SetIsMovieNil() {
 	o.IsMovie.Set(nil)
@@ -6151,6 +6269,7 @@ func (o *BaseItemDto) HasIsSports() bool {
 func (o *BaseItemDto) SetIsSports(v bool) {
 	o.IsSports.Set(&v)
 }
+
 // SetIsSportsNil sets the value for IsSports to be an explicit nil
 func (o *BaseItemDto) SetIsSportsNil() {
 	o.IsSports.Set(nil)
@@ -6193,6 +6312,7 @@ func (o *BaseItemDto) HasIsSeries() bool {
 func (o *BaseItemDto) SetIsSeries(v bool) {
 	o.IsSeries.Set(&v)
 }
+
 // SetIsSeriesNil sets the value for IsSeries to be an explicit nil
 func (o *BaseItemDto) SetIsSeriesNil() {
 	o.IsSeries.Set(nil)
@@ -6235,6 +6355,7 @@ func (o *BaseItemDto) HasIsLive() bool {
 func (o *BaseItemDto) SetIsLive(v bool) {
 	o.IsLive.Set(&v)
 }
+
 // SetIsLiveNil sets the value for IsLive to be an explicit nil
 func (o *BaseItemDto) SetIsLiveNil() {
 	o.IsLive.Set(nil)
@@ -6277,6 +6398,7 @@ func (o *BaseItemDto) HasIsNews() bool {
 func (o *BaseItemDto) SetIsNews(v bool) {
 	o.IsNews.Set(&v)
 }
+
 // SetIsNewsNil sets the value for IsNews to be an explicit nil
 func (o *BaseItemDto) SetIsNewsNil() {
 	o.IsNews.Set(nil)
@@ -6319,6 +6441,7 @@ func (o *BaseItemDto) HasIsKids() bool {
 func (o *BaseItemDto) SetIsKids(v bool) {
 	o.IsKids.Set(&v)
 }
+
 // SetIsKidsNil sets the value for IsKids to be an explicit nil
 func (o *BaseItemDto) SetIsKidsNil() {
 	o.IsKids.Set(nil)
@@ -6361,6 +6484,7 @@ func (o *BaseItemDto) HasIsPremiere() bool {
 func (o *BaseItemDto) SetIsPremiere(v bool) {
 	o.IsPremiere.Set(&v)
 }
+
 // SetIsPremiereNil sets the value for IsPremiere to be an explicit nil
 func (o *BaseItemDto) SetIsPremiereNil() {
 	o.IsPremiere.Set(nil)
@@ -6403,6 +6527,7 @@ func (o *BaseItemDto) HasTimerId() bool {
 func (o *BaseItemDto) SetTimerId(v string) {
 	o.TimerId.Set(&v)
 }
+
 // SetTimerIdNil sets the value for TimerId to be an explicit nil
 func (o *BaseItemDto) SetTimerIdNil() {
 	o.TimerId.Set(nil)
@@ -6445,6 +6570,7 @@ func (o *BaseItemDto) HasNormalizationGain() bool {
 func (o *BaseItemDto) SetNormalizationGain(v float32) {
 	o.NormalizationGain.Set(&v)
 }
+
 // SetNormalizationGainNil sets the value for NormalizationGain to be an explicit nil
 func (o *BaseItemDto) SetNormalizationGainNil() {
 	o.NormalizationGain.Set(nil)
@@ -6487,6 +6613,7 @@ func (o *BaseItemDto) HasCurrentProgram() bool {
 func (o *BaseItemDto) SetCurrentProgram(v BaseItemDto) {
 	o.CurrentProgram.Set(&v)
 }
+
 // SetCurrentProgramNil sets the value for CurrentProgram to be an explicit nil
 func (o *BaseItemDto) SetCurrentProgramNil() {
 	o.CurrentProgram.Set(nil)
@@ -6498,7 +6625,7 @@ func (o *BaseItemDto) UnsetCurrentProgram() {
 }
 
 func (o BaseItemDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -7004,5 +7131,3 @@ func (v *NullableBaseItemDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

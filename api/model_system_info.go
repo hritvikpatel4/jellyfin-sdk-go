@@ -41,7 +41,7 @@ type SystemInfo struct {
 	PackageName NullableString `json:"PackageName,omitempty"`
 	// Gets or sets a value indicating whether this instance has pending restart.
 	HasPendingRestart *bool `json:"HasPendingRestart,omitempty"`
-	IsShuttingDown *bool `json:"IsShuttingDown,omitempty"`
+	IsShuttingDown    *bool `json:"IsShuttingDown,omitempty"`
 	// Gets or sets a value indicating whether [supports library monitor].
 	SupportsLibraryMonitor *bool `json:"SupportsLibraryMonitor,omitempty"`
 	// Gets or sets the web socket port number.
@@ -147,6 +147,7 @@ func (o *SystemInfo) HasLocalAddress() bool {
 func (o *SystemInfo) SetLocalAddress(v string) {
 	o.LocalAddress.Set(&v)
 }
+
 // SetLocalAddressNil sets the value for LocalAddress to be an explicit nil
 func (o *SystemInfo) SetLocalAddressNil() {
 	o.LocalAddress.Set(nil)
@@ -189,6 +190,7 @@ func (o *SystemInfo) HasServerName() bool {
 func (o *SystemInfo) SetServerName(v string) {
 	o.ServerName.Set(&v)
 }
+
 // SetServerNameNil sets the value for ServerName to be an explicit nil
 func (o *SystemInfo) SetServerNameNil() {
 	o.ServerName.Set(nil)
@@ -231,6 +233,7 @@ func (o *SystemInfo) HasVersion() bool {
 func (o *SystemInfo) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *SystemInfo) SetVersionNil() {
 	o.Version.Set(nil)
@@ -273,6 +276,7 @@ func (o *SystemInfo) HasProductName() bool {
 func (o *SystemInfo) SetProductName(v string) {
 	o.ProductName.Set(&v)
 }
+
 // SetProductNameNil sets the value for ProductName to be an explicit nil
 func (o *SystemInfo) SetProductNameNil() {
 	o.ProductName.Set(nil)
@@ -318,6 +322,7 @@ func (o *SystemInfo) HasOperatingSystem() bool {
 func (o *SystemInfo) SetOperatingSystem(v string) {
 	o.OperatingSystem.Set(&v)
 }
+
 // SetOperatingSystemNil sets the value for OperatingSystem to be an explicit nil
 func (o *SystemInfo) SetOperatingSystemNil() {
 	o.OperatingSystem.Set(nil)
@@ -360,6 +365,7 @@ func (o *SystemInfo) HasId() bool {
 func (o *SystemInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *SystemInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -402,6 +408,7 @@ func (o *SystemInfo) HasStartupWizardCompleted() bool {
 func (o *SystemInfo) SetStartupWizardCompleted(v bool) {
 	o.StartupWizardCompleted.Set(&v)
 }
+
 // SetStartupWizardCompletedNil sets the value for StartupWizardCompleted to be an explicit nil
 func (o *SystemInfo) SetStartupWizardCompletedNil() {
 	o.StartupWizardCompleted.Set(nil)
@@ -447,6 +454,7 @@ func (o *SystemInfo) HasOperatingSystemDisplayName() bool {
 func (o *SystemInfo) SetOperatingSystemDisplayName(v string) {
 	o.OperatingSystemDisplayName.Set(&v)
 }
+
 // SetOperatingSystemDisplayNameNil sets the value for OperatingSystemDisplayName to be an explicit nil
 func (o *SystemInfo) SetOperatingSystemDisplayNameNil() {
 	o.OperatingSystemDisplayName.Set(nil)
@@ -489,6 +497,7 @@ func (o *SystemInfo) HasPackageName() bool {
 func (o *SystemInfo) SetPackageName(v string) {
 	o.PackageName.Set(&v)
 }
+
 // SetPackageNameNil sets the value for PackageName to be an explicit nil
 func (o *SystemInfo) SetPackageNameNil() {
 	o.PackageName.Set(nil)
@@ -762,6 +771,7 @@ func (o *SystemInfo) HasProgramDataPath() bool {
 func (o *SystemInfo) SetProgramDataPath(v string) {
 	o.ProgramDataPath.Set(&v)
 }
+
 // SetProgramDataPathNil sets the value for ProgramDataPath to be an explicit nil
 func (o *SystemInfo) SetProgramDataPathNil() {
 	o.ProgramDataPath.Set(nil)
@@ -804,6 +814,7 @@ func (o *SystemInfo) HasWebPath() bool {
 func (o *SystemInfo) SetWebPath(v string) {
 	o.WebPath.Set(&v)
 }
+
 // SetWebPathNil sets the value for WebPath to be an explicit nil
 func (o *SystemInfo) SetWebPathNil() {
 	o.WebPath.Set(nil)
@@ -846,6 +857,7 @@ func (o *SystemInfo) HasItemsByNamePath() bool {
 func (o *SystemInfo) SetItemsByNamePath(v string) {
 	o.ItemsByNamePath.Set(&v)
 }
+
 // SetItemsByNamePathNil sets the value for ItemsByNamePath to be an explicit nil
 func (o *SystemInfo) SetItemsByNamePathNil() {
 	o.ItemsByNamePath.Set(nil)
@@ -888,6 +900,7 @@ func (o *SystemInfo) HasCachePath() bool {
 func (o *SystemInfo) SetCachePath(v string) {
 	o.CachePath.Set(&v)
 }
+
 // SetCachePathNil sets the value for CachePath to be an explicit nil
 func (o *SystemInfo) SetCachePathNil() {
 	o.CachePath.Set(nil)
@@ -930,6 +943,7 @@ func (o *SystemInfo) HasLogPath() bool {
 func (o *SystemInfo) SetLogPath(v string) {
 	o.LogPath.Set(&v)
 }
+
 // SetLogPathNil sets the value for LogPath to be an explicit nil
 func (o *SystemInfo) SetLogPathNil() {
 	o.LogPath.Set(nil)
@@ -972,6 +986,7 @@ func (o *SystemInfo) HasInternalMetadataPath() bool {
 func (o *SystemInfo) SetInternalMetadataPath(v string) {
 	o.InternalMetadataPath.Set(&v)
 }
+
 // SetInternalMetadataPathNil sets the value for InternalMetadataPath to be an explicit nil
 func (o *SystemInfo) SetInternalMetadataPathNil() {
 	o.InternalMetadataPath.Set(nil)
@@ -1014,6 +1029,7 @@ func (o *SystemInfo) HasTranscodingTempPath() bool {
 func (o *SystemInfo) SetTranscodingTempPath(v string) {
 	o.TranscodingTempPath.Set(&v)
 }
+
 // SetTranscodingTempPathNil sets the value for TranscodingTempPath to be an explicit nil
 func (o *SystemInfo) SetTranscodingTempPathNil() {
 	o.TranscodingTempPath.Set(nil)
@@ -1127,6 +1143,7 @@ func (o *SystemInfo) HasEncoderLocation() bool {
 func (o *SystemInfo) SetEncoderLocation(v string) {
 	o.EncoderLocation.Set(&v)
 }
+
 // SetEncoderLocationNil sets the value for EncoderLocation to be an explicit nil
 func (o *SystemInfo) SetEncoderLocationNil() {
 	o.EncoderLocation.Set(nil)
@@ -1172,6 +1189,7 @@ func (o *SystemInfo) HasSystemArchitecture() bool {
 func (o *SystemInfo) SetSystemArchitecture(v string) {
 	o.SystemArchitecture.Set(&v)
 }
+
 // SetSystemArchitectureNil sets the value for SystemArchitecture to be an explicit nil
 func (o *SystemInfo) SetSystemArchitectureNil() {
 	o.SystemArchitecture.Set(nil)
@@ -1183,7 +1201,7 @@ func (o *SystemInfo) UnsetSystemArchitecture() {
 }
 
 func (o SystemInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1311,5 +1329,3 @@ func (v *NullableSystemInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

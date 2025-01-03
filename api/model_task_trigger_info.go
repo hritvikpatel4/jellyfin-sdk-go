@@ -80,6 +80,7 @@ func (o *TaskTriggerInfo) HasType() bool {
 func (o *TaskTriggerInfo) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *TaskTriggerInfo) SetTypeNil() {
 	o.Type.Set(nil)
@@ -122,6 +123,7 @@ func (o *TaskTriggerInfo) HasTimeOfDayTicks() bool {
 func (o *TaskTriggerInfo) SetTimeOfDayTicks(v int64) {
 	o.TimeOfDayTicks.Set(&v)
 }
+
 // SetTimeOfDayTicksNil sets the value for TimeOfDayTicks to be an explicit nil
 func (o *TaskTriggerInfo) SetTimeOfDayTicksNil() {
 	o.TimeOfDayTicks.Set(nil)
@@ -164,6 +166,7 @@ func (o *TaskTriggerInfo) HasIntervalTicks() bool {
 func (o *TaskTriggerInfo) SetIntervalTicks(v int64) {
 	o.IntervalTicks.Set(&v)
 }
+
 // SetIntervalTicksNil sets the value for IntervalTicks to be an explicit nil
 func (o *TaskTriggerInfo) SetIntervalTicksNil() {
 	o.IntervalTicks.Set(nil)
@@ -206,6 +209,7 @@ func (o *TaskTriggerInfo) HasDayOfWeek() bool {
 func (o *TaskTriggerInfo) SetDayOfWeek(v DayOfWeek) {
 	o.DayOfWeek.Set(&v)
 }
+
 // SetDayOfWeekNil sets the value for DayOfWeek to be an explicit nil
 func (o *TaskTriggerInfo) SetDayOfWeekNil() {
 	o.DayOfWeek.Set(nil)
@@ -248,6 +252,7 @@ func (o *TaskTriggerInfo) HasMaxRuntimeTicks() bool {
 func (o *TaskTriggerInfo) SetMaxRuntimeTicks(v int64) {
 	o.MaxRuntimeTicks.Set(&v)
 }
+
 // SetMaxRuntimeTicksNil sets the value for MaxRuntimeTicks to be an explicit nil
 func (o *TaskTriggerInfo) SetMaxRuntimeTicksNil() {
 	o.MaxRuntimeTicks.Set(nil)
@@ -259,7 +264,7 @@ func (o *TaskTriggerInfo) UnsetMaxRuntimeTicks() {
 }
 
 func (o TaskTriggerInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -321,5 +326,3 @@ func (v *NullableTaskTriggerInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,14 +20,14 @@ type ItemFilter string
 
 // List of ItemFilter
 const (
-	ITEMFILTER_IS_FOLDER ItemFilter = "IsFolder"
-	ITEMFILTER_IS_NOT_FOLDER ItemFilter = "IsNotFolder"
-	ITEMFILTER_IS_UNPLAYED ItemFilter = "IsUnplayed"
-	ITEMFILTER_IS_PLAYED ItemFilter = "IsPlayed"
-	ITEMFILTER_IS_FAVORITE ItemFilter = "IsFavorite"
-	ITEMFILTER_IS_RESUMABLE ItemFilter = "IsResumable"
-	ITEMFILTER_LIKES ItemFilter = "Likes"
-	ITEMFILTER_DISLIKES ItemFilter = "Dislikes"
+	ITEMFILTER_IS_FOLDER            ItemFilter = "IsFolder"
+	ITEMFILTER_IS_NOT_FOLDER        ItemFilter = "IsNotFolder"
+	ITEMFILTER_IS_UNPLAYED          ItemFilter = "IsUnplayed"
+	ITEMFILTER_IS_PLAYED            ItemFilter = "IsPlayed"
+	ITEMFILTER_IS_FAVORITE          ItemFilter = "IsFavorite"
+	ITEMFILTER_IS_RESUMABLE         ItemFilter = "IsResumable"
+	ITEMFILTER_LIKES                ItemFilter = "Likes"
+	ITEMFILTER_DISLIKES             ItemFilter = "Dislikes"
 	ITEMFILTER_IS_FAVORITE_OR_LIKES ItemFilter = "IsFavoriteOrLikes"
 )
 
@@ -122,4 +122,3 @@ func (v *NullableItemFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

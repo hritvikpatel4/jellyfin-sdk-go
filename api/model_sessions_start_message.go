@@ -74,6 +74,7 @@ func (o *SessionsStartMessage) HasData() bool {
 func (o *SessionsStartMessage) SetData(v string) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *SessionsStartMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -117,7 +118,7 @@ func (o *SessionsStartMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o SessionsStartMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableSessionsStartMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

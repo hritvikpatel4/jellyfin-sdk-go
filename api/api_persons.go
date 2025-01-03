@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type PersonsAPI interface {
 
 	/*
-	GetPerson Get person by name.
+		GetPerson Get person by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Person name.
-	@return ApiGetPersonRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Person name.
+		@return ApiGetPersonRequest
 	*/
 	GetPerson(ctx context.Context, name string) ApiGetPersonRequest
 
@@ -37,10 +36,10 @@ type PersonsAPI interface {
 	GetPersonExecute(r ApiGetPersonRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetPersons Gets all persons.
+		GetPersons Gets all persons.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPersonsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPersonsRequest
 	*/
 	GetPersons(ctx context.Context) ApiGetPersonsRequest
 
@@ -53,10 +52,10 @@ type PersonsAPI interface {
 type PersonsAPIService service
 
 type ApiGetPersonRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService PersonsAPI
-	name string
-	userId *string
+	name       string
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -72,26 +71,27 @@ func (r ApiGetPersonRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetPerson Get person by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Person name.
- @return ApiGetPersonRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Person name.
+	@return ApiGetPersonRequest
 */
 func (a *PersonsAPIService) GetPerson(ctx context.Context, name string) ApiGetPersonRequest {
 	return ApiGetPersonRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonsAPIService.GetPerson")
@@ -169,8 +169,8 @@ func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*BaseItemDt
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -189,21 +189,21 @@ func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*BaseItemDt
 }
 
 type ApiGetPersonsRequest struct {
-	ctx context.Context
-	ApiService PersonsAPI
-	limit *int32
-	searchTerm *string
-	fields *[]ItemFields
-	filters *[]ItemFilter
-	isFavorite *bool
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	ctx                context.Context
+	ApiService         PersonsAPI
+	limit              *int32
+	searchTerm         *string
+	fields             *[]ItemFields
+	filters            *[]ItemFilter
+	isFavorite         *bool
+	enableUserData     *bool
+	imageTypeLimit     *int32
+	enableImageTypes   *[]ImageType
 	excludePersonTypes *[]string
-	personTypes *[]string
-	appearsInItemId *string
-	userId *string
-	enableImages *bool
+	personTypes        *[]string
+	appearsInItemId    *string
+	userId             *string
+	enableImages       *bool
 }
 
 // Optional. The maximum number of records to return.
@@ -291,24 +291,25 @@ func (r ApiGetPersonsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response
 /*
 GetPersons Gets all persons.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPersonsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPersonsRequest
 */
 func (a *PersonsAPIService) GetPersons(ctx context.Context) ApiGetPersonsRequest {
 	return ApiGetPersonsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *PersonsAPIService) GetPersonsExecute(r ApiGetPersonsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonsAPIService.GetPersons")

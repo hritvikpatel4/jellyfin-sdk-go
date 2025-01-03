@@ -19,10 +19,10 @@ var _ MappedNullable = &TunerChannelMapping{}
 
 // TunerChannelMapping struct for TunerChannelMapping
 type TunerChannelMapping struct {
-	Name NullableString `json:"Name,omitempty"`
+	Name                NullableString `json:"Name,omitempty"`
 	ProviderChannelName NullableString `json:"ProviderChannelName,omitempty"`
-	ProviderChannelId NullableString `json:"ProviderChannelId,omitempty"`
-	Id NullableString `json:"Id,omitempty"`
+	ProviderChannelId   NullableString `json:"ProviderChannelId,omitempty"`
+	Id                  NullableString `json:"Id,omitempty"`
 }
 
 // NewTunerChannelMapping instantiates a new TunerChannelMapping object
@@ -74,6 +74,7 @@ func (o *TunerChannelMapping) HasName() bool {
 func (o *TunerChannelMapping) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *TunerChannelMapping) SetNameNil() {
 	o.Name.Set(nil)
@@ -116,6 +117,7 @@ func (o *TunerChannelMapping) HasProviderChannelName() bool {
 func (o *TunerChannelMapping) SetProviderChannelName(v string) {
 	o.ProviderChannelName.Set(&v)
 }
+
 // SetProviderChannelNameNil sets the value for ProviderChannelName to be an explicit nil
 func (o *TunerChannelMapping) SetProviderChannelNameNil() {
 	o.ProviderChannelName.Set(nil)
@@ -158,6 +160,7 @@ func (o *TunerChannelMapping) HasProviderChannelId() bool {
 func (o *TunerChannelMapping) SetProviderChannelId(v string) {
 	o.ProviderChannelId.Set(&v)
 }
+
 // SetProviderChannelIdNil sets the value for ProviderChannelId to be an explicit nil
 func (o *TunerChannelMapping) SetProviderChannelIdNil() {
 	o.ProviderChannelId.Set(nil)
@@ -200,6 +203,7 @@ func (o *TunerChannelMapping) HasId() bool {
 func (o *TunerChannelMapping) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *TunerChannelMapping) SetIdNil() {
 	o.Id.Set(nil)
@@ -211,7 +215,7 @@ func (o *TunerChannelMapping) UnsetId() {
 }
 
 func (o TunerChannelMapping) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,5 +274,3 @@ func (v *NullableTunerChannelMapping) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

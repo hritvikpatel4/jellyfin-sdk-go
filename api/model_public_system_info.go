@@ -85,6 +85,7 @@ func (o *PublicSystemInfo) HasLocalAddress() bool {
 func (o *PublicSystemInfo) SetLocalAddress(v string) {
 	o.LocalAddress.Set(&v)
 }
+
 // SetLocalAddressNil sets the value for LocalAddress to be an explicit nil
 func (o *PublicSystemInfo) SetLocalAddressNil() {
 	o.LocalAddress.Set(nil)
@@ -127,6 +128,7 @@ func (o *PublicSystemInfo) HasServerName() bool {
 func (o *PublicSystemInfo) SetServerName(v string) {
 	o.ServerName.Set(&v)
 }
+
 // SetServerNameNil sets the value for ServerName to be an explicit nil
 func (o *PublicSystemInfo) SetServerNameNil() {
 	o.ServerName.Set(nil)
@@ -169,6 +171,7 @@ func (o *PublicSystemInfo) HasVersion() bool {
 func (o *PublicSystemInfo) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *PublicSystemInfo) SetVersionNil() {
 	o.Version.Set(nil)
@@ -211,6 +214,7 @@ func (o *PublicSystemInfo) HasProductName() bool {
 func (o *PublicSystemInfo) SetProductName(v string) {
 	o.ProductName.Set(&v)
 }
+
 // SetProductNameNil sets the value for ProductName to be an explicit nil
 func (o *PublicSystemInfo) SetProductNameNil() {
 	o.ProductName.Set(nil)
@@ -256,6 +260,7 @@ func (o *PublicSystemInfo) HasOperatingSystem() bool {
 func (o *PublicSystemInfo) SetOperatingSystem(v string) {
 	o.OperatingSystem.Set(&v)
 }
+
 // SetOperatingSystemNil sets the value for OperatingSystem to be an explicit nil
 func (o *PublicSystemInfo) SetOperatingSystemNil() {
 	o.OperatingSystem.Set(nil)
@@ -298,6 +303,7 @@ func (o *PublicSystemInfo) HasId() bool {
 func (o *PublicSystemInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *PublicSystemInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -340,6 +346,7 @@ func (o *PublicSystemInfo) HasStartupWizardCompleted() bool {
 func (o *PublicSystemInfo) SetStartupWizardCompleted(v bool) {
 	o.StartupWizardCompleted.Set(&v)
 }
+
 // SetStartupWizardCompletedNil sets the value for StartupWizardCompleted to be an explicit nil
 func (o *PublicSystemInfo) SetStartupWizardCompletedNil() {
 	o.StartupWizardCompleted.Set(nil)
@@ -351,7 +358,7 @@ func (o *PublicSystemInfo) UnsetStartupWizardCompleted() {
 }
 
 func (o PublicSystemInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,5 +426,3 @@ func (v *NullablePublicSystemInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

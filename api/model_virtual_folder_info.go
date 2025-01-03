@@ -25,13 +25,13 @@ type VirtualFolderInfo struct {
 	Locations []string `json:"Locations,omitempty"`
 	// Gets or sets the type of the collection.
 	CollectionType NullableCollectionTypeOptions `json:"CollectionType,omitempty"`
-	LibraryOptions NullableLibraryOptions `json:"LibraryOptions,omitempty"`
+	LibraryOptions NullableLibraryOptions        `json:"LibraryOptions,omitempty"`
 	// Gets or sets the item identifier.
 	ItemId NullableString `json:"ItemId,omitempty"`
 	// Gets or sets the primary image item identifier.
-	PrimaryImageItemId NullableString `json:"PrimaryImageItemId,omitempty"`
-	RefreshProgress NullableFloat64 `json:"RefreshProgress,omitempty"`
-	RefreshStatus NullableString `json:"RefreshStatus,omitempty"`
+	PrimaryImageItemId NullableString  `json:"PrimaryImageItemId,omitempty"`
+	RefreshProgress    NullableFloat64 `json:"RefreshProgress,omitempty"`
+	RefreshStatus      NullableString  `json:"RefreshStatus,omitempty"`
 }
 
 // NewVirtualFolderInfo instantiates a new VirtualFolderInfo object
@@ -83,6 +83,7 @@ func (o *VirtualFolderInfo) HasName() bool {
 func (o *VirtualFolderInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *VirtualFolderInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -158,6 +159,7 @@ func (o *VirtualFolderInfo) HasCollectionType() bool {
 func (o *VirtualFolderInfo) SetCollectionType(v CollectionTypeOptions) {
 	o.CollectionType.Set(&v)
 }
+
 // SetCollectionTypeNil sets the value for CollectionType to be an explicit nil
 func (o *VirtualFolderInfo) SetCollectionTypeNil() {
 	o.CollectionType.Set(nil)
@@ -200,6 +202,7 @@ func (o *VirtualFolderInfo) HasLibraryOptions() bool {
 func (o *VirtualFolderInfo) SetLibraryOptions(v LibraryOptions) {
 	o.LibraryOptions.Set(&v)
 }
+
 // SetLibraryOptionsNil sets the value for LibraryOptions to be an explicit nil
 func (o *VirtualFolderInfo) SetLibraryOptionsNil() {
 	o.LibraryOptions.Set(nil)
@@ -242,6 +245,7 @@ func (o *VirtualFolderInfo) HasItemId() bool {
 func (o *VirtualFolderInfo) SetItemId(v string) {
 	o.ItemId.Set(&v)
 }
+
 // SetItemIdNil sets the value for ItemId to be an explicit nil
 func (o *VirtualFolderInfo) SetItemIdNil() {
 	o.ItemId.Set(nil)
@@ -284,6 +288,7 @@ func (o *VirtualFolderInfo) HasPrimaryImageItemId() bool {
 func (o *VirtualFolderInfo) SetPrimaryImageItemId(v string) {
 	o.PrimaryImageItemId.Set(&v)
 }
+
 // SetPrimaryImageItemIdNil sets the value for PrimaryImageItemId to be an explicit nil
 func (o *VirtualFolderInfo) SetPrimaryImageItemIdNil() {
 	o.PrimaryImageItemId.Set(nil)
@@ -326,6 +331,7 @@ func (o *VirtualFolderInfo) HasRefreshProgress() bool {
 func (o *VirtualFolderInfo) SetRefreshProgress(v float64) {
 	o.RefreshProgress.Set(&v)
 }
+
 // SetRefreshProgressNil sets the value for RefreshProgress to be an explicit nil
 func (o *VirtualFolderInfo) SetRefreshProgressNil() {
 	o.RefreshProgress.Set(nil)
@@ -368,6 +374,7 @@ func (o *VirtualFolderInfo) HasRefreshStatus() bool {
 func (o *VirtualFolderInfo) SetRefreshStatus(v string) {
 	o.RefreshStatus.Set(&v)
 }
+
 // SetRefreshStatusNil sets the value for RefreshStatus to be an explicit nil
 func (o *VirtualFolderInfo) SetRefreshStatusNil() {
 	o.RefreshStatus.Set(nil)
@@ -379,7 +386,7 @@ func (o *VirtualFolderInfo) UnsetRefreshStatus() {
 }
 
 func (o VirtualFolderInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -450,5 +457,3 @@ func (v *NullableVirtualFolderInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

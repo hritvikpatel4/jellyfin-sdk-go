@@ -16,18 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type ImageAPI interface {
 
 	/*
-	DeleteCustomSplashscreen Delete a custom splashscreen.
+		DeleteCustomSplashscreen Delete a custom splashscreen.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteCustomSplashscreenRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeleteCustomSplashscreenRequest
 	*/
 	DeleteCustomSplashscreen(ctx context.Context) ApiDeleteCustomSplashscreenRequest
 
@@ -35,12 +34,12 @@ type ImageAPI interface {
 	DeleteCustomSplashscreenExecute(r ApiDeleteCustomSplashscreenRequest) (*http.Response, error)
 
 	/*
-	DeleteItemImage Delete an item's image.
+		DeleteItemImage Delete an item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@return ApiDeleteItemImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@return ApiDeleteItemImageRequest
 	*/
 	DeleteItemImage(ctx context.Context, itemId string, imageType ImageType) ApiDeleteItemImageRequest
 
@@ -48,13 +47,13 @@ type ImageAPI interface {
 	DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*http.Response, error)
 
 	/*
-	DeleteItemImageByIndex Delete an item's image.
+		DeleteItemImageByIndex Delete an item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param imageIndex The image index.
-	@return ApiDeleteItemImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param imageIndex The image index.
+		@return ApiDeleteItemImageByIndexRequest
 	*/
 	DeleteItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiDeleteItemImageByIndexRequest
 
@@ -62,10 +61,10 @@ type ImageAPI interface {
 	DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIndexRequest) (*http.Response, error)
 
 	/*
-	DeleteUserImage Delete the user's image.
+		DeleteUserImage Delete the user's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteUserImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiDeleteUserImageRequest
 	*/
 	DeleteUserImage(ctx context.Context) ApiDeleteUserImageRequest
 
@@ -73,13 +72,13 @@ type ImageAPI interface {
 	DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*http.Response, error)
 
 	/*
-	GetArtistImage Get artist image by name.
+		GetArtistImage Get artist image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Artist name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiGetArtistImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Artist name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiGetArtistImageRequest
 	*/
 	GetArtistImage(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetArtistImageRequest
 
@@ -88,12 +87,12 @@ type ImageAPI interface {
 	GetArtistImageExecute(r ApiGetArtistImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetGenreImage Get genre image by name.
+		GetGenreImage Get genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Genre name.
-	@param imageType Image type.
-	@return ApiGetGenreImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Genre name.
+		@param imageType Image type.
+		@return ApiGetGenreImageRequest
 	*/
 	GetGenreImage(ctx context.Context, name string, imageType ImageType) ApiGetGenreImageRequest
 
@@ -102,13 +101,13 @@ type ImageAPI interface {
 	GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetGenreImageByIndex Get genre image by name.
+		GetGenreImageByIndex Get genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Genre name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiGetGenreImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Genre name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiGetGenreImageByIndexRequest
 	*/
 	GetGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetGenreImageByIndexRequest
 
@@ -117,12 +116,12 @@ type ImageAPI interface {
 	GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetItemImage Gets the item's image.
+		GetItemImage Gets the item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@return ApiGetItemImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@return ApiGetItemImageRequest
 	*/
 	GetItemImage(ctx context.Context, itemId string, imageType ImageType) ApiGetItemImageRequest
 
@@ -131,19 +130,19 @@ type ImageAPI interface {
 	GetItemImageExecute(r ApiGetItemImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetItemImage2 Gets the item's image.
+		GetItemImage2 Gets the item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param maxWidth The maximum image width to return.
-	@param maxHeight The maximum image height to return.
-	@param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
-	@param format Determines the output format of the image - original,gif,jpg,png.
-	@param percentPlayed Optional. Percent to render for the percent played overlay.
-	@param unplayedCount Optional. Unplayed count overlay to render.
-	@param imageIndex Image index.
-	@return ApiGetItemImage2Request
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param maxWidth The maximum image width to return.
+		@param maxHeight The maximum image height to return.
+		@param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
+		@param format Determines the output format of the image - original,gif,jpg,png.
+		@param percentPlayed Optional. Percent to render for the percent played overlay.
+		@param unplayedCount Optional. Unplayed count overlay to render.
+		@param imageIndex Image index.
+		@return ApiGetItemImage2Request
 	*/
 	GetItemImage2(ctx context.Context, itemId string, imageType ImageType, maxWidth int32, maxHeight int32, tag string, format ImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiGetItemImage2Request
 
@@ -152,13 +151,13 @@ type ImageAPI interface {
 	GetItemImage2Execute(r ApiGetItemImage2Request) (*os.File, *http.Response, error)
 
 	/*
-	GetItemImageByIndex Gets the item's image.
+		GetItemImageByIndex Gets the item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiGetItemImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiGetItemImageByIndexRequest
 	*/
 	GetItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiGetItemImageByIndexRequest
 
@@ -167,11 +166,11 @@ type ImageAPI interface {
 	GetItemImageByIndexExecute(r ApiGetItemImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetItemImageInfos Get item image infos.
+		GetItemImageInfos Get item image infos.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiGetItemImageInfosRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiGetItemImageInfosRequest
 	*/
 	GetItemImageInfos(ctx context.Context, itemId string) ApiGetItemImageInfosRequest
 
@@ -180,12 +179,12 @@ type ImageAPI interface {
 	GetItemImageInfosExecute(r ApiGetItemImageInfosRequest) ([]ImageInfo, *http.Response, error)
 
 	/*
-	GetMusicGenreImage Get music genre image by name.
+		GetMusicGenreImage Get music genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Music genre name.
-	@param imageType Image type.
-	@return ApiGetMusicGenreImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Music genre name.
+		@param imageType Image type.
+		@return ApiGetMusicGenreImageRequest
 	*/
 	GetMusicGenreImage(ctx context.Context, name string, imageType ImageType) ApiGetMusicGenreImageRequest
 
@@ -194,13 +193,13 @@ type ImageAPI interface {
 	GetMusicGenreImageExecute(r ApiGetMusicGenreImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetMusicGenreImageByIndex Get music genre image by name.
+		GetMusicGenreImageByIndex Get music genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Music genre name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiGetMusicGenreImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Music genre name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiGetMusicGenreImageByIndexRequest
 	*/
 	GetMusicGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetMusicGenreImageByIndexRequest
 
@@ -209,12 +208,12 @@ type ImageAPI interface {
 	GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetPersonImage Get person image by name.
+		GetPersonImage Get person image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Person name.
-	@param imageType Image type.
-	@return ApiGetPersonImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Person name.
+		@param imageType Image type.
+		@return ApiGetPersonImageRequest
 	*/
 	GetPersonImage(ctx context.Context, name string, imageType ImageType) ApiGetPersonImageRequest
 
@@ -223,13 +222,13 @@ type ImageAPI interface {
 	GetPersonImageExecute(r ApiGetPersonImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetPersonImageByIndex Get person image by name.
+		GetPersonImageByIndex Get person image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Person name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiGetPersonImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Person name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiGetPersonImageByIndexRequest
 	*/
 	GetPersonImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetPersonImageByIndexRequest
 
@@ -238,10 +237,10 @@ type ImageAPI interface {
 	GetPersonImageByIndexExecute(r ApiGetPersonImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetSplashscreen Generates or gets the splashscreen.
+		GetSplashscreen Generates or gets the splashscreen.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSplashscreenRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSplashscreenRequest
 	*/
 	GetSplashscreen(ctx context.Context) ApiGetSplashscreenRequest
 
@@ -250,12 +249,12 @@ type ImageAPI interface {
 	GetSplashscreenExecute(r ApiGetSplashscreenRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetStudioImage Get studio image by name.
+		GetStudioImage Get studio image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Studio name.
-	@param imageType Image type.
-	@return ApiGetStudioImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Studio name.
+		@param imageType Image type.
+		@return ApiGetStudioImageRequest
 	*/
 	GetStudioImage(ctx context.Context, name string, imageType ImageType) ApiGetStudioImageRequest
 
@@ -264,13 +263,13 @@ type ImageAPI interface {
 	GetStudioImageExecute(r ApiGetStudioImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetStudioImageByIndex Get studio image by name.
+		GetStudioImageByIndex Get studio image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Studio name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiGetStudioImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Studio name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiGetStudioImageByIndexRequest
 	*/
 	GetStudioImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetStudioImageByIndexRequest
 
@@ -279,10 +278,10 @@ type ImageAPI interface {
 	GetStudioImageByIndexExecute(r ApiGetStudioImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetUserImage Get user profile image.
+		GetUserImage Get user profile image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUserImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetUserImageRequest
 	*/
 	GetUserImage(ctx context.Context) ApiGetUserImageRequest
 
@@ -291,13 +290,13 @@ type ImageAPI interface {
 	GetUserImageExecute(r ApiGetUserImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadArtistImage Get artist image by name.
+		HeadArtistImage Get artist image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Artist name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiHeadArtistImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Artist name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiHeadArtistImageRequest
 	*/
 	HeadArtistImage(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadArtistImageRequest
 
@@ -306,12 +305,12 @@ type ImageAPI interface {
 	HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadGenreImage Get genre image by name.
+		HeadGenreImage Get genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Genre name.
-	@param imageType Image type.
-	@return ApiHeadGenreImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Genre name.
+		@param imageType Image type.
+		@return ApiHeadGenreImageRequest
 	*/
 	HeadGenreImage(ctx context.Context, name string, imageType ImageType) ApiHeadGenreImageRequest
 
@@ -320,13 +319,13 @@ type ImageAPI interface {
 	HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadGenreImageByIndex Get genre image by name.
+		HeadGenreImageByIndex Get genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Genre name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiHeadGenreImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Genre name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiHeadGenreImageByIndexRequest
 	*/
 	HeadGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadGenreImageByIndexRequest
 
@@ -335,12 +334,12 @@ type ImageAPI interface {
 	HeadGenreImageByIndexExecute(r ApiHeadGenreImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadItemImage Gets the item's image.
+		HeadItemImage Gets the item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@return ApiHeadItemImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@return ApiHeadItemImageRequest
 	*/
 	HeadItemImage(ctx context.Context, itemId string, imageType ImageType) ApiHeadItemImageRequest
 
@@ -349,19 +348,19 @@ type ImageAPI interface {
 	HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadItemImage2 Gets the item's image.
+		HeadItemImage2 Gets the item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param maxWidth The maximum image width to return.
-	@param maxHeight The maximum image height to return.
-	@param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
-	@param format Determines the output format of the image - original,gif,jpg,png.
-	@param percentPlayed Optional. Percent to render for the percent played overlay.
-	@param unplayedCount Optional. Unplayed count overlay to render.
-	@param imageIndex Image index.
-	@return ApiHeadItemImage2Request
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param maxWidth The maximum image width to return.
+		@param maxHeight The maximum image height to return.
+		@param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
+		@param format Determines the output format of the image - original,gif,jpg,png.
+		@param percentPlayed Optional. Percent to render for the percent played overlay.
+		@param unplayedCount Optional. Unplayed count overlay to render.
+		@param imageIndex Image index.
+		@return ApiHeadItemImage2Request
 	*/
 	HeadItemImage2(ctx context.Context, itemId string, imageType ImageType, maxWidth int32, maxHeight int32, tag string, format ImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiHeadItemImage2Request
 
@@ -370,13 +369,13 @@ type ImageAPI interface {
 	HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os.File, *http.Response, error)
 
 	/*
-	HeadItemImageByIndex Gets the item's image.
+		HeadItemImageByIndex Gets the item's image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiHeadItemImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiHeadItemImageByIndexRequest
 	*/
 	HeadItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiHeadItemImageByIndexRequest
 
@@ -385,12 +384,12 @@ type ImageAPI interface {
 	HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadMusicGenreImage Get music genre image by name.
+		HeadMusicGenreImage Get music genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Music genre name.
-	@param imageType Image type.
-	@return ApiHeadMusicGenreImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Music genre name.
+		@param imageType Image type.
+		@return ApiHeadMusicGenreImageRequest
 	*/
 	HeadMusicGenreImage(ctx context.Context, name string, imageType ImageType) ApiHeadMusicGenreImageRequest
 
@@ -399,13 +398,13 @@ type ImageAPI interface {
 	HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadMusicGenreImageByIndex Get music genre image by name.
+		HeadMusicGenreImageByIndex Get music genre image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Music genre name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiHeadMusicGenreImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Music genre name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiHeadMusicGenreImageByIndexRequest
 	*/
 	HeadMusicGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadMusicGenreImageByIndexRequest
 
@@ -414,12 +413,12 @@ type ImageAPI interface {
 	HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadPersonImage Get person image by name.
+		HeadPersonImage Get person image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Person name.
-	@param imageType Image type.
-	@return ApiHeadPersonImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Person name.
+		@param imageType Image type.
+		@return ApiHeadPersonImageRequest
 	*/
 	HeadPersonImage(ctx context.Context, name string, imageType ImageType) ApiHeadPersonImageRequest
 
@@ -428,13 +427,13 @@ type ImageAPI interface {
 	HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadPersonImageByIndex Get person image by name.
+		HeadPersonImageByIndex Get person image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Person name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiHeadPersonImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Person name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiHeadPersonImageByIndexRequest
 	*/
 	HeadPersonImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadPersonImageByIndexRequest
 
@@ -443,12 +442,12 @@ type ImageAPI interface {
 	HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadStudioImage Get studio image by name.
+		HeadStudioImage Get studio image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Studio name.
-	@param imageType Image type.
-	@return ApiHeadStudioImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Studio name.
+		@param imageType Image type.
+		@return ApiHeadStudioImageRequest
 	*/
 	HeadStudioImage(ctx context.Context, name string, imageType ImageType) ApiHeadStudioImageRequest
 
@@ -457,13 +456,13 @@ type ImageAPI interface {
 	HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadStudioImageByIndex Get studio image by name.
+		HeadStudioImageByIndex Get studio image by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Studio name.
-	@param imageType Image type.
-	@param imageIndex Image index.
-	@return ApiHeadStudioImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Studio name.
+		@param imageType Image type.
+		@param imageIndex Image index.
+		@return ApiHeadStudioImageByIndexRequest
 	*/
 	HeadStudioImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadStudioImageByIndexRequest
 
@@ -472,10 +471,10 @@ type ImageAPI interface {
 	HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIndexRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadUserImage Get user profile image.
+		HeadUserImage Get user profile image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiHeadUserImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiHeadUserImageRequest
 	*/
 	HeadUserImage(ctx context.Context) ApiHeadUserImageRequest
 
@@ -484,10 +483,10 @@ type ImageAPI interface {
 	HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.File, *http.Response, error)
 
 	/*
-	PostUserImage Sets the user image.
+		PostUserImage Sets the user image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostUserImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostUserImageRequest
 	*/
 	PostUserImage(ctx context.Context) ApiPostUserImageRequest
 
@@ -495,12 +494,12 @@ type ImageAPI interface {
 	PostUserImageExecute(r ApiPostUserImageRequest) (*http.Response, error)
 
 	/*
-	SetItemImage Set item image.
+		SetItemImage Set item image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@return ApiSetItemImageRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@return ApiSetItemImageRequest
 	*/
 	SetItemImage(ctx context.Context, itemId string, imageType ImageType) ApiSetItemImageRequest
 
@@ -508,13 +507,13 @@ type ImageAPI interface {
 	SetItemImageExecute(r ApiSetItemImageRequest) (*http.Response, error)
 
 	/*
-	SetItemImageByIndex Set item image.
+		SetItemImageByIndex Set item image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param imageIndex (Unused) Image index.
-	@return ApiSetItemImageByIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param imageIndex (Unused) Image index.
+		@return ApiSetItemImageByIndexRequest
 	*/
 	SetItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiSetItemImageByIndexRequest
 
@@ -522,13 +521,13 @@ type ImageAPI interface {
 	SetItemImageByIndexExecute(r ApiSetItemImageByIndexRequest) (*http.Response, error)
 
 	/*
-	UpdateItemImageIndex Updates the index for an item image.
+		UpdateItemImageIndex Updates the index for an item image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@param imageType Image type.
-	@param imageIndex Old image index.
-	@return ApiUpdateItemImageIndexRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@param imageType Image type.
+		@param imageIndex Old image index.
+		@return ApiUpdateItemImageIndexRequest
 	*/
 	UpdateItemImageIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiUpdateItemImageIndexRequest
 
@@ -536,10 +535,10 @@ type ImageAPI interface {
 	UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexRequest) (*http.Response, error)
 
 	/*
-	UploadCustomSplashscreen Uploads a custom splashscreen.  The body is expected to the image contents base64 encoded.
+		UploadCustomSplashscreen Uploads a custom splashscreen.  The body is expected to the image contents base64 encoded.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUploadCustomSplashscreenRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUploadCustomSplashscreenRequest
 	*/
 	UploadCustomSplashscreen(ctx context.Context) ApiUploadCustomSplashscreenRequest
 
@@ -551,7 +550,7 @@ type ImageAPI interface {
 type ImageAPIService service
 
 type ApiDeleteCustomSplashscreenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
 }
 
@@ -562,22 +561,22 @@ func (r ApiDeleteCustomSplashscreenRequest) Execute() (*http.Response, error) {
 /*
 DeleteCustomSplashscreen Delete a custom splashscreen.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteCustomSplashscreenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeleteCustomSplashscreenRequest
 */
 func (a *ImageAPIService) DeleteCustomSplashscreen(ctx context.Context) ApiDeleteCustomSplashscreenRequest {
 	return ApiDeleteCustomSplashscreenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ImageAPIService) DeleteCustomSplashscreenExecute(r ApiDeleteCustomSplashscreenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.DeleteCustomSplashscreen")
@@ -651,10 +650,10 @@ func (a *ImageAPIService) DeleteCustomSplashscreenExecute(r ApiDeleteCustomSplas
 }
 
 type ApiDeleteItemImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	itemId string
-	imageType ImageType
+	itemId     string
+	imageType  ImageType
 	imageIndex *int32
 }
 
@@ -671,26 +670,26 @@ func (r ApiDeleteItemImageRequest) Execute() (*http.Response, error) {
 /*
 DeleteItemImage Delete an item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @return ApiDeleteItemImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@return ApiDeleteItemImageRequest
 */
 func (a *ImageAPIService) DeleteItemImage(ctx context.Context, itemId string, imageType ImageType) ApiDeleteItemImageRequest {
 	return ApiDeleteItemImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
 func (a *ImageAPIService) DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.DeleteItemImage")
@@ -769,8 +768,8 @@ func (a *ImageAPIService) DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -780,10 +779,10 @@ func (a *ImageAPIService) DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*
 }
 
 type ApiDeleteItemImageByIndexRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	itemId string
-	imageType ImageType
+	itemId     string
+	imageType  ImageType
 	imageIndex int32
 }
 
@@ -794,18 +793,18 @@ func (r ApiDeleteItemImageByIndexRequest) Execute() (*http.Response, error) {
 /*
 DeleteItemImageByIndex Delete an item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param imageIndex The image index.
- @return ApiDeleteItemImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param imageIndex The image index.
+	@return ApiDeleteItemImageByIndexRequest
 */
 func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiDeleteItemImageByIndexRequest {
 	return ApiDeleteItemImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
@@ -813,9 +812,9 @@ func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId str
 // Execute executes the request
 func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIndexRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.DeleteItemImageByIndex")
@@ -892,8 +891,8 @@ func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIn
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -903,9 +902,9 @@ func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIn
 }
 
 type ApiDeleteUserImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	userId *string
+	userId     *string
 }
 
 // User Id.
@@ -921,22 +920,22 @@ func (r ApiDeleteUserImageRequest) Execute() (*http.Response, error) {
 /*
 DeleteUserImage Delete the user's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteUserImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeleteUserImageRequest
 */
 func (a *ImageAPIService) DeleteUserImage(ctx context.Context) ApiDeleteUserImageRequest {
 	return ApiDeleteUserImageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ImageAPIService) DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.DeleteUserImage")
@@ -1013,8 +1012,8 @@ func (a *ImageAPIService) DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1024,23 +1023,23 @@ func (a *ImageAPIService) DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*
 }
 
 type ApiGetArtistImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -1136,30 +1135,31 @@ func (r ApiGetArtistImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetArtistImage Get artist image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Artist name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiGetArtistImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Artist name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiGetArtistImageRequest
 */
 func (a *ImageAPIService) GetArtistImage(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetArtistImageRequest {
 	return ApiGetArtistImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetArtistImageExecute(r ApiGetArtistImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetArtistImage")
@@ -1264,8 +1264,8 @@ func (a *ImageAPIService) GetArtistImageExecute(r ApiGetArtistImageRequest) (*os
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1283,25 +1283,25 @@ func (a *ImageAPIService) GetArtistImageExecute(r ApiGetArtistImageRequest) (*os
 }
 
 type ApiGetGenreImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -1401,28 +1401,29 @@ func (r ApiGetGenreImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetGenreImage Get genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Genre name.
- @param imageType Image type.
- @return ApiGetGenreImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Genre name.
+	@param imageType Image type.
+	@return ApiGetGenreImageRequest
 */
 func (a *ImageAPIService) GetGenreImage(ctx context.Context, name string, imageType ImageType) ApiGetGenreImageRequest {
 	return ApiGetGenreImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetGenreImage")
@@ -1529,8 +1530,8 @@ func (a *ImageAPIService) GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.F
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1548,23 +1549,23 @@ func (a *ImageAPIService) GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.F
 }
 
 type ApiGetGenreImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -1660,30 +1661,31 @@ func (r ApiGetGenreImageByIndexRequest) Execute() (*os.File, *http.Response, err
 /*
 GetGenreImageByIndex Get genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Genre name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiGetGenreImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Genre name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiGetGenreImageByIndexRequest
 */
 func (a *ImageAPIService) GetGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetGenreImageByIndexRequest {
 	return ApiGetGenreImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetGenreImageByIndex")
@@ -1788,8 +1790,8 @@ func (a *ImageAPIService) GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1807,25 +1809,25 @@ func (a *ImageAPIService) GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexR
 }
 
 type ApiGetItemImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	maxWidth *int32
-	maxHeight *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	tag *string
-	format *ImageFormat
-	percentPlayed *float64
-	unplayedCount *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	itemId          string
+	imageType       ImageType
+	maxWidth        *int32
+	maxHeight       *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	tag             *string
+	format          *ImageFormat
+	percentPlayed   *float64
+	unplayedCount   *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // The maximum image width to return.
@@ -1925,28 +1927,29 @@ func (r ApiGetItemImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetItemImage Gets the item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @return ApiGetItemImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@return ApiGetItemImageRequest
 */
 func (a *ImageAPIService) GetItemImage(ctx context.Context, itemId string, imageType ImageType) ApiGetItemImageRequest {
 	return ApiGetItemImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetItemImageExecute(r ApiGetItemImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetItemImage")
@@ -2053,8 +2056,8 @@ func (a *ImageAPIService) GetItemImageExecute(r ApiGetItemImageRequest) (*os.Fil
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2072,23 +2075,23 @@ func (a *ImageAPIService) GetItemImageExecute(r ApiGetItemImageRequest) (*os.Fil
 }
 
 type ApiGetItemImage2Request struct {
-	ctx context.Context
-	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	maxWidth int32
-	maxHeight int32
-	tag string
-	format ImageFormat
-	percentPlayed float64
-	unplayedCount int32
-	imageIndex int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	itemId          string
+	imageType       ImageType
+	maxWidth        int32
+	maxHeight       int32
+	tag             string
+	format          ImageFormat
+	percentPlayed   float64
+	unplayedCount   int32
+	imageIndex      int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -2148,42 +2151,43 @@ func (r ApiGetItemImage2Request) Execute() (*os.File, *http.Response, error) {
 /*
 GetItemImage2 Gets the item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param maxWidth The maximum image width to return.
- @param maxHeight The maximum image height to return.
- @param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
- @param format Determines the output format of the image - original,gif,jpg,png.
- @param percentPlayed Optional. Percent to render for the percent played overlay.
- @param unplayedCount Optional. Unplayed count overlay to render.
- @param imageIndex Image index.
- @return ApiGetItemImage2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param maxWidth The maximum image width to return.
+	@param maxHeight The maximum image height to return.
+	@param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
+	@param format Determines the output format of the image - original,gif,jpg,png.
+	@param percentPlayed Optional. Percent to render for the percent played overlay.
+	@param unplayedCount Optional. Unplayed count overlay to render.
+	@param imageIndex Image index.
+	@return ApiGetItemImage2Request
 */
 func (a *ImageAPIService) GetItemImage2(ctx context.Context, itemId string, imageType ImageType, maxWidth int32, maxHeight int32, tag string, format ImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiGetItemImage2Request {
 	return ApiGetItemImage2Request{
-		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
-		maxWidth: maxWidth,
-		maxHeight: maxHeight,
-		tag: tag,
-		format: format,
+		ApiService:    a,
+		ctx:           ctx,
+		itemId:        itemId,
+		imageType:     imageType,
+		maxWidth:      maxWidth,
+		maxHeight:     maxHeight,
+		tag:           tag,
+		format:        format,
 		percentPlayed: percentPlayed,
 		unplayedCount: unplayedCount,
-		imageIndex: imageIndex,
+		imageIndex:    imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetItemImage2Execute(r ApiGetItemImage2Request) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetItemImage2")
@@ -2276,8 +2280,8 @@ func (a *ImageAPIService) GetItemImage2Execute(r ApiGetItemImage2Request) (*os.F
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2295,23 +2299,23 @@ func (a *ImageAPIService) GetItemImage2Execute(r ApiGetItemImage2Request) (*os.F
 }
 
 type ApiGetItemImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	imageIndex int32
-	maxWidth *int32
-	maxHeight *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	tag *string
-	format *ImageFormat
-	percentPlayed *float64
-	unplayedCount *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	itemId          string
+	imageType       ImageType
+	imageIndex      int32
+	maxWidth        *int32
+	maxHeight       *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	tag             *string
+	format          *ImageFormat
+	percentPlayed   *float64
+	unplayedCount   *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -2407,30 +2411,31 @@ func (r ApiGetItemImageByIndexRequest) Execute() (*os.File, *http.Response, erro
 /*
 GetItemImageByIndex Gets the item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiGetItemImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiGetItemImageByIndexRequest
 */
 func (a *ImageAPIService) GetItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiGetItemImageByIndexRequest {
 	return ApiGetItemImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetItemImageByIndexExecute(r ApiGetItemImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetItemImageByIndex")
@@ -2535,8 +2540,8 @@ func (a *ImageAPIService) GetItemImageByIndexExecute(r ApiGetItemImageByIndexReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2554,9 +2559,9 @@ func (a *ImageAPIService) GetItemImageByIndexExecute(r ApiGetItemImageByIndexReq
 }
 
 type ApiGetItemImageInfosRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiGetItemImageInfosRequest) Execute() ([]ImageInfo, *http.Response, error) {
@@ -2566,26 +2571,27 @@ func (r ApiGetItemImageInfosRequest) Execute() ([]ImageInfo, *http.Response, err
 /*
 GetItemImageInfos Get item image infos.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiGetItemImageInfosRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiGetItemImageInfosRequest
 */
 func (a *ImageAPIService) GetItemImageInfos(ctx context.Context, itemId string) ApiGetItemImageInfosRequest {
 	return ApiGetItemImageInfosRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return []ImageInfo
+//
+//	@return []ImageInfo
 func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest) ([]ImageInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ImageInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ImageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetItemImageInfos")
@@ -2660,8 +2666,8 @@ func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2680,25 +2686,25 @@ func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest
 }
 
 type ApiGetMusicGenreImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -2798,28 +2804,29 @@ func (r ApiGetMusicGenreImageRequest) Execute() (*os.File, *http.Response, error
 /*
 GetMusicGenreImage Get music genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Music genre name.
- @param imageType Image type.
- @return ApiGetMusicGenreImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Music genre name.
+	@param imageType Image type.
+	@return ApiGetMusicGenreImageRequest
 */
 func (a *ImageAPIService) GetMusicGenreImage(ctx context.Context, name string, imageType ImageType) ApiGetMusicGenreImageRequest {
 	return ApiGetMusicGenreImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetMusicGenreImageExecute(r ApiGetMusicGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetMusicGenreImage")
@@ -2926,8 +2933,8 @@ func (a *ImageAPIService) GetMusicGenreImageExecute(r ApiGetMusicGenreImageReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2945,23 +2952,23 @@ func (a *ImageAPIService) GetMusicGenreImageExecute(r ApiGetMusicGenreImageReque
 }
 
 type ApiGetMusicGenreImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -3057,30 +3064,31 @@ func (r ApiGetMusicGenreImageByIndexRequest) Execute() (*os.File, *http.Response
 /*
 GetMusicGenreImageByIndex Get music genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Music genre name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiGetMusicGenreImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Music genre name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiGetMusicGenreImageByIndexRequest
 */
 func (a *ImageAPIService) GetMusicGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetMusicGenreImageByIndexRequest {
 	return ApiGetMusicGenreImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetMusicGenreImageByIndex")
@@ -3185,8 +3193,8 @@ func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreIma
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3204,25 +3212,25 @@ func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreIma
 }
 
 type ApiGetPersonImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -3322,28 +3330,29 @@ func (r ApiGetPersonImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetPersonImage Get person image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Person name.
- @param imageType Image type.
- @return ApiGetPersonImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Person name.
+	@param imageType Image type.
+	@return ApiGetPersonImageRequest
 */
 func (a *ImageAPIService) GetPersonImage(ctx context.Context, name string, imageType ImageType) ApiGetPersonImageRequest {
 	return ApiGetPersonImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetPersonImageExecute(r ApiGetPersonImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetPersonImage")
@@ -3450,8 +3459,8 @@ func (a *ImageAPIService) GetPersonImageExecute(r ApiGetPersonImageRequest) (*os
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3469,23 +3478,23 @@ func (a *ImageAPIService) GetPersonImageExecute(r ApiGetPersonImageRequest) (*os
 }
 
 type ApiGetPersonImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -3581,30 +3590,31 @@ func (r ApiGetPersonImageByIndexRequest) Execute() (*os.File, *http.Response, er
 /*
 GetPersonImageByIndex Get person image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Person name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiGetPersonImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Person name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiGetPersonImageByIndexRequest
 */
 func (a *ImageAPIService) GetPersonImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetPersonImageByIndexRequest {
 	return ApiGetPersonImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetPersonImageByIndexExecute(r ApiGetPersonImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetPersonImageByIndex")
@@ -3709,8 +3719,8 @@ func (a *ImageAPIService) GetPersonImageByIndexExecute(r ApiGetPersonImageByInde
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3728,20 +3738,20 @@ func (a *ImageAPIService) GetPersonImageByIndexExecute(r ApiGetPersonImageByInde
 }
 
 type ApiGetSplashscreenRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	width *int32
-	height *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	width           *int32
+	height          *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	quality *int32
+	quality         *int32
 }
 
 // Supply the cache tag from the item object to receive strong caching headers.
@@ -3823,24 +3833,25 @@ func (r ApiGetSplashscreenRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetSplashscreen Generates or gets the splashscreen.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSplashscreenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSplashscreenRequest
 */
 func (a *ImageAPIService) GetSplashscreen(ctx context.Context) ApiGetSplashscreenRequest {
 	return ApiGetSplashscreenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetSplashscreenExecute(r ApiGetSplashscreenRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetSplashscreen")
@@ -3948,25 +3959,25 @@ func (a *ImageAPIService) GetSplashscreenExecute(r ApiGetSplashscreenRequest) (*
 }
 
 type ApiGetStudioImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -4066,28 +4077,29 @@ func (r ApiGetStudioImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetStudioImage Get studio image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Studio name.
- @param imageType Image type.
- @return ApiGetStudioImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Studio name.
+	@param imageType Image type.
+	@return ApiGetStudioImageRequest
 */
 func (a *ImageAPIService) GetStudioImage(ctx context.Context, name string, imageType ImageType) ApiGetStudioImageRequest {
 	return ApiGetStudioImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetStudioImageExecute(r ApiGetStudioImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetStudioImage")
@@ -4194,8 +4206,8 @@ func (a *ImageAPIService) GetStudioImageExecute(r ApiGetStudioImageRequest) (*os
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4213,23 +4225,23 @@ func (a *ImageAPIService) GetStudioImageExecute(r ApiGetStudioImageRequest) (*os
 }
 
 type ApiGetStudioImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -4325,30 +4337,31 @@ func (r ApiGetStudioImageByIndexRequest) Execute() (*os.File, *http.Response, er
 /*
 GetStudioImageByIndex Get studio image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Studio name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiGetStudioImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Studio name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiGetStudioImageByIndexRequest
 */
 func (a *ImageAPIService) GetStudioImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetStudioImageByIndexRequest {
 	return ApiGetStudioImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetStudioImageByIndexExecute(r ApiGetStudioImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetStudioImageByIndex")
@@ -4453,8 +4466,8 @@ func (a *ImageAPIService) GetStudioImageByIndexExecute(r ApiGetStudioImageByInde
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4472,24 +4485,24 @@ func (a *ImageAPIService) GetStudioImageByIndexExecute(r ApiGetStudioImageByInde
 }
 
 type ApiGetUserImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	userId *string
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	userId          *string
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // User id.
@@ -4595,24 +4608,25 @@ func (r ApiGetUserImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetUserImage Get user profile image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUserImageRequest
 */
 func (a *ImageAPIService) GetUserImage(ctx context.Context) ApiGetUserImageRequest {
 	return ApiGetUserImageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetUserImage")
@@ -4720,8 +4734,8 @@ func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.Fil
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -4731,8 +4745,8 @@ func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.Fil
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4750,23 +4764,23 @@ func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.Fil
 }
 
 type ApiHeadArtistImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -4862,30 +4876,31 @@ func (r ApiHeadArtistImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadArtistImage Get artist image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Artist name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiHeadArtistImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Artist name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiHeadArtistImageRequest
 */
 func (a *ImageAPIService) HeadArtistImage(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadArtistImageRequest {
 	return ApiHeadArtistImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadArtistImage")
@@ -4990,8 +5005,8 @@ func (a *ImageAPIService) HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5009,25 +5024,25 @@ func (a *ImageAPIService) HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*
 }
 
 type ApiHeadGenreImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -5127,28 +5142,29 @@ func (r ApiHeadGenreImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadGenreImage Get genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Genre name.
- @param imageType Image type.
- @return ApiHeadGenreImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Genre name.
+	@param imageType Image type.
+	@return ApiHeadGenreImageRequest
 */
 func (a *ImageAPIService) HeadGenreImage(ctx context.Context, name string, imageType ImageType) ApiHeadGenreImageRequest {
 	return ApiHeadGenreImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadGenreImage")
@@ -5255,8 +5271,8 @@ func (a *ImageAPIService) HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5274,23 +5290,23 @@ func (a *ImageAPIService) HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os
 }
 
 type ApiHeadGenreImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -5386,30 +5402,31 @@ func (r ApiHeadGenreImageByIndexRequest) Execute() (*os.File, *http.Response, er
 /*
 HeadGenreImageByIndex Get genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Genre name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiHeadGenreImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Genre name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiHeadGenreImageByIndexRequest
 */
 func (a *ImageAPIService) HeadGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadGenreImageByIndexRequest {
 	return ApiHeadGenreImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ApiHeadGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadGenreImageByIndex")
@@ -5514,8 +5531,8 @@ func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ApiHeadGenreImageByInde
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5533,25 +5550,25 @@ func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ApiHeadGenreImageByInde
 }
 
 type ApiHeadItemImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	maxWidth *int32
-	maxHeight *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	tag *string
-	format *ImageFormat
-	percentPlayed *float64
-	unplayedCount *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	itemId          string
+	imageType       ImageType
+	maxWidth        *int32
+	maxHeight       *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	tag             *string
+	format          *ImageFormat
+	percentPlayed   *float64
+	unplayedCount   *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // The maximum image width to return.
@@ -5651,28 +5668,29 @@ func (r ApiHeadItemImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadItemImage Gets the item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @return ApiHeadItemImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@return ApiHeadItemImageRequest
 */
 func (a *ImageAPIService) HeadItemImage(ctx context.Context, itemId string, imageType ImageType) ApiHeadItemImageRequest {
 	return ApiHeadItemImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadItemImage")
@@ -5779,8 +5797,8 @@ func (a *ImageAPIService) HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.F
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5798,23 +5816,23 @@ func (a *ImageAPIService) HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.F
 }
 
 type ApiHeadItemImage2Request struct {
-	ctx context.Context
-	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	maxWidth int32
-	maxHeight int32
-	tag string
-	format ImageFormat
-	percentPlayed float64
-	unplayedCount int32
-	imageIndex int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	itemId          string
+	imageType       ImageType
+	maxWidth        int32
+	maxHeight       int32
+	tag             string
+	format          ImageFormat
+	percentPlayed   float64
+	unplayedCount   int32
+	imageIndex      int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -5874,42 +5892,43 @@ func (r ApiHeadItemImage2Request) Execute() (*os.File, *http.Response, error) {
 /*
 HeadItemImage2 Gets the item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param maxWidth The maximum image width to return.
- @param maxHeight The maximum image height to return.
- @param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
- @param format Determines the output format of the image - original,gif,jpg,png.
- @param percentPlayed Optional. Percent to render for the percent played overlay.
- @param unplayedCount Optional. Unplayed count overlay to render.
- @param imageIndex Image index.
- @return ApiHeadItemImage2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param maxWidth The maximum image width to return.
+	@param maxHeight The maximum image height to return.
+	@param tag Optional. Supply the cache tag from the item object to receive strong caching headers.
+	@param format Determines the output format of the image - original,gif,jpg,png.
+	@param percentPlayed Optional. Percent to render for the percent played overlay.
+	@param unplayedCount Optional. Unplayed count overlay to render.
+	@param imageIndex Image index.
+	@return ApiHeadItemImage2Request
 */
 func (a *ImageAPIService) HeadItemImage2(ctx context.Context, itemId string, imageType ImageType, maxWidth int32, maxHeight int32, tag string, format ImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiHeadItemImage2Request {
 	return ApiHeadItemImage2Request{
-		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
-		maxWidth: maxWidth,
-		maxHeight: maxHeight,
-		tag: tag,
-		format: format,
+		ApiService:    a,
+		ctx:           ctx,
+		itemId:        itemId,
+		imageType:     imageType,
+		maxWidth:      maxWidth,
+		maxHeight:     maxHeight,
+		tag:           tag,
+		format:        format,
 		percentPlayed: percentPlayed,
 		unplayedCount: unplayedCount,
-		imageIndex: imageIndex,
+		imageIndex:    imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadItemImage2")
@@ -6002,8 +6021,8 @@ func (a *ImageAPIService) HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6021,23 +6040,23 @@ func (a *ImageAPIService) HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os
 }
 
 type ApiHeadItemImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	imageIndex int32
-	maxWidth *int32
-	maxHeight *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	tag *string
-	format *ImageFormat
-	percentPlayed *float64
-	unplayedCount *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	itemId          string
+	imageType       ImageType
+	imageIndex      int32
+	maxWidth        *int32
+	maxHeight       *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	tag             *string
+	format          *ImageFormat
+	percentPlayed   *float64
+	unplayedCount   *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -6133,30 +6152,31 @@ func (r ApiHeadItemImageByIndexRequest) Execute() (*os.File, *http.Response, err
 /*
 HeadItemImageByIndex Gets the item's image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiHeadItemImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiHeadItemImageByIndexRequest
 */
 func (a *ImageAPIService) HeadItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiHeadItemImageByIndexRequest {
 	return ApiHeadItemImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadItemImageByIndex")
@@ -6261,8 +6281,8 @@ func (a *ImageAPIService) HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6280,25 +6300,25 @@ func (a *ImageAPIService) HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexR
 }
 
 type ApiHeadMusicGenreImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -6398,28 +6418,29 @@ func (r ApiHeadMusicGenreImageRequest) Execute() (*os.File, *http.Response, erro
 /*
 HeadMusicGenreImage Get music genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Music genre name.
- @param imageType Image type.
- @return ApiHeadMusicGenreImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Music genre name.
+	@param imageType Image type.
+	@return ApiHeadMusicGenreImageRequest
 */
 func (a *ImageAPIService) HeadMusicGenreImage(ctx context.Context, name string, imageType ImageType) ApiHeadMusicGenreImageRequest {
 	return ApiHeadMusicGenreImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadMusicGenreImage")
@@ -6526,8 +6547,8 @@ func (a *ImageAPIService) HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageReq
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6545,23 +6566,23 @@ func (a *ImageAPIService) HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageReq
 }
 
 type ApiHeadMusicGenreImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -6657,30 +6678,31 @@ func (r ApiHeadMusicGenreImageByIndexRequest) Execute() (*os.File, *http.Respons
 /*
 HeadMusicGenreImageByIndex Get music genre image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Music genre name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiHeadMusicGenreImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Music genre name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiHeadMusicGenreImageByIndexRequest
 */
 func (a *ImageAPIService) HeadMusicGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadMusicGenreImageByIndexRequest {
 	return ApiHeadMusicGenreImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadMusicGenreImageByIndex")
@@ -6785,8 +6807,8 @@ func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6804,25 +6826,25 @@ func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreI
 }
 
 type ApiHeadPersonImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -6922,28 +6944,29 @@ func (r ApiHeadPersonImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadPersonImage Get person image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Person name.
- @param imageType Image type.
- @return ApiHeadPersonImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Person name.
+	@param imageType Image type.
+	@return ApiHeadPersonImageRequest
 */
 func (a *ImageAPIService) HeadPersonImage(ctx context.Context, name string, imageType ImageType) ApiHeadPersonImageRequest {
 	return ApiHeadPersonImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadPersonImage")
@@ -7050,8 +7073,8 @@ func (a *ImageAPIService) HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7069,23 +7092,23 @@ func (a *ImageAPIService) HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*
 }
 
 type ApiHeadPersonImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -7181,30 +7204,31 @@ func (r ApiHeadPersonImageByIndexRequest) Execute() (*os.File, *http.Response, e
 /*
 HeadPersonImageByIndex Get person image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Person name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiHeadPersonImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Person name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiHeadPersonImageByIndexRequest
 */
 func (a *ImageAPIService) HeadPersonImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadPersonImageByIndexRequest {
 	return ApiHeadPersonImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadPersonImageByIndex")
@@ -7309,8 +7333,8 @@ func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7328,25 +7352,25 @@ func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIn
 }
 
 type ApiHeadStudioImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
@@ -7446,28 +7470,29 @@ func (r ApiHeadStudioImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadStudioImage Get studio image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Studio name.
- @param imageType Image type.
- @return ApiHeadStudioImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Studio name.
+	@param imageType Image type.
+	@return ApiHeadStudioImageRequest
 */
 func (a *ImageAPIService) HeadStudioImage(ctx context.Context, name string, imageType ImageType) ApiHeadStudioImageRequest {
 	return ApiHeadStudioImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadStudioImage")
@@ -7574,8 +7599,8 @@ func (a *ImageAPIService) HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7593,23 +7618,23 @@ func (a *ImageAPIService) HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*
 }
 
 type ApiHeadStudioImageByIndexRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	name string
-	imageType ImageType
-	imageIndex int32
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	name            string
+	imageType       ImageType
+	imageIndex      int32
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
 }
@@ -7705,30 +7730,31 @@ func (r ApiHeadStudioImageByIndexRequest) Execute() (*os.File, *http.Response, e
 /*
 HeadStudioImageByIndex Get studio image by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Studio name.
- @param imageType Image type.
- @param imageIndex Image index.
- @return ApiHeadStudioImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Studio name.
+	@param imageType Image type.
+	@param imageIndex Image index.
+	@return ApiHeadStudioImageByIndexRequest
 */
 func (a *ImageAPIService) HeadStudioImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadStudioImageByIndexRequest {
 	return ApiHeadStudioImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		imageType: imageType,
+		ctx:        ctx,
+		name:       name,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadStudioImageByIndex")
@@ -7833,8 +7859,8 @@ func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7852,24 +7878,24 @@ func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIn
 }
 
 type ApiHeadUserImageRequest struct {
-	ctx context.Context
-	ApiService ImageAPI
-	userId *string
-	tag *string
-	format *ImageFormat
-	maxWidth *int32
-	maxHeight *int32
-	percentPlayed *float64
-	unplayedCount *int32
-	width *int32
-	height *int32
-	quality *int32
-	fillWidth *int32
-	fillHeight *int32
-	blur *int32
+	ctx             context.Context
+	ApiService      ImageAPI
+	userId          *string
+	tag             *string
+	format          *ImageFormat
+	maxWidth        *int32
+	maxHeight       *int32
+	percentPlayed   *float64
+	unplayedCount   *int32
+	width           *int32
+	height          *int32
+	quality         *int32
+	fillWidth       *int32
+	fillHeight      *int32
+	blur            *int32
 	backgroundColor *string
 	foregroundLayer *string
-	imageIndex *int32
+	imageIndex      *int32
 }
 
 // User id.
@@ -7975,24 +8001,25 @@ func (r ApiHeadUserImageRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadUserImage Get user profile image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiHeadUserImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiHeadUserImageRequest
 */
 func (a *ImageAPIService) HeadUserImage(ctx context.Context) ApiHeadUserImageRequest {
 	return ApiHeadUserImageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.HeadUserImage")
@@ -8100,8 +8127,8 @@ func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.F
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -8111,8 +8138,8 @@ func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.F
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8130,10 +8157,10 @@ func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.F
 }
 
 type ApiPostUserImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	userId *string
-	body *os.File
+	userId     *string
+	body       *os.File
 }
 
 // User Id.
@@ -8154,22 +8181,22 @@ func (r ApiPostUserImageRequest) Execute() (*http.Response, error) {
 /*
 PostUserImage Sets the user image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUserImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostUserImageRequest
 */
 func (a *ImageAPIService) PostUserImage(ctx context.Context) ApiPostUserImageRequest {
 	return ApiPostUserImageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.PostUserImage")
@@ -8248,8 +8275,8 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -8259,8 +8286,8 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -8270,8 +8297,8 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -8281,11 +8308,11 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 }
 
 type ApiSetItemImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	itemId string
-	imageType ImageType
-	body *os.File
+	itemId     string
+	imageType  ImageType
+	body       *os.File
 }
 
 func (r ApiSetItemImageRequest) Body(body *os.File) ApiSetItemImageRequest {
@@ -8300,26 +8327,26 @@ func (r ApiSetItemImageRequest) Execute() (*http.Response, error) {
 /*
 SetItemImage Set item image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @return ApiSetItemImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@return ApiSetItemImageRequest
 */
 func (a *ImageAPIService) SetItemImage(ctx context.Context, itemId string, imageType ImageType) ApiSetItemImageRequest {
 	return ApiSetItemImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 	}
 }
 
 // Execute executes the request
 func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.SetItemImage")
@@ -8397,8 +8424,8 @@ func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.R
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -8408,8 +8435,8 @@ func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.R
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -8419,12 +8446,12 @@ func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.R
 }
 
 type ApiSetItemImageByIndexRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	itemId string
-	imageType ImageType
+	itemId     string
+	imageType  ImageType
 	imageIndex int32
-	body *os.File
+	body       *os.File
 }
 
 func (r ApiSetItemImageByIndexRequest) Body(body *os.File) ApiSetItemImageByIndexRequest {
@@ -8439,18 +8466,18 @@ func (r ApiSetItemImageByIndexRequest) Execute() (*http.Response, error) {
 /*
 SetItemImageByIndex Set item image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param imageIndex (Unused) Image index.
- @return ApiSetItemImageByIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param imageIndex (Unused) Image index.
+	@return ApiSetItemImageByIndexRequest
 */
 func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiSetItemImageByIndexRequest {
 	return ApiSetItemImageByIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
@@ -8458,9 +8485,9 @@ func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string
 // Execute executes the request
 func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.SetItemImageByIndex")
@@ -8539,8 +8566,8 @@ func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexReq
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -8550,8 +8577,8 @@ func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexReq
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -8561,12 +8588,12 @@ func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexReq
 }
 
 type ApiUpdateItemImageIndexRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	itemId string
-	imageType ImageType
+	itemId     string
+	imageType  ImageType
 	imageIndex int32
-	newIndex *int32
+	newIndex   *int32
 }
 
 // New image index.
@@ -8582,18 +8609,18 @@ func (r ApiUpdateItemImageIndexRequest) Execute() (*http.Response, error) {
 /*
 UpdateItemImageIndex Updates the index for an item image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @param imageType Image type.
- @param imageIndex Old image index.
- @return ApiUpdateItemImageIndexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@param imageType Image type.
+	@param imageIndex Old image index.
+	@return ApiUpdateItemImageIndexRequest
 */
 func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiUpdateItemImageIndexRequest {
 	return ApiUpdateItemImageIndexRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		imageType: imageType,
+		ctx:        ctx,
+		itemId:     itemId,
+		imageType:  imageType,
 		imageIndex: imageIndex,
 	}
 }
@@ -8601,9 +8628,9 @@ func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId strin
 // Execute executes the request
 func (a *ImageAPIService) UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.UpdateItemImageIndex")
@@ -8684,8 +8711,8 @@ func (a *ImageAPIService) UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -8695,9 +8722,9 @@ func (a *ImageAPIService) UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexR
 }
 
 type ApiUploadCustomSplashscreenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ImageAPI
-	body *os.File
+	body       *os.File
 }
 
 func (r ApiUploadCustomSplashscreenRequest) Body(body *os.File) ApiUploadCustomSplashscreenRequest {
@@ -8712,22 +8739,22 @@ func (r ApiUploadCustomSplashscreenRequest) Execute() (*http.Response, error) {
 /*
 UploadCustomSplashscreen Uploads a custom splashscreen.  The body is expected to the image contents base64 encoded.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUploadCustomSplashscreenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUploadCustomSplashscreenRequest
 */
 func (a *ImageAPIService) UploadCustomSplashscreen(ctx context.Context) ApiUploadCustomSplashscreenRequest {
 	return ApiUploadCustomSplashscreenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ApiUploadCustomSplashscreenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.UploadCustomSplashscreen")
@@ -8803,8 +8830,8 @@ func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ApiUploadCustomSplas
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -8814,8 +8841,8 @@ func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ApiUploadCustomSplas
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

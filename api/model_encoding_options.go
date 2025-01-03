@@ -196,6 +196,7 @@ func (o *EncodingOptions) HasTranscodingTempPath() bool {
 func (o *EncodingOptions) SetTranscodingTempPath(v string) {
 	o.TranscodingTempPath.Set(&v)
 }
+
 // SetTranscodingTempPathNil sets the value for TranscodingTempPath to be an explicit nil
 func (o *EncodingOptions) SetTranscodingTempPathNil() {
 	o.TranscodingTempPath.Set(nil)
@@ -238,6 +239,7 @@ func (o *EncodingOptions) HasFallbackFontPath() bool {
 func (o *EncodingOptions) SetFallbackFontPath(v string) {
 	o.FallbackFontPath.Set(&v)
 }
+
 // SetFallbackFontPathNil sets the value for FallbackFontPath to be an explicit nil
 func (o *EncodingOptions) SetFallbackFontPathNil() {
 	o.FallbackFontPath.Set(nil)
@@ -600,6 +602,7 @@ func (o *EncodingOptions) HasEncoderAppPath() bool {
 func (o *EncodingOptions) SetEncoderAppPath(v string) {
 	o.EncoderAppPath.Set(&v)
 }
+
 // SetEncoderAppPathNil sets the value for EncoderAppPath to be an explicit nil
 func (o *EncodingOptions) SetEncoderAppPathNil() {
 	o.EncoderAppPath.Set(nil)
@@ -642,6 +645,7 @@ func (o *EncodingOptions) HasEncoderAppPathDisplay() bool {
 func (o *EncodingOptions) SetEncoderAppPathDisplay(v string) {
 	o.EncoderAppPathDisplay.Set(&v)
 }
+
 // SetEncoderAppPathDisplayNil sets the value for EncoderAppPathDisplay to be an explicit nil
 func (o *EncodingOptions) SetEncoderAppPathDisplayNil() {
 	o.EncoderAppPathDisplay.Set(nil)
@@ -684,6 +688,7 @@ func (o *EncodingOptions) HasVaapiDevice() bool {
 func (o *EncodingOptions) SetVaapiDevice(v string) {
 	o.VaapiDevice.Set(&v)
 }
+
 // SetVaapiDeviceNil sets the value for VaapiDevice to be an explicit nil
 func (o *EncodingOptions) SetVaapiDeviceNil() {
 	o.VaapiDevice.Set(nil)
@@ -726,6 +731,7 @@ func (o *EncodingOptions) HasQsvDevice() bool {
 func (o *EncodingOptions) SetQsvDevice(v string) {
 	o.QsvDevice.Set(&v)
 }
+
 // SetQsvDeviceNil sets the value for QsvDevice to be an explicit nil
 func (o *EncodingOptions) SetQsvDeviceNil() {
 	o.QsvDevice.Set(nil)
@@ -1184,6 +1190,7 @@ func (o *EncodingOptions) HasEncoderPreset() bool {
 func (o *EncodingOptions) SetEncoderPreset(v EncoderPreset) {
 	o.EncoderPreset.Set(&v)
 }
+
 // SetEncoderPresetNil sets the value for EncoderPreset to be an explicit nil
 func (o *EncodingOptions) SetEncoderPresetNil() {
 	o.EncoderPreset.Set(nil)
@@ -1709,7 +1716,7 @@ func (o *EncodingOptions) SetAllowOnDemandMetadataBasedKeyframeExtractionForExte
 }
 
 func (o EncodingOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1897,5 +1904,3 @@ func (v *NullableEncodingOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

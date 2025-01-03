@@ -19,10 +19,10 @@ var _ MappedNullable = &QueryFiltersLegacy{}
 
 // QueryFiltersLegacy struct for QueryFiltersLegacy
 type QueryFiltersLegacy struct {
-	Genres []string `json:"Genres,omitempty"`
-	Tags []string `json:"Tags,omitempty"`
+	Genres          []string `json:"Genres,omitempty"`
+	Tags            []string `json:"Tags,omitempty"`
 	OfficialRatings []string `json:"OfficialRatings,omitempty"`
-	Years []int32 `json:"Years,omitempty"`
+	Years           []int32  `json:"Years,omitempty"`
 }
 
 // NewQueryFiltersLegacy instantiates a new QueryFiltersLegacy object
@@ -175,7 +175,7 @@ func (o *QueryFiltersLegacy) SetYears(v []int32) {
 }
 
 func (o QueryFiltersLegacy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -234,5 +234,3 @@ func (v *NullableQueryFiltersLegacy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

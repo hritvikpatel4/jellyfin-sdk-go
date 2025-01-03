@@ -25,16 +25,16 @@ type RemoteSearchResult struct {
 	// Gets or sets the provider ids.
 	ProviderIds map[string]string `json:"ProviderIds,omitempty"`
 	// Gets or sets the year.
-	ProductionYear NullableInt32 `json:"ProductionYear,omitempty"`
-	IndexNumber NullableInt32 `json:"IndexNumber,omitempty"`
-	IndexNumberEnd NullableInt32 `json:"IndexNumberEnd,omitempty"`
-	ParentIndexNumber NullableInt32 `json:"ParentIndexNumber,omitempty"`
-	PremiereDate NullableTime `json:"PremiereDate,omitempty"`
-	ImageUrl NullableString `json:"ImageUrl,omitempty"`
-	SearchProviderName NullableString `json:"SearchProviderName,omitempty"`
-	Overview NullableString `json:"Overview,omitempty"`
-	AlbumArtist NullableRemoteSearchResult `json:"AlbumArtist,omitempty"`
-	Artists []RemoteSearchResult `json:"Artists,omitempty"`
+	ProductionYear     NullableInt32              `json:"ProductionYear,omitempty"`
+	IndexNumber        NullableInt32              `json:"IndexNumber,omitempty"`
+	IndexNumberEnd     NullableInt32              `json:"IndexNumberEnd,omitempty"`
+	ParentIndexNumber  NullableInt32              `json:"ParentIndexNumber,omitempty"`
+	PremiereDate       NullableTime               `json:"PremiereDate,omitempty"`
+	ImageUrl           NullableString             `json:"ImageUrl,omitempty"`
+	SearchProviderName NullableString             `json:"SearchProviderName,omitempty"`
+	Overview           NullableString             `json:"Overview,omitempty"`
+	AlbumArtist        NullableRemoteSearchResult `json:"AlbumArtist,omitempty"`
+	Artists            []RemoteSearchResult       `json:"Artists,omitempty"`
 }
 
 // NewRemoteSearchResult instantiates a new RemoteSearchResult object
@@ -86,6 +86,7 @@ func (o *RemoteSearchResult) HasName() bool {
 func (o *RemoteSearchResult) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *RemoteSearchResult) SetNameNil() {
 	o.Name.Set(nil)
@@ -161,6 +162,7 @@ func (o *RemoteSearchResult) HasProductionYear() bool {
 func (o *RemoteSearchResult) SetProductionYear(v int32) {
 	o.ProductionYear.Set(&v)
 }
+
 // SetProductionYearNil sets the value for ProductionYear to be an explicit nil
 func (o *RemoteSearchResult) SetProductionYearNil() {
 	o.ProductionYear.Set(nil)
@@ -203,6 +205,7 @@ func (o *RemoteSearchResult) HasIndexNumber() bool {
 func (o *RemoteSearchResult) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *RemoteSearchResult) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -245,6 +248,7 @@ func (o *RemoteSearchResult) HasIndexNumberEnd() bool {
 func (o *RemoteSearchResult) SetIndexNumberEnd(v int32) {
 	o.IndexNumberEnd.Set(&v)
 }
+
 // SetIndexNumberEndNil sets the value for IndexNumberEnd to be an explicit nil
 func (o *RemoteSearchResult) SetIndexNumberEndNil() {
 	o.IndexNumberEnd.Set(nil)
@@ -287,6 +291,7 @@ func (o *RemoteSearchResult) HasParentIndexNumber() bool {
 func (o *RemoteSearchResult) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *RemoteSearchResult) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -329,6 +334,7 @@ func (o *RemoteSearchResult) HasPremiereDate() bool {
 func (o *RemoteSearchResult) SetPremiereDate(v time.Time) {
 	o.PremiereDate.Set(&v)
 }
+
 // SetPremiereDateNil sets the value for PremiereDate to be an explicit nil
 func (o *RemoteSearchResult) SetPremiereDateNil() {
 	o.PremiereDate.Set(nil)
@@ -371,6 +377,7 @@ func (o *RemoteSearchResult) HasImageUrl() bool {
 func (o *RemoteSearchResult) SetImageUrl(v string) {
 	o.ImageUrl.Set(&v)
 }
+
 // SetImageUrlNil sets the value for ImageUrl to be an explicit nil
 func (o *RemoteSearchResult) SetImageUrlNil() {
 	o.ImageUrl.Set(nil)
@@ -413,6 +420,7 @@ func (o *RemoteSearchResult) HasSearchProviderName() bool {
 func (o *RemoteSearchResult) SetSearchProviderName(v string) {
 	o.SearchProviderName.Set(&v)
 }
+
 // SetSearchProviderNameNil sets the value for SearchProviderName to be an explicit nil
 func (o *RemoteSearchResult) SetSearchProviderNameNil() {
 	o.SearchProviderName.Set(nil)
@@ -455,6 +463,7 @@ func (o *RemoteSearchResult) HasOverview() bool {
 func (o *RemoteSearchResult) SetOverview(v string) {
 	o.Overview.Set(&v)
 }
+
 // SetOverviewNil sets the value for Overview to be an explicit nil
 func (o *RemoteSearchResult) SetOverviewNil() {
 	o.Overview.Set(nil)
@@ -497,6 +506,7 @@ func (o *RemoteSearchResult) HasAlbumArtist() bool {
 func (o *RemoteSearchResult) SetAlbumArtist(v RemoteSearchResult) {
 	o.AlbumArtist.Set(&v)
 }
+
 // SetAlbumArtistNil sets the value for AlbumArtist to be an explicit nil
 func (o *RemoteSearchResult) SetAlbumArtistNil() {
 	o.AlbumArtist.Set(nil)
@@ -541,7 +551,7 @@ func (o *RemoteSearchResult) SetArtists(v []RemoteSearchResult) {
 }
 
 func (o RemoteSearchResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -624,5 +634,3 @@ func (v *NullableRemoteSearchResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

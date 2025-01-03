@@ -76,6 +76,7 @@ func (o *PlaystateMessage) HasData() bool {
 func (o *PlaystateMessage) SetData(v PlaystateRequest) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *PlaystateMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -151,7 +152,7 @@ func (o *PlaystateMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o PlaystateMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,5 +208,3 @@ func (v *NullablePlaystateMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

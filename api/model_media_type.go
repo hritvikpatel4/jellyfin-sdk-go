@@ -21,10 +21,10 @@ type MediaType string
 // List of MediaType
 const (
 	MEDIATYPE_UNKNOWN MediaType = "Unknown"
-	MEDIATYPE_VIDEO MediaType = "Video"
-	MEDIATYPE_AUDIO MediaType = "Audio"
-	MEDIATYPE_PHOTO MediaType = "Photo"
-	MEDIATYPE_BOOK MediaType = "Book"
+	MEDIATYPE_VIDEO   MediaType = "Video"
+	MEDIATYPE_AUDIO   MediaType = "Audio"
+	MEDIATYPE_PHOTO   MediaType = "Photo"
+	MEDIATYPE_BOOK    MediaType = "Book"
 )
 
 // All allowed values of MediaType enum
@@ -114,4 +114,3 @@ func (v *NullableMediaType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

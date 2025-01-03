@@ -20,16 +20,16 @@ type GroupUpdateType string
 
 // List of GroupUpdateType
 const (
-	GROUPUPDATETYPE_USER_JOINED GroupUpdateType = "UserJoined"
-	GROUPUPDATETYPE_USER_LEFT GroupUpdateType = "UserLeft"
-	GROUPUPDATETYPE_GROUP_JOINED GroupUpdateType = "GroupJoined"
-	GROUPUPDATETYPE_GROUP_LEFT GroupUpdateType = "GroupLeft"
-	GROUPUPDATETYPE_STATE_UPDATE GroupUpdateType = "StateUpdate"
-	GROUPUPDATETYPE_PLAY_QUEUE GroupUpdateType = "PlayQueue"
-	GROUPUPDATETYPE_NOT_IN_GROUP GroupUpdateType = "NotInGroup"
-	GROUPUPDATETYPE_GROUP_DOES_NOT_EXIST GroupUpdateType = "GroupDoesNotExist"
-	GROUPUPDATETYPE_CREATE_GROUP_DENIED GroupUpdateType = "CreateGroupDenied"
-	GROUPUPDATETYPE_JOIN_GROUP_DENIED GroupUpdateType = "JoinGroupDenied"
+	GROUPUPDATETYPE_USER_JOINED           GroupUpdateType = "UserJoined"
+	GROUPUPDATETYPE_USER_LEFT             GroupUpdateType = "UserLeft"
+	GROUPUPDATETYPE_GROUP_JOINED          GroupUpdateType = "GroupJoined"
+	GROUPUPDATETYPE_GROUP_LEFT            GroupUpdateType = "GroupLeft"
+	GROUPUPDATETYPE_STATE_UPDATE          GroupUpdateType = "StateUpdate"
+	GROUPUPDATETYPE_PLAY_QUEUE            GroupUpdateType = "PlayQueue"
+	GROUPUPDATETYPE_NOT_IN_GROUP          GroupUpdateType = "NotInGroup"
+	GROUPUPDATETYPE_GROUP_DOES_NOT_EXIST  GroupUpdateType = "GroupDoesNotExist"
+	GROUPUPDATETYPE_CREATE_GROUP_DENIED   GroupUpdateType = "CreateGroupDenied"
+	GROUPUPDATETYPE_JOIN_GROUP_DENIED     GroupUpdateType = "JoinGroupDenied"
 	GROUPUPDATETYPE_LIBRARY_ACCESS_DENIED GroupUpdateType = "LibraryAccessDenied"
 )
 
@@ -126,4 +126,3 @@ func (v *NullableGroupUpdateType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

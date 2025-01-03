@@ -21,10 +21,10 @@ type TonemappingMode string
 // List of TonemappingMode
 const (
 	TONEMAPPINGMODE_AUTO TonemappingMode = "auto"
-	TONEMAPPINGMODE_MAX TonemappingMode = "max"
-	TONEMAPPINGMODE_RGB TonemappingMode = "rgb"
-	TONEMAPPINGMODE_LUM TonemappingMode = "lum"
-	TONEMAPPINGMODE_ITP TonemappingMode = "itp"
+	TONEMAPPINGMODE_MAX  TonemappingMode = "max"
+	TONEMAPPINGMODE_RGB  TonemappingMode = "rgb"
+	TONEMAPPINGMODE_LUM  TonemappingMode = "lum"
+	TONEMAPPINGMODE_ITP  TonemappingMode = "itp"
 )
 
 // All allowed values of TonemappingMode enum
@@ -114,4 +114,3 @@ func (v *NullableTonemappingMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

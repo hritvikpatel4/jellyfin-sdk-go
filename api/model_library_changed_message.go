@@ -76,6 +76,7 @@ func (o *LibraryChangedMessage) HasData() bool {
 func (o *LibraryChangedMessage) SetData(v LibraryUpdateInfo) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *LibraryChangedMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -151,7 +152,7 @@ func (o *LibraryChangedMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o LibraryChangedMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,5 +208,3 @@ func (v *NullableLibraryChangedMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

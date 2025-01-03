@@ -76,6 +76,7 @@ func (o *BrandingOptions) HasLoginDisclaimer() bool {
 func (o *BrandingOptions) SetLoginDisclaimer(v string) {
 	o.LoginDisclaimer.Set(&v)
 }
+
 // SetLoginDisclaimerNil sets the value for LoginDisclaimer to be an explicit nil
 func (o *BrandingOptions) SetLoginDisclaimerNil() {
 	o.LoginDisclaimer.Set(nil)
@@ -118,6 +119,7 @@ func (o *BrandingOptions) HasCustomCss() bool {
 func (o *BrandingOptions) SetCustomCss(v string) {
 	o.CustomCss.Set(&v)
 }
+
 // SetCustomCssNil sets the value for CustomCss to be an explicit nil
 func (o *BrandingOptions) SetCustomCssNil() {
 	o.CustomCss.Set(nil)
@@ -161,7 +163,7 @@ func (o *BrandingOptions) SetSplashscreenEnabled(v bool) {
 }
 
 func (o BrandingOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,5 +219,3 @@ func (v *NullableBrandingOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

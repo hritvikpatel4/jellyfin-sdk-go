@@ -19,14 +19,13 @@ import (
 	"reflect"
 )
 
-
 type SuggestionsAPI interface {
 
 	/*
-	GetSuggestions Gets suggestions.
+		GetSuggestions Gets suggestions.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSuggestionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSuggestionsRequest
 	*/
 	GetSuggestions(ctx context.Context) ApiGetSuggestionsRequest
 
@@ -39,13 +38,13 @@ type SuggestionsAPI interface {
 type SuggestionsAPIService service
 
 type ApiGetSuggestionsRequest struct {
-	ctx context.Context
-	ApiService SuggestionsAPI
-	userId *string
-	mediaType *[]MediaType
-	type_ *[]BaseItemKind
-	startIndex *int32
-	limit *int32
+	ctx                    context.Context
+	ApiService             SuggestionsAPI
+	userId                 *string
+	mediaType              *[]MediaType
+	type_                  *[]BaseItemKind
+	startIndex             *int32
+	limit                  *int32
 	enableTotalRecordCount *bool
 }
 
@@ -92,24 +91,25 @@ func (r ApiGetSuggestionsRequest) Execute() (*BaseItemDtoQueryResult, *http.Resp
 /*
 GetSuggestions Gets suggestions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSuggestionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSuggestionsRequest
 */
 func (a *SuggestionsAPIService) GetSuggestions(ctx context.Context) ApiGetSuggestionsRequest {
 	return ApiGetSuggestionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *SuggestionsAPIService) GetSuggestionsExecute(r ApiGetSuggestionsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuggestionsAPIService.GetSuggestions")

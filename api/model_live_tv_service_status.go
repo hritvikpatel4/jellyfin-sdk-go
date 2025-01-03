@@ -20,7 +20,7 @@ type LiveTvServiceStatus string
 
 // List of LiveTvServiceStatus
 const (
-	LIVETVSERVICESTATUS_OK LiveTvServiceStatus = "Ok"
+	LIVETVSERVICESTATUS_OK          LiveTvServiceStatus = "Ok"
 	LIVETVSERVICESTATUS_UNAVAILABLE LiveTvServiceStatus = "Unavailable"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableLiveTvServiceStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

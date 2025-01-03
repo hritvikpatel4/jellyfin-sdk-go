@@ -20,13 +20,13 @@ type PluginStatus string
 
 // List of PluginStatus
 const (
-	PLUGINSTATUS_ACTIVE PluginStatus = "Active"
-	PLUGINSTATUS_RESTART PluginStatus = "Restart"
-	PLUGINSTATUS_DELETED PluginStatus = "Deleted"
-	PLUGINSTATUS_SUPERCEDED PluginStatus = "Superceded"
+	PLUGINSTATUS_ACTIVE        PluginStatus = "Active"
+	PLUGINSTATUS_RESTART       PluginStatus = "Restart"
+	PLUGINSTATUS_DELETED       PluginStatus = "Deleted"
+	PLUGINSTATUS_SUPERCEDED    PluginStatus = "Superceded"
 	PLUGINSTATUS_MALFUNCTIONED PluginStatus = "Malfunctioned"
 	PLUGINSTATUS_NOT_SUPPORTED PluginStatus = "NotSupported"
-	PLUGINSTATUS_DISABLED PluginStatus = "Disabled"
+	PLUGINSTATUS_DISABLED      PluginStatus = "Disabled"
 )
 
 // All allowed values of PluginStatus enum
@@ -118,4 +118,3 @@ func (v *NullablePluginStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

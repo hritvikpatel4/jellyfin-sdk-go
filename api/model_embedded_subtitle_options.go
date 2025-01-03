@@ -20,10 +20,10 @@ type EmbeddedSubtitleOptions string
 
 // List of EmbeddedSubtitleOptions
 const (
-	EMBEDDEDSUBTITLEOPTIONS_ALLOW_ALL EmbeddedSubtitleOptions = "AllowAll"
-	EMBEDDEDSUBTITLEOPTIONS_ALLOW_TEXT EmbeddedSubtitleOptions = "AllowText"
+	EMBEDDEDSUBTITLEOPTIONS_ALLOW_ALL   EmbeddedSubtitleOptions = "AllowAll"
+	EMBEDDEDSUBTITLEOPTIONS_ALLOW_TEXT  EmbeddedSubtitleOptions = "AllowText"
 	EMBEDDEDSUBTITLEOPTIONS_ALLOW_IMAGE EmbeddedSubtitleOptions = "AllowImage"
-	EMBEDDEDSUBTITLEOPTIONS_ALLOW_NONE EmbeddedSubtitleOptions = "AllowNone"
+	EMBEDDEDSUBTITLEOPTIONS_ALLOW_NONE  EmbeddedSubtitleOptions = "AllowNone"
 )
 
 // All allowed values of EmbeddedSubtitleOptions enum
@@ -112,4 +112,3 @@ func (v *NullableEmbeddedSubtitleOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

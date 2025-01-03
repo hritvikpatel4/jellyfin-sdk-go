@@ -19,14 +19,13 @@ import (
 	"reflect"
 )
 
-
 type SearchAPI interface {
 
 	/*
-	GetSearchHints Gets the search hint result.
+		GetSearchHints Gets the search hint result.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSearchHintsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSearchHintsRequest
 	*/
 	GetSearchHints(ctx context.Context) ApiGetSearchHintsRequest
 
@@ -39,26 +38,26 @@ type SearchAPI interface {
 type SearchAPIService service
 
 type ApiGetSearchHintsRequest struct {
-	ctx context.Context
-	ApiService SearchAPI
-	searchTerm *string
-	startIndex *int32
-	limit *int32
-	userId *string
+	ctx              context.Context
+	ApiService       SearchAPI
+	searchTerm       *string
+	startIndex       *int32
+	limit            *int32
+	userId           *string
 	includeItemTypes *[]BaseItemKind
 	excludeItemTypes *[]BaseItemKind
-	mediaTypes *[]MediaType
-	parentId *string
-	isMovie *bool
-	isSeries *bool
-	isNews *bool
-	isKids *bool
-	isSports *bool
-	includePeople *bool
-	includeMedia *bool
-	includeGenres *bool
-	includeStudios *bool
-	includeArtists *bool
+	mediaTypes       *[]MediaType
+	parentId         *string
+	isMovie          *bool
+	isSeries         *bool
+	isNews           *bool
+	isKids           *bool
+	isSports         *bool
+	includePeople    *bool
+	includeMedia     *bool
+	includeGenres    *bool
+	includeStudios   *bool
+	includeArtists   *bool
 }
 
 // The search term to filter on.
@@ -176,24 +175,25 @@ func (r ApiGetSearchHintsRequest) Execute() (*SearchHintResult, *http.Response, 
 /*
 GetSearchHints Gets the search hint result.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSearchHintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSearchHintsRequest
 */
 func (a *SearchAPIService) GetSearchHints(ctx context.Context) ApiGetSearchHintsRequest {
 	return ApiGetSearchHintsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchHintResult
+//
+//	@return SearchHintResult
 func (a *SearchAPIService) GetSearchHintsExecute(r ApiGetSearchHintsRequest) (*SearchHintResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SearchHintResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SearchHintResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.GetSearchHints")

@@ -38,11 +38,11 @@ type PlaybackStartInfo struct {
 	// Gets or sets a value indicating whether this instance is muted.
 	IsMuted *bool `json:"IsMuted,omitempty"`
 	// Gets or sets the position ticks.
-	PositionTicks NullableInt64 `json:"PositionTicks,omitempty"`
+	PositionTicks          NullableInt64 `json:"PositionTicks,omitempty"`
 	PlaybackStartTimeTicks NullableInt64 `json:"PlaybackStartTimeTicks,omitempty"`
 	// Gets or sets the volume level.
-	VolumeLevel NullableInt32 `json:"VolumeLevel,omitempty"`
-	Brightness NullableInt32 `json:"Brightness,omitempty"`
+	VolumeLevel NullableInt32  `json:"VolumeLevel,omitempty"`
+	Brightness  NullableInt32  `json:"Brightness,omitempty"`
 	AspectRatio NullableString `json:"AspectRatio,omitempty"`
 	// Gets or sets the play method.
 	PlayMethod *PlayMethod `json:"PlayMethod,omitempty"`
@@ -53,9 +53,9 @@ type PlaybackStartInfo struct {
 	// Gets or sets the repeat mode.
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
 	// Gets or sets the playback order.
-	PlaybackOrder *PlaybackOrder `json:"PlaybackOrder,omitempty"`
-	NowPlayingQueue []QueueItem `json:"NowPlayingQueue,omitempty"`
-	PlaylistItemId NullableString `json:"PlaylistItemId,omitempty"`
+	PlaybackOrder   *PlaybackOrder `json:"PlaybackOrder,omitempty"`
+	NowPlayingQueue []QueueItem    `json:"NowPlayingQueue,omitempty"`
+	PlaylistItemId  NullableString `json:"PlaylistItemId,omitempty"`
 }
 
 // NewPlaybackStartInfo instantiates a new PlaybackStartInfo object
@@ -139,6 +139,7 @@ func (o *PlaybackStartInfo) HasItem() bool {
 func (o *PlaybackStartInfo) SetItem(v BaseItemDto) {
 	o.Item.Set(&v)
 }
+
 // SetItemNil sets the value for Item to be an explicit nil
 func (o *PlaybackStartInfo) SetItemNil() {
 	o.Item.Set(nil)
@@ -213,6 +214,7 @@ func (o *PlaybackStartInfo) HasSessionId() bool {
 func (o *PlaybackStartInfo) SetSessionId(v string) {
 	o.SessionId.Set(&v)
 }
+
 // SetSessionIdNil sets the value for SessionId to be an explicit nil
 func (o *PlaybackStartInfo) SetSessionIdNil() {
 	o.SessionId.Set(nil)
@@ -255,6 +257,7 @@ func (o *PlaybackStartInfo) HasMediaSourceId() bool {
 func (o *PlaybackStartInfo) SetMediaSourceId(v string) {
 	o.MediaSourceId.Set(&v)
 }
+
 // SetMediaSourceIdNil sets the value for MediaSourceId to be an explicit nil
 func (o *PlaybackStartInfo) SetMediaSourceIdNil() {
 	o.MediaSourceId.Set(nil)
@@ -297,6 +300,7 @@ func (o *PlaybackStartInfo) HasAudioStreamIndex() bool {
 func (o *PlaybackStartInfo) SetAudioStreamIndex(v int32) {
 	o.AudioStreamIndex.Set(&v)
 }
+
 // SetAudioStreamIndexNil sets the value for AudioStreamIndex to be an explicit nil
 func (o *PlaybackStartInfo) SetAudioStreamIndexNil() {
 	o.AudioStreamIndex.Set(nil)
@@ -339,6 +343,7 @@ func (o *PlaybackStartInfo) HasSubtitleStreamIndex() bool {
 func (o *PlaybackStartInfo) SetSubtitleStreamIndex(v int32) {
 	o.SubtitleStreamIndex.Set(&v)
 }
+
 // SetSubtitleStreamIndexNil sets the value for SubtitleStreamIndex to be an explicit nil
 func (o *PlaybackStartInfo) SetSubtitleStreamIndexNil() {
 	o.SubtitleStreamIndex.Set(nil)
@@ -445,6 +450,7 @@ func (o *PlaybackStartInfo) HasPositionTicks() bool {
 func (o *PlaybackStartInfo) SetPositionTicks(v int64) {
 	o.PositionTicks.Set(&v)
 }
+
 // SetPositionTicksNil sets the value for PositionTicks to be an explicit nil
 func (o *PlaybackStartInfo) SetPositionTicksNil() {
 	o.PositionTicks.Set(nil)
@@ -487,6 +493,7 @@ func (o *PlaybackStartInfo) HasPlaybackStartTimeTicks() bool {
 func (o *PlaybackStartInfo) SetPlaybackStartTimeTicks(v int64) {
 	o.PlaybackStartTimeTicks.Set(&v)
 }
+
 // SetPlaybackStartTimeTicksNil sets the value for PlaybackStartTimeTicks to be an explicit nil
 func (o *PlaybackStartInfo) SetPlaybackStartTimeTicksNil() {
 	o.PlaybackStartTimeTicks.Set(nil)
@@ -529,6 +536,7 @@ func (o *PlaybackStartInfo) HasVolumeLevel() bool {
 func (o *PlaybackStartInfo) SetVolumeLevel(v int32) {
 	o.VolumeLevel.Set(&v)
 }
+
 // SetVolumeLevelNil sets the value for VolumeLevel to be an explicit nil
 func (o *PlaybackStartInfo) SetVolumeLevelNil() {
 	o.VolumeLevel.Set(nil)
@@ -571,6 +579,7 @@ func (o *PlaybackStartInfo) HasBrightness() bool {
 func (o *PlaybackStartInfo) SetBrightness(v int32) {
 	o.Brightness.Set(&v)
 }
+
 // SetBrightnessNil sets the value for Brightness to be an explicit nil
 func (o *PlaybackStartInfo) SetBrightnessNil() {
 	o.Brightness.Set(nil)
@@ -613,6 +622,7 @@ func (o *PlaybackStartInfo) HasAspectRatio() bool {
 func (o *PlaybackStartInfo) SetAspectRatio(v string) {
 	o.AspectRatio.Set(&v)
 }
+
 // SetAspectRatioNil sets the value for AspectRatio to be an explicit nil
 func (o *PlaybackStartInfo) SetAspectRatioNil() {
 	o.AspectRatio.Set(nil)
@@ -687,6 +697,7 @@ func (o *PlaybackStartInfo) HasLiveStreamId() bool {
 func (o *PlaybackStartInfo) SetLiveStreamId(v string) {
 	o.LiveStreamId.Set(&v)
 }
+
 // SetLiveStreamIdNil sets the value for LiveStreamId to be an explicit nil
 func (o *PlaybackStartInfo) SetLiveStreamIdNil() {
 	o.LiveStreamId.Set(nil)
@@ -729,6 +740,7 @@ func (o *PlaybackStartInfo) HasPlaySessionId() bool {
 func (o *PlaybackStartInfo) SetPlaySessionId(v string) {
 	o.PlaySessionId.Set(&v)
 }
+
 // SetPlaySessionIdNil sets the value for PlaySessionId to be an explicit nil
 func (o *PlaybackStartInfo) SetPlaySessionIdNil() {
 	o.PlaySessionId.Set(nil)
@@ -868,6 +880,7 @@ func (o *PlaybackStartInfo) HasPlaylistItemId() bool {
 func (o *PlaybackStartInfo) SetPlaylistItemId(v string) {
 	o.PlaylistItemId.Set(&v)
 }
+
 // SetPlaylistItemIdNil sets the value for PlaylistItemId to be an explicit nil
 func (o *PlaybackStartInfo) SetPlaylistItemIdNil() {
 	o.PlaylistItemId.Set(nil)
@@ -879,7 +892,7 @@ func (o *PlaybackStartInfo) UnsetPlaylistItemId() {
 }
 
 func (o PlaybackStartInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -989,5 +1002,3 @@ func (v *NullablePlaybackStartInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

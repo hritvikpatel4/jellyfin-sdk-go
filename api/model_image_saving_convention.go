@@ -20,7 +20,7 @@ type ImageSavingConvention string
 
 // List of ImageSavingConvention
 const (
-	IMAGESAVINGCONVENTION_LEGACY ImageSavingConvention = "Legacy"
+	IMAGESAVINGCONVENTION_LEGACY     ImageSavingConvention = "Legacy"
 	IMAGESAVINGCONVENTION_COMPATIBLE ImageSavingConvention = "Compatible"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableImageSavingConvention) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

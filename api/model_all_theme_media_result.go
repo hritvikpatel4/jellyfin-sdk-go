@@ -76,6 +76,7 @@ func (o *AllThemeMediaResult) HasThemeVideosResult() bool {
 func (o *AllThemeMediaResult) SetThemeVideosResult(v ThemeMediaResult) {
 	o.ThemeVideosResult.Set(&v)
 }
+
 // SetThemeVideosResultNil sets the value for ThemeVideosResult to be an explicit nil
 func (o *AllThemeMediaResult) SetThemeVideosResultNil() {
 	o.ThemeVideosResult.Set(nil)
@@ -118,6 +119,7 @@ func (o *AllThemeMediaResult) HasThemeSongsResult() bool {
 func (o *AllThemeMediaResult) SetThemeSongsResult(v ThemeMediaResult) {
 	o.ThemeSongsResult.Set(&v)
 }
+
 // SetThemeSongsResultNil sets the value for ThemeSongsResult to be an explicit nil
 func (o *AllThemeMediaResult) SetThemeSongsResultNil() {
 	o.ThemeSongsResult.Set(nil)
@@ -160,6 +162,7 @@ func (o *AllThemeMediaResult) HasSoundtrackSongsResult() bool {
 func (o *AllThemeMediaResult) SetSoundtrackSongsResult(v ThemeMediaResult) {
 	o.SoundtrackSongsResult.Set(&v)
 }
+
 // SetSoundtrackSongsResultNil sets the value for SoundtrackSongsResult to be an explicit nil
 func (o *AllThemeMediaResult) SetSoundtrackSongsResultNil() {
 	o.SoundtrackSongsResult.Set(nil)
@@ -171,7 +174,7 @@ func (o *AllThemeMediaResult) UnsetSoundtrackSongsResult() {
 }
 
 func (o AllThemeMediaResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -227,5 +230,3 @@ func (v *NullableAllThemeMediaResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

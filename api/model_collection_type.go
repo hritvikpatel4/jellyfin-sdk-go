@@ -20,19 +20,19 @@ type CollectionType string
 
 // List of CollectionType
 const (
-	COLLECTIONTYPE_UNKNOWN CollectionType = "unknown"
-	COLLECTIONTYPE_MOVIES CollectionType = "movies"
-	COLLECTIONTYPE_TVSHOWS CollectionType = "tvshows"
-	COLLECTIONTYPE_MUSIC CollectionType = "music"
+	COLLECTIONTYPE_UNKNOWN     CollectionType = "unknown"
+	COLLECTIONTYPE_MOVIES      CollectionType = "movies"
+	COLLECTIONTYPE_TVSHOWS     CollectionType = "tvshows"
+	COLLECTIONTYPE_MUSIC       CollectionType = "music"
 	COLLECTIONTYPE_MUSICVIDEOS CollectionType = "musicvideos"
-	COLLECTIONTYPE_TRAILERS CollectionType = "trailers"
-	COLLECTIONTYPE_HOMEVIDEOS CollectionType = "homevideos"
-	COLLECTIONTYPE_BOXSETS CollectionType = "boxsets"
-	COLLECTIONTYPE_BOOKS CollectionType = "books"
-	COLLECTIONTYPE_PHOTOS CollectionType = "photos"
-	COLLECTIONTYPE_LIVETV CollectionType = "livetv"
-	COLLECTIONTYPE_PLAYLISTS CollectionType = "playlists"
-	COLLECTIONTYPE_FOLDERS CollectionType = "folders"
+	COLLECTIONTYPE_TRAILERS    CollectionType = "trailers"
+	COLLECTIONTYPE_HOMEVIDEOS  CollectionType = "homevideos"
+	COLLECTIONTYPE_BOXSETS     CollectionType = "boxsets"
+	COLLECTIONTYPE_BOOKS       CollectionType = "books"
+	COLLECTIONTYPE_PHOTOS      CollectionType = "photos"
+	COLLECTIONTYPE_LIVETV      CollectionType = "livetv"
+	COLLECTIONTYPE_PLAYLISTS   CollectionType = "playlists"
+	COLLECTIONTYPE_FOLDERS     CollectionType = "folders"
 )
 
 // All allowed values of CollectionType enum
@@ -130,4 +130,3 @@ func (v *NullableCollectionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -19,15 +19,14 @@ import (
 	"strings"
 )
 
-
 type ItemRefreshAPI interface {
 
 	/*
-	RefreshItem Refreshes metadata for an item.
+		RefreshItem Refreshes metadata for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId Item id.
-	@return ApiRefreshItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId Item id.
+		@return ApiRefreshItemRequest
 	*/
 	RefreshItem(ctx context.Context, itemId string) ApiRefreshItemRequest
 
@@ -39,13 +38,13 @@ type ItemRefreshAPI interface {
 type ItemRefreshAPIService service
 
 type ApiRefreshItemRequest struct {
-	ctx context.Context
-	ApiService ItemRefreshAPI
-	itemId string
+	ctx                 context.Context
+	ApiService          ItemRefreshAPI
+	itemId              string
 	metadataRefreshMode *MetadataRefreshMode
-	imageRefreshMode *MetadataRefreshMode
-	replaceAllMetadata *bool
-	replaceAllImages *bool
+	imageRefreshMode    *MetadataRefreshMode
+	replaceAllMetadata  *bool
+	replaceAllImages    *bool
 	regenerateTrickplay *bool
 }
 
@@ -86,24 +85,24 @@ func (r ApiRefreshItemRequest) Execute() (*http.Response, error) {
 /*
 RefreshItem Refreshes metadata for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId Item id.
- @return ApiRefreshItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId Item id.
+	@return ApiRefreshItemRequest
 */
 func (a *ItemRefreshAPIService) RefreshItem(ctx context.Context, itemId string) ApiRefreshItemRequest {
 	return ApiRefreshItemRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *ItemRefreshAPIService) RefreshItemExecute(r ApiRefreshItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemRefreshAPIService.RefreshItem")
@@ -208,8 +207,8 @@ func (a *ItemRefreshAPIService) RefreshItemExecute(r ApiRefreshItemRequest) (*ht
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

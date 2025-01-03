@@ -152,6 +152,7 @@ func (o *VersionInfo) HasChangelog() bool {
 func (o *VersionInfo) SetChangelog(v string) {
 	o.Changelog.Set(&v)
 }
+
 // SetChangelogNil sets the value for Changelog to be an explicit nil
 func (o *VersionInfo) SetChangelogNil() {
 	o.Changelog.Set(nil)
@@ -194,6 +195,7 @@ func (o *VersionInfo) HasTargetAbi() bool {
 func (o *VersionInfo) SetTargetAbi(v string) {
 	o.TargetAbi.Set(&v)
 }
+
 // SetTargetAbiNil sets the value for TargetAbi to be an explicit nil
 func (o *VersionInfo) SetTargetAbiNil() {
 	o.TargetAbi.Set(nil)
@@ -236,6 +238,7 @@ func (o *VersionInfo) HasSourceUrl() bool {
 func (o *VersionInfo) SetSourceUrl(v string) {
 	o.SourceUrl.Set(&v)
 }
+
 // SetSourceUrlNil sets the value for SourceUrl to be an explicit nil
 func (o *VersionInfo) SetSourceUrlNil() {
 	o.SourceUrl.Set(nil)
@@ -278,6 +281,7 @@ func (o *VersionInfo) HasChecksum() bool {
 func (o *VersionInfo) SetChecksum(v string) {
 	o.Checksum.Set(&v)
 }
+
 // SetChecksumNil sets the value for Checksum to be an explicit nil
 func (o *VersionInfo) SetChecksumNil() {
 	o.Checksum.Set(nil)
@@ -320,6 +324,7 @@ func (o *VersionInfo) HasTimestamp() bool {
 func (o *VersionInfo) SetTimestamp(v string) {
 	o.Timestamp.Set(&v)
 }
+
 // SetTimestampNil sets the value for Timestamp to be an explicit nil
 func (o *VersionInfo) SetTimestampNil() {
 	o.Timestamp.Set(nil)
@@ -395,7 +400,7 @@ func (o *VersionInfo) SetRepositoryUrl(v string) {
 }
 
 func (o VersionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -469,5 +474,3 @@ func (v *NullableVersionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

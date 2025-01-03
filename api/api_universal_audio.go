@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
 	"reflect"
+	"strings"
 )
-
 
 type UniversalAudioAPI interface {
 
 	/*
-	GetUniversalAudioStream Gets an audio stream.
+		GetUniversalAudioStream Gets an audio stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetUniversalAudioStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetUniversalAudioStreamRequest
 	*/
 	GetUniversalAudioStream(ctx context.Context, itemId string) ApiGetUniversalAudioStreamRequest
 
@@ -38,11 +37,11 @@ type UniversalAudioAPI interface {
 	GetUniversalAudioStreamExecute(r ApiGetUniversalAudioStreamRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadUniversalAudioStream Gets an audio stream.
+		HeadUniversalAudioStream Gets an audio stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiHeadUniversalAudioStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiHeadUniversalAudioStreamRequest
 	*/
 	HeadUniversalAudioStream(ctx context.Context, itemId string) ApiHeadUniversalAudioStreamRequest
 
@@ -55,27 +54,27 @@ type UniversalAudioAPI interface {
 type UniversalAudioAPIService service
 
 type ApiGetUniversalAudioStreamRequest struct {
-	ctx context.Context
-	ApiService UniversalAudioAPI
-	itemId string
-	container *[]string
-	mediaSourceId *string
-	deviceId *string
-	userId *string
-	audioCodec *string
-	maxAudioChannels *int32
+	ctx                      context.Context
+	ApiService               UniversalAudioAPI
+	itemId                   string
+	container                *[]string
+	mediaSourceId            *string
+	deviceId                 *string
+	userId                   *string
+	audioCodec               *string
+	maxAudioChannels         *int32
 	transcodingAudioChannels *int32
-	maxStreamingBitrate *int32
-	audioBitRate *int32
-	startTimeTicks *int64
-	transcodingContainer *string
-	transcodingProtocol *MediaStreamProtocol
-	maxAudioSampleRate *int32
-	maxAudioBitDepth *int32
-	enableRemoteMedia *bool
-	enableAudioVbrEncoding *bool
-	breakOnNonKeyFrames *bool
-	enableRedirection *bool
+	maxStreamingBitrate      *int32
+	audioBitRate             *int32
+	startTimeTicks           *int64
+	transcodingContainer     *string
+	transcodingProtocol      *MediaStreamProtocol
+	maxAudioSampleRate       *int32
+	maxAudioBitDepth         *int32
+	enableRemoteMedia        *bool
+	enableAudioVbrEncoding   *bool
+	breakOnNonKeyFrames      *bool
+	enableRedirection        *bool
 }
 
 // Optional. The audio container.
@@ -193,26 +192,27 @@ func (r ApiGetUniversalAudioStreamRequest) Execute() (*os.File, *http.Response, 
 /*
 GetUniversalAudioStream Gets an audio stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetUniversalAudioStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetUniversalAudioStreamRequest
 */
 func (a *UniversalAudioAPIService) GetUniversalAudioStream(ctx context.Context, itemId string) ApiGetUniversalAudioStreamRequest {
 	return ApiGetUniversalAudioStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r ApiGetUniversalAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UniversalAudioAPIService.GetUniversalAudioStream")
@@ -358,8 +358,8 @@ func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r ApiGetUniver
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -378,27 +378,27 @@ func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r ApiGetUniver
 }
 
 type ApiHeadUniversalAudioStreamRequest struct {
-	ctx context.Context
-	ApiService UniversalAudioAPI
-	itemId string
-	container *[]string
-	mediaSourceId *string
-	deviceId *string
-	userId *string
-	audioCodec *string
-	maxAudioChannels *int32
+	ctx                      context.Context
+	ApiService               UniversalAudioAPI
+	itemId                   string
+	container                *[]string
+	mediaSourceId            *string
+	deviceId                 *string
+	userId                   *string
+	audioCodec               *string
+	maxAudioChannels         *int32
 	transcodingAudioChannels *int32
-	maxStreamingBitrate *int32
-	audioBitRate *int32
-	startTimeTicks *int64
-	transcodingContainer *string
-	transcodingProtocol *MediaStreamProtocol
-	maxAudioSampleRate *int32
-	maxAudioBitDepth *int32
-	enableRemoteMedia *bool
-	enableAudioVbrEncoding *bool
-	breakOnNonKeyFrames *bool
-	enableRedirection *bool
+	maxStreamingBitrate      *int32
+	audioBitRate             *int32
+	startTimeTicks           *int64
+	transcodingContainer     *string
+	transcodingProtocol      *MediaStreamProtocol
+	maxAudioSampleRate       *int32
+	maxAudioBitDepth         *int32
+	enableRemoteMedia        *bool
+	enableAudioVbrEncoding   *bool
+	breakOnNonKeyFrames      *bool
+	enableRedirection        *bool
 }
 
 // Optional. The audio container.
@@ -516,26 +516,27 @@ func (r ApiHeadUniversalAudioStreamRequest) Execute() (*os.File, *http.Response,
 /*
 HeadUniversalAudioStream Gets an audio stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiHeadUniversalAudioStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiHeadUniversalAudioStreamRequest
 */
 func (a *UniversalAudioAPIService) HeadUniversalAudioStream(ctx context.Context, itemId string) ApiHeadUniversalAudioStreamRequest {
 	return ApiHeadUniversalAudioStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *UniversalAudioAPIService) HeadUniversalAudioStreamExecute(r ApiHeadUniversalAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UniversalAudioAPIService.HeadUniversalAudioStream")
@@ -681,8 +682,8 @@ func (a *UniversalAudioAPIService) HeadUniversalAudioStreamExecute(r ApiHeadUniv
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

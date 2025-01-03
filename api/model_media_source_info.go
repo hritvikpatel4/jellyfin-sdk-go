@@ -19,53 +19,53 @@ var _ MappedNullable = &MediaSourceInfo{}
 
 // MediaSourceInfo struct for MediaSourceInfo
 type MediaSourceInfo struct {
-	Protocol *MediaProtocol `json:"Protocol,omitempty"`
-	Id NullableString `json:"Id,omitempty"`
-	Path NullableString `json:"Path,omitempty"`
-	EncoderPath NullableString `json:"EncoderPath,omitempty"`
+	Protocol        *MediaProtocol        `json:"Protocol,omitempty"`
+	Id              NullableString        `json:"Id,omitempty"`
+	Path            NullableString        `json:"Path,omitempty"`
+	EncoderPath     NullableString        `json:"EncoderPath,omitempty"`
 	EncoderProtocol NullableMediaProtocol `json:"EncoderProtocol,omitempty"`
-	Type *MediaSourceType `json:"Type,omitempty"`
-	Container NullableString `json:"Container,omitempty"`
-	Size NullableInt64 `json:"Size,omitempty"`
-	Name NullableString `json:"Name,omitempty"`
+	Type            *MediaSourceType      `json:"Type,omitempty"`
+	Container       NullableString        `json:"Container,omitempty"`
+	Size            NullableInt64         `json:"Size,omitempty"`
+	Name            NullableString        `json:"Name,omitempty"`
 	// Gets or sets a value indicating whether the media is remote.  Differentiate internet url vs local network.
-	IsRemote *bool `json:"IsRemote,omitempty"`
-	ETag NullableString `json:"ETag,omitempty"`
-	RunTimeTicks NullableInt64 `json:"RunTimeTicks,omitempty"`
-	ReadAtNativeFramerate *bool `json:"ReadAtNativeFramerate,omitempty"`
-	IgnoreDts *bool `json:"IgnoreDts,omitempty"`
-	IgnoreIndex *bool `json:"IgnoreIndex,omitempty"`
-	GenPtsInput *bool `json:"GenPtsInput,omitempty"`
-	SupportsTranscoding *bool `json:"SupportsTranscoding,omitempty"`
-	SupportsDirectStream *bool `json:"SupportsDirectStream,omitempty"`
-	SupportsDirectPlay *bool `json:"SupportsDirectPlay,omitempty"`
-	IsInfiniteStream *bool `json:"IsInfiniteStream,omitempty"`
-	UseMostCompatibleTranscodingProfile *bool `json:"UseMostCompatibleTranscodingProfile,omitempty"`
-	RequiresOpening *bool `json:"RequiresOpening,omitempty"`
-	OpenToken NullableString `json:"OpenToken,omitempty"`
-	RequiresClosing *bool `json:"RequiresClosing,omitempty"`
-	LiveStreamId NullableString `json:"LiveStreamId,omitempty"`
-	BufferMs NullableInt32 `json:"BufferMs,omitempty"`
-	RequiresLooping *bool `json:"RequiresLooping,omitempty"`
-	SupportsProbing *bool `json:"SupportsProbing,omitempty"`
-	VideoType NullableVideoType `json:"VideoType,omitempty"`
-	IsoType NullableIsoType `json:"IsoType,omitempty"`
-	Video3DFormat NullableVideo3DFormat `json:"Video3DFormat,omitempty"`
-	MediaStreams []MediaStream `json:"MediaStreams,omitempty"`
-	MediaAttachments []MediaAttachment `json:"MediaAttachments,omitempty"`
-	Formats []string `json:"Formats,omitempty"`
-	Bitrate NullableInt32 `json:"Bitrate,omitempty"`
-	FallbackMaxStreamingBitrate NullableInt32 `json:"FallbackMaxStreamingBitrate,omitempty"`
-	Timestamp NullableTransportStreamTimestamp `json:"Timestamp,omitempty"`
-	RequiredHttpHeaders map[string]string `json:"RequiredHttpHeaders,omitempty"`
-	TranscodingUrl NullableString `json:"TranscodingUrl,omitempty"`
+	IsRemote                            *bool                            `json:"IsRemote,omitempty"`
+	ETag                                NullableString                   `json:"ETag,omitempty"`
+	RunTimeTicks                        NullableInt64                    `json:"RunTimeTicks,omitempty"`
+	ReadAtNativeFramerate               *bool                            `json:"ReadAtNativeFramerate,omitempty"`
+	IgnoreDts                           *bool                            `json:"IgnoreDts,omitempty"`
+	IgnoreIndex                         *bool                            `json:"IgnoreIndex,omitempty"`
+	GenPtsInput                         *bool                            `json:"GenPtsInput,omitempty"`
+	SupportsTranscoding                 *bool                            `json:"SupportsTranscoding,omitempty"`
+	SupportsDirectStream                *bool                            `json:"SupportsDirectStream,omitempty"`
+	SupportsDirectPlay                  *bool                            `json:"SupportsDirectPlay,omitempty"`
+	IsInfiniteStream                    *bool                            `json:"IsInfiniteStream,omitempty"`
+	UseMostCompatibleTranscodingProfile *bool                            `json:"UseMostCompatibleTranscodingProfile,omitempty"`
+	RequiresOpening                     *bool                            `json:"RequiresOpening,omitempty"`
+	OpenToken                           NullableString                   `json:"OpenToken,omitempty"`
+	RequiresClosing                     *bool                            `json:"RequiresClosing,omitempty"`
+	LiveStreamId                        NullableString                   `json:"LiveStreamId,omitempty"`
+	BufferMs                            NullableInt32                    `json:"BufferMs,omitempty"`
+	RequiresLooping                     *bool                            `json:"RequiresLooping,omitempty"`
+	SupportsProbing                     *bool                            `json:"SupportsProbing,omitempty"`
+	VideoType                           NullableVideoType                `json:"VideoType,omitempty"`
+	IsoType                             NullableIsoType                  `json:"IsoType,omitempty"`
+	Video3DFormat                       NullableVideo3DFormat            `json:"Video3DFormat,omitempty"`
+	MediaStreams                        []MediaStream                    `json:"MediaStreams,omitempty"`
+	MediaAttachments                    []MediaAttachment                `json:"MediaAttachments,omitempty"`
+	Formats                             []string                         `json:"Formats,omitempty"`
+	Bitrate                             NullableInt32                    `json:"Bitrate,omitempty"`
+	FallbackMaxStreamingBitrate         NullableInt32                    `json:"FallbackMaxStreamingBitrate,omitempty"`
+	Timestamp                           NullableTransportStreamTimestamp `json:"Timestamp,omitempty"`
+	RequiredHttpHeaders                 map[string]string                `json:"RequiredHttpHeaders,omitempty"`
+	TranscodingUrl                      NullableString                   `json:"TranscodingUrl,omitempty"`
 	// Media streaming protocol.  Lowercase for backwards compatibility.
-	TranscodingSubProtocol *MediaStreamProtocol `json:"TranscodingSubProtocol,omitempty"`
-	TranscodingContainer NullableString `json:"TranscodingContainer,omitempty"`
-	AnalyzeDurationMs NullableInt32 `json:"AnalyzeDurationMs,omitempty"`
-	DefaultAudioStreamIndex NullableInt32 `json:"DefaultAudioStreamIndex,omitempty"`
-	DefaultSubtitleStreamIndex NullableInt32 `json:"DefaultSubtitleStreamIndex,omitempty"`
-	HasSegments *bool `json:"HasSegments,omitempty"`
+	TranscodingSubProtocol     *MediaStreamProtocol `json:"TranscodingSubProtocol,omitempty"`
+	TranscodingContainer       NullableString       `json:"TranscodingContainer,omitempty"`
+	AnalyzeDurationMs          NullableInt32        `json:"AnalyzeDurationMs,omitempty"`
+	DefaultAudioStreamIndex    NullableInt32        `json:"DefaultAudioStreamIndex,omitempty"`
+	DefaultSubtitleStreamIndex NullableInt32        `json:"DefaultSubtitleStreamIndex,omitempty"`
+	HasSegments                *bool                `json:"HasSegments,omitempty"`
 }
 
 // NewMediaSourceInfo instantiates a new MediaSourceInfo object
@@ -153,6 +153,7 @@ func (o *MediaSourceInfo) HasId() bool {
 func (o *MediaSourceInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *MediaSourceInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -195,6 +196,7 @@ func (o *MediaSourceInfo) HasPath() bool {
 func (o *MediaSourceInfo) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *MediaSourceInfo) SetPathNil() {
 	o.Path.Set(nil)
@@ -237,6 +239,7 @@ func (o *MediaSourceInfo) HasEncoderPath() bool {
 func (o *MediaSourceInfo) SetEncoderPath(v string) {
 	o.EncoderPath.Set(&v)
 }
+
 // SetEncoderPathNil sets the value for EncoderPath to be an explicit nil
 func (o *MediaSourceInfo) SetEncoderPathNil() {
 	o.EncoderPath.Set(nil)
@@ -279,6 +282,7 @@ func (o *MediaSourceInfo) HasEncoderProtocol() bool {
 func (o *MediaSourceInfo) SetEncoderProtocol(v MediaProtocol) {
 	o.EncoderProtocol.Set(&v)
 }
+
 // SetEncoderProtocolNil sets the value for EncoderProtocol to be an explicit nil
 func (o *MediaSourceInfo) SetEncoderProtocolNil() {
 	o.EncoderProtocol.Set(nil)
@@ -353,6 +357,7 @@ func (o *MediaSourceInfo) HasContainer() bool {
 func (o *MediaSourceInfo) SetContainer(v string) {
 	o.Container.Set(&v)
 }
+
 // SetContainerNil sets the value for Container to be an explicit nil
 func (o *MediaSourceInfo) SetContainerNil() {
 	o.Container.Set(nil)
@@ -395,6 +400,7 @@ func (o *MediaSourceInfo) HasSize() bool {
 func (o *MediaSourceInfo) SetSize(v int64) {
 	o.Size.Set(&v)
 }
+
 // SetSizeNil sets the value for Size to be an explicit nil
 func (o *MediaSourceInfo) SetSizeNil() {
 	o.Size.Set(nil)
@@ -437,6 +443,7 @@ func (o *MediaSourceInfo) HasName() bool {
 func (o *MediaSourceInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *MediaSourceInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -511,6 +518,7 @@ func (o *MediaSourceInfo) HasETag() bool {
 func (o *MediaSourceInfo) SetETag(v string) {
 	o.ETag.Set(&v)
 }
+
 // SetETagNil sets the value for ETag to be an explicit nil
 func (o *MediaSourceInfo) SetETagNil() {
 	o.ETag.Set(nil)
@@ -553,6 +561,7 @@ func (o *MediaSourceInfo) HasRunTimeTicks() bool {
 func (o *MediaSourceInfo) SetRunTimeTicks(v int64) {
 	o.RunTimeTicks.Set(&v)
 }
+
 // SetRunTimeTicksNil sets the value for RunTimeTicks to be an explicit nil
 func (o *MediaSourceInfo) SetRunTimeTicksNil() {
 	o.RunTimeTicks.Set(nil)
@@ -915,6 +924,7 @@ func (o *MediaSourceInfo) HasOpenToken() bool {
 func (o *MediaSourceInfo) SetOpenToken(v string) {
 	o.OpenToken.Set(&v)
 }
+
 // SetOpenTokenNil sets the value for OpenToken to be an explicit nil
 func (o *MediaSourceInfo) SetOpenTokenNil() {
 	o.OpenToken.Set(nil)
@@ -989,6 +999,7 @@ func (o *MediaSourceInfo) HasLiveStreamId() bool {
 func (o *MediaSourceInfo) SetLiveStreamId(v string) {
 	o.LiveStreamId.Set(&v)
 }
+
 // SetLiveStreamIdNil sets the value for LiveStreamId to be an explicit nil
 func (o *MediaSourceInfo) SetLiveStreamIdNil() {
 	o.LiveStreamId.Set(nil)
@@ -1031,6 +1042,7 @@ func (o *MediaSourceInfo) HasBufferMs() bool {
 func (o *MediaSourceInfo) SetBufferMs(v int32) {
 	o.BufferMs.Set(&v)
 }
+
 // SetBufferMsNil sets the value for BufferMs to be an explicit nil
 func (o *MediaSourceInfo) SetBufferMsNil() {
 	o.BufferMs.Set(nil)
@@ -1137,6 +1149,7 @@ func (o *MediaSourceInfo) HasVideoType() bool {
 func (o *MediaSourceInfo) SetVideoType(v VideoType) {
 	o.VideoType.Set(&v)
 }
+
 // SetVideoTypeNil sets the value for VideoType to be an explicit nil
 func (o *MediaSourceInfo) SetVideoTypeNil() {
 	o.VideoType.Set(nil)
@@ -1179,6 +1192,7 @@ func (o *MediaSourceInfo) HasIsoType() bool {
 func (o *MediaSourceInfo) SetIsoType(v IsoType) {
 	o.IsoType.Set(&v)
 }
+
 // SetIsoTypeNil sets the value for IsoType to be an explicit nil
 func (o *MediaSourceInfo) SetIsoTypeNil() {
 	o.IsoType.Set(nil)
@@ -1221,6 +1235,7 @@ func (o *MediaSourceInfo) HasVideo3DFormat() bool {
 func (o *MediaSourceInfo) SetVideo3DFormat(v Video3DFormat) {
 	o.Video3DFormat.Set(&v)
 }
+
 // SetVideo3DFormatNil sets the value for Video3DFormat to be an explicit nil
 func (o *MediaSourceInfo) SetVideo3DFormatNil() {
 	o.Video3DFormat.Set(nil)
@@ -1362,6 +1377,7 @@ func (o *MediaSourceInfo) HasBitrate() bool {
 func (o *MediaSourceInfo) SetBitrate(v int32) {
 	o.Bitrate.Set(&v)
 }
+
 // SetBitrateNil sets the value for Bitrate to be an explicit nil
 func (o *MediaSourceInfo) SetBitrateNil() {
 	o.Bitrate.Set(nil)
@@ -1404,6 +1420,7 @@ func (o *MediaSourceInfo) HasFallbackMaxStreamingBitrate() bool {
 func (o *MediaSourceInfo) SetFallbackMaxStreamingBitrate(v int32) {
 	o.FallbackMaxStreamingBitrate.Set(&v)
 }
+
 // SetFallbackMaxStreamingBitrateNil sets the value for FallbackMaxStreamingBitrate to be an explicit nil
 func (o *MediaSourceInfo) SetFallbackMaxStreamingBitrateNil() {
 	o.FallbackMaxStreamingBitrate.Set(nil)
@@ -1446,6 +1463,7 @@ func (o *MediaSourceInfo) HasTimestamp() bool {
 func (o *MediaSourceInfo) SetTimestamp(v TransportStreamTimestamp) {
 	o.Timestamp.Set(&v)
 }
+
 // SetTimestampNil sets the value for Timestamp to be an explicit nil
 func (o *MediaSourceInfo) SetTimestampNil() {
 	o.Timestamp.Set(nil)
@@ -1521,6 +1539,7 @@ func (o *MediaSourceInfo) HasTranscodingUrl() bool {
 func (o *MediaSourceInfo) SetTranscodingUrl(v string) {
 	o.TranscodingUrl.Set(&v)
 }
+
 // SetTranscodingUrlNil sets the value for TranscodingUrl to be an explicit nil
 func (o *MediaSourceInfo) SetTranscodingUrlNil() {
 	o.TranscodingUrl.Set(nil)
@@ -1595,6 +1614,7 @@ func (o *MediaSourceInfo) HasTranscodingContainer() bool {
 func (o *MediaSourceInfo) SetTranscodingContainer(v string) {
 	o.TranscodingContainer.Set(&v)
 }
+
 // SetTranscodingContainerNil sets the value for TranscodingContainer to be an explicit nil
 func (o *MediaSourceInfo) SetTranscodingContainerNil() {
 	o.TranscodingContainer.Set(nil)
@@ -1637,6 +1657,7 @@ func (o *MediaSourceInfo) HasAnalyzeDurationMs() bool {
 func (o *MediaSourceInfo) SetAnalyzeDurationMs(v int32) {
 	o.AnalyzeDurationMs.Set(&v)
 }
+
 // SetAnalyzeDurationMsNil sets the value for AnalyzeDurationMs to be an explicit nil
 func (o *MediaSourceInfo) SetAnalyzeDurationMsNil() {
 	o.AnalyzeDurationMs.Set(nil)
@@ -1679,6 +1700,7 @@ func (o *MediaSourceInfo) HasDefaultAudioStreamIndex() bool {
 func (o *MediaSourceInfo) SetDefaultAudioStreamIndex(v int32) {
 	o.DefaultAudioStreamIndex.Set(&v)
 }
+
 // SetDefaultAudioStreamIndexNil sets the value for DefaultAudioStreamIndex to be an explicit nil
 func (o *MediaSourceInfo) SetDefaultAudioStreamIndexNil() {
 	o.DefaultAudioStreamIndex.Set(nil)
@@ -1721,6 +1743,7 @@ func (o *MediaSourceInfo) HasDefaultSubtitleStreamIndex() bool {
 func (o *MediaSourceInfo) SetDefaultSubtitleStreamIndex(v int32) {
 	o.DefaultSubtitleStreamIndex.Set(&v)
 }
+
 // SetDefaultSubtitleStreamIndexNil sets the value for DefaultSubtitleStreamIndex to be an explicit nil
 func (o *MediaSourceInfo) SetDefaultSubtitleStreamIndexNil() {
 	o.DefaultSubtitleStreamIndex.Set(nil)
@@ -1764,7 +1787,7 @@ func (o *MediaSourceInfo) SetHasSegments(v bool) {
 }
 
 func (o MediaSourceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1946,5 +1969,3 @@ func (v *NullableMediaSourceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

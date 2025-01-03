@@ -20,7 +20,7 @@ type TranscodeSeekInfo string
 
 // List of TranscodeSeekInfo
 const (
-	TRANSCODESEEKINFO_AUTO TranscodeSeekInfo = "Auto"
+	TRANSCODESEEKINFO_AUTO  TranscodeSeekInfo = "Auto"
 	TRANSCODESEEKINFO_BYTES TranscodeSeekInfo = "Bytes"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableTranscodeSeekInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

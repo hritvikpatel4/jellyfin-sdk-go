@@ -19,15 +19,14 @@ import (
 	"strings"
 )
 
-
 type DisplayPreferencesAPI interface {
 
 	/*
-	GetDisplayPreferences Get Display Preferences.
+		GetDisplayPreferences Get Display Preferences.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param displayPreferencesId Display preferences id.
-	@return ApiGetDisplayPreferencesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param displayPreferencesId Display preferences id.
+		@return ApiGetDisplayPreferencesRequest
 	*/
 	GetDisplayPreferences(ctx context.Context, displayPreferencesId string) ApiGetDisplayPreferencesRequest
 
@@ -36,11 +35,11 @@ type DisplayPreferencesAPI interface {
 	GetDisplayPreferencesExecute(r ApiGetDisplayPreferencesRequest) (*DisplayPreferencesDto, *http.Response, error)
 
 	/*
-	UpdateDisplayPreferences Update Display Preferences.
+		UpdateDisplayPreferences Update Display Preferences.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param displayPreferencesId Display preferences id.
-	@return ApiUpdateDisplayPreferencesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param displayPreferencesId Display preferences id.
+		@return ApiUpdateDisplayPreferencesRequest
 	*/
 	UpdateDisplayPreferences(ctx context.Context, displayPreferencesId string) ApiUpdateDisplayPreferencesRequest
 
@@ -52,11 +51,11 @@ type DisplayPreferencesAPI interface {
 type DisplayPreferencesAPIService service
 
 type ApiGetDisplayPreferencesRequest struct {
-	ctx context.Context
-	ApiService DisplayPreferencesAPI
+	ctx                  context.Context
+	ApiService           DisplayPreferencesAPI
 	displayPreferencesId string
-	client *string
-	userId *string
+	client               *string
+	userId               *string
 }
 
 // Client.
@@ -78,26 +77,27 @@ func (r ApiGetDisplayPreferencesRequest) Execute() (*DisplayPreferencesDto, *htt
 /*
 GetDisplayPreferences Get Display Preferences.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param displayPreferencesId Display preferences id.
- @return ApiGetDisplayPreferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param displayPreferencesId Display preferences id.
+	@return ApiGetDisplayPreferencesRequest
 */
 func (a *DisplayPreferencesAPIService) GetDisplayPreferences(ctx context.Context, displayPreferencesId string) ApiGetDisplayPreferencesRequest {
 	return ApiGetDisplayPreferencesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		displayPreferencesId: displayPreferencesId,
 	}
 }
 
 // Execute executes the request
-//  @return DisplayPreferencesDto
+//
+//	@return DisplayPreferencesDto
 func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r ApiGetDisplayPreferencesRequest) (*DisplayPreferencesDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DisplayPreferencesDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DisplayPreferencesDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DisplayPreferencesAPIService.GetDisplayPreferences")
@@ -188,12 +188,12 @@ func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r ApiGetDisp
 }
 
 type ApiUpdateDisplayPreferencesRequest struct {
-	ctx context.Context
-	ApiService DisplayPreferencesAPI
-	displayPreferencesId string
-	client *string
+	ctx                   context.Context
+	ApiService            DisplayPreferencesAPI
+	displayPreferencesId  string
+	client                *string
 	displayPreferencesDto *DisplayPreferencesDto
-	userId *string
+	userId                *string
 }
 
 // Client.
@@ -221,14 +221,14 @@ func (r ApiUpdateDisplayPreferencesRequest) Execute() (*http.Response, error) {
 /*
 UpdateDisplayPreferences Update Display Preferences.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param displayPreferencesId Display preferences id.
- @return ApiUpdateDisplayPreferencesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param displayPreferencesId Display preferences id.
+	@return ApiUpdateDisplayPreferencesRequest
 */
 func (a *DisplayPreferencesAPIService) UpdateDisplayPreferences(ctx context.Context, displayPreferencesId string) ApiUpdateDisplayPreferencesRequest {
 	return ApiUpdateDisplayPreferencesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		displayPreferencesId: displayPreferencesId,
 	}
 }
@@ -236,9 +236,9 @@ func (a *DisplayPreferencesAPIService) UpdateDisplayPreferences(ctx context.Cont
 // Execute executes the request
 func (a *DisplayPreferencesAPIService) UpdateDisplayPreferencesExecute(r ApiUpdateDisplayPreferencesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DisplayPreferencesAPIService.UpdateDisplayPreferences")

@@ -20,12 +20,12 @@ type MediaSegmentType string
 
 // List of MediaSegmentType
 const (
-	MEDIASEGMENTTYPE_UNKNOWN MediaSegmentType = "Unknown"
+	MEDIASEGMENTTYPE_UNKNOWN    MediaSegmentType = "Unknown"
 	MEDIASEGMENTTYPE_COMMERCIAL MediaSegmentType = "Commercial"
-	MEDIASEGMENTTYPE_PREVIEW MediaSegmentType = "Preview"
-	MEDIASEGMENTTYPE_RECAP MediaSegmentType = "Recap"
-	MEDIASEGMENTTYPE_OUTRO MediaSegmentType = "Outro"
-	MEDIASEGMENTTYPE_INTRO MediaSegmentType = "Intro"
+	MEDIASEGMENTTYPE_PREVIEW    MediaSegmentType = "Preview"
+	MEDIASEGMENTTYPE_RECAP      MediaSegmentType = "Recap"
+	MEDIASEGMENTTYPE_OUTRO      MediaSegmentType = "Outro"
+	MEDIASEGMENTTYPE_INTRO      MediaSegmentType = "Intro"
 )
 
 // All allowed values of MediaSegmentType enum
@@ -116,4 +116,3 @@ func (v *NullableMediaSegmentType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

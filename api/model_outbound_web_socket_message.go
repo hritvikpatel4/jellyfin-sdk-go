@@ -12,40 +12,40 @@ package api
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // OutboundWebSocketMessage - Represents the list of possible outbound websocket types
 type OutboundWebSocketMessage struct {
-	ActivityLogEntryMessage *ActivityLogEntryMessage
-	ForceKeepAliveMessage *ForceKeepAliveMessage
-	GeneralCommandMessage *GeneralCommandMessage
-	LibraryChangedMessage *LibraryChangedMessage
-	OutboundKeepAliveMessage *OutboundKeepAliveMessage
-	PlayMessage *PlayMessage
-	PlaystateMessage *PlaystateMessage
+	ActivityLogEntryMessage            *ActivityLogEntryMessage
+	ForceKeepAliveMessage              *ForceKeepAliveMessage
+	GeneralCommandMessage              *GeneralCommandMessage
+	LibraryChangedMessage              *LibraryChangedMessage
+	OutboundKeepAliveMessage           *OutboundKeepAliveMessage
+	PlayMessage                        *PlayMessage
+	PlaystateMessage                   *PlaystateMessage
 	PluginInstallationCancelledMessage *PluginInstallationCancelledMessage
 	PluginInstallationCompletedMessage *PluginInstallationCompletedMessage
-	PluginInstallationFailedMessage *PluginInstallationFailedMessage
-	PluginInstallingMessage *PluginInstallingMessage
-	PluginUninstalledMessage *PluginUninstalledMessage
-	RefreshProgressMessage *RefreshProgressMessage
-	RestartRequiredMessage *RestartRequiredMessage
-	ScheduledTaskEndedMessage *ScheduledTaskEndedMessage
-	ScheduledTasksInfoMessage *ScheduledTasksInfoMessage
-	SeriesTimerCancelledMessage *SeriesTimerCancelledMessage
-	SeriesTimerCreatedMessage *SeriesTimerCreatedMessage
-	ServerRestartingMessage *ServerRestartingMessage
-	ServerShuttingDownMessage *ServerShuttingDownMessage
-	SessionsMessage *SessionsMessage
-	SyncPlayCommandMessage *SyncPlayCommandMessage
-	SyncPlayGroupUpdateCommandMessage *SyncPlayGroupUpdateCommandMessage
-	TimerCancelledMessage *TimerCancelledMessage
-	TimerCreatedMessage *TimerCreatedMessage
-	UserDataChangedMessage *UserDataChangedMessage
-	UserDeletedMessage *UserDeletedMessage
-	UserUpdatedMessage *UserUpdatedMessage
+	PluginInstallationFailedMessage    *PluginInstallationFailedMessage
+	PluginInstallingMessage            *PluginInstallingMessage
+	PluginUninstalledMessage           *PluginUninstalledMessage
+	RefreshProgressMessage             *RefreshProgressMessage
+	RestartRequiredMessage             *RestartRequiredMessage
+	ScheduledTaskEndedMessage          *ScheduledTaskEndedMessage
+	ScheduledTasksInfoMessage          *ScheduledTasksInfoMessage
+	SeriesTimerCancelledMessage        *SeriesTimerCancelledMessage
+	SeriesTimerCreatedMessage          *SeriesTimerCreatedMessage
+	ServerRestartingMessage            *ServerRestartingMessage
+	ServerShuttingDownMessage          *ServerShuttingDownMessage
+	SessionsMessage                    *SessionsMessage
+	SyncPlayCommandMessage             *SyncPlayCommandMessage
+	SyncPlayGroupUpdateCommandMessage  *SyncPlayGroupUpdateCommandMessage
+	TimerCancelledMessage              *TimerCancelledMessage
+	TimerCreatedMessage                *TimerCreatedMessage
+	UserDataChangedMessage             *UserDataChangedMessage
+	UserDeletedMessage                 *UserDeletedMessage
+	UserUpdatedMessage                 *UserUpdatedMessage
 }
 
 // ActivityLogEntryMessageAsOutboundWebSocketMessage is a convenience function that returns ActivityLogEntryMessage wrapped in OutboundWebSocketMessage
@@ -243,7 +243,6 @@ func UserUpdatedMessageAsOutboundWebSocketMessage(v *UserUpdatedMessage) Outboun
 		UserUpdatedMessage: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OutboundWebSocketMessage) UnmarshalJSON(data []byte) error {
@@ -882,7 +881,7 @@ func (src OutboundWebSocketMessage) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OutboundWebSocketMessage) GetActualInstance() (interface{}) {
+func (obj *OutboundWebSocketMessage) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -1037,5 +1036,3 @@ func (v *NullableOutboundWebSocketMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

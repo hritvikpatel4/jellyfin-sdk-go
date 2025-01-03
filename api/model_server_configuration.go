@@ -30,14 +30,14 @@ type ServerConfiguration struct {
 	// Gets or sets the stringified PreviousVersion to be stored/loaded,  because System.Version itself isn't xml-serializable.
 	PreviousVersionStr NullableString `json:"PreviousVersionStr,omitempty"`
 	// Gets or sets a value indicating whether to enable prometheus metrics exporting.
-	EnableMetrics *bool `json:"EnableMetrics,omitempty"`
+	EnableMetrics                 *bool `json:"EnableMetrics,omitempty"`
 	EnableNormalizedItemByNameIds *bool `json:"EnableNormalizedItemByNameIds,omitempty"`
 	// Gets or sets a value indicating whether this instance is port authorized.
 	IsPortAuthorized *bool `json:"IsPortAuthorized,omitempty"`
 	// Gets or sets a value indicating whether quick connect is available for use on this server.
 	QuickConnectAvailable *bool `json:"QuickConnectAvailable,omitempty"`
 	// Gets or sets a value indicating whether [enable case sensitive item ids].
-	EnableCaseSensitiveItemIds *bool `json:"EnableCaseSensitiveItemIds,omitempty"`
+	EnableCaseSensitiveItemIds       *bool `json:"EnableCaseSensitiveItemIds,omitempty"`
 	DisableLiveTvChannelUserDataName *bool `json:"DisableLiveTvChannelUserDataName,omitempty"`
 	// Gets or sets the metadata path.
 	MetadataPath *string `json:"MetadataPath,omitempty"`
@@ -68,22 +68,22 @@ type ServerConfiguration struct {
 	// Gets or sets the duration in seconds that we will wait after a library updated event before executing the library changed notification.
 	LibraryUpdateDuration *int32 `json:"LibraryUpdateDuration,omitempty"`
 	// Gets or sets the image saving convention.
-	ImageSavingConvention *ImageSavingConvention `json:"ImageSavingConvention,omitempty"`
-	MetadataOptions []MetadataOptions `json:"MetadataOptions,omitempty"`
-	SkipDeserializationForBasicTypes *bool `json:"SkipDeserializationForBasicTypes,omitempty"`
-	ServerName *string `json:"ServerName,omitempty"`
-	UICulture *string `json:"UICulture,omitempty"`
-	SaveMetadataHidden *bool `json:"SaveMetadataHidden,omitempty"`
-	ContentTypes []NameValuePair `json:"ContentTypes,omitempty"`
-	RemoteClientBitrateLimit *int32 `json:"RemoteClientBitrateLimit,omitempty"`
-	EnableFolderView *bool `json:"EnableFolderView,omitempty"`
-	EnableGroupingIntoCollections *bool `json:"EnableGroupingIntoCollections,omitempty"`
-	DisplaySpecialsWithinSeasons *bool `json:"DisplaySpecialsWithinSeasons,omitempty"`
-	CodecsUsed []string `json:"CodecsUsed,omitempty"`
-	PluginRepositories []RepositoryInfo `json:"PluginRepositories,omitempty"`
-	EnableExternalContentInSuggestions *bool `json:"EnableExternalContentInSuggestions,omitempty"`
-	ImageExtractionTimeoutMs *int32 `json:"ImageExtractionTimeoutMs,omitempty"`
-	PathSubstitutions []PathSubstitution `json:"PathSubstitutions,omitempty"`
+	ImageSavingConvention              *ImageSavingConvention `json:"ImageSavingConvention,omitempty"`
+	MetadataOptions                    []MetadataOptions      `json:"MetadataOptions,omitempty"`
+	SkipDeserializationForBasicTypes   *bool                  `json:"SkipDeserializationForBasicTypes,omitempty"`
+	ServerName                         *string                `json:"ServerName,omitempty"`
+	UICulture                          *string                `json:"UICulture,omitempty"`
+	SaveMetadataHidden                 *bool                  `json:"SaveMetadataHidden,omitempty"`
+	ContentTypes                       []NameValuePair        `json:"ContentTypes,omitempty"`
+	RemoteClientBitrateLimit           *int32                 `json:"RemoteClientBitrateLimit,omitempty"`
+	EnableFolderView                   *bool                  `json:"EnableFolderView,omitempty"`
+	EnableGroupingIntoCollections      *bool                  `json:"EnableGroupingIntoCollections,omitempty"`
+	DisplaySpecialsWithinSeasons       *bool                  `json:"DisplaySpecialsWithinSeasons,omitempty"`
+	CodecsUsed                         []string               `json:"CodecsUsed,omitempty"`
+	PluginRepositories                 []RepositoryInfo       `json:"PluginRepositories,omitempty"`
+	EnableExternalContentInSuggestions *bool                  `json:"EnableExternalContentInSuggestions,omitempty"`
+	ImageExtractionTimeoutMs           *int32                 `json:"ImageExtractionTimeoutMs,omitempty"`
+	PathSubstitutions                  []PathSubstitution     `json:"PathSubstitutions,omitempty"`
 	// Gets or sets a value indicating whether slow server responses should be logged as a warning.
 	EnableSlowResponseWarning *bool `json:"EnableSlowResponseWarning,omitempty"`
 	// Gets or sets the threshold for the slow response time warning in ms.
@@ -225,6 +225,7 @@ func (o *ServerConfiguration) HasCachePath() bool {
 func (o *ServerConfiguration) SetCachePath(v string) {
 	o.CachePath.Set(&v)
 }
+
 // SetCachePathNil sets the value for CachePath to be an explicit nil
 func (o *ServerConfiguration) SetCachePathNil() {
 	o.CachePath.Set(nil)
@@ -267,6 +268,7 @@ func (o *ServerConfiguration) HasPreviousVersion() bool {
 func (o *ServerConfiguration) SetPreviousVersion(v string) {
 	o.PreviousVersion.Set(&v)
 }
+
 // SetPreviousVersionNil sets the value for PreviousVersion to be an explicit nil
 func (o *ServerConfiguration) SetPreviousVersionNil() {
 	o.PreviousVersion.Set(nil)
@@ -309,6 +311,7 @@ func (o *ServerConfiguration) HasPreviousVersionStr() bool {
 func (o *ServerConfiguration) SetPreviousVersionStr(v string) {
 	o.PreviousVersionStr.Set(&v)
 }
+
 // SetPreviousVersionStrNil sets the value for PreviousVersionStr to be an explicit nil
 func (o *ServerConfiguration) SetPreviousVersionStrNil() {
 	o.PreviousVersionStr.Set(nil)
@@ -1599,6 +1602,7 @@ func (o *ServerConfiguration) HasActivityLogRetentionDays() bool {
 func (o *ServerConfiguration) SetActivityLogRetentionDays(v int32) {
 	o.ActivityLogRetentionDays.Set(&v)
 }
+
 // SetActivityLogRetentionDaysNil sets the value for ActivityLogRetentionDays to be an explicit nil
 func (o *ServerConfiguration) SetActivityLogRetentionDaysNil() {
 	o.ActivityLogRetentionDays.Set(nil)
@@ -1898,7 +1902,7 @@ func (o *ServerConfiguration) SetTrickplayOptions(v TrickplayOptions) {
 }
 
 func (o ServerConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2107,5 +2111,3 @@ func (v *NullableServerConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

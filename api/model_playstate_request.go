@@ -20,8 +20,8 @@ var _ MappedNullable = &PlaystateRequest{}
 // PlaystateRequest struct for PlaystateRequest
 type PlaystateRequest struct {
 	// Enum PlaystateCommand.
-	Command *PlaystateCommand `json:"Command,omitempty"`
-	SeekPositionTicks NullableInt64 `json:"SeekPositionTicks,omitempty"`
+	Command           *PlaystateCommand `json:"Command,omitempty"`
+	SeekPositionTicks NullableInt64     `json:"SeekPositionTicks,omitempty"`
 	// Gets or sets the controlling user identifier.
 	ControllingUserId NullableString `json:"ControllingUserId,omitempty"`
 }
@@ -107,6 +107,7 @@ func (o *PlaystateRequest) HasSeekPositionTicks() bool {
 func (o *PlaystateRequest) SetSeekPositionTicks(v int64) {
 	o.SeekPositionTicks.Set(&v)
 }
+
 // SetSeekPositionTicksNil sets the value for SeekPositionTicks to be an explicit nil
 func (o *PlaystateRequest) SetSeekPositionTicksNil() {
 	o.SeekPositionTicks.Set(nil)
@@ -149,6 +150,7 @@ func (o *PlaystateRequest) HasControllingUserId() bool {
 func (o *PlaystateRequest) SetControllingUserId(v string) {
 	o.ControllingUserId.Set(&v)
 }
+
 // SetControllingUserIdNil sets the value for ControllingUserId to be an explicit nil
 func (o *PlaystateRequest) SetControllingUserIdNil() {
 	o.ControllingUserId.Set(nil)
@@ -160,7 +162,7 @@ func (o *PlaystateRequest) UnsetControllingUserId() {
 }
 
 func (o PlaystateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,5 +218,3 @@ func (v *NullablePlaystateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

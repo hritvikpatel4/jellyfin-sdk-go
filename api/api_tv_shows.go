@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 	"time"
 )
-
 
 type TvShowsAPI interface {
 
 	/*
-	GetEpisodes Gets episodes for a tv season.
+		GetEpisodes Gets episodes for a tv season.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param seriesId The series id.
-	@return ApiGetEpisodesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param seriesId The series id.
+		@return ApiGetEpisodesRequest
 	*/
 	GetEpisodes(ctx context.Context, seriesId string) ApiGetEpisodesRequest
 
@@ -38,10 +37,10 @@ type TvShowsAPI interface {
 	GetEpisodesExecute(r ApiGetEpisodesRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetNextUp Gets a list of next up episodes.
+		GetNextUp Gets a list of next up episodes.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetNextUpRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetNextUpRequest
 	*/
 	GetNextUp(ctx context.Context) ApiGetNextUpRequest
 
@@ -50,11 +49,11 @@ type TvShowsAPI interface {
 	GetNextUpExecute(r ApiGetNextUpRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetSeasons Gets seasons for a tv series.
+		GetSeasons Gets seasons for a tv series.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param seriesId The series id.
-	@return ApiGetSeasonsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param seriesId The series id.
+		@return ApiGetSeasonsRequest
 	*/
 	GetSeasons(ctx context.Context, seriesId string) ApiGetSeasonsRequest
 
@@ -63,10 +62,10 @@ type TvShowsAPI interface {
 	GetSeasonsExecute(r ApiGetSeasonsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetUpcomingEpisodes Gets a list of upcoming episodes.
+		GetUpcomingEpisodes Gets a list of upcoming episodes.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUpcomingEpisodesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetUpcomingEpisodesRequest
 	*/
 	GetUpcomingEpisodes(ctx context.Context) ApiGetUpcomingEpisodesRequest
 
@@ -79,23 +78,23 @@ type TvShowsAPI interface {
 type TvShowsAPIService service
 
 type ApiGetEpisodesRequest struct {
-	ctx context.Context
-	ApiService TvShowsAPI
-	seriesId string
-	userId *string
-	fields *[]ItemFields
-	season *int32
-	seasonId *string
-	isMissing *bool
-	adjacentTo *string
-	startItemId *string
-	startIndex *int32
-	limit *int32
-	enableImages *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       TvShowsAPI
+	seriesId         string
+	userId           *string
+	fields           *[]ItemFields
+	season           *int32
+	seasonId         *string
+	isMissing        *bool
+	adjacentTo       *string
+	startItemId      *string
+	startIndex       *int32
+	limit            *int32
+	enableImages     *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
-	enableUserData *bool
-	sortBy *ItemSortBy
+	enableUserData   *bool
+	sortBy           *ItemSortBy
 }
 
 // The user id.
@@ -189,26 +188,27 @@ func (r ApiGetEpisodesRequest) Execute() (*BaseItemDtoQueryResult, *http.Respons
 /*
 GetEpisodes Gets episodes for a tv season.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param seriesId The series id.
- @return ApiGetEpisodesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param seriesId The series id.
+	@return ApiGetEpisodesRequest
 */
 func (a *TvShowsAPIService) GetEpisodes(ctx context.Context, seriesId string) ApiGetEpisodesRequest {
 	return ApiGetEpisodesRequest{
 		ApiService: a,
-		ctx: ctx,
-		seriesId: seriesId,
+		ctx:        ctx,
+		seriesId:   seriesId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetEpisodes")
@@ -341,8 +341,8 @@ func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*BaseIt
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -361,23 +361,23 @@ func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*BaseIt
 }
 
 type ApiGetNextUpRequest struct {
-	ctx context.Context
-	ApiService TvShowsAPI
-	userId *string
-	startIndex *int32
-	limit *int32
-	fields *[]ItemFields
-	seriesId *string
-	parentId *string
-	enableImages *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	enableUserData *bool
-	nextUpDateCutoff *time.Time
+	ctx                    context.Context
+	ApiService             TvShowsAPI
+	userId                 *string
+	startIndex             *int32
+	limit                  *int32
+	fields                 *[]ItemFields
+	seriesId               *string
+	parentId               *string
+	enableImages           *bool
+	imageTypeLimit         *int32
+	enableImageTypes       *[]ImageType
+	enableUserData         *bool
+	nextUpDateCutoff       *time.Time
 	enableTotalRecordCount *bool
-	disableFirstEpisode *bool
-	enableResumable *bool
-	enableRewatching *bool
+	disableFirstEpisode    *bool
+	enableResumable        *bool
+	enableRewatching       *bool
 }
 
 // The user id of the user to get the next up episodes for.
@@ -477,24 +477,25 @@ func (r ApiGetNextUpRequest) Execute() (*BaseItemDtoQueryResult, *http.Response,
 /*
 GetNextUp Gets a list of next up episodes.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNextUpRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNextUpRequest
 */
 func (a *TvShowsAPIService) GetNextUp(ctx context.Context) ApiGetNextUpRequest {
 	return ApiGetNextUpRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *TvShowsAPIService) GetNextUpExecute(r ApiGetNextUpRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetNextUp")
@@ -650,18 +651,18 @@ func (a *TvShowsAPIService) GetNextUpExecute(r ApiGetNextUpRequest) (*BaseItemDt
 }
 
 type ApiGetSeasonsRequest struct {
-	ctx context.Context
-	ApiService TvShowsAPI
-	seriesId string
-	userId *string
-	fields *[]ItemFields
-	isSpecialSeason *bool
-	isMissing *bool
-	adjacentTo *string
-	enableImages *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       TvShowsAPI
+	seriesId         string
+	userId           *string
+	fields           *[]ItemFields
+	isSpecialSeason  *bool
+	isMissing        *bool
+	adjacentTo       *string
+	enableImages     *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
-	enableUserData *bool
+	enableUserData   *bool
 }
 
 // The user id.
@@ -725,26 +726,27 @@ func (r ApiGetSeasonsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response
 /*
 GetSeasons Gets seasons for a tv series.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param seriesId The series id.
- @return ApiGetSeasonsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param seriesId The series id.
+	@return ApiGetSeasonsRequest
 */
 func (a *TvShowsAPIService) GetSeasons(ctx context.Context, seriesId string) ApiGetSeasonsRequest {
 	return ApiGetSeasonsRequest{
 		ApiService: a,
-		ctx: ctx,
-		seriesId: seriesId,
+		ctx:        ctx,
+		seriesId:   seriesId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetSeasons")
@@ -862,8 +864,8 @@ func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*BaseItem
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -882,17 +884,17 @@ func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*BaseItem
 }
 
 type ApiGetUpcomingEpisodesRequest struct {
-	ctx context.Context
-	ApiService TvShowsAPI
-	userId *string
-	startIndex *int32
-	limit *int32
-	fields *[]ItemFields
-	parentId *string
-	enableImages *bool
-	imageTypeLimit *int32
+	ctx              context.Context
+	ApiService       TvShowsAPI
+	userId           *string
+	startIndex       *int32
+	limit            *int32
+	fields           *[]ItemFields
+	parentId         *string
+	enableImages     *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
-	enableUserData *bool
+	enableUserData   *bool
 }
 
 // The user id of the user to get the upcoming episodes for.
@@ -956,24 +958,25 @@ func (r ApiGetUpcomingEpisodesRequest) Execute() (*BaseItemDtoQueryResult, *http
 /*
 GetUpcomingEpisodes Gets a list of upcoming episodes.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUpcomingEpisodesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUpcomingEpisodesRequest
 */
 func (a *TvShowsAPIService) GetUpcomingEpisodes(ctx context.Context) ApiGetUpcomingEpisodesRequest {
 	return ApiGetUpcomingEpisodesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *TvShowsAPIService) GetUpcomingEpisodesExecute(r ApiGetUpcomingEpisodesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetUpcomingEpisodes")

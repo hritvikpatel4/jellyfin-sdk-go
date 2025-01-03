@@ -20,9 +20,9 @@ type PlaybackErrorCode string
 
 // List of PlaybackErrorCode
 const (
-	PLAYBACKERRORCODE_NOT_ALLOWED PlaybackErrorCode = "NotAllowed"
+	PLAYBACKERRORCODE_NOT_ALLOWED          PlaybackErrorCode = "NotAllowed"
 	PLAYBACKERRORCODE_NO_COMPATIBLE_STREAM PlaybackErrorCode = "NoCompatibleStream"
-	PLAYBACKERRORCODE_RATE_LIMIT_EXCEEDED PlaybackErrorCode = "RateLimitExceeded"
+	PLAYBACKERRORCODE_RATE_LIMIT_EXCEEDED  PlaybackErrorCode = "RateLimitExceeded"
 )
 
 // All allowed values of PlaybackErrorCode enum
@@ -110,4 +110,3 @@ func (v *NullablePlaybackErrorCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

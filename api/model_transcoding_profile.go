@@ -496,6 +496,7 @@ func (o *TranscodingProfile) HasMaxAudioChannels() bool {
 func (o *TranscodingProfile) SetMaxAudioChannels(v string) {
 	o.MaxAudioChannels.Set(&v)
 }
+
 // SetMaxAudioChannelsNil sets the value for MaxAudioChannels to be an explicit nil
 func (o *TranscodingProfile) SetMaxAudioChannelsNil() {
 	o.MaxAudioChannels.Set(nil)
@@ -667,7 +668,7 @@ func (o *TranscodingProfile) SetEnableAudioVbrEncoding(v bool) {
 }
 
 func (o TranscodingProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -765,5 +766,3 @@ func (v *NullableTranscodingProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -11,8 +11,8 @@ API version: 10.10.3
 package api
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &MessageCommand{}
 
 // MessageCommand struct for MessageCommand
 type MessageCommand struct {
-	Header NullableString `json:"Header,omitempty"`
-	Text string `json:"Text"`
-	TimeoutMs NullableInt64 `json:"TimeoutMs,omitempty"`
+	Header    NullableString `json:"Header,omitempty"`
+	Text      string         `json:"Text"`
+	TimeoutMs NullableInt64  `json:"TimeoutMs,omitempty"`
 }
 
 type _MessageCommand MessageCommand
@@ -78,6 +78,7 @@ func (o *MessageCommand) HasHeader() bool {
 func (o *MessageCommand) SetHeader(v string) {
 	o.Header.Set(&v)
 }
+
 // SetHeaderNil sets the value for Header to be an explicit nil
 func (o *MessageCommand) SetHeaderNil() {
 	o.Header.Set(nil)
@@ -144,6 +145,7 @@ func (o *MessageCommand) HasTimeoutMs() bool {
 func (o *MessageCommand) SetTimeoutMs(v int64) {
 	o.TimeoutMs.Set(&v)
 }
+
 // SetTimeoutMsNil sets the value for TimeoutMs to be an explicit nil
 func (o *MessageCommand) SetTimeoutMsNil() {
 	o.TimeoutMs.Set(nil)
@@ -155,7 +157,7 @@ func (o *MessageCommand) UnsetTimeoutMs() {
 }
 
 func (o MessageCommand) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -187,10 +189,10 @@ func (o *MessageCommand) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -246,5 +248,3 @@ func (v *NullableMessageCommand) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

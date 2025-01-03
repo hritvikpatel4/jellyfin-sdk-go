@@ -74,6 +74,7 @@ func (o *ActivityLogEntryStartMessage) HasData() bool {
 func (o *ActivityLogEntryStartMessage) SetData(v string) {
 	o.Data.Set(&v)
 }
+
 // SetDataNil sets the value for Data to be an explicit nil
 func (o *ActivityLogEntryStartMessage) SetDataNil() {
 	o.Data.Set(nil)
@@ -117,7 +118,7 @@ func (o *ActivityLogEntryStartMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o ActivityLogEntryStartMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableActivityLogEntryStartMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

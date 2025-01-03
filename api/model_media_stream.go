@@ -66,17 +66,17 @@ type MediaStream struct {
 	// Gets the video dovi title.
 	VideoDoViTitle NullableString `json:"VideoDoViTitle,omitempty"`
 	// An enum representing formats of spatial audio.
-	AudioSpatialFormat *AudioSpatialFormat `json:"AudioSpatialFormat,omitempty"`
-	LocalizedUndefined NullableString `json:"LocalizedUndefined,omitempty"`
-	LocalizedDefault NullableString `json:"LocalizedDefault,omitempty"`
-	LocalizedForced NullableString `json:"LocalizedForced,omitempty"`
-	LocalizedExternal NullableString `json:"LocalizedExternal,omitempty"`
-	LocalizedHearingImpaired NullableString `json:"LocalizedHearingImpaired,omitempty"`
-	DisplayTitle NullableString `json:"DisplayTitle,omitempty"`
-	NalLengthSize NullableString `json:"NalLengthSize,omitempty"`
+	AudioSpatialFormat       *AudioSpatialFormat `json:"AudioSpatialFormat,omitempty"`
+	LocalizedUndefined       NullableString      `json:"LocalizedUndefined,omitempty"`
+	LocalizedDefault         NullableString      `json:"LocalizedDefault,omitempty"`
+	LocalizedForced          NullableString      `json:"LocalizedForced,omitempty"`
+	LocalizedExternal        NullableString      `json:"LocalizedExternal,omitempty"`
+	LocalizedHearingImpaired NullableString      `json:"LocalizedHearingImpaired,omitempty"`
+	DisplayTitle             NullableString      `json:"DisplayTitle,omitempty"`
+	NalLengthSize            NullableString      `json:"NalLengthSize,omitempty"`
 	// Gets or sets a value indicating whether this instance is interlaced.
-	IsInterlaced *bool `json:"IsInterlaced,omitempty"`
-	IsAVC NullableBool `json:"IsAVC,omitempty"`
+	IsInterlaced *bool        `json:"IsInterlaced,omitempty"`
+	IsAVC        NullableBool `json:"IsAVC,omitempty"`
 	// Gets or sets the channel layout.
 	ChannelLayout NullableString `json:"ChannelLayout,omitempty"`
 	// Gets or sets the bit rate.
@@ -124,8 +124,8 @@ type MediaStream struct {
 	// Gets or sets the delivery URL.
 	DeliveryUrl NullableString `json:"DeliveryUrl,omitempty"`
 	// Gets or sets a value indicating whether this instance is external URL.
-	IsExternalUrl NullableBool `json:"IsExternalUrl,omitempty"`
-	IsTextSubtitleStream *bool `json:"IsTextSubtitleStream,omitempty"`
+	IsExternalUrl        NullableBool `json:"IsExternalUrl,omitempty"`
+	IsTextSubtitleStream *bool        `json:"IsTextSubtitleStream,omitempty"`
 	// Gets or sets a value indicating whether [supports external stream].
 	SupportsExternalStream *bool `json:"SupportsExternalStream,omitempty"`
 	// Gets or sets the filename.
@@ -187,6 +187,7 @@ func (o *MediaStream) HasCodec() bool {
 func (o *MediaStream) SetCodec(v string) {
 	o.Codec.Set(&v)
 }
+
 // SetCodecNil sets the value for Codec to be an explicit nil
 func (o *MediaStream) SetCodecNil() {
 	o.Codec.Set(nil)
@@ -229,6 +230,7 @@ func (o *MediaStream) HasCodecTag() bool {
 func (o *MediaStream) SetCodecTag(v string) {
 	o.CodecTag.Set(&v)
 }
+
 // SetCodecTagNil sets the value for CodecTag to be an explicit nil
 func (o *MediaStream) SetCodecTagNil() {
 	o.CodecTag.Set(nil)
@@ -271,6 +273,7 @@ func (o *MediaStream) HasLanguage() bool {
 func (o *MediaStream) SetLanguage(v string) {
 	o.Language.Set(&v)
 }
+
 // SetLanguageNil sets the value for Language to be an explicit nil
 func (o *MediaStream) SetLanguageNil() {
 	o.Language.Set(nil)
@@ -313,6 +316,7 @@ func (o *MediaStream) HasColorRange() bool {
 func (o *MediaStream) SetColorRange(v string) {
 	o.ColorRange.Set(&v)
 }
+
 // SetColorRangeNil sets the value for ColorRange to be an explicit nil
 func (o *MediaStream) SetColorRangeNil() {
 	o.ColorRange.Set(nil)
@@ -355,6 +359,7 @@ func (o *MediaStream) HasColorSpace() bool {
 func (o *MediaStream) SetColorSpace(v string) {
 	o.ColorSpace.Set(&v)
 }
+
 // SetColorSpaceNil sets the value for ColorSpace to be an explicit nil
 func (o *MediaStream) SetColorSpaceNil() {
 	o.ColorSpace.Set(nil)
@@ -397,6 +402,7 @@ func (o *MediaStream) HasColorTransfer() bool {
 func (o *MediaStream) SetColorTransfer(v string) {
 	o.ColorTransfer.Set(&v)
 }
+
 // SetColorTransferNil sets the value for ColorTransfer to be an explicit nil
 func (o *MediaStream) SetColorTransferNil() {
 	o.ColorTransfer.Set(nil)
@@ -439,6 +445,7 @@ func (o *MediaStream) HasColorPrimaries() bool {
 func (o *MediaStream) SetColorPrimaries(v string) {
 	o.ColorPrimaries.Set(&v)
 }
+
 // SetColorPrimariesNil sets the value for ColorPrimaries to be an explicit nil
 func (o *MediaStream) SetColorPrimariesNil() {
 	o.ColorPrimaries.Set(nil)
@@ -481,6 +488,7 @@ func (o *MediaStream) HasDvVersionMajor() bool {
 func (o *MediaStream) SetDvVersionMajor(v int32) {
 	o.DvVersionMajor.Set(&v)
 }
+
 // SetDvVersionMajorNil sets the value for DvVersionMajor to be an explicit nil
 func (o *MediaStream) SetDvVersionMajorNil() {
 	o.DvVersionMajor.Set(nil)
@@ -523,6 +531,7 @@ func (o *MediaStream) HasDvVersionMinor() bool {
 func (o *MediaStream) SetDvVersionMinor(v int32) {
 	o.DvVersionMinor.Set(&v)
 }
+
 // SetDvVersionMinorNil sets the value for DvVersionMinor to be an explicit nil
 func (o *MediaStream) SetDvVersionMinorNil() {
 	o.DvVersionMinor.Set(nil)
@@ -565,6 +574,7 @@ func (o *MediaStream) HasDvProfile() bool {
 func (o *MediaStream) SetDvProfile(v int32) {
 	o.DvProfile.Set(&v)
 }
+
 // SetDvProfileNil sets the value for DvProfile to be an explicit nil
 func (o *MediaStream) SetDvProfileNil() {
 	o.DvProfile.Set(nil)
@@ -607,6 +617,7 @@ func (o *MediaStream) HasDvLevel() bool {
 func (o *MediaStream) SetDvLevel(v int32) {
 	o.DvLevel.Set(&v)
 }
+
 // SetDvLevelNil sets the value for DvLevel to be an explicit nil
 func (o *MediaStream) SetDvLevelNil() {
 	o.DvLevel.Set(nil)
@@ -649,6 +660,7 @@ func (o *MediaStream) HasRpuPresentFlag() bool {
 func (o *MediaStream) SetRpuPresentFlag(v int32) {
 	o.RpuPresentFlag.Set(&v)
 }
+
 // SetRpuPresentFlagNil sets the value for RpuPresentFlag to be an explicit nil
 func (o *MediaStream) SetRpuPresentFlagNil() {
 	o.RpuPresentFlag.Set(nil)
@@ -691,6 +703,7 @@ func (o *MediaStream) HasElPresentFlag() bool {
 func (o *MediaStream) SetElPresentFlag(v int32) {
 	o.ElPresentFlag.Set(&v)
 }
+
 // SetElPresentFlagNil sets the value for ElPresentFlag to be an explicit nil
 func (o *MediaStream) SetElPresentFlagNil() {
 	o.ElPresentFlag.Set(nil)
@@ -733,6 +746,7 @@ func (o *MediaStream) HasBlPresentFlag() bool {
 func (o *MediaStream) SetBlPresentFlag(v int32) {
 	o.BlPresentFlag.Set(&v)
 }
+
 // SetBlPresentFlagNil sets the value for BlPresentFlag to be an explicit nil
 func (o *MediaStream) SetBlPresentFlagNil() {
 	o.BlPresentFlag.Set(nil)
@@ -775,6 +789,7 @@ func (o *MediaStream) HasDvBlSignalCompatibilityId() bool {
 func (o *MediaStream) SetDvBlSignalCompatibilityId(v int32) {
 	o.DvBlSignalCompatibilityId.Set(&v)
 }
+
 // SetDvBlSignalCompatibilityIdNil sets the value for DvBlSignalCompatibilityId to be an explicit nil
 func (o *MediaStream) SetDvBlSignalCompatibilityIdNil() {
 	o.DvBlSignalCompatibilityId.Set(nil)
@@ -817,6 +832,7 @@ func (o *MediaStream) HasRotation() bool {
 func (o *MediaStream) SetRotation(v int32) {
 	o.Rotation.Set(&v)
 }
+
 // SetRotationNil sets the value for Rotation to be an explicit nil
 func (o *MediaStream) SetRotationNil() {
 	o.Rotation.Set(nil)
@@ -859,6 +875,7 @@ func (o *MediaStream) HasComment() bool {
 func (o *MediaStream) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *MediaStream) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -901,6 +918,7 @@ func (o *MediaStream) HasTimeBase() bool {
 func (o *MediaStream) SetTimeBase(v string) {
 	o.TimeBase.Set(&v)
 }
+
 // SetTimeBaseNil sets the value for TimeBase to be an explicit nil
 func (o *MediaStream) SetTimeBaseNil() {
 	o.TimeBase.Set(nil)
@@ -943,6 +961,7 @@ func (o *MediaStream) HasCodecTimeBase() bool {
 func (o *MediaStream) SetCodecTimeBase(v string) {
 	o.CodecTimeBase.Set(&v)
 }
+
 // SetCodecTimeBaseNil sets the value for CodecTimeBase to be an explicit nil
 func (o *MediaStream) SetCodecTimeBaseNil() {
 	o.CodecTimeBase.Set(nil)
@@ -985,6 +1004,7 @@ func (o *MediaStream) HasTitle() bool {
 func (o *MediaStream) SetTitle(v string) {
 	o.Title.Set(&v)
 }
+
 // SetTitleNil sets the value for Title to be an explicit nil
 func (o *MediaStream) SetTitleNil() {
 	o.Title.Set(nil)
@@ -1091,6 +1111,7 @@ func (o *MediaStream) HasVideoDoViTitle() bool {
 func (o *MediaStream) SetVideoDoViTitle(v string) {
 	o.VideoDoViTitle.Set(&v)
 }
+
 // SetVideoDoViTitleNil sets the value for VideoDoViTitle to be an explicit nil
 func (o *MediaStream) SetVideoDoViTitleNil() {
 	o.VideoDoViTitle.Set(nil)
@@ -1165,6 +1186,7 @@ func (o *MediaStream) HasLocalizedUndefined() bool {
 func (o *MediaStream) SetLocalizedUndefined(v string) {
 	o.LocalizedUndefined.Set(&v)
 }
+
 // SetLocalizedUndefinedNil sets the value for LocalizedUndefined to be an explicit nil
 func (o *MediaStream) SetLocalizedUndefinedNil() {
 	o.LocalizedUndefined.Set(nil)
@@ -1207,6 +1229,7 @@ func (o *MediaStream) HasLocalizedDefault() bool {
 func (o *MediaStream) SetLocalizedDefault(v string) {
 	o.LocalizedDefault.Set(&v)
 }
+
 // SetLocalizedDefaultNil sets the value for LocalizedDefault to be an explicit nil
 func (o *MediaStream) SetLocalizedDefaultNil() {
 	o.LocalizedDefault.Set(nil)
@@ -1249,6 +1272,7 @@ func (o *MediaStream) HasLocalizedForced() bool {
 func (o *MediaStream) SetLocalizedForced(v string) {
 	o.LocalizedForced.Set(&v)
 }
+
 // SetLocalizedForcedNil sets the value for LocalizedForced to be an explicit nil
 func (o *MediaStream) SetLocalizedForcedNil() {
 	o.LocalizedForced.Set(nil)
@@ -1291,6 +1315,7 @@ func (o *MediaStream) HasLocalizedExternal() bool {
 func (o *MediaStream) SetLocalizedExternal(v string) {
 	o.LocalizedExternal.Set(&v)
 }
+
 // SetLocalizedExternalNil sets the value for LocalizedExternal to be an explicit nil
 func (o *MediaStream) SetLocalizedExternalNil() {
 	o.LocalizedExternal.Set(nil)
@@ -1333,6 +1358,7 @@ func (o *MediaStream) HasLocalizedHearingImpaired() bool {
 func (o *MediaStream) SetLocalizedHearingImpaired(v string) {
 	o.LocalizedHearingImpaired.Set(&v)
 }
+
 // SetLocalizedHearingImpairedNil sets the value for LocalizedHearingImpaired to be an explicit nil
 func (o *MediaStream) SetLocalizedHearingImpairedNil() {
 	o.LocalizedHearingImpaired.Set(nil)
@@ -1375,6 +1401,7 @@ func (o *MediaStream) HasDisplayTitle() bool {
 func (o *MediaStream) SetDisplayTitle(v string) {
 	o.DisplayTitle.Set(&v)
 }
+
 // SetDisplayTitleNil sets the value for DisplayTitle to be an explicit nil
 func (o *MediaStream) SetDisplayTitleNil() {
 	o.DisplayTitle.Set(nil)
@@ -1417,6 +1444,7 @@ func (o *MediaStream) HasNalLengthSize() bool {
 func (o *MediaStream) SetNalLengthSize(v string) {
 	o.NalLengthSize.Set(&v)
 }
+
 // SetNalLengthSizeNil sets the value for NalLengthSize to be an explicit nil
 func (o *MediaStream) SetNalLengthSizeNil() {
 	o.NalLengthSize.Set(nil)
@@ -1491,6 +1519,7 @@ func (o *MediaStream) HasIsAVC() bool {
 func (o *MediaStream) SetIsAVC(v bool) {
 	o.IsAVC.Set(&v)
 }
+
 // SetIsAVCNil sets the value for IsAVC to be an explicit nil
 func (o *MediaStream) SetIsAVCNil() {
 	o.IsAVC.Set(nil)
@@ -1533,6 +1562,7 @@ func (o *MediaStream) HasChannelLayout() bool {
 func (o *MediaStream) SetChannelLayout(v string) {
 	o.ChannelLayout.Set(&v)
 }
+
 // SetChannelLayoutNil sets the value for ChannelLayout to be an explicit nil
 func (o *MediaStream) SetChannelLayoutNil() {
 	o.ChannelLayout.Set(nil)
@@ -1575,6 +1605,7 @@ func (o *MediaStream) HasBitRate() bool {
 func (o *MediaStream) SetBitRate(v int32) {
 	o.BitRate.Set(&v)
 }
+
 // SetBitRateNil sets the value for BitRate to be an explicit nil
 func (o *MediaStream) SetBitRateNil() {
 	o.BitRate.Set(nil)
@@ -1617,6 +1648,7 @@ func (o *MediaStream) HasBitDepth() bool {
 func (o *MediaStream) SetBitDepth(v int32) {
 	o.BitDepth.Set(&v)
 }
+
 // SetBitDepthNil sets the value for BitDepth to be an explicit nil
 func (o *MediaStream) SetBitDepthNil() {
 	o.BitDepth.Set(nil)
@@ -1659,6 +1691,7 @@ func (o *MediaStream) HasRefFrames() bool {
 func (o *MediaStream) SetRefFrames(v int32) {
 	o.RefFrames.Set(&v)
 }
+
 // SetRefFramesNil sets the value for RefFrames to be an explicit nil
 func (o *MediaStream) SetRefFramesNil() {
 	o.RefFrames.Set(nil)
@@ -1701,6 +1734,7 @@ func (o *MediaStream) HasPacketLength() bool {
 func (o *MediaStream) SetPacketLength(v int32) {
 	o.PacketLength.Set(&v)
 }
+
 // SetPacketLengthNil sets the value for PacketLength to be an explicit nil
 func (o *MediaStream) SetPacketLengthNil() {
 	o.PacketLength.Set(nil)
@@ -1743,6 +1777,7 @@ func (o *MediaStream) HasChannels() bool {
 func (o *MediaStream) SetChannels(v int32) {
 	o.Channels.Set(&v)
 }
+
 // SetChannelsNil sets the value for Channels to be an explicit nil
 func (o *MediaStream) SetChannelsNil() {
 	o.Channels.Set(nil)
@@ -1785,6 +1820,7 @@ func (o *MediaStream) HasSampleRate() bool {
 func (o *MediaStream) SetSampleRate(v int32) {
 	o.SampleRate.Set(&v)
 }
+
 // SetSampleRateNil sets the value for SampleRate to be an explicit nil
 func (o *MediaStream) SetSampleRateNil() {
 	o.SampleRate.Set(nil)
@@ -1923,6 +1959,7 @@ func (o *MediaStream) HasHeight() bool {
 func (o *MediaStream) SetHeight(v int32) {
 	o.Height.Set(&v)
 }
+
 // SetHeightNil sets the value for Height to be an explicit nil
 func (o *MediaStream) SetHeightNil() {
 	o.Height.Set(nil)
@@ -1965,6 +2002,7 @@ func (o *MediaStream) HasWidth() bool {
 func (o *MediaStream) SetWidth(v int32) {
 	o.Width.Set(&v)
 }
+
 // SetWidthNil sets the value for Width to be an explicit nil
 func (o *MediaStream) SetWidthNil() {
 	o.Width.Set(nil)
@@ -2007,6 +2045,7 @@ func (o *MediaStream) HasAverageFrameRate() bool {
 func (o *MediaStream) SetAverageFrameRate(v float32) {
 	o.AverageFrameRate.Set(&v)
 }
+
 // SetAverageFrameRateNil sets the value for AverageFrameRate to be an explicit nil
 func (o *MediaStream) SetAverageFrameRateNil() {
 	o.AverageFrameRate.Set(nil)
@@ -2049,6 +2088,7 @@ func (o *MediaStream) HasRealFrameRate() bool {
 func (o *MediaStream) SetRealFrameRate(v float32) {
 	o.RealFrameRate.Set(&v)
 }
+
 // SetRealFrameRateNil sets the value for RealFrameRate to be an explicit nil
 func (o *MediaStream) SetRealFrameRateNil() {
 	o.RealFrameRate.Set(nil)
@@ -2091,6 +2131,7 @@ func (o *MediaStream) HasReferenceFrameRate() bool {
 func (o *MediaStream) SetReferenceFrameRate(v float32) {
 	o.ReferenceFrameRate.Set(&v)
 }
+
 // SetReferenceFrameRateNil sets the value for ReferenceFrameRate to be an explicit nil
 func (o *MediaStream) SetReferenceFrameRateNil() {
 	o.ReferenceFrameRate.Set(nil)
@@ -2133,6 +2174,7 @@ func (o *MediaStream) HasProfile() bool {
 func (o *MediaStream) SetProfile(v string) {
 	o.Profile.Set(&v)
 }
+
 // SetProfileNil sets the value for Profile to be an explicit nil
 func (o *MediaStream) SetProfileNil() {
 	o.Profile.Set(nil)
@@ -2207,6 +2249,7 @@ func (o *MediaStream) HasAspectRatio() bool {
 func (o *MediaStream) SetAspectRatio(v string) {
 	o.AspectRatio.Set(&v)
 }
+
 // SetAspectRatioNil sets the value for AspectRatio to be an explicit nil
 func (o *MediaStream) SetAspectRatioNil() {
 	o.AspectRatio.Set(nil)
@@ -2281,6 +2324,7 @@ func (o *MediaStream) HasScore() bool {
 func (o *MediaStream) SetScore(v int32) {
 	o.Score.Set(&v)
 }
+
 // SetScoreNil sets the value for Score to be an explicit nil
 func (o *MediaStream) SetScoreNil() {
 	o.Score.Set(nil)
@@ -2355,6 +2399,7 @@ func (o *MediaStream) HasDeliveryMethod() bool {
 func (o *MediaStream) SetDeliveryMethod(v SubtitleDeliveryMethod) {
 	o.DeliveryMethod.Set(&v)
 }
+
 // SetDeliveryMethodNil sets the value for DeliveryMethod to be an explicit nil
 func (o *MediaStream) SetDeliveryMethodNil() {
 	o.DeliveryMethod.Set(nil)
@@ -2397,6 +2442,7 @@ func (o *MediaStream) HasDeliveryUrl() bool {
 func (o *MediaStream) SetDeliveryUrl(v string) {
 	o.DeliveryUrl.Set(&v)
 }
+
 // SetDeliveryUrlNil sets the value for DeliveryUrl to be an explicit nil
 func (o *MediaStream) SetDeliveryUrlNil() {
 	o.DeliveryUrl.Set(nil)
@@ -2439,6 +2485,7 @@ func (o *MediaStream) HasIsExternalUrl() bool {
 func (o *MediaStream) SetIsExternalUrl(v bool) {
 	o.IsExternalUrl.Set(&v)
 }
+
 // SetIsExternalUrlNil sets the value for IsExternalUrl to be an explicit nil
 func (o *MediaStream) SetIsExternalUrlNil() {
 	o.IsExternalUrl.Set(nil)
@@ -2545,6 +2592,7 @@ func (o *MediaStream) HasPath() bool {
 func (o *MediaStream) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *MediaStream) SetPathNil() {
 	o.Path.Set(nil)
@@ -2587,6 +2635,7 @@ func (o *MediaStream) HasPixelFormat() bool {
 func (o *MediaStream) SetPixelFormat(v string) {
 	o.PixelFormat.Set(&v)
 }
+
 // SetPixelFormatNil sets the value for PixelFormat to be an explicit nil
 func (o *MediaStream) SetPixelFormatNil() {
 	o.PixelFormat.Set(nil)
@@ -2629,6 +2678,7 @@ func (o *MediaStream) HasLevel() bool {
 func (o *MediaStream) SetLevel(v float64) {
 	o.Level.Set(&v)
 }
+
 // SetLevelNil sets the value for Level to be an explicit nil
 func (o *MediaStream) SetLevelNil() {
 	o.Level.Set(nil)
@@ -2671,6 +2721,7 @@ func (o *MediaStream) HasIsAnamorphic() bool {
 func (o *MediaStream) SetIsAnamorphic(v bool) {
 	o.IsAnamorphic.Set(&v)
 }
+
 // SetIsAnamorphicNil sets the value for IsAnamorphic to be an explicit nil
 func (o *MediaStream) SetIsAnamorphicNil() {
 	o.IsAnamorphic.Set(nil)
@@ -2682,7 +2733,7 @@ func (o *MediaStream) UnsetIsAnamorphic() {
 }
 
 func (o MediaStream) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2918,5 +2969,3 @@ func (v *NullableMediaStream) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

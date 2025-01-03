@@ -32,8 +32,8 @@ type LiveTvServiceInfo struct {
 	// Gets or sets a value indicating whether this instance has update available.
 	HasUpdateAvailable *bool `json:"HasUpdateAvailable,omitempty"`
 	// Gets or sets a value indicating whether this instance is visible.
-	IsVisible *bool `json:"IsVisible,omitempty"`
-	Tuners []string `json:"Tuners,omitempty"`
+	IsVisible *bool    `json:"IsVisible,omitempty"`
+	Tuners    []string `json:"Tuners,omitempty"`
 }
 
 // NewLiveTvServiceInfo instantiates a new LiveTvServiceInfo object
@@ -85,6 +85,7 @@ func (o *LiveTvServiceInfo) HasName() bool {
 func (o *LiveTvServiceInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *LiveTvServiceInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -127,6 +128,7 @@ func (o *LiveTvServiceInfo) HasHomePageUrl() bool {
 func (o *LiveTvServiceInfo) SetHomePageUrl(v string) {
 	o.HomePageUrl.Set(&v)
 }
+
 // SetHomePageUrlNil sets the value for HomePageUrl to be an explicit nil
 func (o *LiveTvServiceInfo) SetHomePageUrlNil() {
 	o.HomePageUrl.Set(nil)
@@ -201,6 +203,7 @@ func (o *LiveTvServiceInfo) HasStatusMessage() bool {
 func (o *LiveTvServiceInfo) SetStatusMessage(v string) {
 	o.StatusMessage.Set(&v)
 }
+
 // SetStatusMessageNil sets the value for StatusMessage to be an explicit nil
 func (o *LiveTvServiceInfo) SetStatusMessageNil() {
 	o.StatusMessage.Set(nil)
@@ -243,6 +246,7 @@ func (o *LiveTvServiceInfo) HasVersion() bool {
 func (o *LiveTvServiceInfo) SetVersion(v string) {
 	o.Version.Set(&v)
 }
+
 // SetVersionNil sets the value for Version to be an explicit nil
 func (o *LiveTvServiceInfo) SetVersionNil() {
 	o.Version.Set(nil)
@@ -351,7 +355,7 @@ func (o *LiveTvServiceInfo) SetTuners(v []string) {
 }
 
 func (o LiveTvServiceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -422,5 +426,3 @@ func (v *NullableLiveTvServiceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

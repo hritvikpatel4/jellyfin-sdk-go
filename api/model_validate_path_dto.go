@@ -108,6 +108,7 @@ func (o *ValidatePathDto) HasPath() bool {
 func (o *ValidatePathDto) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *ValidatePathDto) SetPathNil() {
 	o.Path.Set(nil)
@@ -150,6 +151,7 @@ func (o *ValidatePathDto) HasIsFile() bool {
 func (o *ValidatePathDto) SetIsFile(v bool) {
 	o.IsFile.Set(&v)
 }
+
 // SetIsFileNil sets the value for IsFile to be an explicit nil
 func (o *ValidatePathDto) SetIsFileNil() {
 	o.IsFile.Set(nil)
@@ -161,7 +163,7 @@ func (o *ValidatePathDto) UnsetIsFile() {
 }
 
 func (o ValidatePathDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,5 +219,3 @@ func (v *NullableValidatePathDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -212,6 +212,7 @@ func (o *ClientCapabilitiesDto) HasDeviceProfile() bool {
 func (o *ClientCapabilitiesDto) SetDeviceProfile(v DeviceProfile) {
 	o.DeviceProfile.Set(&v)
 }
+
 // SetDeviceProfileNil sets the value for DeviceProfile to be an explicit nil
 func (o *ClientCapabilitiesDto) SetDeviceProfileNil() {
 	o.DeviceProfile.Set(nil)
@@ -254,6 +255,7 @@ func (o *ClientCapabilitiesDto) HasAppStoreUrl() bool {
 func (o *ClientCapabilitiesDto) SetAppStoreUrl(v string) {
 	o.AppStoreUrl.Set(&v)
 }
+
 // SetAppStoreUrlNil sets the value for AppStoreUrl to be an explicit nil
 func (o *ClientCapabilitiesDto) SetAppStoreUrlNil() {
 	o.AppStoreUrl.Set(nil)
@@ -296,6 +298,7 @@ func (o *ClientCapabilitiesDto) HasIconUrl() bool {
 func (o *ClientCapabilitiesDto) SetIconUrl(v string) {
 	o.IconUrl.Set(&v)
 }
+
 // SetIconUrlNil sets the value for IconUrl to be an explicit nil
 func (o *ClientCapabilitiesDto) SetIconUrlNil() {
 	o.IconUrl.Set(nil)
@@ -307,7 +310,7 @@ func (o *ClientCapabilitiesDto) UnsetIconUrl() {
 }
 
 func (o ClientCapabilitiesDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -375,5 +378,3 @@ func (v *NullableClientCapabilitiesDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

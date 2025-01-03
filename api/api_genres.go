@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type GenresAPI interface {
 
 	/*
-	GetGenre Gets a genre, by name.
+		GetGenre Gets a genre, by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param genreName The genre name.
-	@return ApiGetGenreRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param genreName The genre name.
+		@return ApiGetGenreRequest
 	*/
 	GetGenre(ctx context.Context, genreName string) ApiGetGenreRequest
 
@@ -37,10 +36,10 @@ type GenresAPI interface {
 	GetGenreExecute(r ApiGetGenreRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetGenres Gets all genres from a given item, folder, or the entire library.
+		GetGenres Gets all genres from a given item, folder, or the entire library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetGenresRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetGenresRequest
 	*/
 	GetGenres(ctx context.Context) ApiGetGenresRequest
 
@@ -53,10 +52,10 @@ type GenresAPI interface {
 type GenresAPIService service
 
 type ApiGetGenreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService GenresAPI
-	genreName string
-	userId *string
+	genreName  string
+	userId     *string
 }
 
 // The user id.
@@ -72,26 +71,27 @@ func (r ApiGetGenreRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetGenre Gets a genre, by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param genreName The genre name.
- @return ApiGetGenreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param genreName The genre name.
+	@return ApiGetGenreRequest
 */
 func (a *GenresAPIService) GetGenre(ctx context.Context, genreName string) ApiGetGenreRequest {
 	return ApiGetGenreRequest{
 		ApiService: a,
-		ctx: ctx,
-		genreName: genreName,
+		ctx:        ctx,
+		genreName:  genreName,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *GenresAPIService) GetGenreExecute(r ApiGetGenreRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GenresAPIService.GetGenre")
@@ -178,26 +178,26 @@ func (a *GenresAPIService) GetGenreExecute(r ApiGetGenreRequest) (*BaseItemDto, 
 }
 
 type ApiGetGenresRequest struct {
-	ctx context.Context
-	ApiService GenresAPI
-	startIndex *int32
-	limit *int32
-	searchTerm *string
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	isFavorite *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	userId *string
+	ctx                     context.Context
+	ApiService              GenresAPI
+	startIndex              *int32
+	limit                   *int32
+	searchTerm              *string
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	includeItemTypes        *[]BaseItemKind
+	isFavorite              *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	userId                  *string
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
-	enableImages *bool
-	enableTotalRecordCount *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	sortBy                  *[]ItemSortBy
+	sortOrder               *[]SortOrder
+	enableImages            *bool
+	enableTotalRecordCount  *bool
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
@@ -315,24 +315,25 @@ func (r ApiGetGenresRequest) Execute() (*BaseItemDtoQueryResult, *http.Response,
 /*
 GetGenres Gets all genres from a given item, folder, or the entire library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGenresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetGenresRequest
 */
 func (a *GenresAPIService) GetGenres(ctx context.Context) ApiGetGenresRequest {
 	return ApiGetGenresRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *GenresAPIService) GetGenresExecute(r ApiGetGenresRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GenresAPIService.GetGenres")

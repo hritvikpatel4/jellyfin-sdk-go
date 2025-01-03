@@ -19,10 +19,10 @@ var _ MappedNullable = &ProfileCondition{}
 
 // ProfileCondition struct for ProfileCondition
 type ProfileCondition struct {
-	Condition *ProfileConditionType `json:"Condition,omitempty"`
-	Property *ProfileConditionValue `json:"Property,omitempty"`
-	Value NullableString `json:"Value,omitempty"`
-	IsRequired *bool `json:"IsRequired,omitempty"`
+	Condition  *ProfileConditionType  `json:"Condition,omitempty"`
+	Property   *ProfileConditionValue `json:"Property,omitempty"`
+	Value      NullableString         `json:"Value,omitempty"`
+	IsRequired *bool                  `json:"IsRequired,omitempty"`
 }
 
 // NewProfileCondition instantiates a new ProfileCondition object
@@ -138,6 +138,7 @@ func (o *ProfileCondition) HasValue() bool {
 func (o *ProfileCondition) SetValue(v string) {
 	o.Value.Set(&v)
 }
+
 // SetValueNil sets the value for Value to be an explicit nil
 func (o *ProfileCondition) SetValueNil() {
 	o.Value.Set(nil)
@@ -181,7 +182,7 @@ func (o *ProfileCondition) SetIsRequired(v bool) {
 }
 
 func (o ProfileCondition) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,5 +241,3 @@ func (v *NullableProfileCondition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

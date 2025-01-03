@@ -28,7 +28,7 @@ type BaseItemPerson struct {
 	// The person kind.
 	Type *PersonKind `json:"Type,omitempty"`
 	// Gets or sets the primary image tag.
-	PrimaryImageTag NullableString `json:"PrimaryImageTag,omitempty"`
+	PrimaryImageTag NullableString                        `json:"PrimaryImageTag,omitempty"`
 	ImageBlurHashes NullableBaseItemPersonImageBlurHashes `json:"ImageBlurHashes,omitempty"`
 }
 
@@ -81,6 +81,7 @@ func (o *BaseItemPerson) HasName() bool {
 func (o *BaseItemPerson) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *BaseItemPerson) SetNameNil() {
 	o.Name.Set(nil)
@@ -155,6 +156,7 @@ func (o *BaseItemPerson) HasRole() bool {
 func (o *BaseItemPerson) SetRole(v string) {
 	o.Role.Set(&v)
 }
+
 // SetRoleNil sets the value for Role to be an explicit nil
 func (o *BaseItemPerson) SetRoleNil() {
 	o.Role.Set(nil)
@@ -229,6 +231,7 @@ func (o *BaseItemPerson) HasPrimaryImageTag() bool {
 func (o *BaseItemPerson) SetPrimaryImageTag(v string) {
 	o.PrimaryImageTag.Set(&v)
 }
+
 // SetPrimaryImageTagNil sets the value for PrimaryImageTag to be an explicit nil
 func (o *BaseItemPerson) SetPrimaryImageTagNil() {
 	o.PrimaryImageTag.Set(nil)
@@ -271,6 +274,7 @@ func (o *BaseItemPerson) HasImageBlurHashes() bool {
 func (o *BaseItemPerson) SetImageBlurHashes(v BaseItemPersonImageBlurHashes) {
 	o.ImageBlurHashes.Set(&v)
 }
+
 // SetImageBlurHashesNil sets the value for ImageBlurHashes to be an explicit nil
 func (o *BaseItemPerson) SetImageBlurHashesNil() {
 	o.ImageBlurHashes.Set(nil)
@@ -282,7 +286,7 @@ func (o *BaseItemPerson) UnsetImageBlurHashes() {
 }
 
 func (o BaseItemPerson) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,5 +351,3 @@ func (v *NullableBaseItemPerson) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

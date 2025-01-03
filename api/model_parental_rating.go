@@ -74,6 +74,7 @@ func (o *ParentalRating) HasName() bool {
 func (o *ParentalRating) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *ParentalRating) SetNameNil() {
 	o.Name.Set(nil)
@@ -116,6 +117,7 @@ func (o *ParentalRating) HasValue() bool {
 func (o *ParentalRating) SetValue(v int32) {
 	o.Value.Set(&v)
 }
+
 // SetValueNil sets the value for Value to be an explicit nil
 func (o *ParentalRating) SetValueNil() {
 	o.Value.Set(nil)
@@ -127,7 +129,7 @@ func (o *ParentalRating) UnsetValue() {
 }
 
 func (o ParentalRating) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableParentalRating) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

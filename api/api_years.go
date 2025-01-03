@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type YearsAPI interface {
 
 	/*
-	GetYear Gets a year.
+		GetYear Gets a year.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param year The year.
-	@return ApiGetYearRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param year The year.
+		@return ApiGetYearRequest
 	*/
 	GetYear(ctx context.Context, year int32) ApiGetYearRequest
 
@@ -37,10 +36,10 @@ type YearsAPI interface {
 	GetYearExecute(r ApiGetYearRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetYears Get years.
+		GetYears Get years.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetYearsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetYearsRequest
 	*/
 	GetYears(ctx context.Context) ApiGetYearsRequest
 
@@ -53,10 +52,10 @@ type YearsAPI interface {
 type YearsAPIService service
 
 type ApiGetYearRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService YearsAPI
-	year int32
-	userId *string
+	year       int32
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -72,26 +71,27 @@ func (r ApiGetYearRequest) Execute() (*BaseItemDto, *http.Response, error) {
 /*
 GetYear Gets a year.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param year The year.
- @return ApiGetYearRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param year The year.
+	@return ApiGetYearRequest
 */
 func (a *YearsAPIService) GetYear(ctx context.Context, year int32) ApiGetYearRequest {
 	return ApiGetYearRequest{
 		ApiService: a,
-		ctx: ctx,
-		year: year,
+		ctx:        ctx,
+		year:       year,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "YearsAPIService.GetYear")
@@ -169,8 +169,8 @@ func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*BaseItemDto, *ht
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -189,23 +189,23 @@ func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*BaseItemDto, *ht
 }
 
 type ApiGetYearsRequest struct {
-	ctx context.Context
-	ApiService YearsAPI
-	startIndex *int32
-	limit *int32
-	sortOrder *[]SortOrder
-	parentId *string
-	fields *[]ItemFields
+	ctx              context.Context
+	ApiService       YearsAPI
+	startIndex       *int32
+	limit            *int32
+	sortOrder        *[]SortOrder
+	parentId         *string
+	fields           *[]ItemFields
 	excludeItemTypes *[]BaseItemKind
 	includeItemTypes *[]BaseItemKind
-	mediaTypes *[]MediaType
-	sortBy *[]ItemSortBy
-	enableUserData *bool
-	imageTypeLimit *int32
+	mediaTypes       *[]MediaType
+	sortBy           *[]ItemSortBy
+	enableUserData   *bool
+	imageTypeLimit   *int32
 	enableImageTypes *[]ImageType
-	userId *string
-	recursive *bool
-	enableImages *bool
+	userId           *string
+	recursive        *bool
+	enableImages     *bool
 }
 
 // Skips over a given number of items within the results. Use for paging.
@@ -305,24 +305,25 @@ func (r ApiGetYearsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, 
 /*
 GetYears Get years.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetYearsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetYearsRequest
 */
 func (a *YearsAPIService) GetYears(ctx context.Context) ApiGetYearsRequest {
 	return ApiGetYearsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *YearsAPIService) GetYearsExecute(r ApiGetYearsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "YearsAPIService.GetYears")

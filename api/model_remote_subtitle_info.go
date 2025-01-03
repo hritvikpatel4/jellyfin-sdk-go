@@ -20,22 +20,22 @@ var _ MappedNullable = &RemoteSubtitleInfo{}
 
 // RemoteSubtitleInfo struct for RemoteSubtitleInfo
 type RemoteSubtitleInfo struct {
-	ThreeLetterISOLanguageName NullableString `json:"ThreeLetterISOLanguageName,omitempty"`
-	Id NullableString `json:"Id,omitempty"`
-	ProviderName NullableString `json:"ProviderName,omitempty"`
-	Name NullableString `json:"Name,omitempty"`
-	Format NullableString `json:"Format,omitempty"`
-	Author NullableString `json:"Author,omitempty"`
-	Comment NullableString `json:"Comment,omitempty"`
-	DateCreated NullableTime `json:"DateCreated,omitempty"`
-	CommunityRating NullableFloat32 `json:"CommunityRating,omitempty"`
-	FrameRate NullableFloat32 `json:"FrameRate,omitempty"`
-	DownloadCount NullableInt32 `json:"DownloadCount,omitempty"`
-	IsHashMatch NullableBool `json:"IsHashMatch,omitempty"`
-	AiTranslated NullableBool `json:"AiTranslated,omitempty"`
-	MachineTranslated NullableBool `json:"MachineTranslated,omitempty"`
-	Forced NullableBool `json:"Forced,omitempty"`
-	HearingImpaired NullableBool `json:"HearingImpaired,omitempty"`
+	ThreeLetterISOLanguageName NullableString  `json:"ThreeLetterISOLanguageName,omitempty"`
+	Id                         NullableString  `json:"Id,omitempty"`
+	ProviderName               NullableString  `json:"ProviderName,omitempty"`
+	Name                       NullableString  `json:"Name,omitempty"`
+	Format                     NullableString  `json:"Format,omitempty"`
+	Author                     NullableString  `json:"Author,omitempty"`
+	Comment                    NullableString  `json:"Comment,omitempty"`
+	DateCreated                NullableTime    `json:"DateCreated,omitempty"`
+	CommunityRating            NullableFloat32 `json:"CommunityRating,omitempty"`
+	FrameRate                  NullableFloat32 `json:"FrameRate,omitempty"`
+	DownloadCount              NullableInt32   `json:"DownloadCount,omitempty"`
+	IsHashMatch                NullableBool    `json:"IsHashMatch,omitempty"`
+	AiTranslated               NullableBool    `json:"AiTranslated,omitempty"`
+	MachineTranslated          NullableBool    `json:"MachineTranslated,omitempty"`
+	Forced                     NullableBool    `json:"Forced,omitempty"`
+	HearingImpaired            NullableBool    `json:"HearingImpaired,omitempty"`
 }
 
 // NewRemoteSubtitleInfo instantiates a new RemoteSubtitleInfo object
@@ -87,6 +87,7 @@ func (o *RemoteSubtitleInfo) HasThreeLetterISOLanguageName() bool {
 func (o *RemoteSubtitleInfo) SetThreeLetterISOLanguageName(v string) {
 	o.ThreeLetterISOLanguageName.Set(&v)
 }
+
 // SetThreeLetterISOLanguageNameNil sets the value for ThreeLetterISOLanguageName to be an explicit nil
 func (o *RemoteSubtitleInfo) SetThreeLetterISOLanguageNameNil() {
 	o.ThreeLetterISOLanguageName.Set(nil)
@@ -129,6 +130,7 @@ func (o *RemoteSubtitleInfo) HasId() bool {
 func (o *RemoteSubtitleInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *RemoteSubtitleInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -171,6 +173,7 @@ func (o *RemoteSubtitleInfo) HasProviderName() bool {
 func (o *RemoteSubtitleInfo) SetProviderName(v string) {
 	o.ProviderName.Set(&v)
 }
+
 // SetProviderNameNil sets the value for ProviderName to be an explicit nil
 func (o *RemoteSubtitleInfo) SetProviderNameNil() {
 	o.ProviderName.Set(nil)
@@ -213,6 +216,7 @@ func (o *RemoteSubtitleInfo) HasName() bool {
 func (o *RemoteSubtitleInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *RemoteSubtitleInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -255,6 +259,7 @@ func (o *RemoteSubtitleInfo) HasFormat() bool {
 func (o *RemoteSubtitleInfo) SetFormat(v string) {
 	o.Format.Set(&v)
 }
+
 // SetFormatNil sets the value for Format to be an explicit nil
 func (o *RemoteSubtitleInfo) SetFormatNil() {
 	o.Format.Set(nil)
@@ -297,6 +302,7 @@ func (o *RemoteSubtitleInfo) HasAuthor() bool {
 func (o *RemoteSubtitleInfo) SetAuthor(v string) {
 	o.Author.Set(&v)
 }
+
 // SetAuthorNil sets the value for Author to be an explicit nil
 func (o *RemoteSubtitleInfo) SetAuthorNil() {
 	o.Author.Set(nil)
@@ -339,6 +345,7 @@ func (o *RemoteSubtitleInfo) HasComment() bool {
 func (o *RemoteSubtitleInfo) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *RemoteSubtitleInfo) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -381,6 +388,7 @@ func (o *RemoteSubtitleInfo) HasDateCreated() bool {
 func (o *RemoteSubtitleInfo) SetDateCreated(v time.Time) {
 	o.DateCreated.Set(&v)
 }
+
 // SetDateCreatedNil sets the value for DateCreated to be an explicit nil
 func (o *RemoteSubtitleInfo) SetDateCreatedNil() {
 	o.DateCreated.Set(nil)
@@ -423,6 +431,7 @@ func (o *RemoteSubtitleInfo) HasCommunityRating() bool {
 func (o *RemoteSubtitleInfo) SetCommunityRating(v float32) {
 	o.CommunityRating.Set(&v)
 }
+
 // SetCommunityRatingNil sets the value for CommunityRating to be an explicit nil
 func (o *RemoteSubtitleInfo) SetCommunityRatingNil() {
 	o.CommunityRating.Set(nil)
@@ -465,6 +474,7 @@ func (o *RemoteSubtitleInfo) HasFrameRate() bool {
 func (o *RemoteSubtitleInfo) SetFrameRate(v float32) {
 	o.FrameRate.Set(&v)
 }
+
 // SetFrameRateNil sets the value for FrameRate to be an explicit nil
 func (o *RemoteSubtitleInfo) SetFrameRateNil() {
 	o.FrameRate.Set(nil)
@@ -507,6 +517,7 @@ func (o *RemoteSubtitleInfo) HasDownloadCount() bool {
 func (o *RemoteSubtitleInfo) SetDownloadCount(v int32) {
 	o.DownloadCount.Set(&v)
 }
+
 // SetDownloadCountNil sets the value for DownloadCount to be an explicit nil
 func (o *RemoteSubtitleInfo) SetDownloadCountNil() {
 	o.DownloadCount.Set(nil)
@@ -549,6 +560,7 @@ func (o *RemoteSubtitleInfo) HasIsHashMatch() bool {
 func (o *RemoteSubtitleInfo) SetIsHashMatch(v bool) {
 	o.IsHashMatch.Set(&v)
 }
+
 // SetIsHashMatchNil sets the value for IsHashMatch to be an explicit nil
 func (o *RemoteSubtitleInfo) SetIsHashMatchNil() {
 	o.IsHashMatch.Set(nil)
@@ -591,6 +603,7 @@ func (o *RemoteSubtitleInfo) HasAiTranslated() bool {
 func (o *RemoteSubtitleInfo) SetAiTranslated(v bool) {
 	o.AiTranslated.Set(&v)
 }
+
 // SetAiTranslatedNil sets the value for AiTranslated to be an explicit nil
 func (o *RemoteSubtitleInfo) SetAiTranslatedNil() {
 	o.AiTranslated.Set(nil)
@@ -633,6 +646,7 @@ func (o *RemoteSubtitleInfo) HasMachineTranslated() bool {
 func (o *RemoteSubtitleInfo) SetMachineTranslated(v bool) {
 	o.MachineTranslated.Set(&v)
 }
+
 // SetMachineTranslatedNil sets the value for MachineTranslated to be an explicit nil
 func (o *RemoteSubtitleInfo) SetMachineTranslatedNil() {
 	o.MachineTranslated.Set(nil)
@@ -675,6 +689,7 @@ func (o *RemoteSubtitleInfo) HasForced() bool {
 func (o *RemoteSubtitleInfo) SetForced(v bool) {
 	o.Forced.Set(&v)
 }
+
 // SetForcedNil sets the value for Forced to be an explicit nil
 func (o *RemoteSubtitleInfo) SetForcedNil() {
 	o.Forced.Set(nil)
@@ -717,6 +732,7 @@ func (o *RemoteSubtitleInfo) HasHearingImpaired() bool {
 func (o *RemoteSubtitleInfo) SetHearingImpaired(v bool) {
 	o.HearingImpaired.Set(&v)
 }
+
 // SetHearingImpairedNil sets the value for HearingImpaired to be an explicit nil
 func (o *RemoteSubtitleInfo) SetHearingImpairedNil() {
 	o.HearingImpaired.Set(nil)
@@ -728,7 +744,7 @@ func (o *RemoteSubtitleInfo) UnsetHearingImpaired() {
 }
 
 func (o RemoteSubtitleInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -823,5 +839,3 @@ func (v *NullableRemoteSubtitleInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

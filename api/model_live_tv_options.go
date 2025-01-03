@@ -19,21 +19,21 @@ var _ MappedNullable = &LiveTvOptions{}
 
 // LiveTvOptions struct for LiveTvOptions
 type LiveTvOptions struct {
-	GuideDays NullableInt32 `json:"GuideDays,omitempty"`
-	RecordingPath NullableString `json:"RecordingPath,omitempty"`
-	MovieRecordingPath NullableString `json:"MovieRecordingPath,omitempty"`
-	SeriesRecordingPath NullableString `json:"SeriesRecordingPath,omitempty"`
-	EnableRecordingSubfolders *bool `json:"EnableRecordingSubfolders,omitempty"`
-	EnableOriginalAudioWithEncodedRecordings *bool `json:"EnableOriginalAudioWithEncodedRecordings,omitempty"`
-	TunerHosts []TunerHostInfo `json:"TunerHosts,omitempty"`
-	ListingProviders []ListingsProviderInfo `json:"ListingProviders,omitempty"`
-	PrePaddingSeconds *int32 `json:"PrePaddingSeconds,omitempty"`
-	PostPaddingSeconds *int32 `json:"PostPaddingSeconds,omitempty"`
-	MediaLocationsCreated []string `json:"MediaLocationsCreated,omitempty"`
-	RecordingPostProcessor NullableString `json:"RecordingPostProcessor,omitempty"`
-	RecordingPostProcessorArguments NullableString `json:"RecordingPostProcessorArguments,omitempty"`
-	SaveRecordingNFO *bool `json:"SaveRecordingNFO,omitempty"`
-	SaveRecordingImages *bool `json:"SaveRecordingImages,omitempty"`
+	GuideDays                                NullableInt32          `json:"GuideDays,omitempty"`
+	RecordingPath                            NullableString         `json:"RecordingPath,omitempty"`
+	MovieRecordingPath                       NullableString         `json:"MovieRecordingPath,omitempty"`
+	SeriesRecordingPath                      NullableString         `json:"SeriesRecordingPath,omitempty"`
+	EnableRecordingSubfolders                *bool                  `json:"EnableRecordingSubfolders,omitempty"`
+	EnableOriginalAudioWithEncodedRecordings *bool                  `json:"EnableOriginalAudioWithEncodedRecordings,omitempty"`
+	TunerHosts                               []TunerHostInfo        `json:"TunerHosts,omitempty"`
+	ListingProviders                         []ListingsProviderInfo `json:"ListingProviders,omitempty"`
+	PrePaddingSeconds                        *int32                 `json:"PrePaddingSeconds,omitempty"`
+	PostPaddingSeconds                       *int32                 `json:"PostPaddingSeconds,omitempty"`
+	MediaLocationsCreated                    []string               `json:"MediaLocationsCreated,omitempty"`
+	RecordingPostProcessor                   NullableString         `json:"RecordingPostProcessor,omitempty"`
+	RecordingPostProcessorArguments          NullableString         `json:"RecordingPostProcessorArguments,omitempty"`
+	SaveRecordingNFO                         *bool                  `json:"SaveRecordingNFO,omitempty"`
+	SaveRecordingImages                      *bool                  `json:"SaveRecordingImages,omitempty"`
 }
 
 // NewLiveTvOptions instantiates a new LiveTvOptions object
@@ -85,6 +85,7 @@ func (o *LiveTvOptions) HasGuideDays() bool {
 func (o *LiveTvOptions) SetGuideDays(v int32) {
 	o.GuideDays.Set(&v)
 }
+
 // SetGuideDaysNil sets the value for GuideDays to be an explicit nil
 func (o *LiveTvOptions) SetGuideDaysNil() {
 	o.GuideDays.Set(nil)
@@ -127,6 +128,7 @@ func (o *LiveTvOptions) HasRecordingPath() bool {
 func (o *LiveTvOptions) SetRecordingPath(v string) {
 	o.RecordingPath.Set(&v)
 }
+
 // SetRecordingPathNil sets the value for RecordingPath to be an explicit nil
 func (o *LiveTvOptions) SetRecordingPathNil() {
 	o.RecordingPath.Set(nil)
@@ -169,6 +171,7 @@ func (o *LiveTvOptions) HasMovieRecordingPath() bool {
 func (o *LiveTvOptions) SetMovieRecordingPath(v string) {
 	o.MovieRecordingPath.Set(&v)
 }
+
 // SetMovieRecordingPathNil sets the value for MovieRecordingPath to be an explicit nil
 func (o *LiveTvOptions) SetMovieRecordingPathNil() {
 	o.MovieRecordingPath.Set(nil)
@@ -211,6 +214,7 @@ func (o *LiveTvOptions) HasSeriesRecordingPath() bool {
 func (o *LiveTvOptions) SetSeriesRecordingPath(v string) {
 	o.SeriesRecordingPath.Set(&v)
 }
+
 // SetSeriesRecordingPathNil sets the value for SeriesRecordingPath to be an explicit nil
 func (o *LiveTvOptions) SetSeriesRecordingPathNil() {
 	o.SeriesRecordingPath.Set(nil)
@@ -480,6 +484,7 @@ func (o *LiveTvOptions) HasRecordingPostProcessor() bool {
 func (o *LiveTvOptions) SetRecordingPostProcessor(v string) {
 	o.RecordingPostProcessor.Set(&v)
 }
+
 // SetRecordingPostProcessorNil sets the value for RecordingPostProcessor to be an explicit nil
 func (o *LiveTvOptions) SetRecordingPostProcessorNil() {
 	o.RecordingPostProcessor.Set(nil)
@@ -522,6 +527,7 @@ func (o *LiveTvOptions) HasRecordingPostProcessorArguments() bool {
 func (o *LiveTvOptions) SetRecordingPostProcessorArguments(v string) {
 	o.RecordingPostProcessorArguments.Set(&v)
 }
+
 // SetRecordingPostProcessorArgumentsNil sets the value for RecordingPostProcessorArguments to be an explicit nil
 func (o *LiveTvOptions) SetRecordingPostProcessorArgumentsNil() {
 	o.RecordingPostProcessorArguments.Set(nil)
@@ -597,7 +603,7 @@ func (o *LiveTvOptions) SetSaveRecordingImages(v bool) {
 }
 
 func (o LiveTvOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -689,5 +695,3 @@ func (v *NullableLiveTvOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

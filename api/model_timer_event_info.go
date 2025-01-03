@@ -19,7 +19,7 @@ var _ MappedNullable = &TimerEventInfo{}
 
 // TimerEventInfo struct for TimerEventInfo
 type TimerEventInfo struct {
-	Id *string `json:"Id,omitempty"`
+	Id        *string        `json:"Id,omitempty"`
 	ProgramId NullableString `json:"ProgramId,omitempty"`
 }
 
@@ -104,6 +104,7 @@ func (o *TimerEventInfo) HasProgramId() bool {
 func (o *TimerEventInfo) SetProgramId(v string) {
 	o.ProgramId.Set(&v)
 }
+
 // SetProgramIdNil sets the value for ProgramId to be an explicit nil
 func (o *TimerEventInfo) SetProgramIdNil() {
 	o.ProgramId.Set(nil)
@@ -115,7 +116,7 @@ func (o *TimerEventInfo) UnsetProgramId() {
 }
 
 func (o TimerEventInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +169,3 @@ func (v *NullableTimerEventInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

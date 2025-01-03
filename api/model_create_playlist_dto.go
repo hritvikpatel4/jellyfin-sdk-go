@@ -146,6 +146,7 @@ func (o *CreatePlaylistDto) HasUserId() bool {
 func (o *CreatePlaylistDto) SetUserId(v string) {
 	o.UserId.Set(&v)
 }
+
 // SetUserIdNil sets the value for UserId to be an explicit nil
 func (o *CreatePlaylistDto) SetUserIdNil() {
 	o.UserId.Set(nil)
@@ -188,6 +189,7 @@ func (o *CreatePlaylistDto) HasMediaType() bool {
 func (o *CreatePlaylistDto) SetMediaType(v MediaType) {
 	o.MediaType.Set(&v)
 }
+
 // SetMediaTypeNil sets the value for MediaType to be an explicit nil
 func (o *CreatePlaylistDto) SetMediaTypeNil() {
 	o.MediaType.Set(nil)
@@ -263,7 +265,7 @@ func (o *CreatePlaylistDto) SetIsPublic(v bool) {
 }
 
 func (o CreatePlaylistDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -328,5 +330,3 @@ func (v *NullableCreatePlaylistDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

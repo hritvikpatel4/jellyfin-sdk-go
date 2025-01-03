@@ -20,18 +20,18 @@ type ExtraType string
 
 // List of ExtraType
 const (
-	EXTRATYPE_UNKNOWN ExtraType = "Unknown"
-	EXTRATYPE_CLIP ExtraType = "Clip"
-	EXTRATYPE_TRAILER ExtraType = "Trailer"
+	EXTRATYPE_UNKNOWN           ExtraType = "Unknown"
+	EXTRATYPE_CLIP              ExtraType = "Clip"
+	EXTRATYPE_TRAILER           ExtraType = "Trailer"
 	EXTRATYPE_BEHIND_THE_SCENES ExtraType = "BehindTheScenes"
-	EXTRATYPE_DELETED_SCENE ExtraType = "DeletedScene"
-	EXTRATYPE_INTERVIEW ExtraType = "Interview"
-	EXTRATYPE_SCENE ExtraType = "Scene"
-	EXTRATYPE_SAMPLE ExtraType = "Sample"
-	EXTRATYPE_THEME_SONG ExtraType = "ThemeSong"
-	EXTRATYPE_THEME_VIDEO ExtraType = "ThemeVideo"
-	EXTRATYPE_FEATURETTE ExtraType = "Featurette"
-	EXTRATYPE_SHORT ExtraType = "Short"
+	EXTRATYPE_DELETED_SCENE     ExtraType = "DeletedScene"
+	EXTRATYPE_INTERVIEW         ExtraType = "Interview"
+	EXTRATYPE_SCENE             ExtraType = "Scene"
+	EXTRATYPE_SAMPLE            ExtraType = "Sample"
+	EXTRATYPE_THEME_SONG        ExtraType = "ThemeSong"
+	EXTRATYPE_THEME_VIDEO       ExtraType = "ThemeVideo"
+	EXTRATYPE_FEATURETTE        ExtraType = "Featurette"
+	EXTRATYPE_SHORT             ExtraType = "Short"
 )
 
 // All allowed values of ExtraType enum
@@ -128,4 +128,3 @@ func (v *NullableExtraType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

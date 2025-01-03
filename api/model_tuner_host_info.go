@@ -19,21 +19,21 @@ var _ MappedNullable = &TunerHostInfo{}
 
 // TunerHostInfo struct for TunerHostInfo
 type TunerHostInfo struct {
-	Id NullableString `json:"Id,omitempty"`
-	Url NullableString `json:"Url,omitempty"`
-	Type NullableString `json:"Type,omitempty"`
-	DeviceId NullableString `json:"DeviceId,omitempty"`
-	FriendlyName NullableString `json:"FriendlyName,omitempty"`
-	ImportFavoritesOnly *bool `json:"ImportFavoritesOnly,omitempty"`
-	AllowHWTranscoding *bool `json:"AllowHWTranscoding,omitempty"`
-	AllowFmp4TranscodingContainer *bool `json:"AllowFmp4TranscodingContainer,omitempty"`
-	AllowStreamSharing *bool `json:"AllowStreamSharing,omitempty"`
-	FallbackMaxStreamingBitrate *int32 `json:"FallbackMaxStreamingBitrate,omitempty"`
-	EnableStreamLooping *bool `json:"EnableStreamLooping,omitempty"`
-	Source NullableString `json:"Source,omitempty"`
-	TunerCount *int32 `json:"TunerCount,omitempty"`
-	UserAgent NullableString `json:"UserAgent,omitempty"`
-	IgnoreDts *bool `json:"IgnoreDts,omitempty"`
+	Id                            NullableString `json:"Id,omitempty"`
+	Url                           NullableString `json:"Url,omitempty"`
+	Type                          NullableString `json:"Type,omitempty"`
+	DeviceId                      NullableString `json:"DeviceId,omitempty"`
+	FriendlyName                  NullableString `json:"FriendlyName,omitempty"`
+	ImportFavoritesOnly           *bool          `json:"ImportFavoritesOnly,omitempty"`
+	AllowHWTranscoding            *bool          `json:"AllowHWTranscoding,omitempty"`
+	AllowFmp4TranscodingContainer *bool          `json:"AllowFmp4TranscodingContainer,omitempty"`
+	AllowStreamSharing            *bool          `json:"AllowStreamSharing,omitempty"`
+	FallbackMaxStreamingBitrate   *int32         `json:"FallbackMaxStreamingBitrate,omitempty"`
+	EnableStreamLooping           *bool          `json:"EnableStreamLooping,omitempty"`
+	Source                        NullableString `json:"Source,omitempty"`
+	TunerCount                    *int32         `json:"TunerCount,omitempty"`
+	UserAgent                     NullableString `json:"UserAgent,omitempty"`
+	IgnoreDts                     *bool          `json:"IgnoreDts,omitempty"`
 }
 
 // NewTunerHostInfo instantiates a new TunerHostInfo object
@@ -85,6 +85,7 @@ func (o *TunerHostInfo) HasId() bool {
 func (o *TunerHostInfo) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *TunerHostInfo) SetIdNil() {
 	o.Id.Set(nil)
@@ -127,6 +128,7 @@ func (o *TunerHostInfo) HasUrl() bool {
 func (o *TunerHostInfo) SetUrl(v string) {
 	o.Url.Set(&v)
 }
+
 // SetUrlNil sets the value for Url to be an explicit nil
 func (o *TunerHostInfo) SetUrlNil() {
 	o.Url.Set(nil)
@@ -169,6 +171,7 @@ func (o *TunerHostInfo) HasType() bool {
 func (o *TunerHostInfo) SetType(v string) {
 	o.Type.Set(&v)
 }
+
 // SetTypeNil sets the value for Type to be an explicit nil
 func (o *TunerHostInfo) SetTypeNil() {
 	o.Type.Set(nil)
@@ -211,6 +214,7 @@ func (o *TunerHostInfo) HasDeviceId() bool {
 func (o *TunerHostInfo) SetDeviceId(v string) {
 	o.DeviceId.Set(&v)
 }
+
 // SetDeviceIdNil sets the value for DeviceId to be an explicit nil
 func (o *TunerHostInfo) SetDeviceIdNil() {
 	o.DeviceId.Set(nil)
@@ -253,6 +257,7 @@ func (o *TunerHostInfo) HasFriendlyName() bool {
 func (o *TunerHostInfo) SetFriendlyName(v string) {
 	o.FriendlyName.Set(&v)
 }
+
 // SetFriendlyNameNil sets the value for FriendlyName to be an explicit nil
 func (o *TunerHostInfo) SetFriendlyNameNil() {
 	o.FriendlyName.Set(nil)
@@ -487,6 +492,7 @@ func (o *TunerHostInfo) HasSource() bool {
 func (o *TunerHostInfo) SetSource(v string) {
 	o.Source.Set(&v)
 }
+
 // SetSourceNil sets the value for Source to be an explicit nil
 func (o *TunerHostInfo) SetSourceNil() {
 	o.Source.Set(nil)
@@ -561,6 +567,7 @@ func (o *TunerHostInfo) HasUserAgent() bool {
 func (o *TunerHostInfo) SetUserAgent(v string) {
 	o.UserAgent.Set(&v)
 }
+
 // SetUserAgentNil sets the value for UserAgent to be an explicit nil
 func (o *TunerHostInfo) SetUserAgentNil() {
 	o.UserAgent.Set(nil)
@@ -604,7 +611,7 @@ func (o *TunerHostInfo) SetIgnoreDts(v bool) {
 }
 
 func (o TunerHostInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -696,5 +703,3 @@ func (v *NullableTunerHostInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

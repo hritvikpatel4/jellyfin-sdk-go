@@ -229,6 +229,7 @@ func (o *SearchHint) HasMatchedTerm() bool {
 func (o *SearchHint) SetMatchedTerm(v string) {
 	o.MatchedTerm.Set(&v)
 }
+
 // SetMatchedTermNil sets the value for MatchedTerm to be an explicit nil
 func (o *SearchHint) SetMatchedTermNil() {
 	o.MatchedTerm.Set(nil)
@@ -271,6 +272,7 @@ func (o *SearchHint) HasIndexNumber() bool {
 func (o *SearchHint) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *SearchHint) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -313,6 +315,7 @@ func (o *SearchHint) HasProductionYear() bool {
 func (o *SearchHint) SetProductionYear(v int32) {
 	o.ProductionYear.Set(&v)
 }
+
 // SetProductionYearNil sets the value for ProductionYear to be an explicit nil
 func (o *SearchHint) SetProductionYearNil() {
 	o.ProductionYear.Set(nil)
@@ -355,6 +358,7 @@ func (o *SearchHint) HasParentIndexNumber() bool {
 func (o *SearchHint) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *SearchHint) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -397,6 +401,7 @@ func (o *SearchHint) HasPrimaryImageTag() bool {
 func (o *SearchHint) SetPrimaryImageTag(v string) {
 	o.PrimaryImageTag.Set(&v)
 }
+
 // SetPrimaryImageTagNil sets the value for PrimaryImageTag to be an explicit nil
 func (o *SearchHint) SetPrimaryImageTagNil() {
 	o.PrimaryImageTag.Set(nil)
@@ -439,6 +444,7 @@ func (o *SearchHint) HasThumbImageTag() bool {
 func (o *SearchHint) SetThumbImageTag(v string) {
 	o.ThumbImageTag.Set(&v)
 }
+
 // SetThumbImageTagNil sets the value for ThumbImageTag to be an explicit nil
 func (o *SearchHint) SetThumbImageTagNil() {
 	o.ThumbImageTag.Set(nil)
@@ -481,6 +487,7 @@ func (o *SearchHint) HasThumbImageItemId() bool {
 func (o *SearchHint) SetThumbImageItemId(v string) {
 	o.ThumbImageItemId.Set(&v)
 }
+
 // SetThumbImageItemIdNil sets the value for ThumbImageItemId to be an explicit nil
 func (o *SearchHint) SetThumbImageItemIdNil() {
 	o.ThumbImageItemId.Set(nil)
@@ -523,6 +530,7 @@ func (o *SearchHint) HasBackdropImageTag() bool {
 func (o *SearchHint) SetBackdropImageTag(v string) {
 	o.BackdropImageTag.Set(&v)
 }
+
 // SetBackdropImageTagNil sets the value for BackdropImageTag to be an explicit nil
 func (o *SearchHint) SetBackdropImageTagNil() {
 	o.BackdropImageTag.Set(nil)
@@ -565,6 +573,7 @@ func (o *SearchHint) HasBackdropImageItemId() bool {
 func (o *SearchHint) SetBackdropImageItemId(v string) {
 	o.BackdropImageItemId.Set(&v)
 }
+
 // SetBackdropImageItemIdNil sets the value for BackdropImageItemId to be an explicit nil
 func (o *SearchHint) SetBackdropImageItemIdNil() {
 	o.BackdropImageItemId.Set(nil)
@@ -639,6 +648,7 @@ func (o *SearchHint) HasIsFolder() bool {
 func (o *SearchHint) SetIsFolder(v bool) {
 	o.IsFolder.Set(&v)
 }
+
 // SetIsFolderNil sets the value for IsFolder to be an explicit nil
 func (o *SearchHint) SetIsFolderNil() {
 	o.IsFolder.Set(nil)
@@ -681,6 +691,7 @@ func (o *SearchHint) HasRunTimeTicks() bool {
 func (o *SearchHint) SetRunTimeTicks(v int64) {
 	o.RunTimeTicks.Set(&v)
 }
+
 // SetRunTimeTicksNil sets the value for RunTimeTicks to be an explicit nil
 func (o *SearchHint) SetRunTimeTicksNil() {
 	o.RunTimeTicks.Set(nil)
@@ -755,6 +766,7 @@ func (o *SearchHint) HasStartDate() bool {
 func (o *SearchHint) SetStartDate(v time.Time) {
 	o.StartDate.Set(&v)
 }
+
 // SetStartDateNil sets the value for StartDate to be an explicit nil
 func (o *SearchHint) SetStartDateNil() {
 	o.StartDate.Set(nil)
@@ -797,6 +809,7 @@ func (o *SearchHint) HasEndDate() bool {
 func (o *SearchHint) SetEndDate(v time.Time) {
 	o.EndDate.Set(&v)
 }
+
 // SetEndDateNil sets the value for EndDate to be an explicit nil
 func (o *SearchHint) SetEndDateNil() {
 	o.EndDate.Set(nil)
@@ -839,6 +852,7 @@ func (o *SearchHint) HasSeries() bool {
 func (o *SearchHint) SetSeries(v string) {
 	o.Series.Set(&v)
 }
+
 // SetSeriesNil sets the value for Series to be an explicit nil
 func (o *SearchHint) SetSeriesNil() {
 	o.Series.Set(nil)
@@ -881,6 +895,7 @@ func (o *SearchHint) HasStatus() bool {
 func (o *SearchHint) SetStatus(v string) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *SearchHint) SetStatusNil() {
 	o.Status.Set(nil)
@@ -923,6 +938,7 @@ func (o *SearchHint) HasAlbum() bool {
 func (o *SearchHint) SetAlbum(v string) {
 	o.Album.Set(&v)
 }
+
 // SetAlbumNil sets the value for Album to be an explicit nil
 func (o *SearchHint) SetAlbumNil() {
 	o.Album.Set(nil)
@@ -965,6 +981,7 @@ func (o *SearchHint) HasAlbumId() bool {
 func (o *SearchHint) SetAlbumId(v string) {
 	o.AlbumId.Set(&v)
 }
+
 // SetAlbumIdNil sets the value for AlbumId to be an explicit nil
 func (o *SearchHint) SetAlbumIdNil() {
 	o.AlbumId.Set(nil)
@@ -1007,6 +1024,7 @@ func (o *SearchHint) HasAlbumArtist() bool {
 func (o *SearchHint) SetAlbumArtist(v string) {
 	o.AlbumArtist.Set(&v)
 }
+
 // SetAlbumArtistNil sets the value for AlbumArtist to be an explicit nil
 func (o *SearchHint) SetAlbumArtistNil() {
 	o.AlbumArtist.Set(nil)
@@ -1081,6 +1099,7 @@ func (o *SearchHint) HasSongCount() bool {
 func (o *SearchHint) SetSongCount(v int32) {
 	o.SongCount.Set(&v)
 }
+
 // SetSongCountNil sets the value for SongCount to be an explicit nil
 func (o *SearchHint) SetSongCountNil() {
 	o.SongCount.Set(nil)
@@ -1123,6 +1142,7 @@ func (o *SearchHint) HasEpisodeCount() bool {
 func (o *SearchHint) SetEpisodeCount(v int32) {
 	o.EpisodeCount.Set(&v)
 }
+
 // SetEpisodeCountNil sets the value for EpisodeCount to be an explicit nil
 func (o *SearchHint) SetEpisodeCountNil() {
 	o.EpisodeCount.Set(nil)
@@ -1165,6 +1185,7 @@ func (o *SearchHint) HasChannelId() bool {
 func (o *SearchHint) SetChannelId(v string) {
 	o.ChannelId.Set(&v)
 }
+
 // SetChannelIdNil sets the value for ChannelId to be an explicit nil
 func (o *SearchHint) SetChannelIdNil() {
 	o.ChannelId.Set(nil)
@@ -1207,6 +1228,7 @@ func (o *SearchHint) HasChannelName() bool {
 func (o *SearchHint) SetChannelName(v string) {
 	o.ChannelName.Set(&v)
 }
+
 // SetChannelNameNil sets the value for ChannelName to be an explicit nil
 func (o *SearchHint) SetChannelNameNil() {
 	o.ChannelName.Set(nil)
@@ -1249,6 +1271,7 @@ func (o *SearchHint) HasPrimaryImageAspectRatio() bool {
 func (o *SearchHint) SetPrimaryImageAspectRatio(v float64) {
 	o.PrimaryImageAspectRatio.Set(&v)
 }
+
 // SetPrimaryImageAspectRatioNil sets the value for PrimaryImageAspectRatio to be an explicit nil
 func (o *SearchHint) SetPrimaryImageAspectRatioNil() {
 	o.PrimaryImageAspectRatio.Set(nil)
@@ -1260,7 +1283,7 @@ func (o *SearchHint) UnsetPrimaryImageAspectRatio() {
 }
 
 func (o SearchHint) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1394,5 +1417,3 @@ func (v *NullableSearchHint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

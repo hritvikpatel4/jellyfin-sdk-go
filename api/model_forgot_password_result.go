@@ -109,6 +109,7 @@ func (o *ForgotPasswordResult) HasPinFile() bool {
 func (o *ForgotPasswordResult) SetPinFile(v string) {
 	o.PinFile.Set(&v)
 }
+
 // SetPinFileNil sets the value for PinFile to be an explicit nil
 func (o *ForgotPasswordResult) SetPinFileNil() {
 	o.PinFile.Set(nil)
@@ -151,6 +152,7 @@ func (o *ForgotPasswordResult) HasPinExpirationDate() bool {
 func (o *ForgotPasswordResult) SetPinExpirationDate(v time.Time) {
 	o.PinExpirationDate.Set(&v)
 }
+
 // SetPinExpirationDateNil sets the value for PinExpirationDate to be an explicit nil
 func (o *ForgotPasswordResult) SetPinExpirationDateNil() {
 	o.PinExpirationDate.Set(nil)
@@ -162,7 +164,7 @@ func (o *ForgotPasswordResult) UnsetPinExpirationDate() {
 }
 
 func (o ForgotPasswordResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,5 +220,3 @@ func (v *NullableForgotPasswordResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

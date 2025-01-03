@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type BrandingAPI interface {
 
 	/*
-	GetBrandingCss Gets branding css.
+		GetBrandingCss Gets branding css.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBrandingCssRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetBrandingCssRequest
 	*/
 	GetBrandingCss(ctx context.Context) ApiGetBrandingCssRequest
 
@@ -34,10 +33,10 @@ type BrandingAPI interface {
 	GetBrandingCssExecute(r ApiGetBrandingCssRequest) (string, *http.Response, error)
 
 	/*
-	GetBrandingCss2 Gets branding css.
+		GetBrandingCss2 Gets branding css.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBrandingCss2Request
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetBrandingCss2Request
 	*/
 	GetBrandingCss2(ctx context.Context) ApiGetBrandingCss2Request
 
@@ -46,10 +45,10 @@ type BrandingAPI interface {
 	GetBrandingCss2Execute(r ApiGetBrandingCss2Request) (string, *http.Response, error)
 
 	/*
-	GetBrandingOptions Gets branding configuration.
+		GetBrandingOptions Gets branding configuration.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBrandingOptionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetBrandingOptionsRequest
 	*/
 	GetBrandingOptions(ctx context.Context) ApiGetBrandingOptionsRequest
 
@@ -62,7 +61,7 @@ type BrandingAPI interface {
 type BrandingAPIService service
 
 type ApiGetBrandingCssRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService BrandingAPI
 }
 
@@ -73,24 +72,25 @@ func (r ApiGetBrandingCssRequest) Execute() (string, *http.Response, error) {
 /*
 GetBrandingCss Gets branding css.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBrandingCssRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBrandingCssRequest
 */
 func (a *BrandingAPIService) GetBrandingCss(ctx context.Context) ApiGetBrandingCssRequest {
 	return ApiGetBrandingCssRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *BrandingAPIService) GetBrandingCssExecute(r ApiGetBrandingCssRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingAPIService.GetBrandingCss")
@@ -159,7 +159,7 @@ func (a *BrandingAPIService) GetBrandingCssExecute(r ApiGetBrandingCssRequest) (
 }
 
 type ApiGetBrandingCss2Request struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService BrandingAPI
 }
 
@@ -170,24 +170,25 @@ func (r ApiGetBrandingCss2Request) Execute() (string, *http.Response, error) {
 /*
 GetBrandingCss2 Gets branding css.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBrandingCss2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBrandingCss2Request
 */
 func (a *BrandingAPIService) GetBrandingCss2(ctx context.Context) ApiGetBrandingCss2Request {
 	return ApiGetBrandingCss2Request{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *BrandingAPIService) GetBrandingCss2Execute(r ApiGetBrandingCss2Request) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingAPIService.GetBrandingCss2")
@@ -256,7 +257,7 @@ func (a *BrandingAPIService) GetBrandingCss2Execute(r ApiGetBrandingCss2Request)
 }
 
 type ApiGetBrandingOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService BrandingAPI
 }
 
@@ -267,24 +268,25 @@ func (r ApiGetBrandingOptionsRequest) Execute() (*BrandingOptions, *http.Respons
 /*
 GetBrandingOptions Gets branding configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBrandingOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBrandingOptionsRequest
 */
 func (a *BrandingAPIService) GetBrandingOptions(ctx context.Context) ApiGetBrandingOptionsRequest {
 	return ApiGetBrandingOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BrandingOptions
+//
+//	@return BrandingOptions
 func (a *BrandingAPIService) GetBrandingOptionsExecute(r ApiGetBrandingOptionsRequest) (*BrandingOptions, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BrandingOptions
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BrandingOptions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingAPIService.GetBrandingOptions")

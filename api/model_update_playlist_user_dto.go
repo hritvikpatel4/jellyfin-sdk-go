@@ -72,6 +72,7 @@ func (o *UpdatePlaylistUserDto) HasCanEdit() bool {
 func (o *UpdatePlaylistUserDto) SetCanEdit(v bool) {
 	o.CanEdit.Set(&v)
 }
+
 // SetCanEditNil sets the value for CanEdit to be an explicit nil
 func (o *UpdatePlaylistUserDto) SetCanEditNil() {
 	o.CanEdit.Set(nil)
@@ -83,7 +84,7 @@ func (o *UpdatePlaylistUserDto) UnsetCanEdit() {
 }
 
 func (o UpdatePlaylistUserDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,5 +134,3 @@ func (v *NullableUpdatePlaylistUserDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

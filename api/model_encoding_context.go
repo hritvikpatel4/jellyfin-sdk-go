@@ -21,7 +21,7 @@ type EncodingContext string
 // List of EncodingContext
 const (
 	ENCODINGCONTEXT_STREAMING EncodingContext = "Streaming"
-	ENCODINGCONTEXT_STATIC EncodingContext = "Static"
+	ENCODINGCONTEXT_STATIC    EncodingContext = "Static"
 )
 
 // All allowed values of EncodingContext enum
@@ -108,4 +108,3 @@ func (v *NullableEncodingContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

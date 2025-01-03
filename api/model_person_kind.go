@@ -20,31 +20,31 @@ type PersonKind string
 
 // List of PersonKind
 const (
-	PERSONKIND_UNKNOWN PersonKind = "Unknown"
-	PERSONKIND_ACTOR PersonKind = "Actor"
-	PERSONKIND_DIRECTOR PersonKind = "Director"
-	PERSONKIND_COMPOSER PersonKind = "Composer"
-	PERSONKIND_WRITER PersonKind = "Writer"
-	PERSONKIND_GUEST_STAR PersonKind = "GuestStar"
-	PERSONKIND_PRODUCER PersonKind = "Producer"
-	PERSONKIND_CONDUCTOR PersonKind = "Conductor"
-	PERSONKIND_LYRICIST PersonKind = "Lyricist"
-	PERSONKIND_ARRANGER PersonKind = "Arranger"
-	PERSONKIND_ENGINEER PersonKind = "Engineer"
-	PERSONKIND_MIXER PersonKind = "Mixer"
-	PERSONKIND_REMIXER PersonKind = "Remixer"
-	PERSONKIND_CREATOR PersonKind = "Creator"
-	PERSONKIND_ARTIST PersonKind = "Artist"
+	PERSONKIND_UNKNOWN      PersonKind = "Unknown"
+	PERSONKIND_ACTOR        PersonKind = "Actor"
+	PERSONKIND_DIRECTOR     PersonKind = "Director"
+	PERSONKIND_COMPOSER     PersonKind = "Composer"
+	PERSONKIND_WRITER       PersonKind = "Writer"
+	PERSONKIND_GUEST_STAR   PersonKind = "GuestStar"
+	PERSONKIND_PRODUCER     PersonKind = "Producer"
+	PERSONKIND_CONDUCTOR    PersonKind = "Conductor"
+	PERSONKIND_LYRICIST     PersonKind = "Lyricist"
+	PERSONKIND_ARRANGER     PersonKind = "Arranger"
+	PERSONKIND_ENGINEER     PersonKind = "Engineer"
+	PERSONKIND_MIXER        PersonKind = "Mixer"
+	PERSONKIND_REMIXER      PersonKind = "Remixer"
+	PERSONKIND_CREATOR      PersonKind = "Creator"
+	PERSONKIND_ARTIST       PersonKind = "Artist"
 	PERSONKIND_ALBUM_ARTIST PersonKind = "AlbumArtist"
-	PERSONKIND_AUTHOR PersonKind = "Author"
-	PERSONKIND_ILLUSTRATOR PersonKind = "Illustrator"
-	PERSONKIND_PENCILLER PersonKind = "Penciller"
-	PERSONKIND_INKER PersonKind = "Inker"
-	PERSONKIND_COLORIST PersonKind = "Colorist"
-	PERSONKIND_LETTERER PersonKind = "Letterer"
+	PERSONKIND_AUTHOR       PersonKind = "Author"
+	PERSONKIND_ILLUSTRATOR  PersonKind = "Illustrator"
+	PERSONKIND_PENCILLER    PersonKind = "Penciller"
+	PERSONKIND_INKER        PersonKind = "Inker"
+	PERSONKIND_COLORIST     PersonKind = "Colorist"
+	PERSONKIND_LETTERER     PersonKind = "Letterer"
 	PERSONKIND_COVER_ARTIST PersonKind = "CoverArtist"
-	PERSONKIND_EDITOR PersonKind = "Editor"
-	PERSONKIND_TRANSLATOR PersonKind = "Translator"
+	PERSONKIND_EDITOR       PersonKind = "Editor"
+	PERSONKIND_TRANSLATOR   PersonKind = "Translator"
 )
 
 // All allowed values of PersonKind enum
@@ -154,4 +154,3 @@ func (v *NullablePersonKind) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

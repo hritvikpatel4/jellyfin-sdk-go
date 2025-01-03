@@ -20,11 +20,11 @@ type SubtitlePlaybackMode string
 
 // List of SubtitlePlaybackMode
 const (
-	SUBTITLEPLAYBACKMODE_DEFAULT SubtitlePlaybackMode = "Default"
-	SUBTITLEPLAYBACKMODE_ALWAYS SubtitlePlaybackMode = "Always"
+	SUBTITLEPLAYBACKMODE_DEFAULT     SubtitlePlaybackMode = "Default"
+	SUBTITLEPLAYBACKMODE_ALWAYS      SubtitlePlaybackMode = "Always"
 	SUBTITLEPLAYBACKMODE_ONLY_FORCED SubtitlePlaybackMode = "OnlyForced"
-	SUBTITLEPLAYBACKMODE_NONE SubtitlePlaybackMode = "None"
-	SUBTITLEPLAYBACKMODE_SMART SubtitlePlaybackMode = "Smart"
+	SUBTITLEPLAYBACKMODE_NONE        SubtitlePlaybackMode = "None"
+	SUBTITLEPLAYBACKMODE_SMART       SubtitlePlaybackMode = "Smart"
 )
 
 // All allowed values of SubtitlePlaybackMode enum
@@ -114,4 +114,3 @@ func (v *NullableSubtitlePlaybackMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

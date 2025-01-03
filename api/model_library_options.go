@@ -19,52 +19,52 @@ var _ MappedNullable = &LibraryOptions{}
 
 // LibraryOptions struct for LibraryOptions
 type LibraryOptions struct {
-	Enabled *bool `json:"Enabled,omitempty"`
-	EnablePhotos *bool `json:"EnablePhotos,omitempty"`
-	EnableRealtimeMonitor *bool `json:"EnableRealtimeMonitor,omitempty"`
-	EnableLUFSScan *bool `json:"EnableLUFSScan,omitempty"`
-	EnableChapterImageExtraction *bool `json:"EnableChapterImageExtraction,omitempty"`
-	ExtractChapterImagesDuringLibraryScan *bool `json:"ExtractChapterImagesDuringLibraryScan,omitempty"`
-	EnableTrickplayImageExtraction *bool `json:"EnableTrickplayImageExtraction,omitempty"`
-	ExtractTrickplayImagesDuringLibraryScan *bool `json:"ExtractTrickplayImagesDuringLibraryScan,omitempty"`
-	PathInfos []MediaPathInfo `json:"PathInfos,omitempty"`
-	SaveLocalMetadata *bool `json:"SaveLocalMetadata,omitempty"`
+	Enabled                                 *bool           `json:"Enabled,omitempty"`
+	EnablePhotos                            *bool           `json:"EnablePhotos,omitempty"`
+	EnableRealtimeMonitor                   *bool           `json:"EnableRealtimeMonitor,omitempty"`
+	EnableLUFSScan                          *bool           `json:"EnableLUFSScan,omitempty"`
+	EnableChapterImageExtraction            *bool           `json:"EnableChapterImageExtraction,omitempty"`
+	ExtractChapterImagesDuringLibraryScan   *bool           `json:"ExtractChapterImagesDuringLibraryScan,omitempty"`
+	EnableTrickplayImageExtraction          *bool           `json:"EnableTrickplayImageExtraction,omitempty"`
+	ExtractTrickplayImagesDuringLibraryScan *bool           `json:"ExtractTrickplayImagesDuringLibraryScan,omitempty"`
+	PathInfos                               []MediaPathInfo `json:"PathInfos,omitempty"`
+	SaveLocalMetadata                       *bool           `json:"SaveLocalMetadata,omitempty"`
 	// Deprecated
-	EnableInternetProviders *bool `json:"EnableInternetProviders,omitempty"`
-	EnableAutomaticSeriesGrouping *bool `json:"EnableAutomaticSeriesGrouping,omitempty"`
-	EnableEmbeddedTitles *bool `json:"EnableEmbeddedTitles,omitempty"`
-	EnableEmbeddedExtrasTitles *bool `json:"EnableEmbeddedExtrasTitles,omitempty"`
-	EnableEmbeddedEpisodeInfos *bool `json:"EnableEmbeddedEpisodeInfos,omitempty"`
-	AutomaticRefreshIntervalDays *int32 `json:"AutomaticRefreshIntervalDays,omitempty"`
+	EnableInternetProviders       *bool  `json:"EnableInternetProviders,omitempty"`
+	EnableAutomaticSeriesGrouping *bool  `json:"EnableAutomaticSeriesGrouping,omitempty"`
+	EnableEmbeddedTitles          *bool  `json:"EnableEmbeddedTitles,omitempty"`
+	EnableEmbeddedExtrasTitles    *bool  `json:"EnableEmbeddedExtrasTitles,omitempty"`
+	EnableEmbeddedEpisodeInfos    *bool  `json:"EnableEmbeddedEpisodeInfos,omitempty"`
+	AutomaticRefreshIntervalDays  *int32 `json:"AutomaticRefreshIntervalDays,omitempty"`
 	// Gets or sets the preferred metadata language.
 	PreferredMetadataLanguage NullableString `json:"PreferredMetadataLanguage,omitempty"`
 	// Gets or sets the metadata country code.
-	MetadataCountryCode NullableString `json:"MetadataCountryCode,omitempty"`
-	SeasonZeroDisplayName *string `json:"SeasonZeroDisplayName,omitempty"`
-	MetadataSavers []string `json:"MetadataSavers,omitempty"`
-	DisabledLocalMetadataReaders []string `json:"DisabledLocalMetadataReaders,omitempty"`
-	LocalMetadataReaderOrder []string `json:"LocalMetadataReaderOrder,omitempty"`
-	DisabledSubtitleFetchers []string `json:"DisabledSubtitleFetchers,omitempty"`
-	SubtitleFetcherOrder []string `json:"SubtitleFetcherOrder,omitempty"`
-	DisabledMediaSegmentProviders []string `json:"DisabledMediaSegmentProviders,omitempty"`
-	MediaSegmentProvideOrder []string `json:"MediaSegmentProvideOrder,omitempty"`
-	SkipSubtitlesIfEmbeddedSubtitlesPresent *bool `json:"SkipSubtitlesIfEmbeddedSubtitlesPresent,omitempty"`
-	SkipSubtitlesIfAudioTrackMatches *bool `json:"SkipSubtitlesIfAudioTrackMatches,omitempty"`
-	SubtitleDownloadLanguages []string `json:"SubtitleDownloadLanguages,omitempty"`
-	RequirePerfectSubtitleMatch *bool `json:"RequirePerfectSubtitleMatch,omitempty"`
-	SaveSubtitlesWithMedia *bool `json:"SaveSubtitlesWithMedia,omitempty"`
-	SaveLyricsWithMedia *bool `json:"SaveLyricsWithMedia,omitempty"`
-	SaveTrickplayWithMedia *bool `json:"SaveTrickplayWithMedia,omitempty"`
-	DisabledLyricFetchers []string `json:"DisabledLyricFetchers,omitempty"`
-	LyricFetcherOrder []string `json:"LyricFetcherOrder,omitempty"`
-	PreferNonstandardArtistsTag *bool `json:"PreferNonstandardArtistsTag,omitempty"`
-	UseCustomTagDelimiters *bool `json:"UseCustomTagDelimiters,omitempty"`
-	CustomTagDelimiters []string `json:"CustomTagDelimiters,omitempty"`
-	DelimiterWhitelist []string `json:"DelimiterWhitelist,omitempty"`
-	AutomaticallyAddToCollection *bool `json:"AutomaticallyAddToCollection,omitempty"`
+	MetadataCountryCode                     NullableString `json:"MetadataCountryCode,omitempty"`
+	SeasonZeroDisplayName                   *string        `json:"SeasonZeroDisplayName,omitempty"`
+	MetadataSavers                          []string       `json:"MetadataSavers,omitempty"`
+	DisabledLocalMetadataReaders            []string       `json:"DisabledLocalMetadataReaders,omitempty"`
+	LocalMetadataReaderOrder                []string       `json:"LocalMetadataReaderOrder,omitempty"`
+	DisabledSubtitleFetchers                []string       `json:"DisabledSubtitleFetchers,omitempty"`
+	SubtitleFetcherOrder                    []string       `json:"SubtitleFetcherOrder,omitempty"`
+	DisabledMediaSegmentProviders           []string       `json:"DisabledMediaSegmentProviders,omitempty"`
+	MediaSegmentProvideOrder                []string       `json:"MediaSegmentProvideOrder,omitempty"`
+	SkipSubtitlesIfEmbeddedSubtitlesPresent *bool          `json:"SkipSubtitlesIfEmbeddedSubtitlesPresent,omitempty"`
+	SkipSubtitlesIfAudioTrackMatches        *bool          `json:"SkipSubtitlesIfAudioTrackMatches,omitempty"`
+	SubtitleDownloadLanguages               []string       `json:"SubtitleDownloadLanguages,omitempty"`
+	RequirePerfectSubtitleMatch             *bool          `json:"RequirePerfectSubtitleMatch,omitempty"`
+	SaveSubtitlesWithMedia                  *bool          `json:"SaveSubtitlesWithMedia,omitempty"`
+	SaveLyricsWithMedia                     *bool          `json:"SaveLyricsWithMedia,omitempty"`
+	SaveTrickplayWithMedia                  *bool          `json:"SaveTrickplayWithMedia,omitempty"`
+	DisabledLyricFetchers                   []string       `json:"DisabledLyricFetchers,omitempty"`
+	LyricFetcherOrder                       []string       `json:"LyricFetcherOrder,omitempty"`
+	PreferNonstandardArtistsTag             *bool          `json:"PreferNonstandardArtistsTag,omitempty"`
+	UseCustomTagDelimiters                  *bool          `json:"UseCustomTagDelimiters,omitempty"`
+	CustomTagDelimiters                     []string       `json:"CustomTagDelimiters,omitempty"`
+	DelimiterWhitelist                      []string       `json:"DelimiterWhitelist,omitempty"`
+	AutomaticallyAddToCollection            *bool          `json:"AutomaticallyAddToCollection,omitempty"`
 	// An enum representing the options to disable embedded subs.
 	AllowEmbeddedSubtitles *EmbeddedSubtitleOptions `json:"AllowEmbeddedSubtitles,omitempty"`
-	TypeOptions []TypeOptions `json:"TypeOptions,omitempty"`
+	TypeOptions            []TypeOptions            `json:"TypeOptions,omitempty"`
 }
 
 // NewLibraryOptions instantiates a new LibraryOptions object
@@ -647,6 +647,7 @@ func (o *LibraryOptions) HasPreferredMetadataLanguage() bool {
 func (o *LibraryOptions) SetPreferredMetadataLanguage(v string) {
 	o.PreferredMetadataLanguage.Set(&v)
 }
+
 // SetPreferredMetadataLanguageNil sets the value for PreferredMetadataLanguage to be an explicit nil
 func (o *LibraryOptions) SetPreferredMetadataLanguageNil() {
 	o.PreferredMetadataLanguage.Set(nil)
@@ -689,6 +690,7 @@ func (o *LibraryOptions) HasMetadataCountryCode() bool {
 func (o *LibraryOptions) SetMetadataCountryCode(v string) {
 	o.MetadataCountryCode.Set(&v)
 }
+
 // SetMetadataCountryCodeNil sets the value for MetadataCountryCode to be an explicit nil
 func (o *LibraryOptions) SetMetadataCountryCodeNil() {
 	o.MetadataCountryCode.Set(nil)
@@ -1471,7 +1473,7 @@ func (o *LibraryOptions) SetTypeOptions(v []TypeOptions) {
 }
 
 func (o LibraryOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1644,5 +1646,3 @@ func (v *NullableLibraryOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,8 +20,8 @@ type ForgotPasswordAction string
 
 // List of ForgotPasswordAction
 const (
-	FORGOTPASSWORDACTION_CONTACT_ADMIN ForgotPasswordAction = "ContactAdmin"
-	FORGOTPASSWORDACTION_PIN_CODE ForgotPasswordAction = "PinCode"
+	FORGOTPASSWORDACTION_CONTACT_ADMIN       ForgotPasswordAction = "ContactAdmin"
+	FORGOTPASSWORDACTION_PIN_CODE            ForgotPasswordAction = "PinCode"
 	FORGOTPASSWORDACTION_IN_NETWORK_REQUIRED ForgotPasswordAction = "InNetworkRequired"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableForgotPasswordAction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -11,8 +11,8 @@ API version: 10.10.3
 package api
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -34,43 +34,43 @@ type UserPolicy struct {
 	// Gets or sets a value indicating whether this instance is disabled.
 	IsDisabled *bool `json:"IsDisabled,omitempty"`
 	// Gets or sets the max parental rating.
-	MaxParentalRating NullableInt32 `json:"MaxParentalRating,omitempty"`
-	BlockedTags []string `json:"BlockedTags,omitempty"`
-	AllowedTags []string `json:"AllowedTags,omitempty"`
-	EnableUserPreferenceAccess *bool `json:"EnableUserPreferenceAccess,omitempty"`
-	AccessSchedules []AccessSchedule `json:"AccessSchedules,omitempty"`
-	BlockUnratedItems []UnratedItem `json:"BlockUnratedItems,omitempty"`
-	EnableRemoteControlOfOtherUsers *bool `json:"EnableRemoteControlOfOtherUsers,omitempty"`
-	EnableSharedDeviceControl *bool `json:"EnableSharedDeviceControl,omitempty"`
-	EnableRemoteAccess *bool `json:"EnableRemoteAccess,omitempty"`
-	EnableLiveTvManagement *bool `json:"EnableLiveTvManagement,omitempty"`
-	EnableLiveTvAccess *bool `json:"EnableLiveTvAccess,omitempty"`
-	EnableMediaPlayback *bool `json:"EnableMediaPlayback,omitempty"`
-	EnableAudioPlaybackTranscoding *bool `json:"EnableAudioPlaybackTranscoding,omitempty"`
-	EnableVideoPlaybackTranscoding *bool `json:"EnableVideoPlaybackTranscoding,omitempty"`
-	EnablePlaybackRemuxing *bool `json:"EnablePlaybackRemuxing,omitempty"`
-	ForceRemoteSourceTranscoding *bool `json:"ForceRemoteSourceTranscoding,omitempty"`
-	EnableContentDeletion *bool `json:"EnableContentDeletion,omitempty"`
-	EnableContentDeletionFromFolders []string `json:"EnableContentDeletionFromFolders,omitempty"`
-	EnableContentDownloading *bool `json:"EnableContentDownloading,omitempty"`
+	MaxParentalRating                NullableInt32    `json:"MaxParentalRating,omitempty"`
+	BlockedTags                      []string         `json:"BlockedTags,omitempty"`
+	AllowedTags                      []string         `json:"AllowedTags,omitempty"`
+	EnableUserPreferenceAccess       *bool            `json:"EnableUserPreferenceAccess,omitempty"`
+	AccessSchedules                  []AccessSchedule `json:"AccessSchedules,omitempty"`
+	BlockUnratedItems                []UnratedItem    `json:"BlockUnratedItems,omitempty"`
+	EnableRemoteControlOfOtherUsers  *bool            `json:"EnableRemoteControlOfOtherUsers,omitempty"`
+	EnableSharedDeviceControl        *bool            `json:"EnableSharedDeviceControl,omitempty"`
+	EnableRemoteAccess               *bool            `json:"EnableRemoteAccess,omitempty"`
+	EnableLiveTvManagement           *bool            `json:"EnableLiveTvManagement,omitempty"`
+	EnableLiveTvAccess               *bool            `json:"EnableLiveTvAccess,omitempty"`
+	EnableMediaPlayback              *bool            `json:"EnableMediaPlayback,omitempty"`
+	EnableAudioPlaybackTranscoding   *bool            `json:"EnableAudioPlaybackTranscoding,omitempty"`
+	EnableVideoPlaybackTranscoding   *bool            `json:"EnableVideoPlaybackTranscoding,omitempty"`
+	EnablePlaybackRemuxing           *bool            `json:"EnablePlaybackRemuxing,omitempty"`
+	ForceRemoteSourceTranscoding     *bool            `json:"ForceRemoteSourceTranscoding,omitempty"`
+	EnableContentDeletion            *bool            `json:"EnableContentDeletion,omitempty"`
+	EnableContentDeletionFromFolders []string         `json:"EnableContentDeletionFromFolders,omitempty"`
+	EnableContentDownloading         *bool            `json:"EnableContentDownloading,omitempty"`
 	// Gets or sets a value indicating whether [enable synchronize].
-	EnableSyncTranscoding *bool `json:"EnableSyncTranscoding,omitempty"`
-	EnableMediaConversion *bool `json:"EnableMediaConversion,omitempty"`
-	EnabledDevices []string `json:"EnabledDevices,omitempty"`
-	EnableAllDevices *bool `json:"EnableAllDevices,omitempty"`
-	EnabledChannels []string `json:"EnabledChannels,omitempty"`
-	EnableAllChannels *bool `json:"EnableAllChannels,omitempty"`
-	EnabledFolders []string `json:"EnabledFolders,omitempty"`
-	EnableAllFolders *bool `json:"EnableAllFolders,omitempty"`
-	InvalidLoginAttemptCount *int32 `json:"InvalidLoginAttemptCount,omitempty"`
-	LoginAttemptsBeforeLockout *int32 `json:"LoginAttemptsBeforeLockout,omitempty"`
-	MaxActiveSessions *int32 `json:"MaxActiveSessions,omitempty"`
-	EnablePublicSharing *bool `json:"EnablePublicSharing,omitempty"`
-	BlockedMediaFolders []string `json:"BlockedMediaFolders,omitempty"`
-	BlockedChannels []string `json:"BlockedChannels,omitempty"`
-	RemoteClientBitrateLimit *int32 `json:"RemoteClientBitrateLimit,omitempty"`
-	AuthenticationProviderId string `json:"AuthenticationProviderId"`
-	PasswordResetProviderId string `json:"PasswordResetProviderId"`
+	EnableSyncTranscoding      *bool    `json:"EnableSyncTranscoding,omitempty"`
+	EnableMediaConversion      *bool    `json:"EnableMediaConversion,omitempty"`
+	EnabledDevices             []string `json:"EnabledDevices,omitempty"`
+	EnableAllDevices           *bool    `json:"EnableAllDevices,omitempty"`
+	EnabledChannels            []string `json:"EnabledChannels,omitempty"`
+	EnableAllChannels          *bool    `json:"EnableAllChannels,omitempty"`
+	EnabledFolders             []string `json:"EnabledFolders,omitempty"`
+	EnableAllFolders           *bool    `json:"EnableAllFolders,omitempty"`
+	InvalidLoginAttemptCount   *int32   `json:"InvalidLoginAttemptCount,omitempty"`
+	LoginAttemptsBeforeLockout *int32   `json:"LoginAttemptsBeforeLockout,omitempty"`
+	MaxActiveSessions          *int32   `json:"MaxActiveSessions,omitempty"`
+	EnablePublicSharing        *bool    `json:"EnablePublicSharing,omitempty"`
+	BlockedMediaFolders        []string `json:"BlockedMediaFolders,omitempty"`
+	BlockedChannels            []string `json:"BlockedChannels,omitempty"`
+	RemoteClientBitrateLimit   *int32   `json:"RemoteClientBitrateLimit,omitempty"`
+	AuthenticationProviderId   string   `json:"AuthenticationProviderId"`
+	PasswordResetProviderId    string   `json:"PasswordResetProviderId"`
 	// Enum SyncPlayUserAccessType.
 	SyncPlayAccess *SyncPlayUserAccessType `json:"SyncPlayAccess,omitempty"`
 }
@@ -332,6 +332,7 @@ func (o *UserPolicy) HasMaxParentalRating() bool {
 func (o *UserPolicy) SetMaxParentalRating(v int32) {
 	o.MaxParentalRating.Set(&v)
 }
+
 // SetMaxParentalRatingNil sets the value for MaxParentalRating to be an explicit nil
 func (o *UserPolicy) SetMaxParentalRatingNil() {
 	o.MaxParentalRating.Set(nil)
@@ -1489,7 +1490,7 @@ func (o *UserPolicy) SetSyncPlayAccess(v SyncPlayUserAccessType) {
 }
 
 func (o UserPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1640,10 +1641,10 @@ func (o *UserPolicy) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1699,5 +1700,3 @@ func (v *NullableUserPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

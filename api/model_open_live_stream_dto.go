@@ -98,6 +98,7 @@ func (o *OpenLiveStreamDto) HasOpenToken() bool {
 func (o *OpenLiveStreamDto) SetOpenToken(v string) {
 	o.OpenToken.Set(&v)
 }
+
 // SetOpenTokenNil sets the value for OpenToken to be an explicit nil
 func (o *OpenLiveStreamDto) SetOpenTokenNil() {
 	o.OpenToken.Set(nil)
@@ -140,6 +141,7 @@ func (o *OpenLiveStreamDto) HasUserId() bool {
 func (o *OpenLiveStreamDto) SetUserId(v string) {
 	o.UserId.Set(&v)
 }
+
 // SetUserIdNil sets the value for UserId to be an explicit nil
 func (o *OpenLiveStreamDto) SetUserIdNil() {
 	o.UserId.Set(nil)
@@ -182,6 +184,7 @@ func (o *OpenLiveStreamDto) HasPlaySessionId() bool {
 func (o *OpenLiveStreamDto) SetPlaySessionId(v string) {
 	o.PlaySessionId.Set(&v)
 }
+
 // SetPlaySessionIdNil sets the value for PlaySessionId to be an explicit nil
 func (o *OpenLiveStreamDto) SetPlaySessionIdNil() {
 	o.PlaySessionId.Set(nil)
@@ -224,6 +227,7 @@ func (o *OpenLiveStreamDto) HasMaxStreamingBitrate() bool {
 func (o *OpenLiveStreamDto) SetMaxStreamingBitrate(v int32) {
 	o.MaxStreamingBitrate.Set(&v)
 }
+
 // SetMaxStreamingBitrateNil sets the value for MaxStreamingBitrate to be an explicit nil
 func (o *OpenLiveStreamDto) SetMaxStreamingBitrateNil() {
 	o.MaxStreamingBitrate.Set(nil)
@@ -266,6 +270,7 @@ func (o *OpenLiveStreamDto) HasStartTimeTicks() bool {
 func (o *OpenLiveStreamDto) SetStartTimeTicks(v int64) {
 	o.StartTimeTicks.Set(&v)
 }
+
 // SetStartTimeTicksNil sets the value for StartTimeTicks to be an explicit nil
 func (o *OpenLiveStreamDto) SetStartTimeTicksNil() {
 	o.StartTimeTicks.Set(nil)
@@ -308,6 +313,7 @@ func (o *OpenLiveStreamDto) HasAudioStreamIndex() bool {
 func (o *OpenLiveStreamDto) SetAudioStreamIndex(v int32) {
 	o.AudioStreamIndex.Set(&v)
 }
+
 // SetAudioStreamIndexNil sets the value for AudioStreamIndex to be an explicit nil
 func (o *OpenLiveStreamDto) SetAudioStreamIndexNil() {
 	o.AudioStreamIndex.Set(nil)
@@ -350,6 +356,7 @@ func (o *OpenLiveStreamDto) HasSubtitleStreamIndex() bool {
 func (o *OpenLiveStreamDto) SetSubtitleStreamIndex(v int32) {
 	o.SubtitleStreamIndex.Set(&v)
 }
+
 // SetSubtitleStreamIndexNil sets the value for SubtitleStreamIndex to be an explicit nil
 func (o *OpenLiveStreamDto) SetSubtitleStreamIndexNil() {
 	o.SubtitleStreamIndex.Set(nil)
@@ -392,6 +399,7 @@ func (o *OpenLiveStreamDto) HasMaxAudioChannels() bool {
 func (o *OpenLiveStreamDto) SetMaxAudioChannels(v int32) {
 	o.MaxAudioChannels.Set(&v)
 }
+
 // SetMaxAudioChannelsNil sets the value for MaxAudioChannels to be an explicit nil
 func (o *OpenLiveStreamDto) SetMaxAudioChannelsNil() {
 	o.MaxAudioChannels.Set(nil)
@@ -434,6 +442,7 @@ func (o *OpenLiveStreamDto) HasItemId() bool {
 func (o *OpenLiveStreamDto) SetItemId(v string) {
 	o.ItemId.Set(&v)
 }
+
 // SetItemIdNil sets the value for ItemId to be an explicit nil
 func (o *OpenLiveStreamDto) SetItemIdNil() {
 	o.ItemId.Set(nil)
@@ -476,6 +485,7 @@ func (o *OpenLiveStreamDto) HasEnableDirectPlay() bool {
 func (o *OpenLiveStreamDto) SetEnableDirectPlay(v bool) {
 	o.EnableDirectPlay.Set(&v)
 }
+
 // SetEnableDirectPlayNil sets the value for EnableDirectPlay to be an explicit nil
 func (o *OpenLiveStreamDto) SetEnableDirectPlayNil() {
 	o.EnableDirectPlay.Set(nil)
@@ -518,6 +528,7 @@ func (o *OpenLiveStreamDto) HasEnableDirectStream() bool {
 func (o *OpenLiveStreamDto) SetEnableDirectStream(v bool) {
 	o.EnableDirectStream.Set(&v)
 }
+
 // SetEnableDirectStreamNil sets the value for EnableDirectStream to be an explicit nil
 func (o *OpenLiveStreamDto) SetEnableDirectStreamNil() {
 	o.EnableDirectStream.Set(nil)
@@ -560,6 +571,7 @@ func (o *OpenLiveStreamDto) HasAlwaysBurnInSubtitleWhenTranscoding() bool {
 func (o *OpenLiveStreamDto) SetAlwaysBurnInSubtitleWhenTranscoding(v bool) {
 	o.AlwaysBurnInSubtitleWhenTranscoding.Set(&v)
 }
+
 // SetAlwaysBurnInSubtitleWhenTranscodingNil sets the value for AlwaysBurnInSubtitleWhenTranscoding to be an explicit nil
 func (o *OpenLiveStreamDto) SetAlwaysBurnInSubtitleWhenTranscodingNil() {
 	o.AlwaysBurnInSubtitleWhenTranscoding.Set(nil)
@@ -602,6 +614,7 @@ func (o *OpenLiveStreamDto) HasDeviceProfile() bool {
 func (o *OpenLiveStreamDto) SetDeviceProfile(v DeviceProfile) {
 	o.DeviceProfile.Set(&v)
 }
+
 // SetDeviceProfileNil sets the value for DeviceProfile to be an explicit nil
 func (o *OpenLiveStreamDto) SetDeviceProfileNil() {
 	o.DeviceProfile.Set(nil)
@@ -645,7 +658,7 @@ func (o *OpenLiveStreamDto) SetDirectPlayProtocols(v []MediaProtocol) {
 }
 
 func (o OpenLiveStreamDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -734,5 +747,3 @@ func (v *NullableOpenLiveStreamDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

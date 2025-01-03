@@ -84,6 +84,7 @@ func (o *MediaAttachment) HasCodec() bool {
 func (o *MediaAttachment) SetCodec(v string) {
 	o.Codec.Set(&v)
 }
+
 // SetCodecNil sets the value for Codec to be an explicit nil
 func (o *MediaAttachment) SetCodecNil() {
 	o.Codec.Set(nil)
@@ -126,6 +127,7 @@ func (o *MediaAttachment) HasCodecTag() bool {
 func (o *MediaAttachment) SetCodecTag(v string) {
 	o.CodecTag.Set(&v)
 }
+
 // SetCodecTagNil sets the value for CodecTag to be an explicit nil
 func (o *MediaAttachment) SetCodecTagNil() {
 	o.CodecTag.Set(nil)
@@ -168,6 +170,7 @@ func (o *MediaAttachment) HasComment() bool {
 func (o *MediaAttachment) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *MediaAttachment) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -242,6 +245,7 @@ func (o *MediaAttachment) HasFileName() bool {
 func (o *MediaAttachment) SetFileName(v string) {
 	o.FileName.Set(&v)
 }
+
 // SetFileNameNil sets the value for FileName to be an explicit nil
 func (o *MediaAttachment) SetFileNameNil() {
 	o.FileName.Set(nil)
@@ -284,6 +288,7 @@ func (o *MediaAttachment) HasMimeType() bool {
 func (o *MediaAttachment) SetMimeType(v string) {
 	o.MimeType.Set(&v)
 }
+
 // SetMimeTypeNil sets the value for MimeType to be an explicit nil
 func (o *MediaAttachment) SetMimeTypeNil() {
 	o.MimeType.Set(nil)
@@ -326,6 +331,7 @@ func (o *MediaAttachment) HasDeliveryUrl() bool {
 func (o *MediaAttachment) SetDeliveryUrl(v string) {
 	o.DeliveryUrl.Set(&v)
 }
+
 // SetDeliveryUrlNil sets the value for DeliveryUrl to be an explicit nil
 func (o *MediaAttachment) SetDeliveryUrlNil() {
 	o.DeliveryUrl.Set(nil)
@@ -337,7 +343,7 @@ func (o *MediaAttachment) UnsetDeliveryUrl() {
 }
 
 func (o MediaAttachment) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -405,5 +411,3 @@ func (v *NullableMediaAttachment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

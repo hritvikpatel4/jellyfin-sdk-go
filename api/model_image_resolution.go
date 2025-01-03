@@ -21,14 +21,14 @@ type ImageResolution string
 // List of ImageResolution
 const (
 	IMAGERESOLUTION_MATCH_SOURCE ImageResolution = "MatchSource"
-	IMAGERESOLUTION_P144 ImageResolution = "P144"
-	IMAGERESOLUTION_P240 ImageResolution = "P240"
-	IMAGERESOLUTION_P360 ImageResolution = "P360"
-	IMAGERESOLUTION_P480 ImageResolution = "P480"
-	IMAGERESOLUTION_P720 ImageResolution = "P720"
-	IMAGERESOLUTION_P1080 ImageResolution = "P1080"
-	IMAGERESOLUTION_P1440 ImageResolution = "P1440"
-	IMAGERESOLUTION_P2160 ImageResolution = "P2160"
+	IMAGERESOLUTION_P144         ImageResolution = "P144"
+	IMAGERESOLUTION_P240         ImageResolution = "P240"
+	IMAGERESOLUTION_P360         ImageResolution = "P360"
+	IMAGERESOLUTION_P480         ImageResolution = "P480"
+	IMAGERESOLUTION_P720         ImageResolution = "P720"
+	IMAGERESOLUTION_P1080        ImageResolution = "P1080"
+	IMAGERESOLUTION_P1440        ImageResolution = "P1440"
+	IMAGERESOLUTION_P2160        ImageResolution = "P2160"
 )
 
 // All allowed values of ImageResolution enum
@@ -122,4 +122,3 @@ func (v *NullableImageResolution) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

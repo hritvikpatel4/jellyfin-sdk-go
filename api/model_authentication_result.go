@@ -78,6 +78,7 @@ func (o *AuthenticationResult) HasUser() bool {
 func (o *AuthenticationResult) SetUser(v UserDto) {
 	o.User.Set(&v)
 }
+
 // SetUserNil sets the value for User to be an explicit nil
 func (o *AuthenticationResult) SetUserNil() {
 	o.User.Set(nil)
@@ -120,6 +121,7 @@ func (o *AuthenticationResult) HasSessionInfo() bool {
 func (o *AuthenticationResult) SetSessionInfo(v SessionInfoDto) {
 	o.SessionInfo.Set(&v)
 }
+
 // SetSessionInfoNil sets the value for SessionInfo to be an explicit nil
 func (o *AuthenticationResult) SetSessionInfoNil() {
 	o.SessionInfo.Set(nil)
@@ -162,6 +164,7 @@ func (o *AuthenticationResult) HasAccessToken() bool {
 func (o *AuthenticationResult) SetAccessToken(v string) {
 	o.AccessToken.Set(&v)
 }
+
 // SetAccessTokenNil sets the value for AccessToken to be an explicit nil
 func (o *AuthenticationResult) SetAccessTokenNil() {
 	o.AccessToken.Set(nil)
@@ -204,6 +207,7 @@ func (o *AuthenticationResult) HasServerId() bool {
 func (o *AuthenticationResult) SetServerId(v string) {
 	o.ServerId.Set(&v)
 }
+
 // SetServerIdNil sets the value for ServerId to be an explicit nil
 func (o *AuthenticationResult) SetServerIdNil() {
 	o.ServerId.Set(nil)
@@ -215,7 +219,7 @@ func (o *AuthenticationResult) UnsetServerId() {
 }
 
 func (o AuthenticationResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -274,5 +278,3 @@ func (v *NullableAuthenticationResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

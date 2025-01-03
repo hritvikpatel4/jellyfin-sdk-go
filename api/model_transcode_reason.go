@@ -20,32 +20,32 @@ type TranscodeReason string
 
 // List of TranscodeReason
 const (
-	TRANSCODEREASON_CONTAINER_NOT_SUPPORTED TranscodeReason = "ContainerNotSupported"
-	TRANSCODEREASON_VIDEO_CODEC_NOT_SUPPORTED TranscodeReason = "VideoCodecNotSupported"
-	TRANSCODEREASON_AUDIO_CODEC_NOT_SUPPORTED TranscodeReason = "AudioCodecNotSupported"
-	TRANSCODEREASON_SUBTITLE_CODEC_NOT_SUPPORTED TranscodeReason = "SubtitleCodecNotSupported"
-	TRANSCODEREASON_AUDIO_IS_EXTERNAL TranscodeReason = "AudioIsExternal"
-	TRANSCODEREASON_SECONDARY_AUDIO_NOT_SUPPORTED TranscodeReason = "SecondaryAudioNotSupported"
-	TRANSCODEREASON_VIDEO_PROFILE_NOT_SUPPORTED TranscodeReason = "VideoProfileNotSupported"
-	TRANSCODEREASON_VIDEO_LEVEL_NOT_SUPPORTED TranscodeReason = "VideoLevelNotSupported"
-	TRANSCODEREASON_VIDEO_RESOLUTION_NOT_SUPPORTED TranscodeReason = "VideoResolutionNotSupported"
-	TRANSCODEREASON_VIDEO_BIT_DEPTH_NOT_SUPPORTED TranscodeReason = "VideoBitDepthNotSupported"
-	TRANSCODEREASON_VIDEO_FRAMERATE_NOT_SUPPORTED TranscodeReason = "VideoFramerateNotSupported"
-	TRANSCODEREASON_REF_FRAMES_NOT_SUPPORTED TranscodeReason = "RefFramesNotSupported"
-	TRANSCODEREASON_ANAMORPHIC_VIDEO_NOT_SUPPORTED TranscodeReason = "AnamorphicVideoNotSupported"
-	TRANSCODEREASON_INTERLACED_VIDEO_NOT_SUPPORTED TranscodeReason = "InterlacedVideoNotSupported"
-	TRANSCODEREASON_AUDIO_CHANNELS_NOT_SUPPORTED TranscodeReason = "AudioChannelsNotSupported"
-	TRANSCODEREASON_AUDIO_PROFILE_NOT_SUPPORTED TranscodeReason = "AudioProfileNotSupported"
+	TRANSCODEREASON_CONTAINER_NOT_SUPPORTED         TranscodeReason = "ContainerNotSupported"
+	TRANSCODEREASON_VIDEO_CODEC_NOT_SUPPORTED       TranscodeReason = "VideoCodecNotSupported"
+	TRANSCODEREASON_AUDIO_CODEC_NOT_SUPPORTED       TranscodeReason = "AudioCodecNotSupported"
+	TRANSCODEREASON_SUBTITLE_CODEC_NOT_SUPPORTED    TranscodeReason = "SubtitleCodecNotSupported"
+	TRANSCODEREASON_AUDIO_IS_EXTERNAL               TranscodeReason = "AudioIsExternal"
+	TRANSCODEREASON_SECONDARY_AUDIO_NOT_SUPPORTED   TranscodeReason = "SecondaryAudioNotSupported"
+	TRANSCODEREASON_VIDEO_PROFILE_NOT_SUPPORTED     TranscodeReason = "VideoProfileNotSupported"
+	TRANSCODEREASON_VIDEO_LEVEL_NOT_SUPPORTED       TranscodeReason = "VideoLevelNotSupported"
+	TRANSCODEREASON_VIDEO_RESOLUTION_NOT_SUPPORTED  TranscodeReason = "VideoResolutionNotSupported"
+	TRANSCODEREASON_VIDEO_BIT_DEPTH_NOT_SUPPORTED   TranscodeReason = "VideoBitDepthNotSupported"
+	TRANSCODEREASON_VIDEO_FRAMERATE_NOT_SUPPORTED   TranscodeReason = "VideoFramerateNotSupported"
+	TRANSCODEREASON_REF_FRAMES_NOT_SUPPORTED        TranscodeReason = "RefFramesNotSupported"
+	TRANSCODEREASON_ANAMORPHIC_VIDEO_NOT_SUPPORTED  TranscodeReason = "AnamorphicVideoNotSupported"
+	TRANSCODEREASON_INTERLACED_VIDEO_NOT_SUPPORTED  TranscodeReason = "InterlacedVideoNotSupported"
+	TRANSCODEREASON_AUDIO_CHANNELS_NOT_SUPPORTED    TranscodeReason = "AudioChannelsNotSupported"
+	TRANSCODEREASON_AUDIO_PROFILE_NOT_SUPPORTED     TranscodeReason = "AudioProfileNotSupported"
 	TRANSCODEREASON_AUDIO_SAMPLE_RATE_NOT_SUPPORTED TranscodeReason = "AudioSampleRateNotSupported"
-	TRANSCODEREASON_AUDIO_BIT_DEPTH_NOT_SUPPORTED TranscodeReason = "AudioBitDepthNotSupported"
+	TRANSCODEREASON_AUDIO_BIT_DEPTH_NOT_SUPPORTED   TranscodeReason = "AudioBitDepthNotSupported"
 	TRANSCODEREASON_CONTAINER_BITRATE_EXCEEDS_LIMIT TranscodeReason = "ContainerBitrateExceedsLimit"
-	TRANSCODEREASON_VIDEO_BITRATE_NOT_SUPPORTED TranscodeReason = "VideoBitrateNotSupported"
-	TRANSCODEREASON_AUDIO_BITRATE_NOT_SUPPORTED TranscodeReason = "AudioBitrateNotSupported"
-	TRANSCODEREASON_UNKNOWN_VIDEO_STREAM_INFO TranscodeReason = "UnknownVideoStreamInfo"
-	TRANSCODEREASON_UNKNOWN_AUDIO_STREAM_INFO TranscodeReason = "UnknownAudioStreamInfo"
-	TRANSCODEREASON_DIRECT_PLAY_ERROR TranscodeReason = "DirectPlayError"
-	TRANSCODEREASON_VIDEO_RANGE_TYPE_NOT_SUPPORTED TranscodeReason = "VideoRangeTypeNotSupported"
-	TRANSCODEREASON_VIDEO_CODEC_TAG_NOT_SUPPORTED TranscodeReason = "VideoCodecTagNotSupported"
+	TRANSCODEREASON_VIDEO_BITRATE_NOT_SUPPORTED     TranscodeReason = "VideoBitrateNotSupported"
+	TRANSCODEREASON_AUDIO_BITRATE_NOT_SUPPORTED     TranscodeReason = "AudioBitrateNotSupported"
+	TRANSCODEREASON_UNKNOWN_VIDEO_STREAM_INFO       TranscodeReason = "UnknownVideoStreamInfo"
+	TRANSCODEREASON_UNKNOWN_AUDIO_STREAM_INFO       TranscodeReason = "UnknownAudioStreamInfo"
+	TRANSCODEREASON_DIRECT_PLAY_ERROR               TranscodeReason = "DirectPlayError"
+	TRANSCODEREASON_VIDEO_RANGE_TYPE_NOT_SUPPORTED  TranscodeReason = "VideoRangeTypeNotSupported"
+	TRANSCODEREASON_VIDEO_CODEC_TAG_NOT_SUPPORTED   TranscodeReason = "VideoCodecTagNotSupported"
 )
 
 // All allowed values of TranscodeReason enum
@@ -156,4 +156,3 @@ func (v *NullableTranscodeReason) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

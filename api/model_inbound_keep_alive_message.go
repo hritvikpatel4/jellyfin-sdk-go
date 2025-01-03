@@ -73,7 +73,7 @@ func (o *InboundKeepAliveMessage) SetMessageType(v SessionMessageType) {
 }
 
 func (o InboundKeepAliveMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -123,5 +123,3 @@ func (v *NullableInboundKeepAliveMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

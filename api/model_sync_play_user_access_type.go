@@ -21,8 +21,8 @@ type SyncPlayUserAccessType string
 // List of SyncPlayUserAccessType
 const (
 	SYNCPLAYUSERACCESSTYPE_CREATE_AND_JOIN_GROUPS SyncPlayUserAccessType = "CreateAndJoinGroups"
-	SYNCPLAYUSERACCESSTYPE_JOIN_GROUPS SyncPlayUserAccessType = "JoinGroups"
-	SYNCPLAYUSERACCESSTYPE_NONE SyncPlayUserAccessType = "None"
+	SYNCPLAYUSERACCESSTYPE_JOIN_GROUPS            SyncPlayUserAccessType = "JoinGroups"
+	SYNCPLAYUSERACCESSTYPE_NONE                   SyncPlayUserAccessType = "None"
 )
 
 // All allowed values of SyncPlayUserAccessType enum
@@ -110,4 +110,3 @@ func (v *NullableSyncPlayUserAccessType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

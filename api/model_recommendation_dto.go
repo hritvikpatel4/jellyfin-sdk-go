@@ -19,10 +19,10 @@ var _ MappedNullable = &RecommendationDto{}
 
 // RecommendationDto struct for RecommendationDto
 type RecommendationDto struct {
-	Items []BaseItemDto `json:"Items,omitempty"`
+	Items              []BaseItemDto       `json:"Items,omitempty"`
 	RecommendationType *RecommendationType `json:"RecommendationType,omitempty"`
-	BaselineItemName NullableString `json:"BaselineItemName,omitempty"`
-	CategoryId *string `json:"CategoryId,omitempty"`
+	BaselineItemName   NullableString      `json:"BaselineItemName,omitempty"`
+	CategoryId         *string             `json:"CategoryId,omitempty"`
 }
 
 // NewRecommendationDto instantiates a new RecommendationDto object
@@ -139,6 +139,7 @@ func (o *RecommendationDto) HasBaselineItemName() bool {
 func (o *RecommendationDto) SetBaselineItemName(v string) {
 	o.BaselineItemName.Set(&v)
 }
+
 // SetBaselineItemNameNil sets the value for BaselineItemName to be an explicit nil
 func (o *RecommendationDto) SetBaselineItemNameNil() {
 	o.BaselineItemName.Set(nil)
@@ -182,7 +183,7 @@ func (o *RecommendationDto) SetCategoryId(v string) {
 }
 
 func (o RecommendationDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,5 +242,3 @@ func (v *NullableRecommendationDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

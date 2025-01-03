@@ -16,18 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 type MediaInfoAPI interface {
 
 	/*
-	CloseLiveStream Closes a media source.
+		CloseLiveStream Closes a media source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCloseLiveStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiCloseLiveStreamRequest
 	*/
 	CloseLiveStream(ctx context.Context) ApiCloseLiveStreamRequest
 
@@ -35,10 +34,10 @@ type MediaInfoAPI interface {
 	CloseLiveStreamExecute(r ApiCloseLiveStreamRequest) (*http.Response, error)
 
 	/*
-	GetBitrateTestBytes Tests the network with a request with the size of the bitrate.
+		GetBitrateTestBytes Tests the network with a request with the size of the bitrate.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBitrateTestBytesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetBitrateTestBytesRequest
 	*/
 	GetBitrateTestBytes(ctx context.Context) ApiGetBitrateTestBytesRequest
 
@@ -47,11 +46,11 @@ type MediaInfoAPI interface {
 	GetBitrateTestBytesExecute(r ApiGetBitrateTestBytesRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetPlaybackInfo Gets live playback media info for an item.
+		GetPlaybackInfo Gets live playback media info for an item.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetPlaybackInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetPlaybackInfoRequest
 	*/
 	GetPlaybackInfo(ctx context.Context, itemId string) ApiGetPlaybackInfoRequest
 
@@ -60,14 +59,14 @@ type MediaInfoAPI interface {
 	GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest) (*PlaybackInfoResponse, *http.Response, error)
 
 	/*
-	GetPostedPlaybackInfo Gets live playback media info for an item.
+		GetPostedPlaybackInfo Gets live playback media info for an item.
 
-	For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.
-Query parameters are obsolete.
+		For backwards compatibility parameters can be sent via Query or Body, with Query having higher precedence.
+	Query parameters are obsolete.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetPostedPlaybackInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetPostedPlaybackInfoRequest
 	*/
 	GetPostedPlaybackInfo(ctx context.Context, itemId string) ApiGetPostedPlaybackInfoRequest
 
@@ -76,10 +75,10 @@ Query parameters are obsolete.
 	GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybackInfoRequest) (*PlaybackInfoResponse, *http.Response, error)
 
 	/*
-	OpenLiveStream Opens a media source.
+		OpenLiveStream Opens a media source.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiOpenLiveStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiOpenLiveStreamRequest
 	*/
 	OpenLiveStream(ctx context.Context) ApiOpenLiveStreamRequest
 
@@ -92,8 +91,8 @@ Query parameters are obsolete.
 type MediaInfoAPIService service
 
 type ApiCloseLiveStreamRequest struct {
-	ctx context.Context
-	ApiService MediaInfoAPI
+	ctx          context.Context
+	ApiService   MediaInfoAPI
 	liveStreamId *string
 }
 
@@ -110,22 +109,22 @@ func (r ApiCloseLiveStreamRequest) Execute() (*http.Response, error) {
 /*
 CloseLiveStream Closes a media source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCloseLiveStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCloseLiveStreamRequest
 */
 func (a *MediaInfoAPIService) CloseLiveStream(ctx context.Context) ApiCloseLiveStreamRequest {
 	return ApiCloseLiveStreamRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *MediaInfoAPIService) CloseLiveStreamExecute(r ApiCloseLiveStreamRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.CloseLiveStream")
@@ -203,9 +202,9 @@ func (a *MediaInfoAPIService) CloseLiveStreamExecute(r ApiCloseLiveStreamRequest
 }
 
 type ApiGetBitrateTestBytesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService MediaInfoAPI
-	size *int32
+	size       *int32
 }
 
 // The bitrate. Defaults to 102400.
@@ -221,24 +220,25 @@ func (r ApiGetBitrateTestBytesRequest) Execute() (*os.File, *http.Response, erro
 /*
 GetBitrateTestBytes Tests the network with a request with the size of the bitrate.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBitrateTestBytesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBitrateTestBytesRequest
 */
 func (a *MediaInfoAPIService) GetBitrateTestBytes(ctx context.Context) ApiGetBitrateTestBytesRequest {
 	return ApiGetBitrateTestBytesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *MediaInfoAPIService) GetBitrateTestBytesExecute(r ApiGetBitrateTestBytesRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.GetBitrateTestBytes")
@@ -327,10 +327,10 @@ func (a *MediaInfoAPIService) GetBitrateTestBytesExecute(r ApiGetBitrateTestByte
 }
 
 type ApiGetPlaybackInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService MediaInfoAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // The user id.
@@ -346,26 +346,27 @@ func (r ApiGetPlaybackInfoRequest) Execute() (*PlaybackInfoResponse, *http.Respo
 /*
 GetPlaybackInfo Gets live playback media info for an item.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetPlaybackInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetPlaybackInfoRequest
 */
 func (a *MediaInfoAPIService) GetPlaybackInfo(ctx context.Context, itemId string) ApiGetPlaybackInfoRequest {
 	return ApiGetPlaybackInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return PlaybackInfoResponse
+//
+//	@return PlaybackInfoResponse
 func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest) (*PlaybackInfoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PlaybackInfoResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PlaybackInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.GetPlaybackInfo")
@@ -443,8 +444,8 @@ func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -463,24 +464,24 @@ func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest
 }
 
 type ApiGetPostedPlaybackInfoRequest struct {
-	ctx context.Context
-	ApiService MediaInfoAPI
-	itemId string
-	userId *string
-	maxStreamingBitrate *int32
-	startTimeTicks *int64
-	audioStreamIndex *int32
-	subtitleStreamIndex *int32
-	maxAudioChannels *int32
-	mediaSourceId *string
-	liveStreamId *string
-	autoOpenLiveStream *bool
-	enableDirectPlay *bool
-	enableDirectStream *bool
-	enableTranscoding *bool
+	ctx                  context.Context
+	ApiService           MediaInfoAPI
+	itemId               string
+	userId               *string
+	maxStreamingBitrate  *int32
+	startTimeTicks       *int64
+	audioStreamIndex     *int32
+	subtitleStreamIndex  *int32
+	maxAudioChannels     *int32
+	mediaSourceId        *string
+	liveStreamId         *string
+	autoOpenLiveStream   *bool
+	enableDirectPlay     *bool
+	enableDirectStream   *bool
+	enableTranscoding    *bool
 	allowVideoStreamCopy *bool
 	allowAudioStreamCopy *bool
-	playbackInfoDto *PlaybackInfoDto
+	playbackInfoDto      *PlaybackInfoDto
 }
 
 // The user id.
@@ -604,19 +605,20 @@ Query parameters are obsolete.
 func (a *MediaInfoAPIService) GetPostedPlaybackInfo(ctx context.Context, itemId string) ApiGetPostedPlaybackInfoRequest {
 	return ApiGetPostedPlaybackInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return PlaybackInfoResponse
+//
+//	@return PlaybackInfoResponse
 func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybackInfoRequest) (*PlaybackInfoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PlaybackInfoResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PlaybackInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.GetPostedPlaybackInfo")
@@ -735,8 +737,8 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -755,21 +757,21 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybac
 }
 
 type ApiOpenLiveStreamRequest struct {
-	ctx context.Context
-	ApiService MediaInfoAPI
-	openToken *string
-	userId *string
-	playSessionId *string
-	maxStreamingBitrate *int32
-	startTimeTicks *int64
-	audioStreamIndex *int32
-	subtitleStreamIndex *int32
-	maxAudioChannels *int32
-	itemId *string
-	enableDirectPlay *bool
-	enableDirectStream *bool
+	ctx                                 context.Context
+	ApiService                          MediaInfoAPI
+	openToken                           *string
+	userId                              *string
+	playSessionId                       *string
+	maxStreamingBitrate                 *int32
+	startTimeTicks                      *int64
+	audioStreamIndex                    *int32
+	subtitleStreamIndex                 *int32
+	maxAudioChannels                    *int32
+	itemId                              *string
+	enableDirectPlay                    *bool
+	enableDirectStream                  *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
-	openLiveStreamDto *OpenLiveStreamDto
+	openLiveStreamDto                   *OpenLiveStreamDto
 }
 
 // The open token.
@@ -857,24 +859,25 @@ func (r ApiOpenLiveStreamRequest) Execute() (*LiveStreamResponse, *http.Response
 /*
 OpenLiveStream Opens a media source.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOpenLiveStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOpenLiveStreamRequest
 */
 func (a *MediaInfoAPIService) OpenLiveStream(ctx context.Context) ApiOpenLiveStreamRequest {
 	return ApiOpenLiveStreamRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LiveStreamResponse
+//
+//	@return LiveStreamResponse
 func (a *MediaInfoAPIService) OpenLiveStreamExecute(r ApiOpenLiveStreamRequest) (*LiveStreamResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LiveStreamResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LiveStreamResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.OpenLiveStream")

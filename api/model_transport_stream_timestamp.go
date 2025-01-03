@@ -20,8 +20,8 @@ type TransportStreamTimestamp string
 
 // List of TransportStreamTimestamp
 const (
-	TRANSPORTSTREAMTIMESTAMP_NONE TransportStreamTimestamp = "None"
-	TRANSPORTSTREAMTIMESTAMP_ZERO TransportStreamTimestamp = "Zero"
+	TRANSPORTSTREAMTIMESTAMP_NONE  TransportStreamTimestamp = "None"
+	TRANSPORTSTREAMTIMESTAMP_ZERO  TransportStreamTimestamp = "Zero"
 	TRANSPORTSTREAMTIMESTAMP_VALID TransportStreamTimestamp = "Valid"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableTransportStreamTimestamp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

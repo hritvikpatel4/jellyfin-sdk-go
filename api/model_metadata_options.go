@@ -19,13 +19,13 @@ var _ MappedNullable = &MetadataOptions{}
 
 // MetadataOptions Class MetadataOptions.
 type MetadataOptions struct {
-	ItemType NullableString `json:"ItemType,omitempty"`
-	DisabledMetadataSavers []string `json:"DisabledMetadataSavers,omitempty"`
-	LocalMetadataReaderOrder []string `json:"LocalMetadataReaderOrder,omitempty"`
-	DisabledMetadataFetchers []string `json:"DisabledMetadataFetchers,omitempty"`
-	MetadataFetcherOrder []string `json:"MetadataFetcherOrder,omitempty"`
-	DisabledImageFetchers []string `json:"DisabledImageFetchers,omitempty"`
-	ImageFetcherOrder []string `json:"ImageFetcherOrder,omitempty"`
+	ItemType                 NullableString `json:"ItemType,omitempty"`
+	DisabledMetadataSavers   []string       `json:"DisabledMetadataSavers,omitempty"`
+	LocalMetadataReaderOrder []string       `json:"LocalMetadataReaderOrder,omitempty"`
+	DisabledMetadataFetchers []string       `json:"DisabledMetadataFetchers,omitempty"`
+	MetadataFetcherOrder     []string       `json:"MetadataFetcherOrder,omitempty"`
+	DisabledImageFetchers    []string       `json:"DisabledImageFetchers,omitempty"`
+	ImageFetcherOrder        []string       `json:"ImageFetcherOrder,omitempty"`
 }
 
 // NewMetadataOptions instantiates a new MetadataOptions object
@@ -77,6 +77,7 @@ func (o *MetadataOptions) HasItemType() bool {
 func (o *MetadataOptions) SetItemType(v string) {
 	o.ItemType.Set(&v)
 }
+
 // SetItemTypeNil sets the value for ItemType to be an explicit nil
 func (o *MetadataOptions) SetItemTypeNil() {
 	o.ItemType.Set(nil)
@@ -286,7 +287,7 @@ func (o *MetadataOptions) SetImageFetcherOrder(v []string) {
 }
 
 func (o MetadataOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -354,5 +355,3 @@ func (v *NullableMetadataOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

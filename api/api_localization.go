@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type LocalizationAPI interface {
 
 	/*
-	GetCountries Gets known countries.
+		GetCountries Gets known countries.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetCountriesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetCountriesRequest
 	*/
 	GetCountries(ctx context.Context) ApiGetCountriesRequest
 
@@ -34,10 +33,10 @@ type LocalizationAPI interface {
 	GetCountriesExecute(r ApiGetCountriesRequest) ([]CountryInfo, *http.Response, error)
 
 	/*
-	GetCultures Gets known cultures.
+		GetCultures Gets known cultures.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetCulturesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetCulturesRequest
 	*/
 	GetCultures(ctx context.Context) ApiGetCulturesRequest
 
@@ -46,10 +45,10 @@ type LocalizationAPI interface {
 	GetCulturesExecute(r ApiGetCulturesRequest) ([]CultureDto, *http.Response, error)
 
 	/*
-	GetLocalizationOptions Gets localization options.
+		GetLocalizationOptions Gets localization options.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLocalizationOptionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLocalizationOptionsRequest
 	*/
 	GetLocalizationOptions(ctx context.Context) ApiGetLocalizationOptionsRequest
 
@@ -58,10 +57,10 @@ type LocalizationAPI interface {
 	GetLocalizationOptionsExecute(r ApiGetLocalizationOptionsRequest) ([]LocalizationOption, *http.Response, error)
 
 	/*
-	GetParentalRatings Gets known parental ratings.
+		GetParentalRatings Gets known parental ratings.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetParentalRatingsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetParentalRatingsRequest
 	*/
 	GetParentalRatings(ctx context.Context) ApiGetParentalRatingsRequest
 
@@ -74,7 +73,7 @@ type LocalizationAPI interface {
 type LocalizationAPIService service
 
 type ApiGetCountriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LocalizationAPI
 }
 
@@ -85,24 +84,25 @@ func (r ApiGetCountriesRequest) Execute() ([]CountryInfo, *http.Response, error)
 /*
 GetCountries Gets known countries.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCountriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCountriesRequest
 */
 func (a *LocalizationAPIService) GetCountries(ctx context.Context) ApiGetCountriesRequest {
 	return ApiGetCountriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CountryInfo
+//
+//	@return []CountryInfo
 func (a *LocalizationAPIService) GetCountriesExecute(r ApiGetCountriesRequest) ([]CountryInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CountryInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CountryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetCountries")
@@ -185,7 +185,7 @@ func (a *LocalizationAPIService) GetCountriesExecute(r ApiGetCountriesRequest) (
 }
 
 type ApiGetCulturesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LocalizationAPI
 }
 
@@ -196,24 +196,25 @@ func (r ApiGetCulturesRequest) Execute() ([]CultureDto, *http.Response, error) {
 /*
 GetCultures Gets known cultures.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCulturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCulturesRequest
 */
 func (a *LocalizationAPIService) GetCultures(ctx context.Context) ApiGetCulturesRequest {
 	return ApiGetCulturesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CultureDto
+//
+//	@return []CultureDto
 func (a *LocalizationAPIService) GetCulturesExecute(r ApiGetCulturesRequest) ([]CultureDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CultureDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CultureDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetCultures")
@@ -296,7 +297,7 @@ func (a *LocalizationAPIService) GetCulturesExecute(r ApiGetCulturesRequest) ([]
 }
 
 type ApiGetLocalizationOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LocalizationAPI
 }
 
@@ -307,24 +308,25 @@ func (r ApiGetLocalizationOptionsRequest) Execute() ([]LocalizationOption, *http
 /*
 GetLocalizationOptions Gets localization options.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLocalizationOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLocalizationOptionsRequest
 */
 func (a *LocalizationAPIService) GetLocalizationOptions(ctx context.Context) ApiGetLocalizationOptionsRequest {
 	return ApiGetLocalizationOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []LocalizationOption
+//
+//	@return []LocalizationOption
 func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r ApiGetLocalizationOptionsRequest) ([]LocalizationOption, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []LocalizationOption
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []LocalizationOption
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetLocalizationOptions")
@@ -407,7 +409,7 @@ func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r ApiGetLocalizat
 }
 
 type ApiGetParentalRatingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService LocalizationAPI
 }
 
@@ -418,24 +420,25 @@ func (r ApiGetParentalRatingsRequest) Execute() ([]ParentalRating, *http.Respons
 /*
 GetParentalRatings Gets known parental ratings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetParentalRatingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetParentalRatingsRequest
 */
 func (a *LocalizationAPIService) GetParentalRatings(ctx context.Context) ApiGetParentalRatingsRequest {
 	return ApiGetParentalRatingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ParentalRating
+//
+//	@return []ParentalRating
 func (a *LocalizationAPIService) GetParentalRatingsExecute(r ApiGetParentalRatingsRequest) ([]ParentalRating, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ParentalRating
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ParentalRating
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetParentalRatings")

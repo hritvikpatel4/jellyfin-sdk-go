@@ -16,20 +16,19 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
 	"reflect"
+	"strings"
 )
-
 
 type VideosAPI interface {
 
 	/*
-	DeleteAlternateSources Removes alternate video sources.
+		DeleteAlternateSources Removes alternate video sources.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiDeleteAlternateSourcesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiDeleteAlternateSourcesRequest
 	*/
 	DeleteAlternateSources(ctx context.Context, itemId string) ApiDeleteAlternateSourcesRequest
 
@@ -37,11 +36,11 @@ type VideosAPI interface {
 	DeleteAlternateSourcesExecute(r ApiDeleteAlternateSourcesRequest) (*http.Response, error)
 
 	/*
-	GetAdditionalPart Gets additional parts for a video.
+		GetAdditionalPart Gets additional parts for a video.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetAdditionalPartRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetAdditionalPartRequest
 	*/
 	GetAdditionalPart(ctx context.Context, itemId string) ApiGetAdditionalPartRequest
 
@@ -50,11 +49,11 @@ type VideosAPI interface {
 	GetAdditionalPartExecute(r ApiGetAdditionalPartRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetVideoStream Gets a video stream.
+		GetVideoStream Gets a video stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiGetVideoStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiGetVideoStreamRequest
 	*/
 	GetVideoStream(ctx context.Context, itemId string) ApiGetVideoStreamRequest
 
@@ -63,12 +62,12 @@ type VideosAPI interface {
 	GetVideoStreamExecute(r ApiGetVideoStreamRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetVideoStreamByContainer Gets a video stream.
+		GetVideoStreamByContainer Gets a video stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
-	@return ApiGetVideoStreamByContainerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+		@return ApiGetVideoStreamByContainerRequest
 	*/
 	GetVideoStreamByContainer(ctx context.Context, itemId string, container string) ApiGetVideoStreamByContainerRequest
 
@@ -77,11 +76,11 @@ type VideosAPI interface {
 	GetVideoStreamByContainerExecute(r ApiGetVideoStreamByContainerRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadVideoStream Gets a video stream.
+		HeadVideoStream Gets a video stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@return ApiHeadVideoStreamRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@return ApiHeadVideoStreamRequest
 	*/
 	HeadVideoStream(ctx context.Context, itemId string) ApiHeadVideoStreamRequest
 
@@ -90,12 +89,12 @@ type VideosAPI interface {
 	HeadVideoStreamExecute(r ApiHeadVideoStreamRequest) (*os.File, *http.Response, error)
 
 	/*
-	HeadVideoStreamByContainer Gets a video stream.
+		HeadVideoStreamByContainer Gets a video stream.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param itemId The item id.
-	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
-	@return ApiHeadVideoStreamByContainerRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param itemId The item id.
+		@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+		@return ApiHeadVideoStreamByContainerRequest
 	*/
 	HeadVideoStreamByContainer(ctx context.Context, itemId string, container string) ApiHeadVideoStreamByContainerRequest
 
@@ -104,10 +103,10 @@ type VideosAPI interface {
 	HeadVideoStreamByContainerExecute(r ApiHeadVideoStreamByContainerRequest) (*os.File, *http.Response, error)
 
 	/*
-	MergeVersions Merges videos into a single record.
+		MergeVersions Merges videos into a single record.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiMergeVersionsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiMergeVersionsRequest
 	*/
 	MergeVersions(ctx context.Context) ApiMergeVersionsRequest
 
@@ -119,9 +118,9 @@ type VideosAPI interface {
 type VideosAPIService service
 
 type ApiDeleteAlternateSourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService VideosAPI
-	itemId string
+	itemId     string
 }
 
 func (r ApiDeleteAlternateSourcesRequest) Execute() (*http.Response, error) {
@@ -131,24 +130,24 @@ func (r ApiDeleteAlternateSourcesRequest) Execute() (*http.Response, error) {
 /*
 DeleteAlternateSources Removes alternate video sources.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiDeleteAlternateSourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiDeleteAlternateSourcesRequest
 */
 func (a *VideosAPIService) DeleteAlternateSources(ctx context.Context, itemId string) ApiDeleteAlternateSourcesRequest {
 	return ApiDeleteAlternateSourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
 func (a *VideosAPIService) DeleteAlternateSourcesExecute(r ApiDeleteAlternateSourcesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.DeleteAlternateSources")
@@ -223,8 +222,8 @@ func (a *VideosAPIService) DeleteAlternateSourcesExecute(r ApiDeleteAlternateSou
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -234,10 +233,10 @@ func (a *VideosAPIService) DeleteAlternateSourcesExecute(r ApiDeleteAlternateSou
 }
 
 type ApiGetAdditionalPartRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService VideosAPI
-	itemId string
-	userId *string
+	itemId     string
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -253,26 +252,27 @@ func (r ApiGetAdditionalPartRequest) Execute() (*BaseItemDtoQueryResult, *http.R
 /*
 GetAdditionalPart Gets additional parts for a video.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetAdditionalPartRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetAdditionalPartRequest
 */
 func (a *VideosAPIService) GetAdditionalPart(ctx context.Context, itemId string) ApiGetAdditionalPartRequest {
 	return ApiGetAdditionalPartRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *VideosAPIService) GetAdditionalPartExecute(r ApiGetAdditionalPartRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.GetAdditionalPart")
@@ -359,60 +359,60 @@ func (a *VideosAPIService) GetAdditionalPartExecute(r ApiGetAdditionalPartReques
 }
 
 type ApiGetVideoStreamRequest struct {
-	ctx context.Context
-	ApiService VideosAPI
-	itemId string
-	container *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  VideosAPI
+	itemId                      string
+	container                   *string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	maxWidth                    *int32
+	maxHeight                   *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
@@ -729,26 +729,27 @@ func (r ApiGetVideoStreamRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetVideoStream Gets a video stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiGetVideoStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiGetVideoStreamRequest
 */
 func (a *VideosAPIService) GetVideoStream(ctx context.Context, itemId string) ApiGetVideoStreamRequest {
 	return ApiGetVideoStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *VideosAPIService) GetVideoStreamExecute(r ApiGetVideoStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.GetVideoStream")
@@ -974,60 +975,60 @@ func (a *VideosAPIService) GetVideoStreamExecute(r ApiGetVideoStreamRequest) (*o
 }
 
 type ApiGetVideoStreamByContainerRequest struct {
-	ctx context.Context
-	ApiService VideosAPI
-	itemId string
-	container string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  VideosAPI
+	itemId                      string
+	container                   string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	maxWidth                    *int32
+	maxHeight                   *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
@@ -1337,28 +1338,29 @@ func (r ApiGetVideoStreamByContainerRequest) Execute() (*os.File, *http.Response
 /*
 GetVideoStreamByContainer Gets a video stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiGetVideoStreamByContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+	@return ApiGetVideoStreamByContainerRequest
 */
 func (a *VideosAPIService) GetVideoStreamByContainer(ctx context.Context, itemId string, container string) ApiGetVideoStreamByContainerRequest {
 	return ApiGetVideoStreamByContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		container: container,
+		ctx:        ctx,
+		itemId:     itemId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *VideosAPIService) GetVideoStreamByContainerExecute(r ApiGetVideoStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.GetVideoStreamByContainer")
@@ -1582,60 +1584,60 @@ func (a *VideosAPIService) GetVideoStreamByContainerExecute(r ApiGetVideoStreamB
 }
 
 type ApiHeadVideoStreamRequest struct {
-	ctx context.Context
-	ApiService VideosAPI
-	itemId string
-	container *string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  VideosAPI
+	itemId                      string
+	container                   *string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	maxWidth                    *int32
+	maxHeight                   *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
@@ -1952,26 +1954,27 @@ func (r ApiHeadVideoStreamRequest) Execute() (*os.File, *http.Response, error) {
 /*
 HeadVideoStream Gets a video stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @return ApiHeadVideoStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@return ApiHeadVideoStreamRequest
 */
 func (a *VideosAPIService) HeadVideoStream(ctx context.Context, itemId string) ApiHeadVideoStreamRequest {
 	return ApiHeadVideoStreamRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
+		ctx:        ctx,
+		itemId:     itemId,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *VideosAPIService) HeadVideoStreamExecute(r ApiHeadVideoStreamRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.HeadVideoStream")
@@ -2197,60 +2200,60 @@ func (a *VideosAPIService) HeadVideoStreamExecute(r ApiHeadVideoStreamRequest) (
 }
 
 type ApiHeadVideoStreamByContainerRequest struct {
-	ctx context.Context
-	ApiService VideosAPI
-	itemId string
-	container string
-	static *bool
-	params *string
-	tag *string
-	deviceProfileId *string
-	playSessionId *string
-	segmentContainer *string
-	segmentLength *int32
-	minSegments *int32
-	mediaSourceId *string
-	deviceId *string
-	audioCodec *string
-	enableAutoStreamCopy *bool
-	allowVideoStreamCopy *bool
-	allowAudioStreamCopy *bool
-	breakOnNonKeyFrames *bool
-	audioSampleRate *int32
-	maxAudioBitDepth *int32
-	audioBitRate *int32
-	audioChannels *int32
-	maxAudioChannels *int32
-	profile *string
-	level *string
-	framerate *float32
-	maxFramerate *float32
-	copyTimestamps *bool
-	startTimeTicks *int64
-	width *int32
-	height *int32
-	maxWidth *int32
-	maxHeight *int32
-	videoBitRate *int32
-	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
-	maxRefFrames *int32
-	maxVideoBitDepth *int32
-	requireAvc *bool
-	deInterlace *bool
-	requireNonAnamorphic *bool
+	ctx                         context.Context
+	ApiService                  VideosAPI
+	itemId                      string
+	container                   string
+	static                      *bool
+	params                      *string
+	tag                         *string
+	deviceProfileId             *string
+	playSessionId               *string
+	segmentContainer            *string
+	segmentLength               *int32
+	minSegments                 *int32
+	mediaSourceId               *string
+	deviceId                    *string
+	audioCodec                  *string
+	enableAutoStreamCopy        *bool
+	allowVideoStreamCopy        *bool
+	allowAudioStreamCopy        *bool
+	breakOnNonKeyFrames         *bool
+	audioSampleRate             *int32
+	maxAudioBitDepth            *int32
+	audioBitRate                *int32
+	audioChannels               *int32
+	maxAudioChannels            *int32
+	profile                     *string
+	level                       *string
+	framerate                   *float32
+	maxFramerate                *float32
+	copyTimestamps              *bool
+	startTimeTicks              *int64
+	width                       *int32
+	height                      *int32
+	maxWidth                    *int32
+	maxHeight                   *int32
+	videoBitRate                *int32
+	subtitleStreamIndex         *int32
+	subtitleMethod              *SubtitleDeliveryMethod
+	maxRefFrames                *int32
+	maxVideoBitDepth            *int32
+	requireAvc                  *bool
+	deInterlace                 *bool
+	requireNonAnamorphic        *bool
 	transcodingMaxAudioChannels *int32
-	cpuCoreLimit *int32
-	liveStreamId *string
-	enableMpegtsM2TsMode *bool
-	videoCodec *string
-	subtitleCodec *string
-	transcodeReasons *string
-	audioStreamIndex *int32
-	videoStreamIndex *int32
-	context *EncodingContext
-	streamOptions *map[string]string
-	enableAudioVbrEncoding *bool
+	cpuCoreLimit                *int32
+	liveStreamId                *string
+	enableMpegtsM2TsMode        *bool
+	videoCodec                  *string
+	subtitleCodec               *string
+	transcodeReasons            *string
+	audioStreamIndex            *int32
+	videoStreamIndex            *int32
+	context                     *EncodingContext
+	streamOptions               *map[string]string
+	enableAudioVbrEncoding      *bool
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
@@ -2560,28 +2563,29 @@ func (r ApiHeadVideoStreamByContainerRequest) Execute() (*os.File, *http.Respons
 /*
 HeadVideoStreamByContainer Gets a video stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param itemId The item id.
- @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiHeadVideoStreamByContainerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param itemId The item id.
+	@param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
+	@return ApiHeadVideoStreamByContainerRequest
 */
 func (a *VideosAPIService) HeadVideoStreamByContainer(ctx context.Context, itemId string, container string) ApiHeadVideoStreamByContainerRequest {
 	return ApiHeadVideoStreamByContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		itemId: itemId,
-		container: container,
+		ctx:        ctx,
+		itemId:     itemId,
+		container:  container,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *VideosAPIService) HeadVideoStreamByContainerExecute(r ApiHeadVideoStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodHead
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.HeadVideoStreamByContainer")
@@ -2805,9 +2809,9 @@ func (a *VideosAPIService) HeadVideoStreamByContainerExecute(r ApiHeadVideoStrea
 }
 
 type ApiMergeVersionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService VideosAPI
-	ids *[]string
+	ids        *[]string
 }
 
 // Item id list. This allows multiple, comma delimited.
@@ -2823,22 +2827,22 @@ func (r ApiMergeVersionsRequest) Execute() (*http.Response, error) {
 /*
 MergeVersions Merges videos into a single record.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMergeVersionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMergeVersionsRequest
 */
 func (a *VideosAPIService) MergeVersions(ctx context.Context) ApiMergeVersionsRequest {
 	return ApiMergeVersionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *VideosAPIService) MergeVersionsExecute(r ApiMergeVersionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideosAPIService.MergeVersions")
@@ -2926,8 +2930,8 @@ func (a *VideosAPIService) MergeVersionsExecute(r ApiMergeVersionsRequest) (*htt
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

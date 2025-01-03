@@ -74,6 +74,7 @@ func (o *MediaUpdateInfoPathDto) HasPath() bool {
 func (o *MediaUpdateInfoPathDto) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *MediaUpdateInfoPathDto) SetPathNil() {
 	o.Path.Set(nil)
@@ -116,6 +117,7 @@ func (o *MediaUpdateInfoPathDto) HasUpdateType() bool {
 func (o *MediaUpdateInfoPathDto) SetUpdateType(v string) {
 	o.UpdateType.Set(&v)
 }
+
 // SetUpdateTypeNil sets the value for UpdateType to be an explicit nil
 func (o *MediaUpdateInfoPathDto) SetUpdateTypeNil() {
 	o.UpdateType.Set(nil)
@@ -127,7 +129,7 @@ func (o *MediaUpdateInfoPathDto) UnsetUpdateType() {
 }
 
 func (o MediaUpdateInfoPathDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableMediaUpdateInfoPathDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

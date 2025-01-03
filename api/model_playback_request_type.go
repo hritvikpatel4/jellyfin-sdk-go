@@ -20,23 +20,23 @@ type PlaybackRequestType string
 
 // List of PlaybackRequestType
 const (
-	PLAYBACKREQUESTTYPE_PLAY PlaybackRequestType = "Play"
-	PLAYBACKREQUESTTYPE_SET_PLAYLIST_ITEM PlaybackRequestType = "SetPlaylistItem"
+	PLAYBACKREQUESTTYPE_PLAY                 PlaybackRequestType = "Play"
+	PLAYBACKREQUESTTYPE_SET_PLAYLIST_ITEM    PlaybackRequestType = "SetPlaylistItem"
 	PLAYBACKREQUESTTYPE_REMOVE_FROM_PLAYLIST PlaybackRequestType = "RemoveFromPlaylist"
-	PLAYBACKREQUESTTYPE_MOVE_PLAYLIST_ITEM PlaybackRequestType = "MovePlaylistItem"
-	PLAYBACKREQUESTTYPE_QUEUE PlaybackRequestType = "Queue"
-	PLAYBACKREQUESTTYPE_UNPAUSE PlaybackRequestType = "Unpause"
-	PLAYBACKREQUESTTYPE_PAUSE PlaybackRequestType = "Pause"
-	PLAYBACKREQUESTTYPE_STOP PlaybackRequestType = "Stop"
-	PLAYBACKREQUESTTYPE_SEEK PlaybackRequestType = "Seek"
-	PLAYBACKREQUESTTYPE_BUFFER PlaybackRequestType = "Buffer"
-	PLAYBACKREQUESTTYPE_READY PlaybackRequestType = "Ready"
-	PLAYBACKREQUESTTYPE_NEXT_ITEM PlaybackRequestType = "NextItem"
-	PLAYBACKREQUESTTYPE_PREVIOUS_ITEM PlaybackRequestType = "PreviousItem"
-	PLAYBACKREQUESTTYPE_SET_REPEAT_MODE PlaybackRequestType = "SetRepeatMode"
-	PLAYBACKREQUESTTYPE_SET_SHUFFLE_MODE PlaybackRequestType = "SetShuffleMode"
-	PLAYBACKREQUESTTYPE_PING PlaybackRequestType = "Ping"
-	PLAYBACKREQUESTTYPE_IGNORE_WAIT PlaybackRequestType = "IgnoreWait"
+	PLAYBACKREQUESTTYPE_MOVE_PLAYLIST_ITEM   PlaybackRequestType = "MovePlaylistItem"
+	PLAYBACKREQUESTTYPE_QUEUE                PlaybackRequestType = "Queue"
+	PLAYBACKREQUESTTYPE_UNPAUSE              PlaybackRequestType = "Unpause"
+	PLAYBACKREQUESTTYPE_PAUSE                PlaybackRequestType = "Pause"
+	PLAYBACKREQUESTTYPE_STOP                 PlaybackRequestType = "Stop"
+	PLAYBACKREQUESTTYPE_SEEK                 PlaybackRequestType = "Seek"
+	PLAYBACKREQUESTTYPE_BUFFER               PlaybackRequestType = "Buffer"
+	PLAYBACKREQUESTTYPE_READY                PlaybackRequestType = "Ready"
+	PLAYBACKREQUESTTYPE_NEXT_ITEM            PlaybackRequestType = "NextItem"
+	PLAYBACKREQUESTTYPE_PREVIOUS_ITEM        PlaybackRequestType = "PreviousItem"
+	PLAYBACKREQUESTTYPE_SET_REPEAT_MODE      PlaybackRequestType = "SetRepeatMode"
+	PLAYBACKREQUESTTYPE_SET_SHUFFLE_MODE     PlaybackRequestType = "SetShuffleMode"
+	PLAYBACKREQUESTTYPE_PING                 PlaybackRequestType = "Ping"
+	PLAYBACKREQUESTTYPE_IGNORE_WAIT          PlaybackRequestType = "IgnoreWait"
 )
 
 // All allowed values of PlaybackRequestType enum
@@ -138,4 +138,3 @@ func (v *NullablePlaybackRequestType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

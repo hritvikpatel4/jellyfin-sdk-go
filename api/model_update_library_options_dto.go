@@ -106,6 +106,7 @@ func (o *UpdateLibraryOptionsDto) HasLibraryOptions() bool {
 func (o *UpdateLibraryOptionsDto) SetLibraryOptions(v LibraryOptions) {
 	o.LibraryOptions.Set(&v)
 }
+
 // SetLibraryOptionsNil sets the value for LibraryOptions to be an explicit nil
 func (o *UpdateLibraryOptionsDto) SetLibraryOptionsNil() {
 	o.LibraryOptions.Set(nil)
@@ -117,7 +118,7 @@ func (o *UpdateLibraryOptionsDto) UnsetLibraryOptions() {
 }
 
 func (o UpdateLibraryOptionsDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableUpdateLibraryOptionsDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

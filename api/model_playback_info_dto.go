@@ -102,6 +102,7 @@ func (o *PlaybackInfoDto) HasUserId() bool {
 func (o *PlaybackInfoDto) SetUserId(v string) {
 	o.UserId.Set(&v)
 }
+
 // SetUserIdNil sets the value for UserId to be an explicit nil
 func (o *PlaybackInfoDto) SetUserIdNil() {
 	o.UserId.Set(nil)
@@ -144,6 +145,7 @@ func (o *PlaybackInfoDto) HasMaxStreamingBitrate() bool {
 func (o *PlaybackInfoDto) SetMaxStreamingBitrate(v int32) {
 	o.MaxStreamingBitrate.Set(&v)
 }
+
 // SetMaxStreamingBitrateNil sets the value for MaxStreamingBitrate to be an explicit nil
 func (o *PlaybackInfoDto) SetMaxStreamingBitrateNil() {
 	o.MaxStreamingBitrate.Set(nil)
@@ -186,6 +188,7 @@ func (o *PlaybackInfoDto) HasStartTimeTicks() bool {
 func (o *PlaybackInfoDto) SetStartTimeTicks(v int64) {
 	o.StartTimeTicks.Set(&v)
 }
+
 // SetStartTimeTicksNil sets the value for StartTimeTicks to be an explicit nil
 func (o *PlaybackInfoDto) SetStartTimeTicksNil() {
 	o.StartTimeTicks.Set(nil)
@@ -228,6 +231,7 @@ func (o *PlaybackInfoDto) HasAudioStreamIndex() bool {
 func (o *PlaybackInfoDto) SetAudioStreamIndex(v int32) {
 	o.AudioStreamIndex.Set(&v)
 }
+
 // SetAudioStreamIndexNil sets the value for AudioStreamIndex to be an explicit nil
 func (o *PlaybackInfoDto) SetAudioStreamIndexNil() {
 	o.AudioStreamIndex.Set(nil)
@@ -270,6 +274,7 @@ func (o *PlaybackInfoDto) HasSubtitleStreamIndex() bool {
 func (o *PlaybackInfoDto) SetSubtitleStreamIndex(v int32) {
 	o.SubtitleStreamIndex.Set(&v)
 }
+
 // SetSubtitleStreamIndexNil sets the value for SubtitleStreamIndex to be an explicit nil
 func (o *PlaybackInfoDto) SetSubtitleStreamIndexNil() {
 	o.SubtitleStreamIndex.Set(nil)
@@ -312,6 +317,7 @@ func (o *PlaybackInfoDto) HasMaxAudioChannels() bool {
 func (o *PlaybackInfoDto) SetMaxAudioChannels(v int32) {
 	o.MaxAudioChannels.Set(&v)
 }
+
 // SetMaxAudioChannelsNil sets the value for MaxAudioChannels to be an explicit nil
 func (o *PlaybackInfoDto) SetMaxAudioChannelsNil() {
 	o.MaxAudioChannels.Set(nil)
@@ -354,6 +360,7 @@ func (o *PlaybackInfoDto) HasMediaSourceId() bool {
 func (o *PlaybackInfoDto) SetMediaSourceId(v string) {
 	o.MediaSourceId.Set(&v)
 }
+
 // SetMediaSourceIdNil sets the value for MediaSourceId to be an explicit nil
 func (o *PlaybackInfoDto) SetMediaSourceIdNil() {
 	o.MediaSourceId.Set(nil)
@@ -396,6 +403,7 @@ func (o *PlaybackInfoDto) HasLiveStreamId() bool {
 func (o *PlaybackInfoDto) SetLiveStreamId(v string) {
 	o.LiveStreamId.Set(&v)
 }
+
 // SetLiveStreamIdNil sets the value for LiveStreamId to be an explicit nil
 func (o *PlaybackInfoDto) SetLiveStreamIdNil() {
 	o.LiveStreamId.Set(nil)
@@ -438,6 +446,7 @@ func (o *PlaybackInfoDto) HasDeviceProfile() bool {
 func (o *PlaybackInfoDto) SetDeviceProfile(v DeviceProfile) {
 	o.DeviceProfile.Set(&v)
 }
+
 // SetDeviceProfileNil sets the value for DeviceProfile to be an explicit nil
 func (o *PlaybackInfoDto) SetDeviceProfileNil() {
 	o.DeviceProfile.Set(nil)
@@ -480,6 +489,7 @@ func (o *PlaybackInfoDto) HasEnableDirectPlay() bool {
 func (o *PlaybackInfoDto) SetEnableDirectPlay(v bool) {
 	o.EnableDirectPlay.Set(&v)
 }
+
 // SetEnableDirectPlayNil sets the value for EnableDirectPlay to be an explicit nil
 func (o *PlaybackInfoDto) SetEnableDirectPlayNil() {
 	o.EnableDirectPlay.Set(nil)
@@ -522,6 +532,7 @@ func (o *PlaybackInfoDto) HasEnableDirectStream() bool {
 func (o *PlaybackInfoDto) SetEnableDirectStream(v bool) {
 	o.EnableDirectStream.Set(&v)
 }
+
 // SetEnableDirectStreamNil sets the value for EnableDirectStream to be an explicit nil
 func (o *PlaybackInfoDto) SetEnableDirectStreamNil() {
 	o.EnableDirectStream.Set(nil)
@@ -564,6 +575,7 @@ func (o *PlaybackInfoDto) HasEnableTranscoding() bool {
 func (o *PlaybackInfoDto) SetEnableTranscoding(v bool) {
 	o.EnableTranscoding.Set(&v)
 }
+
 // SetEnableTranscodingNil sets the value for EnableTranscoding to be an explicit nil
 func (o *PlaybackInfoDto) SetEnableTranscodingNil() {
 	o.EnableTranscoding.Set(nil)
@@ -606,6 +618,7 @@ func (o *PlaybackInfoDto) HasAllowVideoStreamCopy() bool {
 func (o *PlaybackInfoDto) SetAllowVideoStreamCopy(v bool) {
 	o.AllowVideoStreamCopy.Set(&v)
 }
+
 // SetAllowVideoStreamCopyNil sets the value for AllowVideoStreamCopy to be an explicit nil
 func (o *PlaybackInfoDto) SetAllowVideoStreamCopyNil() {
 	o.AllowVideoStreamCopy.Set(nil)
@@ -648,6 +661,7 @@ func (o *PlaybackInfoDto) HasAllowAudioStreamCopy() bool {
 func (o *PlaybackInfoDto) SetAllowAudioStreamCopy(v bool) {
 	o.AllowAudioStreamCopy.Set(&v)
 }
+
 // SetAllowAudioStreamCopyNil sets the value for AllowAudioStreamCopy to be an explicit nil
 func (o *PlaybackInfoDto) SetAllowAudioStreamCopyNil() {
 	o.AllowAudioStreamCopy.Set(nil)
@@ -690,6 +704,7 @@ func (o *PlaybackInfoDto) HasAutoOpenLiveStream() bool {
 func (o *PlaybackInfoDto) SetAutoOpenLiveStream(v bool) {
 	o.AutoOpenLiveStream.Set(&v)
 }
+
 // SetAutoOpenLiveStreamNil sets the value for AutoOpenLiveStream to be an explicit nil
 func (o *PlaybackInfoDto) SetAutoOpenLiveStreamNil() {
 	o.AutoOpenLiveStream.Set(nil)
@@ -732,6 +747,7 @@ func (o *PlaybackInfoDto) HasAlwaysBurnInSubtitleWhenTranscoding() bool {
 func (o *PlaybackInfoDto) SetAlwaysBurnInSubtitleWhenTranscoding(v bool) {
 	o.AlwaysBurnInSubtitleWhenTranscoding.Set(&v)
 }
+
 // SetAlwaysBurnInSubtitleWhenTranscodingNil sets the value for AlwaysBurnInSubtitleWhenTranscoding to be an explicit nil
 func (o *PlaybackInfoDto) SetAlwaysBurnInSubtitleWhenTranscodingNil() {
 	o.AlwaysBurnInSubtitleWhenTranscoding.Set(nil)
@@ -743,7 +759,7 @@ func (o *PlaybackInfoDto) UnsetAlwaysBurnInSubtitleWhenTranscoding() {
 }
 
 func (o PlaybackInfoDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -838,5 +854,3 @@ func (v *NullablePlaybackInfoDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

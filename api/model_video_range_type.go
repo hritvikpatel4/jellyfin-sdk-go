@@ -20,15 +20,15 @@ type VideoRangeType string
 
 // List of VideoRangeType
 const (
-	VIDEORANGETYPE_UNKNOWN VideoRangeType = "Unknown"
-	VIDEORANGETYPE_SDR VideoRangeType = "SDR"
-	VIDEORANGETYPE_HDR10 VideoRangeType = "HDR10"
-	VIDEORANGETYPE_HLG VideoRangeType = "HLG"
-	VIDEORANGETYPE_DOVI VideoRangeType = "DOVI"
+	VIDEORANGETYPE_UNKNOWN         VideoRangeType = "Unknown"
+	VIDEORANGETYPE_SDR             VideoRangeType = "SDR"
+	VIDEORANGETYPE_HDR10           VideoRangeType = "HDR10"
+	VIDEORANGETYPE_HLG             VideoRangeType = "HLG"
+	VIDEORANGETYPE_DOVI            VideoRangeType = "DOVI"
 	VIDEORANGETYPE_DOVI_WITH_HDR10 VideoRangeType = "DOVIWithHDR10"
-	VIDEORANGETYPE_DOVI_WITH_HLG VideoRangeType = "DOVIWithHLG"
-	VIDEORANGETYPE_DOVI_WITH_SDR VideoRangeType = "DOVIWithSDR"
-	VIDEORANGETYPE_HDR10_PLUS VideoRangeType = "HDR10Plus"
+	VIDEORANGETYPE_DOVI_WITH_HLG   VideoRangeType = "DOVIWithHLG"
+	VIDEORANGETYPE_DOVI_WITH_SDR   VideoRangeType = "DOVIWithSDR"
+	VIDEORANGETYPE_HDR10_PLUS      VideoRangeType = "HDR10Plus"
 )
 
 // All allowed values of VideoRangeType enum
@@ -122,4 +122,3 @@ func (v *NullableVideoRangeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -80,6 +80,7 @@ func (o *SubtitleProfile) HasFormat() bool {
 func (o *SubtitleProfile) SetFormat(v string) {
 	o.Format.Set(&v)
 }
+
 // SetFormatNil sets the value for Format to be an explicit nil
 func (o *SubtitleProfile) SetFormatNil() {
 	o.Format.Set(nil)
@@ -154,6 +155,7 @@ func (o *SubtitleProfile) HasDidlMode() bool {
 func (o *SubtitleProfile) SetDidlMode(v string) {
 	o.DidlMode.Set(&v)
 }
+
 // SetDidlModeNil sets the value for DidlMode to be an explicit nil
 func (o *SubtitleProfile) SetDidlModeNil() {
 	o.DidlMode.Set(nil)
@@ -196,6 +198,7 @@ func (o *SubtitleProfile) HasLanguage() bool {
 func (o *SubtitleProfile) SetLanguage(v string) {
 	o.Language.Set(&v)
 }
+
 // SetLanguageNil sets the value for Language to be an explicit nil
 func (o *SubtitleProfile) SetLanguageNil() {
 	o.Language.Set(nil)
@@ -238,6 +241,7 @@ func (o *SubtitleProfile) HasContainer() bool {
 func (o *SubtitleProfile) SetContainer(v string) {
 	o.Container.Set(&v)
 }
+
 // SetContainerNil sets the value for Container to be an explicit nil
 func (o *SubtitleProfile) SetContainerNil() {
 	o.Container.Set(nil)
@@ -249,7 +253,7 @@ func (o *SubtitleProfile) UnsetContainer() {
 }
 
 func (o SubtitleProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,5 +315,3 @@ func (v *NullableSubtitleProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

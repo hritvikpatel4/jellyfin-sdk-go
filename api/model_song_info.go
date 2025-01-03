@@ -33,14 +33,14 @@ type SongInfo struct {
 	// Gets or sets the provider ids.
 	ProviderIds map[string]string `json:"ProviderIds,omitempty"`
 	// Gets or sets the year.
-	Year NullableInt32 `json:"Year,omitempty"`
-	IndexNumber NullableInt32 `json:"IndexNumber,omitempty"`
-	ParentIndexNumber NullableInt32 `json:"ParentIndexNumber,omitempty"`
-	PremiereDate NullableTime `json:"PremiereDate,omitempty"`
-	IsAutomated *bool `json:"IsAutomated,omitempty"`
-	AlbumArtists []string `json:"AlbumArtists,omitempty"`
-	Album NullableString `json:"Album,omitempty"`
-	Artists []string `json:"Artists,omitempty"`
+	Year              NullableInt32  `json:"Year,omitempty"`
+	IndexNumber       NullableInt32  `json:"IndexNumber,omitempty"`
+	ParentIndexNumber NullableInt32  `json:"ParentIndexNumber,omitempty"`
+	PremiereDate      NullableTime   `json:"PremiereDate,omitempty"`
+	IsAutomated       *bool          `json:"IsAutomated,omitempty"`
+	AlbumArtists      []string       `json:"AlbumArtists,omitempty"`
+	Album             NullableString `json:"Album,omitempty"`
+	Artists           []string       `json:"Artists,omitempty"`
 }
 
 // NewSongInfo instantiates a new SongInfo object
@@ -92,6 +92,7 @@ func (o *SongInfo) HasName() bool {
 func (o *SongInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *SongInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -134,6 +135,7 @@ func (o *SongInfo) HasOriginalTitle() bool {
 func (o *SongInfo) SetOriginalTitle(v string) {
 	o.OriginalTitle.Set(&v)
 }
+
 // SetOriginalTitleNil sets the value for OriginalTitle to be an explicit nil
 func (o *SongInfo) SetOriginalTitleNil() {
 	o.OriginalTitle.Set(nil)
@@ -176,6 +178,7 @@ func (o *SongInfo) HasPath() bool {
 func (o *SongInfo) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *SongInfo) SetPathNil() {
 	o.Path.Set(nil)
@@ -218,6 +221,7 @@ func (o *SongInfo) HasMetadataLanguage() bool {
 func (o *SongInfo) SetMetadataLanguage(v string) {
 	o.MetadataLanguage.Set(&v)
 }
+
 // SetMetadataLanguageNil sets the value for MetadataLanguage to be an explicit nil
 func (o *SongInfo) SetMetadataLanguageNil() {
 	o.MetadataLanguage.Set(nil)
@@ -260,6 +264,7 @@ func (o *SongInfo) HasMetadataCountryCode() bool {
 func (o *SongInfo) SetMetadataCountryCode(v string) {
 	o.MetadataCountryCode.Set(&v)
 }
+
 // SetMetadataCountryCodeNil sets the value for MetadataCountryCode to be an explicit nil
 func (o *SongInfo) SetMetadataCountryCodeNil() {
 	o.MetadataCountryCode.Set(nil)
@@ -335,6 +340,7 @@ func (o *SongInfo) HasYear() bool {
 func (o *SongInfo) SetYear(v int32) {
 	o.Year.Set(&v)
 }
+
 // SetYearNil sets the value for Year to be an explicit nil
 func (o *SongInfo) SetYearNil() {
 	o.Year.Set(nil)
@@ -377,6 +383,7 @@ func (o *SongInfo) HasIndexNumber() bool {
 func (o *SongInfo) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *SongInfo) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -419,6 +426,7 @@ func (o *SongInfo) HasParentIndexNumber() bool {
 func (o *SongInfo) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *SongInfo) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -461,6 +469,7 @@ func (o *SongInfo) HasPremiereDate() bool {
 func (o *SongInfo) SetPremiereDate(v time.Time) {
 	o.PremiereDate.Set(&v)
 }
+
 // SetPremiereDateNil sets the value for PremiereDate to be an explicit nil
 func (o *SongInfo) SetPremiereDateNil() {
 	o.PremiereDate.Set(nil)
@@ -568,6 +577,7 @@ func (o *SongInfo) HasAlbum() bool {
 func (o *SongInfo) SetAlbum(v string) {
 	o.Album.Set(&v)
 }
+
 // SetAlbumNil sets the value for Album to be an explicit nil
 func (o *SongInfo) SetAlbumNil() {
 	o.Album.Set(nil)
@@ -612,7 +622,7 @@ func (o *SongInfo) SetArtists(v []string) {
 }
 
 func (o SongInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -701,5 +711,3 @@ func (v *NullableSongInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

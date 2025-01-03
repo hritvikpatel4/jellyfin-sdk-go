@@ -74,6 +74,7 @@ func (o *NameIdPair) HasName() bool {
 func (o *NameIdPair) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *NameIdPair) SetNameNil() {
 	o.Name.Set(nil)
@@ -116,6 +117,7 @@ func (o *NameIdPair) HasId() bool {
 func (o *NameIdPair) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *NameIdPair) SetIdNil() {
 	o.Id.Set(nil)
@@ -127,7 +129,7 @@ func (o *NameIdPair) UnsetId() {
 }
 
 func (o NameIdPair) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableNameIdPair) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

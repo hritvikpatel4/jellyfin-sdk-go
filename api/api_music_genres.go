@@ -16,19 +16,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type MusicGenresAPI interface {
 
 	/*
-	GetMusicGenre Gets a music genre, by name.
+		GetMusicGenre Gets a music genre, by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param genreName The genre name.
-	@return ApiGetMusicGenreRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param genreName The genre name.
+		@return ApiGetMusicGenreRequest
 	*/
 	GetMusicGenre(ctx context.Context, genreName string) ApiGetMusicGenreRequest
 
@@ -37,12 +36,12 @@ type MusicGenresAPI interface {
 	GetMusicGenreExecute(r ApiGetMusicGenreRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetMusicGenres Gets all music genres from a given item, folder, or the entire library.
+		GetMusicGenres Gets all music genres from a given item, folder, or the entire library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMusicGenresRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetMusicGenresRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetMusicGenres(ctx context.Context) ApiGetMusicGenresRequest
 
@@ -56,10 +55,10 @@ type MusicGenresAPI interface {
 type MusicGenresAPIService service
 
 type ApiGetMusicGenreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService MusicGenresAPI
-	genreName string
-	userId *string
+	genreName  string
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -75,26 +74,27 @@ func (r ApiGetMusicGenreRequest) Execute() (*BaseItemDto, *http.Response, error)
 /*
 GetMusicGenre Gets a music genre, by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param genreName The genre name.
- @return ApiGetMusicGenreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param genreName The genre name.
+	@return ApiGetMusicGenreRequest
 */
 func (a *MusicGenresAPIService) GetMusicGenre(ctx context.Context, genreName string) ApiGetMusicGenreRequest {
 	return ApiGetMusicGenreRequest{
 		ApiService: a,
-		ctx: ctx,
-		genreName: genreName,
+		ctx:        ctx,
+		genreName:  genreName,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *MusicGenresAPIService) GetMusicGenreExecute(r ApiGetMusicGenreRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MusicGenresAPIService.GetMusicGenre")
@@ -181,26 +181,26 @@ func (a *MusicGenresAPIService) GetMusicGenreExecute(r ApiGetMusicGenreRequest) 
 }
 
 type ApiGetMusicGenresRequest struct {
-	ctx context.Context
-	ApiService MusicGenresAPI
-	startIndex *int32
-	limit *int32
-	searchTerm *string
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	isFavorite *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	userId *string
+	ctx                     context.Context
+	ApiService              MusicGenresAPI
+	startIndex              *int32
+	limit                   *int32
+	searchTerm              *string
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	includeItemTypes        *[]BaseItemKind
+	isFavorite              *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	userId                  *string
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
-	enableImages *bool
-	enableTotalRecordCount *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	sortBy                  *[]ItemSortBy
+	sortOrder               *[]SortOrder
+	enableImages            *bool
+	enableTotalRecordCount  *bool
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
@@ -318,27 +318,29 @@ func (r ApiGetMusicGenresRequest) Execute() (*BaseItemDtoQueryResult, *http.Resp
 /*
 GetMusicGenres Gets all music genres from a given item, folder, or the entire library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicGenresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMusicGenresRequest
 
 Deprecated
 */
 func (a *MusicGenresAPIService) GetMusicGenres(ctx context.Context) ApiGetMusicGenresRequest {
 	return ApiGetMusicGenresRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
+//
 // Deprecated
 func (a *MusicGenresAPIService) GetMusicGenresExecute(r ApiGetMusicGenresRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MusicGenresAPIService.GetMusicGenres")

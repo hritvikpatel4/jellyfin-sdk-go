@@ -108,6 +108,7 @@ func (o *DeviceOptionsDto) HasDeviceId() bool {
 func (o *DeviceOptionsDto) SetDeviceId(v string) {
 	o.DeviceId.Set(&v)
 }
+
 // SetDeviceIdNil sets the value for DeviceId to be an explicit nil
 func (o *DeviceOptionsDto) SetDeviceIdNil() {
 	o.DeviceId.Set(nil)
@@ -150,6 +151,7 @@ func (o *DeviceOptionsDto) HasCustomName() bool {
 func (o *DeviceOptionsDto) SetCustomName(v string) {
 	o.CustomName.Set(&v)
 }
+
 // SetCustomNameNil sets the value for CustomName to be an explicit nil
 func (o *DeviceOptionsDto) SetCustomNameNil() {
 	o.CustomName.Set(nil)
@@ -161,7 +163,7 @@ func (o *DeviceOptionsDto) UnsetCustomName() {
 }
 
 func (o DeviceOptionsDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,5 +219,3 @@ func (v *NullableDeviceOptionsDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

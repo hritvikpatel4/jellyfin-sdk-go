@@ -19,14 +19,13 @@ import (
 	"os"
 )
 
-
 type SystemAPI interface {
 
 	/*
-	GetEndpointInfo Gets information about the request endpoint.
+		GetEndpointInfo Gets information about the request endpoint.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetEndpointInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetEndpointInfoRequest
 	*/
 	GetEndpointInfo(ctx context.Context) ApiGetEndpointInfoRequest
 
@@ -35,10 +34,10 @@ type SystemAPI interface {
 	GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (*EndPointInfo, *http.Response, error)
 
 	/*
-	GetLogFile Gets a log file.
+		GetLogFile Gets a log file.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLogFileRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLogFileRequest
 	*/
 	GetLogFile(ctx context.Context) ApiGetLogFileRequest
 
@@ -47,10 +46,10 @@ type SystemAPI interface {
 	GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, *http.Response, error)
 
 	/*
-	GetPingSystem Pings the system.
+		GetPingSystem Pings the system.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPingSystemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPingSystemRequest
 	*/
 	GetPingSystem(ctx context.Context) ApiGetPingSystemRequest
 
@@ -59,10 +58,10 @@ type SystemAPI interface {
 	GetPingSystemExecute(r ApiGetPingSystemRequest) (string, *http.Response, error)
 
 	/*
-	GetPublicSystemInfo Gets public information about the server.
+		GetPublicSystemInfo Gets public information about the server.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetPublicSystemInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetPublicSystemInfoRequest
 	*/
 	GetPublicSystemInfo(ctx context.Context) ApiGetPublicSystemInfoRequest
 
@@ -71,10 +70,10 @@ type SystemAPI interface {
 	GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRequest) (*PublicSystemInfo, *http.Response, error)
 
 	/*
-	GetServerLogs Gets a list of available server log files.
+		GetServerLogs Gets a list of available server log files.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetServerLogsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetServerLogsRequest
 	*/
 	GetServerLogs(ctx context.Context) ApiGetServerLogsRequest
 
@@ -83,10 +82,10 @@ type SystemAPI interface {
 	GetServerLogsExecute(r ApiGetServerLogsRequest) ([]LogFile, *http.Response, error)
 
 	/*
-	GetSystemInfo Gets information about the server.
+		GetSystemInfo Gets information about the server.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetSystemInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetSystemInfoRequest
 	*/
 	GetSystemInfo(ctx context.Context) ApiGetSystemInfoRequest
 
@@ -95,12 +94,12 @@ type SystemAPI interface {
 	GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*SystemInfo, *http.Response, error)
 
 	/*
-	GetWakeOnLanInfo Gets wake on lan information.
+		GetWakeOnLanInfo Gets wake on lan information.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetWakeOnLanInfoRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetWakeOnLanInfoRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWakeOnLanInfo(ctx context.Context) ApiGetWakeOnLanInfoRequest
 
@@ -110,10 +109,10 @@ type SystemAPI interface {
 	GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest) ([]WakeOnLanInfo, *http.Response, error)
 
 	/*
-	PostPingSystem Pings the system.
+		PostPingSystem Pings the system.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostPingSystemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostPingSystemRequest
 	*/
 	PostPingSystem(ctx context.Context) ApiPostPingSystemRequest
 
@@ -122,10 +121,10 @@ type SystemAPI interface {
 	PostPingSystemExecute(r ApiPostPingSystemRequest) (string, *http.Response, error)
 
 	/*
-	RestartApplication Restarts the application.
+		RestartApplication Restarts the application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRestartApplicationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiRestartApplicationRequest
 	*/
 	RestartApplication(ctx context.Context) ApiRestartApplicationRequest
 
@@ -133,10 +132,10 @@ type SystemAPI interface {
 	RestartApplicationExecute(r ApiRestartApplicationRequest) (*http.Response, error)
 
 	/*
-	ShutdownApplication Shuts down the application.
+		ShutdownApplication Shuts down the application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiShutdownApplicationRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiShutdownApplicationRequest
 	*/
 	ShutdownApplication(ctx context.Context) ApiShutdownApplicationRequest
 
@@ -148,7 +147,7 @@ type SystemAPI interface {
 type SystemAPIService service
 
 type ApiGetEndpointInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -159,24 +158,25 @@ func (r ApiGetEndpointInfoRequest) Execute() (*EndPointInfo, *http.Response, err
 /*
 GetEndpointInfo Gets information about the request endpoint.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetEndpointInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetEndpointInfoRequest
 */
 func (a *SystemAPIService) GetEndpointInfo(ctx context.Context) ApiGetEndpointInfoRequest {
 	return ApiGetEndpointInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EndPointInfo
+//
+//	@return EndPointInfo
 func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (*EndPointInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EndPointInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EndPointInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetEndpointInfo")
@@ -250,8 +250,8 @@ func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -270,9 +270,9 @@ func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (
 }
 
 type ApiGetLogFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
-	name *string
+	name       *string
 }
 
 // The name of the log file to get.
@@ -288,24 +288,25 @@ func (r ApiGetLogFileRequest) Execute() (*os.File, *http.Response, error) {
 /*
 GetLogFile Gets a log file.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLogFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLogFileRequest
 */
 func (a *SystemAPIService) GetLogFile(ctx context.Context) ApiGetLogFileRequest {
 	return ApiGetLogFileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *os.File
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetLogFile")
@@ -383,8 +384,8 @@ func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -394,8 +395,8 @@ func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -414,7 +415,7 @@ func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, 
 }
 
 type ApiGetPingSystemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -425,24 +426,25 @@ func (r ApiGetPingSystemRequest) Execute() (string, *http.Response, error) {
 /*
 GetPingSystem Pings the system.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPingSystemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPingSystemRequest
 */
 func (a *SystemAPIService) GetPingSystem(ctx context.Context) ApiGetPingSystemRequest {
 	return ApiGetPingSystemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *SystemAPIService) GetPingSystemExecute(r ApiGetPingSystemRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetPingSystem")
@@ -511,7 +513,7 @@ func (a *SystemAPIService) GetPingSystemExecute(r ApiGetPingSystemRequest) (stri
 }
 
 type ApiGetPublicSystemInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -522,24 +524,25 @@ func (r ApiGetPublicSystemInfoRequest) Execute() (*PublicSystemInfo, *http.Respo
 /*
 GetPublicSystemInfo Gets public information about the server.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPublicSystemInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPublicSystemInfoRequest
 */
 func (a *SystemAPIService) GetPublicSystemInfo(ctx context.Context) ApiGetPublicSystemInfoRequest {
 	return ApiGetPublicSystemInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PublicSystemInfo
+//
+//	@return PublicSystemInfo
 func (a *SystemAPIService) GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRequest) (*PublicSystemInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PublicSystemInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PublicSystemInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetPublicSystemInfo")
@@ -608,7 +611,7 @@ func (a *SystemAPIService) GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRe
 }
 
 type ApiGetServerLogsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -619,24 +622,25 @@ func (r ApiGetServerLogsRequest) Execute() ([]LogFile, *http.Response, error) {
 /*
 GetServerLogs Gets a list of available server log files.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetServerLogsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetServerLogsRequest
 */
 func (a *SystemAPIService) GetServerLogs(ctx context.Context) ApiGetServerLogsRequest {
 	return ApiGetServerLogsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []LogFile
+//
+//	@return []LogFile
 func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]LogFile, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []LogFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []LogFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetServerLogs")
@@ -710,8 +714,8 @@ func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]Lo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -730,7 +734,7 @@ func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]Lo
 }
 
 type ApiGetSystemInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -741,24 +745,25 @@ func (r ApiGetSystemInfoRequest) Execute() (*SystemInfo, *http.Response, error) 
 /*
 GetSystemInfo Gets information about the server.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSystemInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSystemInfoRequest
 */
 func (a *SystemAPIService) GetSystemInfo(ctx context.Context) ApiGetSystemInfoRequest {
 	return ApiGetSystemInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SystemInfo
+//
+//	@return SystemInfo
 func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*SystemInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SystemInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SystemInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetSystemInfo")
@@ -832,8 +837,8 @@ func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*Sys
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -852,7 +857,7 @@ func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*Sys
 }
 
 type ApiGetWakeOnLanInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -863,27 +868,29 @@ func (r ApiGetWakeOnLanInfoRequest) Execute() ([]WakeOnLanInfo, *http.Response, 
 /*
 GetWakeOnLanInfo Gets wake on lan information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetWakeOnLanInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetWakeOnLanInfoRequest
 
 Deprecated
 */
 func (a *SystemAPIService) GetWakeOnLanInfo(ctx context.Context) ApiGetWakeOnLanInfoRequest {
 	return ApiGetWakeOnLanInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WakeOnLanInfo
+//
+//	@return []WakeOnLanInfo
+//
 // Deprecated
 func (a *SystemAPIService) GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest) ([]WakeOnLanInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WakeOnLanInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WakeOnLanInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetWakeOnLanInfo")
@@ -966,7 +973,7 @@ func (a *SystemAPIService) GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest)
 }
 
 type ApiPostPingSystemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -977,24 +984,25 @@ func (r ApiPostPingSystemRequest) Execute() (string, *http.Response, error) {
 /*
 PostPingSystem Pings the system.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPingSystemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostPingSystemRequest
 */
 func (a *SystemAPIService) PostPingSystem(ctx context.Context) ApiPostPingSystemRequest {
 	return ApiPostPingSystemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *SystemAPIService) PostPingSystemExecute(r ApiPostPingSystemRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.PostPingSystem")
@@ -1063,7 +1071,7 @@ func (a *SystemAPIService) PostPingSystemExecute(r ApiPostPingSystemRequest) (st
 }
 
 type ApiRestartApplicationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -1074,22 +1082,22 @@ func (r ApiRestartApplicationRequest) Execute() (*http.Response, error) {
 /*
 RestartApplication Restarts the application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRestartApplicationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRestartApplicationRequest
 */
 func (a *SystemAPIService) RestartApplication(ctx context.Context) ApiRestartApplicationRequest {
 	return ApiRestartApplicationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemAPIService) RestartApplicationExecute(r ApiRestartApplicationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.RestartApplication")
@@ -1163,8 +1171,8 @@ func (a *SystemAPIService) RestartApplicationExecute(r ApiRestartApplicationRequ
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1174,7 +1182,7 @@ func (a *SystemAPIService) RestartApplicationExecute(r ApiRestartApplicationRequ
 }
 
 type ApiShutdownApplicationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SystemAPI
 }
 
@@ -1185,22 +1193,22 @@ func (r ApiShutdownApplicationRequest) Execute() (*http.Response, error) {
 /*
 ShutdownApplication Shuts down the application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiShutdownApplicationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiShutdownApplicationRequest
 */
 func (a *SystemAPIService) ShutdownApplication(ctx context.Context) ApiShutdownApplicationRequest {
 	return ApiShutdownApplicationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemAPIService) ShutdownApplicationExecute(r ApiShutdownApplicationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.ShutdownApplication")
@@ -1274,8 +1282,8 @@ func (a *SystemAPIService) ShutdownApplicationExecute(r ApiShutdownApplicationRe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

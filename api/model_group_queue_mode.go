@@ -20,7 +20,7 @@ type GroupQueueMode string
 
 // List of GroupQueueMode
 const (
-	GROUPQUEUEMODE_QUEUE GroupQueueMode = "Queue"
+	GROUPQUEUEMODE_QUEUE      GroupQueueMode = "Queue"
 	GROUPQUEUEMODE_QUEUE_NEXT GroupQueueMode = "QueueNext"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableGroupQueueMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

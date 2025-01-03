@@ -20,10 +20,10 @@ type MetadataRefreshMode string
 
 // List of MetadataRefreshMode
 const (
-	METADATAREFRESHMODE_NONE MetadataRefreshMode = "None"
+	METADATAREFRESHMODE_NONE            MetadataRefreshMode = "None"
 	METADATAREFRESHMODE_VALIDATION_ONLY MetadataRefreshMode = "ValidationOnly"
-	METADATAREFRESHMODE_DEFAULT MetadataRefreshMode = "Default"
-	METADATAREFRESHMODE_FULL_REFRESH MetadataRefreshMode = "FullRefresh"
+	METADATAREFRESHMODE_DEFAULT         MetadataRefreshMode = "Default"
+	METADATAREFRESHMODE_FULL_REFRESH    MetadataRefreshMode = "FullRefresh"
 )
 
 // All allowed values of MetadataRefreshMode enum
@@ -112,4 +112,3 @@ func (v *NullableMetadataRefreshMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

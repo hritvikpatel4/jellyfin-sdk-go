@@ -108,6 +108,7 @@ func (o *PlaybackInfoResponse) HasPlaySessionId() bool {
 func (o *PlaybackInfoResponse) SetPlaySessionId(v string) {
 	o.PlaySessionId.Set(&v)
 }
+
 // SetPlaySessionIdNil sets the value for PlaySessionId to be an explicit nil
 func (o *PlaybackInfoResponse) SetPlaySessionIdNil() {
 	o.PlaySessionId.Set(nil)
@@ -150,6 +151,7 @@ func (o *PlaybackInfoResponse) HasErrorCode() bool {
 func (o *PlaybackInfoResponse) SetErrorCode(v PlaybackErrorCode) {
 	o.ErrorCode.Set(&v)
 }
+
 // SetErrorCodeNil sets the value for ErrorCode to be an explicit nil
 func (o *PlaybackInfoResponse) SetErrorCodeNil() {
 	o.ErrorCode.Set(nil)
@@ -161,7 +163,7 @@ func (o *PlaybackInfoResponse) UnsetErrorCode() {
 }
 
 func (o PlaybackInfoResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,5 +219,3 @@ func (v *NullablePlaybackInfoResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

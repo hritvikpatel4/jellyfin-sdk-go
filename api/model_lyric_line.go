@@ -106,6 +106,7 @@ func (o *LyricLine) HasStart() bool {
 func (o *LyricLine) SetStart(v int64) {
 	o.Start.Set(&v)
 }
+
 // SetStartNil sets the value for Start to be an explicit nil
 func (o *LyricLine) SetStartNil() {
 	o.Start.Set(nil)
@@ -117,7 +118,7 @@ func (o *LyricLine) UnsetStart() {
 }
 
 func (o LyricLine) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +171,3 @@ func (v *NullableLyricLine) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

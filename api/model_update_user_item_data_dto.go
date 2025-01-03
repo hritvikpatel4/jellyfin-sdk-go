@@ -93,6 +93,7 @@ func (o *UpdateUserItemDataDto) HasRating() bool {
 func (o *UpdateUserItemDataDto) SetRating(v float64) {
 	o.Rating.Set(&v)
 }
+
 // SetRatingNil sets the value for Rating to be an explicit nil
 func (o *UpdateUserItemDataDto) SetRatingNil() {
 	o.Rating.Set(nil)
@@ -135,6 +136,7 @@ func (o *UpdateUserItemDataDto) HasPlayedPercentage() bool {
 func (o *UpdateUserItemDataDto) SetPlayedPercentage(v float64) {
 	o.PlayedPercentage.Set(&v)
 }
+
 // SetPlayedPercentageNil sets the value for PlayedPercentage to be an explicit nil
 func (o *UpdateUserItemDataDto) SetPlayedPercentageNil() {
 	o.PlayedPercentage.Set(nil)
@@ -177,6 +179,7 @@ func (o *UpdateUserItemDataDto) HasUnplayedItemCount() bool {
 func (o *UpdateUserItemDataDto) SetUnplayedItemCount(v int32) {
 	o.UnplayedItemCount.Set(&v)
 }
+
 // SetUnplayedItemCountNil sets the value for UnplayedItemCount to be an explicit nil
 func (o *UpdateUserItemDataDto) SetUnplayedItemCountNil() {
 	o.UnplayedItemCount.Set(nil)
@@ -219,6 +222,7 @@ func (o *UpdateUserItemDataDto) HasPlaybackPositionTicks() bool {
 func (o *UpdateUserItemDataDto) SetPlaybackPositionTicks(v int64) {
 	o.PlaybackPositionTicks.Set(&v)
 }
+
 // SetPlaybackPositionTicksNil sets the value for PlaybackPositionTicks to be an explicit nil
 func (o *UpdateUserItemDataDto) SetPlaybackPositionTicksNil() {
 	o.PlaybackPositionTicks.Set(nil)
@@ -261,6 +265,7 @@ func (o *UpdateUserItemDataDto) HasPlayCount() bool {
 func (o *UpdateUserItemDataDto) SetPlayCount(v int32) {
 	o.PlayCount.Set(&v)
 }
+
 // SetPlayCountNil sets the value for PlayCount to be an explicit nil
 func (o *UpdateUserItemDataDto) SetPlayCountNil() {
 	o.PlayCount.Set(nil)
@@ -303,6 +308,7 @@ func (o *UpdateUserItemDataDto) HasIsFavorite() bool {
 func (o *UpdateUserItemDataDto) SetIsFavorite(v bool) {
 	o.IsFavorite.Set(&v)
 }
+
 // SetIsFavoriteNil sets the value for IsFavorite to be an explicit nil
 func (o *UpdateUserItemDataDto) SetIsFavoriteNil() {
 	o.IsFavorite.Set(nil)
@@ -345,6 +351,7 @@ func (o *UpdateUserItemDataDto) HasLikes() bool {
 func (o *UpdateUserItemDataDto) SetLikes(v bool) {
 	o.Likes.Set(&v)
 }
+
 // SetLikesNil sets the value for Likes to be an explicit nil
 func (o *UpdateUserItemDataDto) SetLikesNil() {
 	o.Likes.Set(nil)
@@ -387,6 +394,7 @@ func (o *UpdateUserItemDataDto) HasLastPlayedDate() bool {
 func (o *UpdateUserItemDataDto) SetLastPlayedDate(v time.Time) {
 	o.LastPlayedDate.Set(&v)
 }
+
 // SetLastPlayedDateNil sets the value for LastPlayedDate to be an explicit nil
 func (o *UpdateUserItemDataDto) SetLastPlayedDateNil() {
 	o.LastPlayedDate.Set(nil)
@@ -429,6 +437,7 @@ func (o *UpdateUserItemDataDto) HasPlayed() bool {
 func (o *UpdateUserItemDataDto) SetPlayed(v bool) {
 	o.Played.Set(&v)
 }
+
 // SetPlayedNil sets the value for Played to be an explicit nil
 func (o *UpdateUserItemDataDto) SetPlayedNil() {
 	o.Played.Set(nil)
@@ -471,6 +480,7 @@ func (o *UpdateUserItemDataDto) HasKey() bool {
 func (o *UpdateUserItemDataDto) SetKey(v string) {
 	o.Key.Set(&v)
 }
+
 // SetKeyNil sets the value for Key to be an explicit nil
 func (o *UpdateUserItemDataDto) SetKeyNil() {
 	o.Key.Set(nil)
@@ -513,6 +523,7 @@ func (o *UpdateUserItemDataDto) HasItemId() bool {
 func (o *UpdateUserItemDataDto) SetItemId(v string) {
 	o.ItemId.Set(&v)
 }
+
 // SetItemIdNil sets the value for ItemId to be an explicit nil
 func (o *UpdateUserItemDataDto) SetItemIdNil() {
 	o.ItemId.Set(nil)
@@ -524,7 +535,7 @@ func (o *UpdateUserItemDataDto) UnsetItemId() {
 }
 
 func (o UpdateUserItemDataDto) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -604,5 +615,3 @@ func (v *NullableUpdateUserItemDataDto) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

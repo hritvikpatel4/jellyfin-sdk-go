@@ -20,12 +20,12 @@ type MediaStreamType string
 
 // List of MediaStreamType
 const (
-	MEDIASTREAMTYPE_AUDIO MediaStreamType = "Audio"
-	MEDIASTREAMTYPE_VIDEO MediaStreamType = "Video"
-	MEDIASTREAMTYPE_SUBTITLE MediaStreamType = "Subtitle"
+	MEDIASTREAMTYPE_AUDIO          MediaStreamType = "Audio"
+	MEDIASTREAMTYPE_VIDEO          MediaStreamType = "Video"
+	MEDIASTREAMTYPE_SUBTITLE       MediaStreamType = "Subtitle"
 	MEDIASTREAMTYPE_EMBEDDED_IMAGE MediaStreamType = "EmbeddedImage"
-	MEDIASTREAMTYPE_DATA MediaStreamType = "Data"
-	MEDIASTREAMTYPE_LYRIC MediaStreamType = "Lyric"
+	MEDIASTREAMTYPE_DATA           MediaStreamType = "Data"
+	MEDIASTREAMTYPE_LYRIC          MediaStreamType = "Lyric"
 )
 
 // All allowed values of MediaStreamType enum
@@ -116,4 +116,3 @@ func (v *NullableMediaStreamType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

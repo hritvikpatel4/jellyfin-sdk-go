@@ -20,7 +20,7 @@ type GroupShuffleMode string
 
 // List of GroupShuffleMode
 const (
-	GROUPSHUFFLEMODE_SORTED GroupShuffleMode = "Sorted"
+	GROUPSHUFFLEMODE_SORTED  GroupShuffleMode = "Sorted"
 	GROUPSHUFFLEMODE_SHUFFLE GroupShuffleMode = "Shuffle"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableGroupShuffleMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

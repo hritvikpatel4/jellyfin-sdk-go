@@ -33,11 +33,11 @@ type PersonLookupInfo struct {
 	// Gets or sets the provider ids.
 	ProviderIds map[string]string `json:"ProviderIds,omitempty"`
 	// Gets or sets the year.
-	Year NullableInt32 `json:"Year,omitempty"`
-	IndexNumber NullableInt32 `json:"IndexNumber,omitempty"`
+	Year              NullableInt32 `json:"Year,omitempty"`
+	IndexNumber       NullableInt32 `json:"IndexNumber,omitempty"`
 	ParentIndexNumber NullableInt32 `json:"ParentIndexNumber,omitempty"`
-	PremiereDate NullableTime `json:"PremiereDate,omitempty"`
-	IsAutomated *bool `json:"IsAutomated,omitempty"`
+	PremiereDate      NullableTime  `json:"PremiereDate,omitempty"`
+	IsAutomated       *bool         `json:"IsAutomated,omitempty"`
 }
 
 // NewPersonLookupInfo instantiates a new PersonLookupInfo object
@@ -89,6 +89,7 @@ func (o *PersonLookupInfo) HasName() bool {
 func (o *PersonLookupInfo) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *PersonLookupInfo) SetNameNil() {
 	o.Name.Set(nil)
@@ -131,6 +132,7 @@ func (o *PersonLookupInfo) HasOriginalTitle() bool {
 func (o *PersonLookupInfo) SetOriginalTitle(v string) {
 	o.OriginalTitle.Set(&v)
 }
+
 // SetOriginalTitleNil sets the value for OriginalTitle to be an explicit nil
 func (o *PersonLookupInfo) SetOriginalTitleNil() {
 	o.OriginalTitle.Set(nil)
@@ -173,6 +175,7 @@ func (o *PersonLookupInfo) HasPath() bool {
 func (o *PersonLookupInfo) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *PersonLookupInfo) SetPathNil() {
 	o.Path.Set(nil)
@@ -215,6 +218,7 @@ func (o *PersonLookupInfo) HasMetadataLanguage() bool {
 func (o *PersonLookupInfo) SetMetadataLanguage(v string) {
 	o.MetadataLanguage.Set(&v)
 }
+
 // SetMetadataLanguageNil sets the value for MetadataLanguage to be an explicit nil
 func (o *PersonLookupInfo) SetMetadataLanguageNil() {
 	o.MetadataLanguage.Set(nil)
@@ -257,6 +261,7 @@ func (o *PersonLookupInfo) HasMetadataCountryCode() bool {
 func (o *PersonLookupInfo) SetMetadataCountryCode(v string) {
 	o.MetadataCountryCode.Set(&v)
 }
+
 // SetMetadataCountryCodeNil sets the value for MetadataCountryCode to be an explicit nil
 func (o *PersonLookupInfo) SetMetadataCountryCodeNil() {
 	o.MetadataCountryCode.Set(nil)
@@ -332,6 +337,7 @@ func (o *PersonLookupInfo) HasYear() bool {
 func (o *PersonLookupInfo) SetYear(v int32) {
 	o.Year.Set(&v)
 }
+
 // SetYearNil sets the value for Year to be an explicit nil
 func (o *PersonLookupInfo) SetYearNil() {
 	o.Year.Set(nil)
@@ -374,6 +380,7 @@ func (o *PersonLookupInfo) HasIndexNumber() bool {
 func (o *PersonLookupInfo) SetIndexNumber(v int32) {
 	o.IndexNumber.Set(&v)
 }
+
 // SetIndexNumberNil sets the value for IndexNumber to be an explicit nil
 func (o *PersonLookupInfo) SetIndexNumberNil() {
 	o.IndexNumber.Set(nil)
@@ -416,6 +423,7 @@ func (o *PersonLookupInfo) HasParentIndexNumber() bool {
 func (o *PersonLookupInfo) SetParentIndexNumber(v int32) {
 	o.ParentIndexNumber.Set(&v)
 }
+
 // SetParentIndexNumberNil sets the value for ParentIndexNumber to be an explicit nil
 func (o *PersonLookupInfo) SetParentIndexNumberNil() {
 	o.ParentIndexNumber.Set(nil)
@@ -458,6 +466,7 @@ func (o *PersonLookupInfo) HasPremiereDate() bool {
 func (o *PersonLookupInfo) SetPremiereDate(v time.Time) {
 	o.PremiereDate.Set(&v)
 }
+
 // SetPremiereDateNil sets the value for PremiereDate to be an explicit nil
 func (o *PersonLookupInfo) SetPremiereDateNil() {
 	o.PremiereDate.Set(nil)
@@ -501,7 +510,7 @@ func (o *PersonLookupInfo) SetIsAutomated(v bool) {
 }
 
 func (o PersonLookupInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,5 +590,3 @@ func (v *NullablePersonLookupInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

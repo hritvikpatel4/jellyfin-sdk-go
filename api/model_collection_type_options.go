@@ -20,14 +20,14 @@ type CollectionTypeOptions string
 
 // List of CollectionTypeOptions
 const (
-	COLLECTIONTYPEOPTIONS_MOVIES CollectionTypeOptions = "movies"
-	COLLECTIONTYPEOPTIONS_TVSHOWS CollectionTypeOptions = "tvshows"
-	COLLECTIONTYPEOPTIONS_MUSIC CollectionTypeOptions = "music"
+	COLLECTIONTYPEOPTIONS_MOVIES      CollectionTypeOptions = "movies"
+	COLLECTIONTYPEOPTIONS_TVSHOWS     CollectionTypeOptions = "tvshows"
+	COLLECTIONTYPEOPTIONS_MUSIC       CollectionTypeOptions = "music"
 	COLLECTIONTYPEOPTIONS_MUSICVIDEOS CollectionTypeOptions = "musicvideos"
-	COLLECTIONTYPEOPTIONS_HOMEVIDEOS CollectionTypeOptions = "homevideos"
-	COLLECTIONTYPEOPTIONS_BOXSETS CollectionTypeOptions = "boxsets"
-	COLLECTIONTYPEOPTIONS_BOOKS CollectionTypeOptions = "books"
-	COLLECTIONTYPEOPTIONS_MIXED CollectionTypeOptions = "mixed"
+	COLLECTIONTYPEOPTIONS_HOMEVIDEOS  CollectionTypeOptions = "homevideos"
+	COLLECTIONTYPEOPTIONS_BOXSETS     CollectionTypeOptions = "boxsets"
+	COLLECTIONTYPEOPTIONS_BOOKS       CollectionTypeOptions = "books"
+	COLLECTIONTYPEOPTIONS_MIXED       CollectionTypeOptions = "mixed"
 )
 
 // All allowed values of CollectionTypeOptions enum
@@ -120,4 +120,3 @@ func (v *NullableCollectionTypeOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

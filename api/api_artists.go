@@ -16,18 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type ArtistsAPI interface {
 
 	/*
-	GetAlbumArtists Gets all album artists from a given item, folder, or the entire library.
+		GetAlbumArtists Gets all album artists from a given item, folder, or the entire library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetAlbumArtistsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetAlbumArtistsRequest
 	*/
 	GetAlbumArtists(ctx context.Context) ApiGetAlbumArtistsRequest
 
@@ -36,11 +35,11 @@ type ArtistsAPI interface {
 	GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetArtistByName Gets an artist by name.
+		GetArtistByName Gets an artist by name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param name Studio name.
-	@return ApiGetArtistByNameRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param name Studio name.
+		@return ApiGetArtistByNameRequest
 	*/
 	GetArtistByName(ctx context.Context, name string) ApiGetArtistByNameRequest
 
@@ -49,10 +48,10 @@ type ArtistsAPI interface {
 	GetArtistByNameExecute(r ApiGetArtistByNameRequest) (*BaseItemDto, *http.Response, error)
 
 	/*
-	GetArtists Gets all artists from a given item, folder, or the entire library.
+		GetArtists Gets all artists from a given item, folder, or the entire library.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetArtistsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetArtistsRequest
 	*/
 	GetArtists(ctx context.Context) ApiGetArtistsRequest
 
@@ -65,40 +64,40 @@ type ArtistsAPI interface {
 type ArtistsAPIService service
 
 type ApiGetAlbumArtistsRequest struct {
-	ctx context.Context
-	ApiService ArtistsAPI
-	minCommunityRating *float64
-	startIndex *int32
-	limit *int32
-	searchTerm *string
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
-	isFavorite *bool
-	mediaTypes *[]MediaType
-	genres *[]string
-	genreIds *[]string
-	officialRatings *[]string
-	tags *[]string
-	years *[]int32
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	person *string
-	personIds *[]string
-	personTypes *[]string
-	studios *[]string
-	studioIds *[]string
-	userId *string
+	ctx                     context.Context
+	ApiService              ArtistsAPI
+	minCommunityRating      *float64
+	startIndex              *int32
+	limit                   *int32
+	searchTerm              *string
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	includeItemTypes        *[]BaseItemKind
+	filters                 *[]ItemFilter
+	isFavorite              *bool
+	mediaTypes              *[]MediaType
+	genres                  *[]string
+	genreIds                *[]string
+	officialRatings         *[]string
+	tags                    *[]string
+	years                   *[]int32
+	enableUserData          *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	person                  *string
+	personIds               *[]string
+	personTypes             *[]string
+	studios                 *[]string
+	studioIds               *[]string
+	userId                  *string
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
-	enableImages *bool
-	enableTotalRecordCount *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	sortBy                  *[]ItemSortBy
+	sortOrder               *[]SortOrder
+	enableImages            *bool
+	enableTotalRecordCount  *bool
 }
 
 // Optional filter by minimum community rating.
@@ -300,24 +299,25 @@ func (r ApiGetAlbumArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.Res
 /*
 GetAlbumArtists Gets all album artists from a given item, folder, or the entire library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAlbumArtistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAlbumArtistsRequest
 */
 func (a *ArtistsAPIService) GetAlbumArtists(ctx context.Context) ApiGetAlbumArtistsRequest {
 	return ApiGetAlbumArtistsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistsAPIService.GetAlbumArtists")
@@ -638,10 +638,10 @@ func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) 
 }
 
 type ApiGetArtistByNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ArtistsAPI
-	name string
-	userId *string
+	name       string
+	userId     *string
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -657,26 +657,27 @@ func (r ApiGetArtistByNameRequest) Execute() (*BaseItemDto, *http.Response, erro
 /*
 GetArtistByName Gets an artist by name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Studio name.
- @return ApiGetArtistByNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Studio name.
+	@return ApiGetArtistByNameRequest
 */
 func (a *ArtistsAPIService) GetArtistByName(ctx context.Context, name string) ApiGetArtistByNameRequest {
 	return ApiGetArtistByNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDto
+//
+//	@return BaseItemDto
 func (a *ArtistsAPIService) GetArtistByNameExecute(r ApiGetArtistByNameRequest) (*BaseItemDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistsAPIService.GetArtistByName")
@@ -763,40 +764,40 @@ func (a *ArtistsAPIService) GetArtistByNameExecute(r ApiGetArtistByNameRequest) 
 }
 
 type ApiGetArtistsRequest struct {
-	ctx context.Context
-	ApiService ArtistsAPI
-	minCommunityRating *float64
-	startIndex *int32
-	limit *int32
-	searchTerm *string
-	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
-	isFavorite *bool
-	mediaTypes *[]MediaType
-	genres *[]string
-	genreIds *[]string
-	officialRatings *[]string
-	tags *[]string
-	years *[]int32
-	enableUserData *bool
-	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	person *string
-	personIds *[]string
-	personTypes *[]string
-	studios *[]string
-	studioIds *[]string
-	userId *string
+	ctx                     context.Context
+	ApiService              ArtistsAPI
+	minCommunityRating      *float64
+	startIndex              *int32
+	limit                   *int32
+	searchTerm              *string
+	parentId                *string
+	fields                  *[]ItemFields
+	excludeItemTypes        *[]BaseItemKind
+	includeItemTypes        *[]BaseItemKind
+	filters                 *[]ItemFilter
+	isFavorite              *bool
+	mediaTypes              *[]MediaType
+	genres                  *[]string
+	genreIds                *[]string
+	officialRatings         *[]string
+	tags                    *[]string
+	years                   *[]int32
+	enableUserData          *bool
+	imageTypeLimit          *int32
+	enableImageTypes        *[]ImageType
+	person                  *string
+	personIds               *[]string
+	personTypes             *[]string
+	studios                 *[]string
+	studioIds               *[]string
+	userId                  *string
 	nameStartsWithOrGreater *string
-	nameStartsWith *string
-	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
-	enableImages *bool
-	enableTotalRecordCount *bool
+	nameStartsWith          *string
+	nameLessThan            *string
+	sortBy                  *[]ItemSortBy
+	sortOrder               *[]SortOrder
+	enableImages            *bool
+	enableTotalRecordCount  *bool
 }
 
 // Optional filter by minimum community rating.
@@ -998,24 +999,25 @@ func (r ApiGetArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response
 /*
 GetArtists Gets all artists from a given item, folder, or the entire library.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetArtistsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetArtistsRequest
 */
 func (a *ArtistsAPIService) GetArtists(ctx context.Context) ApiGetArtistsRequest {
 	return ApiGetArtistsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ArtistsAPIService) GetArtistsExecute(r ApiGetArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistsAPIService.GetArtists")

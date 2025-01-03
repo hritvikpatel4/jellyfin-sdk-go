@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 type SyncPlayAPI interface {
 
 	/*
-	SyncPlayBuffering Notify SyncPlay group that member is buffering.
+		SyncPlayBuffering Notify SyncPlay group that member is buffering.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayBufferingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayBufferingRequest
 	*/
 	SyncPlayBuffering(ctx context.Context) ApiSyncPlayBufferingRequest
 
@@ -33,10 +32,10 @@ type SyncPlayAPI interface {
 	SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequest) (*http.Response, error)
 
 	/*
-	SyncPlayCreateGroup Create a new SyncPlay group.
+		SyncPlayCreateGroup Create a new SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayCreateGroupRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayCreateGroupRequest
 	*/
 	SyncPlayCreateGroup(ctx context.Context) ApiSyncPlayCreateGroupRequest
 
@@ -44,10 +43,10 @@ type SyncPlayAPI interface {
 	SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroupRequest) (*http.Response, error)
 
 	/*
-	SyncPlayGetGroups Gets all SyncPlay groups.
+		SyncPlayGetGroups Gets all SyncPlay groups.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayGetGroupsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayGetGroupsRequest
 	*/
 	SyncPlayGetGroups(ctx context.Context) ApiSyncPlayGetGroupsRequest
 
@@ -56,10 +55,10 @@ type SyncPlayAPI interface {
 	SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequest) ([]GroupInfoDto, *http.Response, error)
 
 	/*
-	SyncPlayJoinGroup Join an existing SyncPlay group.
+		SyncPlayJoinGroup Join an existing SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayJoinGroupRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayJoinGroupRequest
 	*/
 	SyncPlayJoinGroup(ctx context.Context) ApiSyncPlayJoinGroupRequest
 
@@ -67,10 +66,10 @@ type SyncPlayAPI interface {
 	SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequest) (*http.Response, error)
 
 	/*
-	SyncPlayLeaveGroup Leave the joined SyncPlay group.
+		SyncPlayLeaveGroup Leave the joined SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayLeaveGroupRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayLeaveGroupRequest
 	*/
 	SyncPlayLeaveGroup(ctx context.Context) ApiSyncPlayLeaveGroupRequest
 
@@ -78,10 +77,10 @@ type SyncPlayAPI interface {
 	SyncPlayLeaveGroupExecute(r ApiSyncPlayLeaveGroupRequest) (*http.Response, error)
 
 	/*
-	SyncPlayMovePlaylistItem Request to move an item in the playlist in SyncPlay group.
+		SyncPlayMovePlaylistItem Request to move an item in the playlist in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayMovePlaylistItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayMovePlaylistItemRequest
 	*/
 	SyncPlayMovePlaylistItem(ctx context.Context) ApiSyncPlayMovePlaylistItemRequest
 
@@ -89,10 +88,10 @@ type SyncPlayAPI interface {
 	SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePlaylistItemRequest) (*http.Response, error)
 
 	/*
-	SyncPlayNextItem Request next item in SyncPlay group.
+		SyncPlayNextItem Request next item in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayNextItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayNextItemRequest
 	*/
 	SyncPlayNextItem(ctx context.Context) ApiSyncPlayNextItemRequest
 
@@ -100,10 +99,10 @@ type SyncPlayAPI interface {
 	SyncPlayNextItemExecute(r ApiSyncPlayNextItemRequest) (*http.Response, error)
 
 	/*
-	SyncPlayPause Request pause in SyncPlay group.
+		SyncPlayPause Request pause in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayPauseRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayPauseRequest
 	*/
 	SyncPlayPause(ctx context.Context) ApiSyncPlayPauseRequest
 
@@ -111,10 +110,10 @@ type SyncPlayAPI interface {
 	SyncPlayPauseExecute(r ApiSyncPlayPauseRequest) (*http.Response, error)
 
 	/*
-	SyncPlayPing Update session ping.
+		SyncPlayPing Update session ping.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayPingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayPingRequest
 	*/
 	SyncPlayPing(ctx context.Context) ApiSyncPlayPingRequest
 
@@ -122,10 +121,10 @@ type SyncPlayAPI interface {
 	SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*http.Response, error)
 
 	/*
-	SyncPlayPreviousItem Request previous item in SyncPlay group.
+		SyncPlayPreviousItem Request previous item in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayPreviousItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayPreviousItemRequest
 	*/
 	SyncPlayPreviousItem(ctx context.Context) ApiSyncPlayPreviousItemRequest
 
@@ -133,10 +132,10 @@ type SyncPlayAPI interface {
 	SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousItemRequest) (*http.Response, error)
 
 	/*
-	SyncPlayQueue Request to queue items to the playlist of a SyncPlay group.
+		SyncPlayQueue Request to queue items to the playlist of a SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayQueueRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayQueueRequest
 	*/
 	SyncPlayQueue(ctx context.Context) ApiSyncPlayQueueRequest
 
@@ -144,10 +143,10 @@ type SyncPlayAPI interface {
 	SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*http.Response, error)
 
 	/*
-	SyncPlayReady Notify SyncPlay group that member is ready for playback.
+		SyncPlayReady Notify SyncPlay group that member is ready for playback.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayReadyRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayReadyRequest
 	*/
 	SyncPlayReady(ctx context.Context) ApiSyncPlayReadyRequest
 
@@ -155,10 +154,10 @@ type SyncPlayAPI interface {
 	SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*http.Response, error)
 
 	/*
-	SyncPlayRemoveFromPlaylist Request to remove items from the playlist in SyncPlay group.
+		SyncPlayRemoveFromPlaylist Request to remove items from the playlist in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayRemoveFromPlaylistRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayRemoveFromPlaylistRequest
 	*/
 	SyncPlayRemoveFromPlaylist(ctx context.Context) ApiSyncPlayRemoveFromPlaylistRequest
 
@@ -166,10 +165,10 @@ type SyncPlayAPI interface {
 	SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemoveFromPlaylistRequest) (*http.Response, error)
 
 	/*
-	SyncPlaySeek Request seek in SyncPlay group.
+		SyncPlaySeek Request seek in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlaySeekRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlaySeekRequest
 	*/
 	SyncPlaySeek(ctx context.Context) ApiSyncPlaySeekRequest
 
@@ -177,10 +176,10 @@ type SyncPlayAPI interface {
 	SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*http.Response, error)
 
 	/*
-	SyncPlaySetIgnoreWait Request SyncPlay group to ignore member during group-wait.
+		SyncPlaySetIgnoreWait Request SyncPlay group to ignore member during group-wait.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlaySetIgnoreWaitRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlaySetIgnoreWaitRequest
 	*/
 	SyncPlaySetIgnoreWait(ctx context.Context) ApiSyncPlaySetIgnoreWaitRequest
 
@@ -188,10 +187,10 @@ type SyncPlayAPI interface {
 	SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnoreWaitRequest) (*http.Response, error)
 
 	/*
-	SyncPlaySetNewQueue Request to set new playlist in SyncPlay group.
+		SyncPlaySetNewQueue Request to set new playlist in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlaySetNewQueueRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlaySetNewQueueRequest
 	*/
 	SyncPlaySetNewQueue(ctx context.Context) ApiSyncPlaySetNewQueueRequest
 
@@ -199,10 +198,10 @@ type SyncPlayAPI interface {
 	SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueueRequest) (*http.Response, error)
 
 	/*
-	SyncPlaySetPlaylistItem Request to change playlist item in SyncPlay group.
+		SyncPlaySetPlaylistItem Request to change playlist item in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlaySetPlaylistItemRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlaySetPlaylistItemRequest
 	*/
 	SyncPlaySetPlaylistItem(ctx context.Context) ApiSyncPlaySetPlaylistItemRequest
 
@@ -210,10 +209,10 @@ type SyncPlayAPI interface {
 	SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlaylistItemRequest) (*http.Response, error)
 
 	/*
-	SyncPlaySetRepeatMode Request to set repeat mode in SyncPlay group.
+		SyncPlaySetRepeatMode Request to set repeat mode in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlaySetRepeatModeRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlaySetRepeatModeRequest
 	*/
 	SyncPlaySetRepeatMode(ctx context.Context) ApiSyncPlaySetRepeatModeRequest
 
@@ -221,10 +220,10 @@ type SyncPlayAPI interface {
 	SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeatModeRequest) (*http.Response, error)
 
 	/*
-	SyncPlaySetShuffleMode Request to set shuffle mode in SyncPlay group.
+		SyncPlaySetShuffleMode Request to set shuffle mode in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlaySetShuffleModeRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlaySetShuffleModeRequest
 	*/
 	SyncPlaySetShuffleMode(ctx context.Context) ApiSyncPlaySetShuffleModeRequest
 
@@ -232,10 +231,10 @@ type SyncPlayAPI interface {
 	SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuffleModeRequest) (*http.Response, error)
 
 	/*
-	SyncPlayStop Request stop in SyncPlay group.
+		SyncPlayStop Request stop in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayStopRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayStopRequest
 	*/
 	SyncPlayStop(ctx context.Context) ApiSyncPlayStopRequest
 
@@ -243,10 +242,10 @@ type SyncPlayAPI interface {
 	SyncPlayStopExecute(r ApiSyncPlayStopRequest) (*http.Response, error)
 
 	/*
-	SyncPlayUnpause Request unpause in SyncPlay group.
+		SyncPlayUnpause Request unpause in SyncPlay group.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSyncPlayUnpauseRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiSyncPlayUnpauseRequest
 	*/
 	SyncPlayUnpause(ctx context.Context) ApiSyncPlayUnpauseRequest
 
@@ -258,8 +257,8 @@ type SyncPlayAPI interface {
 type SyncPlayAPIService service
 
 type ApiSyncPlayBufferingRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx              context.Context
+	ApiService       SyncPlayAPI
 	bufferRequestDto *BufferRequestDto
 }
 
@@ -276,22 +275,22 @@ func (r ApiSyncPlayBufferingRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayBuffering Notify SyncPlay group that member is buffering.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayBufferingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayBufferingRequest
 */
 func (a *SyncPlayAPIService) SyncPlayBuffering(ctx context.Context) ApiSyncPlayBufferingRequest {
 	return ApiSyncPlayBufferingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayBuffering")
@@ -370,8 +369,8 @@ func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequ
 }
 
 type ApiSyncPlayCreateGroupRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                context.Context
+	ApiService         SyncPlayAPI
 	newGroupRequestDto *NewGroupRequestDto
 }
 
@@ -388,22 +387,22 @@ func (r ApiSyncPlayCreateGroupRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayCreateGroup Create a new SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayCreateGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayCreateGroupRequest
 */
 func (a *SyncPlayAPIService) SyncPlayCreateGroup(ctx context.Context) ApiSyncPlayCreateGroupRequest {
 	return ApiSyncPlayCreateGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayCreateGroup")
@@ -482,7 +481,7 @@ func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroup
 }
 
 type ApiSyncPlayGetGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SyncPlayAPI
 }
 
@@ -493,24 +492,25 @@ func (r ApiSyncPlayGetGroupsRequest) Execute() ([]GroupInfoDto, *http.Response, 
 /*
 SyncPlayGetGroups Gets all SyncPlay groups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayGetGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayGetGroupsRequest
 */
 func (a *SyncPlayAPIService) SyncPlayGetGroups(ctx context.Context) ApiSyncPlayGetGroupsRequest {
 	return ApiSyncPlayGetGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []GroupInfoDto
+//
+//	@return []GroupInfoDto
 func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequest) ([]GroupInfoDto, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []GroupInfoDto
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []GroupInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayGetGroups")
@@ -593,8 +593,8 @@ func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequ
 }
 
 type ApiSyncPlayJoinGroupRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                 context.Context
+	ApiService          SyncPlayAPI
 	joinGroupRequestDto *JoinGroupRequestDto
 }
 
@@ -611,22 +611,22 @@ func (r ApiSyncPlayJoinGroupRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayJoinGroup Join an existing SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayJoinGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayJoinGroupRequest
 */
 func (a *SyncPlayAPIService) SyncPlayJoinGroup(ctx context.Context) ApiSyncPlayJoinGroupRequest {
 	return ApiSyncPlayJoinGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayJoinGroup")
@@ -705,7 +705,7 @@ func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequ
 }
 
 type ApiSyncPlayLeaveGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SyncPlayAPI
 }
 
@@ -716,22 +716,22 @@ func (r ApiSyncPlayLeaveGroupRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayLeaveGroup Leave the joined SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayLeaveGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayLeaveGroupRequest
 */
 func (a *SyncPlayAPIService) SyncPlayLeaveGroup(ctx context.Context) ApiSyncPlayLeaveGroupRequest {
 	return ApiSyncPlayLeaveGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayLeaveGroupExecute(r ApiSyncPlayLeaveGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayLeaveGroup")
@@ -805,8 +805,8 @@ func (a *SyncPlayAPIService) SyncPlayLeaveGroupExecute(r ApiSyncPlayLeaveGroupRe
 }
 
 type ApiSyncPlayMovePlaylistItemRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                        context.Context
+	ApiService                 SyncPlayAPI
 	movePlaylistItemRequestDto *MovePlaylistItemRequestDto
 }
 
@@ -823,22 +823,22 @@ func (r ApiSyncPlayMovePlaylistItemRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayMovePlaylistItem Request to move an item in the playlist in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayMovePlaylistItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayMovePlaylistItemRequest
 */
 func (a *SyncPlayAPIService) SyncPlayMovePlaylistItem(ctx context.Context) ApiSyncPlayMovePlaylistItemRequest {
 	return ApiSyncPlayMovePlaylistItemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePlaylistItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayMovePlaylistItem")
@@ -917,8 +917,8 @@ func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePl
 }
 
 type ApiSyncPlayNextItemRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                context.Context
+	ApiService         SyncPlayAPI
 	nextItemRequestDto *NextItemRequestDto
 }
 
@@ -935,22 +935,22 @@ func (r ApiSyncPlayNextItemRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayNextItem Request next item in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayNextItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayNextItemRequest
 */
 func (a *SyncPlayAPIService) SyncPlayNextItem(ctx context.Context) ApiSyncPlayNextItemRequest {
 	return ApiSyncPlayNextItemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r ApiSyncPlayNextItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayNextItem")
@@ -1029,7 +1029,7 @@ func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r ApiSyncPlayNextItemReques
 }
 
 type ApiSyncPlayPauseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SyncPlayAPI
 }
 
@@ -1040,22 +1040,22 @@ func (r ApiSyncPlayPauseRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayPause Request pause in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayPauseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayPauseRequest
 */
 func (a *SyncPlayAPIService) SyncPlayPause(ctx context.Context) ApiSyncPlayPauseRequest {
 	return ApiSyncPlayPauseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayPauseExecute(r ApiSyncPlayPauseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayPause")
@@ -1129,8 +1129,8 @@ func (a *SyncPlayAPIService) SyncPlayPauseExecute(r ApiSyncPlayPauseRequest) (*h
 }
 
 type ApiSyncPlayPingRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx            context.Context
+	ApiService     SyncPlayAPI
 	pingRequestDto *PingRequestDto
 }
 
@@ -1147,22 +1147,22 @@ func (r ApiSyncPlayPingRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayPing Update session ping.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayPingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayPingRequest
 */
 func (a *SyncPlayAPIService) SyncPlayPing(ctx context.Context) ApiSyncPlayPingRequest {
 	return ApiSyncPlayPingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayPing")
@@ -1241,8 +1241,8 @@ func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*htt
 }
 
 type ApiSyncPlayPreviousItemRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                    context.Context
+	ApiService             SyncPlayAPI
 	previousItemRequestDto *PreviousItemRequestDto
 }
 
@@ -1259,22 +1259,22 @@ func (r ApiSyncPlayPreviousItemRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayPreviousItem Request previous item in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayPreviousItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayPreviousItemRequest
 */
 func (a *SyncPlayAPIService) SyncPlayPreviousItem(ctx context.Context) ApiSyncPlayPreviousItemRequest {
 	return ApiSyncPlayPreviousItemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayPreviousItem")
@@ -1353,8 +1353,8 @@ func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousIt
 }
 
 type ApiSyncPlayQueueRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx             context.Context
+	ApiService      SyncPlayAPI
 	queueRequestDto *QueueRequestDto
 }
 
@@ -1371,22 +1371,22 @@ func (r ApiSyncPlayQueueRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayQueue Request to queue items to the playlist of a SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayQueueRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayQueueRequest
 */
 func (a *SyncPlayAPIService) SyncPlayQueue(ctx context.Context) ApiSyncPlayQueueRequest {
 	return ApiSyncPlayQueueRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayQueue")
@@ -1465,8 +1465,8 @@ func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*h
 }
 
 type ApiSyncPlayReadyRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx             context.Context
+	ApiService      SyncPlayAPI
 	readyRequestDto *ReadyRequestDto
 }
 
@@ -1483,22 +1483,22 @@ func (r ApiSyncPlayReadyRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayReady Notify SyncPlay group that member is ready for playback.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayReadyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayReadyRequest
 */
 func (a *SyncPlayAPIService) SyncPlayReady(ctx context.Context) ApiSyncPlayReadyRequest {
 	return ApiSyncPlayReadyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayReady")
@@ -1577,8 +1577,8 @@ func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*h
 }
 
 type ApiSyncPlayRemoveFromPlaylistRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                          context.Context
+	ApiService                   SyncPlayAPI
 	removeFromPlaylistRequestDto *RemoveFromPlaylistRequestDto
 }
 
@@ -1595,22 +1595,22 @@ func (r ApiSyncPlayRemoveFromPlaylistRequest) Execute() (*http.Response, error) 
 /*
 SyncPlayRemoveFromPlaylist Request to remove items from the playlist in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayRemoveFromPlaylistRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayRemoveFromPlaylistRequest
 */
 func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylist(ctx context.Context) ApiSyncPlayRemoveFromPlaylistRequest {
 	return ApiSyncPlayRemoveFromPlaylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemoveFromPlaylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayRemoveFromPlaylist")
@@ -1689,8 +1689,8 @@ func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemo
 }
 
 type ApiSyncPlaySeekRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx            context.Context
+	ApiService     SyncPlayAPI
 	seekRequestDto *SeekRequestDto
 }
 
@@ -1707,22 +1707,22 @@ func (r ApiSyncPlaySeekRequest) Execute() (*http.Response, error) {
 /*
 SyncPlaySeek Request seek in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySeekRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlaySeekRequest
 */
 func (a *SyncPlayAPIService) SyncPlaySeek(ctx context.Context) ApiSyncPlaySeekRequest {
 	return ApiSyncPlaySeekRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlaySeek")
@@ -1801,8 +1801,8 @@ func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*htt
 }
 
 type ApiSyncPlaySetIgnoreWaitRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                  context.Context
+	ApiService           SyncPlayAPI
 	ignoreWaitRequestDto *IgnoreWaitRequestDto
 }
 
@@ -1819,22 +1819,22 @@ func (r ApiSyncPlaySetIgnoreWaitRequest) Execute() (*http.Response, error) {
 /*
 SyncPlaySetIgnoreWait Request SyncPlay group to ignore member during group-wait.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetIgnoreWaitRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlaySetIgnoreWaitRequest
 */
 func (a *SyncPlayAPIService) SyncPlaySetIgnoreWait(ctx context.Context) ApiSyncPlaySetIgnoreWaitRequest {
 	return ApiSyncPlaySetIgnoreWaitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnoreWaitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlaySetIgnoreWait")
@@ -1913,8 +1913,8 @@ func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnore
 }
 
 type ApiSyncPlaySetNewQueueRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx            context.Context
+	ApiService     SyncPlayAPI
 	playRequestDto *PlayRequestDto
 }
 
@@ -1931,22 +1931,22 @@ func (r ApiSyncPlaySetNewQueueRequest) Execute() (*http.Response, error) {
 /*
 SyncPlaySetNewQueue Request to set new playlist in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetNewQueueRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlaySetNewQueueRequest
 */
 func (a *SyncPlayAPIService) SyncPlaySetNewQueue(ctx context.Context) ApiSyncPlaySetNewQueueRequest {
 	return ApiSyncPlaySetNewQueueRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueueRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlaySetNewQueue")
@@ -2025,8 +2025,8 @@ func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueue
 }
 
 type ApiSyncPlaySetPlaylistItemRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                       context.Context
+	ApiService                SyncPlayAPI
 	setPlaylistItemRequestDto *SetPlaylistItemRequestDto
 }
 
@@ -2043,22 +2043,22 @@ func (r ApiSyncPlaySetPlaylistItemRequest) Execute() (*http.Response, error) {
 /*
 SyncPlaySetPlaylistItem Request to change playlist item in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetPlaylistItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlaySetPlaylistItemRequest
 */
 func (a *SyncPlayAPIService) SyncPlaySetPlaylistItem(ctx context.Context) ApiSyncPlaySetPlaylistItemRequest {
 	return ApiSyncPlaySetPlaylistItemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlaylistItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlaySetPlaylistItem")
@@ -2137,8 +2137,8 @@ func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlay
 }
 
 type ApiSyncPlaySetRepeatModeRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                     context.Context
+	ApiService              SyncPlayAPI
 	setRepeatModeRequestDto *SetRepeatModeRequestDto
 }
 
@@ -2155,22 +2155,22 @@ func (r ApiSyncPlaySetRepeatModeRequest) Execute() (*http.Response, error) {
 /*
 SyncPlaySetRepeatMode Request to set repeat mode in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetRepeatModeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlaySetRepeatModeRequest
 */
 func (a *SyncPlayAPIService) SyncPlaySetRepeatMode(ctx context.Context) ApiSyncPlaySetRepeatModeRequest {
 	return ApiSyncPlaySetRepeatModeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeatModeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlaySetRepeatMode")
@@ -2249,8 +2249,8 @@ func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeat
 }
 
 type ApiSyncPlaySetShuffleModeRequest struct {
-	ctx context.Context
-	ApiService SyncPlayAPI
+	ctx                      context.Context
+	ApiService               SyncPlayAPI
 	setShuffleModeRequestDto *SetShuffleModeRequestDto
 }
 
@@ -2267,22 +2267,22 @@ func (r ApiSyncPlaySetShuffleModeRequest) Execute() (*http.Response, error) {
 /*
 SyncPlaySetShuffleMode Request to set shuffle mode in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetShuffleModeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlaySetShuffleModeRequest
 */
 func (a *SyncPlayAPIService) SyncPlaySetShuffleMode(ctx context.Context) ApiSyncPlaySetShuffleModeRequest {
 	return ApiSyncPlaySetShuffleModeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuffleModeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlaySetShuffleMode")
@@ -2361,7 +2361,7 @@ func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuff
 }
 
 type ApiSyncPlayStopRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SyncPlayAPI
 }
 
@@ -2372,22 +2372,22 @@ func (r ApiSyncPlayStopRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayStop Request stop in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayStopRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayStopRequest
 */
 func (a *SyncPlayAPIService) SyncPlayStop(ctx context.Context) ApiSyncPlayStopRequest {
 	return ApiSyncPlayStopRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayStopExecute(r ApiSyncPlayStopRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayStop")
@@ -2461,7 +2461,7 @@ func (a *SyncPlayAPIService) SyncPlayStopExecute(r ApiSyncPlayStopRequest) (*htt
 }
 
 type ApiSyncPlayUnpauseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService SyncPlayAPI
 }
 
@@ -2472,22 +2472,22 @@ func (r ApiSyncPlayUnpauseRequest) Execute() (*http.Response, error) {
 /*
 SyncPlayUnpause Request unpause in SyncPlay group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayUnpauseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSyncPlayUnpauseRequest
 */
 func (a *SyncPlayAPIService) SyncPlayUnpause(ctx context.Context) ApiSyncPlayUnpauseRequest {
 	return ApiSyncPlayUnpauseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SyncPlayAPIService) SyncPlayUnpauseExecute(r ApiSyncPlayUnpauseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayUnpause")

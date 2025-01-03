@@ -20,9 +20,9 @@ type PlayMethod string
 
 // List of PlayMethod
 const (
-	PLAYMETHOD_TRANSCODE PlayMethod = "Transcode"
+	PLAYMETHOD_TRANSCODE     PlayMethod = "Transcode"
 	PLAYMETHOD_DIRECT_STREAM PlayMethod = "DirectStream"
-	PLAYMETHOD_DIRECT_PLAY PlayMethod = "DirectPlay"
+	PLAYMETHOD_DIRECT_PLAY   PlayMethod = "DirectPlay"
 )
 
 // All allowed values of PlayMethod enum
@@ -110,4 +110,3 @@ func (v *NullablePlayMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

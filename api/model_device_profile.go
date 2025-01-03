@@ -92,6 +92,7 @@ func (o *DeviceProfile) HasName() bool {
 func (o *DeviceProfile) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *DeviceProfile) SetNameNil() {
 	o.Name.Set(nil)
@@ -134,6 +135,7 @@ func (o *DeviceProfile) HasId() bool {
 func (o *DeviceProfile) SetId(v string) {
 	o.Id.Set(&v)
 }
+
 // SetIdNil sets the value for Id to be an explicit nil
 func (o *DeviceProfile) SetIdNil() {
 	o.Id.Set(nil)
@@ -176,6 +178,7 @@ func (o *DeviceProfile) HasMaxStreamingBitrate() bool {
 func (o *DeviceProfile) SetMaxStreamingBitrate(v int32) {
 	o.MaxStreamingBitrate.Set(&v)
 }
+
 // SetMaxStreamingBitrateNil sets the value for MaxStreamingBitrate to be an explicit nil
 func (o *DeviceProfile) SetMaxStreamingBitrateNil() {
 	o.MaxStreamingBitrate.Set(nil)
@@ -218,6 +221,7 @@ func (o *DeviceProfile) HasMaxStaticBitrate() bool {
 func (o *DeviceProfile) SetMaxStaticBitrate(v int32) {
 	o.MaxStaticBitrate.Set(&v)
 }
+
 // SetMaxStaticBitrateNil sets the value for MaxStaticBitrate to be an explicit nil
 func (o *DeviceProfile) SetMaxStaticBitrateNil() {
 	o.MaxStaticBitrate.Set(nil)
@@ -260,6 +264,7 @@ func (o *DeviceProfile) HasMusicStreamingTranscodingBitrate() bool {
 func (o *DeviceProfile) SetMusicStreamingTranscodingBitrate(v int32) {
 	o.MusicStreamingTranscodingBitrate.Set(&v)
 }
+
 // SetMusicStreamingTranscodingBitrateNil sets the value for MusicStreamingTranscodingBitrate to be an explicit nil
 func (o *DeviceProfile) SetMusicStreamingTranscodingBitrateNil() {
 	o.MusicStreamingTranscodingBitrate.Set(nil)
@@ -302,6 +307,7 @@ func (o *DeviceProfile) HasMaxStaticMusicBitrate() bool {
 func (o *DeviceProfile) SetMaxStaticMusicBitrate(v int32) {
 	o.MaxStaticMusicBitrate.Set(&v)
 }
+
 // SetMaxStaticMusicBitrateNil sets the value for MaxStaticMusicBitrate to be an explicit nil
 func (o *DeviceProfile) SetMaxStaticMusicBitrateNil() {
 	o.MaxStaticMusicBitrate.Set(nil)
@@ -473,7 +479,7 @@ func (o *DeviceProfile) SetSubtitleProfiles(v []SubtitleProfile) {
 }
 
 func (o DeviceProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -553,5 +559,3 @@ func (v *NullableDeviceProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

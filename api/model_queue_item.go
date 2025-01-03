@@ -19,7 +19,7 @@ var _ MappedNullable = &QueueItem{}
 
 // QueueItem struct for QueueItem
 type QueueItem struct {
-	Id *string `json:"Id,omitempty"`
+	Id             *string        `json:"Id,omitempty"`
 	PlaylistItemId NullableString `json:"PlaylistItemId,omitempty"`
 }
 
@@ -104,6 +104,7 @@ func (o *QueueItem) HasPlaylistItemId() bool {
 func (o *QueueItem) SetPlaylistItemId(v string) {
 	o.PlaylistItemId.Set(&v)
 }
+
 // SetPlaylistItemIdNil sets the value for PlaylistItemId to be an explicit nil
 func (o *QueueItem) SetPlaylistItemIdNil() {
 	o.PlaylistItemId.Set(nil)
@@ -115,7 +116,7 @@ func (o *QueueItem) UnsetPlaylistItemId() {
 }
 
 func (o QueueItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +169,3 @@ func (v *NullableQueueItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

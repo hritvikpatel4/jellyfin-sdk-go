@@ -16,18 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 type ChannelsAPI interface {
 
 	/*
-	GetAllChannelFeatures Get all channel features.
+		GetAllChannelFeatures Get all channel features.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetAllChannelFeaturesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetAllChannelFeaturesRequest
 	*/
 	GetAllChannelFeatures(ctx context.Context) ApiGetAllChannelFeaturesRequest
 
@@ -36,11 +35,11 @@ type ChannelsAPI interface {
 	GetAllChannelFeaturesExecute(r ApiGetAllChannelFeaturesRequest) ([]ChannelFeatures, *http.Response, error)
 
 	/*
-	GetChannelFeatures Get channel features.
+		GetChannelFeatures Get channel features.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param channelId Channel id.
-	@return ApiGetChannelFeaturesRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param channelId Channel id.
+		@return ApiGetChannelFeaturesRequest
 	*/
 	GetChannelFeatures(ctx context.Context, channelId string) ApiGetChannelFeaturesRequest
 
@@ -49,11 +48,11 @@ type ChannelsAPI interface {
 	GetChannelFeaturesExecute(r ApiGetChannelFeaturesRequest) (*ChannelFeatures, *http.Response, error)
 
 	/*
-	GetChannelItems Get channel items.
+		GetChannelItems Get channel items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param channelId Channel Id.
-	@return ApiGetChannelItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param channelId Channel Id.
+		@return ApiGetChannelItemsRequest
 	*/
 	GetChannelItems(ctx context.Context, channelId string) ApiGetChannelItemsRequest
 
@@ -62,10 +61,10 @@ type ChannelsAPI interface {
 	GetChannelItemsExecute(r ApiGetChannelItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetChannels Gets available channels.
+		GetChannels Gets available channels.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChannelsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetChannelsRequest
 	*/
 	GetChannels(ctx context.Context) ApiGetChannelsRequest
 
@@ -74,10 +73,10 @@ type ChannelsAPI interface {
 	GetChannelsExecute(r ApiGetChannelsRequest) (*BaseItemDtoQueryResult, *http.Response, error)
 
 	/*
-	GetLatestChannelItems Gets latest channel items.
+		GetLatestChannelItems Gets latest channel items.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetLatestChannelItemsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiGetLatestChannelItemsRequest
 	*/
 	GetLatestChannelItems(ctx context.Context) ApiGetLatestChannelItemsRequest
 
@@ -90,7 +89,7 @@ type ChannelsAPI interface {
 type ChannelsAPIService service
 
 type ApiGetAllChannelFeaturesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ChannelsAPI
 }
 
@@ -101,24 +100,25 @@ func (r ApiGetAllChannelFeaturesRequest) Execute() ([]ChannelFeatures, *http.Res
 /*
 GetAllChannelFeatures Get all channel features.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllChannelFeaturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllChannelFeaturesRequest
 */
 func (a *ChannelsAPIService) GetAllChannelFeatures(ctx context.Context) ApiGetAllChannelFeaturesRequest {
 	return ApiGetAllChannelFeaturesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ChannelFeatures
+//
+//	@return []ChannelFeatures
 func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ApiGetAllChannelFeaturesRequest) ([]ChannelFeatures, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ChannelFeatures
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ChannelFeatures
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetAllChannelFeatures")
@@ -201,9 +201,9 @@ func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ApiGetAllChannelFeat
 }
 
 type ApiGetChannelFeaturesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ChannelsAPI
-	channelId string
+	channelId  string
 }
 
 func (r ApiGetChannelFeaturesRequest) Execute() (*ChannelFeatures, *http.Response, error) {
@@ -213,26 +213,27 @@ func (r ApiGetChannelFeaturesRequest) Execute() (*ChannelFeatures, *http.Respons
 /*
 GetChannelFeatures Get channel features.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param channelId Channel id.
- @return ApiGetChannelFeaturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param channelId Channel id.
+	@return ApiGetChannelFeaturesRequest
 */
 func (a *ChannelsAPIService) GetChannelFeatures(ctx context.Context, channelId string) ApiGetChannelFeaturesRequest {
 	return ApiGetChannelFeaturesRequest{
 		ApiService: a,
-		ctx: ctx,
-		channelId: channelId,
+		ctx:        ctx,
+		channelId:  channelId,
 	}
 }
 
 // Execute executes the request
-//  @return ChannelFeatures
+//
+//	@return ChannelFeatures
 func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ApiGetChannelFeaturesRequest) (*ChannelFeatures, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChannelFeatures
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChannelFeatures
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetChannelFeatures")
@@ -316,17 +317,17 @@ func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ApiGetChannelFeaturesRe
 }
 
 type ApiGetChannelItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ChannelsAPI
-	channelId string
-	folderId *string
-	userId *string
+	channelId  string
+	folderId   *string
+	userId     *string
 	startIndex *int32
-	limit *int32
-	sortOrder *[]SortOrder
-	filters *[]ItemFilter
-	sortBy *[]ItemSortBy
-	fields *[]ItemFields
+	limit      *int32
+	sortOrder  *[]SortOrder
+	filters    *[]ItemFilter
+	sortBy     *[]ItemSortBy
+	fields     *[]ItemFields
 }
 
 // Optional. Folder Id.
@@ -384,26 +385,27 @@ func (r ApiGetChannelItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Res
 /*
 GetChannelItems Get channel items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param channelId Channel Id.
- @return ApiGetChannelItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param channelId Channel Id.
+	@return ApiGetChannelItemsRequest
 */
 func (a *ChannelsAPIService) GetChannelItems(ctx context.Context, channelId string) ApiGetChannelItemsRequest {
 	return ApiGetChannelItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		channelId: channelId,
+		ctx:        ctx,
+		channelId:  channelId,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ChannelsAPIService) GetChannelItemsExecute(r ApiGetChannelItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetChannelItems")
@@ -543,14 +545,14 @@ func (a *ChannelsAPIService) GetChannelItemsExecute(r ApiGetChannelItemsRequest)
 }
 
 type ApiGetChannelsRequest struct {
-	ctx context.Context
-	ApiService ChannelsAPI
-	userId *string
-	startIndex *int32
-	limit *int32
-	supportsLatestItems *bool
+	ctx                   context.Context
+	ApiService            ChannelsAPI
+	userId                *string
+	startIndex            *int32
+	limit                 *int32
+	supportsLatestItems   *bool
 	supportsMediaDeletion *bool
-	isFavorite *bool
+	isFavorite            *bool
 }
 
 // User Id to filter by. Use System.Guid.Empty to not filter by user.
@@ -596,24 +598,25 @@ func (r ApiGetChannelsRequest) Execute() (*BaseItemDtoQueryResult, *http.Respons
 /*
 GetChannels Gets available channels.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChannelsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetChannelsRequest
 */
 func (a *ChannelsAPIService) GetChannels(ctx context.Context) ApiGetChannelsRequest {
 	return ApiGetChannelsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ChannelsAPIService) GetChannelsExecute(r ApiGetChannelsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetChannels")
@@ -714,13 +717,13 @@ func (a *ChannelsAPIService) GetChannelsExecute(r ApiGetChannelsRequest) (*BaseI
 }
 
 type ApiGetLatestChannelItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService ChannelsAPI
-	userId *string
+	userId     *string
 	startIndex *int32
-	limit *int32
-	filters *[]ItemFilter
-	fields *[]ItemFields
+	limit      *int32
+	filters    *[]ItemFilter
+	fields     *[]ItemFields
 	channelIds *[]string
 }
 
@@ -767,24 +770,25 @@ func (r ApiGetLatestChannelItemsRequest) Execute() (*BaseItemDtoQueryResult, *ht
 /*
 GetLatestChannelItems Gets latest channel items.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLatestChannelItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLatestChannelItemsRequest
 */
 func (a *ChannelsAPIService) GetLatestChannelItems(ctx context.Context) ApiGetLatestChannelItemsRequest {
 	return ApiGetLatestChannelItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//
+//	@return BaseItemDtoQueryResult
 func (a *ChannelsAPIService) GetLatestChannelItemsExecute(r ApiGetLatestChannelItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetLatestChannelItems")
