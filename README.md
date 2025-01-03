@@ -1,6 +1,11 @@
-# Jellyfin Client SDK - Golang
-
-Auto-generated Go client package for [Jellyfin](https://jellyfin.org/) using [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator). See the [API Documentation](/api/README.md).
+<p align="center">
+<h1 align="center">Jellyfin Client SDK - Go</h1>
+<p align="center">Auto-generated Go client package for <a href="https://jellyfin.org/">Jellyfin</a> using <a href="https://github.com/OpenAPITools/openapi-generator">OpenAPI Generator</a></p>
+<p align="center">See the <a href="/api/README.md">API Documentation</a></p>
+</p>
+<p align="center">
+<p align="center"><a href="https://github.com/hritvikpatel4/jellyfin-sdk-go/actions/workflows/update.yml?query=branch%3Amain"><img src="https://github.com/hritvikpatel4/jellyfin-sdk-go/actions/workflows/update.yml/badge.svg?branch=main" alt="Build Status"></a> <a href="https://goreportcard.com/report/github.com/hritvikpatel4/jellyfin-sdk-go"><img src="https://goreportcard.com/badge/hritvikpatel4/jellyfin-sdk-go" alt="Go Report Card"></a> <a href="https://github.com/hritvikpatel4/jellyfin-sdk-go/releases/latest"><img src="https://img.shields.io/badge/version-10.10.3-blue.svg" alt="Release Version"></a> <a href="https://pkg.go.dev/github.com/hritvikpatel4/jellyfin-sdk-go"><img src="https://pkg.go.dev/badge/github.com/hritvikpatel4/jellyfin-sdk-go" alt="GoDoc"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/hritvikpatel4/jellyfin-sdk-go.svg" alt="License"></a></p>
+</p>
 
 ## Example
 
