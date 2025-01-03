@@ -7,6 +7,17 @@
 <p align="center"><a href="https://github.com/hritvikpatel4/jellyfin-sdk-go/actions/workflows/update.yml?query=branch%3Amain"><img src="https://github.com/hritvikpatel4/jellyfin-sdk-go/actions/workflows/update.yml/badge.svg?branch=main" alt="Build Status"></a> <a href="https://goreportcard.com/report/github.com/hritvikpatel4/jellyfin-sdk-go"><img src="https://goreportcard.com/badge/github.com/hritvikpatel4/jellyfin-sdk-go" alt="Go Report Card"></a> <a href="https://github.com/hritvikpatel4/jellyfin-sdk-go/releases/latest"><img src="https://img.shields.io/badge/version-10.10.3-blue.svg" alt="Release Version"></a> <a href="https://pkg.go.dev/github.com/hritvikpatel4/jellyfin-sdk-go"><img src="https://pkg.go.dev/badge/github.com/hritvikpatel4/jellyfin-sdk-go" alt="GoDoc"></a> <a href="LICENSE"><img src="https://img.shields.io/github/license/hritvikpatel4/jellyfin-sdk-go.svg" alt="License"></a></p>
 </p>
 
+## Installation
+
+```bash
+go get github.com/hritvikpatel4/jellyfin-sdk-go
+```
+or
+```
+# Go Modules
+require github.com/hritvikpatel4/jellyfin-sdk-go v10.10.3
+```
+
 ## Example
 
 Generate an API token in the Jellyfin WebUI at Administration -> Overview -> Advanced -> API Token.
